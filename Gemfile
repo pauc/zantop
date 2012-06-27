@@ -9,6 +9,7 @@ gem 'decent_exposure'
 gem 'friendly_id'
 gem 'cancan'
 gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'
@@ -31,7 +32,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2.0.4.0'
 end
 
 group :development, :test do
