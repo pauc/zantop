@@ -1,0 +1,12 @@
+<div id="session_bar" class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav pull-left">
+        <li><a href="#"><%= current_user.name.camelize %></a></li>
+      </ul>
+      <ul class="nav pull-right">
+        <%= content_tag :li, link_to('log out', logout_path) %>
+      </ul>
+    </div>
+  </div>
+</div>
