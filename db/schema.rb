@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628125628) do
+ActiveRecord::Schema.define(:version => 20120628183347) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -33,5 +33,17 @@ ActiveRecord::Schema.define(:version => 20120628125628) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+
+  create_table "works", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "type"
+    t.date     "realized"
+    t.string   "where"
+    t.integer  "position"
+    t.boolean  "visible"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end

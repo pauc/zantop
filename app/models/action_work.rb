@@ -1,0 +1,2 @@
+class ActionWork < Work
+end

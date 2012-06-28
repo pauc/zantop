@@ -1,12 +1,23 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id         :integer         not null, primary key
+#  title      :string(255)
+#  body       :text
+#  position   :integer
+#  slug       :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
 require 'spec_helper'
 
 describe Page do
-  before do
-    pages = Page.all
-    if pages.empty?
-      Page.create!([{title: 'About page', body: 'This is the about page'},
-                    {title: 'Contact page', body: 'This is the contact page'}]) 
-    end
+  pages = Page.all
+  if pages.empty?
+    Page.create([{title: 'About page', body: 'This is the about page'},
+                  {title: 'Contact page', body: 'This is the contact page'}]) 
   end
 
   it { Page.all.size.should equal 2 }
@@ -21,9 +32,9 @@ describe Page do
 
   describe 'with id 2 is the "contact" page' do
     before do
-      @p = Page.find(1)
-      @about = Page.about
+      @p = Page.find(2)
+      @contact = Page.contact
     end
-    it { @about.should == @p }
+    it { @contact.should == @p }
   end
 end
