@@ -6,5 +6,5 @@ Zantop::Application.routes.draw do
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'
 
-  root to: 'users#index'
+  root to: 'dashboards#front'
 end
