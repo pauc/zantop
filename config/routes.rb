@@ -2,7 +2,7 @@ Zantop::Application.routes.draw do
 
   resources :sessions, only: [:index, :new, :create, :destroy]
   resources :users
-  resources :pages, only: [:index, :show, :edit, :update]
+  resources :pages, only: [:edit, :update]
 
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'

@@ -1,5 +1,7 @@
 class Page < ActiveRecord::Base
-  attr_accessible :body, :position, :slug, :title
+  attr_accessible :body, :slug, :title
+
+  validates :title, presence: true
 
   def self.about
     find(1)
