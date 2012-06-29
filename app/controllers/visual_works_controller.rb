@@ -1,0 +1,2 @@
+class VisualWorksController < ApplicationController
+end
