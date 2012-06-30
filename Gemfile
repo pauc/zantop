@@ -13,6 +13,7 @@ gem 'will_paginate-bootstrap'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'
+gem 'globalize3'
 
 gem 'fog'
 gem 'carrierwave'

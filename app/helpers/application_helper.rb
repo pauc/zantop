@@ -17,4 +17,11 @@ module ApplicationHelper
   def front?
     controller.controller_name == 'dashboards' && controller.action_name == 'front'
   end
+
+  def lang_selector
+    ca = I18n.locale == :ca ? 'ca' : link_to('ca', url_for(locale: 'ca'))
+    es = I18n.locale == :es ? 'es' : link_to('es', url_for(locale: 'es'))
+    en = I18n.locale == :en ? 'en' : link_to('en', url_for(locale: 'en'))
+    ca + " | " + en + " | " + es
+  end
 end

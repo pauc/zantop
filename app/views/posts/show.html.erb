@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= post.slug %></h2>
+<p>
+  ca: <%= post.translated?(:ca) %>
+</p>
+<p>
+  es: <%= post.translated?(:es) %>
+</p>
+<p>
+  en: <%= post.translated?(:en) %>
+</p>
+<p>
+  <b>Title:</b>
+  <%= post.title %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= post.text %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(post) %> |
+<%= link_to 'Back', posts_path %>
