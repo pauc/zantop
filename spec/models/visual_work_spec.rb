@@ -1,17 +1,29 @@
+# == Schema Information
+#
+# Table name: visual_works
+#
+#  id               :integer         not null, primary key
+#  slug_en          :string(255)
+#  slug_es          :string(255)
+#  slug_ca          :string(255)
+#  realization_date :date
+#  dimensions       :string(255)
+#  position         :integer
+#  created_at       :datetime        not null
+#  updated_at       :datetime        not null
+#
+
 require 'spec_helper'
 
 describe VisualWork do
-  before { @visual_work = FactoryGirl.create(:visual_work) }
+  before { @work = FactoryGirl.create(:visual_work) }
 
-  subject { @visual_work }
+  subject { @work }
 
-  it 'has type "visual_work"' do
-    @visual_work.type.should == 'VisualWork'
-  end
+  it { should be_valid }
 
-  describe "without title is invalid" do
-    before { @visual_work.title = nil }
-
+  describe "when title is not present" do
+    before { @work.title = " " }
     it { should_not be_valid }
   end
 end

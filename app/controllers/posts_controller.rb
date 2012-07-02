@@ -1,16 +1,17 @@
 class PostsController < ApplicationController
-  include RespondWithCorrectSlug
   respond_to :html
 
   expose(:posts) { Post.all }
   expose(:post)
 
+  before_filter :find_post, only: [:show]
+
   def index
-    respond_with :posts
+    respond_with posts
   end
 
   def show
-    responder_for post
+    respond_with post
   end
 
   def new
@@ -31,10 +32,18 @@ class PostsController < ApplicationController
     respond_with post
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     flash[:success] = "deleted" if post.destroy
     respond_with post, location: posts_path
   end
+
+  private
+
+    def find_post
+      post = Post.find params[:id]
+
+      if request.path != post_path(post)
+        return redirect_to post, :status => :moved_permanently
+      end
+    end
 end

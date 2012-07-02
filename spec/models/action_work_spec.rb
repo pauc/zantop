@@ -1,17 +1,28 @@
+# == Schema Information
+#
+# Table name: action_works
+#
+#  id               :integer         not null, primary key
+#  slug_en          :string(255)
+#  slug_es          :string(255)
+#  slug_ca          :string(255)
+#  realization_date :date
+#  position         :integer
+#  created_at       :datetime        not null
+#  updated_at       :datetime        not null
+#
+
 require 'spec_helper'
 
 describe ActionWork do
-  before { @action_work = FactoryGirl.create(:action_work) }
+  before { @work = FactoryGirl.create(:action_work) }
 
-  subject { @action_work }
+  subject { @work }
 
-  it 'has type "action_work"' do
-    @action_work.type.should == 'ActionWork'
-  end
+  it { should be_valid }
 
-  describe "without title is invalid" do
-    before { @action_work.title = nil }
-
+  describe "when title is not present" do
+    before { @work.title = " " }
     it { should_not be_valid }
   end
 end

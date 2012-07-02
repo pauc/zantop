@@ -1,0 +1,29 @@
+<h1>Listing Action_Works</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Place</th>
+    <th>Realized</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% action_works.each do |act_w| %>
+  <tr>
+    <td><%= act_w.title %></td>
+    <td><%= act_w.description %></td>
+    <td><%= act_w.place %></td>
+    <td><%= l act_w.realization_date, format: :long %></td>
+    <td><%= link_to 'Show', act_w %></td>
+    <td><%= link_to 'Edit', edit_action_work_path(act_w) %></td>
+    <td><%= link_to 'Destroy', action_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Work', new_action_work_path %>

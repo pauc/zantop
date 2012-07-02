@@ -4,31 +4,31 @@ describe UsersController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/users").should route_to("users#index")
+      get("/#{I18n.locale}/users").should route_to("users#index", locale: I18n.locale.to_s)
     end
 
     it "routes to #new" do
-      get("/users/new").should route_to("users#new")
+      get("/#{I18n.locale}/users/new").should route_to("users#new", locale: I18n.locale.to_s)
     end
 
     it "routes to #show" do
-      get("/users/1").should route_to("users#show", :id => "1")
+      get("/#{I18n.locale}/users/1").should route_to("users#show", id: "1", locale: I18n.locale.to_s)
     end
 
     it "routes to #edit" do
-      get("/users/1/edit").should route_to("users#edit", :id => "1")
+      get("/#{I18n.locale}/users/1/edit").should route_to("users#edit", id: "1", locale: I18n.locale.to_s)
     end
 
     it "routes to #create" do
-      post("/users").should route_to("users#create")
+      post("/#{I18n.locale}/users").should route_to("users#create", locale: I18n.locale.to_s)
     end
 
     it "routes to #update" do
-      put("/users/1").should route_to("users#update", :id => "1")
+      put("/#{I18n.locale}/users/1").should route_to("users#update", id: "1", locale: I18n.locale.to_s)
     end
 
     it "routes to #destroy" do
-      delete("/users/1").should route_to("users#destroy", :id => "1")
+      delete("/#{I18n.locale}/users/1").should route_to("users#destroy", id: "1", locale: I18n.locale.to_s)
     end
   end
 end

@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
         redirect_to location
       end
     end
+
+    def home_path
+      root_url + I18n.locale.to_s
+    end
 end

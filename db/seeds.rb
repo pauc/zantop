@@ -8,5 +8,5 @@
 
 pages = Page.all
 
-Page.create([{title: 'About', body: 'The about-page', position: 1},
-        {title: 'Contact', body: 'The contact-page', position: 2} ]) if pages.empty?
+Page.create([{title: 'About', body: 'The about-page'},
+        {title: 'Contact', body: 'The contact-page'} ]) if pages.empty?

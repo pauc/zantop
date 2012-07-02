@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:new_session][:password])
       sign_in user
       flash[:success] = "Hola #{user.name.camelize}!!"
-      redirect_to root_url
+      redirect_to home_path
     else
       flash.now[:error] = t('.invalid_login')
       render "new"
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to home_path, :notice => "Logged out!"
   end
 
   private

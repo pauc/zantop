@@ -1,0 +1,29 @@
+<h1>Listing Visual_Works</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Place</th>
+    <th>Realized</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% visual_works.each do |visual_w| %>
+  <tr>
+    <td><%= visual_w.title %></td>
+    <td><%= visual_w.description %></td>
+    <td><%= visual_w.place %></td>
+    <td><%= l visual_w.realization_date, format: :long %></td>
+    <td><%= link_to 'Show', visual_w %></td>
+    <td><%= link_to 'Edit', edit_visual_work_path(visual_w) %></td>
+    <td><%= link_to 'Destroy', visual_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Work', new_visual_work_path %>

@@ -11,7 +11,61 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629184830) do
+ActiveRecord::Schema.define(:version => 20120702234540) do
+
+  create_table "action_work_translations", :force => true do |t|
+    t.integer  "action_work_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "description"
+    t.string   "place"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "action_work_translations", ["action_work_id"], :name => "index_action_work_translations_on_action_work_id"
+  add_index "action_work_translations", ["locale"], :name => "index_action_work_translations_on_locale"
+
+  create_table "action_works", :force => true do |t|
+    t.string   "slug_en"
+    t.string   "slug_es"
+    t.string   "slug_ca"
+    t.date     "realization_date"
+    t.integer  "position"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "action_works", ["slug_ca"], :name => "index_action_works_on_slug_ca", :unique => true
+  add_index "action_works", ["slug_en"], :name => "index_action_works_on_slug_en", :unique => true
+  add_index "action_works", ["slug_es"], :name => "index_action_works_on_slug_es", :unique => true
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -41,6 +95,10 @@ ActiveRecord::Schema.define(:version => 20120629184830) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "posts", ["slug_ca"], :name => "index_posts_on_slug_ca", :unique => true
+  add_index "posts", ["slug_en"], :name => "index_posts_on_slug_en", :unique => true
+  add_index "posts", ["slug_es"], :name => "index_posts_on_slug_es", :unique => true
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -52,6 +110,34 @@ ActiveRecord::Schema.define(:version => 20120629184830) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+
+  create_table "visual_work_translations", :force => true do |t|
+    t.integer  "visual_work_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "description"
+    t.string   "techniques"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "visual_work_translations", ["locale"], :name => "index_visual_work_translations_on_locale"
+  add_index "visual_work_translations", ["visual_work_id"], :name => "index_visual_work_translations_on_visual_work_id"
+
+  create_table "visual_works", :force => true do |t|
+    t.string   "slug_en"
+    t.string   "slug_es"
+    t.string   "slug_ca"
+    t.date     "realization_date"
+    t.string   "dimensions"
+    t.integer  "position"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "visual_works", ["slug_ca"], :name => "index_visual_works_on_slug_ca", :unique => true
+  add_index "visual_works", ["slug_en"], :name => "index_visual_works_on_slug_en", :unique => true
+  add_index "visual_works", ["slug_es"], :name => "index_visual_works_on_slug_es", :unique => true
 
   create_table "works", :force => true do |t|
     t.string   "title"

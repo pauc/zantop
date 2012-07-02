@@ -1,0 +1,7 @@
+<%= simple_form_for action_work do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, :as => :ckeditor %>
+  <%= f.input :place %>
+  <%= f.input :realization_date %>
+  <%= f.button :submit %>
+<% end %>

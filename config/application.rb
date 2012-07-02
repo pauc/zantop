@@ -18,6 +18,7 @@ end
 module Zantop
   class Application < Rails::Application
     config.autoload_paths += %W(
+      #{config.root}/app/models/ckeditor
       #{config.root}/app/models/concerns
       #{config.root}/app/controllers/concerns
     )

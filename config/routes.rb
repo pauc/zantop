@@ -1,9 +1,13 @@
 Zantop::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :sessions, only: [:index, :new, :create, :destroy]
   resources :users
   resources :pages, only: [:edit, :update]
   resources :posts
+  resources :action_works
+  resources :visual_works
 
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'

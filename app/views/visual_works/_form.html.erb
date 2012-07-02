@@ -1,0 +1,8 @@
+<%= simple_form_for visual_work do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description, :as => :ckeditor %>
+  <%= f.input :techniques %>
+  <%= f.input :dimensions %>
+  <%= f.input :realization_date %>
+  <%= f.button :submit %>
+<% end %>

@@ -2,7 +2,7 @@ module Slugconcern
   extend ActiveSupport::Concern
 
   included do
-    before_validation do
+    before_save do
       value = slug
       [:en, :es, :ca].each do |locale|
         send("slug_#{locale}=", value) unless send("slug_#{locale}?")
@@ -19,7 +19,7 @@ module Slugconcern
     end
   end
 
-  def translated?(locale)
+  def has_translation?(locale)
     translation = translations.select { |tr| tr.locale == locale }
     !translation.blank?
   end
