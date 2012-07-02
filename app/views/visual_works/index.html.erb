@@ -4,7 +4,8 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Place</th>
+    <th>Techniques</th>
+    <th>Dimensions</th>
     <th>Realized</th>
     <th></th>
     <th></th>
@@ -14,8 +15,9 @@
 <% visual_works.each do |visual_w| %>
   <tr>
     <td><%= visual_w.title %></td>
-    <td><%= visual_w.description %></td>
-    <td><%= visual_w.place %></td>
+    <td><%= raw visual_w.description %></td>
+    <td><%= visual_w.techniques %></td>
+    <td><%= visual_w.dimensions %></td>
     <td><%= l visual_w.realization_date, format: :long %></td>
     <td><%= link_to 'Show', visual_w %></td>
     <td><%= link_to 'Edit', edit_visual_work_path(visual_w) %></td>

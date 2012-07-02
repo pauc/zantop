@@ -2,11 +2,38 @@
   position: relative;
 
   #brand {
-    margin-top: 20px;  
+    margin-top: 20px;
+    display: inline-block;
+
+    h1 {
+      display: inline-block;
+    }
   }
 
   #select_lang {
     position: absolute;
     top: 0;
   }
+
+  #main_menu {
+    display: inline-block;
+    list-style: none outside;
+    font-size: 22px;
+
+    li {
+      display: inline;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+  }
+
+  #secondary_menu {
+    float: right;
+    margin-top: 20px;
+    list-style: none outside;
+  }
+}
+
+table {
+  width: 100%;
 }
