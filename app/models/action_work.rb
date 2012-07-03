@@ -34,4 +34,6 @@ class ActionWork < ActiveRecord::Base
   end
 
   validates :title, presence: true
+
+  has_many :images, as: :illustrated
 end

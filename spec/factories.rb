@@ -22,4 +22,9 @@ FactoryGirl.define do
     techniques { "Techniques for #{title}"}
     sequence(:realization_date) { |n| n.days.from_now }
   end
+
+  factory :image do |f|
+    image { "route/to/image" }
+    f.association :illustrated, factory: :visual_work
+  end
 end

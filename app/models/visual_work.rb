@@ -37,4 +37,5 @@ class VisualWork < ActiveRecord::Base
 
   validates :title, presence: true
 
+  has_many :images, as: :illustrated
 end

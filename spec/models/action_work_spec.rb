@@ -20,6 +20,7 @@ describe ActionWork do
   subject { @work }
 
   it { should be_valid }
+  it { should respond_to(:images) }
 
   describe "when title is not present" do
     before { @work.title = " " }
