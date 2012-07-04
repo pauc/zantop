@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    flash[:success] = t('updated') if post.update_attributes(params[:post])
+    flash[:success] = t('updated') if post.save
     respond_with post
   end
 

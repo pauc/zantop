@@ -13,6 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+public/uploads/tmp
 
 config/amazon_s3.yml
 config/database.yml

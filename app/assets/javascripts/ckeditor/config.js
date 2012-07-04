@@ -50,12 +50,12 @@ CKEDITOR.editorConfig = function( config )
 
   config.forcePasteAsPlainText = true;
 
-  //config.format_tags = 'p;h3' 
+  config.format_tags = 'p;h3' 
 
   config.removeDialogTabs = 'image:advanced;image:Upload;link:target;link:advanced';
   
   /* Toolbars */
-  //config.toolbar = 'Defeault';
+  config.toolbar = 'Defeault';
   
   config.toolbar_Defeault =
     [

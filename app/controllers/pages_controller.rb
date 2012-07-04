@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def update
-    if page.update_attributes(params[:page])
+    if page.save
       flash[:success] = t('updated')
       if page.id == 1
         redirect_to about_path

@@ -21,7 +21,8 @@ class VisualWork < ActiveRecord::Base
                   :techniques,
                   :dimensions,
                   :realization_date, 
-                  :position
+                  :position,
+                  :images_attributes
 
   include Slugconcern
   include UserInputCleaner
@@ -37,5 +38,6 @@ class VisualWork < ActiveRecord::Base
 
   validates :title, presence: true
 
-  has_many :images, as: :illustrated
+  has_many :images, as: :illustrated, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
 end

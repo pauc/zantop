@@ -10,6 +10,7 @@ gem 'friendly_id'
 gem 'cancan'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+gem "nested_form"
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

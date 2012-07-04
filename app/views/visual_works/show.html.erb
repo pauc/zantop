@@ -3,6 +3,9 @@
 <div><%= visual_work.techniques %></div>
 <div><%= visual_work.dimensions %></div>
 <div><%= visual_work.realization_date %></div>
+<% visual_work.images.each do |img| %>
+  <%= image_tag img.image.thumb.to_s %>
+<% end %>
 
 <%= link_to 'Edit', edit_visual_work_path(visual_work) %> |
 <%= link_to 'Back', visual_works_path %>

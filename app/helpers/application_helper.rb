@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def page_title
     tag = front? ? :h1 : :span
-    content_tag tag, link_to('Zantop', root_path), id: 'page_title'
+    content_tag tag, link_to('Zantop', home_path), id: 'page_title'
   end
 
   def front?

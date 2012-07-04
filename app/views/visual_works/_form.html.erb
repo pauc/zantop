@@ -1,6 +1,12 @@
-<%= simple_form_for visual_work do |f| %>
+<%= simple_nested_form_for visual_work, html: { multipart: true } do |f| %>
   <%= f.input :title %>
   <%= f.input :description, :as => :ckeditor %>
+  <%= f.fields_for :images do |image_form| %>
+    <%= image_form.input :image, as: :image_preview, 
+          input_html: { preview_version: :thumb } %>
+    <%= image_form.link_to_remove "Remove this image" %>
+  <% end %>
+  <p><%= f.link_to_add "Add an image", :images %></p>
   <%= f.input :techniques %>
   <%= f.input :dimensions %>
   <%= f.input :realization_date %>

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    falsh[:success] = t('.updated', model_name: t('models.User')) if user.update_attributes(params[:user])
+    falsh[:success] = t('.updated', model_name: t('models.User')) if user.save
     respond_with user
   end
 

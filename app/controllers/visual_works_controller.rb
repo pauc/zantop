@@ -28,7 +28,7 @@ class VisualWorksController < ApplicationController
   end
 
   def update
-    flash[:success] = t('updated') if visual_work.update_attributes(params[:visual_work])
+    flash[:success] = t('updated') if visual_work.save
     respond_with visual_work
   end
 

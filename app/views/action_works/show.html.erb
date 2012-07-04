@@ -2,6 +2,9 @@
 <div><%= raw action_work.description %></div>
 <div><%= action_work.place %></div>
 <div><%= action_work.realization_date %></div>
+<% action_work.images.each do |img| %>
+  <%= image_tag img.image.thumb.to_s %>
+<% end %>
 
 <%= link_to 'Edit', edit_action_work_path(action_work) %> |
 <%= link_to 'Back', action_works_path %>

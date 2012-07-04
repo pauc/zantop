@@ -28,7 +28,7 @@ class ActionWorksController < ApplicationController
   end
 
   def update
-    flash[:success] = t('updated') if action_work.update_attributes(params[:action_work])
+    flash[:success] = t('updated') if action_work.save
     respond_with action_work
   end
 
