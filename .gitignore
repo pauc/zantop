@@ -17,6 +17,5 @@ public/uploads/tmp
 
 config/amazon_s3.yml
 config/database.yml
-config/initializers/secret_token.rb
 .rvmrc
 zantop.sublime*

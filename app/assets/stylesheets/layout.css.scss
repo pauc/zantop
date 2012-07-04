@@ -7,10 +7,10 @@ table {
 
   #brand {
     margin-top: 20px;
-    display: inline-block;
+    @include inline-block;
 
     h1 {
-      display: inline-block;
+      @include inline-block;
     }
   }
 
@@ -20,7 +20,7 @@ table {
   }
 
   #main_menu {
-    display: inline-block;
+    @include inline-block;
     list-style: none outside;
     font-size: 22px;
 
