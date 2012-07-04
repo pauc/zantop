@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
     t.string   "slug_en"
     t.string   "slug_es"
     t.string   "slug_ca"
+    t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -146,17 +147,5 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
   add_index "visual_works", ["slug_ca"], :name => "index_visual_works_on_slug_ca", :unique => true
   add_index "visual_works", ["slug_en"], :name => "index_visual_works_on_slug_en", :unique => true
   add_index "visual_works", ["slug_es"], :name => "index_visual_works_on_slug_es", :unique => true
-
-  create_table "works", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "type"
-    t.date     "realized"
-    t.string   "where"
-    t.integer  "position"
-    t.boolean  "visible"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
 
 end

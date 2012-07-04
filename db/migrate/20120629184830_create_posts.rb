@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :slug_en
       t.string :slug_es
       t.string :slug_ca
+      t.integer :position
 
       t.timestamps
     end

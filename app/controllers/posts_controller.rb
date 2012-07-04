@@ -37,6 +37,15 @@ class PostsController < ApplicationController
     respond_with post, location: posts_path
   end
 
+  def sort
+    @posts = Post.all
+    @posts.each do |post|
+      post.position = params['post'].index(post.id.to_s) + 1
+      post.save
+    end
+    render :nothing => true
+  end
+
   private
 
     def find_post

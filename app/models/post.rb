@@ -12,7 +12,7 @@
 
 class Post < ActiveRecord::Base
   translates :title, :text
-  attr_accessible :title, :text
+  attr_accessible :title, :text, :position
 
   include Slugconcern
   include UserInputCleaner
@@ -27,5 +27,8 @@ class Post < ActiveRecord::Base
   end
 
   validates :title, presence: true
+
+  acts_as_list
+  default_scope :order => 'position'
 
 end

@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require jquery_nested_form
+//= require posts.js

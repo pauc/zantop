@@ -4,6 +4,7 @@ gem 'rails', '>=3.2.3'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'friendly_id'
@@ -11,6 +12,8 @@ gem 'cancan'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem "nested_form"
+
+gem 'acts_as_list'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

@@ -5,7 +5,9 @@ Zantop::Application.routes.draw do
   resources :sessions, only: [:index, :new, :create, :destroy]
   resources :users
   resources :pages, only: [:edit, :update]
-  resources :posts
+  resources :posts do
+    post :sort, on: :collection
+  end
   resources :action_works
   resources :visual_works
 
