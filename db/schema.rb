@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
     t.string   "image"
     t.integer  "illustrated_id"
     t.string   "illustrated_type"
+    t.integer  "position"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

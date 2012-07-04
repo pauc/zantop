@@ -1,6 +1,6 @@
 <h1>Listing posts</h1>
 
-<ul id="posts">
+<ul id="posts" class="sortable-list" data-resource="posts" data-action="sort">
 <% posts.each do |post| %>
   <%= content_tag_for :li, post do %>
     <span class="handle">[drag]</span>

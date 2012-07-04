@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include Sortable::SimpleSort
   respond_to :html
 
   expose(:posts) { Post.all }
@@ -35,15 +36,6 @@ class PostsController < ApplicationController
   def destroy
     flash[:success] = "deleted" if post.destroy
     respond_with post, location: posts_path
-  end
-
-  def sort
-    @posts = Post.all
-    @posts.each do |post|
-      post.position = params['post'].index(post.id.to_s) + 1
-      post.save
-    end
-    render :nothing => true
   end
 
   private

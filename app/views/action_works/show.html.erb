@@ -2,8 +2,12 @@
 <div><%= raw action_work.description %></div>
 <div><%= action_work.place %></div>
 <div><%= action_work.realization_date %></div>
-<% action_work.images.each do |img| %>
-  <%= image_tag img.image.thumb.to_s %>
+<ul id="images" class="sortable-list" data-resource="action_works/<%= action_work.id %>" data-action="sort_nested" data-sortable="images">
+<% action_work.images.each do |image| %>
+  <%= content_tag_for :li, image do %>
+    <%= image_tag image.image.thumb.to_s, class: "handle" %>
+    : <%= image.position %>
+  <% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_action_work_path(action_work) %> |

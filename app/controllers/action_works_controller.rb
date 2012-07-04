@@ -1,4 +1,6 @@
 class ActionWorksController < ApplicationController
+  include Sortable::SimpleSort
+  include Sortable::SortNested
   respond_to :html
 
   expose(:action_works) { ActionWork.all }

@@ -8,8 +8,14 @@ Zantop::Application.routes.draw do
   resources :posts do
     post :sort, on: :collection
   end
-  resources :action_works
-  resources :visual_works
+  resources :action_works do
+    post :sort, on: :collection
+    post :sort_nested, on: :member
+  end
+  resources :visual_works do
+    post :sort, on: :collection
+    post :sort_nested, on: :member
+  end
 
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'

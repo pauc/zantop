@@ -4,4 +4,8 @@ class Image < ActiveRecord::Base
   attr_accessible :image
 
   mount_uploader :image, ImageUploader
+
+  acts_as_list scope: 'illustrated_id=#{illustrated_id} and 
+                        illustrated_type=\'#{illustrated_type}\''
+  default_scope :order => 'position'
 end

@@ -1,4 +1,6 @@
 class VisualWorksController < ApplicationController
+  include Sortable::SimpleSort
+  include Sortable::SortNested
   respond_to :html
 
   expose(:visual_works) { VisualWork.all }

@@ -3,9 +3,14 @@
 <div><%= visual_work.techniques %></div>
 <div><%= visual_work.dimensions %></div>
 <div><%= visual_work.realization_date %></div>
-<% visual_work.images.each do |img| %>
-  <%= image_tag img.image.thumb.to_s %>
+<ul id="images" class="sortable-list" data-resource="visual_works/<%= visual_work.id %>" data-action="sort_nested" data-sortable="images">
+<% visual_work.images.each do |image| %>
+  <%= content_tag_for :li, image do %>
+    <%= image_tag image.image.thumb.to_s, class: "handle" %>
+    : <%= image.position %>
+  <% end %>
 <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_visual_work_path(visual_work) %> |
 <%= link_to 'Back', visual_works_path %>
