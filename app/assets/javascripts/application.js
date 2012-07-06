@@ -16,3 +16,7 @@
 //= require ckeditor/init
 //= require jquery_nested_form
 //= require sortables
+//= require nested_fields
+//= require galleria/galleria-1.2.7.min
+//= require galleria/galleria.classic.min
+//= require gallerify
