@@ -21,6 +21,7 @@ describe ActionWork do
 
   it { should be_valid }
   it { should respond_to(:images) }
+  it { @work.type.should == "ActionWork"}
 
   describe "when title is not present" do
     before { @work.title = " " }

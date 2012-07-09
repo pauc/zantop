@@ -13,33 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120703192045) do
 
-  create_table "action_work_translations", :force => true do |t|
-    t.integer  "action_work_id"
-    t.string   "locale"
-    t.string   "title"
-    t.text     "description"
-    t.string   "place"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  add_index "action_work_translations", ["action_work_id"], :name => "index_action_work_translations_on_action_work_id"
-  add_index "action_work_translations", ["locale"], :name => "index_action_work_translations_on_locale"
-
-  create_table "action_works", :force => true do |t|
-    t.string   "slug_en"
-    t.string   "slug_es"
-    t.string   "slug_ca"
-    t.date     "realization_date"
-    t.integer  "position"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  add_index "action_works", ["slug_ca"], :name => "index_action_works_on_slug_ca", :unique => true
-  add_index "action_works", ["slug_en"], :name => "index_action_works_on_slug_en", :unique => true
-  add_index "action_works", ["slug_es"], :name => "index_action_works_on_slug_es", :unique => true
-
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
     t.string   "data_content_type"
@@ -69,11 +42,10 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
 
   create_table "images", :force => true do |t|
     t.string   "image"
-    t.integer  "illustrated_id"
-    t.string   "illustrated_type"
+    t.integer  "work_id"
     t.integer  "position"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
@@ -121,32 +93,34 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["name"], :name => "index_users_on_name", :unique => true
 
-  create_table "visual_work_translations", :force => true do |t|
-    t.integer  "visual_work_id"
+  create_table "work_translations", :force => true do |t|
+    t.integer  "work_id"
     t.string   "locale"
     t.string   "title"
     t.text     "description"
+    t.string   "place"
     t.string   "techniques"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "visual_work_translations", ["locale"], :name => "index_visual_work_translations_on_locale"
-  add_index "visual_work_translations", ["visual_work_id"], :name => "index_visual_work_translations_on_visual_work_id"
+  add_index "work_translations", ["locale"], :name => "index_work_translations_on_locale"
+  add_index "work_translations", ["work_id"], :name => "index_work_translations_on_work_id"
 
-  create_table "visual_works", :force => true do |t|
+  create_table "works", :force => true do |t|
     t.string   "slug_en"
     t.string   "slug_es"
     t.string   "slug_ca"
     t.date     "realization_date"
     t.string   "dimensions"
     t.integer  "position"
+    t.string   "type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
-  add_index "visual_works", ["slug_ca"], :name => "index_visual_works_on_slug_ca", :unique => true
-  add_index "visual_works", ["slug_en"], :name => "index_visual_works_on_slug_en", :unique => true
-  add_index "visual_works", ["slug_es"], :name => "index_visual_works_on_slug_es", :unique => true
+  add_index "works", ["slug_ca"], :name => "index_works_on_slug_ca", :unique => true
+  add_index "works", ["slug_en"], :name => "index_works_on_slug_en", :unique => true
+  add_index "works", ["slug_es"], :name => "index_works_on_slug_es", :unique => true
 
 end

@@ -22,6 +22,7 @@ describe VisualWork do
 
   it { should be_valid }
   it { should respond_to(:images) }
+  it { @work.type.should == "VisualWork"}
 
   describe "when title is not present" do
     before { @work.title = " " }
