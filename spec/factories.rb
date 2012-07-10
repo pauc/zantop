@@ -24,7 +24,6 @@ FactoryGirl.define do
   end
 
   factory :image do |f|
-    image { "route/to/image" }
-    f.association :illustrated, factory: :visual_work
+    f.association :work, factory: :visual_work
   end
 end

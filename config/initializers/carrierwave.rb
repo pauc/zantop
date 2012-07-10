@@ -15,4 +15,11 @@ CarrierWave.configure do |config|
   config.fog_directory = s3_bucket
   config.fog_public = true
   config.fog_host = 'http://' + s3_bucket
+
+  if Rails.env.test?
+    config.storage = :file
+    config.enable_processing = false
+  else
+    config.storage = :fog
+  end
 end

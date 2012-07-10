@@ -28,7 +28,7 @@ describe "Authentication" do
       end
 
       it { should have_selector('div.alert.alert-success') }
-      # it { should have_link('log out', href: logout_path) }
+      it { should have_link('log out', href: logout_path) }
     end
   end
 end
