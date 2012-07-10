@@ -24,6 +24,13 @@ describe VisualWork do
   it { should respond_to(:images) }
   it { @work.type.should == "VisualWork"}
 
+  describe "slugs" do
+    it "are the same for all locales after create new work" do
+      @work.slug_en.should == @work.slug_ca
+      @work.slug_en.should == @work.slug_es
+    end
+  end
+
   describe "when title is not present" do
     before { @work.title = " " }
     it { should_not be_valid }

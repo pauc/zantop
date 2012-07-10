@@ -25,5 +25,7 @@ class Work < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, 
+                                allow_destroy: true,
+                                reject_if: proc { |attributes| attributes['image'].blank? }
 end

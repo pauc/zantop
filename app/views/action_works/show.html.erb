@@ -2,12 +2,13 @@
 <div><%= raw action_work.description %></div>
 <div><%= action_work.place %></div>
 <div><%= action_work.realization_date %></div>
-
-<div id="galleria" style="height: 500px">
-  <% action_work.images.each do |image| %>
-    <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
-  <% end %>
-</div>
+<% if !action_work.images.empty? %>
+  <div id="galleria" style="height: 500px">
+    <% action_work.images.each do |image| %>
+      <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+    <% end %>
+  </div>
+<% end %>
 
 <ul id="images" class="sortable-list" data-resource="action_works/<%= action_work.id %>" data-action="sort_nested" data-sortable="images">
 <% action_work.images.each do |image| %>
