@@ -1,0 +1,46 @@
+es:
+  create: Create
+  edit: Edita
+  delete: Delete
+  cancel: Cancel
+
+  contact: Contacto
+  about: Sobre mi
+
+  sessions:
+    new:
+      title: Iniciar sesión
+
+  visual_works:
+    index:
+      title: Todos los trabajos visuales
+
+    edit:
+      title: Editar <span>%{work}</span>
+
+    new:
+      title: Nuevo trabajo visual
+
+  action_works:
+    index:
+      title: Todos los trabajos de acción
+
+    new:
+      title: Nuevo travajo de acción
+
+    edit: 
+      title: Editar <span>%{work}</span>
+
+  pages:
+    edit:
+      title: Editar <span>%{page}</span>
+
+  users: 
+    index:
+      title: Lista de usuarios
+
+    new:
+      title: Nuevo usuario
+
+    edit:
+      title: Editar <span>%{user}</span>

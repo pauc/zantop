@@ -1,0 +1,46 @@
+ca:
+  create: Crear
+  edit: Editar
+  delete: Esborrar
+  cancel: Cancel·lar
+
+  contact: Contacte
+  about: Sobre mi
+
+  sessions:
+    new:
+      title: Iniciar sessió
+
+  visual_works:
+    index:
+      title: Tots els treballs visuals
+
+    edit:
+      title: Editar <span>%{work}</span>
+
+    new:
+      title: Nou treball visual
+
+  action_works:
+    index:
+      title: Tots els treballs d'acció
+
+    new:
+      title: Nou Treball d'acció
+
+    edit: 
+      title: Editar <span>%{work}</span>
+
+  pages:
+    edit:
+      title: Editar <span>%{page}</span>
+
+  users: 
+    index:
+      title: Llistat d'usuaris
+
+    new:
+      title: Nou usuari
+
+    edit:
+      title: Editar <span>%{user}</span>

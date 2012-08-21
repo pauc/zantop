@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Zantop <%= yield :title %></title>
+  <title><%= yield :title %>ZANTOP</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= javascript_include_tag "application" %>
@@ -13,6 +13,9 @@
     <%= render 'header' %>
     <%= render 'flash_messages' %>    
     <div id="main" class="container">
+      <% unless front? %>
+        <h1 class="main-title"><%= yield :page_title %></h1>
+      <% end %>
       <%= yield %>
     </div>
   </div>

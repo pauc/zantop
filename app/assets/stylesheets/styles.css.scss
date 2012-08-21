@@ -1,7 +1,17 @@
-/*
- * UNIFORMITZAR L'ASPECTE DEL TÍTOL
- */
-#main_title {
+#wrapper {
+  #main_header {
+    #select_lang {
+      margin: 0;
+      list-style: none;
+
+      li {
+        display: inline;
+      }
+    }
+  }
+}
+/* Uniformitzar l'aspecte del títol */
+#brand #site_name {
   font-size: 40px;
   font-weight: bold;
   line-height: 36px;
@@ -10,7 +20,15 @@
 
   a{
     text-decoration: none;
-  }    
+  }
+}
+
+h1.main-title {
+  margin-bottom: 20px;
+
+  span {
+    font-style: italic;
+  }
 }
 
 .debug_dump {
