@@ -24,6 +24,6 @@ FactoryGirl.define do
   end
 
   factory :image do |f|
-    f.association :work, factory: :visual_work
+    f.association :illustrated, factory: :visual_work
   end
 end

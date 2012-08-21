@@ -21,7 +21,6 @@ describe ActionWork do
 
   it { should be_valid }
   it { should respond_to(:images) }
-  it { @work.type.should == "ActionWork"}
 
   describe "slugs" do
     it "are the same for all locales after create new work" do
