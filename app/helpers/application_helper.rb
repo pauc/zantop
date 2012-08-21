@@ -9,9 +9,9 @@ module ApplicationHelper
     "class='#{controller.controller_name} #{controller.action_name}'"
   end
 
-  def page_title
+  def main_title
     tag = front? ? :h1 : :span
-    content_tag tag, link_to('Zantop', home_path), id: 'page_title'
+    content_tag tag, link_to('Zantop', home_path), id: 'main_title'
   end
 
   def front?
@@ -22,6 +22,6 @@ module ApplicationHelper
     ca = I18n.locale == :ca ? 'ca' : link_to('ca', url_for(locale: 'ca'))
     es = I18n.locale == :es ? 'es' : link_to('es', url_for(locale: 'es'))
     en = I18n.locale == :en ? 'en' : link_to('en', url_for(locale: 'en'))
-    ca + " | " + en + " | " + es
+    "#{ca} | #{en} | #{es}"
   end
 end

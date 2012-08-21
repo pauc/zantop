@@ -1,6 +1,6 @@
-<h2><%= t('Edit') %> '<%= page.title %>'</h2>
+<h1><%= t('Edit') %> '<%= page.title %>'</h1>
 <%= simple_form_for page do |f| %>
   <%= f.input :title %>
-  <%= f.input :body %>
+  <%= f.input :body, as: :ckeditor %>
   <%= f.button :submit %>
 <% end %>

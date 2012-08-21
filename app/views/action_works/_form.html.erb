@@ -1,6 +1,6 @@
 <%= simple_nested_form_for action_work, html: { multipart: true } do |f| %>
   <%= f.input :title %>
-  <%= f.input :description, :as => :ckeditor %>
+  <%= f.input :description, as: :ckeditor %>
   <%= f.fields_for :images do |image_form| %>
     <%= image_form.input :image, as: :image_preview, 
           input_html: { preview_version: :thumb } %>
