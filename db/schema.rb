@@ -76,10 +76,21 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "pages", :force => true do |t|
+  add_index "images", ["illustrated_id", "illustrated_type"], :name => "index_images_on_illustrated_id_and_illustrated_type"
+
+  create_table "page_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "locale"
     t.string   "title"
     t.text     "body"
-    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "page_translations", ["locale"], :name => "index_page_translations_on_locale"
+  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
+
+  create_table "pages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

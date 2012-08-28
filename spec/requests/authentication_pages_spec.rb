@@ -14,7 +14,7 @@ describe "Authentication" do
     before { visit login_path }
 
     describe "with invalid information" do
-      before { click_button "Entrar" }
+      before { click_button "login" }
 
       it { should have_selector('div.alert.alert-error') }
     end
@@ -24,7 +24,7 @@ describe "Authentication" do
       before do
         fill_in "new_session[email]",    with: user.email
         fill_in "new_session[password]", with: user.password
-        click_button "Entrar"
+        click_button "login"
       end
 
       it { should have_selector('div.alert.alert-success') }
