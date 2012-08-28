@@ -26,4 +26,13 @@ FactoryGirl.define do
   factory :image do |f|
     f.association :illustrated, factory: :visual_work
   end
+
+  factory :tag do
+    sequence(:name) { |n| "Tag-#{n}" }
+  end
+
+  factory :tagging do |f|
+    tag
+    f.association :taggable, factory: :visual_work
+  end
 end

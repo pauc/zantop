@@ -38,6 +38,9 @@ class VisualWork < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
+  has_many :taggings, as: :taggable
+  has_many :tags, through: :taggings
+
   has_many :images, as: :illustrated, dependent: :destroy
   accepts_nested_attributes_for :images,
                                 allow_destroy: true,

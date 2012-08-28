@@ -21,6 +21,7 @@ describe ActionWork do
 
   it { should be_valid }
   it { should respond_to(:images) }
+  it { should respond_to(:tags) }
 
   describe "slugs" do
     it "are the same for all locales after create new work" do

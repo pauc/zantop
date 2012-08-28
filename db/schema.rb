@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703192045) do
+ActiveRecord::Schema.define(:version => 20120828020950) do
 
   create_table "action_work_translations", :force => true do |t|
     t.integer  "action_work_id"
@@ -119,6 +119,33 @@ ActiveRecord::Schema.define(:version => 20120703192045) do
   add_index "posts", ["slug_ca"], :name => "index_posts_on_slug_ca", :unique => true
   add_index "posts", ["slug_en"], :name => "index_posts_on_slug_en", :unique => true
   add_index "posts", ["slug_es"], :name => "index_posts_on_slug_es", :unique => true
+
+  create_table "tag_translations", :force => true do |t|
+    t.integer  "tag_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tag_translations", ["locale"], :name => "index_tag_translations_on_locale"
+  add_index "tag_translations", ["tag_id"], :name => "index_tag_translations_on_tag_id"
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.string   "taggable_type"
+    t.integer  "taggable_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_type", "taggable_id"], :name => "index_taggings_on_taggable_type_and_taggable_id"
+
+  create_table "tags", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
