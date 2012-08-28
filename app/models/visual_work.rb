@@ -26,8 +26,8 @@ class VisualWork < ActiveRecord::Base
                   :tag_tokens
   attr_reader :tag_tokens
 
-  def tag_tokens=(ids)
-    self.tag_ids = ids.split(",")
+  def tag_tokens=(tokens)
+    self.tag_ids = Tag.ids_from_tokens(tokens)
   end
 
   class Translation
