@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Techniques</th>
-    <th>Dimensions</th>
-    <th>Realized</th>
+    <th><%= t 'title', scope: 'simple_form.labels.defaults' %></th>
+    <th><%= t 'description', scope: 'simple_form.labels.defaults' %></th>
+    <th><%= t 'techniques', scope: 'simple_form.labels.defaults' %></th>
+    <th><%= t 'dimensions', scope: 'simple_form.labels.defaults' %></th>
+    <th><%= t :realization_date, scope: 'simple_form.labels.defaults' %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Work', new_visual_work_path %>
+<%= link_to t('new_element', e: VisualWork.model_name.human.downcase), new_action_work_path %>

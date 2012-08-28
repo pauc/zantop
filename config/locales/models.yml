@@ -1,29 +1,44 @@
 ca:
-  models:
-    visual_works:
-      one: Treball visual
-      other: Treballs visuals
+  activerecord:
+    models:
+      visual_work:
+        one: Treball visual
+        other: Treballs visuals
 
-    action_works:
-      one: Treball d'acció
-      other: Treballs d'acció
+      action_work:
+        one: Treball d'acció
+        other: Treballs d'acció
+
+      user:
+        one: Usuari
+        other: Usuaris
 
 en:
-  models:
-    visual_works:
-      one: Visual work
-      other: Visual works
+  activerecord:
+    models:
+      visual_work:
+        one: Visual work
+        other: Visual works
 
-    action_works:
-      one: Action work
-      other: Action works
+      action_work:
+        one: Action work
+        other: Action works
+
+      user:
+        one: User
+        other: Users
 
 es:
-  models:
-    visual_works:
-      one: Trabajo visual
-      other: Trabajos visuales
+  activerecord:
+    models:
+      visual_work:
+        one: Trabajo visual
+        other: Trabajos visuales
 
-    action_works:
-      one: Trabajo de acción
-      other: Trabajos de acción
+      action_work:
+        one: Trabajo de acción
+        other: Trabajos de acción
+
+      user:
+        one: Usuario
+        other: Usuarios

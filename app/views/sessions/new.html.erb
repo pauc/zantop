@@ -3,5 +3,5 @@
       html: {class: 'form-vertical', id: 'new_session'}) do |f| %>
   <%= f.input :email %>
   <%= f.input :password %>
-  <%= f.submit 'Entrar', class: "btn" %>
+  <%= f.submit t('sessions.new.title'), class: "btn", id: 'login' %>
 <% end %>

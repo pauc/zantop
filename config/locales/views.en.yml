@@ -7,6 +7,8 @@ en:
   contact: Contact
   about: About me
 
+  new_element: New %{e}
+
   sessions:
     new:
       title: Log in

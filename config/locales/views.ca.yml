@@ -7,6 +7,8 @@ ca:
   contact: Contacte
   about: Sobre mi
 
+  new_element: Nou %{e}
+
   sessions:
     new:
       title: Iniciar sessió

@@ -131,6 +131,7 @@ ca:
       create: Crear %{model}
       submit: Guardar %{model}
       update: Actualizar %{model}
+      login: Entrar
   number:
     currency:
       format:
