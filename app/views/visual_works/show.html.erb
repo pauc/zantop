@@ -1,4 +1,9 @@
 <% page_title visual_work.title %>
+<div>
+  <% visual_work.tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+</div>
 <div><%= raw visual_work.description %></div>
 <div><%= visual_work.techniques %></div>
 <div><%= visual_work.dimensions %></div>

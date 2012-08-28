@@ -2,6 +2,8 @@ Zantop::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
+  resources :tags,  only: [:index]
+
   resources :sessions, only: [:index, :new, :create, :destroy]
   resources :users
   resources :pages, only: [:edit, :update]

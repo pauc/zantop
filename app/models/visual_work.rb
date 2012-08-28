@@ -22,7 +22,13 @@ class VisualWork < ActiveRecord::Base
                   :techniques,
                   :dimensions,
                   :position,
-                  :images_attributes
+                  :images_attributes,
+                  :tag_tokens
+  attr_reader :tag_tokens
+
+  def tag_tokens=(ids)
+    self.tag_ids = ids.split(",")
+  end
 
   class Translation
     attr_accessible :locale
