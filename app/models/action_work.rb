@@ -13,32 +13,26 @@
 #
 
 class ActionWork < ActiveRecord::Base
-  translates :title, :description, :place
+  include HasImages
+  include Slugconcern
+  include UserInputCleaner
+  include HasTags
 
-  attr_accessible :title,
-                  :description,
-                  :place,
-                  :realization_date,
-                  :position,
-                  :images_attributes
+  translates :title, :description, :place
+  clean_fields :description
 
   class Translation
     attr_accessible :locale
   end
 
-  validates :title, presence: true
-
-  include Slugconcern
-  include UserInputCleaner
-  include HasTags
-
-  clean_fields :description
-
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
-  has_many :images, as: :illustrated, dependent: :destroy
-  accepts_nested_attributes_for :images,
-                                allow_destroy: true,
-                                reject_if: proc { |attributes| attributes['image'].blank? }
+  attr_accessible :title,
+                  :description,
+                  :place,
+                  :realization_date,
+                  :position
+
+  validates :title, presence: true
 end

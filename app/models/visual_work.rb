@@ -14,33 +14,27 @@
 #
 
 class VisualWork < ActiveRecord::Base
+  include HasImages
+  include Slugconcern
+  include UserInputCleaner
+  include HasTags
+
   translates :title, :description, :techniques
+  clean_fields :description
+
+  class Translation
+    attr_accessible :locale
+  end
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
   attr_accessible :title,
                   :description,
                   :realization_date,
                   :techniques,
                   :dimensions,
-                  :position,
-                  :images_attributes
-
-  class Translation
-    attr_accessible :locale
-  end
-
-  include Slugconcern
-  include UserInputCleaner
-  include HasTags
+                  :position
 
   validates :title, presence: true
-
-  clean_fields :description
-
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :simple_i18n, :history]
-
-  has_many :images, as: :illustrated, dependent: :destroy
-  accepts_nested_attributes_for :images,
-                                allow_destroy: true,
-                                reject_if: proc { |attributes| attributes['image'].blank? }
 end
