@@ -1,4 +1,9 @@
 <% page_title action_work.title %>
+<div>
+  <% action_work.tags.find_each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+</div>
 <div><%= raw action_work.description %></div>
 <div><%= action_work.place %></div>
 <div><%= action_work.realization_date %></div>

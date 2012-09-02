@@ -22,30 +22,22 @@ class VisualWork < ActiveRecord::Base
                   :techniques,
                   :dimensions,
                   :position,
-                  :images_attributes,
-                  :tag_tokens
-  attr_reader :tag_tokens
-
-  def tag_tokens=(tokens)
-    self.tag_ids = Tag.ids_from_tokens(tokens)
-  end
+                  :images_attributes
 
   class Translation
     attr_accessible :locale
   end
 
-  validates :title, presence: true
-
   include Slugconcern
   include UserInputCleaner
+  include HasTags
+
+  validates :title, presence: true
 
   clean_fields :description
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
-
-  has_many :taggings, as: :taggable, dependent: :destroy
-  has_many :tags, through: :taggings
 
   has_many :images, as: :illustrated, dependent: :destroy
   accepts_nested_attributes_for :images,
