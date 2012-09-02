@@ -1,18 +1,15 @@
 class SessionsController < ApplicationController
-  before_filter :create_first_user, only: [:create]
 
   def index
     render 'new'
   end
 
   def new
-    
+
   end
 
   def create
-    if User.all.empty?
-      create_first_user
-    end
+    create_first_user if User.all.empty?
 
     user = User.find_by_email(params[:new_session][:email])
     if user && user.authenticate(params[:new_session][:password])
