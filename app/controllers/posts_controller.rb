@@ -8,19 +8,19 @@ class PostsController < ApplicationController
   before_filter :find_post, only: [:show]
 
   def index
-    respond_with posts
+
   end
 
   def show
-    respond_with post
+
   end
 
   def new
-    respond_with post
+
   end
 
   def edit
-    respond_with post
+
   end
 
   def create

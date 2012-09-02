@@ -8,14 +8,15 @@ class ActionWorksController < ApplicationController
   before_filter :find_work, only: [:show]
 
   def index
-    respond_with action_works
+
   end
 
   def show
-    respond_with action_work
+
   end
 
   def new
+    visual_work.images.build
     respond_with action_work
   end
 
@@ -25,6 +26,7 @@ class ActionWorksController < ApplicationController
   end
 
   def edit
+    visual_work.images.build if visual_work.images.empty?
     respond_with action_work
   end
 
