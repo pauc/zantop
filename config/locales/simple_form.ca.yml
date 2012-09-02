@@ -1,0 +1,27 @@
+ca:
+  simple_form:
+    yes: Si
+    no: No
+
+    required:
+      text: 'obligatori'
+      mark: '*'
+      html: '<abbr title="obligatori">*</abbr>'
+
+    error_notification:
+      default_message: "Sisplau, revisa els següents problemes:"
+
+    labels:
+      defaults:
+        title: Títol
+        description: Descripció
+        image: Imatge
+        place: Lloc
+        realization_date: Data de realització
+        techniques: Tècniques
+        dimensions: Dimensions
+        name: Nom
+        email: Correu-e
+        password: Contrasenya
+        password_confirmation: Confirma la contrasenya
+        body: Text

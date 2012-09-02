@@ -1,0 +1,27 @@
+es:
+  simple_form:
+    yes: Si
+    no: No
+
+    required:
+      text: 'obligatorio'
+      mark: '*'
+      html: '<abbr title="obligatorio">*</abbr>'
+
+    error_notification:
+      default_message: "Por favor, revisa los problemas siguientes:"
+
+    labels:
+      defaults:
+        title: Título
+        description: Descripción
+        image: Imagen
+        place: Lugar
+        realization_date: Fecha de realización
+        techniques: Técnicas
+        dimensions: Dimensiones
+        name: Nombre
+        email: Correo-e
+        password: Contraseña
+        password_confirmation: Confirma la contraseña
+        body: Texto

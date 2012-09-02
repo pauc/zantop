@@ -24,4 +24,24 @@ describe Tagging do
       should_not be_valid
     end
   end
+
+  describe "deleting a tag" do
+    before do
+      @tagging.tag.destroy
+    end
+
+    it "must destroy its taggings" do
+      Tagging.exists?(@tagging).should == false
+    end
+  end
+
+  describe "deleting a taggable object" do
+    before do
+      @tagging.taggable.destroy
+    end
+
+    it "must destroy its taggings" do
+      Tagging.exists?(@tagging).should == false
+    end
+  end
 end

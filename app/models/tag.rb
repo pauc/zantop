@@ -13,7 +13,7 @@ class Tag < ActiveRecord::Base
 
   has_many :visual_works, through: :taggings, source: :taggable, source_type: "VisualWork"
   has_many :action_works, through: :taggings, source: :taggable, source_type: "ActionWork"
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
 
   def self.tokens(query)
     tags = Tag.with_translations(I18n.locale).order(:name).where("name ilike ?", "%#{query}%")

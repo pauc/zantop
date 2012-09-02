@@ -3,7 +3,7 @@
   <%= f.input :description, as: :ckeditor %>
   <%= f.input :tag_tokens, label: "Tags", 
     input_html: { :'data-locale' => I18n.locale, 
-                  :'data-preload' => visual_work.tags.sort! { |t1, t2| t1.name <=> t2.name }.to_json } %>
+                  :'data-preload' => visual_work.tags.to_json } %>
   <%= f.fields_for :images do |image_form| %>
     <%= image_form.input :image, as: :image_preview, 
           input_html: { preview_version: :thumb } %>
