@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  include Sortable::SimpleSort
+  include Sortable
   respond_to :html
 
   expose(:posts) { Post.all }

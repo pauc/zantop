@@ -11,14 +11,14 @@
 
 <% if !visual_work.images.empty? %>
   <div id="galleria" style="height: 500px">
-    <% visual_work.images.find_each do |image| %>
+    <% visual_work.images.each do |image| %>
       <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
     <% end %>
   </div>
 <% end %>
 
 <ul id="images" class="sortable-list" data-resource="visual_works/<%= visual_work.id %>" data-action="sort_nested" data-sortable="images">
-  <% visual_work.images.find_each do |image| %>
+  <% visual_work.images.each do |image| %>
     <%= content_tag_for :li, image do %>
       <%= image_tag image.image.thumb.to_s, class: "handle" %>
       : <%= image.position %>

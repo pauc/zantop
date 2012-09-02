@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def body_classes
-    "class='#{controller.controller_name} #{controller.action_name}'"
+    "#{controller.controller_name} #{controller.action_name}"
   end
 
   def front?
