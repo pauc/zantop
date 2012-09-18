@@ -11,7 +11,6 @@ gem 'decent_exposure'
 gem 'friendly_id'
 gem 'cancan'
 gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap'
 gem "nested_form"
 
 gem 'acts_as_list'
@@ -38,7 +37,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass', '~> 2.0.4.0'
 end
 
 group :development, :test do
