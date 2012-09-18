@@ -143,6 +143,7 @@ GEM
       net-ssh (>= 1.99.1)
     newrelic_rpm (3.4.2)
     nokogiri (1.5.5)
+    normalize-rails (0.0.1)
     orm_adapter (0.4.0)
     paper_trail (2.6.3)
       activerecord (~> 3.0)
@@ -269,6 +270,7 @@ DEPENDENCIES
   modernizr-rails
   nested_form
   newrelic_rpm
+  normalize-rails
   pg
   quiet_assets
   rails (>= 3.2.3)

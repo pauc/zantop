@@ -5,38 +5,41 @@ gem 'rails', '>=3.2.3'
 gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'bourbon'
+
+
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'friendly_id'
 gem 'cancan'
 gem 'will_paginate', '~> 3.0'
 gem "nested_form"
-
 gem 'acts_as_list'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'ckeditor'
+gem 'modernizr-rails'
 
-gem 'rails-translate-routes'
-gem 'http_accept_language'
-gem 'globalize3'
-
+# Image upload
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'ckeditor'
+# Server
+gem 'unicorn'
+gem 'capistrano'
+gem 'newrelic_rpm'
 
-gem 'modernizr-rails'
+# I18n
+gem 'rails-translate-routes'
+gem 'http_accept_language'
+gem 'globalize3'
 
-gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
+  gem 'bourbon'
+  gem 'normalize-rails'
 end
 
 group :development, :test do
@@ -59,7 +62,3 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
-
-gem 'unicorn'
-gem 'capistrano'
-gem 'newrelic_rpm'
