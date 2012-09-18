@@ -64,3 +64,4 @@ end
 
 gem 'unicorn'
 gem 'capistrano'
+gem 'newrelic_rpm'

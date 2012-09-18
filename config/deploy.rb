@@ -9,7 +9,7 @@ load "config/recipes/rbenv"
 load "config/recipes/check"
 load "config/recipes/config_files"
 load "config/recipes/assets"
-# load "config/recipes/newrelic"
+load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
 
