@@ -24,7 +24,9 @@ Zantop::Application.routes.draw do
   match '/about', to: 'dashboards#about'
   match '/contact', to: 'dashboards#contact'
 
-  root to: 'dashboards#front'
+  # Canvi de pàgina d'inici provisional:
+  match '/front', to: 'dashboards#front'
+  root to: 'dashboards#provisional'
 
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
 end
