@@ -39,6 +39,18 @@ a {
   }
 }
 
+@media (min-width: 1700px) {
+  body {
+    font-size: 210%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1699px) {
+  body {
+    font-size: 180%;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 115%;
