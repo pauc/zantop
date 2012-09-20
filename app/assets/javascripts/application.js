@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //# require ckeditor/init
+//= require modernizr
 //= require jquery_nested_form
 //= require jquery.tokeninput
 //= require sortables
