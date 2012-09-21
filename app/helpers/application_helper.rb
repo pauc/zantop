@@ -12,7 +12,7 @@ module ApplicationHelper
 
   def site_name
     tag = front? ? :h1 : :span
-    content_tag tag, link_to('Zantop', home_path), id: 'site_name'
+    content_tag tag, link_to('Zantop', front_path), id: 'site_name'
   end
 
   def body_classes
