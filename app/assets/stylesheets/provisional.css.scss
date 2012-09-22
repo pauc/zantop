@@ -2,6 +2,13 @@
 @import 'bourbon';
 @import 'supersized';
 
+@mixin transition($name, $time) {
+   transition: #{$name} #{$time};
+  -webkit-transition: #{$name} #{$time};
+  -moz-transition: #{$name} #{$time};
+  -ms-transition: #{$name} #{$time};
+}
+
 html {
   height: 100%;
 }
@@ -9,6 +16,7 @@ html {
 body {
   font-size: 145%;
   color: #ededed;
+  @include transition (font-size, 1s);
 }
 
 #main {
