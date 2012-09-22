@@ -5,19 +5,19 @@ class UsersController < ApplicationController
   expose(:user)
 
   def index
-    respond_with users
+
   end
 
   def show
-    respond_with user
+
   end
 
   def new
-    respond_with user
+
   end
 
   def edit
-    respond_with user
+
   end
 
   def create
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    falsh[:success] = t('.updated', model_name: t('models.User')) if user.save
+    flash[:success] = t('.updated', model_name: t('models.User')) if user.save
     respond_with user
   end
 
