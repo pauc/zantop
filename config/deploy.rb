@@ -33,6 +33,8 @@ ssh_options[:forward_agent] = true
 set :server_names, '<%= nginx_server_names %>'
 set :nginx_page_caching, true
 
+set :newrelic_license_key, '369e370691bc6fc878b2eb7c331ebb0aefc64548'
+
 # config files settings
 set :config_files, ['amazon_s3.yml']
 
