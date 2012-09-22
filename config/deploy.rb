@@ -12,6 +12,7 @@ load "config/recipes/assets"
 load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
+load "config/recipes/seed"
 
 server "176.58.122.177", :web, :app, :db, primary: true
 
