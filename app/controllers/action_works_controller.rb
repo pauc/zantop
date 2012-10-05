@@ -1,11 +1,10 @@
 class ActionWorksController < ApplicationController
   include Sortable
+  include Finder
   respond_to :html
 
   expose(:action_works) { ActionWork.all }
   expose(:action_work)
-
-  before_filter :find_work, only: [:show]
 
   def index
 
@@ -39,14 +38,4 @@ class ActionWorksController < ApplicationController
     flash[:success] = "deleted" if action_work.destroy
     respond_with action_work, location: action_works_path
   end
-
-  private
-
-    def find_work
-      action_work = ActionWork.find params[:id]
-
-      if request.path != action_work_path(action_work)
-        return redirect_to action_work, :status => :moved_permanently
-      end
-    end
 end

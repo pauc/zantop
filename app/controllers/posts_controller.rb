@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   include Sortable
+  include Finder
   respond_to :html
 
   expose(:posts) { Post.all }
   expose(:post)
-
-  before_filter :find_post, only: [:show]
 
   def index
 
@@ -37,14 +36,4 @@ class PostsController < ApplicationController
     flash[:success] = "deleted" if post.destroy
     respond_with post, location: posts_path
   end
-
-  private
-
-    def find_post
-      post = Post.find params[:id]
-
-      if request.path != post_path(post)
-        return redirect_to post, :status => :moved_permanently
-      end
-    end
 end

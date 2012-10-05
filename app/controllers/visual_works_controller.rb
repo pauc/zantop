@@ -1,11 +1,10 @@
 class VisualWorksController < ApplicationController
   include Sortable
+  include Finder
   respond_to :html
 
   expose(:visual_works) { VisualWork.all }
   expose(:visual_work)
-
-  before_filter :find_work, only: [:show]
 
   def index
 
@@ -39,14 +38,4 @@ class VisualWorksController < ApplicationController
     flash[:success] = "deleted" if visual_work.destroy
     respond_with visual_work, location: visual_works_path
   end
-
-  private
-
-    def find_work
-      visual_work = VisualWork.find params[:id]
-
-      if request.path != visual_work_path(visual_work)
-        return redirect_to visual_work, :status => :moved_permanently
-      end
-    end
 end
