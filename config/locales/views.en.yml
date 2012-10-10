@@ -9,6 +9,8 @@ en:
   contact: Contact
   about: About me
 
+  recent_works: Treballs recents
+
   new_element: New %{e}
 
   sessions:

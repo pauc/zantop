@@ -1,19 +1,10 @@
-<header id="main_header" class="container">
-  <div>
-    <ul id="select_lang">
-      <%= lang_selector.html_safe %>
-    </ul>
-    <div id="brand">
-      <%= site_name %>
-    </div>
-    <ul id="main_menu">
-      <li><%= link_to ActionWork.model_name.human(count: 2), action_works_path %></li>
-      /
-      <li><%= link_to VisualWork.model_name.human(count: 2), visual_works_path %></li>
-    </ul>
-    <ul id="secondary_menu" >
-      <li><%= link_to t('about'), about_path %></li>
-      <li><%= link_to t('contact'), contact_path %></li>
-    </ul>
+<header id="main_header" role="banner">
+  <div id="brand">
+    <%= site_name %>
   </div>
+  <nav id="main_menu" role="navigation">
+    <%= link_to ActionWork.model_name.human(count: 2), action_works_path, class: 'action' %>
+    <%= content_tag 'i', 'Art' if front? %>
+    <%= link_to VisualWork.model_name.human(count: 2), visual_works_path, class: 'visual' %>
+  </nav>
 </header>

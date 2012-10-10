@@ -1,43 +1,16 @@
-table {
+#wrapper {
+  float: left;
   width: 100%;
 }
 
-#main_header{
-  position: relative;
-
-  #brand {
-    margin-top: 20px;
-    @include inline-block;
-
-    h1 {
-      @include inline-block;
-    }
-  }
-
-  #select_lang {
-    position: absolute;
-    top: 0;
-  }
-
-  #main_menu {
-    @include inline-block;
-    list-style: none outside;
-    font-size: 22px;
-
-    li {
-      display: inline;
-      margin-right: 15px;
-      margin-left: 15px;
-    }
-  }
-
-  #secondary_menu {
-    float: right;
-    margin-top: 20px;
-    list-style: none outside;
-  }
+#main_header {
 }
 
 #main {
   margin-top: 30px;
+}
+
+#footer {
+  margin-top: 5em;
+  padding: 1em 0;
 }

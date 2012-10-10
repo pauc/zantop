@@ -24,9 +24,9 @@ module ApplicationHelper
   end
 
   def lang_selector
-    ca = I18n.locale == :ca ? 'ca' : link_to('ca', url_for(locale: 'ca'))
-    es = I18n.locale == :es ? 'es' : link_to('es', url_for(locale: 'es'))
-    en = I18n.locale == :en ? 'en' : link_to('en', url_for(locale: 'en'))
+    ca = link_to_unless_current 'ca', url_for(locale: 'ca')
+    es = link_to_unless_current 'es', url_for(locale: 'es')
+    en = link_to_unless_current 'en', url_for(locale: 'en')
     "<li title='Català'>#{ca}</li> | <li title='English'>#{en}</li> | <li title='Español'>#{es}</li>"
   end
 end

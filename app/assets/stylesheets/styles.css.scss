@@ -1,37 +1,23 @@
-#wrapper {
-  #main_header {
-    #select_lang {
-      margin: 0;
-      list-style: none;
-
-      li {
-        display: inline;
-      }
-    }
-  }
+table {
+  width: 100%;
 }
-/* Uniformitzar l'aspecte del títol */
-#brand #site_name {
-  font-size: 40px;
-  font-weight: bold;
-  line-height: 36px;
-  text-rendering: geometricPrecision;
-  letter-spacing: 0.05em;
 
-  a{
-    text-decoration: none;
+/* Estils per al selector de llengües */
+#select_lang {
+  position: absolute;
+  right: 0;
+  padding: 0 1em;
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: inline;
   }
 }
 
-h1.main-title {
-  margin-bottom: 20px;
-
-  span {
-    font-style: italic;
-  }
-}
-
+/* Estils per a la caixa debug */
 .debug_dump {
+  background: #aaa;
   clear: both;
-  margin-top: 45px;
+  margin: 0;
 }

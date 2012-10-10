@@ -8,6 +8,8 @@ ca:
   contact: Contacte
   about: Sobre mi
 
+  recent_works: Treballs recents
+
   new_element: Nou %{e}
 
   sessions:

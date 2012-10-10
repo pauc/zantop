@@ -1,0 +1,44 @@
+body.dashboards.front {
+  #main_header {
+    text-align: center;
+    margin: 1.34em 0;
+
+    #main_menu {
+      position: relative;
+      margin: 1.6em;
+
+      a {
+        @include inline-block;
+        margin: 0.25em 0.75em;
+        padding: 0.25em;
+        @include border-radius(0.5em);
+      }
+
+      i {
+        width: 100%;
+        position: absolute;
+        top: -1em;
+        left: 0;
+      }
+    }
+  }
+
+  #recent_works {
+    margin-left: -3%;
+    @include clearfix;
+
+    h2 {
+      margin-left: 3%;
+      margin-bottom : 0;
+    }
+
+    .work {
+      width: 29.86%;
+      min-height: 180px;
+      float: left;
+      margin-left: 3.333333%;
+      margin-top: 3.333333%;
+      @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
+    }
+  }
+}

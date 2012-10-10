@@ -1,0 +1,20 @@
+body {
+  background: image-url('ricepaper2.png');
+}
+
+#footer {
+  background: #2d63be;
+}
+
+/* Només per a la pàgina d'inici */
+body.dashboards.front {
+  #main_menu a {
+    &.action {
+      background: #e88717;
+    }
+
+    &.visual {
+      background: #2d63be;
+    }
+  }
+}

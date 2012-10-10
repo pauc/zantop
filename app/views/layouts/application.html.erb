@@ -10,14 +10,18 @@
 <body class="<%= body_classes %>" >
   <div id="wrapper" <%= "class='top-bar'" if current_user? %> >
     <%= render 'session_bar' if current_user? %>
+    <ul id="select_lang">
+      <%= lang_selector.html_safe %>
+    </ul>
     <%= render 'header' %>
-    <%= render 'flash_messages' %>    
-    <div id="main" class="container">
+    <%= render 'flash_messages' %>
+    <div id="main" role="main">
       <% unless front? %>
         <h1 class="main-title"><%= yield :page_title %></h1>
       <% end %>
       <%= yield %>
     </div>
+    <%= render 'footer' %>
   </div>
   <%= debug(params) if Rails.env.development? %>
 </body>
