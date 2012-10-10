@@ -8,6 +8,9 @@ ca:
   contact: Contacte
   about: Sobre mi
 
+  action: Acció
+  visual: Visual
+
   recent_works: Treballs recents
 
   new_element: Nou %{e}

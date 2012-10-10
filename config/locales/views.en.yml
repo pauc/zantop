@@ -9,7 +9,10 @@ en:
   contact: Contact
   about: About me
 
-  recent_works: Treballs recents
+  action: Action
+  visual: Visual
+
+  recent_works: Recent works
 
   new_element: New %{e}
 

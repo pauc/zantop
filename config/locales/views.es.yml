@@ -9,6 +9,9 @@ es:
   contact: Contacto
   about: Sobre mi
 
+  action: Acción
+  visual: Visual
+
   recent_works: Trabajos recientes
 
   new_element: Nuevo %{e}

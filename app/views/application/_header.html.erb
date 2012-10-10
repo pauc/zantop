@@ -3,8 +3,10 @@
     <%= site_name %>
   </div>
   <nav id="main_menu" role="navigation">
-    <%= link_to ActionWork.model_name.human(count: 2), action_works_path, class: 'action' %>
-    <%= content_tag 'i', 'Art' if front? %>
-    <%= link_to VisualWork.model_name.human(count: 2), visual_works_path, class: 'visual' %>
+    <% if front? %>
+      <%= render 'menu_front' %>
+    <% else %>
+      <%= render 'menu' %>
+    <% end %>
   </nav>
 </header>
