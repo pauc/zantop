@@ -1,8 +1,9 @@
 class DashboardsController < ApplicationController
-  respond_to :html
+  respond_to :html, :js
 
   expose(:about_page) { Page.about }
   expose(:contact_page) { Page.contact }
+  expose(:works) { Work.paginate(page: params[:page], per_page: 12) }
 
   def front
 

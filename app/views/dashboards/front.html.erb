@@ -1,8 +1,4 @@
-<div id='recent_works'>
-  <h2><%= t 'recent_works' %>:</h2>
-  <% 9.times do %>
-    <div class="work">
-      A work
-    </div>
-  <% end %>
+<div id='works'>
+  <%= render partial: 'works', locals: { works: works } %>
 </div>
+<%= will_paginate works, :"data-alt_text" => t('fetching_more') %>

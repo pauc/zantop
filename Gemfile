@@ -48,7 +48,6 @@ end
 
 group :development do
   gem 'guard-rspec', '0.5.5'
-  gem 'annotate', '~> 2.4.1.beta'
   gem 'quiet_assets'
   gem 'thin'
 end

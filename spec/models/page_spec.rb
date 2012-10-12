@@ -1,12 +1,3 @@
-# == Schema Information
-#
-# Table name: pages
-#
-#  id         :integer         not null, primary key
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-
 require 'spec_helper'
 
 describe Page do

@@ -1,0 +1,6 @@
+$('#works').append('<%= j render(partial: "works", locals: { works: works }) %>');
+<% if works.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(works) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

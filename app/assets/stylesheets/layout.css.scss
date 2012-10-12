@@ -1,13 +1,20 @@
 #wrapper {
-  float: left;
-  width: 100%;
+  margin: -1px 0 0;
+  padding-top: 1px;
+}
+
+.container {
+  max-width: 1500px;
+  position: relative;
+  margin-left: auto; margin-right: auto;
+  @include clearfix;
 }
 
 #main_header {
 }
 
 #main {
-  margin-top: 30px;
+  margin-top: 2em;
   padding: 0 1.5%;
 }
 

@@ -29,12 +29,11 @@ describe "ActionWorks" do
     describe "with valid information" do
       before do
         fill_in "action_work[title]", with: "The Title"
-        find('form input[type="submit"]').click        
+        find('form input[type="submit"]').click
       end
 
       it "redirects to the new work" do
-        current_path.should == action_work_path(ActionWork.last)
-        should have_content(ActionWork.last.title)
+        should have_content('The Title')
       end
     end
   end

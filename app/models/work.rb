@@ -4,7 +4,7 @@ class Work < ActiveRecord::Base
   include UserInputCleaner
   include HasTags
 
-  acts_as_list scope: 'type=\'#{type}\''
+  acts_as_list
 
   translates :title, :description, :techniques, :place
   clean_fields :description
@@ -26,5 +26,5 @@ class Work < ActiveRecord::Base
 
   validates :title, presence: true
 
-  default_scope :order => 'position DESC'
+  default_scope order: 'position DESC'
 end

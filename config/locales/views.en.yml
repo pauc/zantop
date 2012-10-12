@@ -14,6 +14,8 @@ en:
 
   recent_works: Recent works
 
+  fetching_more: Fetching more content
+
   new_element: New %{e}
 
   sessions:

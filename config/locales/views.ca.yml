@@ -13,6 +13,8 @@ ca:
 
   recent_works: Treballs recents
 
+  fetching_more: Carregant més contingut
+
   new_element: Nou %{e}
 
   sessions:

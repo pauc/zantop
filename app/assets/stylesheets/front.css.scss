@@ -1,7 +1,11 @@
 body.dashboards.front {
   #main_header {
     text-align: center;
-    margin: 2em 0;
+    padding: 6em 0;
+
+    h1 {
+      margin: 0;
+    }
 
     #main_menu {
       position: relative;
@@ -24,14 +28,13 @@ body.dashboards.front {
     }
   }
 
-  #recent_works {
+  #main {
+    margin-top: 0;
+  }
+
+  #works {
     margin-left: -3%;
     @include clearfix;
-
-    h2 {
-      margin-left: 3%;
-      margin-bottom : 0;
-    }
 
     .work {
       width: 29.81%;
@@ -41,5 +44,12 @@ body.dashboards.front {
       margin-top: 3.333333%;
       @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
     }
+
+  }
+
+  .pagination {
+    clear: both;
+    margin-top: 2em;
+    text-align: center;
   }
 }
