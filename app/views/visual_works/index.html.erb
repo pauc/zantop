@@ -7,6 +7,7 @@
     <th><%= t 'techniques', scope: 'simple_form.labels.defaults' %></th>
     <th><%= t 'dimensions', scope: 'simple_form.labels.defaults' %></th>
     <th><%= t :realization_date, scope: 'simple_form.labels.defaults' %></th>
+    <th>Position</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= visual_w.techniques %></td>
     <td><%= visual_w.dimensions %></td>
     <td><%= l visual_w.realization_date, format: :long %></td>
+    <td><%= visual_w.position %></td>
     <td><%= link_to 'Show', visual_w %></td>
     <td><%= link_to 'Edit', edit_visual_work_path(visual_w) %></td>
     <td><%= link_to 'Destroy', visual_w, method: :delete, data: { confirm: 'Are you sure?' } %></td>

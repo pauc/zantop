@@ -1,4 +1,4 @@
-module Slugconcern
+module SlugConcern
   extend ActiveSupport::Concern
 
   included do

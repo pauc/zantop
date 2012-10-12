@@ -12,7 +12,7 @@ load "config/recipes/assets"
 load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
-load "config/recipes/seed"
+load "config/recipes/db_utils"
 
 server "176.58.122.177", :web, :app, :db, primary: true
 

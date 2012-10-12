@@ -6,6 +6,7 @@
     <th><%= t 'description', scope: 'simple_form.labels.defaults' %></th>
     <th><%= t :place, scope: 'simple_form.labels.defaults' %></th>
     <th><%= t :realization_date, scope: 'simple_form.labels.defaults' %></th>
+    <th>Position</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= act_w.description %></td>
     <td><%= act_w.place %></td>
     <td><%= l act_w.realization_date, format: :long %></td>
+    <td><%= act_w.position %></td>
     <td><%= link_to 'Show', act_w %></td>
     <td><%= link_to 'Edit', edit_action_work_path(act_w) %></td>
     <td><%= link_to 'Destroy', act_w, method: :delete, data: { confirm: 'Are you sure?' } %></td>
