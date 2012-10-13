@@ -2,17 +2,18 @@ class ActionWorksController < ApplicationController
   include Sortable
   include Finder
   include Authorization
+  include CreateWithDefaultLocale
   respond_to :html
 
-  expose(:action_works) { ActionWork.all }
+  expose(:action_works) { ActionWork.published }
   expose(:action_work)
 
   def index
-
+    respond_with action_works
   end
 
   def show
-
+    respond_with action_work
   end
 
   def new

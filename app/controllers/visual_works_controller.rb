@@ -2,9 +2,10 @@ class VisualWorksController < ApplicationController
   include Sortable
   include Finder
   include Authorization
+  include CreateWithDefaultLocale
   respond_to :html
 
-  expose(:visual_works) { VisualWork.all }
+  expose(:visual_works) { VisualWork.published }
   expose(:visual_work)
 
   def index

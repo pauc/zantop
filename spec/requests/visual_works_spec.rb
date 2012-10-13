@@ -27,7 +27,7 @@ describe "VisualWorks" do
     describe "with invalid information" do
       it "fails validation" do
         find('form input[type="submit"]').click
-        should have_content("can't be blank")
+        should have_content("no pot estar en blanc")
       end
     end
 
