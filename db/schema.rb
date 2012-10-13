@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828020950) do
+ActiveRecord::Schema.define(:version => 20121013062746) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -154,8 +154,9 @@ ActiveRecord::Schema.define(:version => 20120828020950) do
     t.string   "dimensions"
     t.integer  "position"
     t.string   "type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "published",        :default => false
   end
 
   add_index "works", ["slug_ca"], :name => "index_works_on_slug_ca", :unique => true

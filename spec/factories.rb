@@ -12,6 +12,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Action Work #{n}"}
     description { "Description for #{title}" }
     place { "Place for #{title}"}
+    published { true }
     sequence(:realization_date) { |n| n.days.from_now }
   end
 
@@ -20,6 +21,7 @@ FactoryGirl.define do
     description { "Description for #{title}" }
     dimensions { "Place for #{title}"}
     techniques { "Techniques for #{title}"}
+    published { true }
     sequence(:realization_date) { |n| n.days.from_now }
   end
 

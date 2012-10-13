@@ -22,9 +22,11 @@ class Work < ActiveRecord::Base
                   :realization_date,
                   :techniques,
                   :dimensions,
-                  :position
+                  :position,
+                  :published
 
   validates :title, presence: true
 
   default_scope order: 'position DESC'
+  scope :published, where(published: true)
 end

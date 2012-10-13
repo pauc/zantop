@@ -25,3 +25,4 @@ ca:
         password: Contrasenya
         password_confirmation: Confirma la contrasenya
         body: Text
+        published: Publicat?

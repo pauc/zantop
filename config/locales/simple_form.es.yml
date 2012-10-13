@@ -25,3 +25,4 @@ es:
         password: Contraseña
         password_confirmation: Confirma la contraseña
         body: Texto
+        published: Publicado?
