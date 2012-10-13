@@ -5,11 +5,12 @@ class VisualWorksController < ApplicationController
   include CreateWithDefaultLocale
   respond_to :html
 
-  expose(:visual_works) { VisualWork.published }
+  expose(:visual_works)
   expose(:visual_work)
+  expose(:published_works) { VisualWork.published }
 
   def index
-
+    respond_with published_works
   end
 
   def show
@@ -18,7 +19,6 @@ class VisualWorksController < ApplicationController
 
   def new
     visual_work.images.build
-    respond_with visual_work
   end
 
   def create
@@ -28,7 +28,6 @@ class VisualWorksController < ApplicationController
 
   def edit
     visual_work.images.build if visual_work.images.empty?
-    respond_with visual_work
   end
 
   def update

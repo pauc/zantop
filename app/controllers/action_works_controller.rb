@@ -5,20 +5,20 @@ class ActionWorksController < ApplicationController
   include CreateWithDefaultLocale
   respond_to :html
 
-  expose(:action_works) { ActionWork.published }
+  expose(:action_works)
   expose(:action_work)
+  expose(:published_works) { ActionWork.published }
 
   def index
-    respond_with action_works
+    respond_with published_works
   end
 
   def show
-    respond_with action_work
+
   end
 
   def new
     action_work.images.build
-    respond_with action_work
   end
 
   def create
@@ -28,7 +28,6 @@ class ActionWorksController < ApplicationController
 
   def edit
     action_work.images.build if action_work.images.empty?
-    respond_with action_work
   end
 
   def update
