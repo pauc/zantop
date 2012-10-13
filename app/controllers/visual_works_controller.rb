@@ -1,6 +1,7 @@
 class VisualWorksController < ApplicationController
   include Sortable
   include Finder
+  include Authorization
   respond_to :html
 
   expose(:visual_works) { VisualWork.all }

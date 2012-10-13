@@ -10,7 +10,7 @@ gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'friendly_id'
-gem 'cancan'
+#gem 'cancan'
 gem 'will_paginate', '~> 3.0'
 gem "nested_form"
 gem 'acts_as_list'

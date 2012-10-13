@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_locale_from_url
 
-  protected
+  private
 
     VALID_LOCALES = ['es', 'ca', 'en']
     def set_locale

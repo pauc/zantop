@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   respond_to :html
+  include Authorization
   expose(:page)
 
   def edit

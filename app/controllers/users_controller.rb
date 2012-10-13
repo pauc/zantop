@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html
+  include Authorization
 
   expose(:users) { User.all }
   expose(:user)

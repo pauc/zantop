@@ -14,7 +14,12 @@ describe "ActionWorks" do
   end
 
   describe "GET /action_works/new" do
-    before { visit new_action_work_path }
+    before do
+      @user = FactoryGirl.create(:user)
+      sign_in @user
+      visit new_action_work_path
+    end
+
     it "works!!" do
       should have_selector("form#new_action_work")
     end

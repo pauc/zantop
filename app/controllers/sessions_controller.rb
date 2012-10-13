@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:new_session][:password])
       sign_in user
       flash[:success] = "Hola #{user.name.camelize}!!"
-      redirect_to front_path
+      redirect_back
     else
       flash.now[:error] = t('.invalid_login')
       render "new"

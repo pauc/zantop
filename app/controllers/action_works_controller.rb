@@ -1,6 +1,7 @@
 class ActionWorksController < ApplicationController
   include Sortable
   include Finder
+  include Authorization
   respond_to :html
 
   expose(:action_works) { ActionWork.all }

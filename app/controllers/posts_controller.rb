@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   include Sortable
   include Finder
+  include Authorization
   respond_to :html
 
   expose(:posts) { Post.all }
