@@ -2,7 +2,8 @@ en:
   under_construction: Under construction
 
   create: Crear
-  edit: Editar
+  edit: Edita
+  edit_e: Edita %{e}
   delete: Borrar
   cancel: Cancelar
 

@@ -17,6 +17,7 @@ module Authorization
   def authorize_admin
     unless current_user?
       store_location
+      flash[:error] = t('Restricted_access')
       redirect_to login_path
     end
   end
@@ -24,8 +25,8 @@ module Authorization
   def authorise_unpublished
     content = self.controller_name.classify.constantize.find(params[:id])
     if content.respond_to?('published') and !content.published? and !current_user
+      flash[:error] = t('Restricted_access')
       redirect_to front_path
     end
   end
-
 end

@@ -2,6 +2,7 @@ ca:
   under_construction: En construcció
   create: Crear
   edit: Editar
+  edit_e: Editar %{e}
   delete: Esborrar
   cancel: Cancel·lar
 

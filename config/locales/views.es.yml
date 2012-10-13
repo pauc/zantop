@@ -1,10 +1,10 @@
 es:
   under_construction: En construcción
-
   create: Create
-  edit: Edita
-  delete: Delete
-  cancel: Cancel
+  edit: Editar
+  edit_e: Editar %{e}
+  delete: Borrar
+  cancel: Cancelar
 
   contact: Contacto
   about: Sobre mi
