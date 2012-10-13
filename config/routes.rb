@@ -10,10 +10,12 @@ Zantop::Application.routes.draw do
   resources :posts do
     post :sort, on: :collection
   end
+
   resources :action_works do
     post :sort, on: :collection
     post :sort_nested, on: :member
   end
+
   resources :visual_works do
     post :sort, on: :collection
     post :sort_nested, on: :member
@@ -21,8 +23,10 @@ Zantop::Application.routes.draw do
 
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'
+
   match '/about', to: 'dashboards#about'
   match '/contact', to: 'dashboards#contact'
+  match '/admin_works', to: 'dashboards#admin'
 
   # Canvi de pàgina d'inici provisional:
   match '/front', to: 'dashboards#front'

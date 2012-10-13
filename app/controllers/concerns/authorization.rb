@@ -9,7 +9,7 @@ module Authorization
                                      :destroy,
                                      :admin]
 
-    before_filter :authorise_unpublished, only: [:show]
+    before_filter :authorize_unpublished, only: [:show]
   end
 
   private
@@ -22,7 +22,7 @@ module Authorization
     end
   end
 
-  def authorise_unpublished
+  def authorize_unpublished
     content = self.controller_name.classify.constantize.find(params[:id])
     if content.respond_to?('published') and !content.published? and !current_user
       flash[:error] = t('Restricted_access')

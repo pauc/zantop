@@ -17,6 +17,10 @@ class DashboardsController < ApplicationController
     respond_with contact_page
   end
 
+  def admin
+
+  end
+
   def provisional
     render layout: "empty"
   end

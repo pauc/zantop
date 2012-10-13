@@ -6,8 +6,8 @@ module ApplicationHelper
   end
 
   def page_title(title)
-    content_for(:page_title) { title.html_safe }
     title strip_tags(title)
+    "<h1 id='main_title'>#{title}</h1>".html_safe
   end
 
   def site_name

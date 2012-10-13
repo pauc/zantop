@@ -1,4 +1,4 @@
-<% page_title t('.title') %>
+<%= page_title t('.title') %>
 <%= simple_form_for(:new_session, url: sessions_path,
       html: {class: 'form-vertical', id: 'new_session'}) do |f| %>
   <%= f.input :email %>
