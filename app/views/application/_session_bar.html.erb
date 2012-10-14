@@ -3,4 +3,7 @@
     <%= link_to t('edit_e', e: 'usuari'), edit_user_path(current_user) %>
     <%= link_to 'log out', logout_path %>
   </div>
+  <div id="admin_controls">
+    <%= raw send("#{controller.controller_name}_#{controller.action_name}_admin_links") %>
+  </div>
 </div>

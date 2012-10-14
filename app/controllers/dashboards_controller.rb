@@ -1,9 +1,11 @@
 class DashboardsController < ApplicationController
+  include Authorization
   respond_to :html, :js
 
   expose(:about_page) { Page.about }
   expose(:contact_page) { Page.contact }
   expose(:works) { Work.published.paginate(page: params[:page], per_page: 12) }
+  expose(:all_works) { Work.all }
 
   def front
 
