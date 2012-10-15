@@ -1,6 +1,6 @@
 module AdministrationHelper
 
-  def method_missing(meth)
+  def method_missing(meth, *args)
     super unless meth.to_s =~ /.+admin_links$/
   end
 

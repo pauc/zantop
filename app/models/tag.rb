@@ -1,6 +1,6 @@
 class Tag < ActiveRecord::Base
   attr_accessible :name
-  
+
   before_save :name_to_underscore
 
   translates :name
@@ -11,16 +11,17 @@ class Tag < ActiveRecord::Base
 
   validates :name, presence: true
 
-  has_many :visual_works, through: :taggings, source: :taggable, source_type: "VisualWork"
-  has_many :action_works, through: :taggings, source: :taggable, source_type: "ActionWork"
+  has_many :works, through: :taggings, source: :taggable, source_type: "Work"
   has_many :taggings, dependent: :destroy
 
   def self.tokens(query)
-    tags = Tag.with_translations(I18n.locale).order(:name).where("name ilike ?", "%#{query}%")
-    if tags.empty?
-      [{id: "<<<#{query}>>>", name: "new: \"#{query}\""}]
-    else
-      tags
+    unless query.blank?
+      tags = Tag.with_translations(I18n.locale).order(:name).where("name ilike ?", "%#{query}%")
+      if tags.empty?
+        [{id: "<<<#{query}>>>", name: "new: \"#{query}\""}]
+      else
+        tags
+      end
     end
   end
 
