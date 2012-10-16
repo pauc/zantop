@@ -2,17 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#tags_table {
-  tr {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-  }
+#admin_tags {
+  width: 100%;
 
-  td {
-    padding: 0.5em 0.5em;
-  }
+  div.tag {
+    margin: 1px 0;
+    padding: 0.5em;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    &.untranslated_tag {
+      background: #ea4921;
+    }
 
-  .untranslated_tag {
-    background: #ea4921;
+    form {
+      text-align: justify;
+      min-width: 1024px;
+
+      & > * {
+        @include inline-block;
+        min-width: 10%;
+      }
+    }
   }
 }

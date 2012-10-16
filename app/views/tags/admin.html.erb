@@ -1,17 +1,6 @@
 <%= page_title 'Administrar categories' %>
-<table id='tags_table'>
+<div id="admin_tags">
   <% categories.each do |tag| %>
-    <tr <%= 'class=untranslated_tag' if tag.untranslated? %>>
-      <%= simple_form_for tag do |form| %>
-        <td><h3><%= tag.name %>:</h3></td>
-        <% I18n.available_locales.each do |locale| %>
-          <td>
-            <%= form.input :"name_#{locale}", input_html: { size: 18 } %>
-          </td>
-        <% end %>
-        <td><%= form.submit %></td>
-        <td><%= link_to t('delete'), tag_path(tag), method: :delete, confirm: "Segur que vols esborrar aquesta etiqueta?" %></td>
-      <% end %>
-    </tr>
+    <%= render partial: 'form', locals: { category: tag } %>
   <% end %>
-</table>
+</div>

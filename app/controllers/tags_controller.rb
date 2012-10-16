@@ -20,7 +20,10 @@ class TagsController < ApplicationController
     I18n.available_locales.each do |locale|
       category.send("name_#{locale}=", params[:tag][:"name_#{locale}"]) if !params[:tag][:"name_#{locale}"].blank?
     end
-    respond_with category, location: admin_tags_path
+    respond_to do |format|
+      format.html { respond_with category, location: admin_tags_path }
+      format.js { render 'update' }
+    end
   end
 
   def destroy
