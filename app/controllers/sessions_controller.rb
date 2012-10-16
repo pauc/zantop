@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:new_session][:email])
     if user && user.authenticate(params[:new_session][:password])
       sign_in user
-      flash[:success] = "Hola #{user.name.camelize}!!"
+      flash.notice = "Hola #{user.name.camelize}!!"
       redirect_back
     else
       flash.now[:error] = t('.invalid_login')

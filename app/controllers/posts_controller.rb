@@ -24,17 +24,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    flash[:success] = "Created" if post.save
+    flash.notice = "Created" if post.save
     respond_with post
   end
 
   def update
-    flash[:success] = t('updated') if post.save
+    flash.notice = t('updated') if post.save
     respond_with post
   end
 
   def destroy
-    flash[:success] = "deleted" if post.destroy
+    flash.notice = "deleted" if post.destroy
     respond_with post, location: posts_path
   end
 end

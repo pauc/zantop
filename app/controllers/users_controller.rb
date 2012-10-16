@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+noticeclass UsersController < ApplicationController
   respond_to :html
   include Authorization
 
@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    falsh[:success] = t('.created', model_name: t('models.User')) if user.save
+    falsh.notice = t('.created', model_name: t('models.User')) if user.save
     respond_with user
   end
 
   def update
-    flash[:success] = t('.updated', model_name: t('models.User')) if user.save
+    flash.notice = t('.updated', model_name: t('models.User')) if user.save
     respond_with user, location: front_path
   end
 end

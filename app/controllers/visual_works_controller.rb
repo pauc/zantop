@@ -22,7 +22,7 @@ class VisualWorksController < ApplicationController
   end
 
   def create
-    flash[:success] = t('Created') if visual_work.save
+    flash.notice = t('Created') if visual_work.save
     respond_with visual_work
   end
 
@@ -31,12 +31,12 @@ class VisualWorksController < ApplicationController
   end
 
   def update
-    flash[:success] = t('updated') if visual_work.save
+    flash.notice = t('updated') if visual_work.save
     respond_with visual_work
   end
 
   def destroy
-    flash[:success] = "deleted" if visual_work.destroy
+    flash.notice = "deleted" if visual_work.destroy
     respond_with visual_work, location: visual_works_path
   end
 end

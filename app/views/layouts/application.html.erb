@@ -12,8 +12,8 @@
     <div class="container">
       <%= render 'header' %>
     </div>
+    <%= render 'session_bar' if current_user? %>
     <div class="container">
-      <%= render 'session_bar' if current_user? %>
       <%= render 'flash_messages' %>
       <div id="main" role="main">
         <%= yield %>

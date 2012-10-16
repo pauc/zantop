@@ -1,12 +1,13 @@
 en:
   under_construction: Under construction
 
-  create: Crear
-  edit: Edita
-  edit_e: Edita %{e}
-  delete: Borrar
-  cancel: Cancelar
-  back: Volver
+  create: Create
+  edit: Edit
+  edit_e: Edit %{e}
+  delete: Delete
+  cancel: Cancel
+  back: Back
+  invalid_login: Invalid login
 
   contact: Contact
   about: About me

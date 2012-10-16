@@ -1,11 +1,12 @@
 es:
   under_construction: En construcción
-  create: Create
+  create: Crear
   edit: Editar
   edit_e: Editar %{e}
   delete: Borrar
   cancel: Cancelar
-  back: Back
+  back: Atrás
+  invalid_login: Datos incorrectos
 
   contact: Contacto
   about: Sobre mi

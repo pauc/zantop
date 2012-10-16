@@ -22,7 +22,7 @@ class ActionWorksController < ApplicationController
   end
 
   def create
-    flash[:success] = t('Created') if action_work.save
+    flash.notice = t('Created') if action_work.save
     respond_with action_work
   end
 
@@ -31,12 +31,12 @@ class ActionWorksController < ApplicationController
   end
 
   def update
-    flash[:success] = t('updated') if action_work.save
+    flash.notice = t('updated') if action_work.save
     respond_with action_work
   end
 
   def destroy
-    flash[:success] = "deleted" if action_work.destroy
+    flash.notice = "deleted" if action_work.destroy
     respond_with action_work, location: action_works_path
   end
 end

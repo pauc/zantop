@@ -6,6 +6,7 @@ ca:
   delete: Esborrar
   cancel: Cancel·lar
   back: Tornar
+  invalid_login: Dades incorrectes
 
 
   contact: Contacte
