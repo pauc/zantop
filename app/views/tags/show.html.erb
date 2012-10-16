@@ -1,1 +1,9 @@
 <%= page_title category.name %>
+<% category.works.each do |work| %>
+  <%= div_for work, class: 'work' do |work| %>
+    <%= content_tag 'h2', work.title %>
+    <div>
+      <%= work.description %>
+    </div>
+  <% end %>
+<% end %>

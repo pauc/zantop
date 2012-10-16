@@ -13,15 +13,14 @@ Zantop::Application.routes.draw do
   # Works
   resources :works, only: [] do
     get 'admin', on: :collection
+    post :sort, on: :collection
   end
 
   resources :action_works do
-    post :sort, on: :collection
     post :sort_nested, on: :member
   end
 
   resources :visual_works do
-    post :sort, on: :collection
     post :sort_nested, on: :member
   end
 

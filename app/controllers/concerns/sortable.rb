@@ -20,7 +20,7 @@ module Sortable
 
   def reorder(sortables)
     sortables.each do |obj|
-      obj.position = params["#{obj.class.to_s.downcase}"].index(obj.id.to_s) + 1
+      obj.position = params["#{obj.class.table_name.classify.downcase}"].index(obj.id.to_s) + 1
       obj.save
     end
   end

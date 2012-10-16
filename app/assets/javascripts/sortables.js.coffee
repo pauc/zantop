@@ -15,9 +15,12 @@ $ ->
       url2 = $(this).attr("data-action")
       nested = $(this).attr("data-sortable")
       list = $(this)
+      data = list.sortable("serialize")
+      if $(this).attr("data-order") == "DESC"
+        data = data.split('&').reverse().join('&')
       $.ajax
         type: "post"
-        data: list.sortable("serialize")
+        data: data
         dataType: "script"
         complete: (request) ->
           list.effect "highlight"

@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   include Authorization
+  include Sortable
 
   respond_to :html
 
