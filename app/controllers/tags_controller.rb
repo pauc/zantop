@@ -1,8 +1,9 @@
 class TagsController < ApplicationController
-  respond_to :html
+  include Finder
   include Authorization
+  respond_to :html
 
-  expose(:categories) { Tag.all }
+  expose(:categories) { Tag.order('created_at DESC') }
   expose(:category) { Tag.find(params[:id]) }
   expose(:works) { tag.works.published }
 
@@ -17,9 +18,14 @@ class TagsController < ApplicationController
   end
 
   def update
+    initial_locale = I18n.locale
     I18n.available_locales.each do |locale|
-      category.send("name_#{locale}=", params[:tag][:"name_#{locale}"]) if !params[:tag][:"name_#{locale}"].blank?
+      I18n.locale = locale
+      category.name = params[:tag][:name][locale]
+      category.save
     end
+    I18n.locale = initial_locale
+
     respond_to do |format|
       format.html { respond_with category, location: admin_tags_path }
       format.js { render 'update' }

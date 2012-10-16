@@ -1,7 +1,5 @@
 class Tag < ActiveRecord::Base
-  attr_accessible :name
-
-  before_save :name_to_underscore
+  include SlugConcern
 
   translates :name
 
@@ -10,10 +8,17 @@ class Tag < ActiveRecord::Base
     attr_accessible :name
   end
 
-  validates :name, presence: true
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :simple_i18n, :history]
 
   has_many :works, through: :taggings, source: :taggable, source_type: "Work"
   has_many :taggings, dependent: :destroy
+
+  attr_accessible :name
+
+  validates :name, presence: true
+
+  before_save :name_to_underscore
 
   def self.tokens(query)
     unless query.blank?
@@ -42,16 +47,6 @@ class Tag < ActiveRecord::Base
   I18n.available_locales.each do |locale|
     define_method "name_#{locale}" do
       self.translations.where(locale: locale).first.try(:name)
-    end
-
-    define_method "name_#{locale}=" do |name|
-      trl = self.translations.where(locale: locale).first
-      if trl.present?
-        trl.name = name.downcase
-        trl.save
-      else
-        self.translations.create(name: name.downcase, locale: locale)
-      end
     end
   end
 

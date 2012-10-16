@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013062746) do
+ActiveRecord::Schema.define(:version => 20121016161659) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -118,7 +118,14 @@ ActiveRecord::Schema.define(:version => 20121013062746) do
   create_table "tags", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug_en"
+    t.string   "slug_es"
+    t.string   "slug_ca"
   end
+
+  add_index "tags", ["slug_ca"], :name => "index_tags_on_slug_ca"
+  add_index "tags", ["slug_en"], :name => "index_tags_on_slug_en"
+  add_index "tags", ["slug_es"], :name => "index_tags_on_slug_es"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -40,10 +40,9 @@ Zantop::Application.routes.draw do
   root to: 'dashboards#provisional'
 
   # Tags
-  resources :tags, only: [:index, :update, :destroy] do
+  resources :tags, except: [:new, :edit] do
     get 'admin', on: :collection
   end
-  resources :tags,  only: [:show], path: ''
 
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
 end
