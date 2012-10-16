@@ -7,6 +7,7 @@ class Tag < ActiveRecord::Base
 
   class Translation
     attr_accessible :locale
+    attr_accessible :name
   end
 
   validates :name, presence: true
@@ -28,6 +29,30 @@ class Tag < ActiveRecord::Base
   def self.ids_from_tokens(tokens)
     tokens.gsub!(/<<<(.+?)>>>/) { Tag.create!(name: $1).id }
     tokens.split(',')
+  end
+
+  def get_translation(locale)
+    self.translations.where(locale: locale).first
+  end
+
+  def untranslated?
+    self.translations.size < 3
+  end
+
+  I18n.available_locales.each do |locale|
+    define_method "name_#{locale}" do
+      self.translations.where(locale: locale).first.try(:name)
+    end
+
+    define_method "name_#{locale}=" do |name|
+      trl = self.translations.where(locale: locale).first
+      if trl.present?
+        trl.name = name.downcase
+        trl.save
+      else
+        self.translations.create(name: name.downcase, locale: locale)
+      end
+    end
   end
 
   private

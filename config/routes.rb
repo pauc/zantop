@@ -2,13 +2,17 @@ Zantop::Application.routes.draw do
 
   # mount Ckeditor::Engine => '/ckeditor'
 
-  resources :tags,  only: [:index]
-
-  resources :sessions, only: [:index, :new, :create, :destroy]
+  # Users
   resources :users, except: [:index, :show, :destroy]
-  resources :pages, only: [:edit, :update]
+
+  # Provisional. Only for testing purposes
   resources :posts do
     post :sort, on: :collection
+  end
+
+  # Works
+  resources :works, only: [] do
+    get 'admin', on: :collection
   end
 
   resources :action_works do
@@ -21,16 +25,25 @@ Zantop::Application.routes.draw do
     post :sort_nested, on: :member
   end
 
+  # Sessions
+  resources :sessions, only: [:create, :destroy]
   match '/login',  to: 'sessions#new'
   match '/logout', to: 'sessions#destroy'
 
+  # Pages
+  resources :pages, only: [:edit, :update]
   match '/about', to: 'dashboards#about'
   match '/contact', to: 'dashboards#contact'
-  match '/admin_works', to: 'dashboards#admin'
 
   # Canvi de pàgina d'inici provisional:
   match '/front', to: 'dashboards#front'
   root to: 'dashboards#provisional'
+
+  # Tags
+  resources :tags, only: [:index, :update, :destroy] do
+    get 'admin', on: :collection
+  end
+  resources :tags,  only: [:show], path: ''
 
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
 end

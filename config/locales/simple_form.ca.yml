@@ -26,3 +26,6 @@ ca:
         password_confirmation: Confirma la contrasenya
         body: Text
         published: Publicat?
+        name_ca: Català
+        name_en: Anglès
+        name_es: Castellà

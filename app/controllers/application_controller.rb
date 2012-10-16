@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
         translated = tag.translations.size == 3
       end
       unless translated
-        flash.now['error'] = "Tens tags pendents de traduir."
+        flash.now['error'] = "Tens tags pendents de traduir. <a href='#{url_for controller: 'tags', action: 'admin'}'>Administrar tags</a>".html_safe
       end
     end
 end
