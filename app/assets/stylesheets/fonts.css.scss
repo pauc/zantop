@@ -22,6 +22,21 @@ body {
   text-decoration: none;
 }
 
+#admin_bar {
+  font-size: 0.875em;
+  color: $grey;
+
+  /* Buttons */
+  a {
+    color: #222;
+    text-decoration: none;
+
+    &.warning {
+      color: #fff;
+    }
+  }
+}
+
 /* Estils de fonts per a la pàgina d'inici */
 body.dashboards.front {
   #brand, #main_menu {

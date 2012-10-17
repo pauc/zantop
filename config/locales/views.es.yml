@@ -6,7 +6,9 @@ es:
   delete: Borrar
   cancel: Cancelar
   back: Atrás
-  invalid_login: Datos incorrectos
+  invalid_login: Datos incorrectos.
+  restricted_accessl: Acceso restringindo. Debes identificarte antes.
+  updated: Contenido actualizado.
 
   contact: Contacto
   about: Sobre mi

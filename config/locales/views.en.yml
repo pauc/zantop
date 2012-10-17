@@ -8,14 +8,14 @@ en:
   cancel: Cancel
   back: Back
   invalid_login: Invalid login
+  restricted_accessl: Resticted acces. You need to log in first.
+  updated: Content.
 
   contact: Contact
   about: About me
 
   action: Action
   visual: Visual
-
-  recent_works: Recent works
 
   fetching_more: Fetching more content
 

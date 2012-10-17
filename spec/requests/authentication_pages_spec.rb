@@ -27,8 +27,8 @@ describe "Authentication" do
         click_button "login"
       end
 
-      it { should have_selector('div.alert.alert-notice') }
-      it { should have_link('log out', href: logout_path) }
+      it { should have_selector('#admin_bar') }
+      it { should have_link('Sortir', href: logout_path) }
     end
   end
 end

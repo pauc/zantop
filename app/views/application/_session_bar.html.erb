@@ -6,7 +6,6 @@
       <%= link_to t('edit_e', e: 'usuari'), edit_user_path(current_user) %>
     </div>
     <div id="admin_controls">
-      <strong>Administració:</strong>
       <%= raw send("#{controller.controller_name}_#{controller.action_name}_admin_links") %>
     </div>
   </div>

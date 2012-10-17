@@ -3,19 +3,29 @@ body {
 }
 
 #admin_bar {
-  background: #000;
+  background: $black;
 }
 
 .alert-notice {
-  background: #a4e194;
+  background: $green;
 }
 
 .alert-error {
-  background: #ea4921;
+  background: $error;
 }
 
 #footer {
   background: #2d63be;
+}
+
+#admin_bar {
+  a{
+    background: #ddd;
+  }
+
+  a.warning {
+    background: $warning;
+  }
 }
 
 /* Només per a la pàgina d'inici */

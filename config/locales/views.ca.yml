@@ -6,7 +6,9 @@ ca:
   delete: Esborrar
   cancel: Cancel·lar
   back: Tornar
-  invalid_login: Dades incorrectes
+  invalid_login: Dades incorrectes.
+  restricted_access: Accés restringit. T'has d'identificar abans.
+  updated: Contingut actualitzat.
 
 
   contact: Contacte
@@ -14,8 +16,6 @@ ca:
 
   action: Acció
   visual: Visual
-
-  recent_works: Treballs recents
 
   fetching_more: Carregant més contingut
 
