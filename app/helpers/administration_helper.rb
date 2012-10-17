@@ -59,7 +59,7 @@ module AdministrationHelper
 
   def visual_works_show_admin_links
     html = edit_link
-    html << link_to('Administrar trballs', admin_works_path)
+    html << link_to('Administrar treballs', admin_works_path)
     html << delete_link
   end
 
