@@ -36,7 +36,7 @@ class VisualWorksController < ApplicationController
   end
 
   def destroy
-    flash.notice = "deleted" if visual_work.destroy
+    flash.notice = t("deleted") if visual_work.destroy
     respond_with visual_work, location: visual_works_path
   end
 end

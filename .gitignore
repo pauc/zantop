@@ -18,5 +18,6 @@ public/uploads/tmp
 
 config/amazon_s3.yml
 config/database.yml
+config/smtp.yml
 .rvmrc
 zantop.sublime*

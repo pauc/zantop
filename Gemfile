@@ -6,6 +6,8 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'basic_config'
+gem 'exception_notification'
 
 gem 'simple_form'
 gem 'decent_exposure'

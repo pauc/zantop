@@ -36,7 +36,7 @@ class ActionWorksController < ApplicationController
   end
 
   def destroy
-    flash.notice = "deleted" if action_work.destroy
+    flash.notice = t("deleted") if action_work.destroy
     respond_with action_work, location: action_works_path
   end
 end

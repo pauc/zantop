@@ -9,7 +9,8 @@ en:
   back: Back
   invalid_login: Invalid login
   restricted_accessl: Resticted acces. You need to log in first.
-  updated: Content.
+  updated: Content updated.
+  deleted: Content deleted
 
   contact: Contact
   about: About me

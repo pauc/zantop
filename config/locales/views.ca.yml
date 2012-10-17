@@ -9,6 +9,7 @@ ca:
   invalid_login: Dades incorrectes.
   restricted_access: Accés restringit. T'has d'identificar abans.
   updated: Contingut actualitzat.
+  deleted: Contingut esborrat.
 
 
   contact: Contacte

@@ -36,7 +36,7 @@ set :nginx_page_caching, true
 set :newrelic_license_key, '369e370691bc6fc878b2eb7c331ebb0aefc64548'
 
 # config files settings
-set :config_files, ['amazon_s3.yml']
+set :config_files, ['amazon_s3.yml', 'smtp.yml']
 
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
