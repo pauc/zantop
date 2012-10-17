@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016161659) do
+ActiveRecord::Schema.define(:version => 20121017031358) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -116,11 +116,12 @@ ActiveRecord::Schema.define(:version => 20121016161659) do
   add_index "taggings", ["taggable_type", "taggable_id"], :name => "index_taggings_on_taggable_type_and_taggable_id"
 
   create_table "tags", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "slug_en"
     t.string   "slug_es"
     t.string   "slug_ca"
+    t.integer  "taggings_count", :default => 0
   end
 
   add_index "tags", ["slug_ca"], :name => "index_tags_on_slug_ca"
@@ -164,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20121016161659) do
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
     t.boolean  "published",        :default => false
+    t.integer  "images_count",     :default => 0
   end
 
   add_index "works", ["slug_ca"], :name => "index_works_on_slug_ca", :unique => true

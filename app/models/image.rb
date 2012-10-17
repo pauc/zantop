@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs_to :illustrated, polymorphic: true
+  belongs_to :illustrated, polymorphic: true, counter_cache: true
 
   attr_accessible :image
 
