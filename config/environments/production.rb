@@ -66,10 +66,6 @@ Zantop::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
-  config.middleware.use ExceptionNotifier,
-    sender_address: 'noreply@agilw.com',
-    exception_recipients: 'pausandalio@gmail.com'
-
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

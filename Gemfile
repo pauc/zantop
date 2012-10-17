@@ -7,7 +7,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'basic_config'
-gem 'exception_notification'
+
+# Error notification
+gem 'airbrake'
 
 gem 'simple_form'
 gem 'decent_exposure'
