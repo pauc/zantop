@@ -1,2 +1,8 @@
-<%= f.input :image, as: :image_preview, input_html: { preview_version: :thumb } %>
+<% if f.object.new_record? %>
+  <%= f.input :image %>
+  <%= f.input :video %>
+<% else %>
+  <%= f.input :image, as: :image_preview, input_html: { preview_version: :thumb } if f.object.image.present? %>
+  <%= f.input :video if f.object.video.present? %>
+<% end %>
 <%= f.link_to_remove "Remove this image" %>

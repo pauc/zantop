@@ -1,5 +1,8 @@
 <% works.each do |work| %>
-  <%= div_for work, class: 'work' do |work| %>
-    <%= link_to work.title, work %>
+  <%= div_for work, class: 'work new-work' do |work| %>
+    <%= link_to preview_image(work), work, class: "work-preview" %>
+    <div class="work-title">
+      <%= link_to work.title, work %>
+    </div>
   <% end %>
 <% end %>

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe VisualWork do
-  before { @work = FactoryGirl.create(:visual_work) }
+  let(:work) { FactoryGirl.create(:visual_work) }
 
-  subject { @work }
+  subject { work }
 
   it { should be_valid }
   it { should respond_to(:images) }
@@ -11,13 +11,13 @@ describe VisualWork do
 
   describe "slugs" do
     it "are the same for all locales after create new work" do
-      @work.slug_en.should == @work.slug_ca
-      @work.slug_en.should == @work.slug_es
+      work.slug_en.should == work.slug_ca
+      work.slug_en.should == work.slug_es
     end
   end
 
   describe "when title is not present" do
-    before { @work.title = " " }
+    before { work.title = " " }
     it { should_not be_valid }
   end
 end

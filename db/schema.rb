@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017031358) do
+ActiveRecord::Schema.define(:version => 20121028134612) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121017031358) do
     t.integer  "position"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "video"
   end
 
   add_index "images", ["illustrated_id", "illustrated_type"], :name => "index_images_on_illustrated_id_and_illustrated_type"

@@ -26,7 +26,7 @@ module Authorization
     content = self.controller_name.classify.constantize.find(params[:id])
     if content.respond_to?('published') and !content.published? and !current_user
       flash[:error] = t('restricted_access')
-      redirect_to front_path
+      redirect_to login_path
     end
   end
 end

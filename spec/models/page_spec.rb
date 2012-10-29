@@ -28,7 +28,7 @@ describe Page do
   describe "without body is not valid" do
     before do
       @p = Page.about
-      @p.body = ""
+      @p.body = " "
     end
 
     it { @p.should_not be_valid }

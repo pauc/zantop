@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe Tag do
-  before { @tag = FactoryGirl.create(:tag) }
+  let(:tag) { FactoryGirl.create(:tag) }
 
-  subject { @tag }
+  subject { tag }
 
   it { should respond_to (:works) }
   it { should respond_to (:taggings) }
 
   it "without name is not valid" do
-    @tag.name = "  "
+    tag.name = "  "
     should_not be_valid
   end
 end

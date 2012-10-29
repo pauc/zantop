@@ -10,7 +10,12 @@
 <% if !action_work.images.empty? %>
   <div id="galleria" style="height: 500px">
     <% action_work.images.each do |image| %>
-      <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+      <% if image.image? %>
+        <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+        <% end %>
+      <% if image.video? %>
+        <%= link_to content_tag(:span, "Watch this video", class: "video"), image.video %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

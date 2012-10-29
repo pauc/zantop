@@ -4,8 +4,7 @@ class DashboardsController < ApplicationController
 
   expose(:about_page) { Page.about }
   expose(:contact_page) { Page.contact }
-  expose(:works) { Work.published.paginate(page: params[:page], per_page: 12) }
-  expose(:all_works) { Work.all }
+  expose(:works) { Work.published.paginate(page: params[:page], per_page: 3) }
 
   def front
 

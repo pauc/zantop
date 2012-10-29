@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe Image do
-  before { @image = FactoryGirl.create(:image) }
+  let(:image) { FactoryGirl.create(:image) }
 
-  subject { @image }
+  subject { image }
 
   it { should respond_to :illustrated }
 
   it "is not valid without image field" do
-    @image.image = " "
+    image.image = " "
     should_not be_valid
-  end 
+  end
 end

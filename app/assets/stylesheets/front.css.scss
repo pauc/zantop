@@ -9,7 +9,7 @@ body.dashboards.front {
 
     #main_menu {
       position: relative;
-      margin: 2em 0 0;
+      margin: 1em 0 0;
 
       a {
         width: 5.5em;
@@ -38,7 +38,6 @@ body.dashboards.front {
 
     .work {
       width: 29.81%;
-      min-height: 180px;
       float: left;
       margin-left: 3.333333%;
       margin-top: 3.333333%;
@@ -47,9 +46,53 @@ body.dashboards.front {
 
   }
 
-  .pagination {
+  #pagination {
     clear: both;
     margin-top: 2em;
     text-align: center;
   }
+}
+
+.work {
+  position: relative;
+  background: black;
+
+  a.work-preview {
+    width: 100%;
+    padding: 50% 0;
+    display: block;
+    line-height: 0;
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+}
+
+.work-title {
+  position: absolute;
+  bottom: 0.2em;
+  left: 0.5em;
+  max-width: 90%;
+  border-width: 0.5em;
+  border-style: solid;
+  -moz-border-image: image-url('torn_edges_border.png') 10 10 repeat;
+  -webkit-border-image: image-url('torn_edges_border.png') 10 10 repeat;
+  -o-border-image: image-url('torn_edges_border.png') 10 10 repeat;
+  border-image: image-url('torn_edges_border.png') 10 10 repeat;
+  text-align: center;
+
+  a {
+    display: block;
+    position: relative;
+    background: image-url('paper.png') 50% 50%;
+  }
+}
+
+/* Per a efecte de fadeIn si està activat el javascript */
+html.js .new-work {
+  visibility: hidden;
 }

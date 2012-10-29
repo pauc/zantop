@@ -119,6 +119,8 @@ GEM
       railties (>= 3.1.0)
     json (1.7.5)
     kgio (2.7.4)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     libnotify (0.5.9)
     libwebsocket (0.1.5)
       addressable
@@ -265,6 +267,7 @@ DEPENDENCIES
   http_accept_language
   jquery-rails
   jquery-ui-rails
+  launchy
   libnotify (= 0.5.9)
   mini_magick
   modernizr-rails
