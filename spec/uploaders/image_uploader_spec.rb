@@ -23,7 +23,7 @@ describe ImageUploader do
 
   context 'the medium version' do
     it "should scale down an image to fit within 400 x 300 pixels" do
-      @uploader.medium.should be_no_larger_than(400, 300)
+      @uploader.medium.should be_no_larger_than(400, 400)
     end
   end
 end
