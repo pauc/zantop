@@ -13,16 +13,16 @@ es:
 
     labels:
       defaults:
-        title: Título
-        description: Descripción
-        image: Imagen
-        place: Lugar
-        realization_date: Fecha de realización
-        techniques: Técnicas
-        dimensions: Dimensiones
-        name: Nombre
-        email: Correo-e
-        password: Contraseña
-        password_confirmation: Confirma la contraseña
-        body: Texto
-        published: Publicado?
+        title: "Título:"
+        description: "Descripción:"
+        image: "Imagen:"
+        place: "Lugar:"
+        realization_date: "Fecha de realización:"
+        techniques: "Técnicas:"
+        dimensions: "Dimensiones:"
+        name: "Nombre:"
+        email: "Correo-e:"
+        password: "Contraseña:"
+        password_confirmation: "Confirma la contraseña:"
+        body: "Texto:"
+        published: "Publicado?:"

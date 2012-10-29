@@ -3,7 +3,7 @@ jQuery ->
     $('.new-work').removeClass('new-work')
     pagination = $('#pagination')
     alt_text = pagination.data('alt_text')
-    opts = opts = offset: '100%'
+    opts = offset: '105%'
 
     pagination.waypoint ((event, direction) ->
       pagination.waypoint('remove')

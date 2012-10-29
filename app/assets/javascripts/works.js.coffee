@@ -34,4 +34,7 @@ $ ->
     processURL video_url, (new_url) ->
       image.attr "src", new_url
       parent_height = image.parents('div').first().height()
-      image.css('top', (parent_height - image.height()) / 2 / parent_height * 100 + "%")
+      image.one('load', ->
+        image.css('top', (parent_height - image.height()) / 2 / parent_height * 100 + "%")
+      ).each ->
+        $(this).load() if $(this).complete || $(this).height == 0

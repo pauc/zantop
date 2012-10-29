@@ -13,19 +13,19 @@ ca:
 
     labels:
       defaults:
-        title: Títol
-        description: Descripció
-        image: Imatge
-        place: Lloc
-        realization_date: Data de realització
-        techniques: Tècniques
-        dimensions: Dimensions
-        name: Nom
-        email: Correu-e
-        password: Contrasenya
-        password_confirmation: Confirma la contrasenya
-        body: Text
-        published: Publicat?
-        name_ca: Català
-        name_en: Anglès
-        name_es: Castellà
+        title: "Títol:"
+        description: "Descripció:"
+        image: "Imatge:"
+        place: "Lloc:"
+        realization_date: "Data de realització:"
+        techniques: "Tècniques:"
+        dimensions: "Dimensions:"
+        name: "Nom:"
+        email: Correu-e:"
+        password: "Contrasenya:"
+        password_confirmation: "Confirma la contrasenya:"
+        body: "Text:"
+        published: "Publicat?:"
+        name_ca: "Català:"
+        name_en: "Anglès:"
+        name_es: "Castellà:"

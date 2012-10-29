@@ -6,6 +6,14 @@ body {
   color: inherit;
 }
 
+label{
+  line-height: 1.7;
+}
+
+legend {
+  font-weight: bold;
+}
+
 /* Uniformitzar l'aspecte del títol */
 #site_name {
   font-size: 2em;

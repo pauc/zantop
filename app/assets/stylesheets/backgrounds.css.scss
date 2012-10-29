@@ -20,12 +20,20 @@ body {
 
 #admin_bar {
   a{
-    background: #ddd;
+    background: $clear_grey;
   }
 
   a.warning {
     background: $warning;
   }
+}
+
+form {
+  background: $clear_grey;
+}
+
+#admin_tags .untranslated_tag form {
+  background: $error;
 }
 
 /* Només per a la pàgina d'inici */

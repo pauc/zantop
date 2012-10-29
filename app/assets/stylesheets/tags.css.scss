@@ -9,20 +9,5 @@
     position: relative;
     margin: 1px 0;
     padding: 0.5em;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    &.untranslated_tag {
-      background: #ea4921;
-    }
-
-    form {
-      text-align: justify;
-      min-width: 1024px;
-
-      & > * {
-        @include inline-block;
-        min-width: 10%;
-      }
-    }
   }
 }

@@ -1,0 +1,38 @@
+form {
+  padding: 0.5em;
+  border: 1px solid $grey;
+  @include border-radius(5px);
+
+  .control-group, fieldset {
+    margin: 0 0 0.75em 0;
+  }
+
+  input {
+    padding: 0.2em;
+  }
+
+  div.fields {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px dashed $grey;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#admin_tags {
+  form {
+    min-width: 1024px;
+
+    & > div {
+      @include inline-block;
+      min-width: 10%;
+    }
+
+    h3 {
+      margin: 0 0 0.5em;
+    }
+  }
+}
