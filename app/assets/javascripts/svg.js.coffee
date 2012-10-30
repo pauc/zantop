@@ -1,4 +1,4 @@
 $ ->
   if !Modernizr.svg
-    $('img').attr 'src', (index, attr) ->
-      attr.replace '.svg', '.png'
+    $('img[data-svg_fallback]').attr 'src', (index, attr) ->
+      return $(this).attr('data-svg_fallback')
