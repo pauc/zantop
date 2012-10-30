@@ -23,6 +23,11 @@ es:
 
   new_element: Nuevo %{e}
 
+  will_paginate:
+    previous_label: Anterior
+    next_label: Siguiente
+    page_gap: " ... "
+
   sessions:
     new:
       title: Iniciar sesión

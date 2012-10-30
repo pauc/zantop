@@ -22,6 +22,11 @@ ca:
 
   new_element: Nou %{e}
 
+  will_paginate:
+    previous_label: Anterior
+    next_label: Següent
+    page_gap: " ... "
+
   sessions:
     new:
       title: Iniciar sessió

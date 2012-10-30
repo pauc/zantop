@@ -17,3 +17,17 @@ table {
   clear: both;
   margin: 0;
 }
+
+/* Estils per al paginador (will_paginate) */
+.pagination {
+  * {
+    min-width: 1em;
+    padding: .2em;
+    border: 1px solid $clear_grey;
+    text-decoration: none;
+  }
+
+  .gap {
+    border: none;
+  }
+}

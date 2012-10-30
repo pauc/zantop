@@ -24,9 +24,9 @@ module ApplicationHelper
   end
 
   def lang_selector
-    ca = link_to_unless_current 'ca', url_for(locale: 'ca')
-    es = link_to_unless_current 'es', url_for(locale: 'es')
-    en = link_to_unless_current 'en', url_for(locale: 'en')
-    "<li title='Català'>#{ca}</li> | <li title='English'>#{en}</li> | <li title='Español'>#{es}</li>"
+    ca = link_to_unless_current 'català', url_for(locale: 'ca')
+    es = link_to_unless_current 'castellano', url_for(locale: 'es')
+    en = link_to_unless_current 'english', url_for(locale: 'en')
+    "<li title='Castellano'>#{es}</li> | <li title='Català'>#{ca}</li> | <li title='English'>#{en}</li>"
   end
 end

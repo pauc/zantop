@@ -3,8 +3,18 @@ body.dashboards.front {
     text-align: center;
     padding: 6em 0;
 
-    h1 {
-      margin: 0;
+    #brand {
+      $brand_width: 80%;
+      width: $brand_width;
+      margin: 0 auto;
+      position: relative;
+      padding: 0.2147727*$brand_width 0;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
 
     #main_menu {
@@ -33,11 +43,11 @@ body.dashboards.front {
   }
 
   #works {
-    margin-left: -3%;
+    margin-left: -3.333333%;
     @include clearfix;
 
     .work {
-      width: 29.81%;
+      width: 30%;
       float: left;
       margin-left: 3.333333%;
       margin-top: 3.333333%;
