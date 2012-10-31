@@ -1,85 +1,74 @@
-body.dashboards.front {
+.front {
   #main_header {
     text-align: center;
     padding: 6em 0;
+  }
 
-    #brand {
-      $brand_width: 80%;
-      width: $brand_width;
-      margin: 0 auto;
-      position: relative;
-      padding: 0.2147727*$brand_width 0;
+  #brand {
+    $brand_width: 80%;
+    width: $brand_width;
+    margin: 0 auto;
+    position: relative;
+    padding: 0.2147727*$brand_width 0;
 
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  #main_menu {
+    position: relative;
+    margin: 1em 0 0;
+
+    a {
+      width: 5.5em;
+      @include inline-block;
+      margin: 0.25em 1.3em;
+      padding: 0.25em;
+      @include border-radius(0.5em);
     }
 
-    #main_menu {
-      position: relative;
-      margin: 1em 0 0;
-
-      a {
-        width: 5.5em;
-        @include inline-block;
-        margin: 0.25em 1.3em;
-        padding: 0.25em;
-        @include border-radius(0.5em);
-      }
-
-      i {
-        width: 100%;
-        position: absolute;
-        top: -1em;
-        left: 0;
-      }
+    i {
+      width: 100%;
+      position: absolute;
+      top: -1em;
+      left: 0;
     }
   }
 
   #main {
     margin-top: 0;
   }
-
-  #works {
-    margin-left: -3.333333%;
-    @include clearfix;
-
-    .work {
-      width: 30%;
-      float: left;
-      margin-left: 3.333333%;
-      margin-top: 3.333333%;
-      @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
-    }
-
-  }
-
-  #pagination {
-    clear: both;
-    margin-top: 2em;
-    text-align: center;
-  }
 }
 
-.work {
-  position: relative;
-  background: black;
+#works {
+  margin-left: -3.333333%;
+  @include clearfix;
 
-  a.work-preview {
-    width: 100%;
-    padding: 50% 0;
-    display: block;
-    line-height: 0;
+  .work {
+    width: 30%;
+    position: relative;
+    float: left;
+    margin-left: 3.333333%;
+    margin-top: 3.333333%;
+    @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
+    background: black;
 
-    img {
+    a.work-preview {
       width: 100%;
-      position: absolute;
-      top: 0;
+      padding: 50% 0;
+      display: block;
+      line-height: 0;
+
+      img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+      }
     }
   }
-
 }
 
 .work-title {
@@ -100,6 +89,12 @@ body.dashboards.front {
     position: relative;
     background: image-url('paper.png') 50% 50%;
   }
+}
+
+#pagination {
+  clear: both;
+  margin-top: 2em;
+  text-align: center;
 }
 
 /* Per a efecte de fadeIn si està activat el javascript */

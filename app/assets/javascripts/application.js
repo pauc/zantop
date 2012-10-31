@@ -15,7 +15,6 @@
 //# require ckeditor/init
 //= require modernizr
 //= require waypoints.min
-//= require svg
 //= require jquery_nested_form
 //= require jquery.tokeninput
 //= require front

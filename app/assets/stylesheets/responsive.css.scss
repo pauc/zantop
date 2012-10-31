@@ -1,0 +1,56 @@
+@media (min-width: 1700px) {
+}
+
+@media (min-width: 1200px) and (max-width: 1699px) {
+}
+
+@media (max-width: 900px) {
+  .front {
+    #main_header {
+      padding: 3em 0;
+    }
+
+    #main_menu {
+      font-size: 2em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .front {
+    #brand {
+      width: 100%;
+      padding: 21.47727% 0;
+    }
+  }
+
+  #works {
+    margin-left: -3%;
+
+    .work {
+      width: 47%;
+      margin-left: 3%;
+      margin-top: 3%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .front {
+    #main_menu {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  #works {
+    margin-left: 0;
+
+    .work {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 1em;
+    }
+  }
+}
