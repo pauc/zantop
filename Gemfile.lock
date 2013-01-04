@@ -57,6 +57,9 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    ckeditor (3.7.3)
+      mime-types
+      orm_adapter
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -150,6 +153,7 @@ GEM
     newrelic_rpm (3.5.0.1)
     nokogiri (1.5.5)
     normalize-rails (0.0.1)
+    orm_adapter (0.4.0)
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
@@ -259,6 +263,7 @@ DEPENDENCIES
   capistrano
   capybara (= 1.1.2)
   carrierwave
+  ckeditor
   coffee-rails (~> 3.2.1)
   database_cleaner
   decent_exposure

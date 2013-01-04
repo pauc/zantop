@@ -2,82 +2,51 @@
 module AdministrationHelper
 
   def method_missing(meth, *args)
-    super unless meth.to_s =~ /.+admin_links$/
-  end
-
-  ## DASHBOARDS ##
-  def dashboards_front_admin_links
-    html = link_to "Administrar treballs", admin_works_path
-    html << link_to("Administrar tags", admin_tags_path)
-    html << link_to("Crear treball d'acció", new_action_work_path)
-    html << link_to("Crear treball visual", new_visual_work_path)
-  end
-
-  def dashboards_about_admin_links
-    link_to t('edit'), edit_page_path(1)
-  end
-
-  def dashboards_contact_admin_links
-    link_to t('edit'), edit_page_path(2)
+    super unless meth.to_s =~ /.+content_controls$/
   end
 
   ## PAGES ##
-  def pages_edit_admin_links
+  def dashboards_about_content_controls
+    link_to t('edit'), edit_page_path(1)
+  end
+
+  def dashboards_contact_content_controls
+    link_to t('edit'), edit_page_path(2)
+  end
+
+  def pages_edit_content_controls
     path = params[:id] == "1" ? about_path : contact_path
     link_to t('back'), path
   end
 
-  ## WORKS ##
-  def works_admin_admin_links
-    html = link_to "Crear treball d'acció", new_action_work_path
-    html << link_to("Crear treball visual", new_visual_work_path)
-  end
-
   ## ACTION WORKS ##
-  def action_works_index_admin_links
-    link_to "Crear treball d'acció", new_action_work_path
-  end
-
-  def action_works_show_admin_links
+  def action_works_show_content_controls
     html = edit_link
-    html << link_to('Administrar trballs', admin_works_path)
     html << delete_link
   end
 
-  def action_works_new_admin_links
-    link_to t('back'), admin_works_path
+  def action_works_new_content_controls
+    link_to t('back'), action_works_path
   end
 
-  def action_works_edit_admin_links
-    link_to t('back'), action_work_path(params[:id])
+  def action_works_edit_content_controls
+    html = link_to(t('back'), action_work_path(params[:id]))
+    html << delete_link
   end
 
   ## VISUAL WORKS ##
-  def visual_works_index_admin_links
-    link_to "Crear treball visual", new_visual_work_path
-  end
-
-  def visual_works_show_admin_links
+  def visual_works_show_content_controls
     html = edit_link
-    html << link_to('Administrar treballs', admin_works_path)
     html << delete_link
   end
 
-  def visual_works_new_admin_links
-    link_to t('back'), admin_works_path
+  def visual_works_new_content_controls
+    link_to t('back'), visual_works_path
   end
 
-  def visual_works_edit_admin_links
-    link_to t('back'), visual_work_path(params[:id])
-  end
-
-  ## TAGS ##
-  def tags_show_admin_links
-    dashboards_front_admin_links
-  end
-
-  def tags_admin_admin_links
-    link_to "Administrar treballs", admin_works_path
+  def visual_works_edit_content_controls
+    html = link_to( t('back'), visual_work_path(params[:id]) )
+    html << delete_link
   end
 
   private

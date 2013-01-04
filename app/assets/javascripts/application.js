@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//# require ckeditor/init
 //= require modernizr
 //= require waypoints.min
 //= require jquery_nested_form

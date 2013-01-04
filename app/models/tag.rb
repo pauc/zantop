@@ -44,6 +44,14 @@ class Tag < ActiveRecord::Base
     self.translations.size < 3
   end
 
+  def self.all_translated?
+    translated = true
+    all.take_while do |tag|
+      translated = tag.translations.size == 3
+    end
+    translated
+  end
+
   I18n.available_locales.each do |locale|
     define_method "name_#{locale}" do
       self.translations.where(locale: locale).first.try(:name)

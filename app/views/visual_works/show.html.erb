@@ -7,7 +7,7 @@
 <div><%= raw visual_work.description %></div>
 <div><%= visual_work.techniques %></div>
 <div><%= visual_work.dimensions %></div>
-<div><%= visual_work.realization_date %></div>
+<div><%= visual_work.realization_date.year %></div>
 
 <% if !visual_work.images.empty? %>
   <div id="galleria" style="height: 500px">
@@ -21,5 +21,3 @@
     <% end %>
   </div>
 <% end %>
-<%= link_to 'Edit', edit_visual_work_path(visual_work) %> |
-<%= link_to 'Back', visual_works_path %>

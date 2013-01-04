@@ -7,7 +7,7 @@
   <fieldset>
     <legend>Imatges i vídeos</legend>
     <%= f.fields_for :images %>
-    <p><%= f.link_to_add "Add an image", :images %></p>
+    <p><%= f.link_to_add "Add an image", :images, class: "btn" %></p>
   </fieldset>
   <%= f.input :place %>
   <%= f.input :realization_date %>

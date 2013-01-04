@@ -19,7 +19,7 @@ gem 'will_paginate', '~> 3.0'
 gem "nested_form"
 gem 'acts_as_list'
 gem 'bcrypt-ruby', '~> 3.0.0'
-# gem 'ckeditor'
+gem 'ckeditor'
 gem 'modernizr-rails'
 
 # Image upload

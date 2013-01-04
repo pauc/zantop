@@ -1,16 +1,16 @@
 ca:
-  under_construction: En construcció
-  create: Crear
-  edit: Editar
-  edit_e: Editar %{e}
-  delete: Esborrar
-  cancel: Cancel·lar
   back: Tornar
+  cancel: Cancel·lar
+  change_password: Canviar contrassenya
+  create: Crear
+  deleted: Contingut esborrat.
+  delete: Esborrar
+  edit: Editar
   invalid_login: Dades incorrectes.
   restricted_access: Accés restringit. T'has d'identificar abans.
   updated: Contingut actualitzat.
-  deleted: Contingut esborrat.
 
+  under_construction: En construcció
 
   contact: Contacte
   about: Sobre mi

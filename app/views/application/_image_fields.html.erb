@@ -5,4 +5,4 @@
   <%= f.input :image, as: :image_preview, input_html: { preview_version: :thumb } if f.object.image.present? %>
   <%= f.input :video if f.object.video.present? %>
 <% end %>
-<%= f.link_to_remove "Remove this image" %>
+<%= f.link_to_remove "Remove this image", class: "btn_wrng" %>

@@ -31,3 +31,11 @@ table {
     border: none;
   }
 }
+
+.btn {
+  @include button(pill);
+}
+
+.btn_wrng {
+  @include button(pill, $warning);
+}

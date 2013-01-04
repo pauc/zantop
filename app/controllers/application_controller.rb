@@ -20,11 +20,7 @@ class ApplicationController < ActionController::Base
     end
 
     def check_tags_translations
-      translated = true
-      Tag.all.take_while do |tag|
-        translated = tag.translations.size == 3
-      end
-      unless translated
+      unless Tag.all_translated? or request.path == admin_tags_path
         flash.now['error'] = "Tens tags pendents de traduir. <a href='#{url_for controller: 'tags', action: 'admin'}'>Administrar tags</a>".html_safe
       end
     end

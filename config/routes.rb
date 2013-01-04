@@ -1,6 +1,6 @@
 Zantop::Application.routes.draw do
 
-  # mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => '/ckeditor'
 
   # Users
   resources :users, except: [:index, :show, :destroy]

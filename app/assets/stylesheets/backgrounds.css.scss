@@ -19,7 +19,7 @@ body {
 }
 
 #admin_bar {
-  a{
+  a {
     background: $clear_grey;
   }
 
@@ -32,8 +32,8 @@ form {
   background: $clear_grey;
 }
 
-#admin_tags .untranslated_tag form {
-  background: $error;
+div.fields {
+  background: lighten($grey, 20%);
 }
 
 /* Només per a la pàgina d'inici */

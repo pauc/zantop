@@ -3,8 +3,9 @@
     <h3><%= tag.name %>:</h3>
     <% I18n.available_locales.each do |locale| %>
       <%= form.input :"name_#{locale}", input_html: { name: "tag[name][#{locale}]", size: 18 } %>
-    <% end %>
-    <%= form.submit %>
-    <%= link_to t('delete'), tag_path(tag), method: :delete, confirm: "Segur que vols esborrar aquesta etiqueta?" %>
+    <% end %><br />
+    <%= form.button :submit %>
+    <%= link_to t('delete'), tag_path(tag), method: :delete,
+        confirm: "Segur que vols esborrar aquesta etiqueta?", class: "btn_wrng" %>
   <% end %>
 <% end %>

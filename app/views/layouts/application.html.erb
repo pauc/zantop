@@ -4,14 +4,15 @@
   <title><%= yield :title %>ZANTOP</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= yield :javascripts %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_classes %>" >
   <div id="wrapper" <%= "class=top-bar" if current_user? %> >
+    <%= render 'session_bar' if current_user? %>
     <div class="container">
       <%= render 'header' %>
     </div>
-    <%= render 'session_bar' if current_user? %>
     <div class="container">
       <%= render 'flash_messages' %>
       <div id="main" role="main">

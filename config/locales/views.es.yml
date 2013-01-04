@@ -1,15 +1,16 @@
 es:
-  under_construction: En construcción
-  create: Crear
-  edit: Editar
-  edit_e: Editar %{e}
-  delete: Borrar
-  cancel: Cancelar
   back: Atrás
+  cancel: Cancelar
+  change_password: Cambiar contraseña
+  create: Crear
+  delete: Borrar
+  deleted: Contenido Borrado.
+  edit: Editar
   invalid_login: Datos incorrectos.
   restricted_accessl: Acceso restringindo. Debes identificarte antes.
   updated: Contenido actualizado.
-  deleted: Contenido Borrado.
+
+  under_construction: En construcción
 
   contact: Contacto
   about: Sobre mi
