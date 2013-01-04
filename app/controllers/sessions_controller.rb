@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SessionsController < ApplicationController
 
   def index
@@ -5,7 +6,10 @@ class SessionsController < ApplicationController
   end
 
   def new
-
+    if current_user?
+      flash[:notice] = "Hola #{current_user.name}, ja estàs autentificat/da"
+      redirect_to front_path
+    end
   end
 
   def create
