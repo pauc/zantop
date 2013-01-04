@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   respond_to :html
   include Authorization
 
-  expose(:users) { User.all }
   expose(:user)
 
   def new
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    falsh[:success] = t('.created', model_name: t('models.User')) if user.save
+    flash[:success] = t('.created', model_name: t('models.User')) if user.save
     respond_with user
   end
 
