@@ -6,7 +6,6 @@ module HasTags
     attr_reader :tag_tokens
     has_many :taggings, as: :taggable, dependent: :destroy
     has_many :tags, through: :taggings
-    #before_validation :destroy_taggings
   end
 
   def tag_tokens=(tokens)

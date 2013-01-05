@@ -38,13 +38,19 @@ div.fields {
 
 /* Només per a la pàgina d'inici */
 body.dashboards.front {
+  #wrapper {
+    background: transparent image-url('taca_sostre_front.png') top left no-repeat;
+    background-size: contain;
+  }
+
   #main_menu a {
     &.action {
-      background: #e88717;
+      background: transparent image-url('taca_action.png') no-repeat 50% 50%;
+      background-size: 100% 100%;
     }
 
     &.visual {
-      background: #2d63be;
+      background: transparent;
     }
   }
 }
