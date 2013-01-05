@@ -1,18 +1,19 @@
+changePagination = (pagination) ->
+  alt_text = pagination.data('alt_text')
+  url = pagination.find('a.next_page').attr('href')
+  pagination.html "<a id='ajx_get_works' href='" + url + "'>" + alt_text + "</a>"
+  url
+
+
 jQuery ->
   if $('#pagination').length
     $('.new-work').removeClass('new-work')
     pagination = $('#pagination')
-    alt_text = pagination.data('alt_text')
-    opts = offset: '105%'
+    url = changePagination pagination
 
-    pagination.waypoint ((event, direction) ->
-      pagination.waypoint('remove')
-      url = $('.pagination .next_page').attr('href')
-      if url
-        pagination.html(alt_text)
-        $.getScript url , ->
-          $('.new-work').css({display: 'none', visibility: 'visible'}).fadeIn 600, "linear", ->
-            $(this).removeClass('new-work')
-            pagination.waypoint(opts)
-    ),
-      opts
+    $('#ajx_get_works').live "click", (event) ->
+      event.preventDefault()
+      $.getScript url, ->
+        url = changePagination pagination
+        $('.new-work').css({display: 'none', visibility: 'visible'}).fadeIn 600, "linear", ->
+          $(this).removeClass('new-work')

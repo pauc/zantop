@@ -18,7 +18,7 @@ en:
   action: Action
   visual: Visual
 
-  fetching_more: Fetching more content
+  get_more_works: View more works
 
   new_element: New %{e}
 
