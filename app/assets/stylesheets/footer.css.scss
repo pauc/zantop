@@ -1,0 +1,31 @@
+#footer {
+  #secondary_menu {
+    list-style: none;
+    padding: 0;
+    @include clearfix;
+
+    li {
+      float: left;
+      margin-right: 3em;
+    }
+  }
+
+  #tags {
+    @include clearfix;
+
+    .label {
+      height: 100%;
+      float: left;
+    }
+
+    p.label {
+      font-weight: bold;
+    }
+
+    #tags_list {
+      width: 40%;
+      float: left;
+      margin: 1em 0 1em 1em;
+    }
+  }
+}

@@ -4,6 +4,13 @@
       <li><%= link_to t('about'), about_path %></li>
       <li><%= link_to t('contact'), contact_path %></li>
     </ul>
-    Footer content
+    <div id="tags">
+      <p class="label">Categories:</p>
+      <div id="tags_list">
+        <% tags.each do |t| %>
+          <%= link_to t.name, tag_path(t) %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </footer>
