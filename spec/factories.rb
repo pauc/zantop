@@ -37,4 +37,9 @@ FactoryGirl.define do
     tag
     f.association :taggable, factory: :visual_work
   end
+
+  factory :link do |l|
+    sequence(:title) { |n| "Interesting link #{n}" }
+    sequence(:url) { |n| "http://example_#{n}.com"}
+  end
 end
