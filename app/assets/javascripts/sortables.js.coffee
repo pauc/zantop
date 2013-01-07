@@ -1,5 +1,5 @@
 //= require jquery.ui.sortable
-//= require jquery.effects.highlight
+//= require jquery.ui.effect-highlight
 
 $ ->
   $(".sortable-list").sortable
