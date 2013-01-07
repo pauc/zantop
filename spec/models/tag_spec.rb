@@ -28,4 +28,33 @@ describe Tag do
     end
     Tag.all_translated?.should be_true
   end
+
+  describe "update taggings counter" do
+    let(:tag) { FactoryGirl.create(:tag) }
+    before do
+      3.times { FactoryGirl.create(:tagging, tag: tag) }
+    end
+
+    it "when adding a tagging" do
+      FactoryGirl.create(:tagging, tag: tag)
+      tag.reload.taggings_count.should eq 4
+    end
+
+    it "when deleting a tagging" do
+      tag.taggings.last.destroy
+      tag.reload.taggings_count.should eq 2
+    end
+  end
+
+  describe "enabled tags" do
+    it "tags without taggings are not enabled" do
+      FactoryGirl.create_list(:tag, 15)
+      Tag.enabled.size.should eq 0
+    end
+
+    it "tags with taggings are enabled" do
+      FactoryGirl.create_list(:tagging, 2)
+      Tag.enabled.size.should eq 2
+    end
+  end
 end
