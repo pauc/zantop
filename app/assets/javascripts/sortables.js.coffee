@@ -1,6 +1,3 @@
-//= require jquery.ui.sortable
-//= require jquery.ui.effect-highlight
-
 $ ->
   $(".sortable-list").sortable
     axis: "y"

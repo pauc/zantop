@@ -13,15 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require modernizr
-//= require waypoints.min
-//= require jquery_nested_form
-//= require jquery.tokeninput
 //= require front
-//= require sortables
 //= require galleria/galleria-1.2.7.min
 //= require galleria/galleria.classic.min
 //= require gallerify
-//= require tags
 //= require works
 
 $(function(){

@@ -16,8 +16,10 @@ form {
   }
 
   div.fields {
+    position: relative;
     margin-bottom: 0.5em;
     padding: 0.5em;
+    padding-left: 2em;
     border-radius: 5px;
     @include clearfix;
 
