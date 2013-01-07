@@ -15,20 +15,16 @@ legend {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Uniformitzar l'aspecte del títol */
 #site_name {
   font-size: 2em;
   font-weight: bold;
   text-rendering: geometricPrecision;
   letter-spacing: 0.05em;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-#main_menu a {
-  text-decoration: none;
 }
 
 #admin_bar {
@@ -38,12 +34,15 @@ legend {
   /* Buttons */
   a {
     color: #222;
-    text-decoration: none;
 
     &.warning {
       color: #fff;
     }
   }
+}
+
+.work-title {
+  font-size: 1.3em;
 }
 
 /* Estils de fonts per a la pàgina d'inici */

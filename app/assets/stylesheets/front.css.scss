@@ -74,10 +74,10 @@
 }
 
 .work-title {
+  width: 100%;
   position: absolute;
-  bottom: 0.2em;
-  left: 0.5em;
-  max-width: 90%;
+  bottom: -10px;
+  left: -10px;
   border-width: 0.5em;
   border-style: solid;
   -moz-border-image: image-url('torn_edges_border.png') 10 10 repeat;
@@ -85,6 +85,7 @@
   -o-border-image: image-url('torn_edges_border.png') 10 10 repeat;
   border-image: image-url('torn_edges_border.png') 10 10 repeat;
   text-align: center;
+  font-size: 1.3em;
 
   a {
     display: block;
