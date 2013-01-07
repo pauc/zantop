@@ -8,8 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_classes %>" >
+  <%= render 'session_bar' if current_user? %>
   <div id="wrapper" <%= "class=top-bar" if current_user? %> >
-    <%= render 'session_bar' if current_user? %>
     <div class="container">
       <%= render 'header' %>
     </div>
