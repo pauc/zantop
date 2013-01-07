@@ -17,7 +17,7 @@ processURL = (url, success) ->
     else if url.match(/vimeo.com\/groups\/[\d\w]+\/videos\/[0-9]+/)
       id = url.split("/")[4]
     else
-      throw new Error("Unsupported Vimeo URL: " + url)
+      throw new SyntaxError("Unsupported Vimeo URL: " + url)
     $.ajax
       url: "http://vimeo.com/api/v2/video/" + id + ".json"
       dataType: "jsonp"
@@ -30,7 +30,7 @@ processURL = (url, success) ->
 $ ->
   $('.work-preview img.video').each ->
     image = $(this)
-    video_url = image.data("video").replace('http://', "")
+    video_url = image.data("video").split("://")[1]
     processURL video_url, (new_url) ->
       image.attr "src", new_url
       parent_height = image.parents('div').first().height()
