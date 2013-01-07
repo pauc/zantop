@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
   before_filter { check_tags_translations if current_user? }
 
-  expose (:tags) { Tag.all }
+  expose (:tags) { Tag.enabled }
 
   private
 

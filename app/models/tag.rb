@@ -20,6 +20,8 @@ class Tag < ActiveRecord::Base
 
   before_save :name_to_underscore
 
+  scope :enabled, where("taggings_count > 0")
+
   def self.tokens(query)
     unless query.blank?
       tags = Tag.with_translations(I18n.locale).order(:name).where("name ilike ?", "%#{query}%")
