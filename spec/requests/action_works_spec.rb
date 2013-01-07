@@ -13,6 +13,13 @@ describe "ActionWorks" do
     end
   end
 
+  describe "view work" do
+    it "woks!!" do
+      visit action_work_path(ActionWork.first)
+      should have_content(ActionWork.first.title)
+    end
+  end
+
   describe "GET /action_works/new" do
     before do
       @user = FactoryGirl.create(:user)
