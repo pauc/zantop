@@ -24,6 +24,12 @@
   <%= debug(params) if Rails.env.development? %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "admin" if current_user? %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ajaxSend(function(e, xhr, options) {
+      var token = $("meta[name='csrf-token']").attr("content");
+      xhr.setRequestHeader("X-CSRF-Token", token);
+    });
+  </script>
   <%= render "ga" unless current_user? %>
 </body>
 </html>
