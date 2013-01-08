@@ -4,11 +4,18 @@ table {
 
 /* Estils per al selector de llengües */
 #select_lang {
-  list-style: none;
-
   li {
     display: inline;
   }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin_controls {
+  margin-top: 0.5em;
 }
 
 /* Estils per a la caixa debug */
@@ -38,6 +45,19 @@ table {
 
 .btn_wrng {
   @include button(pill, $warning);
+}
+
+/* Estils per a les llistes ordenables */
+.sortable-list li {
+  position: relative;
+  margin: 0 0 0.5em;
+  padding: 0.5em 0.5em 0.5em 2em;
+  border: 1px solid $grey;
+  border-radius: 0.5em;
+
+  .item-title {
+    font-weight: bold;
+  }
 }
 
 /* "Agafadors per reordenar continguts */

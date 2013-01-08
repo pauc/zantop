@@ -1,24 +1,6 @@
 body.admin.works {
   #works {
     li {
-      margin: 0 0 0.5em;
-      padding: 0.5em 0.5em 0.5em 2em;
-      border: 1px solid $grey;
-      border-radius: 0.5em;
-      position: relative;
-
-      .handle {
-        width: 1.5em;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        background: transparent image-url('draggable.png') no-repeat center center;
-        border-right: 1px solid $clear_grey;
-        cursor: move;
-      }
-
       .work_title {
         font-weight: bold;
       }

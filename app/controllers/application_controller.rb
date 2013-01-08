@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter { check_tags_translations if current_user? }
 
   expose (:tags) { Tag.enabled }
+  expose(:links) { Link.order(:position) }
 
   private
 

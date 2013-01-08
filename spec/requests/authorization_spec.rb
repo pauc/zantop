@@ -20,5 +20,17 @@ describe 'Authorization' do
       current_path.should == login_path
       page.should have_content('Accés restringit')
     end
+
+    it "cannot admin works" do
+      visit admin_works_path
+      current_path.should == login_path
+      page.should have_content('Accés restringit')
+    end
+
+    it "cannot admin links" do
+      visit admin_links_path
+      current_path.should == login_path
+      page.should have_content('Accés restringit')
+    end
   end
 end

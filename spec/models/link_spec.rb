@@ -20,10 +20,10 @@ describe Link do
       should be_valid
     end
 
-    it "if title is blank it takes url" do
+    it "if title is blank it takes url without protocol" do
       link.title = ""
       link.save
-      link.title.should eq link.url
+      link.title.should eq link.url.split("://")[1]
     end
   end
 end
