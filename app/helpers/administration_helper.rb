@@ -49,13 +49,21 @@ module AdministrationHelper
     html << delete_link
   end
 
+  ## LINKS ##
+  def links_edit_content_controls
+    delete_link
+  end
+
   private
 
   def edit_link
-    link_to t('edit'), url_for(controller: controller.controller_name, action: 'edit', id: params[:id])
+    link_to t('edit'), url_for(controller: controller.controller_name,
+         action: 'edit', id: params[:id])
   end
 
   def delete_link
-    link_to t('delete'), url_for(controller: controller.controller_name, action: 'destroy', id: params[:id]), method: :delete, confirm: 'Segur que ho vols esborrar?', class: 'warning'
+    link_to t('delete'), url_for(controller: controller.controller_name,
+         action: 'destroy', id: params[:id]), method: :delete,
+         confirm: 'Segur que ho vols esborrar?', class: 'warning'
   end
 end

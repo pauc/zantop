@@ -29,3 +29,9 @@ ca:
         name_ca: "Català:"
         name_en: "Anglès:"
         name_es: "Castellà:"
+
+    hints:
+      users:
+        edit:
+          password: Deixa-ho en blanc si no vols canviar la contrasenya
+          password_confirmation: Deixa-ho en blanc si no vols canviar la contrasenya

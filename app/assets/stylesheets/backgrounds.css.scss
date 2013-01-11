@@ -3,7 +3,7 @@ body {
 }
 
 #admin_bar {
-  background: $black;
+  background: white;
 }
 
 .alert-notice {
@@ -12,16 +12,6 @@ body {
 
 .alert-error {
   background: $error;
-}
-
-#admin_bar {
-  a {
-    background: $clear_grey;
-  }
-
-  a.warning {
-    background: $warning;
-  }
 }
 
 form {

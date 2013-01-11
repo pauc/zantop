@@ -1,13 +1,9 @@
 #admin_bar {
-  padding: 0.5em 0 0.2em;
-  @include box-shadow(0 0 2px 2px hsla(0, 0%, 0%, 0.65));
+  border-bottom: 1px solid $dark_grey;
+  @include box-shadow(0 1px 10px 0 hsla(0, 0%, 0%, 0.65));
 
-  .container {
-
-    & > div {
-      margin: 0 0 0.6em;
-      @include clearfix;
-    }
+  .container > div {
+    /*@include clearfix;*/
   }
 
   #session_controls {
@@ -19,7 +15,14 @@
   }
 
   #content_controls {
+    width: 100%;
     clear: both;
+    float: left;
+    margin-top: 0.3em;
+
+    .warning {
+      margin-left: 1em;
+    }
   }
 
   a {
@@ -28,9 +31,10 @@
     border-radius: 0.5em;
     margin-right: 0.3em;
     margin-bottom: 0.3em;
+    @include button(pill, $clear_grey);
 
-    &.warning {
-      float: right;
+    &.warning, &.logout {
+      @include button(pill, $warning);
     }
   }
 }

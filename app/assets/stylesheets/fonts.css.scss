@@ -6,15 +6,6 @@ body {
   color: inherit;
 }
 
-label{
-  line-height: 1.7;
-  font-weight: bold;
-}
-
-legend {
-  font-weight: bold;
-}
-
 a {
   text-decoration: none;
 }
@@ -55,4 +46,27 @@ a {
       font-style: normal;
     }
   }
+}
+
+/* Per als formularis */
+label{
+  line-height: 1.7;
+  font-weight: bold;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.help-block {
+  font-size: 0.8em;
+  color: #0b0;
+
+  &:before {
+    content: "-";
+  }
+}
+
+form .error .help-inline {
+  color: $error;
 }

@@ -47,3 +47,14 @@ form {
     }
   }
 }
+
+.error {
+  input, text-area, select {
+    box-shadow: 0 0 5px 0 $error;
+  }
+
+  .help-inline {
+    padding: 0 0.5em;
+  }
+}
+
