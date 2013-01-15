@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108020610) do
+ActiveRecord::Schema.define(:version => 20130115034721) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -51,14 +51,6 @@ ActiveRecord::Schema.define(:version => 20130108020610) do
   end
 
   add_index "images", ["illustrated_id", "illustrated_type"], :name => "index_images_on_illustrated_id_and_illustrated_type"
-
-  create_table "links", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "position"
-  end
 
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"

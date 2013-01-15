@@ -9,7 +9,6 @@
       <%= link_to "Crear treball visual", new_visual_work_path %>
       <%= link_to "Ordenar treballs", admin_works_path %>
       <%= link_to "Administrar tags", admin_tags_path %>
-      <%= link_to "Administrar links", admin_links_path %>
     </div>
     <div id="content_controls">
       <%= raw send("#{controller.controller_name}_#{controller.action_name}_content_controls") %>

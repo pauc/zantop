@@ -49,11 +49,6 @@ module AdministrationHelper
     html << delete_link
   end
 
-  ## LINKS ##
-  def links_edit_content_controls
-    delete_link
-  end
-
   private
 
   def edit_link

@@ -43,11 +43,5 @@ Zantop::Application.routes.draw do
     get 'admin', on: :collection
   end
 
-  # Links
-  resources :links, except: [:index, :show] do
-    get 'admin', on: :collection
-    post :sort, on: :collection
-  end
-
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
 end
