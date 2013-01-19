@@ -7,8 +7,12 @@ body {
   font-family: 'ubuntu_lightregular', 'cantarellregular', sans-serif;
 }
 
-#main_header a {
-  color: inherit;
+#main_menu {
+  font-size: 1.3em;
+
+  a {
+    color: inherit;
+  }
 }
 
 a {

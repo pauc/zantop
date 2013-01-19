@@ -12,12 +12,13 @@ module ApplicationHelper
 
   def site_name
     tag = front? ? :h1 : :span
-    content_tag tag, link_to('Mireia Zantop', front_path), id: 'site_name'
+    content_tag tag, link_to(image_tag('mz.png', alt: "Mireia Zantop"), front_path), id: 'site_name'
   end
 
   def body_classes
     classes = "#{controller.controller_name} #{controller.action_name}"
     classes += " with_sidebar" if sidebar?
+    classes += " no-front" unless front?
     classes
   end
 

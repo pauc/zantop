@@ -1,5 +1,5 @@
 $sidebar_width: 18em;
-$sidebar_margin: 1.5em;
+$sidebar_gap: 1.5em;
 
 #wrapper {
   margin: -1px 0 0;
@@ -39,6 +39,28 @@ $sidebar_margin: 1.5em;
   }
 }
 
+body.no-front #brand {
+  width: 12em;
+  float: left;
+}
+
+#site_name {
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+body.no-front #main_menu {
+  float: left;
+  margin: 2em 0 0 1.5em;
+
+  a.action {
+    margin-right: 1em;
+  }
+}
+
 #main {
   width: 100%;
   float: left;
@@ -46,10 +68,10 @@ $sidebar_margin: 1.5em;
 }
 
 body.with_sidebar #main {
-  margin-right: -$sidebar_width -$sidebar_margin;
+  margin-right: -$sidebar_width -$sidebar_gap;
 
   .content {
-    margin-right: $sidebar_width +$sidebar_margin;
+    margin-right: $sidebar_width +$sidebar_gap;
   }
 }
 
@@ -57,7 +79,7 @@ body.with_sidebar #main {
 .sidebar {
   width: $sidebar_width;
   float: left;
-  margin-left: $sidebar_margin;
+  margin-left: $sidebar_gap;
   margin-top: 7em;
 }
 
