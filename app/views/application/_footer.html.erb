@@ -6,13 +6,6 @@
     </ul>
     <div id="tags">
       <p class="label">Categories:</p>
-      <div id="tags_list">
-        <%= link_to t('action').downcase, action_works_path %>
-        <%= link_to t('visual').downcase, visual_works_path %>
-        <% tags.each do |t| %>
-          <%= link_to t.name, tag_path(t) %>
-        <% end %>
-      </div>
     </div>
   </div>
 </footer>

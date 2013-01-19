@@ -1,0 +1,12 @@
+<div class="sidebar">
+  <div class="sidebar-block">
+    <h2><%= t('tags') %>:</h2>
+    <ul class="tags_list vertical-list">
+      <li><%= link_to t('action').downcase, action_works_path %></li>
+      <li><%= link_to t('visual').downcase, visual_works_path %></li>
+      <% tags.each do |t| %>
+        <li><%= link_to t.name, tag_path(t) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

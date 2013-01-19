@@ -22,6 +22,8 @@ ca:
 
   new_element: Nou %{e}
 
+  tags: Categories
+
   will_paginate:
     previous_label: Anterior
     next_label: Següent

@@ -24,6 +24,8 @@ es:
 
   new_element: Nuevo %{e}
 
+  tags: Categorias
+
   will_paginate:
     previous_label: Anterior
     next_label: Siguiente
