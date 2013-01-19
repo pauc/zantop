@@ -116,6 +116,7 @@ GEM
       spork (>= 0.8.4)
     highline (1.6.15)
     hike (1.2.1)
+    hirb (0.7.0)
     http_accept_language (1.0.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -281,6 +282,7 @@ DEPENDENCIES
   globalize3
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
+  hirb
   http_accept_language
   jquery-rails
   jquery-ui-rails

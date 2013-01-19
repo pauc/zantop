@@ -54,6 +54,7 @@ group :development do
   gem 'guard-rspec', '0.5.5'
   gem 'quiet_assets'
   gem 'thin'
+  gem 'hirb'
 end
 
 group :test do
