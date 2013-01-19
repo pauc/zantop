@@ -1,5 +1,28 @@
+/* Estils genèrics */
 table {
   width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.25em 0;
+}
+
+ul {
+  margin: 0.25em;
+  padding: 0;
+  list-style: none;
+}
+
+.vertical-list {
+  padding-left: 1em;
+}
+
+.btn {
+  @include button(pill);
+}
+
+.btn_wrng {
+  @include button(pill, $warning);
 }
 
 /* Estils per al selector de llengües */
@@ -7,11 +30,6 @@ table {
   li {
     display: inline;
   }
-}
-
-ul {
-  list-style: none;
-  padding: 0;
 }
 
 .admin_controls {
@@ -37,14 +55,6 @@ ul {
   .gap {
     border: none;
   }
-}
-
-.btn {
-  @include button(pill);
-}
-
-.btn_wrng {
-  @include button(pill, $warning);
 }
 
 /* Estils per a les llistes ordenables */
