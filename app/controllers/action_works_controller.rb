@@ -7,6 +7,7 @@ class ActionWorksController < ApplicationController
 
   expose(:action_works)
   expose(:action_work)
+  expose(:work) { action_work }
   expose(:published_works) { ActionWork.published }
 
   def index
@@ -14,7 +15,7 @@ class ActionWorksController < ApplicationController
   end
 
   def show
-
+    render 'work'
   end
 
   def new

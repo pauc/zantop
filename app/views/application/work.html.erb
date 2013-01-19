@@ -1,0 +1,19 @@
+<%= page_title work.title %>
+<%= print_work_place work %>
+<%= print_work_date work %>
+<% if !work.images.empty? %>
+  <div id="galleria" style="height: 500px">
+    <% work.images.each do |image| %>
+      <% if image.image? %>
+        <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+        <% end %>
+      <% if image.video? %>
+        <%= link_to content_tag(:span, "Watch this video", class: "video"), image.video %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+<%= print_work_techniques work %>
+<%= print_work_dimensions work %>
+<%= print_work_description work %>
+<%= print_work_tags work %>

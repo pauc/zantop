@@ -7,6 +7,7 @@ class VisualWorksController < ApplicationController
 
   expose(:visual_works)
   expose(:visual_work)
+  expose(:work) { visual_work }
   expose(:published_works) { VisualWork.published }
 
   def index
@@ -14,7 +15,7 @@ class VisualWorksController < ApplicationController
   end
 
   def show
-
+    respond_with work, template: 'work'
   end
 
   def new
