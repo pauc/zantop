@@ -16,11 +16,17 @@ module ApplicationHelper
   end
 
   def body_classes
-    "#{controller.controller_name} #{controller.action_name}"
+    classes = "#{controller.controller_name} #{controller.action_name}"
+    classes += " with_sidebar" if sidebar?
+    classes
   end
 
   def front?
     controller.controller_name == 'dashboards' && controller.action_name == 'front'
+  end
+
+  def sidebar?
+    !front? and !current_user?
   end
 
   def lang_selector

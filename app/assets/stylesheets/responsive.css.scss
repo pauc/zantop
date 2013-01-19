@@ -33,6 +33,18 @@
       margin-top: 3%;
     }
   }
+
+  body.with_sidebar #main {
+    margin-right: 0;
+
+    .content {
+      margin-right: 0;
+    }
+  }
+
+  .sidebar {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {

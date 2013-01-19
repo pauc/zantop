@@ -1,3 +1,6 @@
+$sidebar_width: 18em;
+$sidebar_margin: 1.5em;
+
 #wrapper {
   margin: -1px 0 0;
   padding-top: 1px;
@@ -11,7 +14,7 @@
 }
 
 .container {
-  max-width: 1500px;
+  max-width: 1240px;
   position: relative;
   padding: 0 0.5em;
   margin-left: auto; margin-right: auto;
@@ -37,7 +40,25 @@
 }
 
 #main {
+  width: 100%;
+  float: left;
   margin-top: 2em;
+}
+
+body.with_sidebar #main {
+  margin-right: -$sidebar_width -$sidebar_margin;
+
+  .content {
+    margin-right: $sidebar_width +$sidebar_margin;
+  }
+}
+
+
+.sidebar {
+  width: $sidebar_width;
+  float: left;
+  margin-left: $sidebar_margin;
+  margin-top: 7em;
 }
 
 #footer {
