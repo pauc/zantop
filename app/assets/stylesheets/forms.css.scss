@@ -33,6 +33,10 @@ form {
   }
 }
 
+.fields .cke_contents {
+  /*height: 5em !important;*/
+}
+
 #admin_tags {
   form {
     min-width: 1024px;
@@ -57,4 +61,6 @@ form {
     padding: 0 0.5em;
   }
 }
+
+
 

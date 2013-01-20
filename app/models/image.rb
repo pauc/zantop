@@ -1,8 +1,18 @@
 #encoding: UTF-8
 class Image < ActiveRecord::Base
+  include UserInputCleaner
+
+  clean_fields :credits
+
   belongs_to :illustrated, polymorphic: true, counter_cache: true
 
-  attr_accessible :image, :video
+  attr_accessible :image, :video, :credits
+
+  translates :credits
+
+  class Translation
+    attr_accessible :locale
+  end
 
   mount_uploader :image, ImageUploader
 
