@@ -12,7 +12,7 @@ module ApplicationHelper
 
   def site_name
     tag = front? ? :h1 : :span
-    content_tag tag, link_to(image_tag('mz.png', alt: "Mireia Zantop"), front_path), id: 'site_name'
+    content_tag tag, link_to_unless_current(image_tag('mz.png', alt: "Mireia Zantop"), front_path), id: 'site_name'
   end
 
   def body_classes
