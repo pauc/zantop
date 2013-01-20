@@ -38,3 +38,21 @@
     }
   }
 }
+
+body.admin.works {
+  #works {
+    li {
+      .work_title {
+        font-weight: bold;
+      }
+
+      &.unpublished {
+        border: 2px solid $warning;
+
+        span.unpublished {
+          color: $warning;
+        }
+      }
+    }
+  }
+}

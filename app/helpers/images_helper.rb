@@ -6,7 +6,7 @@ module ImagesHelper
     elsif media.present? and media.type == "video"
       return image_tag("abustany_Movie_reel.svg", class: "video", :"data-video" => media.video)
     else
-      return image_tag "mz-comodin.png"
+      return default_image_for_works
     end
   end
 end

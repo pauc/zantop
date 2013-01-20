@@ -34,7 +34,7 @@ en:
       title: Log in
 
   visual_works:
-    index:
+    works_list:
       title: Listing Visual Works
 
     edit:
@@ -44,7 +44,7 @@ en:
       title: New visual work
 
   action_works:
-    index:
+    works_list:
       title: Listing Action Works
 
     new:

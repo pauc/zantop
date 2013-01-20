@@ -34,7 +34,7 @@ ca:
       title: Iniciar sessió
 
   visual_works:
-    index:
+    works_list:
       title: Tots els treballs visuals
 
     edit:
@@ -44,7 +44,7 @@ ca:
       title: Nou treball visual
 
   action_works:
-    index:
+    works_list:
       title: Tots els treballs d'acció
 
     new:

@@ -1,4 +1,8 @@
 module WorksHelper
+  def default_image_for_works
+    image_tag "mz-comodin.png"
+  end
+
   def print_work_place(work)
     if work.respond_to?("place") and !work.place.blank?
       "<div class='work-place'>#{work.place}</div>".html_safe
@@ -31,7 +35,7 @@ module WorksHelper
 
   def print_work_tags(work)
     html = "<div class='work-tags'>"
-    html << t('tags') + ": "
+    html << t('categories') + ": "
     html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
     html << "</div>"
     html.html_safe

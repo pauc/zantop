@@ -1,9 +1,17 @@
-<%= page_title t("#{controller.controller_name}.works_list.title",
-                 category: category.name) %>
+<% if controller.controller_name == "tags" %>
+  <%= page_title t("#{controller.controller_name}.works_list.title",
+                   category: category.name) %>
+<% else %>
+  <% page_title t("#{controller.controller_name}.works_list.title") %>
+<% end %>
 
 <div class="works-list">
   <% published_works.each do |work| %>
-    <%= div_for work do %>
+    <%= div_for work, class: "work" do %>
+      <div class="image-wrapper">
+        <%= work.first_image.present? ? image_tag(work.first_image) :
+         default_image_for_works %>
+      </div>
       <%= content_tag :h2, work.title, class: "work-title" %>
     <% end %>
   <% end %>

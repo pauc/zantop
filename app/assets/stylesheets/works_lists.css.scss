@@ -1,0 +1,23 @@
+.works-list {
+  .work {
+    margin: 1em 0;
+    @include clearfix;
+  }
+
+  .work-title {
+    float: left;
+  }
+
+  .image-wrapper {
+    width: 25%;
+    height: 100%;
+    max-width: 200px;
+    min-width: 80px;
+    float: left;
+    margin-right: 0.5em;
+
+    img {
+      width: 100%;
+    }
+  }
+}

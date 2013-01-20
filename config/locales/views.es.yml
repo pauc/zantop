@@ -18,8 +18,6 @@ es:
   action: Acción
   visual: Visual
 
-  recent_works: Trabajos recientes
-
   get_more_woks: Ver más trabajos
 
   new_element: Nuevo %{e}
@@ -36,7 +34,7 @@ es:
       title: Iniciar sesión
 
   visual_works:
-    index:
+    works_list:
       title: Todos los trabajos visuales
 
     edit:
@@ -46,7 +44,7 @@ es:
       title: Nuevo trabajo visual
 
   action_works:
-    index:
+    works_list:
       title: Todos los trabajos de acción
 
     new:
