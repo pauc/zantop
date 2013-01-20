@@ -5,6 +5,22 @@
 }
 
 @media (max-width: 900px) {
+  body.with_sidebar #main {
+    $sidebar_width: 14em;
+    $sidebar_gap: 1em;
+
+    margin-right: -$sidebar_width - $sidebar_gap;
+
+    .content {
+      margin-right: $sidebar_width + $sidebar_gap;
+    }
+  }
+
+  .sidebar {
+    width: $sidebar_width;
+    margin-left: $sidebar_gap;
+  }
+
   .front {
     #main_header {
       padding: 3em 0;
@@ -17,6 +33,10 @@
 }
 
 @media (max-width: 768px) {
+  .container{
+    padding: 0 1em;
+  }
+
   .front {
     #brand {
       width: 100%;
@@ -44,10 +64,15 @@
 
   .sidebar {
     width: 100%;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+
   .front {
     #main_menu {
       font-size: 1em;

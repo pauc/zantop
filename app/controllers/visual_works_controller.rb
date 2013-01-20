@@ -11,15 +11,16 @@ class VisualWorksController < ApplicationController
   expose(:published_works) { VisualWork.published }
 
   def index
-    respond_with published_works
+    respond_with published_works, template: 'application/works_list'
   end
 
   def show
-    respond_with work, template: 'work'
+    respond_with visual_work, template: 'application/work'
   end
 
   def new
     visual_work.images.build
+    respond_with visual_work
   end
 
   def create
@@ -29,6 +30,7 @@ class VisualWorksController < ApplicationController
 
   def edit
     visual_work.images.build if visual_work.images.empty?
+    respond_with visual_work
   end
 
   def update

@@ -11,15 +11,16 @@ class ActionWorksController < ApplicationController
   expose(:published_works) { ActionWork.published }
 
   def index
-    respond_with published_works
+    respond_with published_works, template: 'application/works_list'
   end
 
   def show
-    render 'work'
+    respond_with action_work, template: 'application/work'
   end
 
   def new
     action_work.images.build
+    respond_with action_work
   end
 
   def create
@@ -29,6 +30,7 @@ class ActionWorksController < ApplicationController
 
   def edit
     action_work.images.build if action_work.images.empty?
+    respond_with action_work
   end
 
   def update

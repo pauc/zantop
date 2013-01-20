@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    create_first_user if User.all.empty?
-
     user = User.find_by_email(params[:new_session][:email])
     if user && user.authenticate(params[:new_session][:password])
       sign_in user
@@ -29,14 +27,4 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to front_path
   end
-
-  private
-
-    def create_first_user
-      User.create(name: 'admin',
-                  email: 'pausandalio@gmail.com',
-                  password: 'secret',
-                  password_confirmation: 'secret',
-                  admin: true ) if User.all.empty?
-    end
 end

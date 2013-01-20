@@ -22,7 +22,7 @@ ca:
 
   new_element: Nou %{e}
 
-  tags: Categories
+  categories: Categories
 
   will_paginate:
     previous_label: Anterior
@@ -66,3 +66,7 @@ ca:
 
     edit:
       title: Editar <span>%{user}</span>
+
+  tags:
+    works_list:
+      title: "%{category}"

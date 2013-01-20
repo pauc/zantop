@@ -5,7 +5,7 @@ class TagsController < ApplicationController
 
   expose(:categories) { Tag.order('created_at DESC') }
   expose(:category) { Tag.find(params[:id]) }
-  expose(:works) { tag.works.published }
+  expose(:published_works) { category.works.published }
 
   def index
     respond_to do |format|
@@ -14,7 +14,7 @@ class TagsController < ApplicationController
   end
 
   def show
-
+    respond_with category, template: 'application/works_list'
   end
 
   def update

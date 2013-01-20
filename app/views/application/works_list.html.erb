@@ -1,0 +1,10 @@
+<%= page_title t("#{controller.controller_name}.works_list.title",
+                 category: category.name) %>
+
+<div class="works-list">
+  <% published_works.each do |work| %>
+    <%= div_for work do %>
+      <%= content_tag :h2, work.title, class: "work-title" %>
+    <% end %>
+  <% end %>
+</div>

@@ -22,7 +22,7 @@ en:
 
   new_element: New %{e}
 
-  tags: Categories
+  categories: Categories
 
   will_paginate:
     previous_label: Previous
@@ -66,3 +66,7 @@ en:
 
     edit:
       title: Edit <span>%{user}</span>
+
+  tags:
+    works_list:
+      title: "%{category}"

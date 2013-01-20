@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def sidebar?
-    !front? and !current_user?
+    !front? and !(%w(new edit admin).include?(controller.action_name))
   end
 
   def lang_selector

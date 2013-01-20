@@ -24,7 +24,7 @@ es:
 
   new_element: Nuevo %{e}
 
-  tags: Categorias
+  categories: Categorias
 
   will_paginate:
     previous_label: Anterior
@@ -68,3 +68,7 @@ es:
 
     edit:
       title: Editar <span>%{user}</span>
+
+  tags:
+    works_list:
+      title: "%{category}"

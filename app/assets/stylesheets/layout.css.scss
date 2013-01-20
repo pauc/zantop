@@ -1,5 +1,9 @@
-$sidebar_width: 18em;
+$sidebar_width: 16em;
 $sidebar_gap: 1.5em;
+
+header {
+  position: relative;
+}
 
 #wrapper {
   margin: -1px 0 0;
@@ -16,7 +20,7 @@ $sidebar_gap: 1.5em;
 .container {
   max-width: 1240px;
   position: relative;
-  padding: 0 0.5em;
+  padding: 0 2em;
   margin-left: auto; margin-right: auto;
   @include clearfix;
 }
@@ -64,14 +68,13 @@ body.no-front #main_menu {
 #main {
   width: 100%;
   float: left;
-  margin-top: 2em;
 }
 
 body.with_sidebar #main {
-  margin-right: -$sidebar_width -$sidebar_gap;
+  margin-right: -$sidebar_width - $sidebar_gap;
 
   .content {
-    margin-right: $sidebar_width +$sidebar_gap;
+    margin-right: $sidebar_width + $sidebar_gap;
   }
 }
 
@@ -81,6 +84,10 @@ body.with_sidebar #main {
   float: left;
   margin-left: $sidebar_gap;
   margin-top: 7em;
+}
+
+.sidebar-block {
+  margin: 0 0.5em 0 1em;
 }
 
 #footer {
