@@ -1,6 +1,7 @@
 <%= simple_nested_form_for action_work, 
     html: { multipart: true, class: "with_sortable_fields" } do |f| %>
   <%= f.input :title %>
+  <%= f.input :intro, as: :ckeditor %>
   <%= f.input :description, as: :ckeditor %>
   <%= f.input :tag_tokens, label: "Tags:",
     input_html: { :'data-locale' => I18n.locale,
