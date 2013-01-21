@@ -5,10 +5,13 @@
   <div id="galleria" style="height: 500px">
     <% work.images.each do |image| %>
       <% if image.image? %>
-        <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+        <%= link_to image_tag(image.image.thumb.to_s, data: { title: image.credits }),
+          image.image.to_s %>
         <% end %>
       <% if image.video? %>
-        <%= link_to content_tag(:span, "Watch this video", class: "video"), image.video %>
+        <%= link_to content_tag(:span, "Watch this video", class: "video",
+                                data: {title: image.credits }),
+          image.video %>
       <% end %>
     <% end %>
   </div>
