@@ -1,3 +1,9 @@
+body {
+  font-size: 100%;
+  font-family: 'cantarellregular', 'ubuntu_lightregular', sans-serif;
+  color: $dark_grey
+}
+
 h1, h2, h3, h4, h5, h6, #main_menu {
   font-family:  'im_fell_english_proregular', 'cabinsketchregular', serif;
   font-weight: normal;
@@ -10,12 +16,6 @@ h1 {
 h2 {
   font-size: 2em;
   font-weight: bold;
-}
-
-body {
-  font-size: 100%;
-  font-family: 'ubuntu_lightregular', 'cantarellregular', sans-serif;
-  color: $dark_grey
 }
 
 #main_menu {

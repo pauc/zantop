@@ -7,14 +7,17 @@
 
 <div class="works-list">
   <% published_works.each do |work| %>
-    <%= div_for work, class: "work" do %>
+    <%= div_for work, class: "work " + cycle('odd', 'even') do %>
       <div class="image-wrapper">
-        <%= link_to (work.first_image.present? ? image_tag(work.first_image) :
-         default_image_for_works), work %>
+        <%= link_to (work.first_image.present? ?
+                     image_tag(work.first_image) :
+                     default_image_for_works), work %>
       </div>
       <div class="work-info">
-        <%= content_tag :h2, link_to(work.title, work), class: "work-title" %>
-        <%= content_tag(:div, work.intro.html_safe, class: "work-intro") if work.intro.present? %>
+        <%= content_tag :h2, link_to(work.title, work),
+          class: "work-title" %>
+        <%= content_tag(:div, work.intro.html_safe,
+                       class: "work-intro") if work.intro.present? %>
         <%= print_work_place work %>
         <%= print_work_date work %>
       </div>

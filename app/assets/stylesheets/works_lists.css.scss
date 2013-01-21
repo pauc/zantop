@@ -16,4 +16,14 @@
       width: 100%;
     }
   }
+
+  .work.even {
+    text-align: right;
+
+    .image-wrapper {
+      float: right;
+      margin-right: 0;
+      margin-left: 0.5em;
+    }
+  }
 }
