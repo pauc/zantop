@@ -52,7 +52,9 @@ CKEDITOR.editorConfig = function( config )
 
   config.forcePasteAsPlainText = true;
 
-  config.format_tags = 'p;h3' 
+  config.format_tags = 'p;h3';
+
+  config.resize_minWidth = 100;
 
   config.removeDialogTabs = 'image:advanced;image:Upload;link:target;link:advanced';
 

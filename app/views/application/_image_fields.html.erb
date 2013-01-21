@@ -3,9 +3,12 @@
   <%= f.input :image %>
   <%= f.input :video %>
 <% else %>
-  <%= f.input :image, as: :image_preview, input_html: { preview_version: :thumb } if f.object.image.present? %>
+  <%= f.input :image, as: :image_preview,
+        input_html: { preview_version: :thumb } if
+        f.object.image.present? %>
   <%= f.input :video if f.object.video.present? %>
 <% end %>
-<%= f.input :credits, as: :text, input_html: { rows: 4, class: "image-credits" } %>
+<%= f.input :credits, as: :text,
+      input_html: { rows: 4, class: "image-credits" } %>
 <%= f.hidden_field :position, type: "hidden" %>
 <%= f.link_to_remove "Remove this image", class: "btn_wrng" %>
