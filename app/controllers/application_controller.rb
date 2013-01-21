@@ -6,8 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
   before_filter { check_tags_translations if current_user? }
 
-  expose (:tags) { Tag.enabled }
-  expose(:links) { Link.order(:position) }
+  expose (:tags) { Tag.enabled.order("taggings_count DESC") }
 
   private
 
