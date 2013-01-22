@@ -34,10 +34,12 @@ module WorksHelper
   end
 
   def print_work_tags(work)
-    html = "<div class='work-tags'>"
-    html << t('categories') + ": "
-    html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
-    html << "</div>"
-    html.html_safe
+    if work.tags.size > 0
+      html = "<div class='work-tags'>"
+      html << t('categories') + ": "
+      html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
+      html << "</div>"
+      html.html_safe
+    end
   end
 end
