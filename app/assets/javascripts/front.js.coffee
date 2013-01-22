@@ -11,7 +11,7 @@ jQuery ->
     pagination = $('#pagination')
     url = changePagination pagination
 
-    $('#ajx_get_works').live "click", (event) ->
+    $('#ajx_get_works').on "click", (event) ->
       event.preventDefault()
       $.getScript url, ->
         url = changePagination pagination
