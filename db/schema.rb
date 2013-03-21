@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122013922) do
+ActiveRecord::Schema.define(:version => 20130321135950) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -161,7 +161,6 @@ ActiveRecord::Schema.define(:version => 20130122013922) do
     t.string   "place"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.text     "intro"
   end
 
   add_index "work_translations", ["locale"], :name => "index_work_translations_on_locale"

@@ -6,7 +6,7 @@ class Work < ActiveRecord::Base
 
   acts_as_list
 
-  translates :title, :description, :techniques, :place, :intro
+  translates :title, :description, :techniques, :place
   clean_fields :description
 
   class Translation
@@ -17,7 +17,6 @@ class Work < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
   attr_accessible :title,
-                  :intro,
                   :description,
                   :place,
                   :realization_date,

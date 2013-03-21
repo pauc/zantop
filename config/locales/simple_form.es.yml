@@ -14,7 +14,6 @@ es:
     labels:
       defaults:
         title: "Título:"
-        intro: "Intro:"
         description: "Descripción:"
         image: "Imagen:"
         place: "Lugar:"

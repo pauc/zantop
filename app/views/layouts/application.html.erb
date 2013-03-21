@@ -34,6 +34,6 @@
       xhr.setRequestHeader("X-CSRF-Token", token);
     });
   </script>
-  <%= render "ga" unless current_user? %>
+  <%= render "ga" if Rails.env.production? and !current_user? %>
 </body>
 </html>

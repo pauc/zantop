@@ -16,8 +16,6 @@
       <div class="work-info">
         <%= content_tag :h2, link_to(work.title, work),
           class: "work-title" %>
-        <%= content_tag(:div, work.intro.html_safe,
-                       class: "work-intro") if work.intro.present? %>
         <%= print_work_place work %>
         <%= print_work_date work %>
       </div>

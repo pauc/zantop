@@ -14,7 +14,6 @@ en:
     labels:
       defaults:
         title: "Title:"
-        intro: "Intro:"
         description: "Description:"
         image: "Image:"
         place: "Place:"
