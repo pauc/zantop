@@ -6,10 +6,6 @@
     <%= site_name %>
   </div>
   <nav id="main_menu" role="navigation">
-    <% if front? %>
-      <%= render 'menu_front' %>
-    <% else %>
-      <%= render 'menu' %>
-    <% end %>
+    <%= render 'menu' %>
   </nav>
 </header>

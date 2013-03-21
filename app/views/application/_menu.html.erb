@@ -1,2 +1,12 @@
-<%= link_to ActionWork.model_name.human(count: 2), action_works_path, class: 'action' %>
-<%= link_to VisualWork.model_name.human(count: 2), visual_works_path, class: 'visual' %>
+<% if front? %>
+  <%= content_tag 'i', 'Art' %>
+  <div>
+    <%= link_to t('action'), action_works_path, class: 'action' %>
+  </div>
+  <div>
+    <%= link_to t('visual'), visual_works_path, class: 'visual' %>
+  </div>
+<% else %>
+  <%= link_to ActionWork.model_name.human(count: 2), action_works_path, class: 'action' %>
+  <%= link_to VisualWork.model_name.human(count: 2), visual_works_path, class: 'visual' %>
+<% end %>

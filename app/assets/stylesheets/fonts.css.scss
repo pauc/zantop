@@ -18,16 +18,18 @@ h2 {
   font-weight: bold;
 }
 
-#main_menu {
+#main_menu a {
   font-size: 1.3em;
-
-  a {
-    color: inherit;
-  }
+  color: inherit;
 }
 
-a {
+a, a:visited, a:active {
+  color: #900;
   text-decoration: none;
+}
+
+a:hover {
+  color: #f00;
 }
 
 /* Uniformitzar l'aspecte del títol */
@@ -55,10 +57,12 @@ a {
 /* Estils de fonts per a la pàgina d'inici */
 .front {
   #brand, #main_menu {
-    font-size: 3em;
+    div a {
+      font-size: 4em;
+    }
 
     i {
-      font-size: 1.5em;
+      font-size: 2em;
       font-style: normal;
     }
   }

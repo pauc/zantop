@@ -20,16 +20,6 @@
     width: $sidebar_width;
     margin-left: $sidebar_gap;
   }
-
-  .front {
-    #main_header {
-      padding: 3em 0;
-    }
-
-    #main_menu {
-      font-size: 2em;
-    }
-  }
 }
 
 @media (max-width: 768px) {
@@ -44,13 +34,13 @@
     }
   }
 
-  #works {
-    margin-left: -3%;
+  .front #works {
+    margin-left: -5%;
 
     .work {
-      width: 47%;
-      margin-left: 3%;
-      margin-top: 3%;
+      width: 45%;
+      margin-left: 5%;
+      margin-top: 5%;
     }
   }
 
@@ -74,20 +64,26 @@
   }
 
   .front {
-    #main_menu {
-      font-size: 1em;
+    #main_menu div a {
+      font-size: 3em;
+    }
+
+    #main {
+      width: auto;
+      float: none;
+      margin: 0 1em;
     }
   }
 }
 
 @media (max-width: 340px) {
-  #works {
+  .front #works {
     margin-left: 0;
 
     .work {
-      width: 100%;
-      margin-left: 0;
-      margin-top: 1em;
+      width: 90%;
+      float: none;
+      margin: 2em auto 0;
     }
   }
 }
