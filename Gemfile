@@ -55,6 +55,8 @@ group :development do
   gem 'quiet_assets'
   gem 'thin'
   gem 'hirb'
+  gem 'bullet'
+  #gem 'rack-mini-profiler'
 end
 
 group :test do
