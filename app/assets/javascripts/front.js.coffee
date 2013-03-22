@@ -4,14 +4,13 @@ changePagination = (pagination) ->
   pagination.html "<a id='ajx_get_works' href='" + url + "'>" + alt_text + "</a>"
   url
 
-
 jQuery ->
   if $('#pagination').length
     $('.new-work').removeClass('new-work')
     pagination = $('#pagination')
     url = changePagination pagination
 
-    $('#ajx_get_works').on "click", (event) ->
+    $('#pagination').on "click", "#ajx_get_works", (event) ->
       event.preventDefault()
       $.getScript url, ->
         url = changePagination pagination
