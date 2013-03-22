@@ -24,6 +24,10 @@ ca:
 
   categories: Categories
 
+  menu:
+    action_art: "Art d'acció"
+    visual_art: "Art visual"
+
   will_paginate:
     previous_label: Anterior
     next_label: Següent
@@ -50,14 +54,14 @@ ca:
     new:
       title: Nou Treball d'acció
 
-    edit: 
+    edit:
       title: Editar <span>%{work}</span>
 
   pages:
     edit:
       title: Editar <span>%{page}</span>
 
-  users: 
+  users:
     index:
       title: Llistat d'usuaris
 

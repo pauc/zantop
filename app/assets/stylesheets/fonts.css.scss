@@ -1,26 +1,30 @@
 body {
   font-size: 100%;
-  font-family: 'cantarellregular', 'ubuntu_lightregular', sans-serif;
+  font-family: 'cantarellregular', sans-serif;
   color: $dark_grey
 }
 
-h1, h2, h3, h4, h5, h6, #main_menu, .f-title {
-  font-family:  'im_fell_english_proregular', 'cabinsketchregular', serif;
+h1, h2, h3, h4, h5, h6, .front #main_menu, .f-title {
+  font-family:  'im_fell_english_proregular', serif;
   font-weight: normal;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 #main_menu a {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: inherit;
+}
+
+.no-front #main_menu a {
+  color: #eee;
 }
 
 a, a:visited, a:active {

@@ -2,6 +2,10 @@ body {
   background: image-url('ricepaper2.png');
 }
 
+.no-front #header_container {
+  background: transparent image-url('header-bg.png');
+}
+
 #admin_bar {
   background: white;
 }

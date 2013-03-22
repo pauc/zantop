@@ -10,7 +10,7 @@
 <body class="<%= body_classes %>" >
   <%= render 'session_bar' if current_user? %>
   <div id="wrapper" <%= "class=top-bar" if current_user? %> >
-    <div class="container">
+    <div id="header_container" class="container">
       <%= render 'header' %>
     </div>
     <div class="container">

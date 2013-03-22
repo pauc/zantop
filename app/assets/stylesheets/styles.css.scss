@@ -40,6 +40,12 @@ p, li {
   margin-top: 0.5em;
 }
 
+/* Estils per a la caçalera */
+.no-front #header_container {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
 /* Estils per a la caixa debug */
 .debug_dump {
   background: #aaa;
