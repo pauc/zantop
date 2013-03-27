@@ -52,7 +52,7 @@
       float: left;
       margin-left: 3.333333%;
       margin-top: 3.333333%;
-      @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
+      @include box-shadow(0 0 6px 1px rgba(77, 28, 34, 0.61));
       background: black;
 
       a.work-preview {
@@ -73,7 +73,7 @@
   .work-title {
     width: 100%;
     position: absolute;
-    bottom: -0.2em;
+    bottom: -6px;
     left: -0.5em;
     border-width: 0.5em;
     border-style: solid;

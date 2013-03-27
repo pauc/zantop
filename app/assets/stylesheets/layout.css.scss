@@ -22,7 +22,8 @@ $sidebar_gap: 1.5em;
 }
 
 .no-front #header_container {
-  margin-top: 1.5em;
+  position: relative;
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -33,7 +34,9 @@ $sidebar_gap: 1.5em;
 .no-front #brand {
   width: 5em;
   float: left;
-  margin: -.5em 0 -2.2em;
+  position: relative;
+  top: .2em;
+  margin: -1em 0 -2.2em;
 }
 
 #site_name {
@@ -46,7 +49,6 @@ $sidebar_gap: 1.5em;
 
 body.no-front #main_menu {
   float: left;
-  margin-top: 0.3em;
 
   a {
     margin-left: 1em;
@@ -62,7 +64,7 @@ body.no-front #main_menu {
 }
 
 .no-front #select_lang {
-  top: -1.5em;
+  top: -1.9em;
 }
 
 #flash_messages {
