@@ -2,10 +2,6 @@ class Page < ActiveRecord::Base
   translates :title, :body
 
   attr_accessible :body, :title
-  
-  class Translation
-    attr_accessible :locale
-  end
 
   include UserInputCleaner
 

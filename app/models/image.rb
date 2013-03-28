@@ -10,10 +10,6 @@ class Image < ActiveRecord::Base
 
   translates :credits
 
-  class Translation
-    attr_accessible :locale
-  end
-
   mount_uploader :image, ImageUploader
 
   validate :image_xor_video

@@ -3,11 +3,6 @@ class Tag < ActiveRecord::Base
 
   translates :name
 
-  class Translation
-    attr_accessible :locale
-    attr_accessible :name
-  end
-
   extend FriendlyId
   friendly_id :name, use: [:slugged, :simple_i18n, :history]
 

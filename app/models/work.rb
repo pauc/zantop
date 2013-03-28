@@ -9,10 +9,6 @@ class Work < ActiveRecord::Base
   translates :title, :description, :techniques, :place
   clean_fields :description
 
-  class Translation
-    attr_accessible :locale
-  end
-
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 

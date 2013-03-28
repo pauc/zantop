@@ -24,7 +24,7 @@ class ActionWorksController < ApplicationController
   end
 
   def create
-    flash.notice = t('Created') if action_work.save
+    flash.notice = t('created') if action_work.save
     respond_with action_work
   end
 
