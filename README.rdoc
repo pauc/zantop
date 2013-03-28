@@ -1,1 +1,3 @@
 http://mireiazantop.com
+
+{<img src="https://codeclimate.com/github/pauc/zantop.png" />}[https://codeclimate.com/github/pauc/zantop]
