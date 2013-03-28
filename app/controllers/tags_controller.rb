@@ -5,7 +5,7 @@ class TagsController < ApplicationController
 
   expose(:categories) { Tag.order('created_at DESC') }
   expose(:category) { Tag.find(params[:id]) }
-  expose(:published_works) { category.works.published }
+  expose(:published_works) { category.works.published.includes(:translations) }
 
   def index
     respond_to do |format|

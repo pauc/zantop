@@ -8,7 +8,7 @@ class ActionWorksController < ApplicationController
   expose(:action_works)
   expose(:action_work)
   expose(:work) { action_work }
-  expose(:published_works) { ActionWork.published }
+  expose(:published_works) { ActionWork.published.includes(:translations) }
 
   def index
     respond_with published_works, template: 'application/works_list'

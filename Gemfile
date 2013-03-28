@@ -56,7 +56,7 @@ group :development do
   gem 'thin'
   gem 'hirb'
   gem 'bullet'
-  #gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler'
 end
 
 group :test do

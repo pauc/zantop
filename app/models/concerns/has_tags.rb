@@ -5,7 +5,7 @@ module HasTags
     attr_accessible :tag_tokens
     attr_reader :tag_tokens
     has_many :taggings, as: :taggable, dependent: :destroy
-    has_many :tags, through: :taggings
+    has_many :tags, through: :taggings, include: :translations
   end
 
   def tag_tokens=(tokens)
