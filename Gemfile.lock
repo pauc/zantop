@@ -119,6 +119,7 @@ GEM
     highline (1.6.15)
     hike (1.2.1)
     hirb (0.7.0)
+    htmlentities (4.3.1)
     http_accept_language (1.0.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -290,6 +291,7 @@ DEPENDENCIES
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
   hirb
+  htmlentities
   http_accept_language
   jquery-rails
   jquery-ui-rails
@@ -299,6 +301,7 @@ DEPENDENCIES
   modernizr-rails
   nested_form
   newrelic_rpm
+  nokogiri
   normalize-rails
   pg
   quiet_assets

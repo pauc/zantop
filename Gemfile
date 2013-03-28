@@ -37,6 +37,8 @@ gem 'rails-translate-routes'
 gem 'http_accept_language'
 gem 'globalize3'
 
+gem 'nokogiri'
+gem 'htmlentities'
 gem 'truncate_html'
 
 group :assets do
