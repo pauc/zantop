@@ -1,8 +1,23 @@
 ca:
-  login: entrar
+  routes:
+    action_works: art-daccio
+    visual_works: art-visual
+    about: bio
+    contact: contacte
+    tags: categories
 
 es:
-  login: entrar
+  routes:
+    action_works: art-de-accion
+    visual_works: arte-visual
+    about: bio
+    contact: contacto
+    tags: categorias
 
 en:
-  login: login
+  routes:
+    action_works: action-art
+    visual_works: visual-art
+    about: bio
+    contact: contact
+    tags: tags

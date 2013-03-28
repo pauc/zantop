@@ -45,3 +45,15 @@ div.fields {
   background: lighten($grey, 20%);
 }
 
+#footer {
+  background: #dfcf80;
+
+  &:before {
+    background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 0;
+    content: " ";
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+  }
+}

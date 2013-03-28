@@ -103,5 +103,11 @@ body.with_sidebar #main {
 
 #footer {
   margin-top: 5em;
-  padding: 1em 0;
+  margin-bottom: -2em;
+  padding: 0.6em 0 2em;
+  position: relative;
+}
+
+#footer_menu {
+  margin-top: 1em;
 }

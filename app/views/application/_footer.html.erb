@@ -1,4 +1,13 @@
 <footer id="footer" role="contentinfo">
   <div class='container'>
+    <div id="footer_page_name">
+      <h3><%= link_to "MireiaZantop.com", front_path %></h3>
+    </div>
+    <div id="footer_menu">
+      <%= link_to t('menu.action_art'), action_works_path %>
+      <%= link_to t('menu.visual_art'), visual_works_path %>
+      <%= link_to t('menu.about'), about_path %>
+      <%= link_to t('menu.contact'), contact_path %>
+    </div>
   </div>
 </footer>
