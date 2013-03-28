@@ -3,6 +3,7 @@ es:
   cancel: Cancelar
   change_password: Cambiar contraseña
   create: Crear
+  created: "Nueco contenido creado correctamente. Ole!"
   delete: Borrar
   deleted: Contenido Borrado.
   edit: Editar
@@ -12,9 +13,6 @@ es:
 
   under_construction: En construcción
 
-  contact: Contacto
-  about: Sobre mi
-
   action: Acción
   visual: Visual
 
@@ -23,6 +21,12 @@ es:
   new_element: Nuevo %{e}
 
   categories: Categorias
+
+  menu:
+    about: Bio
+    action_art: "Arte de acción"
+    contact: Contacto
+    visual_art: "Arte visual"
 
   will_paginate:
     previous_label: Anterior

@@ -11,7 +11,7 @@ module WorksHelper
 
   def print_work_date(work)
     if work.respond_to?("realization_date") and !work.realization_date.blank?
-      "<div class='work-date'><p>#{work.realization_date}</p></div>".html_safe
+      "<div class='work-date'><p>#{l work.realization_date}</p></div>".html_safe
     end
   end
 

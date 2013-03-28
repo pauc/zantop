@@ -3,6 +3,7 @@ ca:
   cancel: Cancel·lar
   change_password: Canviar contrassenya
   create: Crear
+  created: "Contingut creat correctament. Ole!"
   deleted: Contingut esborrat.
   delete: Esborrar
   edit: Editar
@@ -11,9 +12,6 @@ ca:
   updated: Contingut actualitzat.
 
   under_construction: En construcció
-
-  contact: Contacte
-  about: Sobre mi
 
   action: Acció
   visual: Visual
@@ -25,7 +23,9 @@ ca:
   categories: Categories
 
   menu:
+    about: Bio
     action_art: "Art d'acció"
+    contact: Contacte
     visual_art: "Art visual"
 
   will_paginate:

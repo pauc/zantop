@@ -3,6 +3,7 @@ en:
   cancel: Cancel
   change_password: Chanche password
   create: Create
+  created: "New content created. Ole!"
   delete: Delete
   deleted: Content deleted
   edit: Edit
@@ -12,9 +13,6 @@ en:
 
   under_construction: Under construction
 
-  contact: Contact
-  about: About me
-
   action: Action
   visual: Visual
 
@@ -23,6 +21,12 @@ en:
   new_element: New %{e}
 
   categories: Categories
+
+  menu:
+    about: Bio
+    action_art: Action art
+    contact: Contact
+    visual_art: Visual art
 
   will_paginate:
     previous_label: Previous
