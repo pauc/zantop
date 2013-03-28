@@ -41,7 +41,7 @@ ca:
 
   visual_works:
     works_list:
-      title: Tots els treballs visuals
+      title: Art visual
 
     edit:
       title: Editar <span>%{work}</span>
@@ -51,7 +51,7 @@ ca:
 
   action_works:
     works_list:
-      title: Tots els treballs d'acció
+      title: Art d'acció
 
     new:
       title: Nou Treball d'acció

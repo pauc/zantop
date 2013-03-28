@@ -41,7 +41,7 @@ es:
 
   visual_works:
     works_list:
-      title: Todos los trabajos visuales
+      title: Arte visual
 
     edit:
       title: Editar <span>%{work}</span>
@@ -51,19 +51,19 @@ es:
 
   action_works:
     works_list:
-      title: Todos los trabajos de acción
+      title: Arte de acción
 
     new:
       title: Nuevo travajo de acción
 
-    edit: 
+    edit:
       title: Editar <span>%{work}</span>
 
   pages:
     edit:
       title: Editar <span>%{page}</span>
 
-  users: 
+  users:
     index:
       title: Lista de usuarios
 

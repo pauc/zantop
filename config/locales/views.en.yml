@@ -41,7 +41,7 @@ en:
 
   visual_works:
     works_list:
-      title: Listing Visual Works
+      title: Visual art
 
     edit:
       title: Edit <span>%{work}</span>
@@ -51,19 +51,19 @@ en:
 
   action_works:
     works_list:
-      title: Listing Action Works
+      title: Action art
 
     new:
       title: New action work
 
-    edit: 
+    edit:
       title: Edit <span>%{work}</span>
 
   pages:
     edit:
       title: Edit <span>%{page}</span>
 
-  users: 
+  users:
     index:
       title: Listing Users
 
