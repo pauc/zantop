@@ -28,6 +28,14 @@ form {
     }
   }
 
+  .image-preview {
+    max-width: 100px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
   p {
     margin: 0;
   }

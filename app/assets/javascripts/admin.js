@@ -10,3 +10,4 @@
 //= require sortables
 //= require sortable_fields
 //= require tags
+//= require images

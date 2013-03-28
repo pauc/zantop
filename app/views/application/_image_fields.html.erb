@@ -1,11 +1,10 @@
 <span class="handle"></span>
-<% if f.object.new_record? %>
-  <%= f.input :image %>
-  <%= f.input :video %>
-<% else %>
-  <%= f.input :image, as: :image_preview, input_html: { preview_version: :thumb } if f.object.image.present? %>
-  <%= f.input :video if f.object.video.present? %>
-<% end %>
+<div class="image-preview">
+  <%= image_tag f.object.image.thumb if f.object.image.present? %>
+</div>
+<%= f.input :image %>
+<%= f.input :image_cache, as: :hidden %>
+<%= f.input :video %>
 <%= f.input :credits, as: :text, input_html: { rows: 4, class: "image-credits" } %>
 <%= f.hidden_field :position, type: "hidden" %>
 <%= f.link_to_remove "Remove this image", class: "btn_wrng" %>

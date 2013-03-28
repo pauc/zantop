@@ -6,7 +6,7 @@ class Image < ActiveRecord::Base
 
   belongs_to :illustrated, polymorphic: true, counter_cache: true
 
-  attr_accessible :image, :video, :credits
+  attr_accessible :image, :video, :credits, :image_cache
 
   translates :credits
 
