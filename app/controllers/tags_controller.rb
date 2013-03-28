@@ -18,13 +18,14 @@ class TagsController < ApplicationController
   end
 
   def update
-    initial_locale = I18n.locale
     I18n.available_locales.each do |locale|
-      I18n.locale = locale
-      category.name = params[:tag][:name][locale]
-      category.save
+      I18n.with_locale(locale) do
+        if params[:tag][:name][locale].present?
+          category.name = params[:tag][:name][locale]
+          category.save
+        end
+      end
     end
-    I18n.locale = initial_locale
 
     respond_to do |format|
       format.html { respond_with category, location: admin_tags_path }
