@@ -55,6 +55,15 @@
   .sidebar {
     width: 100%;
     margin-left: 0;
+
+    .sidebar-block {
+      margin: 0;
+
+      .tags_list li {
+        float: left;
+        margin-right: 1.5em;
+      }
+    }
   }
 }
 
@@ -84,6 +93,29 @@
       width: 90%;
       float: none;
       margin: 2em auto 0;
+    }
+  }
+
+  .works-list {
+    .work.odd, .work.even {
+      text-align: left;
+
+      .work-title {
+        float: right;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .view-more {
+        display: none;
+      }
+
+      .work-info {
+        width: 100%;
+        clear: both;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }

@@ -37,6 +37,7 @@ gem 'rails-translate-routes'
 gem 'http_accept_language'
 gem 'globalize3'
 
+gem 'truncate_html'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

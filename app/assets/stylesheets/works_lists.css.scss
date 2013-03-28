@@ -1,29 +1,53 @@
 .works-list {
   .work {
     margin: 1em 0;
+    padding: 1em 0;
     @include clearfix;
+  }
+
+  .work .work-title {
+    width: 75%;
+
+    h2 {
+      margin-top: 0;
+      padding: 0 0.666666em;
+    }
   }
 
   .image-wrapper {
     width: 25%;
-    height: 100%;
-    max-width: 200px;
-    min-width: 80px;
     float: left;
-    margin-right: 0.5em;
 
     img {
       width: 100%;
     }
   }
 
+  .work.odd {
+    .work-title {
+      float: right;
+    }
+
+    .work-info {
+      margin-left: 25%;
+      padding-left: 1em;
+    }
+  }
+
   .work.even {
     text-align: right;
 
+    .work-title {
+      float: left;
+    }
+
     .image-wrapper {
       float: right;
-      margin-right: 0;
-      margin-left: 0.5em;
+    }
+
+    .work-info {
+      margin-right: 25%;
+      padding-right: 1em;
     }
   }
 }

@@ -37,4 +37,9 @@ module ApplicationHelper
     en = link_to_unless_current 'eng', url_for(locale: 'en')
     "<li title='Castellano'>#{es}</li> | <li title='Català'>#{ca}</li> | <li title='English'>#{en}</li>"
   end
+
+  def view_more(destination)
+    content_tag "p", link_to( raw(t('view_more') + " &rarr;"),
+                                  destination ), class: 'view-more'
+  end
 end

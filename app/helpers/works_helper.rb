@@ -16,14 +16,21 @@ module WorksHelper
   end
 
   def print_work_description(work)
-    if work.respond_to?("description") and !work.description.blank?
+    if work.respond_to?("description") and work.description.present?
       "<div class='work-description'><p>#{work.description}</div>".html_safe
+    end
+  end
+
+  def print_work_truncated_description(work)
+    if work.respond_to?("description") and work.description.present?
+      description = truncate_html( work.description, length: 300 )
+      "<div class='work-description'>#{description}</div>".html_safe
     end
   end
 
   def print_work_techniques(work)
     if work.respond_to?("techniques") and !work.techniques.blank?
-      "<div class='work-description'><p>#{work.techniques}</p></div>".html_safe
+      "<div class='work-description'>#{work.techniques}</p></div>".html_safe
     end
   end
 
