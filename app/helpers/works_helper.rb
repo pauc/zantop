@@ -23,7 +23,7 @@ module WorksHelper
 
   def print_work_truncated_description(work)
     if work.respond_to?("description") and work.description.present?
-      description = truncate_html( work.description, length: 300 )
+      description = truncate_html( work.description, length: 300, omission: ' ...', separator: ' ' )
       "<div class='work-description'>#{description}</div>".html_safe
     end
   end
