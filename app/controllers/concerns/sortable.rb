@@ -7,27 +7,20 @@ module Sortable
     render nothing: true
   end
 
-
-  def sort_nested
-    object = controller_name.classify.constantize.find(params[:id])
-    sortable = params[:sortable]
-    sortables = object.send("#{sortable}")
-    reorder sortables
-    render nothing: true
-  end
-
   private
 
   def reorder(sortables)
     sql = "BEGIN; "
     sortables.each do |obj|
-      # obj.position = params["#{obj.class.table_name.classify.downcase}"].index(obj.id.to_s) + 1
-      position = params["#{obj.class.table_name.classify.downcase}"].index(obj.id.to_s) + 1
-      table = obj.class.table_name
-      sql << "UPDATE #{table} SET position = #{position} WHERE #{table}.id = #{obj.id}; "
-      #obj.save
+      sql << sql_obj_reorder(obj)
     end
     sql << "COMMIT;"
     controller_name.classify.constantize.connection.update(sql)
+  end
+
+  def sql_obj_reorder(object)
+    position = params["#{object.class.table_name.classify.downcase}"].index(object.id.to_s) + 1
+    table = object.class.table_name
+    "UPDATE #{table} SET position = #{position} WHERE #{table}.id = #{object.id}; "
   end
 end

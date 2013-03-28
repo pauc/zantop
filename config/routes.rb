@@ -16,13 +16,9 @@ Zantop::Application.routes.draw do
     post :sort, on: :collection
   end
 
-  resources :action_works do
-    post :sort_nested, on: :member
-  end
+  resources :action_works
 
-  resources :visual_works do
-    post :sort_nested, on: :member
-  end
+  resources :visual_works
 
   # Sessions
   resources :sessions, only: [:create, :destroy]
