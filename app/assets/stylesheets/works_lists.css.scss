@@ -5,13 +5,13 @@
     @include clearfix;
   }
 
-  .work .work-title {
+  .work-title, .work-place, .work-date, .work-description {
     width: 75%;
+  }
 
-    h2 {
-      margin-top: 0;
-      padding: 0 0.666666em;
-    }
+  .work-title h2 {
+    margin-top: 0;
+    padding: 0 0.666666em;
   }
 
   .image-wrapper {
@@ -28,9 +28,12 @@
       float: right;
     }
 
-    .work-info {
-      margin-left: 25%;
-      padding-left: 1em;
+    .work-date, .work-place, .work-description {
+      float: right;
+
+      h2, p {
+        padding-left: 1em;
+      }
     }
   }
 
@@ -45,9 +48,12 @@
       float: right;
     }
 
-    .work-info {
-      margin-right: 25%;
-      padding-right: 1em;
+    .work-date, .work-place, .work-description {
+      float: left;
+
+      h2, p {
+        padding-right: 1em;
+      }
     }
   }
 }

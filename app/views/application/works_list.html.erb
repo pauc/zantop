@@ -17,11 +17,9 @@
                      default_image_for_works), work %>
         <%= view_more work %>
       </div>
-      <div class="work-info">
-        <%= print_work_place work %>
-        <%= print_work_date work %>
-        <%= print_work_truncated_description work %>
-      </div>
+      <%= print_work_place work %>
+      <%= print_work_date work %>
+      <%= print_work_truncated_description work %>
     <% end %>
   <% end %>
 </div>

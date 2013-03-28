@@ -83,6 +83,12 @@
       margin: 0 1em;
     }
   }
+
+  .works-list {
+    .view-more, .work-place, .work-date {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 340px) {
@@ -100,21 +106,29 @@
     .work.odd, .work.even {
       text-align: left;
 
+      .image-wrapper {
+        float: left;
+      }
+
       .work-title {
         float: right;
         margin-left: 0;
         margin-right: 0;
+
+        p {
+          padding: 0 0 0 1em;
+        }
       }
 
-      .view-more {
-        display: none;
-      }
-
-      .work-info {
+      .work-description {
         width: 100%;
+        float: none;
         clear: both;
         margin: 0;
-        padding: 0;
+
+        p {
+          padding: 0;
+        }
       }
     }
   }
