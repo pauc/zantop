@@ -39,5 +39,7 @@ Zantop::Application.routes.draw do
     get 'admin', on: :collection
   end
 
+  post '/send_email', to: 'application#send_email'
+
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
 end
