@@ -37,9 +37,14 @@ gem 'rails-translate-routes'
 gem 'http_accept_language'
 gem 'globalize3'
 
+# Truncate html
 gem 'nokogiri'
 gem 'htmlentities'
 gem 'truncate_html'
+
+# Caching
+gem 'dalli'
+gem 'cache_digests'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

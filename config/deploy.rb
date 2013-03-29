@@ -13,6 +13,7 @@ load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
 load "config/recipes/db_utils"
+load "config/recipes/memcached"
 
 server "176.58.122.177", :web, :app, :db, primary: true
 

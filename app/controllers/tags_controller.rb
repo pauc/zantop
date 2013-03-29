@@ -14,7 +14,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    respond_with category, template: 'application/works_list'
+    respond_with category
   end
 
   def update

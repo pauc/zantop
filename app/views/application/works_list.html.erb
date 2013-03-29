@@ -1,7 +1,7 @@
 <% if controller.controller_name == "tags" %>
   <%= page_title category.name.capitalize %>
 <% else %>
-  <% page_title t("#{controller.controller_name}.works_list.title") %>
+  <%= page_title t("#{controller.controller_name}.works_list.title") %>
 <% end %>
 
 <div class="works-list">

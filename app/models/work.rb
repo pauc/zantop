@@ -26,7 +26,15 @@ class Work < ActiveRecord::Base
   default_scope order: 'position DESC'
   scope :published, where(published: true)
 
+  after_update :touch_tags
+
   def first_image
     self.images.where("image is not null").first.try(:image).try(:medium)
+  end
+
+  private
+
+  def touch_tags
+    self.tags.each { |t| t.touch }
   end
 end

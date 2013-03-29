@@ -1,8 +1,12 @@
 <% works.each do |work| %>
-  <%= div_for work, class: 'work new-work' do |work| %>
-    <%= link_to preview_image(work), work, class: "work-preview" %>
-    <div class="work-title">
-      <%= link_to work.title, work, class: "f-title" %>
-    </div>
+
+  <% cache [I18n.locale, :f_work, work] do %>
+    <%= div_for work, class: 'work new-work' do |work| %>
+      <%= link_to preview_image(work), work, class: "work-preview" %>
+      <div class="work-title">
+        <%= link_to work.title, work, class: "f-title" %>
+      </div>
+    <% end %>
   <% end %>
+
 <% end %>
