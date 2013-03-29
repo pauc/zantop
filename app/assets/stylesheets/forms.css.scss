@@ -1,3 +1,20 @@
+/* Estils per al formulari de contacte */
+.dashboards.contact {
+  form {
+    input, textarea {
+      width: 40%;
+      min-width: 12em;
+    }
+
+    textarea {
+      width: 65%;
+      min-width: 16em;
+      min-height: 9em;
+    }
+  }
+}
+
+/* Estils per a tots els formularis */
 form {
   padding: 0.5em;
   border: 1px solid $grey;
