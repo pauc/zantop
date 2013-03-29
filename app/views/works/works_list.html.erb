@@ -1,0 +1,5 @@
+<%= page_title t("#{controller.controller_name}.works_list.title") %>
+
+<div class="works-list">
+  <%= render partial: 'works/work_preview', collection: published_works, as: :work %>
+</div>

@@ -11,11 +11,11 @@ class ActionWorksController < ApplicationController
   expose(:published_works) { ActionWork.published.includes(:translations) }
 
   def index
-    respond_with published_works, template: 'application/works_list'
+    respond_with published_works, template: 'works/works_list'
   end
 
   def show
-    respond_with action_work, template: 'application/work'
+    respond_with action_work, template: 'works/show'
   end
 
   def new
