@@ -11,3 +11,4 @@
 //= require sortable_fields
 //= require tags
 //= require images
+//= require ckeditor/init

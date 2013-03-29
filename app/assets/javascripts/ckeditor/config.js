@@ -46,10 +46,6 @@ CKEDITOR.editorConfig = function( config )
 
   config.language = 'ca';
 
-  /* Extra plugins */
-  // works only with en, ru, uk locales
-  config.extraPlugins = "embed,attachment";
-
   config.forcePasteAsPlainText = true;
 
   config.format_tags = 'p;h3';
