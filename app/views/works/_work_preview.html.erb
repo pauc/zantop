@@ -1,6 +1,6 @@
 
-<% cache [I18n.locale, :work_preview, work] do %>
-  <%= div_for work, class: "work " + cycle('odd', 'even') do %>
+<%= div_for work, class: "work " + cycle('odd', 'even') do %>
+  <% cache [I18n.locale, :work_preview, work] do %>
     <div class="work-title">
       <%= content_tag :h2, link_to(work.title, work) %>
     </div>
