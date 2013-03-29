@@ -1,0 +1,9 @@
+<%= page_title t('menu.contact') %>
+
+<%= simple_form_for @contact_message do |f| %>
+  <%= f.input :from_email %>
+  <%= f.input :from_name %>
+  <%= f.input :subject%>
+  <%= f.input :text, as: :text, input_html: { cols: 20, rows: 9 } %>
+  <%= f.button :submit, value: "Enviar" %>
+<% end %>

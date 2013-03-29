@@ -1,4 +1,3 @@
-#encoding: UTF-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
@@ -9,21 +8,7 @@ class ApplicationController < ActionController::Base
 
   expose (:tags) { Tag.enabled.order("taggings_count DESC").includes(:translations) }
 
-  def send_email
-    deliver_message
-    flash[:notice] = "Missatge enviat correctament. Gràcies!!"
-    redirect_to front_path
-  end
-
   private
-
-  def deliver_message
-    from_email = params[:from_email]
-    from_name = params[:from_name]
-    subject = params[:subject]
-    text = params[:text]
-    ContactMailer.contact_message(from_email, from_name, subject, text).deliver
-  end
 
   VALID_LOCALES = ['es', 'ca', 'en']
   def set_locale

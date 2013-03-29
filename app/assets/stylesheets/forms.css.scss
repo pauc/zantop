@@ -1,6 +1,8 @@
 /* Estils per al formulari de contacte */
-.dashboards.contact {
+.contact_messages.new {
   form {
+    margin-top: 1em;
+
     input, textarea {
       width: 40%;
       min-width: 12em;
@@ -10,6 +12,11 @@
       width: 65%;
       min-width: 16em;
       min-height: 9em;
+    }
+
+    input.btn {
+      width: auto;
+      @include button(#ac4a19);
     }
   }
 }

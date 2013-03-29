@@ -28,7 +28,9 @@ module ApplicationHelper
   end
 
   def sidebar?
-    !front? and !(%w(new edit admin).include?(controller.action_name))
+    !front? and
+      !(%w(new edit admin).include?(controller.action_name)) or
+      controller.controller_name == "contact_messages"
   end
 
   def lang_selector
