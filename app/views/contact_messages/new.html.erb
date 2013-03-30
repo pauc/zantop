@@ -1,6 +1,7 @@
 <%= page_title t('menu.contact') %>
 
 <%= simple_form_for @contact_message do |f| %>
+  <%= f.error_notification %>
   <%= f.input :from_email %>
   <%= f.input :from_name %>
   <%= f.input :subject%>

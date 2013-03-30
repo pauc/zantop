@@ -1,5 +1,5 @@
 /* Estils per al formulari de contacte */
-.contact_messages.new {
+.contact_messages.new, .contact_messages.create {
   form {
     margin-top: 1em;
 
@@ -18,6 +18,14 @@
       width: auto;
       @include button(#ac4a19);
     }
+  }
+
+  .alert.alert-error {
+    background: transparent;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 2px solid red;
+    border-radius: 5px;
   }
 }
 
