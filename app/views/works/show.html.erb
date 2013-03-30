@@ -1,5 +1,6 @@
+<%= page_title work.title %>
+
 <% cache [locale, :show, work] do %>
-  <%= page_title work.title %>
   <%= print_work_place work %>
   <%= print_work_date work %>
   <% if !work.images.empty? %>
