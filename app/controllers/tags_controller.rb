@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   include Authorization
   respond_to :html
 
-  expose(:categories) { Tag.order('created_at DESC') }
+  expose(:categories) { Tag.includes(:translations) }
   expose(:category) { Tag.find(params[:id]) }
   expose(:published_works) { category.works.published.includes(:translations) }
 
