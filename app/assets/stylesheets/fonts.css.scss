@@ -30,10 +30,12 @@ h2 {
 a, a:visited, a:active {
   color: #ac4a19;
   text-decoration: none;
+  @include transition(color 0.25s ease-in-out);
 }
 
 a:hover {
   color: #d18007;
+  @include transition(color 0.25s ease-in-out);
 }
 
 /* Uniformitzar l'aspecte del títol */
@@ -51,9 +53,11 @@ a:hover {
   /* Buttons */
   a {
     color: #222;
+    @include transition(color 0.25s ease-in-out);
 
     &.warning {
       color: #fff;
+      @include transition(color 0.25s ease-in-out);
     }
   }
 }
@@ -63,6 +67,12 @@ a:hover {
   #brand, #main_menu {
     div a {
       font-size: 4em;
+      @include transition(color 0.25s ease-in-out);
+
+      &:hover {
+        color: #ac4a19;
+        @include transition(color 0.25s ease-in-out);
+      }
     }
 
     i {
@@ -101,4 +111,8 @@ form .error .help-inline {
 
 #footer_page_name {
   text-decoration: underline;
+}
+
+#ajx_get_works {
+  font-size: 1.5em;
 }
