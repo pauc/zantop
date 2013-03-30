@@ -13,7 +13,7 @@ module ApplicationHelper
   def site_name
     tag = front? ? :h1 : :span
     img_src = front? ? 'MireiaZantop.png' : 'MZ.png'
-    content_tag tag, link_to_unless_current(image_tag(img_src, alt: "Mireia Zantop"), front_path), id: 'site_name'
+    content_tag tag, link_to_unless_current(image_tag(img_src, alt: "Mireia Zantop"), front_path, title: t('home')), id: 'site_name'
   end
 
   def body_classes
@@ -43,5 +43,9 @@ module ApplicationHelper
   def view_more(destination)
     content_tag "p", link_to( raw(t('view_more') + " &rarr;"),
                                   destination ), class: 'view-more'
+  end
+
+  def active_link?(url)
+    return "active" if url == request.fullpath
   end
 end

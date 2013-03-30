@@ -26,3 +26,10 @@ es:
         password_confirmation: "Confirma la contraseña:"
         body: "Texto:"
         published: "Publicado?:"
+
+      contact_message:
+        from_email: "Tu correo:"
+        from_name: "Tu nombre:"
+        subject: "Asunto:"
+        text: "Texto:"
+        send: Enviar

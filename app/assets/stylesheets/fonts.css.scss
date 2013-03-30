@@ -25,6 +25,10 @@ h2 {
 
 .no-front #main_menu a {
   color: #523d14;
+
+  &:hover{
+    color: #ac4a19;
+  }
 }
 
 a, a:visited, a:active {

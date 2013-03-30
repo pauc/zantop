@@ -2,8 +2,11 @@
   <div class="sidebar-block">
     <h2><%= t('categories') %>:</h2>
     <ul class="tags_list vertical-list">
-      <% tags.each do |t| %>
-        <li><%= link_to t.name.humanize, tag_path(t) %></li>
+      <% tags.each do |tag| %>
+        <li>
+          <%= link_to tag.name.humanize, tag_path(tag),
+            class: active_link?(tag_url(tag, only_path: true)) %>
+        </li>
       <% end %>
     </ul>
   </div>

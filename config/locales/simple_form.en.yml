@@ -27,6 +27,13 @@ en:
         body: "Text:"
         published: "Published?:"
 
+      contact_message:
+        from_email: "Your e-mail:"
+        from_name: "Your name:"
+        subject: "Subject:"
+        text: "Text:"
+        send: Send
+
     # Labels and hints examples
     # labels:
     #   defaults:

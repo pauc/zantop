@@ -7,8 +7,12 @@
     <%= link_to t('visual'), visual_works_path, class: 'visual' %>
   </div>
 <% else %>
-  <%= link_to t('menu.action_art'), action_works_path %>
-  <%= link_to t('menu.visual_art'), visual_works_path %>
-  <%= link_to t('menu.about'), about_path %>
-  <%= link_to t('menu.contact'), contact_path %>
+  <%= link_to t('menu.action_art'), action_works_path,
+    class: active_link?(action_works_path) %>
+  <%= link_to t('menu.visual_art'), visual_works_path,
+    class: active_link?(visual_works_path)%>
+  <%= link_to t('menu.about'), about_path,
+    class: active_link?(about_path)%>
+  <%= link_to t('menu.contact'), contact_path,
+    class: active_link?(contact_path)%>
 <% end %>

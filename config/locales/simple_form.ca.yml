@@ -30,6 +30,13 @@ ca:
         name_en: "Anglès:"
         name_es: "Castellà:"
 
+      contact_message:
+        from_email: "El teu correu:"
+        from_name: "El teu nom:"
+        subject: "Assumpte:"
+        text: "Text:"
+        send: Enviar
+
     hints:
       users:
         edit:
