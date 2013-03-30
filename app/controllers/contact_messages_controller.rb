@@ -5,9 +5,9 @@ class ContactMessagesController < ApplicationController
   end
 
   def create
-    @message = ContactMessage.new(params[:contact_message])
-    if @message.valid?
-      ContactMailer.contact_message(@message).deliver
+    @contact_message = ContactMessage.new(params[:contact_message])
+    if @contact_message.valid?
+      ContactMailer.contact_message(@contact_message).deliver
       flash[:notice] = "Missatge enviat correctament. Gràcies!!"
       redirect_to front_path
     else
