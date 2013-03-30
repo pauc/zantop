@@ -76,3 +76,8 @@ ca:
   tags:
     works_list:
       title: "%{category}"
+
+  about_the_code:
+    html: El codi d'aquesta pàgina està disponible per ser copiat, estudiat 
+          o criticat a <a href="http://github.com/pauc/zantop">http://github.com/pauc/zantop</a>.
+          Per qualsevol dubte o suggeriment podeu contactar amb 

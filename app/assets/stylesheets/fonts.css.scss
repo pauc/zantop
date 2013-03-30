@@ -33,7 +33,7 @@ a, a:visited, a:active {
   @include transition(color 0.25s ease-in-out);
 }
 
-a:hover {
+a:hover, .front .work:hover .work-title a {
   color: #d18007;
   @include transition(color 0.25s ease-in-out);
 }

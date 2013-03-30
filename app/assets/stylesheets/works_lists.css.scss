@@ -20,6 +20,13 @@
 
     img {
       width: 100%;
+      @include box-shadow(0 0 6px 1px rgba(77, 28, 34, 0.61));
+      @include transition(box-shadow 0.25s ease-in-out);
+
+      &:hover {
+        @include box-shadow(0 0 8px 2px rgba(77, 28, 34, 0.80));
+        @include transition(box-shadow 0.25s ease-in-out);
+      }
     }
   }
 

@@ -78,7 +78,7 @@ p, li {
   }
 }
 
-/* "Agafadors per reordenar continguts */
+/* "Agafadors" per reordenar continguts */
 .handle {
   width: 1.5em;
   height: 100%;
@@ -89,4 +89,11 @@ p, li {
   background: transparent image-url('draggable.png') no-repeat center center;
   border-right: 1px solid $clear_grey;
   cursor: move;
+}
+
+/* Nota sobre el codi al peu de la pàgina */
+.about-source-code {
+  width: 50%;
+  margin: 2em auto 1em;
+  font-size: 0.75em;
 }
