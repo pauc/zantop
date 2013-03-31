@@ -1,7 +1,7 @@
 changePagination = (pagination) ->
   alt_text = pagination.data('alt_text')
   url = pagination.find('a.next_page').attr('href')
-  pagination.html "<a id='ajx_get_works' href='" + url + "'>" + alt_text + "</a>"
+  pagination.html "<a id='ajx_get_works' href='" + url + "'>" + alt_text + "</a>" if url
   url
 
 jQuery ->

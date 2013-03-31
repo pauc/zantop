@@ -49,6 +49,15 @@ div.fields {
   background: lighten($grey, 20%);
 }
 
+#image_gallery_container {
+  background: #ddd;
+  background: rgba(221, 221, 221, 0.75);
+}
+
+.galleria-container {
+  background: transparent;
+}
+
 #footer {
   background: #dfcf80;
 

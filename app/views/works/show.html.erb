@@ -3,19 +3,21 @@
 <% cache [locale, :show, work] do %>
   <%= print_work_place work %>
   <%= print_work_date work %>
-  <% if !work.images.empty? %>
-    <div id="galleria" style="height: 500px">
-      <% work.images.each do |image| %>
-        <% if image.image? %>
-          <%= link_to image_tag(image.image.thumb.to_s, data: { title: image.credits }),
-            image.image.to_s %>
+  <% unless work.images.empty? %>
+    <div id="image_gallery_container">
+      <div id="galleria">
+        <% work.images.each do |image| %>
+          <% if image.image? %>
+            <%= link_to image_tag(image.image.thumb.to_s, data: { title: image.credits }),
+              image.image.to_s %>
+            <% end %>
+          <% if image.video? %>
+            <%= link_to content_tag(:span, "Watch this video", class: "video",
+                                    data: {title: image.credits }),
+              image.video %>
           <% end %>
-        <% if image.video? %>
-          <%= link_to content_tag(:span, "Watch this video", class: "video",
-                                  data: {title: image.credits }),
-            image.video %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   <% end %>
   <%= print_work_techniques work %>

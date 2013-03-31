@@ -1,0 +1,22 @@
+.action_works.show, .visual_works.show {
+  .work-place, .work-date {
+    position: relative;
+    bottom: 1.5em;
+  }
+}
+
+#image_gallery_container {
+  width: 95%;
+  margin: 0 auto 1em;
+  border-radius: 5px;
+}
+
+.galleria-thumb-nav-left,
+.galleria-thumb-nav-right {
+  background-color: #777;
+  border-radius: 5px;
+
+  &.disabled {
+    background-color: transparent;
+  }
+}

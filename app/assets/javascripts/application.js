@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require modernizr
 //= require front
-//= require galleria/galleria-1.2.7.min
-//= require galleria/galleria.classic.min
+//= require galleria/galleria-1.2.9
+//= require galleria/galleria.classic
 //= require gallerify
 //= require works
 
