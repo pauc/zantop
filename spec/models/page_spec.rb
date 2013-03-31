@@ -1,36 +1,17 @@
 require 'spec_helper'
 
 describe Page do
-  pages = Page.all
-  if pages.empty?
-    Page.create([{title: 'About page', body: 'This is the about page'},
-                 {title: 'Contact page', body: 'This is the contact page'}]) 
+  let( :page ) { create( :page ) }
+
+  it { page.should be_valid }
+
+  it 'without title is not valid' do
+    page.title = '   '
+    expect( page ).not_to be_valid
   end
 
-  it { Page.all.size.should equal 2 }
-
-  describe 'with id 1 is the "about" page' do
-    before do
-      @p = Page.find(1)
-      @about = Page.about
-    end
-    it { @about.should == @p }
-  end
-
-  describe 'with id 2 is the "contact" page' do
-    before do
-      @p = Page.find(2)
-      @contact = Page.contact
-    end
-    it { @contact.should == @p }
-  end
-
-  describe "without body is not valid" do
-    before do
-      @p = Page.about
-      @p.body = " "
-    end
-
-    it { @p.should_not be_valid }
+  it 'without body is not valid' do
+    page.body = '   '
+    expect( page ).not_to be_valid
   end
 end

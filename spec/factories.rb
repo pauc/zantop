@@ -8,6 +8,11 @@ FactoryGirl.define do
     password_confirmation { password }
   end
 
+  factory :page do
+    sequence(:title) { |n| "Page #{n} title" }
+    body { "The body for the page" }
+  end
+
   factory :action_work do
     sequence(:title) {|n| "Action Work #{n}"}
     description { "Description for #{title}" }
