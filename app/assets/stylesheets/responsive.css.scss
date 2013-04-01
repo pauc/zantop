@@ -6,12 +6,28 @@
     font-size: 125%;
     @include transition(font-size 0.75s linear);
   }
+
+  body.with_sidebar #main {
+    $sidebar_width: 12em;
+    $sidebar_gap: 2.5em;
+
+    margin-right: -$sidebar_width - $sidebar_gap;
+
+    .content {
+      margin-right: $sidebar_width + $sidebar_gap;
+    }
+  }
+
+  .sidebar {
+    width: $sidebar_width;
+    margin-left: $sidebar_gap;
+  }
 }
 
 @media (max-width: 900px) {
   body.with_sidebar #main {
-    $sidebar_width: 14em;
-    $sidebar_gap: 1em;
+    $sidebar_width: 12em;
+    $sidebar_gap: 2em;
 
     margin-right: -$sidebar_width - $sidebar_gap;
 
