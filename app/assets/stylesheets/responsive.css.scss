@@ -1,7 +1,11 @@
 @media (min-width: 1700px) {
 }
 
-@media (min-width: 1200px) and (max-width: 1699px) {
+@media (min-width: 1281px) {
+  body {
+    font-size: 125%;
+    @include transition(font-size 0.75s linear);
+  }
 }
 
 @media (max-width: 900px) {
@@ -143,18 +147,6 @@
       display: none;
     }
   }
-}
-
-@media (max-width: 340px) {
-  .front #works {
-    margin-left: 0;
-
-    .work {
-      width: 90%;
-      float: none;
-      margin: 2em auto 0;
-    }
-  }
 
   .works-list {
     .work.odd, .work.even {
@@ -184,6 +176,18 @@
           padding: 0;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .front #works {
+    margin-left: 0;
+
+    .work {
+      width: 90%;
+      float: none;
+      margin: 2em auto 0;
     }
   }
 

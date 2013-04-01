@@ -6,7 +6,7 @@
   <% unless work.images.empty? %>
     <div id="image_gallery_container">
       <div id="galleria">
-        <% work.images.each do |image| %>
+        <% work.images.includes(:translations).each do |image| %>
           <% if image.image? %>
             <%= link_to image_tag(image.image.thumb.to_s, data: { title: image.credits }),
               image.image.to_s %>
