@@ -9,6 +9,12 @@
     width: 75%;
   }
 
+  .work-place p, .work-date p {
+    margin: 0;
+    position: relative;
+    bottom: 0.3em;
+  }
+
   .work-title h2 {
     margin-top: 0;
     padding: 0 0.666666em;
