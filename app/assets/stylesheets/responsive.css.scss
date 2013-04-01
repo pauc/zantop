@@ -74,6 +74,12 @@
     padding-right: 0.5em;
   }
 
+  .action_works.show, .visual_works.show {
+    .work-place, .work-date {
+      bottom: 1em;
+    }
+  }
+
   .container {
     padding: 0 0.5em;
   }
