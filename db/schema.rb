@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321135950) do
+ActiveRecord::Schema.define(:version => 20130402185036) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -80,30 +80,27 @@ ActiveRecord::Schema.define(:version => 20130321135950) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "post_translations", :force => true do |t|
-    t.integer  "post_id"
+  create_table "section_translations", :force => true do |t|
+    t.integer  "section_id"
     t.string   "locale"
     t.string   "title"
-    t.text     "text"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "post_translations", ["locale"], :name => "index_post_translations_on_locale"
-  add_index "post_translations", ["post_id"], :name => "index_post_translations_on_post_id"
+  add_index "section_translations", ["locale"], :name => "index_section_translations_on_locale"
+  add_index "section_translations", ["section_id"], :name => "index_section_translations_on_section_id"
 
-  create_table "posts", :force => true do |t|
-    t.string   "slug_en"
-    t.string   "slug_es"
-    t.string   "slug_ca"
+  create_table "sections", :force => true do |t|
+    t.integer  "content_id"
+    t.integer  "content_type"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
-  add_index "posts", ["slug_ca"], :name => "index_posts_on_slug_ca", :unique => true
-  add_index "posts", ["slug_en"], :name => "index_posts_on_slug_en", :unique => true
-  add_index "posts", ["slug_es"], :name => "index_posts_on_slug_es", :unique => true
+  add_index "sections", ["content_id", "content_type"], :name => "index_sections_on_content_id_and_content_type"
 
   create_table "tag_translations", :force => true do |t|
     t.integer  "tag_id"

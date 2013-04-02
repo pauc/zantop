@@ -3,6 +3,7 @@ class Work < ActiveRecord::Base
   include SlugConcern
   include UserInputCleaner
   include HasTags
+  include HasSections
 
   acts_as_list
 

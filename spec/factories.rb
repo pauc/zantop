@@ -47,4 +47,10 @@ FactoryGirl.define do
     sequence(:title) { |n| "Interesting link #{n}" }
     sequence(:url) { |n| "http://example_#{n}.com"}
   end
+
+  factory :section do |s|
+    sequence(:title) { |n| "Section #{n}" }
+    sequence(:body) { |n| "The text for section #{n}" }
+    s.association :content, factory: :visual_work
+  end
 end
