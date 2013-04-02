@@ -20,7 +20,7 @@ Spork.prefork do
   RSpec.configure do |config|
     # Include FactoryGirl syntax to simplify calls to factories
     config.include FactoryGirl::Syntax::Methods
-    
+
     # ## Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

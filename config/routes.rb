@@ -29,10 +29,6 @@ Zantop::Application.routes.draw do
   resources :pages, only: [:edit, :update]
   match '/about', to: 'dashboards#about'
 
-  # Canvi de pàgina d'inici provisional:
-  match '/front', to: 'dashboards#front'
-  root to: 'dashboards#provisional'
-
   # Tags
   resources :tags, except: [:new, :edit] do
     get 'admin', on: :collection
@@ -42,4 +38,9 @@ Zantop::Application.routes.draw do
   resources :contact_messages, only: [:create]
 
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { prefix_on_default_locale: true })
+
+  root to: 'dashboards#front'
+
+  match '/:locale', to: 'dashboards#front',
+    constraints: {:locale => /(ca|en|es)/}, as: :front
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Dashboards integration', js: true do
   let(:works) { create_list( :action_work, 20 ) }
-  before { visit front_path }
+  before { visit root_path }
 
   describe 'with empty pagination' do
     it 'there is no link to get more works' do
@@ -13,7 +13,7 @@ describe 'Dashboards integration', js: true do
   describe 'with pagination' do
     before do
       works
-      visit front_path
+      visit root_path
     end
 
     it 'there is a link to get more works' do
