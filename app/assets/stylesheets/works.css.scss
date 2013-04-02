@@ -1,3 +1,15 @@
+/* admin works page */
+.translations-info {
+  float: right;
+
+  & > div {
+    float: left;
+    margin-left: 1.5em;
+    text-transform: uppercase;
+  }
+}
+
+/* show work page */
 .action_works.show, .visual_works.show {
   .work-place, .work-date {
     position: relative;

@@ -1,4 +1,8 @@
 es:
+  ca: català
+  es: castellà
+  en: anglès
+
   home: Inicio
   back: Atrás
   cancel: Cancelar
@@ -10,6 +14,7 @@ es:
   edit: Editar
   invalid_login: Datos incorrectos.
   restricted_accessl: Acceso restringindo. Debes identificarte antes.
+  untranslated_content: Ups! Disculpa, este contenido no está traducido al castellano.
   updated: Contenido actualizado.
 
   under_construction: En construcción

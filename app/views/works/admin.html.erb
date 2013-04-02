@@ -6,6 +6,14 @@
       <% if !work.published? %>
         <span class="unpublished">(no publicat)</span>
       <% end %>
+      <small>- <%= link_to "editar", url_for_edit_work(work) %></small>
+      <div class="translations-info">
+        <% [:ca, :es, :en].each do |locale| %>
+          <div class="translation-<%= locale %>">
+            <%= translation_info(work, locale) %>
+          </div>
+        <% end %>
+      </div>
     </li>
   <% end %>
 </ul>

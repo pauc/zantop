@@ -1,4 +1,8 @@
 ca:
+  ca: català
+  es: castellà
+  en: anglès
+
   home: Inici
   back: Tornar
   cancel: Cancel·lar
@@ -10,6 +14,7 @@ ca:
   edit: Editar
   invalid_login: Dades incorrectes.
   restricted_access: Accés restringit. T'has d'identificar abans.
+  untranslated_conten: Oops! Ho sentim, aquest contingut no està traduït al català
   updated: Contingut actualitzat.
 
   under_construction: En construcció

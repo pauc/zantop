@@ -1,4 +1,8 @@
 en:
+  ca: català
+  es: castellà
+  en: anglès
+
   home: Home
   back: Back
   cancel: Cancel
@@ -10,6 +14,7 @@ en:
   edit: Edit
   invalid_login: Invalid login
   updated: Content updated.
+  untranslated_content: Oops! Sorry, this content is not translated into english.
   restricted_accessl: Resticted acces. You need to log in first.
 
   under_construction: Under construction

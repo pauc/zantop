@@ -49,4 +49,16 @@ module WorksHelper
       html.html_safe
     end
   end
+
+  def url_for_edit_work(work)
+    work.class == ActionWork ? edit_action_work_path(work) : 
+      edit_visual_work_path(work)
+  end
+
+  def translation_info(work, locale)
+    css_class = work.has_translation?(locale) ? 'translated' : 'untranslated'
+    I18n.with_locale(locale) do
+      link_to t(locale), url_for_edit_work(work), class: css_class
+    end
+  end
 end

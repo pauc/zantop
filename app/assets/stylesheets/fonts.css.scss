@@ -123,3 +123,15 @@ form .error .help-inline {
 #ajx_get_works {
   font-size: 1.5em;
 }
+
+.translations-info {
+  font-size: 75%;
+
+  .translated {
+    color: green;
+  }
+
+  .untranslated {
+    color: red;
+  }
+}
