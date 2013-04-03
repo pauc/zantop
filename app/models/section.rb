@@ -4,7 +4,7 @@ class Section < ActiveRecord::Base
 
   attr_accessible :title, :body
 
-  validates :body, presence: true
+  #validates :body, presence: true
 
   belongs_to :content, polymorphic: true
 

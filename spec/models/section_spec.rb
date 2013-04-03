@@ -9,10 +9,10 @@ describe Section do
   it { section.should respond_to('translations') }
   it { section.should respond_to('position') }
 
-  it 'without boddy is not valid' do
-    section.body = '   '
-    expect( section ).to_not be_valid
-  end
+  #it 'without boddy is not valid' do
+    #section.body = '   '
+    #expect( section ).to_not be_valid
+  #end
 
   it 'delete sections when removing a content' do
     sections

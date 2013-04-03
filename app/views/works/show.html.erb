@@ -23,5 +23,8 @@
   <%= print_work_techniques work %>
   <%= print_work_dimensions work %>
   <%= print_work_description work %>
+  <% unless work.sections.empty? %>
+    <%= render work.sections %>
+  <% end %>
   <%= print_work_tags work %>
 <% end %>

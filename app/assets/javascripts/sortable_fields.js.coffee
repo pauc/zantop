@@ -1,6 +1,6 @@
 $(document).on "nested:fieldAdded", (event) ->
   event.field.parent('p').before(event.field)
-  textArea = event.field.find('.image-credits')
+  textArea = event.field.find('.rich-text-area')
   init_CKEditor textArea.attr('id')
 
  ## CKEDITOR for image credits-&-comments
@@ -9,8 +9,8 @@ init_CKEditor = (textAreaId) ->
     height: "5em"
 
 $ ->
-  ## Replace .image-credits textareas with CKEditor
-  text_areas = $('.image-credits')
+  ## Replace textareas with CKEditor
+  text_areas = $('.rich-text-area')
   $.each text_areas, (i) ->
     init_CKEditor text_areas[i].id
 

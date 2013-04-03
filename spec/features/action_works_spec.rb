@@ -2,21 +2,21 @@
 require 'spec_helper'
 
 describe "ActionWorks" do
-  before { @works = FactoryGirl.create_list(:action_work, 5) }
-  subject { page }
+  let(:works) { create_list(:action_work, 5) }
 
   describe "GET /visual_works" do
     it "works!!" do
+      works
       visit action_works_path
-      page.should have_content(@works.first.title)
-      page.should have_content(@works.last.title)
+      expect( page ).to have_content(works.first.title)
+      expect( page ).to have_content(works.last.title)
     end
   end
 
   describe "view work" do
-    it "woks!!" do
-      visit action_work_path(ActionWork.first)
-      should have_content(ActionWork.first.title)
+    it "works!!" do
+      visit action_work_path(works.first)
+      expect( page ).to have_content(works.first.title)
     end
   end
 
@@ -28,13 +28,13 @@ describe "ActionWorks" do
     end
 
     it "works!!" do
-      should have_selector("form#new_action_work")
+      expect( page ).to have_selector("form#new_action_work")
     end
 
     describe "with invalid information" do
       it "fails validation" do
         find('form input[type="submit"]').click
-        should have_content("no pot estar en blanc")
+        expect( page ).to have_content("no pot estar en blanc")
       end
     end
 
@@ -45,7 +45,7 @@ describe "ActionWorks" do
       end
 
       it "redirects to the new work" do
-        should have_content('The Title')
+        expect( page ).to have_content('The Title')
       end
     end
   end
