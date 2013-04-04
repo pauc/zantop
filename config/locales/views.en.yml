@@ -65,6 +65,10 @@ en:
     edit:
       title: Edit <span>%{work}</span>
 
+  works:
+    labels:
+      techniques: Técnicas
+
   pages:
     edit:
       title: Edit <span>%{page}</span>

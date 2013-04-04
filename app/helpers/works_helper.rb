@@ -17,7 +17,7 @@ module WorksHelper
 
   def print_work_description(work)
     if work.respond_to?("description") and work.description.present?
-      "<div class='work-description'><p>#{work.description}</div>".html_safe
+      "<div class='work-description'>#{work.description}</div>".html_safe
     end
   end
 
@@ -30,13 +30,13 @@ module WorksHelper
 
   def print_work_techniques(work)
     if work.respond_to?("techniques") and !work.techniques.blank?
-      "<div class='work-description'>#{work.techniques}</p></div>".html_safe
+      "<div class='work-techniques'><p><strong>#{t('works.labels.techniques')}:</strong> #{work.techniques}</p></div>".html_safe
     end
   end
 
   def print_work_dimensions(work)
     if work.respond_to?("dimensions") and !work.dimensions.blank?
-      "<div class='work-description'><p>#{work.dimensions}</p></div>".html_safe
+      "<div class='work-dimensions'><p>#{work.dimensions}</p></div>"
     end
   end
 
@@ -51,7 +51,7 @@ module WorksHelper
   end
 
   def url_for_edit_work(work)
-    work.class == ActionWork ? edit_action_work_path(work) : 
+    work.class == ActionWork ? edit_action_work_path(work) :
       edit_visual_work_path(work)
   end
 

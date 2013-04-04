@@ -65,6 +65,10 @@ ca:
     edit:
       title: Editar <span>%{work}</span>
 
+  works:
+    labels:
+      techniques: Tècniques
+
   pages:
     edit:
       title: Editar <span>%{page}</span>
