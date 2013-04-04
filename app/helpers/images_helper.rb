@@ -4,7 +4,7 @@ module ImagesHelper
     if media.present? and media.type == "image"
       return image_tag media.image.medium
     elsif media.present? and media.type == "video"
-      return image_tag("abustany_Movie_reel.svg", class: "video", :"data-video" => media.video)
+      return image_tag("abustany_Movie_reel.svg", class: "video unprocessed", :"data-video" => media.video)
     else
       return default_image_for_works
     end

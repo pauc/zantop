@@ -1,6 +1,8 @@
-<span class="handle"></span>
 <div class="image-preview">
   <%= image_tag f.object.image.thumb if f.object.image.present? %>
+</div>
+<div class="sort-field">
+  <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
 </div>
 <%= f.input :image %>
 <%= f.input :image_cache, as: :hidden %>

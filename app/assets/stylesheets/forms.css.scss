@@ -61,7 +61,9 @@ form {
   }
 
   .image-preview {
+    float: right;
     max-width: 100px;
+    margin-left: 1.5em;
 
     img {
       max-width: 100%;
@@ -102,5 +104,9 @@ form {
   }
 }
 
+/* Estils per als camps ordenables */
+.sort-field {
+  float: right;
+}
 
 

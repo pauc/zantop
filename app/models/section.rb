@@ -4,7 +4,7 @@ class Section < ActiveRecord::Base
 
   attr_accessible :title, :body
 
-  #validates :body, presence: true
+  validate :body_not_blank
 
   belongs_to :content, polymorphic: true
 
@@ -13,4 +13,8 @@ class Section < ActiveRecord::Base
   acts_as_list scope: 'content_id=#{content_id} and
                        content_type=\'#{content_type}\''
   default_scope :order => 'position'
+
+  def body_not_blank
+    body.present?
+  end
 end

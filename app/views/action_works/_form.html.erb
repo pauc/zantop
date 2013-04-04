@@ -1,5 +1,6 @@
 <%= simple_nested_form_for action_work,
-    html: { multipart: true, class: "with_sortable_fields" } do |f| %>
+    html: { multipart: true, class: "with-sortable-fields" } do |f| %>
+  <%= f.error_notification %>
   <%= f.input :title %>
   <%= f.input :description, as: :ckeditor %>
   <%= f.input :tag_tokens, label: "Tags:",
@@ -10,7 +11,7 @@
     <%= f.fields_for :sections %>
     <p><%= f.link_to_add "Add a section", :sections, class: "btn" %></p>
   </fieldset>
-  <fieldset class="sortable_fieldset">
+  <fieldset class="sortable-fieldset images">
     <legend>Imatges i vídeos</legend>
     <%= f.fields_for :images %>
     <p><%= f.link_to_add "Add an image", :images, class: "btn" %></p>

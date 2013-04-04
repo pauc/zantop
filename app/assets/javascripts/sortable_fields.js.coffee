@@ -1,31 +1,38 @@
-$(document).on "nested:fieldAdded", (event) ->
-  event.field.parent('p').before(event.field)
-  textArea = event.field.find('.rich-text-area')
-  init_CKEditor textArea.attr('id')
+(->
+  $.fn.extend initSortableFields: ->
+    @each ->
+      $self = $(this)
 
- ## CKEDITOR for image credits-&-comments
-init_CKEditor = (textAreaId) ->
-  CKEDITOR.replace textAreaId,
-    height: "5em"
+      # Initialize CKEditor in some textarea
+      initEditor = (textareaId) ->
+        CKEDITOR.replace textareaId,
+          height: '5em'
 
-$ ->
-  ## Replace textareas with CKEditor
-  text_areas = $('.rich-text-area')
-  $.each text_areas, (i) ->
-    init_CKEditor text_areas[i].id
+      destroyEditor = (textareaId) ->
+        CKEDITOR.instances[textareaId].destroy()
 
-  ## Make fields sortable
-  $('.sortable_fieldset').sortable
-    axis: "y"
-    dropOnEmpty: false
-    handle: ".handle"
-    items: "div.fields"
-    opacity: 0.4
-    scroll: true
+      # Insert event handlers
+      $self.on 'click', '.sort-field a', (event) ->
+        $this = $(this)
+        field = $this.closest('div.fields')
+        destroyEditor field.find('.rich-text-area').attr('id')
+        field.insertBefore field.prev('.fields') if $this.hasClass('up')
+        field.insertAfter field.next('.fields') if $this.hasClass('down')
+        initEditor field.find('.rich-text-area').attr('id')
 
+      $(document).on "nested:fieldAdded", (event) ->
+        event.field.parent('p').before(event.field)
+        initEditor event.field.find('.rich-text-area').attr('id')
 
-  ## Set the field position on submit
-  $('form.with_sortable_fields').submit (event) ->
-    fields = $(this).find('.fields')
-    fields.each (index) ->
-      $(this).find('input[id$="position"]').attr('value', index + 1)
+      setPositions = ->
+        $(this).find('.sortable-fieldset').each ->
+          $self.find('.fields').each (index) ->
+            $(this).find('input[id$="position"]').attr('value', index + 1)
+
+      $self.on 'submit', setPositions
+
+      $.each $self.find('.rich-text-area'), ->
+        initEditor $(this).attr('id')
+
+  $('form.with-sortable-fields').initSortableFields()
+)()

@@ -21,7 +21,6 @@ class ActionWorksController < ApplicationController
   end
 
   def new
-    action_work.images.build
     respond_with action_work
   end
 
@@ -31,7 +30,6 @@ class ActionWorksController < ApplicationController
   end
 
   def edit
-    action_work.images.build if action_work.images.empty?
     respond_with action_work
   end
 

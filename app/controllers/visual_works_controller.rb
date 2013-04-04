@@ -19,7 +19,6 @@ class VisualWorksController < ApplicationController
   end
 
   def new
-    visual_work.images.build
     respond_with visual_work
   end
 
@@ -29,7 +28,6 @@ class VisualWorksController < ApplicationController
   end
 
   def edit
-    visual_work.images.build if visual_work.images.empty?
     respond_with visual_work
   end
 

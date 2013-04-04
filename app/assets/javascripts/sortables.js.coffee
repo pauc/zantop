@@ -8,12 +8,13 @@ $ ->
     opacity: 0.4
     scroll: true
     update: ->
-      url1 = $(this).attr("data-resource")
-      url2 = $(this).attr("data-action")
-      nested = $(this).attr("data-sortable")
-      list = $(this)
+      $self = $(this)
+      url1 = $self.attr("data-resource")
+      url2 = $self.attr("data-action")
+      nested = $self.attr("data-sortable")
+      list = $self
       data = list.sortable("serialize")
-      if $(this).attr("data-order") == "DESC"
+      if $self.attr("data-order") == "DESC"
         data = data.split('&').reverse().join('&')
       $.ajax
         type: "post"

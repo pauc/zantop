@@ -31,5 +31,11 @@ class Image < ActiveRecord::Base
       errors.add(:video, "Només imatge o video, no tots dos")
       return false
     end
+
+    if self.image.blank? and self.video.blank?
+      errors.add(:image, "Has d'indicar una imatge o vídeo")
+      errors.add(:video, "Has d'indicar una imatge o vídeo")
+      return false
+    end
   end
 end

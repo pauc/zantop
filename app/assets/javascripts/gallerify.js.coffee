@@ -1,25 +1,31 @@
-galleria_height= ->
-  galleria = $('#galleria')
-  if galleria.width() > 480
-    return 500
-  else
-    return 360
+$.fn.extend gallerify: ->
+  @each ->
+    $self = $(this)
 
-Galleria.configure
-  autoplay: 7000,
-  easing: 'ease-in-out',
-  debug: 'false',
-  height: galleria_height()
-  lightbox: false,
-  responsive: true,
-  showCounter: false,
-  showImagenav: false,
-  showInfo: true,
-  transition: 'fade',
-  transitionSpeed: 600,
-  touchTransition: 'slide',
-  _toggleInfo: false
+    galleriaHeight= ->
+      if $self.width() > 480
+        return 500
+      else
+        return 360
 
-$ ->
-  if $('#galleria').length > 0
-    Galleria.run('#galleria')
+    Galleria.configure
+
+      autoplay: 7000,
+      easing: 'ease-in-out',
+      debug: 'false',
+      height: galleriaHeight()
+      lightbox: false,
+      responsive: true,
+      showCounter: false,
+      showImagenav: false,
+      showInfo: true,
+      transition: 'fade',
+      transitionSpeed: 600,
+      touchTransition: 'slide',
+      _toggleInfo: false
+
+    Galleria.run $self
+
+(->
+  $('#galleria').gallerify()
+)()
