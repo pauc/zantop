@@ -67,6 +67,7 @@ ca:
 
   works:
     labels:
+      dimensions: Dimensions
       techniques: Tècniques
 
   pages:

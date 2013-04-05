@@ -67,7 +67,8 @@ en:
 
   works:
     labels:
-      techniques: Técnicas
+      dimensions: Dimensions
+      techniques: Techniques
 
   pages:
     edit:

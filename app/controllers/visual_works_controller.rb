@@ -15,6 +15,8 @@ class VisualWorksController < ApplicationController
   end
 
   def show
+    flash.now[:alert] = t('untranslated_content') unless visual_work.
+      has_translation?(I18n.locale)
     respond_with visual_work, template: 'works/show'
   end
 

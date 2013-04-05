@@ -4,7 +4,7 @@ describe ImageUploader do
   include CarrierWave::Test::Matchers
 
   before do
-    @image = FactoryGirl.create(:image)
+    @image = FactoryGirl.build(:image)
     ImageUploader.enable_processing = true
     @uploader = ImageUploader.new(@image, :image)
     @uploader.store!(File.open("#{Rails.root}/spec/images_for_tests/HomoLuxus.jpg"))

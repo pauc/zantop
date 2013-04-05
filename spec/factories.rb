@@ -1,4 +1,5 @@
 # encoding: utf-8
+include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory :user do
@@ -31,6 +32,7 @@ FactoryGirl.define do
   end
 
   factory :image do |f|
+    image { fixture_file_upload("#{Rails.root}/spec/images_for_tests/HomoLuxus.jpg") }
     f.association :illustrated, factory: :visual_work
   end
 

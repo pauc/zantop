@@ -11,7 +11,11 @@ module WorksHelper
 
   def print_work_date(work)
     if work.respond_to?("realization_date") and !work.realization_date.blank?
-      "<div class='work-date'><p>#{l work.realization_date}</p></div>".html_safe
+      if work.class == ActionWork
+        "<div class='work-date'><p>#{l work.realization_date}</p></div>".html_safe
+      elsif work.class == VisualWork
+        "<div class='work-date'><p>#{ work.realization_date.strftime("%Y") }</p></div>".html_safe
+      end
     end
   end
 
@@ -36,7 +40,7 @@ module WorksHelper
 
   def print_work_dimensions(work)
     if work.respond_to?("dimensions") and !work.dimensions.blank?
-      "<div class='work-dimensions'><p>#{work.dimensions}</p></div>"
+      "<div class='work-dimensions'><p><strong>#{t('works.labels.dimensions')}:</strong> #{work.dimensions}</p></div>".html_safe
     end
   end
 

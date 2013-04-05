@@ -4,7 +4,7 @@ class WorksController < ApplicationController
 
   respond_to :html
 
-  expose(:works) { Work.all }
+  expose(:works) { Work.includes :translations }
 
   def admin
 
