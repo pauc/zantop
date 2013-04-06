@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Tag do
+  let(:tag) { FactoryGirl.create(:tag) }
 
   it { should respond_to (:works) }
   it { should respond_to (:taggings) }
@@ -30,7 +31,6 @@ describe Tag do
   end
 
   describe "update taggings counter" do
-    let(:tag) { FactoryGirl.create(:tag) }
     before do
       3.times { FactoryGirl.create(:tagging, tag: tag) }
     end
@@ -55,6 +55,12 @@ describe Tag do
     it "tags with taggings are enabled" do
       FactoryGirl.create_list(:tagging, 2)
       Tag.enabled.size.should eq 2
+    end
+
+    it 'tags with taggings related to unpublised content are not enabled' do
+      w = FactoryGirl.create :visual_work, published: false
+      tagging = FactoryGirl.create( :tagging, tag: tag, taggable: w )
+      expect( Tag.enabled.size ).to eq 0
     end
   end
 end

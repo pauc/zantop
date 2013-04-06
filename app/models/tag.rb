@@ -15,7 +15,13 @@ class Tag < ActiveRecord::Base
 
   before_save :name_to_underscore
 
-  scope :enabled, where("taggings_count > 0")
+  #scope :enabled, where("taggings_count > 0")
+  def self.enabled
+    select("DISTINCT(tags.id), tags.*").
+    joins("JOIN taggings ON tags.id = taggings.tag_id
+           JOIN works ON works.id = taggings.taggable_id
+           WHERE works.published = true")
+  end
 
   def self.tokens(query)
     unless query.blank?

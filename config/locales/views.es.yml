@@ -8,7 +8,7 @@ es:
   cancel: Cancelar
   change_password: Cambiar contraseña
   create: Crear
-  created: "Nueco contenido creado correctamente. Ole!"
+  created: "Nuevo contenido creado correctamente. Ole!"
   delete: Borrar
   deleted: Contenido Borrado.
   edit: Editar
@@ -22,7 +22,7 @@ es:
   action: Acción
   visual: Visual
 
-  get_more_woks: Ver más trabajos
+  get_more_works: Ver más trabajos
 
   new_element: Nuevo %{e}
 
