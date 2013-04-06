@@ -69,6 +69,7 @@ ca:
     labels:
       dimensions: Dimensions
       techniques: Tècniques
+      related: Treballs semblants
 
   pages:
     edit:

@@ -69,6 +69,7 @@ es:
     labels:
       dimensions: Dimensiones
       techniques: Técnicas
+      related: Trabajos parecidos
 
   pages:
     edit:

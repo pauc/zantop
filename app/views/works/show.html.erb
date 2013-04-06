@@ -1,6 +1,22 @@
+<% content_for :sidebar do %>
+  <% cache [I18n.locale, :related_works, work] do %>
+    <% unless related_works.empty? %>
+      <div class="sidebar-block">
+        <h2><%= t 'works.labels.related' %></h2>
+        <ul class="related-works vertical-list">
+          <% related_works.each do |w| %>
+            <li>
+              <%= link_to w.title, w %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
 <%= page_title work.title %>
 
-<% cache [locale, :show, work] do %>
+<% cache [I18n.locale, :show, work] do %>
   <%= print_work_place work %>
   <%= print_work_date work %>
   <% unless work.images.empty? %>

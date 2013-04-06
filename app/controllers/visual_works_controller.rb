@@ -9,6 +9,7 @@ class VisualWorksController < ApplicationController
   expose(:visual_work)
   expose(:work) { visual_work }
   expose(:published_works) { VisualWork.published.includes(:translations) }
+  expose(:related_works) { work.related }
 
   def index
     respond_with published_works, template: 'works/works_list'

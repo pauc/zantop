@@ -3,11 +3,11 @@ module Authorization
 
   included do
     before_filter :authorize_admin, only: [:new,
-                                     :edit,
-                                     :create,
-                                     :update,
-                                     :destroy,
-                                     :admin]
+                                           :edit,
+                                           :create,
+                                           :update,
+                                           :destroy,
+                                           :admin]
 
     before_filter :authorize_unpublished, only: [:show]
   end

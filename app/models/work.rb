@@ -33,6 +33,17 @@ class Work < ActiveRecord::Base
     self.images.where("image is not null").first.try(:image).try(:medium)
   end
 
+  def related
+    conditions_array_for_taggings = [self.tags.map { |t| "tag_id = ?" }
+                                     .join(" OR ")]
+    self.tags.each { |t| conditions_array_for_taggings << t.id }
+    work_ids_from_taggings = Tagging.select("DISTINCT taggable_id").
+      where(conditions_array_for_taggings).
+      where("taggable_id != ?", self.id)
+    self.class.where(id: work_ids_from_taggings).limit(5).
+      includes(:translations)
+  end
+
   private
 
   def touch_tags
