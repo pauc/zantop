@@ -40,7 +40,7 @@ class Work < ActiveRecord::Base
     work_ids_from_taggings = Tagging.select("DISTINCT taggable_id").
       where(conditions_array_for_taggings).
       where("taggable_id != ?", self.id)
-    self.class.where(id: work_ids_from_taggings).limit(5).
+    self.class.published.where(id: work_ids_from_taggings).limit(5).
       includes(:translations)
   end
 

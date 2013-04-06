@@ -43,5 +43,12 @@ describe Work do
     it "not include the same work" do
       expect( work.related ).not_to include work
     end
+
+    it "do not return unpublished works" do
+      work3 = FactoryGirl.create( :action_work, published: false )
+      FactoryGirl.create :tagging, tag: tag1, taggable: work3
+
+      expect( work.related ).not_to include work3
+    end
   end
 end
