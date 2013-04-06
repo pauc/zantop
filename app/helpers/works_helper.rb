@@ -32,15 +32,9 @@ module WorksHelper
     end
   end
 
-  def print_work_techniques(work)
-    if work.respond_to?("techniques") and !work.techniques.blank?
-      "<div class='work-techniques'><p><strong>#{t('works.labels.techniques')}:</strong> #{work.techniques}</p></div>".html_safe
-    end
-  end
-
-  def print_work_dimensions(work)
-    if work.respond_to?("dimensions") and !work.dimensions.blank?
-      "<div class='work-dimensions'><p><strong>#{t('works.labels.dimensions')}:</strong> #{work.dimensions}</p></div>".html_safe
+  def print_work_field(work, field)
+    if work.respond_to?(field) and !work.send(field).blank?
+      "<div class='work-#{field}'><p><strong>#{t('works.labels.' + field.to_s)}:</strong> #{work.send(field)}</p></div>".html_safe
     end
   end
 
