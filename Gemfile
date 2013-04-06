@@ -9,7 +9,7 @@ gem 'jquery-ui-rails'
 gem 'basic_config'
 
 # Error notification
-gem 'airbrake'
+gem 'airbrake', '3.1.8'
 
 gem 'simple_form'
 gem 'decent_exposure'
