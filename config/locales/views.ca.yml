@@ -30,6 +30,9 @@ ca:
 
   view_more: Veure més
 
+  add_image_or_video: Afegeix una imatge o vídeo
+  remove_image_or_video: Esborra aquesta imatge o vídeo
+
   menu:
     about: Bio
     action_art: "Art d'acció"

@@ -9,4 +9,4 @@
 <%= f.input :video %>
 <%= f.input :credits, as: :text, input_html: { rows: 4, class: "rich-text-area" } %>
 <%= f.hidden_field :position, type: "hidden" %>
-<%= f.link_to_remove "Remove this image", class: "btn_wrng" %>
+<%= f.link_to_remove t('remove_image_or_video'), class: "btn_wrng" %>
