@@ -9,13 +9,13 @@ load "config/recipes/rbenv"
 load "config/recipes/check"
 load "config/recipes/config_files"
 load "config/recipes/assets"
-load "config/recipes/newrelic"
+#load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
 load "config/recipes/db_utils"
 load "config/recipes/memcached"
 
-server "176.58.122.177", :web, :app, :db, primary: true
+server "198.211.119.133", :web, :app, :db, primary: true
 
 set :application, "zantop"
 set :user, "deployer"
@@ -31,7 +31,7 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 # nginx stuff
-set :server_names, '<%= nginx_server_names %>'
+set :server_names, 'mireiazantop.com www.mireiazantop.com'
 set :nginx_page_caching, true
 
 set :newrelic_license_key, '369e370691bc6fc878b2eb7c331ebb0aefc64548'
