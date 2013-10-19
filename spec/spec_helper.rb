@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'capybara/poltergeist'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -30,7 +31,7 @@ Spork.prefork do
     # config.mock_with :rr
     config.mock_with :rspec
 
-    Capybara.javascript_driver = :webkit
+    Capybara.javascript_driver = :poltergeist
 
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
     # config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -69,7 +69,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'rb-inotify', '0.9'
   gem 'libnotify', '0.5.9'
   gem 'guard-spork', '0.3.2'

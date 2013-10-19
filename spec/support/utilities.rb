@@ -9,9 +9,5 @@ end
 def fill_in_ckeditor(fieldset, opts)
   browser = page.driver.browser
   content = opts.fetch(:with).to_json
-  browser.execute_script <<-SCRIPT
-    var locator = $('.#{fieldset}').find('textarea').first().attr('id')
-    CKEDITOR.instances[locator].setData(#{content});
-    $('textarea#' + locator).text(#{content});
-  SCRIPT
+  page.execute_script("var locator = $('.#{fieldset}').find('textarea').first().attr('id'); CKEDITOR.instances[locator].setData(#{content}); $('textarea#' + locator).text(#{content});")
 end

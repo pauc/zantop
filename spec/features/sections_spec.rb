@@ -1,19 +1,20 @@
 require 'spec_helper'
 
 shared_examples_for 'sections integration' do |content_klass|
-  let( :content ) { create content_klass }
-  let( :user ) { sign_in create(:user) }
+  let(:content ) { create content_klass }
+  let(:section) { create :section, content: content }
 
   before do
-    user
-    visit polymorphic_path([:edit, content])
+    sign_in FactoryGirl.create(:user)
   end
 
   it 'show fieldset for sections' do
+    visit polymorphic_path([:edit, content])
     has_selector? 'fieldset.extra-content-fields'
   end
 
   it 'add a section' do
+    visit polymorphic_path([:edit, content])
     click_link "Add a section"
     section_body = 'A very long text'
     fill_in_ckeditor 'extra-content-fields',
@@ -24,8 +25,7 @@ shared_examples_for 'sections integration' do |content_klass|
   end
 
   it 'remove a section' do
-    section = FactoryGirl.create( :section, content: content )
-    expect( content.sections.count ).to eq 1
+    section
     visit polymorphic_path([content])
     has_content? section.body
 
@@ -34,20 +34,17 @@ shared_examples_for 'sections integration' do |content_klass|
     find('form input[type="submit"]').click
 
     has_no_content? section.body
-    expect( Section.all.size ).to eq 0
-    expect( content.sections.count ).to eq 0
+    expect(content.sections.count).to eq 0
   end
 
-  it 'update a sections' do
-    section = FactoryGirl.create( :section, content: content )
-    expect( content.sections.count ).to eq 1
-    visit polymorphic_path([content])
-    has_content? section.body
-
+  it 'update sections' do
+    section
+    
     original_body = section.body
     updated_section_body = 'A new text for the section'
 
     visit polymorphic_path([:edit, content])
+    has_content? section.body
     fill_in_ckeditor 'extra-content-fields',
       :with => updated_section_body
     find('form input[type="submit"]').click
@@ -57,10 +54,11 @@ shared_examples_for 'sections integration' do |content_klass|
   end
 end
 
-describe 'action works', js: true do |content_klass|
+describe 'action works', js: true do
   it_behaves_like 'sections integration', :action_work
 end
 
-describe 'visual works', js: true do |content_klass|
+describe 'visual works', js: true do
   it_behaves_like 'sections integration', :visual_work
 end
+
