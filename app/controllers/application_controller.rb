@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     locale = params[:locale]
     if !(locale.present? and VALID_LOCALES.include?(locale))
       location = request.fullpath
-      locale = request.compatible_language_from(VALID_LOCALES) || I18n.default_locale
+      locale = http_accept_language.compatible_language_from(VALID_LOCALES) || I18n.default_locale
       location = '/' + locale.to_s + location
       redirect_to location
     end

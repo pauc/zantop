@@ -29,7 +29,7 @@ gem 'mini_magick'
 
 # Server
 gem 'unicorn'
-gem 'capistrano'
+gem 'capistrano', "< 3"
 gem 'newrelic_rpm'
 
 # I18n
