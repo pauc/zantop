@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
   }
   config.fog_directory = s3_bucket
   config.fog_public = true
-  config.asset_host = 'http://' + s3_bucket
+  config.asset_host = 'https://' + s3_bucket
   config.fog_attributes = { 'Cache-Control' => 'max-age=415576000' }
 
   if Rails.env.test?
