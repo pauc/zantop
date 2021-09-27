@@ -9,11 +9,11 @@ load "config/recipes/rbenv"
 load "config/recipes/check"
 load "config/recipes/config_files"
 load "config/recipes/assets"
-#load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
-load "config/recipes/db_utils"
+# load "config/recipes/db_utils"
 load "config/recipes/memcached"
+#load "config/recipes/newrelic"
 
 server "198.211.119.133", :web, :app, :db, primary: true
 
@@ -44,4 +44,3 @@ set :default_environment, {
 }
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
-

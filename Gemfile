@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>=3.2.3'
+gem 'rails', '3.2.15'
 
 gem 'pg'
 gem 'jquery-rails'
@@ -9,7 +9,7 @@ gem 'jquery-ui-rails'
 gem 'basic_config'
 
 # Error notification
-gem 'airbrake', '3.1.8'
+# gem 'airbrake', '3.1.8'
 
 gem 'simple_form'
 gem 'decent_exposure'
@@ -18,7 +18,6 @@ gem 'friendly_id'
 gem 'will_paginate', '~> 3.0'
 gem "nested_form"
 gem 'acts_as_list'
-gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'ckeditor'
 gem 'modernizr-rails'
 
@@ -71,7 +70,6 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'rb-inotify', '0.9'
-  gem 'libnotify', '0.5.9'
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails'
