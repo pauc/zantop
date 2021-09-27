@@ -1,4 +1,0 @@
-[submodule "config/recipes"]
-	path = config/recipes
-	url = git://github.com/recortable/capistrano-recipes
-  ignore = dirty

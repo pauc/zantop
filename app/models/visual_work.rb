@@ -1,2 +1,0 @@
-class VisualWork < Work
-end

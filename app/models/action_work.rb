@@ -1,2 +1,0 @@
-class ActionWork < Work
-end
