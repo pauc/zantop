@@ -31,6 +31,3 @@ zantop.sublime*
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-
-# Asdf
-.tool-versions
