@@ -19,5 +19,3 @@ test:
 production:
   <<: *default
   database: zantop_production
-  username: zantop
-  password: <%= ENV['ZANTOP_DATABASE_PASSWORD'] %>
