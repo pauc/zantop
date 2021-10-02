@@ -1,0 +1,51 @@
+x-database-credentials: &database_credentials
+  ZANTOP_DATABASE_HOST: zantop_db
+  ZANTOP_DATABASE_USER: zantop
+  ZANTOP_DATABASE_PASSWORD: zantop
+x-app-config: &app_config
+  image: "zantop"
+  build:
+    context: .
+    dockerfile: Dockerfile-development
+  environment: &rails_dev_environment
+    <<: *database_credentials
+    ? PRY_HISTORY_FILE
+  tty: true
+  stdin_open: true
+  volumes:
+    - .:/app:cached
+    - bundle_cache:/bundle
+  depends_on:
+    - db
+
+version: '3'
+services:
+  db:
+    container_name: zantop_db
+    image: "postgres:13.4-alpine"
+    environment:
+      - POSTGRES_USER=zantop
+      - POSTGRES_PASSWORD=zantop
+    volumes:
+      - database_files:/var/lib/postgresql/data
+    ports:
+      - "5445:5432"
+
+  web:
+    <<: *app_config
+    container_name: simba_web
+    command: bundle exec puma -C config/puma.rb
+
+  spring:
+    <<: *app_config
+    command: /bundle/bin/spring server
+    environment:
+      <<: *rails_dev_environment
+
+networks:
+  default:
+    name: zantop_default
+
+volumes:
+  database_files:
+  bundle_cache:
