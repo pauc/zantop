@@ -1,0 +1,31 @@
+FROM ruby:3.0.2-alpine3.14 as Builder
+
+RUN apk add --update --no-cache \
+  cmake \
+  libcurl \
+  tzdata \
+  libpq \
+  less \
+  imagemagick \
+  libgcc libstdc++ libx11 glib libxrender libxext libintl \
+  libcrypto1.1 libssl1.1 \
+  ttf-dejavu ttf-droid ttf-freefont ttf-liberation \
+  git \
+  postgresql-dev postgresql-client \
+  build-base \
+  openssl-dev \
+  nodejs-current
+
+WORKDIR /app
+
+COPY docker/imagemagick-policy.xml /etc/ImageMagick-7/policy.xml
+
+# Caching gems
+# https://medium.com/@jfroom/docker-compose-3-bundler-caching-in-dev-9ca1e49ac441
+COPY docker/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+ENV BUNDLE_PATH=/bundle \
+    BUNDLE_BIN=/bundle/bin \
+    GEM_HOME=/bundle \
+    PATH=$PATH:/app/bin
