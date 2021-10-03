@@ -22,9 +22,15 @@ jobs:
         gem install bundler
         bundle install
 
-    - name: Get changed files using defaults
-      id: changed-files
-      uses: jitterbit/get-changed-files@v1
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        list-files: 'escape'
+        filters: |
+          ruby:
+            - '**/*.rb'
 
+      # run only for ruby files
     - name: Run rubocop for changed or added files
-      run: bundle exec rubocop ${{ steps.changed-files.outputs.added_modified }}
+      if: steps.changes.outputs.ruby == 'true'
+      run: bundle exec rubocop ${{ steps.changes.outputs.ruby_files}}
