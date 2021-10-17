@@ -1,0 +1,6 @@
+<div id='works'>
+  <%= render partial: 'works', locals: { works: works } %>
+</div>
+<div id="pagination" data-alt_text="&laquo; <%= t('get_more_works') %> &raquo;">
+  <%= will_paginate works %>
+</div>
