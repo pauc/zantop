@@ -9,20 +9,18 @@
   <%#<body class="<%= body_classes %>
   <body class="front">
     <%#<%= render 'session_bar' if current_user? %>
-    <div id="wrapper">
-      <%= render 'header' %>
-      <div class="container">
-        <%#<%= render 'flash_messages' %>
-        <%= yield :page_title %>
-        <div id="main" role="main">
-          <div class="content">
-            <%= yield %>
-          </div>
+    <%= render 'header' %>
+    <div class="container">
+      <%#<%= render 'flash_messages' %>
+      <%= yield :page_title %>
+      <div id="main" role="main">
+        <div class="content">
+          <%= yield %>
         </div>
-        <%#<%= render 'sidebar' if sidebar? %>
       </div>
-      <%#<%= render 'footer' %>
+      <%#<%= render 'sidebar' if sidebar? %>
     </div>
+    <%#<%= render 'footer' %>
     <%#<%= javascript_include_tag "application" %>
     <%#<%= javascript_include_tag "ckeditor/init" if current_user? %>
     <%#<%= javascript_include_tag "admin" if current_user? %>
