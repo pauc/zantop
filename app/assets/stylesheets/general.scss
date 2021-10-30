@@ -1,6 +1,10 @@
 $sidebar_width: 14em;
 $sidebar_gap: 2.5em;
 
+html {
+  background: $kaki_yellow;
+}
+
 body {
   background: $grey image_url('ricepaper2.png');
   margin: 0;

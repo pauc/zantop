@@ -2,11 +2,11 @@
 <% if front? %>
   <i>Art</i>
   <div class="menu-item">
-    <a>Acción</a>
+    <%= link_to t('action'), nil, class: 'action' %>
     <%#<%= link_to t('action'), action_works_path, class: 'action' %>
   </div>
   <div class="menu-item">
-    <a>Visual</a>
+    <%= link_to t('visual'), nil, class: 'visual' %>
     <%#<%= link_to t('visual'), visual_works_path, class: 'visual' %>
   </div>
 <% else %>
