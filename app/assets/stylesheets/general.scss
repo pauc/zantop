@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 1240px;
   padding: 0 2.5%;
-  margin-left: auto; margin-right: auto;
+  margin: 0 auto;
   //@include clearfix;
 }
 
@@ -39,12 +39,3 @@ body {
   width: 100%;
 }
 
-#footer {
-  margin-top: 5em;
-  margin-bottom: -2em;
-  padding: 0.6em 0 2em;
-}
-
-#footer_menu {
-  margin-top: 1em;
-}
