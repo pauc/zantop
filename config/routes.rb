@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboards/front', as: 'front'
+  get 'dashboards/home', as: 'home'
 
-  root to: 'dashboards#front'
+  root to: 'dashboards#home'
 end

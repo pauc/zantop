@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
   #   Work.published.includes(:translations).paginate(page: params[:page], per_page: 6)
   # end
 
-  def front; end
+  def home; end
 
   # def about
   # respond_with about_page

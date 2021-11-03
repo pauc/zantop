@@ -27,7 +27,7 @@ body {
   //@include transition(font-size 0.75s linear);
 }
 
-h1, h2, h3, h4, h5, h6, .front #main_menu, .f-title {
+h1, h2, h3, h4, h5, h6, .home #main_menu, .f-title {
   font-family:  'im_fell_english_proregular', serif;
   font-weight: normal;
 }
@@ -47,7 +47,7 @@ a, a:visited, a:active {
   //@include transition(color 0.25s ease-in-out);
 }
 
-a:hover, .front .work:hover .work-title a {
+a:hover, .home .work:hover .work-title a {
   color: #d18007;
   //@include transition(color 0.25s ease-in-out);
 }
@@ -57,7 +57,7 @@ a:hover, .front .work:hover .work-title a {
   color: inherit;
 }
 
-.no-front #main_menu a {
+.no-home #main_menu a {
   color: #523d14;
   font-size: 1.5em;
   line-height: 1;
@@ -92,7 +92,7 @@ a:hover, .front .work:hover .work-title a {
 }
 
 /* Estils de fonts per a la pàgina d'inici */
-.front {
+.home {
   #brand, #main_menu {
     div a {
       font-size: 4em;
@@ -135,7 +135,7 @@ legend {
 }
 
 form .error .help-inline {
-  //color: $error;
+  color: $error;
 }
 
 #footer_page_name h3 a {

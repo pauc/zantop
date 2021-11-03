@@ -1,8 +1,8 @@
 module ApplicationHelper
   def site_name
-    tag = front? ? :h1 : :span
-    img_src = front? ? 'MireiaZantop.png' : 'MZ.png'
-    title = front? ? nil : t('home')
+    tag = home? ? :h1 : :span
+    img_src = home? ? 'MireiaZantop.png' : 'MZ.png'
+    title = home? ? nil : t('home')
 
     content_tag(
       tag,
@@ -11,14 +11,14 @@ module ApplicationHelper
           img_src,
           alt: "Mireia Zantop"
         ),
-        front_path,
+        home_path,
         title: title
       ),
       id: 'site_name'
     )
   end
 
-  def front?
-    controller.controller_name == 'dashboards' && controller.action_name == 'front'
+  def home?
+    controller.controller_name == 'dashboards' && controller.action_name == 'home'
   end
 end
