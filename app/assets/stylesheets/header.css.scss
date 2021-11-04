@@ -44,6 +44,28 @@
     background: #dfcf80;
     position: relative;
     margin-bottom: 2em;
+
+    #main_header {
+      display: flex;
+    }
+
+    #brand {
+      width: 5em;
+      position: relative;
+      top: .2em;
+      margin: -1em 0 -2.2em;
+      z-index: 1;
+    }
+
+    #main_menu {
+      a {
+        margin-left: 1em;
+      }
+    }
+
+    #select_lang {
+      top: -1.9em;
+    }
   }
 
   #header_container:before {
@@ -65,28 +87,4 @@
     z-index: 0;
   }
 
-  #main_header {
-    display: flex;
-  }
-
-  #brand {
-    width: 5em;
-    //float: left;
-    position: relative;
-    top: .2em;
-    margin: -1em 0 -2.2em;
-    z-index: 1;
-  }
-
-  #main_menu {
-    //float: left;
-
-    a {
-      margin-left: 1em;
-    }
-  }
-
-  #select_lang {
-    top: -1.9em;
-  }
 }
