@@ -1,0 +1,98 @@
+ca:
+  ca: català
+  es: castellà
+  en: anglès
+
+  home: Inici
+  back: Tornar
+  cancel: Cancel·lar
+  change_password: Canviar contrassenya
+  create: Crear
+  created: "Contingut creat correctament. Ole!"
+  deleted: Contingut esborrat.
+  delete: Esborrar
+  edit: Editar
+  invalid_login: Dades incorrectes.
+  restricted_access: Accés restringit. T'has d'identificar abans.
+  untranslated_conten: Oops! Ho sentim, aquest contingut no està traduït al català
+  updated: Contingut actualitzat.
+
+  under_construction: En construcció
+
+  action: Acció
+  visual: Visual
+
+  get_more_works: Veure més treballs
+
+  new_element: Nou %{e}
+
+  categories: Categories
+
+  view_more: Veure més
+
+  add_image_or_video: Afegeix una imatge o vídeo
+  remove_image_or_video: Esborra aquesta imatge o vídeo
+
+  menu:
+    about: Bio
+    action_art: "Art d'acció"
+    contact: Contacte
+    visual_art: "Art visual"
+
+  will_paginate:
+    previous_label: Anterior
+    next_label: Següent
+    page_gap: " ... "
+
+  sessions:
+    new:
+      title: Iniciar sessió
+
+  visual_works:
+    works_list:
+      title: Art visual
+
+    edit:
+      title: Editar <span>%{work}</span>
+
+    new:
+      title: Nou treball visual
+
+  action_works:
+    works_list:
+      title: Art d'acció
+
+    new:
+      title: Nou Treball d'acció
+
+    edit:
+      title: Editar <span>%{work}</span>
+
+  works:
+    labels:
+      dimensions: Dimensions
+      techniques: Tècniques
+      related: Treballs semblants
+
+  pages:
+    edit:
+      title: Editar <span>%{page}</span>
+
+  users:
+    index:
+      title: Llistat d'usuaris
+
+    new:
+      title: Nou usuari
+
+    edit:
+      title: Editar <span>%{user}</span>
+
+  tags:
+    works_list:
+      title: "%{category}"
+
+  about_the_code:
+    html: El codi font d'aquest lloc web està disponible per ser copiat, estudiat
+          o criticat a <a href="http://github.com/pauc/zantop">http://github.com/pauc/zantop</a>.
+          Per qualsevol dubte o suggeriment podeu contactar

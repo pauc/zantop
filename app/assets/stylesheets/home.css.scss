@@ -1,0 +1,40 @@
+.home {
+  #main_header {
+    text-align: center;
+    padding: 3em 0 0;
+  }
+
+  #brand {
+    $brand_width: 80%;
+    width: $brand_width;
+    margin: 0 auto;
+    position: relative;
+    padding: 0.2147727*$brand_width 0;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  #main_menu {
+    display: flex;
+    position: relative;
+    //@include clearfix;
+
+    .menu-item {
+      width: 50%;
+      padding: 1.6em 0 1.3em;
+      text-align: center;
+    }
+
+    i {
+      width: 100%;
+      position: absolute;
+      top: -0.25em;
+      left: 0;
+      z-index: 0;
+    }
+  }
+}
