@@ -1,14 +1,12 @@
-<div id="header_container">
-  <div class="container">
-    <header id="main_header" role="banner">
-      <div id="brand">
-        <%= site_name %>
-      </div>
-      <%= render 'menu' %>
-    </header>
+<header role="banner">
+  <div class="container header-container">
+    <div id="brand">
+      <%= site_name %>
+    </div>
+    <%= render 'menu' %>
     <ul id="select_lang">
       lang_selector
       <%#<%= lang_selector.html_safe %>
     </ul>
   </div>
-</div>
+</header>
