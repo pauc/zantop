@@ -9,14 +9,14 @@ class DashboardsController < ApplicationController
 
   def home; end
 
-  # def about
-  # respond_with about_page
-  # end
+  def about
+    # respond_with about_page
+  end
 
   # def admin
   # end
 
   # def provisional
-  # render layout: "empty"
+  #   render layout: "empty"
   # end
 end

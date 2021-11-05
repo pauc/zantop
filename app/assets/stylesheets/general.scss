@@ -10,11 +10,10 @@ body {
   margin: 0;
 }
 
-#admin_bar {
-  width: 100%;
-  padding: 0.5em 0 0.2em;
-  z-index: 100;
+body.no-home {
+  padding-top: 2em;
 }
+
 
 .container {
   max-width: 1240px;
