@@ -34,14 +34,34 @@
 }
 
 .no-home {
-  #header_container {
-    background: #dfcf80;
+  header {
+    margin-bottom: 3em;
+    background: $kaki_yellow;
     position: relative;
-    margin-bottom: 2em;
 
-    #main_header {
-      display: flex;
+    &:before {
+      background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 0;
+      position: absolute;
+      content: " ";
+      width: 100%;
+      height: 10px;
+      top: -10px;
     }
+
+    &:after {
+      background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 100%;
+      position: absolute;
+      content: " ";
+      width: 100%;
+      height: 10px;
+      bottom: -10px;
+      z-index: 0;
+    }
+  }
+
+  .header-container {
+    display: flex;
+    position: relative;
 
     #brand {
       width: 5em;
@@ -61,24 +81,4 @@
       top: -1.9em;
     }
   }
-
-  #header_container:before {
-    background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 0;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 10px;
-    top: -10px;
-  }
-
-  #header_container:after {
-    background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 100%;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 10px;
-    bottom: -10px;
-    z-index: 0;
-  }
-
 }
