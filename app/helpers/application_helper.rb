@@ -19,10 +19,11 @@ module ApplicationHelper
   end
 
   def body_classes
-    classes = "#{controller.controller_name} #{controller.action_name}"
-    classes += " with_sidebar" if sidebar?
-    classes += " no-home" unless home?
-    classes
+    classes = [controller.controller_name, controller.action_name]
+    classes << "with_sidebar" if sidebar?
+    classes << "no-home" unless home?
+
+    classes.join(' ')
   end
 
   def home?
@@ -31,6 +32,22 @@ module ApplicationHelper
 
   def active_link?(url)
     return "active" if url == request.fullpath
+  end
+
+  def page_name
+    base_name =
+      case controller.controller_name
+      when 'action_works'
+        t('menu.action_art')
+      when 'visual_works'
+        t('menu.visual_art')
+      when 'dashboards'
+        t('menu.about') if controller.action_name == 'about'
+      when 'contact_messages'
+        t('menu.contact')
+      end
+
+    base_name + " | "
   end
 
 private
