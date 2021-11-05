@@ -47,14 +47,13 @@ module ApplicationHelper
         t('menu.contact')
       end
 
-    base_name + " | "
+    "#{base_name} | "
   end
 
-private
+  private
 
   def sidebar?
-    !home? and
-      !(%w(new edit admin).include?(controller.action_name)) or
+    (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
   end
 end
