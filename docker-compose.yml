@@ -35,6 +35,8 @@ services:
     <<: *app_config
     container_name: zantop_web
     command: bundle exec puma -C config/puma.rb
+    ports:
+      - "3000:3000"
 
   spring:
     <<: *app_config

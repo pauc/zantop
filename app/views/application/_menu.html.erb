@@ -1,0 +1,21 @@
+<nav id="main_menu" role="navigation">
+<% if home? %>
+  <i>Art</i>
+  <div class="menu-item">
+    <%= link_to t('action'), nil, class: 'action' %>
+    <%#<%= link_to t('action'), action_works_path, class: 'action' %>
+  </div>
+  <div class="menu-item">
+    <%= link_to t('visual'), nil, class: 'visual' %>
+    <%#<%= link_to t('visual'), visual_works_path, class: 'visual' %>
+  </div>
+<% else %>
+  <%#<%= link_to t('menu.action_art'), action_works_path, class: active_link?(action_works_path) %>
+  <%#<%= link_to t('menu.visual_art'), visual_works_path, class: active_link?(visual_works_path)%>
+  <%#<%= link_to t('menu.about'), about_path, class: active_link?(about_path)%>
+  <%#<%= link_to t('menu.contact'), contact_path, class: active_link?(contact_path)%>
+  <%= link_to t('menu.action_art'), nil, class: active_link?(action_works_path) %>
+  <%= link_to t('menu.visual_art'), nil, class: active_link?(visual_works_path)%>
+  <%= link_to t('menu.about'), nil, class: active_link?(about_path)%>
+  <%= link_to t('menu.contact'), nil, class: active_link?(contact_path)%>
+<% end %>
