@@ -1,22 +1,17 @@
 <footer id="footer" role="contentinfo">
   <div class='container'>
     <div id="footer_page_name">
-      <h3><%= link_to "MireiaZantop.com", home_path %></h3>
+      <h3><%= link_to 'MireiaZantop.com', home_path %></h3>
     </div>
     <div id="footer_menu">
-      <%#<%= link_to t('menu.action_art'), action_works_path %>
-      <%#<%= link_to t('menu.visual_art'), visual_works_path %>
-      <%#<%= link_to t('menu.about'), about_path %>
-      <%#<%= link_to t('menu.contact'), contact_path %>
-      <%= link_to t('menu.action_art'), nil%>
-      <%= link_to t('menu.visual_art'), nil%>
-      <%= link_to t('menu.about'), nil%>
-      <%= link_to t('menu.contact'), nil%>
+      <%= link_to t('menu.action_art'), action_works_path %>
+      <%= link_to t('menu.visual_art'), visual_works_path %>
+      <%= link_to t('menu.about'), about_path %>
+      <%= link_to t('menu.contact'), contact_path %>
     </div>
   </div>
   <div class="about-source-code">
     <%= t('about_the_code.html') %>
-    <%= mail_to "pausandalio@gmail.com", nil,
-      encode: "hex", replace_at: "[at]" %>.
+    <%= mail_to "pausandalio@gmail.com", nil, encode: "hex", replace_at: "[at]" %>
   </div>
 </footer>
