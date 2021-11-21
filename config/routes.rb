@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
-    resources :action_works
+  localized do
     resources :visual_works
+    resources :action_works
 
     get 'contact', to: 'contact_messages#new'
     post 'contact_messages/create'
