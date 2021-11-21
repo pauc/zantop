@@ -1,1 +1,1 @@
-I18n.available_locales = [:es, :ca, :en]
+I18n.available_locales = %i[es ca en]
