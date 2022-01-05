@@ -46,8 +46,6 @@ module ApplicationHelper
       when 'contact_messages'
         t('menu.contact')
       end
-
-    "#{base_name} | "
   end
 
   private
@@ -55,5 +53,10 @@ module ApplicationHelper
   def sidebar?
     (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
+  end
+
+  def set_page_title(title = nil)
+    title = title + ' | ' unless title.nil?
+    content_for(:title) { title }
   end
 end

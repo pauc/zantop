@@ -1,5 +1,12 @@
-<% content_for :title do %>
-  <%= page_name %>
-<% end %>
+<% set_page_title(page_name) %>
 
-<h1><%= t('menu.contact') %></h1>
+<h1 id="section_header"><%= t('menu.contact') %></h1>
+
+<%= simple_form_for @contact_message do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :from_email %>
+  <%= f.input :from_name %>
+  <%= f.input :subject%>
+  <%= f.input :text, as: :text, input_html: { cols: 20, rows: 9 } %>
+  <%= f.button :submit, value: t('simple_form.labels.contact_message.send') %>
+<% end %>
