@@ -1,7 +1,4 @@
-class ContactMailer < ActionMailer::Base
-  default from: "no-reply@mireiazantop.com",
-          charset: 'UTF-8'
-
+class ContactMailer < ApplicationMailer
   def contact_message(message)
     @name = message.from_name
     @text = message.text

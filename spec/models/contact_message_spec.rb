@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ContactMessage do
   let(:message) do
-    ContactMessage.new(
+    described_class.new(
       from_email: 'example@example.com',
       from_name: 'The name',
       subject: 'The subject',

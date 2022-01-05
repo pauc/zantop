@@ -35,3 +35,6 @@ Style/StringLiterals:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 5

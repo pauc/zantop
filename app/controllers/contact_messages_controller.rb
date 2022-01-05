@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ContactMessagesController < ApplicationController
   def new
     @contact_message = ContactMessage.new
