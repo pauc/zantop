@@ -1,0 +1,124 @@
+/* Estils per al formulari de contacte */
+.contact_messages.new, .contact_messages.create {
+  form {
+    margin-top: 1em;
+
+    input, textarea {
+      font-size: 100%;
+    }
+
+    input {
+      width: 40%;
+      min-width: 12em;
+    }
+
+    textarea {
+      width: 65%;
+      min-width: 16em;
+      min-height: 9em;
+    }
+  }
+
+  .alert.alert-error {
+    background: transparent;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 2px solid red;
+    border-radius: 5px;
+  }
+}
+
+form {
+  background-color: $clear_grey;
+  padding: 0.5em;
+  border: 1px solid $grey;
+  border-radius: 5px;
+
+  .control-group, fieldset {
+    margin: 0 0 1em 0;
+  }
+
+  .control-group {
+    margin-bottom: 0.8em;
+
+    label, input{
+      display: block;
+    }
+
+    input {
+      padding: 0.2em;
+      font-size: 125%;
+    }
+  }
+}
+/* Estils per a tots els formularis */
+//form {
+  //.control-group, fieldset {
+    //margin: 0 0 1em 0;
+  //}
+
+  //fieldset {
+    //border: 4px double $black;
+  //}
+
+  //.fields {
+    //position: relative;
+    //margin-bottom: 0.5em;
+    //padding: 0.5em;
+    //padding-left: 2em;
+    //border-radius: 5px;
+    ////@include clearfix;
+
+    //.remove_nested_fields {
+      //float: right;
+    //}
+  //}
+
+  //.image-preview {
+    //float: right;
+    //max-width: 100px;
+    //margin-left: 1.5em;
+
+    //img {
+      //max-width: 100%;
+    //}
+  //}
+
+  //p {
+    //margin: 0;
+  //}
+//}
+
+//.fields .control-group.text {
+  //max-width: 30em;
+//}
+
+//#admin_tags {
+  //form {
+    //min-width: 1024px;
+
+    //& > div {
+      ////@include inline-block;
+      //min-width: 10%;
+    //}
+
+    //h3 {
+      //margin: 0 0 0.5em;
+    //}
+  //}
+//}
+
+//.error {
+  //input, text-area, select {
+    //box-shadow: 0 0 5px 0 $error;
+  //}
+
+  //.help-inline {
+    //padding: 0 0.5em;
+  //}
+//}
+
+//[> Estils per als camps ordenables <]
+//.sort-field {
+  //float: right;
+//}

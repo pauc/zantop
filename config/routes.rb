@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :action_works
 
     get 'contact', to: 'contact_messages#new'
-    post 'contact_messages/create'
+    resources :contact_messages, only: [:create]
 
     get 'home', to: 'dashboards#home'
     get 'about', to: 'dashboards#about'

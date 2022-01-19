@@ -35,19 +35,16 @@ module ApplicationHelper
   end
 
   def page_name
-    base_name =
-      case controller.controller_name
-      when 'action_works'
-        t('menu.action_art')
-      when 'visual_works'
-        t('menu.visual_art')
-      when 'dashboards'
-        t('menu.about') if controller.action_name == 'about'
-      when 'contact_messages'
-        t('menu.contact')
-      end
-
-    "#{base_name} | "
+    case controller.controller_name
+    when 'action_works'
+      t('menu.action_art')
+    when 'visual_works'
+      t('menu.visual_art')
+    when 'dashboards'
+      t('menu.about') if controller.action_name == 'about'
+    when 'contact_messages'
+      t('menu.contact')
+    end
   end
 
   private
@@ -55,5 +52,10 @@ module ApplicationHelper
   def sidebar?
     (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
+  end
+
+  def page_title(title = nil)
+    title += ' | ' unless title.nil?
+    content_for(:title) { title }
   end
 end
