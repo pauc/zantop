@@ -2,7 +2,7 @@
 <html class="no-script">
   <head>
     <title><%= yield :title %>ZANTOP</title>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
   </head>
@@ -10,8 +10,8 @@
     <%#<%= render 'session_bar' if current_user? %>
     <%= render 'header' %>
     <div class="container">
-      <%#<%= render 'flash_messages' %>
-      <%= yield :page_title %>
+      <%= render 'flash_messages' %>
+      <%= yield :page_header %>
       <div id="main" role="main">
         <div class="content">
           <%= yield %>
