@@ -15,7 +15,11 @@ class ActionWorksController < ApplicationController
 
   def index
     @published_works = ActionWork.all.includes(:translations)
+<<<<<<< HEAD
     render template: "works/works_list"
+=======
+    render template: 'works/works_list'
+>>>>>>> a7eb4c8 ([28] Action works)
   end
 
   # def show
