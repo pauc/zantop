@@ -34,12 +34,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_31_224759) do
     t.index ["locale"], name: "index_image_translations_on_locale"
   end
 
-  create_table "images", id: :serial, force: :cascade do |t|
-    t.string "image", limit: 255
+  create_table "images", force: :cascade do |t|
+    t.string "image"
+    t.integer "illustrated_id"
+    t.string "illustrated_type"
     t.integer "position"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.string "video", limit: 255
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["illustrated_id", "illustrated_type"], name: "index_images_on_illustrated_id_and_illustrated_type"
+  end
+
+  create_table "work_translations", force: :cascade do |t|
     t.bigint "work_id", null: false
     t.index ["work_id"], name: "index_images_on_work_id"
   end

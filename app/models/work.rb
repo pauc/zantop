@@ -8,6 +8,8 @@ class Work < ApplicationRecord
   has_many :sections, dependent: :destroy
   has_many :images, dependent: :destroy
 
+  include HasImages
+
   translates :title, :description, :techniques, :place
 
   validates :title, presence: true
