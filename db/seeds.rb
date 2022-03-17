@@ -1,7 +1,1 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+`psql -h ${ZANTOP_DATABASE_HOST:-localhost} -U $ZANTOP_DATABASE_USER -p ${ZANTOP_DATABASE_PORT:-5432} ${ZANTOP_DATABASE_NAME:-zantop_development} < db/initial_db_state.sql`
