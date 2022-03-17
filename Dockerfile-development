@@ -1,4 +1,4 @@
-FROM ruby:3.0.2-alpine3.14 as Builder
+FROM ruby:3.0.2-alpine3.14 AS Builder
 
 RUN apk add --update --no-cache \
   cmake \
@@ -14,9 +14,12 @@ RUN apk add --update --no-cache \
   postgresql-dev postgresql-client \
   build-base \
   openssl-dev \
-  nodejs-current
+  nodejs-current \
+  yarn
 
 WORKDIR /app
+
+RUN yarn install --check-files
 
 COPY docker/imagemagick-policy.xml /etc/ImageMagick-7/policy.xml
 
