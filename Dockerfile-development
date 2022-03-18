@@ -1,4 +1,4 @@
-FROM ruby:3.0.2-alpine3.14 AS Builder
+FROM ruby:3.1.1-alpine3.14 AS Builder
 
 RUN apk add --update --no-cache \
   cmake \
@@ -28,7 +28,3 @@ COPY docker/imagemagick-policy.xml /etc/ImageMagick-7/policy.xml
 COPY docker/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-ENV BUNDLE_PATH=/bundle \
-    BUNDLE_BIN=/bundle/bin \
-    GEM_HOME=/bundle \
-    PATH=$PATH:/app/bin

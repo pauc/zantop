@@ -15,7 +15,7 @@ x-app-config: &app_config
   stdin_open: true
   volumes:
     - .:/app:cached
-    - bundle_cache:/bundle
+    - bundle_cache:/usr/local/bundle
   depends_on:
     - db
 
@@ -36,12 +36,14 @@ services:
     <<: *app_config
     container_name: zantop_web
     command: bundle exec puma -C config/puma.rb
+    environment:
+      <<: *rails_dev_environment
     ports:
       - "3000:3000"
 
   spring:
     <<: *app_config
-    command: /bundle/bin/spring server
+    command: bin/spring server
     environment:
       <<: *rails_dev_environment
 

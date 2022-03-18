@@ -2,695 +2,33 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 13.4
+-- Dumped by pg_dump version 13.6 (Ubuntu 13.6-1.pgdg21.10+1)
+
 SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-
-SET search_path = public, pg_catalog;
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
---
--- Name: ckeditor_assets; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE ckeditor_assets (
-    id integer NOT NULL,
-    data_file_name character varying(255) NOT NULL,
-    data_content_type character varying(255),
-    data_file_size integer,
-    assetable_id integer,
-    assetable_type character varying(30),
-    type character varying(30),
-    width integer,
-    height integer,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.ckeditor_assets OWNER TO postgres;
-
---
--- Name: ckeditor_assets_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE ckeditor_assets_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.ckeditor_assets_id_seq OWNER TO postgres;
-
---
--- Name: ckeditor_assets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE ckeditor_assets_id_seq OWNED BY ckeditor_assets.id;
-
-
---
--- Name: friendly_id_slugs; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE friendly_id_slugs (
-    id integer NOT NULL,
-    slug character varying(255) NOT NULL,
-    sluggable_id integer NOT NULL,
-    sluggable_type character varying(40),
-    created_at timestamp without time zone
-);
-
-
-ALTER TABLE public.friendly_id_slugs OWNER TO postgres;
-
---
--- Name: friendly_id_slugs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE friendly_id_slugs_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.friendly_id_slugs_id_seq OWNER TO postgres;
-
---
--- Name: friendly_id_slugs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE friendly_id_slugs_id_seq OWNED BY friendly_id_slugs.id;
-
-
---
--- Name: image_translations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE image_translations (
-    id integer NOT NULL,
-    image_id integer,
-    locale character varying(255),
-    credits text,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.image_translations OWNER TO postgres;
-
---
--- Name: image_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE image_translations_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.image_translations_id_seq OWNER TO postgres;
-
---
--- Name: image_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE image_translations_id_seq OWNED BY image_translations.id;
-
-
---
--- Name: images; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE images (
-    id integer NOT NULL,
-    image character varying(255),
-    illustrated_id integer,
-    illustrated_type character varying(255),
-    "position" integer,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    video character varying(255)
-);
-
-
-ALTER TABLE public.images OWNER TO postgres;
-
---
--- Name: images_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE images_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.images_id_seq OWNER TO postgres;
-
---
--- Name: images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE images_id_seq OWNED BY images.id;
-
-
---
--- Name: page_translations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE page_translations (
-    id integer NOT NULL,
-    page_id integer,
-    locale character varying(255),
-    title character varying(255),
-    body text,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.page_translations OWNER TO postgres;
-
---
--- Name: page_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE page_translations_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.page_translations_id_seq OWNER TO postgres;
-
---
--- Name: page_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE page_translations_id_seq OWNED BY page_translations.id;
-
-
---
--- Name: pages; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE pages (
-    id integer NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.pages OWNER TO postgres;
-
---
--- Name: pages_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE pages_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.pages_id_seq OWNER TO postgres;
-
---
--- Name: pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE pages_id_seq OWNED BY pages.id;
-
-
---
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
-);
-
-
-ALTER TABLE public.schema_migrations OWNER TO postgres;
-
---
--- Name: section_translations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE section_translations (
-    id integer NOT NULL,
-    section_id integer,
-    locale character varying(255),
-    title character varying(255),
-    body text,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.section_translations OWNER TO postgres;
-
---
--- Name: section_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE section_translations_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.section_translations_id_seq OWNER TO postgres;
-
---
--- Name: section_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE section_translations_id_seq OWNED BY section_translations.id;
-
-
---
--- Name: sections; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE sections (
-    id integer NOT NULL,
-    content_id integer,
-    content_type integer,
-    "position" integer,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.sections OWNER TO postgres;
-
---
--- Name: sections_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE sections_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.sections_id_seq OWNER TO postgres;
-
---
--- Name: sections_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE sections_id_seq OWNED BY sections.id;
-
-
---
--- Name: tag_translations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE tag_translations (
-    id integer NOT NULL,
-    tag_id integer,
-    locale character varying(255),
-    name character varying(255),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.tag_translations OWNER TO postgres;
-
---
--- Name: tag_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE tag_translations_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.tag_translations_id_seq OWNER TO postgres;
-
---
--- Name: tag_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE tag_translations_id_seq OWNED BY tag_translations.id;
-
-
---
--- Name: taggings; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE taggings (
-    id integer NOT NULL,
-    tag_id integer,
-    taggable_type character varying(255),
-    taggable_id integer,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.taggings OWNER TO postgres;
-
---
--- Name: taggings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE taggings_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.taggings_id_seq OWNER TO postgres;
-
---
--- Name: taggings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE taggings_id_seq OWNED BY taggings.id;
-
-
---
--- Name: tags; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE tags (
-    id integer NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    slug_en character varying(255),
-    slug_es character varying(255),
-    slug_ca character varying(255),
-    taggings_count integer DEFAULT 0
-);
-
-
-ALTER TABLE public.tags OWNER TO postgres;
-
---
--- Name: tags_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE tags_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.tags_id_seq OWNER TO postgres;
-
---
--- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE tags_id_seq OWNED BY tags.id;
-
-
---
--- Name: users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE users (
-    id integer NOT NULL,
-    name character varying(255),
-    email character varying(255),
-    admin boolean DEFAULT false,
-    password_digest character varying(255),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.users OWNER TO postgres;
-
---
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE users_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.users_id_seq OWNER TO postgres;
-
---
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
-
-
---
--- Name: work_translations; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE work_translations (
-    id integer NOT NULL,
-    work_id integer,
-    locale character varying(255),
-    title character varying(255),
-    description text,
-    techniques character varying(255),
-    place character varying(255),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
-ALTER TABLE public.work_translations OWNER TO postgres;
-
---
--- Name: work_translations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE work_translations_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.work_translations_id_seq OWNER TO postgres;
-
---
--- Name: work_translations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE work_translations_id_seq OWNED BY work_translations.id;
-
-
---
--- Name: works; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE works (
-    id integer NOT NULL,
-    slug_en character varying(255),
-    slug_es character varying(255),
-    slug_ca character varying(255),
-    realization_date date,
-    dimensions character varying(255),
-    "position" integer,
-    type character varying(255),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    published boolean DEFAULT false,
-    images_count integer DEFAULT 0
-);
-
-
-ALTER TABLE public.works OWNER TO postgres;
-
---
--- Name: works_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE works_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.works_id_seq OWNER TO postgres;
-
---
--- Name: works_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE works_id_seq OWNED BY works.id;
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY ckeditor_assets ALTER COLUMN id SET DEFAULT nextval('ckeditor_assets_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY friendly_id_slugs ALTER COLUMN id SET DEFAULT nextval('friendly_id_slugs_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY image_translations ALTER COLUMN id SET DEFAULT nextval('image_translations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY images ALTER COLUMN id SET DEFAULT nextval('images_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY page_translations ALTER COLUMN id SET DEFAULT nextval('page_translations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY pages ALTER COLUMN id SET DEFAULT nextval('pages_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY section_translations ALTER COLUMN id SET DEFAULT nextval('section_translations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY sections ALTER COLUMN id SET DEFAULT nextval('sections_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY tag_translations ALTER COLUMN id SET DEFAULT nextval('tag_translations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY taggings ALTER COLUMN id SET DEFAULT nextval('taggings_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY tags ALTER COLUMN id SET DEFAULT nextval('tags_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY work_translations ALTER COLUMN id SET DEFAULT nextval('work_translations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY works ALTER COLUMN id SET DEFAULT nextval('works_id_seq'::regclass);
-
-
---
--- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY ckeditor_assets (id, data_file_name, data_content_type, data_file_size, assetable_id, assetable_type, type, width, height, created_at, updated_at) FROM stdin;
+COPY public.ckeditor_assets (id, data_file_name, data_content_type, data_file_size, assetable_id, assetable_type, type, width, height, created_at, updated_at) FROM stdin;
 \.
 
 
 --
--- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('ckeditor_assets_id_seq', 1, false);
-
-
---
--- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at) FROM stdin;
+COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at) FROM stdin;
 277	group-process	32	Tag	2021-09-26 16:49:29.329393
 16	corpologia	5	Tag	2013-01-04 20:22:42.080227
 18	zenits-1	6	Work	2013-01-04 20:32:20.781848
@@ -857,17 +195,10 @@ COPY friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at) FROM
 
 
 --
--- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('friendly_id_slugs_id_seq', 294, true);
-
-
---
--- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY image_translations (id, image_id, locale, credits, created_at, updated_at) FROM stdin;
+COPY public.image_translations (id, image_id, locale, credits, created_at, updated_at) FROM stdin;
 3	55	ca		2013-03-22 00:11:06.540112	2013-03-22 00:11:06.540112
 4	56	ca		2013-03-27 21:32:21.839954	2013-03-27 21:32:21.839954
 5	57	ca		2013-03-27 21:32:22.733564	2013-03-27 21:32:22.733564
@@ -1400,17 +731,10 @@ COPY image_translations (id, image_id, locale, credits, created_at, updated_at) 
 
 
 --
--- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('image_translations_id_seq', 594, true);
-
-
---
--- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY images (id, image, illustrated_id, illustrated_type, "position", created_at, updated_at, video) FROM stdin;
+COPY public.images (id, image, illustrated_id, illustrated_type, "position", created_at, updated_at, video) FROM stdin;
 14	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	10	Work	1	2013-01-05 00:35:47.142951	2013-01-05 00:35:47.142951	
 15	ANA_RITA_RODRIGUES_FEM_2011_PAR_8672.jpg	10	Work	2	2013-01-05 00:35:48.064251	2013-01-05 00:35:48.064251	
 16	ANA_RITA_RODRIGUES_FEM_2011_PAR_8711.jpg	10	Work	3	2013-01-05 00:35:48.681777	2013-01-05 00:35:48.681777	
@@ -1818,17 +1142,10 @@ COPY images (id, image, illustrated_id, illustrated_type, "position", created_at
 
 
 --
--- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('images_id_seq', 472, true);
-
-
---
--- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY page_translations (id, page_id, locale, title, body, created_at, updated_at) FROM stdin;
+COPY public.page_translations (id, page_id, locale, title, body, created_at, updated_at) FROM stdin;
 2	2	ca	Contact	The contact-page	2012-10-29 18:37:00.457137	2012-10-29 18:37:00.459652
 1	1	ca	About	<p>mireia zantop zigzageja en l&#39;u,<br />\r\ntreballa amb els llenguatges visuals i del cos,</p>\r\n\r\n<p>en l&#39;art d&#39;acci&oacute;, relaciona identitats en l&#39;espai/temps de conflu&egrave;ncia de mirades i intencions</p>\r\n\r\n<p>performance participativa a l&#39;espai p&uacute;blic: <a href="http://www.lesmireies.com">http://www.lesmireies.com</a></p>\r\n\r\n<p>+ info: hola@mireiazantop.com</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	2012-10-29 18:37:00.444265	2021-12-10 15:37:26.956474
 4	1	es	About	<p><strong>Mireia Zantop</strong> zigzaguea en la unidad poli&eacute;drica, trabaja con los lenguajes visuales y del cuerpo.</p>\r\n\r\n<p>en el arte de acci&oacute;n, ese caj&oacute;n transdisciplinario, conjuga identidades y las relaciona con la poes&iacute;a del espacio/tiempo.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Para una mayor confluencia de miradas e intenciones, para dar voz y presencia a aquello que solemos silenciar de forma individual y colectiva, surgieron</p>\r\n\r\n<p><strong>les mireies,</strong> un proyecto de performance participativa en el espacio p&uacute;blico <a href="http://www.lesmireies.com">http://www.lesmireies.com</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>+ info: hola@mireiazantop.com</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	2021-11-19 21:55:25.520084	2022-02-11 10:51:02.050197
@@ -1837,64 +1154,20 @@ COPY page_translations (id, page_id, locale, title, body, created_at, updated_at
 
 
 --
--- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('page_translations_id_seq', 4, true);
-
-
---
--- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY pages (id, created_at, updated_at) FROM stdin;
+COPY public.pages (id, created_at, updated_at) FROM stdin;
 2	2012-10-29 18:37:00.455895	2012-10-29 18:37:00.455895
 1	2012-10-29 18:37:00.367104	2022-02-11 11:18:01.353326
 \.
 
 
 --
--- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('pages_id_seq', 2, true);
-
-
---
--- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY schema_migrations (version) FROM stdin;
-20120627134352
-20120628125628
-20120629184830
-20120630202152
-20120702202339
-20120702234540
-20120703192045
-20120828014115
-20120828020950
-20121013062746
-20121016161659
-20121017030057
-20121017031358
-20121028134612
-20130107110701
-20130108020610
-20130115034721
-20130120041118
-20130120165112
-20130122013922
-20130321135950
-20130402185036
-\.
-
-
---
--- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY section_translations (id, section_id, locale, title, body, created_at, updated_at) FROM stdin;
+COPY public.section_translations (id, section_id, locale, title, body, created_at, updated_at) FROM stdin;
 2	2	ca	agraïments 	<p>(f&egrave; d&#39;errata)a la p&agrave;gina dels cr&egrave;dits hauria de figurar, escrit a m&agrave;:</p>\r\n\r\n<p>Agra&Iuml;da</p>\r\n\r\n<p>a les saurines de idees,<br />\r\nal pare Jordi i als meus,<br />\r\nals amables del cam&iacute;<br />\r\ni a tot all&ograve; que m&#39;atrau i em permet veure m&eacute;s enll&agrave; de la forma. &nbsp;<br />\r\nA tu.</p>\r\n	2013-04-05 18:53:18.947731	2013-04-05 18:53:18.947731
 1	1	ca	CANON de SINEQUANONS	<p>veure per crear<br />\r\ncrear per veure<br />\r\nviure per veure<br />\r\n(i da capo)</p>\r\n	2013-04-05 18:53:18.922375	2013-04-05 18:56:47.263267
 3	3	ca		<p>Equilibri, de aequilibrium: aequus = igual i libra=balan&ccedil;a, pes i aqu&iacute;. i a qui? libris: dels llibres o dels lliures. libertas: tornar a la mare</p>\r\n\r\n<p>Fragment del proc&eacute;s d&#39;equilibri de lectures obertes i creuades del pes propi i l&#39;exterior, del cos &iacute;ntim davant del cos p&uacute;blic dels factors intencionats o involuntaris, de l&#39;acci&oacute; de forces que implico o s&#39;impliquen i contrarresten m&uacute;tuament, dels vincles de la paraula-veu i la paraula-paper, paper del lligam, de la (con)fusi&oacute; dels estrats de percepci&oacute; i mem&ograve;ria en l&#39;harmonia de la unitat.</p>\r\n\r\n<p>Els factors (sempre) canviants neguen un estat d&#39;equilibri estable, un resultat, i evidencien un proc&eacute;s pur d&#39;infinit moviment tendint a la justesa i l&#39;harmonia en la unitat.</p>\r\n\r\n<p>...Et qui est libre?</p>\r\n	2013-04-05 19:05:21.9985	2013-04-05 19:05:21.9985
@@ -1929,17 +1202,10 @@ COPY section_translations (id, section_id, locale, title, body, created_at, upda
 
 
 --
--- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('section_translations_id_seq', 30, true);
-
-
---
--- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY sections (id, content_id, content_type, "position", created_at, updated_at) FROM stdin;
+COPY public.sections (id, content_id, content_type, "position", created_at, updated_at) FROM stdin;
 1	29	0	1	2013-04-05 18:53:18.872714	2013-04-05 18:56:47.25782
 2	29	0	2	2013-04-05 18:53:18.942055	2013-04-05 18:56:47.269763
 3	9	0	1	2013-04-05 19:05:21.993125	2013-04-05 19:05:21.993125
@@ -1964,17 +1230,10 @@ COPY sections (id, content_id, content_type, "position", created_at, updated_at)
 
 
 --
--- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('sections_id_seq', 20, true);
-
-
---
--- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY tag_translations (id, tag_id, locale, name, created_at, updated_at) FROM stdin;
+COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) FROM stdin;
 1	1	ca	dansa	2012-10-29 18:42:31.571497	2012-10-29 18:42:31.577401
 5	1	en	dance	2012-10-29 18:55:28.185695	2012-10-29 18:55:28.188629
 6	1	es	danza	2012-10-29 18:55:28.203152	2012-10-29 18:55:28.206018
@@ -2051,17 +1310,10 @@ COPY tag_translations (id, tag_id, locale, name, created_at, updated_at) FROM st
 
 
 --
--- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('tag_translations_id_seq', 93, true);
-
-
---
--- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY taggings (id, tag_id, taggable_type, taggable_id, created_at, updated_at) FROM stdin;
+COPY public.taggings (id, tag_id, taggable_type, taggable_id, created_at, updated_at) FROM stdin;
 681	10	Work	75	2022-01-10 11:45:58.677547	2022-01-10 11:45:58.677547
 517	11	Work	70	2020-09-20 21:15:52.22018	2020-09-20 21:15:52.22018
 682	9	Work	75	2022-01-10 11:45:58.682215	2022-01-10 11:45:58.682215
@@ -2183,17 +1435,10 @@ COPY taggings (id, tag_id, taggable_type, taggable_id, created_at, updated_at) F
 
 
 --
--- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('taggings_id_seq', 690, true);
-
-
---
--- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count) FROM stdin;
+COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count) FROM stdin;
 13	2013-01-05 01:30:12.281032	2022-01-05 20:10:05.551677	drawing	dibujo	dibuix	2
 32	2021-09-26 16:49:29.307532	2022-01-13 20:54:16.145591	group-process--4	proceso-colectivo	proces-col-lectiu	1
 30	2021-04-08 21:30:55.578699	2022-01-13 20:54:16.146657	video-performance	video-accion	video-accio	2
@@ -2222,17 +1467,18 @@ COPY tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count
 
 
 --
--- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('tags_id_seq', 35, true);
+COPY public.users (id, name, email, admin, password_digest, created_at, updated_at) FROM stdin;
+\.
 
 
 --
--- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-COPY work_translations (id, work_id, locale, title, description, techniques, place, created_at, updated_at) FROM stdin;
+COPY public.work_translations (id, work_id, locale, title, description, techniques, place, created_at, updated_at) FROM stdin;
 10	9	es	E qui libri (s) II	<p>\r\n\tCORPOLOGIA 9</p>\r\n<p>\r\n\tEquilibri, de aequilibrium: aequus = igual y libra=balanza, peso He (a)qu&iacute; He a qui&eacute;n libris: de los libros o de los libres de libertas: volver a la madre</p>\r\n<p>\r\n\tFragmento del proceso del equilibrio de lecturas abiertas y cruzadas del peso propio i el exterior, del cuerpo &iacute;ntimo delante del cuerpo p&uacute;blico de factores intencionados o involuntarios, de la acci&oacute;n de fuerzas que implico o se implican y contrarestan m&uacute;tuamente, de los v&iacute;nculos de la palabra-voz y la palabra-papel, el papel de la relaci&oacute;n, de la (con)fusi&oacute;n de estratos de percepci&oacute;n i memoria en la armon&iacute;a del conjunto.</p>\r\n<p>\r\n\tLos factores (siempre) cambiantes niegan un estado de equilibrio estable, un resultado, y evidencian un proceso puro de incesante movimento que tiende a la justeza y la armon&iacute;a en la unidad.</p>\r\n<p>\r\n\t...et qui est libre?</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 23:01:43.390395	2013-03-27 23:42:28.181869
 6	6	ca	ZeNits / 1	<p>\r\n\tPoemes d&#39;Eva Puig. Exposici&oacute; CTN La Floresta</p>\r\n	tècnica mixta sobre fusta	\N	2013-01-04 20:32:20.744798	2013-03-28 01:44:05.514606
 11	10	ca	anima(l), U	<p>\r\n\tAlma mater. Coto vedado. Caza y captura de interrogantes abiertos, pero encadenados en espiral, sobre la identidad en desequilibrio entre consciencia espiritual y cuerpo de especie animal capaz de olvidar que lo es, era y ser&aacute;. Memoria embrionaria de origen que niega, domestica, objetualiza y crea imaginarios</p>\r\n<p>\r\n\t&iquest;para entender o redimirse? &iquest;Por casualidad? &iquest;Por curiosidad?</p>\r\n<p>\r\n\tDesvelar la condici&oacute;n b&aacute;sica de nuestra animalidad subraya la condici&oacute;n humana. U. In secula seculorum...</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\thttp://www.avui.cat/noticia/article/5-cultura/19-cultura/378596-el-fem11-ja-bull.html</p>\r\n	\N	FEM / Centre Cultural La Mercè / Girona	2013-01-05 00:35:49.828799	2013-01-05 00:38:00.877773
@@ -2244,6 +1490,8 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 9	9	ca	E qui libri (s) II	<p>performance a CORPOLOGIA 9</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 22:53:54.222335	2013-04-05 19:05:22.008013
 17	16	ca	OUROBOROS (veus?)	<p>\r\n\tInsaciable, Ouroboros, el monstre que es menja a s&iacute; mateix.<br />\r\n\tCicle infinit?<br />\r\n\tEl m&eacute;s contradictori del proc&eacute;s &eacute;s que l&#39;acusat de provocar-lo i la v&iacute;ctima de les seves conseq&uuml;&egrave;ncies &eacute;s la mateixa: el monstre, tu, jo.</p>\r\n	\N	Brossa, caos i art | Exposició a Casa Elizalde | Barcelona	2013-01-20 00:53:58.813752	2013-01-20 00:55:10.001451
 40	34	en	sum(us)	<p>CORPOLOGIA 13 en el marc de l&#39;exposici&oacute; <strong>Cargol treu banya</strong>.</p>\r\n\r\n<p>sum(us)</p>\r\n\r\n<p>I<br />\r\nsum (lat.): s&oacute;c (cat.), soy (es.)<br />\r\nsumus (lat.): som (cat.), somos (es.)</p>\r\n\r\n<p>s&oacute;c<br />\r\n(s)i som<br />\r\nsi hi som</p>\r\n\r\n<p>II<br />\r\nsum (eng.): suma<br />\r\nus (eng.): nosaltres (cat.), nosotros (es.)<br />\r\nus (cat.): os, a vosotros, to you</p>\r\n\r\n<p>sumant-nos&nbsp; som.<br />\r\nSumeu-nos<br />\r\nsumeu-vos<br />\r\nsomieu-vos</p>\r\n\r\n<p>&quot;...que tots els espectadors passin a l&#39;acci&oacute;.&quot;</p>\r\n\r\n<p>Nos habebat, nos habebit humus.</p>\r\n\r\n<p>Entretant:<br />\r\ntemps de consci&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/83686197">https://vimeo.com/83686197</a></p>\r\n\r\n<p><a href="https://vimeo.com/user14560762">https://vimeo.com/user14560762</a></p>\r\n	\N	Casa Elizalde, Barcelona	2014-05-17 12:13:12.6868	2014-05-17 12:19:18.303007
+62	57	ca	Flux(Us)	<p><strong>La Muga Caula</strong>, trobada Internacional de poesia d&#39;acci&oacute; i performance</p>\r\n\r\n<p>panta rei - tot unit en la difer&egrave;ncia</p>\r\n\r\n<p><a href="http://lamugacaula.cat">http://lamugacaula.cat</a></p>\r\n\r\n<p>fotografia: <a href="http://pacojusticia.com">http://pacojusticia.com</a></p>\r\n	\N	Les Escaules, Girona	2016-10-19 22:59:40.435486	2017-02-19 23:10:21.240546
+67	62	ca	DONAR VEU...i veure més	<p>Acci&oacute; performativa a l&rsquo;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar entorn de les (des)igualtats de g&egrave;nere.</p>\r\n\r\n<p>Creaci&oacute; i realitzaci&oacute;: <strong>Les Mireies - projecte art&iacute;stic i social</strong> ( Mireia Chalamanch i Mireia Zantop)</p>\r\n	\N	Espai públic de municipis de comarques de Barcelona	2017-06-01 23:33:01.197827	2019-06-10 22:20:51.268437
 26	24	es	S/T: sin título	<p>\r\n\tCorpologia 10</p>\r\n<p>\r\n\tPuerta de entrada: portada en blanco.<br />\r\n\tEntre m&iacute; y todos, tiempo com&uacute;n i dos libros sin un solo t&iacute;tulo.<br />\r\n\tPuerta dos, portadores.<br />\r\n\tSe unen, p&aacute;gina a p&aacute;gina, en un cuerpo que no quiere dividirse. Se diferencian por palabra y pensamiento propio, se encuentran entre l&iacute;neas.<br />\r\n\tPuerta tres, al p&uacute;blico.<br />\r\n\tEje de equilibrio. Cruce de enlace mientras act&uacute;a la fuerza del roce y la tensi&oacute;n, atenci&oacute;n.<br />\r\n\tV&iacute;nculo fr&aacute;gil pero contundente arn&eacute;s m&uacute;tuo que aguanta el instante, el tiempo justo. Pueden ser horas, segundos, seg&uacute;n.</p>\r\n<p>\r\n\t<br />\r\n\t&quot;por favor, con calma, os pido que pens&eacute;is un t&iacute;tulo para esta acci&oacute;n. Cuando lo teng&aacute;is, levantad la mano derecha.&quot;<br />\r\n\t...<br />\r\n\tdigo ssss/t.<br />\r\n\tescribo S/T</p>\r\n<p>\r\n\t&quot;Gracias. Yo tambi&eacute;n prometo no decirlo nunca a nadie.&quot;</p>\r\n<p>\r\n\t(y no dud&eacute;is que me muero de ganas de saberlos)</p>\r\n<p>\r\n\tSujeto subjetivo sujetado a dos bandas. Reflejo-reflexi&oacute;n de experiencia.<br />\r\n\tCada uno es titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 23:34:12.941673	2013-03-27 23:34:13.0084
 18	17	ca	úters |	<p>\r\n\tArts i lletres de la m&agrave;. Exposici&oacute; amb Rosa Abuchaibe, Gloria Andrade, Pedro Blanco i Javier Quintanilla. Pati Llimona, Barcelona</p>\r\n	tècnica mixta sobre paper	\N	2013-01-20 01:01:02.209471	2013-03-28 00:07:10.428195
 28	26	ca	El celler i +	<p>\r\n\tportades de t&iacute;tols de Noah Gordon per a Editorial Roca</p>\r\n		\N	2013-03-28 00:59:08.741807	2013-03-28 00:59:08.741807
@@ -2253,6 +1501,8 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 31	29	ca	Grafies d'una mirada a Sarrià	<p>Quadern de viatge pel barri de Sarri&agrave; en una primavera. Llibre de la colecci&oacute; Carnet de Voyage editat per l&#39;Ajuntament de Barcelona.</p>\r\n	tècnica mixta sobre paper	\N	2013-04-05 18:53:18.958475	2013-04-05 18:56:47.283683
 8	8	ca	dues Veus nues	<p>Exposici&oacute; i instal.laci&oacute; d&#39;obra sobre paper i poemes de Rosa Abuchaibe. Performance, improvisaci&oacute; d&#39;art i poesia amb Rosa Abuchaibe. Vil.la Florida, Barcelona</p>\r\n	mixta sobre paper 	\N	2013-01-04 20:55:14.000793	2013-04-05 19:27:48.627716
 25	24	ca	S/T: sense títol	<p>Porta-1 d&#39;entrada: portada en blanc.<br />\r\nEntre mi i tots, temps com&uacute; i dos llibres sense un sol t&iacute;tol.<br />\r\nPorta-do(r)s.<br />\r\nS&#39;uneixen, p&agrave;gina a p&agrave;gina, en un cos que no vol dividir-se. Es diferencien per paraula i pensament propi, es troben entre l&iacute;nies.<br />\r\nPorta tres: em porta al p&uacute;blic.<br />\r\nEix d&#39;equilibri. Cru&iuml;lla d&#39;enlla&ccedil; mentre actua la for&ccedil;a del frec i la tensi&oacute;, atenci&oacute;.<br />\r\nLligam fr&agrave;gil per&ograve; contundent arn&eacute;s mutu que aguanta el instant, el temps just. Poden ser hores, segons.<br />\r\nPorta quatre mosquetons i corda que recorda: no estem nuats.</p>\r\n\r\n<p>&quot;Sisplau, amb la calma, us demano que penseu un t&iacute;tol per a aquesta acci&oacute;. Quan el tingueu, aixequeu la m&agrave; dreta.&quot;<br />\r\n...<br />\r\ndic: ssss/t.<br />\r\nescric S/T</p>\r\n\r\n<p>&quot;Gr&agrave;cies.<br />\r\nJo tamb&eacute; prometo no dir-ho mai a ning&uacute;.&quot;</p>\r\n\r\n<p>(i no dubteu que em moro de ganes de saber-los)</p>\r\n\r\n<p>Subjecte subjectat a dues bandes, reflexe-reflexi&oacute; d&#39;experi&egrave;ncia.<br />\r\nCadasc&uacute; n&#39;&eacute;s titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 21:35:26.168316	2013-04-05 19:00:00.761269
+66	61	ca	we were waiting for you	<p>Festival FLARE 3</p>\r\n\r\n<p>col&middot;lectiu d&#39;investigaci&oacute; d&#39;art d&#39;acci&oacute; <strong>ocells al cap:</strong></p>\r\n\r\n<p>Denys Blacker, Nat&agrave;lia Espinet, Victoria Grey, Helena Hunter, Marta Vergony&oacute;s, Sabina Vilagut, Lesley Yendell, Mireia Zantop</p>\r\n\r\n<p><a href="https://flare707.wordpress.com/">https://flare707.wordpress.com/</a></p>\r\n	\N	Vane Gallery, Newcastle, GB	2017-06-01 23:01:04.874164	2017-06-01 23:09:35.10061
+88	85	ca	SI i/o NO, torno i no torno	<p>Video-acci&oacute; per a l&#39;Exposici&oacute; Plurivisions de Fel&iacute;cia Fuster</p>\r\n\r\n<p>Realitzaci&oacute; del v&iacute;deo: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-04-08 21:04:22.995001	2021-04-08 21:31:03.886253
 32	30	ca	axis salus: homenatge al bon metge	<p>Premi al bon metge</p>\r\n\r\n<p>Paraules recollides en el proc&eacute;s de creaci&oacute; de l&#39;escultura -que acompanyaren el premi en composicions cal.ligr&agrave;fiques &uacute;niques- i que envolten l&#39;excel.l&egrave;ncia del bon metge. Valors i virtuts que van m&eacute;s enll&agrave; del coneixement cient&iacute;fic i l&#39;ex`peri&egrave;ncia fruit d&#39;estudis i praxis.&nbsp; Tenen m&eacute;s a veure amb la saviesa human&iacute;stica, el com usar el saber, com tractar el cos i l&#39;&agrave;nima de la persona. Nos&oacute;n mesurables, per&ograve; els reconeixem quan est&agrave;n presents.</p>\r\n\r\n<p>La pe&ccedil;a contempla la relaci&oacute; metge-pacient, tot i asim&egrave;trica, com un tot org&agrave;nic amb una base compartida, com un equillibri delicat, per&ograve; just, com un viatge profund a un centre com&uacute;, com una comunicaci&oacute; clara d&#39;escolta m&uacute;tua en la que parla el silenci.</p>\r\n\r\n<p>Tot el meu agra&iuml;ment i reconeixement a l&#39;equip de SEPAR i a tots els metges que dia a dia cultiven conscientment aquests valors que ens trascendeixen i fan m&eacute;s humans.</p>\r\n	escultura de bronze	\N	2013-08-20 12:50:53.349579	2013-08-20 12:50:53.349579
 33	30	es	axis salus: homenaje al buen médico. Premio SEPAR	<p>Premio al Buen M&eacute;dico</p>\r\n\r\n<p>En el proceso de creaci&oacute;n de la escultura, recog&iacute; palabras&nbsp; -que acompa&ntilde;ar&aacute;n el premio- y que envuelven la excelencia del buen m&eacute;dico. Una larga lista de valores y virtudes que van m&aacute;s all&aacute; del conocimiento cient&iacute;fico y la experiencia fruto de estudios y praxis. Tienen m&aacute;s que ver con la sabidur&iacute;a humana de c&oacute;mo usar ese saber, de c&oacute;mo tratar el cuerpo y el alma de la persona. No se pueden medir, pero se reconocen cuando est&aacute;n presentes.<br />\r\nLa pieza contempla la relaci&oacute;n m&eacute;dico-paciente, aunque asim&eacute;trica, como un todo org&aacute;nico con una base compartida, como un equilibrio delicado, pero justo, como un viaje profundo, como una comunicaci&oacute;n clara y de escucha m&uacute;tua en la que tambi&eacute;n habla e lsilencio.</p>\r\n\r\n<p>Todo mi agradecimiento y reconocimiento al equipo de Separ y a todos los m&eacute;dicos que, d&iacute;a a d&iacute;a, cultivan conscientemente estos valores preciosos que nos trascienden y hacen m&aacute;s seres humanos.</p>\r\n	escultura de bronce	\N	2013-08-20 12:52:14.3328	2013-08-20 12:53:55.06822
 34	30	en	axis salus: hommage to the good doctor	<p>Good Physician Award<br />\r\n<br />\r\nIn the process of creating the sculpture, picked words that accompany the award-and excellence involving good doctor. A long list of values ​​and virtues that go beyond scientific knowledge and experience result of research and practice. They have more to do with the wisdom of how to use this knowledge, how to treat the body and soul of the person. Can not be measured, but are recognized when present.<br />\r\nThe piece includes the doctor-patient relationship, although asymmetric, as an organic whole with a shared basis, as a delicate balance, but just as a trip deep, as clear communication and mutual listening which also silences speak.<br />\r\n<br />\r\nAll my thanks and appreciation to Separ team and all physicians who, day by day, consciously cultivate these precious values ​​transcend and make us more human.</p>\r\n	bronze sculpture	\N	2013-08-20 12:58:58.389429	2013-08-20 12:58:58.393426
@@ -2263,6 +1513,7 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 41	36	en	despunxar	<p><strong>Acci&oacute; po&egrave;tica amb Al&egrave;xia Lleonart</strong> en el marc de la seva exposici&oacute; d&#39;obra original <strong>Esbarzers.</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/&nbsp;</p>\r\n	\N	Llibreria Papasseit, Manresa	2014-05-17 12:17:29.478349	2014-05-17 12:17:29.484756
 38	35	ca	Quina és la pregunta?	<p>25 de novembre: Dia per a la eradicaci&oacute; de la viol&egrave;ncia de g&egrave;nere</p>\r\n\r\n<p>Acci&oacute; al carrer amb Mireia Chalamanc i instal.laci&oacute; a la Capella de Sant Corneli</p>\r\n\r\n<p>&ldquo;A poc a poc al endinsar-me a l&rsquo;ambient del mercat amb actitud de receptivitat van anar sorgint complicitats, mirades, apropaments, fins que em vaig sentir submergida a un flux de respostes i preguntes que anaven donant sentit a les nostres pres&egrave;ncies. Receptacles d&rsquo;emocions, pensaments, paraules, comentaris, intimitats, reaccions, necessitats&hellip; en el tap&iacute;s d&rsquo;aquesta Acci&oacute; vaig quedar impregnada de dolor, de veus callades, de veus silenciades, i al mateix temps, impregnada de possibilitats, d&rsquo;escletxes, de veus manifestades, de veus agra&iuml;des, de diversitat de veus i d&rsquo;experi&egrave;ncies.&rdquo;</p>\r\n\r\n<p>&ldquo;Una de les certeses que vaig sentir &eacute;s que durant la nostra acci&oacute; erem alhora subtils emissores i receptores, per&ograve;, sobre tot, canals a trav&eacute;s dels quals permetiem que afluessin, s&#39;expres&eacute;ssin i prengu&eacute;ssin forma verbal, -conscient o inconscientment- alguns pensaments, opinions i sentiments que solen restar soterrats.</p>\r\n\r\n<p>I parlo sempre del tot: nosaltres i els altres, l&#39;espai d d&#39;aquesta trobada &iacute;ntima en l&#39;espai p&uacute;blic nom&eacute;s podia sorgir de l&#39;escolta, la reflexi&oacute; i la sinceritat m&uacute;tua.</p>\r\n\r\n<p>Varem ser full en blanc per a paraules &ldquo;indici&rdquo;, que assenyalen t&iacute;midament moltes hist&ograve;ries que compartim poc i solen ser m&eacute;s silenciades que explicades. &Eacute;s tab&uacute; all&ograve; del que no se&#39;n parla. Em va sorprendre les visions i percepcions de la viol&egrave;ncia, i com alguns neguen ser capa&ccedil;os de sentir-la o recon&egrave;ixer-la, tant com a agents passius o actius. Em va alegrar veure que les persones, amb independ&egrave;ncia de g&egrave;nere, edat o condici&oacute; social, desitgen obrir el di&agrave;leg, cercar respostes i, amb clara determinaci&oacute;, aportar de la seva part per l&#39;eradicaci&oacute; de la viol&egrave;ncia.</p>\r\n	\N	Mercat i capella de Sant Corneli, Cardedeu	2013-12-06 13:07:21.047497	2015-01-04 21:35:15.140994
 35	31	ca	A...Z 5/5 (f)acts	<p>(f)acts</p>\r\n\r\n<p>1/5: A&#39;s rain as poem as...</p>\r\n\r\n<p>2/5: pienso, luego... o no</p>\r\n\r\n<p>3/5: yo no he sido</p>\r\n\r\n<p>4/5: entrar saliendo o salir entrando</p>\r\n\r\n<p>5/5: a room, espai habitat</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Experimental Room Festival, Barcelona	2013-09-05 14:59:31.67866	2015-09-20 18:03:57.753149
+91	87	es	Over and over, again and again 	<p>Video-performance con Denys Blacker.</p>\r\n\r\n<p>Proceso creativo colectivo sobre migraciones con Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) e Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>Presentado en Regional Cultural Centre Letterkenny Co.Donegal en oto&ntilde;o de 2021</p>\r\n\r\n<p>WILD SWANS: https://www.bernadettehopkins.com/wild-swans-performance-art.html</p>\r\n	\N	Madremanya, Girona/ Donegal, Ireland	2021-09-13 17:22:20.910774	2021-12-16 21:38:29.44898
 46	40	ca	BIRDS-ocells al cap	<p><br />\r\nActivitat vinculada a l&#39;exposici&oacute;<strong>&nbsp;Allan Kaprow. Altres maneres</strong>&nbsp;a la Fundaci&oacute; Antoni T&agrave;pies, Barcelona</p>\r\n\r\n<p><br />\r\nPerformance:&nbsp;Punt de trobada a Can Obert, Madremanya &nbsp;10h - 13h<br />\r\nPosta en com&uacute;:&nbsp;Can Obert, Madremanya 16h -18h</p>\r\n\r\n<p><br />\r\nDe&nbsp;Birds&nbsp;(Ocells) a&nbsp;Tenir ocells al cap&nbsp;<br />\r\nA partir de la proposta de treballar al voltant de l&rsquo;obra&nbsp;de Kaprow i en con&egrave;ixer el seu vincle amb la Womanhouse, decidim recrear la pe&ccedil;a&nbsp;Birds. En el proc&eacute;s de &ldquo;reinvenci&oacute;&rdquo; que proposa el mateix Kaprow ens interessa anar m&eacute;s enll&agrave; de la partitura proposada, i explorar, en aquesta intervenci&oacute; en plena natura, la locuci&oacute; &ldquo;tenir ocells al cap&rdquo;.</p>\r\n\r\n<p><br />\r\nCoordinadores de la reinvenci&oacute;:&nbsp;Denys Blacker i Marta Vergony&oacute;s<br />\r\nAmb la participaci&oacute; de:&nbsp;Montse Ser&oacute;,&nbsp;Ada Vilar&oacute;,&nbsp;Lesley Yendell,&nbsp;Paloma Orts,&nbsp;Nat&agrave;lia Espinet,&nbsp;N&uacute;ria Icl&egrave;sies,&nbsp;Mar Serinya,&nbsp;Clara Gar&iacute;,&nbsp;J&uacute;lia Falgas i Mireia Zantop.<br />\r\n<a href="http://www.fundaciotapies.org/site/spip.php?rubrique1274">http://www.fundaciotapies.org/site/spip.php?rubrique1274</a></p>\r\n	\N	Madremanya	2014-05-17 13:01:15.49841	2016-08-05 12:02:03.841509
 42	33	en	fent volar coloms	<p>Fent volar coloms s&#39;ha gestat durant el temps de conviv&egrave;ncia amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una s&egrave;rie de peces breus que incorporen tamb&eacute; elements sonors.</p>\r\n\r\n<p>Transitem tamb&eacute; per 11 v&iacute;deo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agra&iuml;ments a l&#39;equip de l&#39;Antic, Clara Bes, Pau Compte, Andr&eacute;s Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p><a href="http://vimeo.com/81280599">http://vimeo.com/81280599</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>\r\n	\N	Antic Teatre, Barcelona	2014-05-17 12:23:54.04395	2014-05-17 12:23:54.048024
 43	37	ca	(n)ombrares 	<p><strong>(n)ombrares</strong> es basa en la relaci&oacute; amb la pr&ograve;pia ombra en relaci&oacute; amb el nombre d&#39;ombres i el nombre d&#39;ares que percebem conscientment i podem nombrar</p>\r\n\r\n<p>(fent segments subjectius de la unitat flu&iuml;da del tot).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Anotacions marginals:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>La meva ombra m&#39;acompanya des del meu enllumenament.</p>\r\n\r\n<p>&Eacute;s variable - particular, privada (tamb&eacute; de llibertat) y p&uacute;blica, &uacute;nica y m&uacute;ltiple, impert&egrave;rrita i adaptable, singular o plural,</p>\r\n\r\n<p>i sempre sincr&ograve;nica.</p>\r\n\r\n<p>&Eacute;s tots els meus jos i nos. Tenim una bona relaci&oacute;.</p>\r\n\r\n<p>&Eacute;s la meva ombra de la guarda.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Relaci&oacute; d&#39;ares t&ograve;nics per preposicions &agrave;tones</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>a l&#39;ombra (parlo i beso)</p>\r\n\r\n<p>amb l&#39;ombra ( em defineixo i m&#39;abra&ccedil;o)</p>\r\n\r\n<p>de l&#39;ombra (neixo i s&oacute;c inseparable. S&eacute; que no la puc matar sense morir en</p>\r\n\r\n<p>l&#39;intent - o tu i jo o ni tu ni jo)</p>\r\n\r\n<p>en l&#39;ombra (que m&#39;acull, m&#39;esmunyo)</p>\r\n\r\n<p>per l&#39;ombra (interpreto forma i acci&oacute; segons la llum de la mirada)</p>\r\n\r\n<p>per a l&#39;ombra (un got de vi, que tra&ccedil;a i revela la seva ess&egrave;ncia incorp&ograve;ria)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>subtext, flash-acci&oacute; imagin&agrave;ria:</p>\r\n\r\n<p>En algun moment vaig pensar en proposar de reunir-nos tots els corpologistes abra&ccedil;ats i mirar uns instants l&#39;ombra com&uacute;, fer-li una foto amb flash com a evid&egrave;ncia absoluta de la seva pres&egrave;ncia ef&iacute;mera i la incapacitat de retenir-la. Per&ograve; ja havia descartat la opci&oacute; de matar l&#39;ombra... segueixo jaient amb ella.</p>\r\n	\N	Sant Hilari Sacalm	2014-05-17 12:35:52.148102	2014-05-17 12:35:52.148102
@@ -2272,6 +1523,7 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 83	78	ca	Thyllandsias	<p>viure amb poc i d&#39;all&ograve; (aparentment) immaterial</p>\r\n	Escultura d'alabastre	\N	2020-02-14 21:53:45.80356	2020-09-21 12:36:37.639959
 70	65	ca	Desig Per(z)ones	<p><strong>art participatiu a l&#39;espai p&uacute;blic. Pe&ccedil;a entorn de les relacions afectives i la sexualitat</strong></p>\r\n\r\n<p>Acci&oacute;-performance i instal&middot;laci&oacute; col&middot;lectiva fruit de la participaci&oacute; i la reflexi&oacute; individual generant un di&agrave;leg entre espai p&uacute;blic i espai &iacute;ntim, visibilitzant la diversitat de qualsevol forma de sentir per expressar tot all&ograve; silenciat, envoltat de prejudicis i tab&uacute;s.</p>\r\n\r\n<p><strong>Les Mireies</strong>, projecte art&iacute;stic i social,</p>\r\n\r\n<p>som Mireia Chalamanch i Mireia Zantop</p>\r\n	\N	Espai públic de 23 municipis del Barcelonès	2018-08-22 15:06:01.767606	2020-06-15 15:22:31.23499
 82	77	ca	DE VEU · EN VEU	<p><strong>les Mireies, </strong>projecte art&iacute;stic i social</p>\r\n\r\n<p>Mireia Chalamanch i Mireia Zantop</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/337385523">https://vimeo.com/337385523 </a></p>\r\n\r\n<p><a href="https://vimeo.com/490838260">https://vimeo.com/490838260</a></p>\r\n\r\n<p>De VEU en VEU neix de la necessitat de fer-vos c&ograve;mplices d&rsquo;algunes de les m&eacute;s de 3.500 veus que hem recollit fent la performance DONAR VEU al llarg d&rsquo;aquests 5 anys.</p>\r\n\r\n<p>La pe&ccedil;a vol ser una invitaci&oacute; a l&rsquo;escolta, a la reflexi&oacute;, aix&iacute; com la presa de consci&egrave;ncia de la diversitat d&rsquo;experi&egrave;ncies entorn a temes com la viol&egrave;ncia masclista, la (des)igualtat i la diversitat sexual i de g&egrave;nere.</p>\r\n	\N	Can Manyé, Alella	2019-06-10 22:08:30.884277	2021-01-04 21:07:14.45751
+107	67	es	ip(sum), id(est)	<p>Acci&oacute;n en la Fundaci&oacute;n Valvi en el marco del festival Inundart, Girona</p>\r\n\r\n<p>1 de julio de 2018</p>\r\n	Performance, dibujo con el cuerpo, yeso, carbón, saliva y agua.	\N	2022-01-05 21:12:29.961094	2022-01-05 21:12:29.963527
 47	41	ca	present% o saltAl'ara	<p>CORPOLOGIA 15</p>\r\n\r\n<p>16 accions de 4 minuts.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Em presenten, em presento amb la pres&egrave;ncia, presento el t&iacute;tol:</p>\r\n\r\n<p><strong>PRESENT%</strong>: t&iacute;tol I pensat anteriorment (del passat)</p>\r\n\r\n<p>salal&#39;ara: t&iacute;tol II pensat just abans de l&#39;acci&oacute; (en un salt a l&#39;ara)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Presento i ofereixo com a present</p>\r\n\r\n<p>els objectes que m&#39;acompanyen:</p>\r\n\r\n<p>un paper blanc rod&oacute; fet a m&agrave; que porta a sobre una bossa plena de sal i 2 vells despertadors negres -d&#39;aquells que fan tic-tac i riiing percutint les dues campanes-</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Volia preguntar -quina hora &eacute;s?, per&ograve; com, sigui quina sigui, ja no &eacute;s, no vaig posar els rellotges a l&#39;hora que &eacute;s/era, si no a l&#39;hora primera i &uacute;ltima de la nostra mesura del temps: 0.00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Inici</p>\r\n\r\n<p>Sincronia = sense cronos? No cr&ograve;nic? Alhora? Tot</p>\r\n\r\n<p>A-sincronia de 2 rellotges:</p>\r\n\r\n<p>Una dimensi&oacute; del temps absoluta, mesurable. Tremolo mentre dono corda al rellotge</p>\r\n\r\n<p>L&#39;altra dimensi&oacute;, relativa, el temps percebut, l&#39;ara propi. Em calmo</p>\r\n\r\n<p>S&oacute;c a sobre del paper en blanc. Al meu eix i a l&#39;axis tempus 0:00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Salalcor, salalgust, nusalasal, nusalcap.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mossego la sal, la sento present en tota la boca en tot moment</p>\r\n\r\n<p>Tra&ccedil;o i salo un cercle/cicle en el sentit del rellotge. al ritme propi que l&#39;acci&oacute; em permet. Estic a les seves mans, s&oacute;c llapis d&#39;una voluntat invisible d&#39;aven&ccedil; imparable, fins a tancar el cercle, una acci&oacute; rodona</p>\r\n\r\n<p>Torno a l&#39;eix vertical, absurd i em desdibuixo canviant de dimensi&oacute;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara sala&#39;m! Em salo i gaudeixo tot el temps immensurable del plaer</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Eix de balan&ccedil;a, amb un rellotge a cada m&agrave; -el que mesura el temps i el que no-, em concentro en la pres&egrave;ncia (present tense!), un ara buit i ple d&#39;acci&oacute; al que li queda poc temps, 30? 10? segons. Ara cent/sent per cent</p>\r\n\r\n<p>...ara riiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing sincr&ograve;nic</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara em sorpr&egrave;n que els aplaudiments cobreixin el so de les alarmes: un fi fos amb un altre</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara d&#39;eixo d&#39;estar, esborro l&#39;eix de la mesura del temps i el seu contrari: marxo</p>\r\n\r\n<p>M&#39;emporto el paper rod&oacute;, la illa blanca de centre i cercle.</p>\r\n\r\n<p>Resta un espai negre sense sal: abs&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	l'Ateneu, Celrà	2014-05-17 13:20:04.158385	2014-11-03 23:29:42.94207
 48	42	ca	d'accions i diccions	<p>&nbsp;</p>\r\n\r\n<p>(en el marc de <strong>Poesia als parcs 2014)</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Acci&oacute; po&egrave;tica que allibera un accionari d&#39;un diccionari</p>\r\n\r\n<p>Acci&oacute; d&#39;aviacci&oacute; de reacci&oacute; a la dicci&oacute;</p>\r\n\r\n<p>Plegats, pleguem</p>\r\n\r\n<p>cadasc&uacute; un avi&oacute;, paraula de paper. Cadasc&uacute; en la direcci&oacute; del vol que vol</p>\r\n\r\n<p><strong>Dicci&oacute; al vent</strong></p>\r\n\r\n<p><strong>acci&oacute; al present</strong></p>\r\n\r\n<p><strong>text al context.</strong></p>\r\n\r\n<p><a href="https://www.facebook.com/poesiaalsparcs"><strong>https://www.facebook.com/poesiaalsparcs</strong></a></p>\r\n	\N	 Ermita de Sant Feliuet de Savassona	2015-01-04 22:05:21.205506	2015-01-04 22:13:33.965796
 49	43	ca	esClau	<p>acci&oacute; que complementa un poema llegit als 4 vents unes setmanes abans a l&#39;ermita de Sant Feliu de Savassona (gr&agrave;cies, Ester i Carles):</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CAP ESCLAU.</p>\r\n\r\n<p>t&eacute; la clau</p>\r\n\r\n<p>cau el cap,</p>\r\n\r\n<p>cau de cap</p>\r\n\r\n<p>cau l&#39;esclau del cap (esclau clau)</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>els claus cauen de cap per les escales</p>\r\n\r\n<p>&Eacute;s clau: tens la clau.</p>\r\n\r\n<p>La clau de sol.</p>\r\n\r\n<p>Cap &eacute;s clau.</p>\r\n\r\n<p><a href="http://corpologialiveart.blogspot.com.es/">http://corpologialiveart.blogspot.com.es/</a></p>\r\n	\N	Antic Teatre, Barcelona	2015-01-04 23:00:44.744179	2015-01-04 23:21:25.218318
@@ -2283,9 +1535,6 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 58	53	ca	FluxUs	<p>MUGA CAULA 2016.</p>\r\n\r\n<p>Performance en el Museu de l&#39;Empord&agrave;.</p>\r\n\r\n<p>Exposici&oacute; material gr&agrave;fic i audiovisual de la Muga Caula.</p>\r\n\r\n<p>Homenatge.</p>\r\n	\N	Museu de l'Empordà, Figueres	2016-08-01 17:43:57.124514	2020-02-19 17:17:17.26401
 57	52	ca	eventuall	<p>Corpologia 20</p>\r\n\r\n<p>(tra&ccedil;os al vent eventual del ventall)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Preparacci&oacute;:</strong></p>\r\n\r\n<p>un llibre-poema a l&#39;aire lliure.</p>\r\n\r\n<p><strong>Inspiracci&oacute;:</strong></p>\r\n\r\n<p>inspiro i escric, sense fer correccions.</p>\r\n\r\n<p><strong>Ventilacci&oacute;:</strong></p>\r\n\r\n<p>el vent del ventall de possibilitats selecciona el que ha de ser sentit:</p>\r\n\r\n<p>Acci&oacute; eventual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Nota visual: llibre i ventall, ess&egrave;ncies congruents.</p>\r\n\r\n<p>Nota musical: sis p&agrave;gines d&#39;ai -res muts.</p>\r\n\r\n<p>Nota de peu:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>(ai-)</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>....</p>\r\n\r\n<p>RESS&Ograve;</p>\r\n	\N	La Fàbrica, Celrà	2016-08-01 16:58:26.654279	2016-08-01 16:58:26.654279
 71	66	ca	per se	<p>N&ordm;5 CORPOLOGIA&gt;25</p>\r\n\r\n<p>Inauguraci&oacute; de l&#39;exposici&oacute; de Denys Blacker<strong> Mapes ef&iacute;mers, complicitats i sincronies</strong></p>\r\n\r\n<p>Instal&middot;laci&oacute; a l&#39;aparador de la sala d&#39;exposicions del 14 al 21 de juny per gentilesa de Denys Blacker.</p>\r\n	\N	Bòlit Centre D'Art Contemporani, Girona	2018-08-22 15:12:28.300594	2018-12-21 20:09:58.560882
-62	57	ca	Flux(Us)	<p><strong>La Muga Caula</strong>, trobada Internacional de poesia d&#39;acci&oacute; i performance</p>\r\n\r\n<p>panta rei - tot unit en la difer&egrave;ncia</p>\r\n\r\n<p><a href="http://lamugacaula.cat">http://lamugacaula.cat</a></p>\r\n\r\n<p>fotografia: <a href="http://pacojusticia.com">http://pacojusticia.com</a></p>\r\n	\N	Les Escaules, Girona	2016-10-19 22:59:40.435486	2017-02-19 23:10:21.240546
-67	62	ca	DONAR VEU...i veure més	<p>Acci&oacute; performativa a l&rsquo;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar entorn de les (des)igualtats de g&egrave;nere.</p>\r\n\r\n<p>Creaci&oacute; i realitzaci&oacute;: <strong>Les Mireies - projecte art&iacute;stic i social</strong> ( Mireia Chalamanch i Mireia Zantop)</p>\r\n	\N	Espai públic de municipis de comarques de Barcelona	2017-06-01 23:33:01.197827	2019-06-10 22:20:51.268437
-66	61	ca	we were waiting for you	<p>Festival FLARE 3</p>\r\n\r\n<p>col&middot;lectiu d&#39;investigaci&oacute; d&#39;art d&#39;acci&oacute; <strong>ocells al cap:</strong></p>\r\n\r\n<p>Denys Blacker, Nat&agrave;lia Espinet, Victoria Grey, Helena Hunter, Marta Vergony&oacute;s, Sabina Vilagut, Lesley Yendell, Mireia Zantop</p>\r\n\r\n<p><a href="https://flare707.wordpress.com/">https://flare707.wordpress.com/</a></p>\r\n	\N	Vane Gallery, Newcastle, GB	2017-06-01 23:01:04.874164	2017-06-01 23:09:35.10061
 61	56	ca	cromoSomX	<p>Corpologia 24.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Reflexi&oacute; intuitiva</p>\r\n\r\n<p>que assenyala identitats,</p>\r\n\r\n<p>emmiralla all&ograve; propi i apropiat,</p>\r\n\r\n<p>com&uacute; i diferenciador.</p>\r\n\r\n<p>Relaci&oacute; de poder d&#39;oposats i equilibri</p>\r\n\r\n<p>entre desig i perm&iacute;s rec&iacute;proc</p>\r\n\r\n<p>entre forma i fons de la unitat dual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>x (fem.) Present en refleXi&oacute;, seXe i eXpressi&oacute; de g&egrave;nere.</strong></p>\r\n\r\n<p>Lletra de l&#39;alfabet. Signe de multiplicaci&oacute;. Signe que representa la inc&ograve;gnita que no es vol o pot dir.</p>\r\n\r\n<p>Signe de creuament. Signe que defineix un punt en l&#39;espai. Cromosoma sexual present en mascles i femelles de l&#39;esp&egrave;cie humana.</p>\r\n	\N	Matèric Cuerpo/Objeto/Espacio. L'Hospitalet de Llobregat	2016-10-19 22:54:30.251459	2017-06-02 00:09:34.318544
 68	63	ca	Flux (...)	<p>La Muga Caula, Trobada internacional de poesia d&#39;acci&oacute; i performance</p>\r\n	\N	Les Escaules, Girona.	2017-06-02 00:01:33.881666	2018-08-22 14:36:16.870776
 72	67	ca	ip(sum), id(est)	<p>Acci&oacute; a la Fundaci&oacute; Valvi en el marc del festival Inundart, Girona</p>\r\n\r\n<p>1 de juliol de 2018</p>\r\n	Performance, dibuix amb el cos, carbó, saliva i aigua.	\N	2018-08-22 15:22:59.132785	2018-12-21 20:56:16.075856
@@ -2306,8 +1555,7 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 77	72	ca	cap cap	<p>&nbsp;</p>\r\n\r\n<p><strong>Festival de Land-art</strong> ArtiGavarres 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Projecte de co-creaci&oacute; amb Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	escultures efímeres de palla 	\N	2019-04-10 23:03:30.950809	2020-06-15 15:40:15.938341
 85	82	ca	Phoscenes	<p>Dibuixos del Confinament, Exposici&oacute; del 18 de setembre al 30 d&#39;octubre 2020 a Lapek i Madremanya</p>\r\n	mixtes	\N	2020-09-21 08:55:36.139032	2020-10-14 22:53:13.951877
 86	83	ca	(des)CUIDAR	<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://lesmireies.com/descuidar">https://lesmireies.com/descuidar</a></p>\r\n	\N	Puig-reig, St.Joan de V., St.Antoni V. i Folgueroles, 	2021-01-04 20:46:08.768568	2021-01-04 20:49:41.681774
-91	87	es	Over and over, again and again 	<p>Video-performance con Denys Blacker.</p>\r\n\r\n<p>Proceso creativo colectivo sobre migraciones con Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) e Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>Presentado en Regional Cultural Centre Letterkenny Co.Donegal en oto&ntilde;o de 2021</p>\r\n\r\n<p>WILD SWANS: https://www.bernadettehopkins.com/wild-swans-performance-art.html</p>\r\n	\N	Madremanya, Girona/ Donegal, Ireland	2021-09-13 17:22:20.910774	2021-12-16 21:38:29.44898
-88	85	ca	SI i/o NO, torno i no torno	<p>Video-acci&oacute; per a l&#39;Exposici&oacute; Plurivisions de Fel&iacute;cia Fuster</p>\r\n\r\n<p>Realitzaci&oacute; del v&iacute;deo: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-04-08 21:04:22.995001	2021-04-08 21:31:03.886253
+104	76	es	gravat 9	<p><strong>Acciones fotograbadas y poes&iacute;as visuales</strong> (serie cont&iacute;nuos-discont&iacute;nuos y serie r&iacute;os de cielo)</p>\r\n\r\n<p>Exposici&oacute;n colectiva en La Mirada Expandida y Can Bast&eacute;, Barcelona</p>\r\n	fotograbado	\N	2022-01-05 20:25:20.171489	2022-01-05 20:26:16.346682
 87	84	ca	entre línies, 8ple8buit, veure +	<p>D&#39;ANADA I TORNADA Viatges d&#39;Arts entre Lletres a la Fundaci&oacute; Brossa de Barcelona. Cicle a cura d&#39;Ester Xargay.</p>\r\n\r\n<p>3 accions po&egrave;tiques i 1 video-acci&oacute;, i una presentaci&oacute; de l&#39;obra recent de poesia visual. Amb Ester Xargay i Jordi Aligu&eacute;.</p>\r\n\r\n<p><a href="https://www.fundaciojoanbrossa.cat/arts-entre-lletres/">https://www.fundaciojoanbrossa.cat/arts-entre-lletres/</a></p>\r\n\r\n<p><a href="https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898">https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898</a></p>\r\n	\N	Fundació Brossa, Barcelona	2021-01-04 20:54:14.346009	2021-08-31 23:06:56.970755
 90	87	ca	over and over, again and again	<p>Madremanya, Girona/ Donegal, Ireland<br />\r\n<br />\r\n08/08/2021<br />\r\n<br />\r\nV&iacute;deo-performance amb Denys Blacker <a href="https://denysblacker.com">https://denysblacker.com</a><br />\r\nProc&eacute;s creatiu col&middot;lectiu sobre migracions amb Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) i Isa Fontbona.<br />\r\nV&iacute;deo: Mar Ximenis<br />\r\nPresentat en Regional Cultural Centri Letterkenny Co.Donegal a la tardor de 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-08-31 23:10:08.833939	2022-01-13 20:54:16.142262
 94	87	en	over and over, again and again	<p>Video-performance with Denys Blacker&nbsp;</p>\r\n\r\n<p>Group Process on mygrations with Marina Barsy, Denys Blacker Aodan McCardle, Sandra Johnson, Bernmadette Hopkins (curator in charge) and Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>To be exhibited, in the Regional Cultural Centre Letterkenny Co.Donegal in the Autumn 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-09-26 16:57:03.774287	2021-11-19 22:01:54.690653
@@ -2322,8 +1570,6 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 102	13	es	constelacciones	<p>Acci&oacute;n in&eacute;dita realizada con Elisabetta Balasso.</p>\r\n	dibujo sobre piel	\N	2022-01-05 20:10:05.54647	2022-01-05 20:10:05.549086
 98	88	es	ULL! agulles	<p>Festival de Land Art MICROSCOPIES</p>\r\n\r\n<p>Manresa, 2021</p>\r\n\r\n<p>Cocreaci&oacute;n i coproducci&oacute;n de ALEIX ANTILLACH y MIREIA ZANTOP</p>\r\n\r\n<p>Construyendo, as&iacute; como dibujando, miramos, conocemos y, tal vez, reconocemos. Jugamos con el paisaje ind&oacute;mito y el domesticado. Jugamos con la escala, el tama&ntilde;o y la medida que nuestra mirada conjuga.</p>\r\n\r\n<p>Cat&aacute;logo virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Prensa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instalación efímera en el paisaje	\N	2021-11-19 21:41:37.138667	2022-01-05 20:16:55.148213
 103	71	es	entrar saliendo, salir entrando		Escultura de alabastro	\N	2022-01-05 20:21:12.669864	2022-01-05 20:21:12.67258
-107	67	es	ip(sum), id(est)	<p>Acci&oacute;n en la Fundaci&oacute;n Valvi en el marco del festival Inundart, Girona</p>\r\n\r\n<p>1 de julio de 2018</p>\r\n	Performance, dibujo con el cuerpo, yeso, carbón, saliva y agua.	\N	2022-01-05 21:12:29.961094	2022-01-05 21:12:29.963527
-104	76	es	gravat 9	<p><strong>Acciones fotograbadas y poes&iacute;as visuales</strong> (serie cont&iacute;nuos-discont&iacute;nuos y serie r&iacute;os de cielo)</p>\r\n\r\n<p>Exposici&oacute;n colectiva en La Mirada Expandida y Can Bast&eacute;, Barcelona</p>\r\n	fotograbado	\N	2022-01-05 20:25:20.171489	2022-01-05 20:26:16.346682
 109	44	es	estOna	<p>Intervenci&oacute;n ef&iacute;mera en el sector &quot;Ona&quot; en la Alta Garrotxa.</p>\r\n\r\n<p>ona = ola</p>\r\n\r\n<p>estona = rato</p>\r\n\r\n<p>est = este, punto cardinal, o es, del lat&iacute;n</p>\r\n\r\n<p>visibilizaci&oacute;n de una l&iacute;nea de est-ratos</p>\r\n\r\n<p>&nbsp;</p>\r\n	intervención efímera	\N	2022-01-05 21:31:18.943235	2022-01-05 21:38:07.451519
 108	64	es	fluxus	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposici&oacute;n colectiva en homenaje a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Vent&oacute;s, Figueres.</strong></p>\r\n\r\n<p>Acci&oacute;n-instalaci&oacute;n iniciada antes de la inauguraci&oacute;n, completando-se durante la exposici&oacute;.</p>\r\n	tintas sobre papel, bolsa de suero, equipo de perfusión, cascabels	\N	2022-01-05 21:18:23.188331	2022-01-05 21:20:49.99799
 110	73	es	trans form/morf I-VII		manipulación,transformación, reubicación de materiales naturales 	\N	2022-01-05 21:43:08.66151	2022-01-05 21:43:08.663907
@@ -2335,17 +1581,10 @@ COPY work_translations (id, work_id, locale, title, description, techniques, pla
 
 
 --
--- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('work_translations_id_seq', 113, true);
-
-
---
--- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "position", type, created_at, updated_at, published, images_count) FROM stdin;
+COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "position", type, created_at, updated_at, published, images_count) FROM stdin;
 83	des-cuidar	des-cuidar	des-cuidar	2020-03-08	\N	66	ActionWork	2021-01-04 20:46:03.849595	2021-01-04 20:49:41.618875	f	7
 78	thyllandsias	thyllandsias	thyllandsias	2019-02-14	petites	64	VisualWork	2020-02-14 21:53:45.784852	2020-10-14 23:00:12.393682	f	4
 82	phoscenes	phoscenes	phoscenes	2020-09-20	15x20cm y 21x30cm	65	VisualWork	2020-09-21 08:55:36.118883	2022-01-05 20:07:42.746165	t	8
@@ -2421,318 +1660,101 @@ COPY works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "positi
 
 
 --
--- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('works_id_seq', 92, true);
+SELECT pg_catalog.setval('public.ckeditor_assets_id_seq', 1, false);
 
 
 --
--- Name: ckeditor_assets_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY ckeditor_assets
-    ADD CONSTRAINT ckeditor_assets_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 294, true);
 
 
 --
--- Name: friendly_id_slugs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY friendly_id_slugs
-    ADD CONSTRAINT friendly_id_slugs_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.image_translations_id_seq', 594, true);
 
 
 --
--- Name: image_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY image_translations
-    ADD CONSTRAINT image_translations_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.images_id_seq', 472, true);
 
 
 --
--- Name: images_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY images
-    ADD CONSTRAINT images_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.page_translations_id_seq', 4, true);
 
 
 --
--- Name: page_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY page_translations
-    ADD CONSTRAINT page_translations_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.pages_id_seq', 2, true);
 
 
 --
--- Name: pages_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY pages
-    ADD CONSTRAINT pages_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.section_translations_id_seq', 30, true);
 
 
 --
--- Name: section_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY section_translations
-    ADD CONSTRAINT section_translations_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.sections_id_seq', 20, true);
 
 
 --
--- Name: sections_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY sections
-    ADD CONSTRAINT sections_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.tag_translations_id_seq', 93, true);
 
 
 --
--- Name: tag_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY tag_translations
-    ADD CONSTRAINT tag_translations_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.taggings_id_seq', 690, true);
 
 
 --
--- Name: taggings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY taggings
-    ADD CONSTRAINT taggings_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.tags_id_seq', 35, true);
 
 
 --
--- Name: tags_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY tags
-    ADD CONSTRAINT tags_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.users_id_seq', 1, false);
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY users
-    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.work_translations_id_seq', 113, true);
 
 
 --
--- Name: work_translations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+-- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-ALTER TABLE ONLY work_translations
-    ADD CONSTRAINT work_translations_pkey PRIMARY KEY (id);
-
-
---
--- Name: works_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY works
-    ADD CONSTRAINT works_pkey PRIMARY KEY (id);
-
-
---
--- Name: idx_ckeditor_assetable; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX idx_ckeditor_assetable ON ckeditor_assets USING btree (assetable_type, assetable_id);
-
-
---
--- Name: idx_ckeditor_assetable_type; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX idx_ckeditor_assetable_type ON ckeditor_assets USING btree (assetable_type, type, assetable_id);
-
-
---
--- Name: index_friendly_id_slugs_on_slug_and_sluggable_type; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_friendly_id_slugs_on_slug_and_sluggable_type ON friendly_id_slugs USING btree (slug, sluggable_type);
-
-
---
--- Name: index_friendly_id_slugs_on_sluggable_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_friendly_id_slugs_on_sluggable_id ON friendly_id_slugs USING btree (sluggable_id);
-
-
---
--- Name: index_friendly_id_slugs_on_sluggable_type; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_friendly_id_slugs_on_sluggable_type ON friendly_id_slugs USING btree (sluggable_type);
-
-
---
--- Name: index_image_translations_on_image_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_image_translations_on_image_id ON image_translations USING btree (image_id);
-
-
---
--- Name: index_image_translations_on_locale; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_image_translations_on_locale ON image_translations USING btree (locale);
-
-
---
--- Name: index_images_on_illustrated_id_and_illustrated_type; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_images_on_illustrated_id_and_illustrated_type ON images USING btree (illustrated_id, illustrated_type);
-
-
---
--- Name: index_page_translations_on_locale; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_page_translations_on_locale ON page_translations USING btree (locale);
-
-
---
--- Name: index_page_translations_on_page_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_page_translations_on_page_id ON page_translations USING btree (page_id);
-
-
---
--- Name: index_section_translations_on_locale; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_section_translations_on_locale ON section_translations USING btree (locale);
-
-
---
--- Name: index_section_translations_on_section_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_section_translations_on_section_id ON section_translations USING btree (section_id);
-
-
---
--- Name: index_sections_on_content_id_and_content_type; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_sections_on_content_id_and_content_type ON sections USING btree (content_id, content_type);
-
-
---
--- Name: index_tag_translations_on_locale; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_tag_translations_on_locale ON tag_translations USING btree (locale);
-
-
---
--- Name: index_tag_translations_on_tag_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_tag_translations_on_tag_id ON tag_translations USING btree (tag_id);
-
-
---
--- Name: index_taggings_on_tag_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_taggings_on_tag_id ON taggings USING btree (tag_id);
-
-
---
--- Name: index_taggings_on_taggable_type_and_taggable_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_taggings_on_taggable_type_and_taggable_id ON taggings USING btree (taggable_type, taggable_id);
-
-
---
--- Name: index_tags_on_slug_ca; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_tags_on_slug_ca ON tags USING btree (slug_ca);
-
-
---
--- Name: index_tags_on_slug_en; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_tags_on_slug_en ON tags USING btree (slug_en);
-
-
---
--- Name: index_tags_on_slug_es; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_tags_on_slug_es ON tags USING btree (slug_es);
-
-
---
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
-
-
---
--- Name: index_users_on_name; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_name ON users USING btree (name);
-
-
---
--- Name: index_work_translations_on_locale; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_work_translations_on_locale ON work_translations USING btree (locale);
-
-
---
--- Name: index_work_translations_on_work_id; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE INDEX index_work_translations_on_work_id ON work_translations USING btree (work_id);
-
-
---
--- Name: index_works_on_slug_ca; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_works_on_slug_ca ON works USING btree (slug_ca);
-
-
---
--- Name: index_works_on_slug_en; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_works_on_slug_en ON works USING btree (slug_en);
-
-
---
--- Name: index_works_on_slug_es; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_works_on_slug_es ON works USING btree (slug_es);
-
-
---
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+SELECT pg_catalog.setval('public.works_id_seq', 92, true);
 
 
 --
