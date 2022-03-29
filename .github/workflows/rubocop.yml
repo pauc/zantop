@@ -19,18 +19,19 @@ jobs:
 
     - name: Install Ruby dependencies
       run: |
-        gem install bundler
+        gem install bundler:2.3.9
         bundle install
 
-    - uses: dorny/paths-filter@v2
+    - uses: AurorNZ/paths-filter@v3
       id: changes
       with:
         list-files: 'escape'
         filters: |
           ruby:
             - '**/*.rb'
+            - '!db/schema.rb'
 
       # run only for ruby files
     - name: Run rubocop for changed or added files
       if: steps.changes.outputs.ruby == 'true'
-      run: bundle exec rubocop ${{ steps.changes.outputs.ruby_files}}
+      run: bundle exec rubocop ${{steps.changes.outputs.ruby_files}}
