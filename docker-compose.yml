@@ -3,6 +3,7 @@ x-database-credentials: &database_credentials
   ZANTOP_DATABASE_USER: zantop
   ZANTOP_DATABASE_PASSWORD: zantop
 x-app-config: &app_config
+  user: "developer"
   image: "zantop"
   build:
     context: .
