@@ -3,7 +3,7 @@ name: Run tests
 on: [push]
 
 env:
-  RUBY_VERSION: 3.0.2
+  RUBY_VERSION: 3.1.1
 
 jobs:
   rspec-test:
@@ -36,9 +36,10 @@ jobs:
           bundler-cache: true
       - name: Install postgres client
         run: sudo apt-get install libpq-dev
+      - name: Install latest bundler
+        run: gem install bundler:2.3.9
       - name: Install dependencies
         run: |
-          gem install bundler
           bundler install
       - name: Create database
         run: |
