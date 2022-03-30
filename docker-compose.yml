@@ -36,7 +36,7 @@ services:
   web:
     <<: *app_config
     container_name: zantop_web
-    command: bundle exec puma -C config/puma.rb
+    command: bin/rails server -b 0.0.0.0
     environment:
       <<: *rails_dev_environment
     ports:
