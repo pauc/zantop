@@ -26,6 +26,10 @@ Lint/AmbiguousBlockAssociation:
   Exclude:
     - spec/**/*
 
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  AllowBracesOnProceduralOneLiners: true
+
 Style/Documentation:
   Enabled: false
 

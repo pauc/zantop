@@ -1,4 +1,20 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
+  def title(title = nil)
+    title += " | " unless title.nil?
+    content_for(:title) { title }
+  end
+
+  def page_title(title)
+    strip_tags(title)
+      .then(&method(:title))
+
+    content_for(:page_title) {
+      content_tag(:h1, title, id: "main_title")
+    }
+  end
+
   def site_name
     tag = home? ? :h1 : :span
     img_src = home? ? 'MireiaZantop.png' : 'MZ.png'
@@ -12,7 +28,7 @@ module ApplicationHelper
           alt: "Mireia Zantop"
         ),
         home_path,
-        title: title
+        title:
       ),
       id: 'site_name'
     )
@@ -47,15 +63,8 @@ module ApplicationHelper
     end
   end
 
-  private
-
   def sidebar?
     (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
-  end
-
-  def page_title(title = nil)
-    title += ' | ' unless title.nil?
-    content_for(:title) { title }
   end
 end
