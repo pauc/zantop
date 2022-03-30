@@ -6,8 +6,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.17'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
