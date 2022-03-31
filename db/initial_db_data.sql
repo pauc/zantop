@@ -5,6 +5,8 @@
 -- Dumped from database version 13.4
 -- Dumped by pg_dump version 13.6 (Ubuntu 13.6-1.pgdg21.10+1)
 
+-- Started on 2022-04-01 00:09:21 CEST
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -17,7 +19,21 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3185 (class 0 OID 18189)
+-- Dependencies: 229
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2022-03-31 21:28:36.155382	2022-03-31 21:28:36.155382
+schema_sha1	0b5a714bf73401531270d3dc34459f9795a8d5e7	2022-03-31 21:28:36.185989	2022-03-31 21:28:36.185989
+\.
+
+
+--
+-- TOC entry 3158 (class 0 OID 18010)
+-- Dependencies: 201
+-- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.ckeditor_assets (id, data_file_name, data_content_type, data_file_size, assetable_id, assetable_type, type, width, height, created_at, updated_at) FROM stdin;
@@ -25,7 +41,9 @@ COPY public.ckeditor_assets (id, data_file_name, data_content_type, data_file_si
 
 
 --
--- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3160 (class 0 OID 18023)
+-- Dependencies: 203
+-- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at) FROM stdin;
@@ -195,7 +213,9 @@ COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_a
 
 
 --
--- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3162 (class 0 OID 18034)
+-- Dependencies: 205
+-- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.image_translations (id, image_id, locale, credits, created_at, updated_at) FROM stdin;
@@ -731,7 +751,9 @@ COPY public.image_translations (id, image_id, locale, credits, created_at, updat
 
 
 --
--- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3164 (class 0 OID 18047)
+-- Dependencies: 207
+-- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.images (id, image, illustrated_id, illustrated_type, "position", created_at, updated_at, video) FROM stdin;
@@ -1142,7 +1164,9 @@ COPY public.images (id, image, illustrated_id, illustrated_type, "position", cre
 
 
 --
--- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3166 (class 0 OID 18059)
+-- Dependencies: 209
+-- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.page_translations (id, page_id, locale, title, body, created_at, updated_at) FROM stdin;
@@ -1154,7 +1178,9 @@ COPY public.page_translations (id, page_id, locale, title, body, created_at, upd
 
 
 --
--- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3168 (class 0 OID 18072)
+-- Dependencies: 211
+-- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.pages (id, created_at, updated_at) FROM stdin;
@@ -1164,7 +1190,21 @@ COPY public.pages (id, created_at, updated_at) FROM stdin;
 
 
 --
--- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3184 (class 0 OID 18181)
+-- Dependencies: 228
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.schema_migrations (version) FROM stdin;
+20130402185036
+20220331204131
+\.
+
+
+--
+-- TOC entry 3170 (class 0 OID 18080)
+-- Dependencies: 213
+-- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.section_translations (id, section_id, locale, title, body, created_at, updated_at) FROM stdin;
@@ -1202,7 +1242,9 @@ COPY public.section_translations (id, section_id, locale, title, body, created_a
 
 
 --
--- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3172 (class 0 OID 18093)
+-- Dependencies: 215
+-- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.sections (id, content_id, content_type, "position", created_at, updated_at) FROM stdin;
@@ -1230,7 +1272,9 @@ COPY public.sections (id, content_id, content_type, "position", created_at, upda
 
 
 --
--- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3174 (class 0 OID 18102)
+-- Dependencies: 217
+-- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) FROM stdin;
@@ -1310,132 +1354,9 @@ COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) 
 
 
 --
--- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: zantop
---
-
-COPY public.taggings (id, tag_id, taggable_type, taggable_id, created_at, updated_at) FROM stdin;
-681	10	Work	75	2022-01-10 11:45:58.677547	2022-01-10 11:45:58.677547
-517	11	Work	70	2020-09-20 21:15:52.22018	2020-09-20 21:15:52.22018
-682	9	Work	75	2022-01-10 11:45:58.682215	2022-01-10 11:45:58.682215
-519	17	Work	81	2020-09-20 21:21:00.623163	2020-09-20 21:21:00.623163
-15	9	Work	11	2013-01-05 00:51:53.529397	2013-01-05 00:51:53.529397
-16	11	Work	11	2013-01-05 00:55:50.527103	2013-01-05 00:55:50.527103
-683	8	Work	75	2022-01-10 11:45:58.68652	2022-01-10 11:45:58.68652
-520	9	Work	81	2020-09-20 21:21:00.633545	2020-09-20 21:21:00.633545
-521	11	Work	81	2020-09-20 21:21:00.642112	2020-09-20 21:21:00.642112
-684	18	Work	75	2022-01-10 11:45:58.690684	2022-01-10 11:45:58.690684
-685	21	Work	38	2022-01-10 11:49:05.929309	2022-01-10 11:49:05.929309
-25	1	Work	15	2013-01-20 00:30:44.912037	2013-01-20 00:30:44.912037
-26	10	Work	15	2013-01-20 00:30:44.938692	2013-01-20 00:30:44.938692
-686	9	Work	38	2022-01-10 11:49:05.934758	2022-01-10 11:49:05.934758
-687	11	Work	38	2022-01-10 11:49:05.939635	2022-01-10 11:49:05.939635
-33	9	Work	16	2013-01-20 01:03:16.197571	2013-01-20 01:03:16.197571
-688	32	Work	87	2022-01-13 20:54:16.058058	2022-01-13 20:54:16.058058
-689	30	Work	87	2022-01-13 20:54:16.063706	2022-01-13 20:54:16.063706
-46	1	Work	18	2013-01-22 03:07:57.13106	2013-01-22 03:07:57.13106
-690	21	Work	87	2022-01-13 20:54:16.068721	2022-01-13 20:54:16.068721
-49	9	Work	23	2013-03-27 21:32:17.812245	2013-03-27 21:32:17.812245
-50	10	Work	23	2013-03-27 21:32:17.814903	2013-03-27 21:32:17.814903
-59	8	Work	17	2013-03-28 00:07:10.370251	2013-03-28 00:07:10.370251
-63	15	Work	26	2013-03-28 01:20:39.590467	2013-03-28 01:20:39.590467
-64	8	Work	26	2013-03-28 01:20:39.593428	2013-03-28 01:20:39.593428
-65	16	Work	26	2013-03-28 01:20:39.59595	2013-03-28 01:20:39.59595
-68	6	Work	6	2013-03-28 01:44:05.391596	2013-03-28 01:44:05.391596
-69	10	Work	6	2013-03-28 01:44:05.394322	2013-03-28 01:44:05.394322
-79	7	Work	27	2013-04-05 16:13:48.323069	2013-04-05 16:13:48.323069
-80	9	Work	27	2013-04-05 16:13:48.332029	2013-04-05 16:13:48.332029
-81	17	Work	27	2013-04-05 16:13:48.341013	2013-04-05 16:13:48.341013
-85	15	Work	29	2013-04-05 18:56:47.086945	2013-04-05 18:56:47.086945
-86	8	Work	29	2013-04-05 18:56:47.097459	2013-04-05 18:56:47.097459
-87	16	Work	29	2013-04-05 18:56:47.107504	2013-04-05 18:56:47.107504
-90	5	Work	9	2013-04-05 19:05:21.752616	2013-04-05 19:05:21.752616
-534	11	Work	78	2020-10-14 23:00:07.666433	2020-10-14 23:00:07.666433
-549	18	Work	84	2021-08-31 23:06:52.002281	2021-08-31 23:06:52.002281
-550	21	Work	84	2021-08-31 23:06:52.009598	2021-08-31 23:06:52.009598
-100	5	Work	24	2013-06-19 15:49:35.481969	2013-06-19 15:49:35.481969
-551	16	Work	84	2021-08-31 23:06:52.015541	2021-08-31 23:06:52.015541
-552	23	Work	77	2021-08-31 23:07:42.363915	2021-08-31 23:07:42.363915
-294	5	Work	56	2017-06-02 00:09:34.11498	2017-06-02 00:09:34.11498
-295	21	Work	56	2017-06-02 00:09:34.136691	2017-06-02 00:09:34.136691
-203	9	Work	31	2015-09-20 18:04:25.9152	2015-09-20 18:04:25.9152
-204	10	Work	31	2015-09-20 18:04:25.932719	2015-09-20 18:04:25.932719
-653	23	Work	72	2022-01-05 21:06:26.013642	2022-01-05 21:06:26.013642
-654	26	Work	72	2022-01-05 21:06:26.019027	2022-01-05 21:06:26.019027
-655	11	Work	72	2022-01-05 21:06:26.02362	2022-01-05 21:06:26.02362
-656	21	Work	67	2022-01-05 21:12:29.868347	2022-01-05 21:12:29.868347
-299	21	Work	57	2017-06-02 00:57:42.76304	2017-06-02 00:57:42.76304
-657	7	Work	67	2022-01-05 21:12:29.873864	2022-01-05 21:12:29.873864
-301	7	Work	57	2017-06-02 00:57:42.802979	2017-06-02 00:57:42.802979
-659	9	Work	64	2022-01-05 21:20:49.940297	2022-01-05 21:20:49.940297
-660	35	Work	64	2022-01-05 21:20:49.944781	2022-01-05 21:20:49.944781
-217	8	Work	8	2015-09-25 01:15:04.503367	2015-09-25 01:15:04.503367
-219	9	Work	8	2015-09-25 01:15:04.518094	2015-09-25 01:15:04.518094
-220	10	Work	8	2015-09-25 01:15:04.525023	2015-09-25 01:15:04.525023
-222	19	Work	47	2015-09-27 22:42:43.638605	2015-09-27 22:42:43.638605
-600	21	Work	85	2021-09-26 20:50:13.185813	2021-09-26 20:50:13.185813
-601	30	Work	85	2021-09-26 20:50:13.190631	2021-09-26 20:50:13.190631
-228	5	Work	46	2016-08-01 15:23:05.650402	2016-08-01 15:23:05.650402
-229	5	Work	48	2016-08-01 15:36:44.480106	2016-08-01 15:36:44.480106
-139	9	Work	36	2014-05-17 12:17:29.290198	2014-05-17 12:17:29.290198
-388	21	Work	69	2019-01-28 20:33:59.945633	2019-01-28 20:33:59.945633
-142	5	Work	34	2014-05-17 12:19:36.699762	2014-05-17 12:19:36.699762
-667	26	Work	44	2022-01-05 21:38:07.39756	2022-01-05 21:38:07.39756
-668	21	Work	44	2022-01-05 21:38:07.402577	2022-01-05 21:38:07.402577
-145	17	Work	33	2014-05-17 12:23:53.885253	2014-05-17 12:23:53.885253
-146	10	Work	33	2014-05-17 12:23:53.891807	2014-05-17 12:23:53.891807
-147	1	Work	33	2014-05-17 12:23:53.898598	2014-05-17 12:23:53.898598
-669	26	Work	73	2022-01-05 21:43:08.585293	2022-01-05 21:43:08.585293
-149	5	Work	37	2014-05-17 12:35:52.122448	2014-05-17 12:35:52.122448
-150	8	Work	37	2014-05-17 12:35:52.133956	2014-05-17 12:35:52.133956
-672	14	Work	14	2022-01-10 11:21:20.67074	2022-01-10 11:21:20.67074
-393	19	Work	68	2019-03-07 22:05:12.34874	2019-03-07 22:05:12.34874
-394	21	Work	59	2019-03-07 22:10:15.958474	2019-03-07 22:10:15.958474
-237	18	Work	52	2016-08-01 16:59:31.463289	2016-08-01 16:59:31.463289
-238	5	Work	52	2016-08-01 16:59:31.470255	2016-08-01 16:59:31.470255
-239	18	Work	49	2016-08-01 17:00:18.628472	2016-08-01 17:00:18.628472
-162	11	Work	30	2014-10-09 17:18:44.728089	2014-10-09 17:18:44.728089
-675	14	Work	74	2022-01-10 11:24:54.36432	2022-01-10 11:24:54.36432
-676	8	Work	74	2022-01-10 11:24:54.369086	2022-01-10 11:24:54.369086
-247	19	Work	51	2016-08-05 11:39:07.542653	2016-08-05 11:39:07.542653
-169	5	Work	41	2014-11-03 23:30:04.558152	2014-11-03 23:30:04.558152
-172	9	Work	35	2015-01-04 21:35:15.002672	2015-01-04 21:35:15.002672
-175	17	Work	39	2015-01-04 21:39:23.484924	2015-01-04 21:39:23.484924
-250	19	Work	40	2016-08-05 12:02:03.811572	2016-08-05 12:02:03.811572
-181	10	Work	42	2015-01-04 22:13:33.793967	2015-01-04 22:13:33.793967
-184	18	Work	43	2015-01-04 23:21:23.556368	2015-01-04 23:21:23.556368
-185	5	Work	43	2015-01-04 23:21:23.567593	2015-01-04 23:21:23.567593
-410	7	Work	7	2019-06-10 20:19:22.354383	2019-06-10 20:19:22.354383
-412	1	Work	7	2019-06-10 20:19:22.37285	2019-06-10 20:19:22.37285
-338	21	Work	66	2018-12-21 20:19:40.548503	2018-12-21 20:19:40.548503
-339	5	Work	66	2018-12-21 20:19:40.555481	2018-12-21 20:19:40.555481
-537	21	Work	83	2021-01-04 20:49:41.57467	2021-01-04 20:49:41.57467
-538	28	Work	83	2021-01-04 20:49:41.582213	2021-01-04 20:49:41.582213
-445	21	Work	62	2019-06-10 22:28:06.185876	2019-06-10 22:28:06.185876
-632	14	Work	92	2022-01-05 20:02:40.402393	2022-01-05 20:02:40.402393
-493	28	Work	54	2020-06-15 15:27:55.779648	2020-06-15 15:27:55.779648
-634	13	Work	82	2022-01-05 20:07:42.721888	2022-01-05 20:07:42.721888
-495	23	Work	65	2020-06-15 15:34:09.215624	2020-06-15 15:34:09.215624
-635	13	Work	13	2022-01-05 20:10:05.519543	2022-01-05 20:10:05.519543
-497	28	Work	65	2020-06-15 15:34:09.234324	2020-06-15 15:34:09.234324
-636	21	Work	13	2022-01-05 20:10:05.524248	2022-01-05 20:10:05.524248
-637	31	Work	88	2022-01-05 20:16:55.050659	2022-01-05 20:16:55.050659
-638	9	Work	88	2022-01-05 20:16:55.055614	2022-01-05 20:16:55.055614
-639	26	Work	88	2022-01-05 20:16:55.060266	2022-01-05 20:16:55.060266
-640	11	Work	71	2022-01-05 20:21:12.626426	2022-01-05 20:21:12.626426
-462	17	Work	53	2020-02-19 17:17:17.1457	2020-02-19 17:17:17.1457
-499	9	Work	19	2020-06-15 15:36:58.096735	2020-06-15 15:36:58.096735
-500	28	Work	19	2020-06-15 15:36:58.105762	2020-06-15 15:36:58.105762
-501	23	Work	19	2020-06-15 15:36:58.115241	2020-06-15 15:36:58.115241
-644	21	Work	76	2022-01-05 20:26:16.273078	2022-01-05 20:26:16.273078
-645	27	Work	76	2022-01-05 20:26:16.277981	2022-01-05 20:26:16.277981
-646	14	Work	76	2022-01-05 20:26:16.282367	2022-01-05 20:26:16.282367
-514	28	Work	55	2020-06-15 15:43:34.279057	2020-06-15 15:43:34.279057
-515	23	Work	55	2020-06-15 15:43:34.287067	2020-06-15 15:43:34.287067
-\.
-
-
---
--- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3178 (class 0 OID 18125)
+-- Dependencies: 221
+-- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count) FROM stdin;
@@ -1467,121 +1388,9 @@ COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, tagging
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: zantop
---
-
-COPY public.users (id, name, email, admin, password_digest, created_at, updated_at) FROM stdin;
-\.
-
-
---
--- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: zantop
---
-
-COPY public.work_translations (id, work_id, locale, title, description, techniques, place, created_at, updated_at) FROM stdin;
-10	9	es	E qui libri (s) II	<p>\r\n\tCORPOLOGIA 9</p>\r\n<p>\r\n\tEquilibri, de aequilibrium: aequus = igual y libra=balanza, peso He (a)qu&iacute; He a qui&eacute;n libris: de los libros o de los libres de libertas: volver a la madre</p>\r\n<p>\r\n\tFragmento del proceso del equilibrio de lecturas abiertas y cruzadas del peso propio i el exterior, del cuerpo &iacute;ntimo delante del cuerpo p&uacute;blico de factores intencionados o involuntarios, de la acci&oacute;n de fuerzas que implico o se implican y contrarestan m&uacute;tuamente, de los v&iacute;nculos de la palabra-voz y la palabra-papel, el papel de la relaci&oacute;n, de la (con)fusi&oacute;n de estratos de percepci&oacute;n i memoria en la armon&iacute;a del conjunto.</p>\r\n<p>\r\n\tLos factores (siempre) cambiantes niegan un estado de equilibrio estable, un resultado, y evidencian un proceso puro de incesante movimento que tiende a la justeza y la armon&iacute;a en la unidad.</p>\r\n<p>\r\n\t...et qui est libre?</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 23:01:43.390395	2013-03-27 23:42:28.181869
-6	6	ca	ZeNits / 1	<p>\r\n\tPoemes d&#39;Eva Puig. Exposici&oacute; CTN La Floresta</p>\r\n	tècnica mixta sobre fusta	\N	2013-01-04 20:32:20.744798	2013-03-28 01:44:05.514606
-11	10	ca	anima(l), U	<p>\r\n\tAlma mater. Coto vedado. Caza y captura de interrogantes abiertos, pero encadenados en espiral, sobre la identidad en desequilibrio entre consciencia espiritual y cuerpo de especie animal capaz de olvidar que lo es, era y ser&aacute;. Memoria embrionaria de origen que niega, domestica, objetualiza y crea imaginarios</p>\r\n<p>\r\n\t&iquest;para entender o redimirse? &iquest;Por casualidad? &iquest;Por curiosidad?</p>\r\n<p>\r\n\tDesvelar la condici&oacute;n b&aacute;sica de nuestra animalidad subraya la condici&oacute;n humana. U. In secula seculorum...</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\thttp://www.avui.cat/noticia/article/5-cultura/19-cultura/378596-el-fem11-ja-bull.html</p>\r\n	\N	FEM / Centre Cultural La Mercè / Girona	2013-01-05 00:35:49.828799	2013-01-05 00:38:00.877773
-12	11	ca	Dinergia I,II,III	<p>\r\n\tDinergia I - Llavors... Dinergia II - Armonia Diat&eacute;ssaron&nbsp; Dinergia III - Auria ad infinitum &nbsp;Materials: Dinergia I: Llavor natural, Fil de coure, paper, pedra, respecte&nbsp; Dinergia II: Llavor natural, Fil de coure, paper i tinta, vidre, agra&iuml;ment&nbsp; Dinergia III: Petxina natural, Fil de coure, pedra de lava, mirall, amor &nbsp;</p>\r\n<p>\r\n\t&quot;Dinergia: Els processos i patrons b&agrave;s&igrave;cs de formaci&oacute; i creaci&oacute;, amb els seus l&iacute;mits estrictes i les proporcions &agrave;uries omnipresents, ens reflecteixen en petit format la perfecci&oacute; infinita de l&#39;armonia i pres&egrave;ncia del tot etern, il.limitat, aix&iacute; com l&#39;abs&egrave;ncia de fronteres entre ci&egrave;ncia, art, filosofia i misticisme.&quot;</p>\r\n<p>\r\n\tFESTIVAL MaMa d&#39;Art Contemporani, Madremanya, Girona</p>\r\n		\N	2013-01-05 00:51:53.536201	2013-01-05 00:55:50.542169
-13	12	ca	musical ment	<p>\r\n\tL&#39;obra &eacute;s una instal.laci&oacute;/performance col.lectiva on conflueixen l&rsquo;escultura, el so i el moviment, creant un di&agrave;leg interdisciplinar entre la mat&egrave;ria, el silenci i l&rsquo;expressi&oacute; corporal.&nbsp;&nbsp;&nbsp;\r\n\t&nbsp;\r\n\tUna escultura sonora &eacute;s l&rsquo;element central i fil conductor de la composici&oacute; musical i ; a trav&eacute;s del silenci i el so s&#39;experimenta amb l&rsquo;efecte que el ritme i la m&uacute;sica tenen sobre la ment, el cos i els sentiments.&nbsp; El moviment del cos dibuixa l&#39;espai i acciona, tra&ccedil;a camins paral.lels.\r\n\tL&#39;escultura de ferro i fusta, de 3m d&#39;al&ccedil;ada i di&agrave;metre, estructura l&#39;espai del moviment; l&#39;espectador es pot moure al voltant de l&#39;acci&oacute; i percebre el conjunt des de diverses perspectives visuals i sonores.</p>\r\n<p>\r\n\tEscultura i direcci&oacute;: Yago Del&agrave;s\r\n\tFotografia: Mireia Tor\r\n\tM&uacute;sics i artistes: Yago Del&agrave;s, X&egrave;nia Gassull, Adri&agrave; L&oacute;pez, N&uacute;ria Mad&iacute;, Simon Saura, Ruth Soler, Jordi Vinyoles, Mireia Zantop</p>\r\n	\N	Casa de Cultura de Girona / Plaça de la Vila,Viladrau / Festival de percussió, Centelles	2013-01-05 01:21:09.043867	2013-01-05 01:21:09.064496
-14	13	ca	constelaccions	<p>\r\n\tAcci&oacute; in&egrave;dita realitzada amb Elisabetta Balasso.</p>\r\n	dibuix sobre pell	\N	2013-01-05 01:30:15.252021	2013-01-05 01:30:15.48331
-15	14	ca	AflorA		calcografia i serigrafia	\N	2013-01-05 01:36:10.271251	2013-01-05 01:36:10.275731
-16	15	ca	impro	<p>\r\n\tRosa Abuchaibe, Hanneke Ilse, Mireia Zantop (23 Marzo.2012, 18h, Laberinto de Ariadna)</p>\r\n<p>\r\n\tRosa Abuchaibe, poeta, escribe relatos y versos.</p>\r\n<p>\r\n\tHanneke Ilse, trompetista, toca en varios grupos y cultiva desde hace a&ntilde;os diversos estilos musicales.</p>\r\n<p>\r\n\tMireia Zantop, pintora, grabadora y performer, trabaja sobre los lenguajes del cuerpo en su obra pl&aacute;stica y esc&eacute;nica.</p>\r\n<p>\r\n\tEn esta pieza se reencuentran tres lenguajes art&iacute;sticos. La m&uacute;sica, la palabra y el movimiento se complementan en un todo fruto de la conexi&oacute;n entre las personas, el aqu&iacute; y el ahora. Es el arte ef&iacute;mero de la improvisaci&oacute;n.</p>\r\n<p>\r\n\tImparte: Anna Rossell</p>\r\n	\N	Ateneu Barcelonès, Barcelona	2013-01-05 01:58:06.680323	2013-01-20 00:30:45.073577
-9	9	ca	E qui libri (s) II	<p>performance a CORPOLOGIA 9</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 22:53:54.222335	2013-04-05 19:05:22.008013
-17	16	ca	OUROBOROS (veus?)	<p>\r\n\tInsaciable, Ouroboros, el monstre que es menja a s&iacute; mateix.<br />\r\n\tCicle infinit?<br />\r\n\tEl m&eacute;s contradictori del proc&eacute;s &eacute;s que l&#39;acusat de provocar-lo i la v&iacute;ctima de les seves conseq&uuml;&egrave;ncies &eacute;s la mateixa: el monstre, tu, jo.</p>\r\n	\N	Brossa, caos i art | Exposició a Casa Elizalde | Barcelona	2013-01-20 00:53:58.813752	2013-01-20 00:55:10.001451
-40	34	en	sum(us)	<p>CORPOLOGIA 13 en el marc de l&#39;exposici&oacute; <strong>Cargol treu banya</strong>.</p>\r\n\r\n<p>sum(us)</p>\r\n\r\n<p>I<br />\r\nsum (lat.): s&oacute;c (cat.), soy (es.)<br />\r\nsumus (lat.): som (cat.), somos (es.)</p>\r\n\r\n<p>s&oacute;c<br />\r\n(s)i som<br />\r\nsi hi som</p>\r\n\r\n<p>II<br />\r\nsum (eng.): suma<br />\r\nus (eng.): nosaltres (cat.), nosotros (es.)<br />\r\nus (cat.): os, a vosotros, to you</p>\r\n\r\n<p>sumant-nos&nbsp; som.<br />\r\nSumeu-nos<br />\r\nsumeu-vos<br />\r\nsomieu-vos</p>\r\n\r\n<p>&quot;...que tots els espectadors passin a l&#39;acci&oacute;.&quot;</p>\r\n\r\n<p>Nos habebat, nos habebit humus.</p>\r\n\r\n<p>Entretant:<br />\r\ntemps de consci&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/83686197">https://vimeo.com/83686197</a></p>\r\n\r\n<p><a href="https://vimeo.com/user14560762">https://vimeo.com/user14560762</a></p>\r\n	\N	Casa Elizalde, Barcelona	2014-05-17 12:13:12.6868	2014-05-17 12:19:18.303007
-62	57	ca	Flux(Us)	<p><strong>La Muga Caula</strong>, trobada Internacional de poesia d&#39;acci&oacute; i performance</p>\r\n\r\n<p>panta rei - tot unit en la difer&egrave;ncia</p>\r\n\r\n<p><a href="http://lamugacaula.cat">http://lamugacaula.cat</a></p>\r\n\r\n<p>fotografia: <a href="http://pacojusticia.com">http://pacojusticia.com</a></p>\r\n	\N	Les Escaules, Girona	2016-10-19 22:59:40.435486	2017-02-19 23:10:21.240546
-67	62	ca	DONAR VEU...i veure més	<p>Acci&oacute; performativa a l&rsquo;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar entorn de les (des)igualtats de g&egrave;nere.</p>\r\n\r\n<p>Creaci&oacute; i realitzaci&oacute;: <strong>Les Mireies - projecte art&iacute;stic i social</strong> ( Mireia Chalamanch i Mireia Zantop)</p>\r\n	\N	Espai públic de municipis de comarques de Barcelona	2017-06-01 23:33:01.197827	2019-06-10 22:20:51.268437
-26	24	es	S/T: sin título	<p>\r\n\tCorpologia 10</p>\r\n<p>\r\n\tPuerta de entrada: portada en blanco.<br />\r\n\tEntre m&iacute; y todos, tiempo com&uacute;n i dos libros sin un solo t&iacute;tulo.<br />\r\n\tPuerta dos, portadores.<br />\r\n\tSe unen, p&aacute;gina a p&aacute;gina, en un cuerpo que no quiere dividirse. Se diferencian por palabra y pensamiento propio, se encuentran entre l&iacute;neas.<br />\r\n\tPuerta tres, al p&uacute;blico.<br />\r\n\tEje de equilibrio. Cruce de enlace mientras act&uacute;a la fuerza del roce y la tensi&oacute;n, atenci&oacute;n.<br />\r\n\tV&iacute;nculo fr&aacute;gil pero contundente arn&eacute;s m&uacute;tuo que aguanta el instante, el tiempo justo. Pueden ser horas, segundos, seg&uacute;n.</p>\r\n<p>\r\n\t<br />\r\n\t&quot;por favor, con calma, os pido que pens&eacute;is un t&iacute;tulo para esta acci&oacute;n. Cuando lo teng&aacute;is, levantad la mano derecha.&quot;<br />\r\n\t...<br />\r\n\tdigo ssss/t.<br />\r\n\tescribo S/T</p>\r\n<p>\r\n\t&quot;Gracias. Yo tambi&eacute;n prometo no decirlo nunca a nadie.&quot;</p>\r\n<p>\r\n\t(y no dud&eacute;is que me muero de ganas de saberlos)</p>\r\n<p>\r\n\tSujeto subjetivo sujetado a dos bandas. Reflejo-reflexi&oacute;n de experiencia.<br />\r\n\tCada uno es titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 23:34:12.941673	2013-03-27 23:34:13.0084
-18	17	ca	úters |	<p>\r\n\tArts i lletres de la m&agrave;. Exposici&oacute; amb Rosa Abuchaibe, Gloria Andrade, Pedro Blanco i Javier Quintanilla. Pati Llimona, Barcelona</p>\r\n	tècnica mixta sobre paper	\N	2013-01-20 01:01:02.209471	2013-03-28 00:07:10.428195
-28	26	ca	El celler i +	<p>\r\n\tportades de t&iacute;tols de Noah Gordon per a Editorial Roca</p>\r\n		\N	2013-03-28 00:59:08.741807	2013-03-28 00:59:08.741807
-19	18	ca	Itaca | pas a dos	<p>\r\n\tPerformance amb Eva Puig<br />\r\n\t<br />\r\n\t&Iacute;TACA<br />\r\n\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />\r\n\tQuan surts per fer el viatge cap a &Iacute;taca,<br />\r\n\thas de pregar que el cam&iacute; sigui llarg,<br />\r\n\tple d&#39;aventures, ple de coneixen&ccedil;a.<br />\r\n\tEls Lestr&iacute;gons i els C&iacute;clops,<br />\r\n\tl&#39;a&iuml;rat Posid&oacute;, no te n&#39;esfereixis:<br />\r\n\ts&oacute;n coses que en el teu cam&iacute; no trobar&agrave;s,<br />\r\n\tno, mai, si el pensament se&#39;t mant&eacute; alt, si una emoci&oacute; escollida<br />\r\n\tet toca l&#39;esperit i el cos alhora.<br />\r\n\tEls Lestr&iacute;gons i els C&iacute;clops,<br />\r\n\tel fero&ccedil; Posid&oacute;, mai no ser&agrave; que els topis<br />\r\n\tsi no els portes amb tu dins la teva &agrave;nima,<br />\r\n\tsi no &eacute;s la teva &agrave;nima que els dre&ccedil;a davant teu.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tHas de pregar que el cam&iacute; sigui llarg.<br />\r\n\tQue siguin moltes les matinades d&#39;estiu<br />\r\n\tque, amb quina delectan&ccedil;a, amb quina joia!<br />\r\n\tentrar&agrave;s en un port que els teus ulls ignoraven;<br />\r\n\tque et puguis aturar en mercats fenicis<br />\r\n\ti comprar-hi les bones coses que s&#39;hi exhibeixen,<br />\r\n\tcoral i nacres, ambres i banussos<br />\r\n\ti delicats perfums de tota mena:<br />\r\n\ttanta abundor com puguis de perfums delicats;<br />\r\n\tque vagis a ciutats d&#39;Egipte, a moltes,<br />\r\n\tper aprendre i aprendre dels que saben.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tSempre tingues al cor la idea d&#39;&Iacute;taca.<br />\r\n\tHas d&#39;arribar-hi, &eacute;s el teu dest&iacute;.<br />\r\n\tPer&ograve; no forcis gens la travessia.<br />\r\n\t&Eacute;s preferible que duri molts anys<br />\r\n\ti que ja siguis vell quan fondegis a l&#39;illa,<br />\r\n\tric de tot el que haur&agrave;s guanyat fent cam&iacute;,<br />\r\n\tsense esperar que t&#39;hagi de dar riqueses &Iacute;taca.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\t&Iacute;taca t&#39;ha donat el bell viatge.<br />\r\n\tSense ella no hauries pas sortit cap a fer-lo.<br />\r\n\tRes m&eacute;s no t&eacute; que et pugui ja donar.<br />\r\n\t&nbsp;&nbsp;&nbsp;<br />\r\n\tI si la trobes pobra, no &eacute;s que &Iacute;taca t&#39;hagi enganyat.<br />\r\n\tSavi com b&eacute; t&#39;has fet, amb tanta experi&egrave;ncia,<br />\r\n\tja haur&agrave;s pogut comprendre qu&egrave; volen dir les &Iacute;taques.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tK.P.KAVAFIS, 1911<br />\r\n\tTrad. C. Riba</p>\r\n	\N	Teatre Sants i CCBesós, Barcelona	2013-01-20 02:15:46.404718	2013-01-22 03:07:57.16442
-24	23	ca	6 senses (consentidOsinsentido)	<p>\r\n\tPerformance i instal.lacio a l&#39;exposicio Dones amb sentit&#39;s a carrec de Roser Girona</p>\r\n<p>\r\n\tDaU al sis sentits<br />\r\n\t(en clau de tu)</p>\r\n<p>\r\n\tSents?<br />\r\n\tSents cent ocells i l&#39;harmonia.<br />\r\n\tSents sons i suau son.<br />\r\n\tSents sol als ulls clucs, veus el que vols.<br />\r\n\tImagines la imatge, anotes el que notes:<br />\r\n\tCreus i crees imaginaccions.<br />\r\n\tSents la car&iacute;cia i la intenci&oacute;.<br />\r\n\tSents la mel i la seva llengua dol&ccedil;a.&nbsp;<br />\r\n\tSents l&#39;aroma del caf&egrave; i ensums el que sents.<br />\r\n\tT&#39;he sentit, t&eacute; sentit.<br />\r\n\tT&#39;afecta l&#39;afecte i l&#39;efecte del sent-i-ment.<br />\r\n\tI el sis&egrave; sentit m&eacute;s que el com&uacute;.</p>\r\n<p>\r\n\tAssents, dissents, consents i pressents en present.<br />\r\n\tHo sents: ergo ets<br />\r\n\tun tot sensible<br />\r\n\tamb sentit(s)</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\tTot i ser negat per irreprodu&iuml;ble i indemostrable, el sis&egrave; sentit t&eacute; nom propi. Segons Ramon Llull, els cinc sentits tradicionals proporcionen dades massa disperses per ser copsades per la ment. Defineix l&#39;afat, el sis&egrave; sentit com una facultat unificadora que atorga un concepte a les diferents sensacions que permet comunicar-lo mitjan&ccedil;ant la paraula.<br />\r\n\tLa neuroci&egrave;ncia ara explora el sis&egrave; sentit o la visi&oacute; mental premonit&ograve;ria dels canvis abans que es produeixin. El cervell crea patrons de mem&ograve;ria que s&oacute;n la font de la intuici&oacute;. Els mecanismes resten impredictibles, segurament, perque no els reconeixem prou com una forma complement&agrave;ria de la percepci&oacute;. Encara.</p>\r\n	\N	CCBarceloneta	2013-03-22 00:11:07.040939	2013-03-27 21:32:24.077723
-29	27	ca	Sí, lent, sí, silenci		\N		2013-04-05 15:05:10.533417	2013-04-05 15:53:49.048616
-31	29	ca	Grafies d'una mirada a Sarrià	<p>Quadern de viatge pel barri de Sarri&agrave; en una primavera. Llibre de la colecci&oacute; Carnet de Voyage editat per l&#39;Ajuntament de Barcelona.</p>\r\n	tècnica mixta sobre paper	\N	2013-04-05 18:53:18.958475	2013-04-05 18:56:47.283683
-8	8	ca	dues Veus nues	<p>Exposici&oacute; i instal.laci&oacute; d&#39;obra sobre paper i poemes de Rosa Abuchaibe. Performance, improvisaci&oacute; d&#39;art i poesia amb Rosa Abuchaibe. Vil.la Florida, Barcelona</p>\r\n	mixta sobre paper 	\N	2013-01-04 20:55:14.000793	2013-04-05 19:27:48.627716
-25	24	ca	S/T: sense títol	<p>Porta-1 d&#39;entrada: portada en blanc.<br />\r\nEntre mi i tots, temps com&uacute; i dos llibres sense un sol t&iacute;tol.<br />\r\nPorta-do(r)s.<br />\r\nS&#39;uneixen, p&agrave;gina a p&agrave;gina, en un cos que no vol dividir-se. Es diferencien per paraula i pensament propi, es troben entre l&iacute;nies.<br />\r\nPorta tres: em porta al p&uacute;blic.<br />\r\nEix d&#39;equilibri. Cru&iuml;lla d&#39;enlla&ccedil; mentre actua la for&ccedil;a del frec i la tensi&oacute;, atenci&oacute;.<br />\r\nLligam fr&agrave;gil per&ograve; contundent arn&eacute;s mutu que aguanta el instant, el temps just. Poden ser hores, segons.<br />\r\nPorta quatre mosquetons i corda que recorda: no estem nuats.</p>\r\n\r\n<p>&quot;Sisplau, amb la calma, us demano que penseu un t&iacute;tol per a aquesta acci&oacute;. Quan el tingueu, aixequeu la m&agrave; dreta.&quot;<br />\r\n...<br />\r\ndic: ssss/t.<br />\r\nescric S/T</p>\r\n\r\n<p>&quot;Gr&agrave;cies.<br />\r\nJo tamb&eacute; prometo no dir-ho mai a ning&uacute;.&quot;</p>\r\n\r\n<p>(i no dubteu que em moro de ganes de saber-los)</p>\r\n\r\n<p>Subjecte subjectat a dues bandes, reflexe-reflexi&oacute; d&#39;experi&egrave;ncia.<br />\r\nCadasc&uacute; n&#39;&eacute;s titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 21:35:26.168316	2013-04-05 19:00:00.761269
-66	61	ca	we were waiting for you	<p>Festival FLARE 3</p>\r\n\r\n<p>col&middot;lectiu d&#39;investigaci&oacute; d&#39;art d&#39;acci&oacute; <strong>ocells al cap:</strong></p>\r\n\r\n<p>Denys Blacker, Nat&agrave;lia Espinet, Victoria Grey, Helena Hunter, Marta Vergony&oacute;s, Sabina Vilagut, Lesley Yendell, Mireia Zantop</p>\r\n\r\n<p><a href="https://flare707.wordpress.com/">https://flare707.wordpress.com/</a></p>\r\n	\N	Vane Gallery, Newcastle, GB	2017-06-01 23:01:04.874164	2017-06-01 23:09:35.10061
-88	85	ca	SI i/o NO, torno i no torno	<p>Video-acci&oacute; per a l&#39;Exposici&oacute; Plurivisions de Fel&iacute;cia Fuster</p>\r\n\r\n<p>Realitzaci&oacute; del v&iacute;deo: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-04-08 21:04:22.995001	2021-04-08 21:31:03.886253
-32	30	ca	axis salus: homenatge al bon metge	<p>Premi al bon metge</p>\r\n\r\n<p>Paraules recollides en el proc&eacute;s de creaci&oacute; de l&#39;escultura -que acompanyaren el premi en composicions cal.ligr&agrave;fiques &uacute;niques- i que envolten l&#39;excel.l&egrave;ncia del bon metge. Valors i virtuts que van m&eacute;s enll&agrave; del coneixement cient&iacute;fic i l&#39;ex`peri&egrave;ncia fruit d&#39;estudis i praxis.&nbsp; Tenen m&eacute;s a veure amb la saviesa human&iacute;stica, el com usar el saber, com tractar el cos i l&#39;&agrave;nima de la persona. Nos&oacute;n mesurables, per&ograve; els reconeixem quan est&agrave;n presents.</p>\r\n\r\n<p>La pe&ccedil;a contempla la relaci&oacute; metge-pacient, tot i asim&egrave;trica, com un tot org&agrave;nic amb una base compartida, com un equillibri delicat, per&ograve; just, com un viatge profund a un centre com&uacute;, com una comunicaci&oacute; clara d&#39;escolta m&uacute;tua en la que parla el silenci.</p>\r\n\r\n<p>Tot el meu agra&iuml;ment i reconeixement a l&#39;equip de SEPAR i a tots els metges que dia a dia cultiven conscientment aquests valors que ens trascendeixen i fan m&eacute;s humans.</p>\r\n	escultura de bronze	\N	2013-08-20 12:50:53.349579	2013-08-20 12:50:53.349579
-33	30	es	axis salus: homenaje al buen médico. Premio SEPAR	<p>Premio al Buen M&eacute;dico</p>\r\n\r\n<p>En el proceso de creaci&oacute;n de la escultura, recog&iacute; palabras&nbsp; -que acompa&ntilde;ar&aacute;n el premio- y que envuelven la excelencia del buen m&eacute;dico. Una larga lista de valores y virtudes que van m&aacute;s all&aacute; del conocimiento cient&iacute;fico y la experiencia fruto de estudios y praxis. Tienen m&aacute;s que ver con la sabidur&iacute;a humana de c&oacute;mo usar ese saber, de c&oacute;mo tratar el cuerpo y el alma de la persona. No se pueden medir, pero se reconocen cuando est&aacute;n presentes.<br />\r\nLa pieza contempla la relaci&oacute;n m&eacute;dico-paciente, aunque asim&eacute;trica, como un todo org&aacute;nico con una base compartida, como un equilibrio delicado, pero justo, como un viaje profundo, como una comunicaci&oacute;n clara y de escucha m&uacute;tua en la que tambi&eacute;n habla e lsilencio.</p>\r\n\r\n<p>Todo mi agradecimiento y reconocimiento al equipo de Separ y a todos los m&eacute;dicos que, d&iacute;a a d&iacute;a, cultivan conscientemente estos valores preciosos que nos trascienden y hacen m&aacute;s seres humanos.</p>\r\n	escultura de bronce	\N	2013-08-20 12:52:14.3328	2013-08-20 12:53:55.06822
-34	30	en	axis salus: hommage to the good doctor	<p>Good Physician Award<br />\r\n<br />\r\nIn the process of creating the sculpture, picked words that accompany the award-and excellence involving good doctor. A long list of values ​​and virtues that go beyond scientific knowledge and experience result of research and practice. They have more to do with the wisdom of how to use this knowledge, how to treat the body and soul of the person. Can not be measured, but are recognized when present.<br />\r\nThe piece includes the doctor-patient relationship, although asymmetric, as an organic whole with a shared basis, as a delicate balance, but just as a trip deep, as clear communication and mutual listening which also silences speak.<br />\r\n<br />\r\nAll my thanks and appreciation to Separ team and all physicians who, day by day, consciously cultivate these precious values ​​transcend and make us more human.</p>\r\n	bronze sculpture	\N	2013-08-20 12:58:58.389429	2013-08-20 12:58:58.393426
-36	33	ca	fent volar coloms	<p>Fent volar coloms s&#39;ha gestat durant el temps de conviv&egrave;ncia amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una s&egrave;rie de peces breus que incorporen tamb&eacute; elements sonors.</p>\r\n\r\n<p>Transitem tamb&eacute; per 11 v&iacute;deo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agra&iuml;ments a l&#39;equip de l&#39;Antic, Clara Bes, Pau Compte, Andr&eacute;s Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>\r\n	\N	Antic Teatre, Barcelona	2013-12-06 12:49:29.127486	2013-12-06 12:57:36.416638
-37	34	ca	sum(us)	<p>Corpologia 13 en el marc de l&#39;exposici&oacute; <strong>Cargol treu banya</strong></p>\r\n	\N	Casa Elizalde, Barcelona	2013-12-06 13:04:41.823364	2013-12-06 13:04:41.823364
-39	36	ca	despunxar	<p>Acci&oacute; po&egrave;tica amb Al&egrave;xia Lleonart en el marc de l&#39;exposici&oacute; d&#39;obra original Esbarzers.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/&nbsp;</p>\r\n	\N	Llibreria Papasseit, Manresa	2013-12-06 13:20:59.623252	2013-12-06 13:20:59.623252
-56	51	ca	pomps of the subsoil	<p>Col&middot;lectiu d&#39;art d&#39;acci&oacute; OCELLS AL CAP:</p>\r\n\r\n<p>participen: Denys Blacker, Natalia Espinet, Juliette Murphy, Montse Ser&oacute;, Marta Vergony&oacute;s, Ada Vilar&oacute;, Lesley Yendell, Mireia Zantop</p>\r\n	\N	FESTIVAL ESCENA POBLENOU, Can Felipa, Barcelona	2016-08-01 16:18:35.356281	2016-08-05 11:37:55.053477
-41	36	en	despunxar	<p><strong>Acci&oacute; po&egrave;tica amb Al&egrave;xia Lleonart</strong> en el marc de la seva exposici&oacute; d&#39;obra original <strong>Esbarzers.</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/&nbsp;</p>\r\n	\N	Llibreria Papasseit, Manresa	2014-05-17 12:17:29.478349	2014-05-17 12:17:29.484756
-38	35	ca	Quina és la pregunta?	<p>25 de novembre: Dia per a la eradicaci&oacute; de la viol&egrave;ncia de g&egrave;nere</p>\r\n\r\n<p>Acci&oacute; al carrer amb Mireia Chalamanc i instal.laci&oacute; a la Capella de Sant Corneli</p>\r\n\r\n<p>&ldquo;A poc a poc al endinsar-me a l&rsquo;ambient del mercat amb actitud de receptivitat van anar sorgint complicitats, mirades, apropaments, fins que em vaig sentir submergida a un flux de respostes i preguntes que anaven donant sentit a les nostres pres&egrave;ncies. Receptacles d&rsquo;emocions, pensaments, paraules, comentaris, intimitats, reaccions, necessitats&hellip; en el tap&iacute;s d&rsquo;aquesta Acci&oacute; vaig quedar impregnada de dolor, de veus callades, de veus silenciades, i al mateix temps, impregnada de possibilitats, d&rsquo;escletxes, de veus manifestades, de veus agra&iuml;des, de diversitat de veus i d&rsquo;experi&egrave;ncies.&rdquo;</p>\r\n\r\n<p>&ldquo;Una de les certeses que vaig sentir &eacute;s que durant la nostra acci&oacute; erem alhora subtils emissores i receptores, per&ograve;, sobre tot, canals a trav&eacute;s dels quals permetiem que afluessin, s&#39;expres&eacute;ssin i prengu&eacute;ssin forma verbal, -conscient o inconscientment- alguns pensaments, opinions i sentiments que solen restar soterrats.</p>\r\n\r\n<p>I parlo sempre del tot: nosaltres i els altres, l&#39;espai d d&#39;aquesta trobada &iacute;ntima en l&#39;espai p&uacute;blic nom&eacute;s podia sorgir de l&#39;escolta, la reflexi&oacute; i la sinceritat m&uacute;tua.</p>\r\n\r\n<p>Varem ser full en blanc per a paraules &ldquo;indici&rdquo;, que assenyalen t&iacute;midament moltes hist&ograve;ries que compartim poc i solen ser m&eacute;s silenciades que explicades. &Eacute;s tab&uacute; all&ograve; del que no se&#39;n parla. Em va sorprendre les visions i percepcions de la viol&egrave;ncia, i com alguns neguen ser capa&ccedil;os de sentir-la o recon&egrave;ixer-la, tant com a agents passius o actius. Em va alegrar veure que les persones, amb independ&egrave;ncia de g&egrave;nere, edat o condici&oacute; social, desitgen obrir el di&agrave;leg, cercar respostes i, amb clara determinaci&oacute;, aportar de la seva part per l&#39;eradicaci&oacute; de la viol&egrave;ncia.</p>\r\n	\N	Mercat i capella de Sant Corneli, Cardedeu	2013-12-06 13:07:21.047497	2015-01-04 21:35:15.140994
-35	31	ca	A...Z 5/5 (f)acts	<p>(f)acts</p>\r\n\r\n<p>1/5: A&#39;s rain as poem as...</p>\r\n\r\n<p>2/5: pienso, luego... o no</p>\r\n\r\n<p>3/5: yo no he sido</p>\r\n\r\n<p>4/5: entrar saliendo o salir entrando</p>\r\n\r\n<p>5/5: a room, espai habitat</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Experimental Room Festival, Barcelona	2013-09-05 14:59:31.67866	2015-09-20 18:03:57.753149
-91	87	es	Over and over, again and again 	<p>Video-performance con Denys Blacker.</p>\r\n\r\n<p>Proceso creativo colectivo sobre migraciones con Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) e Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>Presentado en Regional Cultural Centre Letterkenny Co.Donegal en oto&ntilde;o de 2021</p>\r\n\r\n<p>WILD SWANS: https://www.bernadettehopkins.com/wild-swans-performance-art.html</p>\r\n	\N	Madremanya, Girona/ Donegal, Ireland	2021-09-13 17:22:20.910774	2021-12-16 21:38:29.44898
-46	40	ca	BIRDS-ocells al cap	<p><br />\r\nActivitat vinculada a l&#39;exposici&oacute;<strong>&nbsp;Allan Kaprow. Altres maneres</strong>&nbsp;a la Fundaci&oacute; Antoni T&agrave;pies, Barcelona</p>\r\n\r\n<p><br />\r\nPerformance:&nbsp;Punt de trobada a Can Obert, Madremanya &nbsp;10h - 13h<br />\r\nPosta en com&uacute;:&nbsp;Can Obert, Madremanya 16h -18h</p>\r\n\r\n<p><br />\r\nDe&nbsp;Birds&nbsp;(Ocells) a&nbsp;Tenir ocells al cap&nbsp;<br />\r\nA partir de la proposta de treballar al voltant de l&rsquo;obra&nbsp;de Kaprow i en con&egrave;ixer el seu vincle amb la Womanhouse, decidim recrear la pe&ccedil;a&nbsp;Birds. En el proc&eacute;s de &ldquo;reinvenci&oacute;&rdquo; que proposa el mateix Kaprow ens interessa anar m&eacute;s enll&agrave; de la partitura proposada, i explorar, en aquesta intervenci&oacute; en plena natura, la locuci&oacute; &ldquo;tenir ocells al cap&rdquo;.</p>\r\n\r\n<p><br />\r\nCoordinadores de la reinvenci&oacute;:&nbsp;Denys Blacker i Marta Vergony&oacute;s<br />\r\nAmb la participaci&oacute; de:&nbsp;Montse Ser&oacute;,&nbsp;Ada Vilar&oacute;,&nbsp;Lesley Yendell,&nbsp;Paloma Orts,&nbsp;Nat&agrave;lia Espinet,&nbsp;N&uacute;ria Icl&egrave;sies,&nbsp;Mar Serinya,&nbsp;Clara Gar&iacute;,&nbsp;J&uacute;lia Falgas i Mireia Zantop.<br />\r\n<a href="http://www.fundaciotapies.org/site/spip.php?rubrique1274">http://www.fundaciotapies.org/site/spip.php?rubrique1274</a></p>\r\n	\N	Madremanya	2014-05-17 13:01:15.49841	2016-08-05 12:02:03.841509
-42	33	en	fent volar coloms	<p>Fent volar coloms s&#39;ha gestat durant el temps de conviv&egrave;ncia amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una s&egrave;rie de peces breus que incorporen tamb&eacute; elements sonors.</p>\r\n\r\n<p>Transitem tamb&eacute; per 11 v&iacute;deo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agra&iuml;ments a l&#39;equip de l&#39;Antic, Clara Bes, Pau Compte, Andr&eacute;s Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p><a href="http://vimeo.com/81280599">http://vimeo.com/81280599</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>\r\n	\N	Antic Teatre, Barcelona	2014-05-17 12:23:54.04395	2014-05-17 12:23:54.048024
-43	37	ca	(n)ombrares 	<p><strong>(n)ombrares</strong> es basa en la relaci&oacute; amb la pr&ograve;pia ombra en relaci&oacute; amb el nombre d&#39;ombres i el nombre d&#39;ares que percebem conscientment i podem nombrar</p>\r\n\r\n<p>(fent segments subjectius de la unitat flu&iuml;da del tot).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Anotacions marginals:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>La meva ombra m&#39;acompanya des del meu enllumenament.</p>\r\n\r\n<p>&Eacute;s variable - particular, privada (tamb&eacute; de llibertat) y p&uacute;blica, &uacute;nica y m&uacute;ltiple, impert&egrave;rrita i adaptable, singular o plural,</p>\r\n\r\n<p>i sempre sincr&ograve;nica.</p>\r\n\r\n<p>&Eacute;s tots els meus jos i nos. Tenim una bona relaci&oacute;.</p>\r\n\r\n<p>&Eacute;s la meva ombra de la guarda.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Relaci&oacute; d&#39;ares t&ograve;nics per preposicions &agrave;tones</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>a l&#39;ombra (parlo i beso)</p>\r\n\r\n<p>amb l&#39;ombra ( em defineixo i m&#39;abra&ccedil;o)</p>\r\n\r\n<p>de l&#39;ombra (neixo i s&oacute;c inseparable. S&eacute; que no la puc matar sense morir en</p>\r\n\r\n<p>l&#39;intent - o tu i jo o ni tu ni jo)</p>\r\n\r\n<p>en l&#39;ombra (que m&#39;acull, m&#39;esmunyo)</p>\r\n\r\n<p>per l&#39;ombra (interpreto forma i acci&oacute; segons la llum de la mirada)</p>\r\n\r\n<p>per a l&#39;ombra (un got de vi, que tra&ccedil;a i revela la seva ess&egrave;ncia incorp&ograve;ria)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>subtext, flash-acci&oacute; imagin&agrave;ria:</p>\r\n\r\n<p>En algun moment vaig pensar en proposar de reunir-nos tots els corpologistes abra&ccedil;ats i mirar uns instants l&#39;ombra com&uacute;, fer-li una foto amb flash com a evid&egrave;ncia absoluta de la seva pres&egrave;ncia ef&iacute;mera i la incapacitat de retenir-la. Per&ograve; ja havia descartat la opci&oacute; de matar l&#39;ombra... segueixo jaient amb ella.</p>\r\n	\N	Sant Hilari Sacalm	2014-05-17 12:35:52.148102	2014-05-17 12:35:52.148102
-45	39	ca	els polissons	<p>Disturbanitats:</p>\r\n\r\n<p>Performance-Acci&oacute; sonora amb instruments tradicionals tocats instintivament, comprovant la hip&ograve;tesi harm&ograve;nica de la teoria del caos a la recerca de la biologia primordial.</p>\r\n\r\n<p>Els Polissons estan formats per artistes transdisciplinars que conreen tant la creaci&oacute; en directe com t&egrave;cniques m&eacute;s el&middot;laborades del m&oacute;n de les arts visuals, liter&agrave;ries, esc&egrave;niques i musicals. Aquest projecte beu de fonts dada&iacute;stes amb precedents de treball en grups d&#39;improvisaci&oacute; i investigaci&oacute; musical.</p>\r\n\r\n<p>Participen:</p>\r\n\r\n<p>Joan Vinuesa&nbsp;<a href="http://www.joanvinuesabaliu.info"> www.joanvinuesabaliu.info</a>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>Aleix Antillach <a href="http://www.leix.org">www.leix.org</a>&nbsp;</p>\r\n\r\n<p>Eva Puig <a href="http://www.estranhaformadevida.com">www.estranhaformadevida.com</a></p>\r\n\r\n<p>Col&middot;labora: Ona Mestre</p>\r\n\r\n<p>contacte: elspolissons@gmail.com</p>\r\n	\N	XIV Festival Perpetracions - Antologia Animal, Sant Martí, Barcelona	2014-05-17 12:59:00.763419	2014-07-17 22:28:58.029492
-84	81	ca	gota · gota	<p>Artistes a cel obert</p>\r\n\r\n<p>Taller de Montse Ser&oacute;, a Rupi&agrave;, i exposici&oacute; al Museu de la Terrissa de Quart.</p>\r\n	Ceràmica i instal·lació amb aigua i objectes.	\N	2020-02-19 17:54:40.924657	2020-02-19 18:03:44.48378
-44	38	ca	ad hoc	<p>s&egrave;rie de accions/intervencions improvisades ad hoc</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	moviment i relació amb i entre els objets trouvés, acció i escultura efímera	\N	2014-05-17 12:58:04.890932	2015-01-04 21:41:51.477027
-83	78	ca	Thyllandsias	<p>viure amb poc i d&#39;all&ograve; (aparentment) immaterial</p>\r\n	Escultura d'alabastre	\N	2020-02-14 21:53:45.80356	2020-09-21 12:36:37.639959
-70	65	ca	Desig Per(z)ones	<p><strong>art participatiu a l&#39;espai p&uacute;blic. Pe&ccedil;a entorn de les relacions afectives i la sexualitat</strong></p>\r\n\r\n<p>Acci&oacute;-performance i instal&middot;laci&oacute; col&middot;lectiva fruit de la participaci&oacute; i la reflexi&oacute; individual generant un di&agrave;leg entre espai p&uacute;blic i espai &iacute;ntim, visibilitzant la diversitat de qualsevol forma de sentir per expressar tot all&ograve; silenciat, envoltat de prejudicis i tab&uacute;s.</p>\r\n\r\n<p><strong>Les Mireies</strong>, projecte art&iacute;stic i social,</p>\r\n\r\n<p>som Mireia Chalamanch i Mireia Zantop</p>\r\n	\N	Espai públic de 23 municipis del Barcelonès	2018-08-22 15:06:01.767606	2020-06-15 15:22:31.23499
-82	77	ca	DE VEU · EN VEU	<p><strong>les Mireies, </strong>projecte art&iacute;stic i social</p>\r\n\r\n<p>Mireia Chalamanch i Mireia Zantop</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/337385523">https://vimeo.com/337385523 </a></p>\r\n\r\n<p><a href="https://vimeo.com/490838260">https://vimeo.com/490838260</a></p>\r\n\r\n<p>De VEU en VEU neix de la necessitat de fer-vos c&ograve;mplices d&rsquo;algunes de les m&eacute;s de 3.500 veus que hem recollit fent la performance DONAR VEU al llarg d&rsquo;aquests 5 anys.</p>\r\n\r\n<p>La pe&ccedil;a vol ser una invitaci&oacute; a l&rsquo;escolta, a la reflexi&oacute;, aix&iacute; com la presa de consci&egrave;ncia de la diversitat d&rsquo;experi&egrave;ncies entorn a temes com la viol&egrave;ncia masclista, la (des)igualtat i la diversitat sexual i de g&egrave;nere.</p>\r\n	\N	Can Manyé, Alella	2019-06-10 22:08:30.884277	2021-01-04 21:07:14.45751
-107	67	es	ip(sum), id(est)	<p>Acci&oacute;n en la Fundaci&oacute;n Valvi en el marco del festival Inundart, Girona</p>\r\n\r\n<p>1 de julio de 2018</p>\r\n	Performance, dibujo con el cuerpo, yeso, carbón, saliva y agua.	\N	2022-01-05 21:12:29.961094	2022-01-05 21:12:29.963527
-47	41	ca	present% o saltAl'ara	<p>CORPOLOGIA 15</p>\r\n\r\n<p>16 accions de 4 minuts.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Em presenten, em presento amb la pres&egrave;ncia, presento el t&iacute;tol:</p>\r\n\r\n<p><strong>PRESENT%</strong>: t&iacute;tol I pensat anteriorment (del passat)</p>\r\n\r\n<p>salal&#39;ara: t&iacute;tol II pensat just abans de l&#39;acci&oacute; (en un salt a l&#39;ara)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Presento i ofereixo com a present</p>\r\n\r\n<p>els objectes que m&#39;acompanyen:</p>\r\n\r\n<p>un paper blanc rod&oacute; fet a m&agrave; que porta a sobre una bossa plena de sal i 2 vells despertadors negres -d&#39;aquells que fan tic-tac i riiing percutint les dues campanes-</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Volia preguntar -quina hora &eacute;s?, per&ograve; com, sigui quina sigui, ja no &eacute;s, no vaig posar els rellotges a l&#39;hora que &eacute;s/era, si no a l&#39;hora primera i &uacute;ltima de la nostra mesura del temps: 0.00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Inici</p>\r\n\r\n<p>Sincronia = sense cronos? No cr&ograve;nic? Alhora? Tot</p>\r\n\r\n<p>A-sincronia de 2 rellotges:</p>\r\n\r\n<p>Una dimensi&oacute; del temps absoluta, mesurable. Tremolo mentre dono corda al rellotge</p>\r\n\r\n<p>L&#39;altra dimensi&oacute;, relativa, el temps percebut, l&#39;ara propi. Em calmo</p>\r\n\r\n<p>S&oacute;c a sobre del paper en blanc. Al meu eix i a l&#39;axis tempus 0:00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Salalcor, salalgust, nusalasal, nusalcap.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mossego la sal, la sento present en tota la boca en tot moment</p>\r\n\r\n<p>Tra&ccedil;o i salo un cercle/cicle en el sentit del rellotge. al ritme propi que l&#39;acci&oacute; em permet. Estic a les seves mans, s&oacute;c llapis d&#39;una voluntat invisible d&#39;aven&ccedil; imparable, fins a tancar el cercle, una acci&oacute; rodona</p>\r\n\r\n<p>Torno a l&#39;eix vertical, absurd i em desdibuixo canviant de dimensi&oacute;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara sala&#39;m! Em salo i gaudeixo tot el temps immensurable del plaer</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Eix de balan&ccedil;a, amb un rellotge a cada m&agrave; -el que mesura el temps i el que no-, em concentro en la pres&egrave;ncia (present tense!), un ara buit i ple d&#39;acci&oacute; al que li queda poc temps, 30? 10? segons. Ara cent/sent per cent</p>\r\n\r\n<p>...ara riiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing sincr&ograve;nic</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara em sorpr&egrave;n que els aplaudiments cobreixin el so de les alarmes: un fi fos amb un altre</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara d&#39;eixo d&#39;estar, esborro l&#39;eix de la mesura del temps i el seu contrari: marxo</p>\r\n\r\n<p>M&#39;emporto el paper rod&oacute;, la illa blanca de centre i cercle.</p>\r\n\r\n<p>Resta un espai negre sense sal: abs&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	l'Ateneu, Celrà	2014-05-17 13:20:04.158385	2014-11-03 23:29:42.94207
-48	42	ca	d'accions i diccions	<p>&nbsp;</p>\r\n\r\n<p>(en el marc de <strong>Poesia als parcs 2014)</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Acci&oacute; po&egrave;tica que allibera un accionari d&#39;un diccionari</p>\r\n\r\n<p>Acci&oacute; d&#39;aviacci&oacute; de reacci&oacute; a la dicci&oacute;</p>\r\n\r\n<p>Plegats, pleguem</p>\r\n\r\n<p>cadasc&uacute; un avi&oacute;, paraula de paper. Cadasc&uacute; en la direcci&oacute; del vol que vol</p>\r\n\r\n<p><strong>Dicci&oacute; al vent</strong></p>\r\n\r\n<p><strong>acci&oacute; al present</strong></p>\r\n\r\n<p><strong>text al context.</strong></p>\r\n\r\n<p><a href="https://www.facebook.com/poesiaalsparcs"><strong>https://www.facebook.com/poesiaalsparcs</strong></a></p>\r\n	\N	 Ermita de Sant Feliuet de Savassona	2015-01-04 22:05:21.205506	2015-01-04 22:13:33.965796
-49	43	ca	esClau	<p>acci&oacute; que complementa un poema llegit als 4 vents unes setmanes abans a l&#39;ermita de Sant Feliu de Savassona (gr&agrave;cies, Ester i Carles):</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CAP ESCLAU.</p>\r\n\r\n<p>t&eacute; la clau</p>\r\n\r\n<p>cau el cap,</p>\r\n\r\n<p>cau de cap</p>\r\n\r\n<p>cau l&#39;esclau del cap (esclau clau)</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>els claus cauen de cap per les escales</p>\r\n\r\n<p>&Eacute;s clau: tens la clau.</p>\r\n\r\n<p>La clau de sol.</p>\r\n\r\n<p>Cap &eacute;s clau.</p>\r\n\r\n<p><a href="http://corpologialiveart.blogspot.com.es/">http://corpologialiveart.blogspot.com.es/</a></p>\r\n	\N	Antic Teatre, Barcelona	2015-01-04 23:00:44.744179	2015-01-04 23:21:25.218318
-50	44	ca	estOna		intervenció efímera	\N	2015-01-05 00:13:38.832743	2015-07-02 23:53:58.583162
-51	46	ca	FRee WILL (x veure +) 	<p><strong>free will</strong> &ndash; lliure albir. Lit.: lliure voluntat</p>\r\n\r\n<p>t&iacute;tol i tema triats per incertesa metaf&iacute;sica.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>(x veure +)</strong></p>\r\n\r\n<p>acci&oacute; sense acci&oacute;</p>\r\n\r\n<p>i veure</p>\r\n\r\n<p>veure-us</p>\r\n\r\n<p>obrir el llibre a l&#39;albir.</p>\r\n\r\n<p>A trav&eacute;s del llibre,</p>\r\n\r\n<p>veure amb ulls que no veuen,</p>\r\n\r\n<p>veure +</p>\r\n\r\n<p>Coneixe-ment</p>\r\n\r\n<p>en un altre sentit.</p>\r\n\r\n<p>La informaci&oacute; embena els ulls</p>\r\n\r\n<p>x a veure +</p>\r\n\r\n<p>la imatge interior encertada,</p>\r\n\r\n<p>la intenci&oacute; certa</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>allibero els o/u(ll)s.</p>\r\n\r\n<p>o van on volen</p>\r\n\r\n<p>o van on vull</p>\r\n\r\n<p>o van on havien d&#39;anar</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>...dansa lliure a l&#39;albir.</p>\r\n	\N	Cicle d'Art d'Acció La Carbonera, Girona 	2015-07-03 00:07:38.029673	2015-07-03 00:12:11.465762
-52	47	ca	elGrandTour	<p>Sin&egrave;rgies i elements trobats autour del proc&eacute;s creatiu basat en la intu&iuml;ci&oacute;.</p>\r\n\r\n<p>Acci&oacute; col&middot;lectiva amb Denys Blacker, Carlus Camps, Natalia Espinet, Rotnip, Lesley Yendell, Mireia Zantop.</p>\r\n\r\n<p>en el marc del Grand Tour:</p>\r\n\r\n<p>Del 26/08 al 13/09/2015, de la Nau C&ocirc;clea a St. Feliu de Gu&iacute;xols, 350km a peu en tres setmanes. Obra d&#39;artistes visuals, ballarins, poetes, m&uacute;sics i performers.</p>\r\n\r\n<p><a href="http://elgrandtour.net">http://elgrandtour.net</a></p>\r\n	\N	Madremanya, Girona	2015-09-27 22:40:27.703182	2015-09-27 22:42:43.772683
-53	48	ca	pEs&pressió	<p>(EX-PRESSI&Oacute; &eacute;s-cultura?)</p>\r\n\r\n<p>c&agrave;rrega visible:</p>\r\n\r\n<p>- b&agrave;scula</p>\r\n\r\n<p>- 3 maletes de viatge carregades volunt&agrave;riament amb llibres de pes relatiu i involuntari</p>\r\n\r\n<p>- 5 kg de cadenes</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>pes del cap</p>\r\n\r\n<p>pes del cap en cadenes</p>\r\n\r\n<p>al cap, el pes del cap en cadenes (pressi&oacute;)</p>\r\n\r\n<p>pes del cos</p>\r\n\r\n<p>pes del cos en llibres</p>\r\n\r\n<p>construcci&oacute;; s&#39;aguanta per pressi&oacute; del cap</p>\r\n\r\n<p>a sobre, pes de les cadenes, s&#39;aguanta per pressi&oacute; del cos, agenollat</p>\r\n\r\n<p>cos de cap, cos de pes (equilibri per pressi&oacute;)</p>\r\n\r\n<p>pel propi pes de la pres(si)&oacute;</p>\r\n\r\n<p>la consci&egrave;ncia defineix el moment d&#39;alliberacci&oacute;</p>\r\n	\N	Antic Teatre, Barcelona	2016-08-01 15:36:44.498892	2016-08-01 15:36:44.498892
-54	49	ca	aux bleux aigus d'acier et de cristal	<p>Festival Pepe Sales, Homenatge a Ren&eacute;e Vivien</p>\r\n\r\n<p>Marta Vergony&oacute;s i Mireia Zantop</p>\r\n	\N	Auditori de La Mercè, Girona	2016-08-01 15:46:04.562559	2016-08-01 15:48:05.399932
-58	53	ca	FluxUs	<p>MUGA CAULA 2016.</p>\r\n\r\n<p>Performance en el Museu de l&#39;Empord&agrave;.</p>\r\n\r\n<p>Exposici&oacute; material gr&agrave;fic i audiovisual de la Muga Caula.</p>\r\n\r\n<p>Homenatge.</p>\r\n	\N	Museu de l'Empordà, Figueres	2016-08-01 17:43:57.124514	2020-02-19 17:17:17.26401
-57	52	ca	eventuall	<p>Corpologia 20</p>\r\n\r\n<p>(tra&ccedil;os al vent eventual del ventall)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Preparacci&oacute;:</strong></p>\r\n\r\n<p>un llibre-poema a l&#39;aire lliure.</p>\r\n\r\n<p><strong>Inspiracci&oacute;:</strong></p>\r\n\r\n<p>inspiro i escric, sense fer correccions.</p>\r\n\r\n<p><strong>Ventilacci&oacute;:</strong></p>\r\n\r\n<p>el vent del ventall de possibilitats selecciona el que ha de ser sentit:</p>\r\n\r\n<p>Acci&oacute; eventual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Nota visual: llibre i ventall, ess&egrave;ncies congruents.</p>\r\n\r\n<p>Nota musical: sis p&agrave;gines d&#39;ai -res muts.</p>\r\n\r\n<p>Nota de peu:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>(ai-)</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>....</p>\r\n\r\n<p>RESS&Ograve;</p>\r\n	\N	La Fàbrica, Celrà	2016-08-01 16:58:26.654279	2016-08-01 16:58:26.654279
-71	66	ca	per se	<p>N&ordm;5 CORPOLOGIA&gt;25</p>\r\n\r\n<p>Inauguraci&oacute; de l&#39;exposici&oacute; de Denys Blacker<strong> Mapes ef&iacute;mers, complicitats i sincronies</strong></p>\r\n\r\n<p>Instal&middot;laci&oacute; a l&#39;aparador de la sala d&#39;exposicions del 14 al 21 de juny per gentilesa de Denys Blacker.</p>\r\n	\N	Bòlit Centre D'Art Contemporani, Girona	2018-08-22 15:12:28.300594	2018-12-21 20:09:58.560882
-61	56	ca	cromoSomX	<p>Corpologia 24.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Reflexi&oacute; intuitiva</p>\r\n\r\n<p>que assenyala identitats,</p>\r\n\r\n<p>emmiralla all&ograve; propi i apropiat,</p>\r\n\r\n<p>com&uacute; i diferenciador.</p>\r\n\r\n<p>Relaci&oacute; de poder d&#39;oposats i equilibri</p>\r\n\r\n<p>entre desig i perm&iacute;s rec&iacute;proc</p>\r\n\r\n<p>entre forma i fons de la unitat dual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>x (fem.) Present en refleXi&oacute;, seXe i eXpressi&oacute; de g&egrave;nere.</strong></p>\r\n\r\n<p>Lletra de l&#39;alfabet. Signe de multiplicaci&oacute;. Signe que representa la inc&ograve;gnita que no es vol o pot dir.</p>\r\n\r\n<p>Signe de creuament. Signe que defineix un punt en l&#39;espai. Cromosoma sexual present en mascles i femelles de l&#39;esp&egrave;cie humana.</p>\r\n	\N	Matèric Cuerpo/Objeto/Espacio. L'Hospitalet de Llobregat	2016-10-19 22:54:30.251459	2017-06-02 00:09:34.318544
-68	63	ca	Flux (...)	<p>La Muga Caula, Trobada internacional de poesia d&#39;acci&oacute; i performance</p>\r\n	\N	Les Escaules, Girona.	2017-06-02 00:01:33.881666	2018-08-22 14:36:16.870776
-72	67	ca	ip(sum), id(est)	<p>Acci&oacute; a la Fundaci&oacute; Valvi en el marc del festival Inundart, Girona</p>\r\n\r\n<p>1 de juliol de 2018</p>\r\n	Performance, dibuix amb el cos, carbó, saliva i aigua.	\N	2018-08-22 15:22:59.132785	2018-12-21 20:56:16.075856
-73	68	ca	quid de la qüestió	<p>NIT DE PERFORMANCE&nbsp; 18 d&#39;agost, 2018. Continuum d&#39;accions paral&middot;leles a l&#39;esgl&eacute;sia de Sta Ll&uacute;cia i La Carbonera en el marc de l&#39;exposici&oacute; <strong>&quot;Mapes ef&iacute;mers, complicitats i sincronies&quot;</strong>, B&ograve;lit centre d&#39;Art Contemporani, Girona</p>\r\n\r\n<p>Ocells al Cap, col&middot;lectiu d&#39;art d&#39;acci&oacute;:</p>\r\n\r\n<p>Marina Barsy, Marcela Contreras, Hellen Collard, Nat&agrave;lia Espinet, Pir&ograve;mana d&#39;Arg&oacute;s, Anita Ponton, Sandra Johnston, Montse Ser&oacute;, Holly Slingsby, Martine Viale, Ada Vilar&oacute;, Lesley Yendell, Mireia Zantop</p>\r\n	\N	Església de Sta. Llúcia, Girona	2018-08-22 15:29:30.559934	2018-12-21 21:13:46.396649
-74	69	ca	Ipse Ipsa Ipsum(em)	<p>2n cicle<strong> PARLEM CONTEMPORANI?</strong></p>\r\n\r\n<p>Ipse, ipsa, ipsum(em)</p>\r\n\r\n<p>[del llat&iacute;, ell mateix, ella mateixa, un mateix] + [del llat&iacute;, soc] + [del catal&agrave;, sumem]</p>\r\n\r\n<p>: acci&oacute; entre rastres d&#39;identitats estimades.</p>\r\n\r\n<p>Entre: cicles d&#39;entrar sortint, de definir desdibuixant, del flux de relacions interrogants.</p>\r\n	\N	Convent de les Arts, Alcover	2019-01-18 23:45:26.102019	2019-01-28 20:30:00.140779
-69	64	ca	fluxus	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposici&oacute; col&middot;lectiva homenatge a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Vent&oacute;s, Figueres.</strong></p>\r\n\r\n<p>Obra-acci&oacute; iniciada abans de la inauguraci&oacute;, completant-se durant l&#39;exposici&oacute;.</p>\r\n	tinta i aigua sobre paper, bossa de suero i equip de perfusió, picarols	\N	2017-06-02 00:41:14.374509	2019-01-28 20:37:54.476589
-64	59	ca	idenDitat	<p>Festival Flors i Violes.</p>\r\n\r\n<p>Introducci&oacute; i veu: Francesc Oui</p>\r\n\r\n<p><a href="http://francescoui.com">http://francescoui.com</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Fundació Cuixart, Palafrugell	2017-06-01 22:46:09.186381	2019-03-07 22:10:16.110711
-59	54	ca	DONAR VEU al desig	<p>Performance participativa a l&#39;espai p&uacute;blic per generar reflexi&oacute; i consci&egrave;ncia personal i social sobre all&ograve; que solem silenciar.</p>\r\n\r\n<p><strong>les Mireies</strong> som Mireia Chalamanc i Mireia Zantop</p>\r\n	\N	Espai públic de Manlleu, Torelló, Tona i Vic	2016-08-01 17:50:44.223621	2020-06-15 15:27:55.925838
-79	74	ca	paisatge líquid	<p><strong>Exposici&oacute; col&middot;lectiva i taller &quot;La pell com a paisatge&quot;</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell i Mireia Zantop</p>\r\n\r\n<p>a La Pedrera, Subirats.</p>\r\n\r\n<p>&nbsp;</p>\r\n	obra original sobre paper i obra gràfica	\N	2019-06-10 20:41:51.28195	2020-02-19 17:23:07.108279
-78	73	ca	trans form/morf I-VII		manipulació de materials naturals	\N	2019-04-15 11:41:07.655355	2019-04-15 11:41:07.655355
-75	70	ca	PetrAperta	<p>improvisacions en proc&eacute;s: di&agrave;leg amb la pedra</p>\r\n\r\n<p>des del 2018</p>\r\n		\N	2019-01-28 21:07:00.401383	2020-09-20 21:15:52.235421
-7	7	ca	possibles IMpossibles	<p>un cos, dos cossos, una acci&oacute; sobre els propis l&iacute;mits i la cooperaci&oacute;</p>\r\n\r\n<p>Co-creaci&oacute; i realitzaci&oacute; amb Norma Ros</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Sala Calassanç / Barcelona	2013-01-04 20:49:50.041175	2019-06-10 20:19:22.443508
-80	75	ca	EnClauDeBes	<p>Instal.lacci&oacute; po&egrave;tica</p>\r\n\r\n<p><strong>Fisures</strong> I Trobada i Mostra d&#39;Art Multidisciplinari de Palafolls</p>\r\n\r\n<p>acci&oacute;: 12 de juliol de 2014</p>\r\n	escala de fusta, martell, claus, paper fet a mà, roba de lli, alfabets, branques de diferents arbres i arbustos, pintallavis marró	\N	2019-06-10 21:35:33.868726	2019-06-10 21:35:33.868726
-81	76	ca	gravat 9	<p>Accions fotogravades i poesies visuals (s&egrave;ries continus-discontinus i rius de cel)</p>\r\n\r\n<p>Exposici&oacute; col&middot;lectiva a La Mirada expandida i Can Bast&eacute;, Barcelona</p>\r\n	fotogravat	\N	2019-06-10 21:53:37.333636	2020-02-14 20:58:34.799422
-76	71	ca	entrar sortint, sortir entrant		Escultura d'alabastre	\N	2019-03-07 22:44:50.238451	2020-02-14 21:07:05.797199
-60	55	ca	DONAR VEU... i fer un pas	<p>Performance participativa de llarga durada en l&#39;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar</p>\r\n\r\n<p>entorn de la <strong>viol&egrave;ncia de g&egrave;nere</strong></p>\r\n\r\n<p><strong>Les Mireies</strong> som Mireia Chalamanch i Mireia Zantop</p>\r\n	\N	Igualada, Sta. Margarida de Montbui i Vilanova del Camí, Conca d'Òdena	2016-08-01 17:54:00.857897	2020-06-15 15:43:34.388645
-20	19	ca	TABOo... Ser/reS. Cos/soC	<p>Performance participativa de llarga durada i instal.laci&oacute; a INUND&#39;ART 2010.</p>\r\n\r\n<p>Paraules del que es silencia.<br />\r\nQuant acceptem? Quant tolerem? Som tan lliures (de prejudicis) com creiem?</p>\r\n\r\n<p>Reflexi&oacute; sobre el concepte del tab&uacute;. Reflexe de la nostra mirada sobre el ser i el cos,&nbsp; relaci&oacute; amb la intenci&oacute; en la projecci&oacute; subjectiva i el prejudici socio-cultural implicat a l&#39;hora de identificar les seves subtils aparences simb&ograve;liques.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>La construcci&oacute; de la instal.laci&oacute; &eacute;s un work on progress al llarg de dues jornades d&#39;inundart. Eix de la primera jornada: RES versus SER; Eix de la segona part: S&Oacute;C versus COS.</p>\r\n	\N	Centre Cultural La Mercè, Girona	2013-01-20 02:38:43.499575	2020-06-15 15:36:58.247221
-77	72	ca	cap cap	<p>&nbsp;</p>\r\n\r\n<p><strong>Festival de Land-art</strong> ArtiGavarres 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Projecte de co-creaci&oacute; amb Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	escultures efímeres de palla 	\N	2019-04-10 23:03:30.950809	2020-06-15 15:40:15.938341
-85	82	ca	Phoscenes	<p>Dibuixos del Confinament, Exposici&oacute; del 18 de setembre al 30 d&#39;octubre 2020 a Lapek i Madremanya</p>\r\n	mixtes	\N	2020-09-21 08:55:36.139032	2020-10-14 22:53:13.951877
-86	83	ca	(des)CUIDAR	<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://lesmireies.com/descuidar">https://lesmireies.com/descuidar</a></p>\r\n	\N	Puig-reig, St.Joan de V., St.Antoni V. i Folgueroles, 	2021-01-04 20:46:08.768568	2021-01-04 20:49:41.681774
-104	76	es	gravat 9	<p><strong>Acciones fotograbadas y poes&iacute;as visuales</strong> (serie cont&iacute;nuos-discont&iacute;nuos y serie r&iacute;os de cielo)</p>\r\n\r\n<p>Exposici&oacute;n colectiva en La Mirada Expandida y Can Bast&eacute;, Barcelona</p>\r\n	fotograbado	\N	2022-01-05 20:25:20.171489	2022-01-05 20:26:16.346682
-87	84	ca	entre línies, 8ple8buit, veure +	<p>D&#39;ANADA I TORNADA Viatges d&#39;Arts entre Lletres a la Fundaci&oacute; Brossa de Barcelona. Cicle a cura d&#39;Ester Xargay.</p>\r\n\r\n<p>3 accions po&egrave;tiques i 1 video-acci&oacute;, i una presentaci&oacute; de l&#39;obra recent de poesia visual. Amb Ester Xargay i Jordi Aligu&eacute;.</p>\r\n\r\n<p><a href="https://www.fundaciojoanbrossa.cat/arts-entre-lletres/">https://www.fundaciojoanbrossa.cat/arts-entre-lletres/</a></p>\r\n\r\n<p><a href="https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898">https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898</a></p>\r\n	\N	Fundació Brossa, Barcelona	2021-01-04 20:54:14.346009	2021-08-31 23:06:56.970755
-90	87	ca	over and over, again and again	<p>Madremanya, Girona/ Donegal, Ireland<br />\r\n<br />\r\n08/08/2021<br />\r\n<br />\r\nV&iacute;deo-performance amb Denys Blacker <a href="https://denysblacker.com">https://denysblacker.com</a><br />\r\nProc&eacute;s creatiu col&middot;lectiu sobre migracions amb Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) i Isa Fontbona.<br />\r\nV&iacute;deo: Mar Ximenis<br />\r\nPresentat en Regional Cultural Centri Letterkenny Co.Donegal a la tardor de 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-08-31 23:10:08.833939	2022-01-13 20:54:16.142262
-94	87	en	over and over, again and again	<p>Video-performance with Denys Blacker&nbsp;</p>\r\n\r\n<p>Group Process on mygrations with Marina Barsy, Denys Blacker Aodan McCardle, Sandra Johnson, Bernmadette Hopkins (curator in charge) and Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>To be exhibited, in the Regional Cultural Centre Letterkenny Co.Donegal in the Autumn 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-09-26 16:57:03.774287	2021-11-19 22:01:54.690653
-93	88	en	ULL! agulles	<p>&nbsp;festival&nbsp; MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreaci&oacute; i coproducci&oacute; d&#39;ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge ind&ograve;mit i domesticat. Juguem amb l&rsquo;escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Cat&agrave;leg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instal·lació amb estaques.	\N	2021-09-20 20:36:36.429491	2021-09-20 20:36:36.432545
-92	88	ca	ULL! agulles	<p>festival de Land Art MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreaci&oacute; i coproducci&oacute; d&#39;ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge ind&ograve;mit i domesticat. Juguem amb l&rsquo;escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Cat&agrave;leg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instal·lació amb estaques.	\N	2021-09-20 19:33:22.589456	2021-09-26 17:13:49.856907
-96	85	es	SI i/o NO, torno i no torno	<p>Video-acci&oacute;n para la Exposici&oacute;n itinerante <strong>Plurivisions de Fel&iacute;cia Fuster</strong></p>\r\n\r\n<p>Realizaci&oacute;n del video: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-09-26 20:50:13.269672	2021-09-26 20:50:13.272148
-100	92	es	obra gráfica	<p>Estaremos en Bilbao en el Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	grabado calcográfico i serigrafía sobre diversos papeles i soportes	\N	2021-11-20 13:40:05.73467	2022-01-05 20:02:40.480179
-99	92	en	prints	<p>&nbsp;FIG Bilbao al Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	gravat calcogràfic i serigrafia sobre diversos papers i suports	\N	2021-11-20 13:37:15.600703	2021-11-20 13:37:15.603289
-97	92	ca	obra gràfica	<p>Exposem a Bilbao al Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	gravat calcogràfic i serigrafia sobre diversos papers i suports	\N	2021-11-19 20:17:29.236969	2021-11-20 13:40:31.601172
-106	72	es	cap cap	<p><strong>Festival de Land-art</strong> ArtiGavarres, 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Proyecto de cocreaci&oacute;n con Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	escultures efímeres de palla 	\N	2022-01-05 21:06:26.094854	2022-01-05 21:06:26.097595
-101	82	es	Phoscenes	<p>Dibujos del confinamiento, exposici&oacute;n del 18 de septiembre al 30 de octubre 2020 en Lapek (Lavern Subirats) i Madremanya (Girona).</p>\r\n	mixta s/ papel	\N	2022-01-05 20:06:46.252987	2022-01-05 20:07:42.792587
-102	13	es	constelacciones	<p>Acci&oacute;n in&eacute;dita realizada con Elisabetta Balasso.</p>\r\n	dibujo sobre piel	\N	2022-01-05 20:10:05.54647	2022-01-05 20:10:05.549086
-98	88	es	ULL! agulles	<p>Festival de Land Art MICROSCOPIES</p>\r\n\r\n<p>Manresa, 2021</p>\r\n\r\n<p>Cocreaci&oacute;n i coproducci&oacute;n de ALEIX ANTILLACH y MIREIA ZANTOP</p>\r\n\r\n<p>Construyendo, as&iacute; como dibujando, miramos, conocemos y, tal vez, reconocemos. Jugamos con el paisaje ind&oacute;mito y el domesticado. Jugamos con la escala, el tama&ntilde;o y la medida que nuestra mirada conjuga.</p>\r\n\r\n<p>Cat&aacute;logo virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Prensa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instalación efímera en el paisaje	\N	2021-11-19 21:41:37.138667	2022-01-05 20:16:55.148213
-103	71	es	entrar saliendo, salir entrando		Escultura de alabastro	\N	2022-01-05 20:21:12.669864	2022-01-05 20:21:12.67258
-109	44	es	estOna	<p>Intervenci&oacute;n ef&iacute;mera en el sector &quot;Ona&quot; en la Alta Garrotxa.</p>\r\n\r\n<p>ona = ola</p>\r\n\r\n<p>estona = rato</p>\r\n\r\n<p>est = este, punto cardinal, o es, del lat&iacute;n</p>\r\n\r\n<p>visibilizaci&oacute;n de una l&iacute;nea de est-ratos</p>\r\n\r\n<p>&nbsp;</p>\r\n	intervención efímera	\N	2022-01-05 21:31:18.943235	2022-01-05 21:38:07.451519
-108	64	es	fluxus	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposici&oacute;n colectiva en homenaje a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Vent&oacute;s, Figueres.</strong></p>\r\n\r\n<p>Acci&oacute;n-instalaci&oacute;n iniciada antes de la inauguraci&oacute;n, completando-se durante la exposici&oacute;.</p>\r\n	tintas sobre papel, bolsa de suero, equipo de perfusión, cascabels	\N	2022-01-05 21:18:23.188331	2022-01-05 21:20:49.99799
-110	73	es	trans form/morf I-VII		manipulación,transformación, reubicación de materiales naturales 	\N	2022-01-05 21:43:08.66151	2022-01-05 21:43:08.663907
-112	75	es	EnClaveDeBes(os)	<p>Instalacci&oacute;n po&eacute;tica</p>\r\n\r\n<p><strong>Fisures</strong> I Encuentro y Muestra de Arte Multidisciplinario de Palafolls</p>\r\n\r\n<p>acci&oacute;n: 12 de julio de 2014</p>\r\n	Escalera, martillo, clavos, papel hecho a mano, ropa de lino, alfabetos, sonidos, ramas, pintalabios	\N	2022-01-10 11:45:29.813529	2022-01-10 11:45:58.782086
-111	14	es	AflorA	<p>Exposici&oacute;n de obra gr&aacute;fica original, Sin&egrave;rgia, Vic.</p>\r\n	calcografía y serigrafía	\N	2022-01-05 21:50:21.122443	2022-01-10 11:21:20.719942
-105	74	es	paisaje líquido	<p><strong>Exposici&oacute;n colectiva y taller &quot;La piel como paisaje&quot;</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell y Mireia Zantop</p>\r\n\r\n<p>en La Pedrera, Subirats.</p>\r\n\r\n<p>&nbsp;</p>\r\n	obra original sobre papel y obra gráfica	\N	2022-01-05 20:33:13.007013	2022-01-10 11:22:41.06805
-113	38	es	ad hoc	<p>serie de acciones e intervenciones improvisadas ad hoc</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	movimiento y relación con y entre los objets trouvés, acción, escultura e instalación efímera	\N	2022-01-10 11:49:06.041888	2022-01-10 11:49:06.044599
-\.
-
-
---
--- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: zantop
+-- TOC entry 3183 (class 0 OID 18167)
+-- Dependencies: 227
+-- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "position", type, created_at, updated_at, published, images_count) FROM stdin;
@@ -1660,102 +1469,367 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 
 
 --
--- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3176 (class 0 OID 18115)
+-- Dependencies: 219
+-- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.taggings (id, tag_id, created_at, updated_at, work_id) FROM stdin;
+90	5	2013-04-05 19:05:21.752616	2013-04-05 19:05:21.752616	9
+534	11	2020-10-14 23:00:07.666433	2020-10-14 23:00:07.666433	78
+549	18	2021-08-31 23:06:52.002281	2021-08-31 23:06:52.002281	84
+550	21	2021-08-31 23:06:52.009598	2021-08-31 23:06:52.009598	84
+100	5	2013-06-19 15:49:35.481969	2013-06-19 15:49:35.481969	24
+551	16	2021-08-31 23:06:52.015541	2021-08-31 23:06:52.015541	84
+552	23	2021-08-31 23:07:42.363915	2021-08-31 23:07:42.363915	77
+294	5	2017-06-02 00:09:34.11498	2017-06-02 00:09:34.11498	56
+295	21	2017-06-02 00:09:34.136691	2017-06-02 00:09:34.136691	56
+203	9	2015-09-20 18:04:25.9152	2015-09-20 18:04:25.9152	31
+204	10	2015-09-20 18:04:25.932719	2015-09-20 18:04:25.932719	31
+653	23	2022-01-05 21:06:26.013642	2022-01-05 21:06:26.013642	72
+654	26	2022-01-05 21:06:26.019027	2022-01-05 21:06:26.019027	72
+655	11	2022-01-05 21:06:26.02362	2022-01-05 21:06:26.02362	72
+656	21	2022-01-05 21:12:29.868347	2022-01-05 21:12:29.868347	67
+299	21	2017-06-02 00:57:42.76304	2017-06-02 00:57:42.76304	57
+657	7	2022-01-05 21:12:29.873864	2022-01-05 21:12:29.873864	67
+301	7	2017-06-02 00:57:42.802979	2017-06-02 00:57:42.802979	57
+659	9	2022-01-05 21:20:49.940297	2022-01-05 21:20:49.940297	64
+660	35	2022-01-05 21:20:49.944781	2022-01-05 21:20:49.944781	64
+217	8	2015-09-25 01:15:04.503367	2015-09-25 01:15:04.503367	8
+219	9	2015-09-25 01:15:04.518094	2015-09-25 01:15:04.518094	8
+220	10	2015-09-25 01:15:04.525023	2015-09-25 01:15:04.525023	8
+222	19	2015-09-27 22:42:43.638605	2015-09-27 22:42:43.638605	47
+600	21	2021-09-26 20:50:13.185813	2021-09-26 20:50:13.185813	85
+601	30	2021-09-26 20:50:13.190631	2021-09-26 20:50:13.190631	85
+228	5	2016-08-01 15:23:05.650402	2016-08-01 15:23:05.650402	46
+229	5	2016-08-01 15:36:44.480106	2016-08-01 15:36:44.480106	48
+139	9	2014-05-17 12:17:29.290198	2014-05-17 12:17:29.290198	36
+388	21	2019-01-28 20:33:59.945633	2019-01-28 20:33:59.945633	69
+142	5	2014-05-17 12:19:36.699762	2014-05-17 12:19:36.699762	34
+667	26	2022-01-05 21:38:07.39756	2022-01-05 21:38:07.39756	44
+668	21	2022-01-05 21:38:07.402577	2022-01-05 21:38:07.402577	44
+145	17	2014-05-17 12:23:53.885253	2014-05-17 12:23:53.885253	33
+146	10	2014-05-17 12:23:53.891807	2014-05-17 12:23:53.891807	33
+147	1	2014-05-17 12:23:53.898598	2014-05-17 12:23:53.898598	33
+501	23	2020-06-15 15:36:58.115241	2020-06-15 15:36:58.115241	19
+644	21	2022-01-05 20:26:16.273078	2022-01-05 20:26:16.273078	76
+645	27	2022-01-05 20:26:16.277981	2022-01-05 20:26:16.277981	76
+646	14	2022-01-05 20:26:16.282367	2022-01-05 20:26:16.282367	76
+514	28	2020-06-15 15:43:34.279057	2020-06-15 15:43:34.279057	55
+515	23	2020-06-15 15:43:34.287067	2020-06-15 15:43:34.287067	55
+46	1	2013-01-22 03:07:57.13106	2013-01-22 03:07:57.13106	18
+681	10	2022-01-10 11:45:58.677547	2022-01-10 11:45:58.677547	75
+517	11	2020-09-20 21:15:52.22018	2020-09-20 21:15:52.22018	70
+682	9	2022-01-10 11:45:58.682215	2022-01-10 11:45:58.682215	75
+519	17	2020-09-20 21:21:00.623163	2020-09-20 21:21:00.623163	81
+15	9	2013-01-05 00:51:53.529397	2013-01-05 00:51:53.529397	11
+16	11	2013-01-05 00:55:50.527103	2013-01-05 00:55:50.527103	11
+683	8	2022-01-10 11:45:58.68652	2022-01-10 11:45:58.68652	75
+520	9	2020-09-20 21:21:00.633545	2020-09-20 21:21:00.633545	81
+690	21	2022-01-13 20:54:16.068721	2022-01-13 20:54:16.068721	87
+49	9	2013-03-27 21:32:17.812245	2013-03-27 21:32:17.812245	23
+50	10	2013-03-27 21:32:17.814903	2013-03-27 21:32:17.814903	23
+59	8	2013-03-28 00:07:10.370251	2013-03-28 00:07:10.370251	17
+63	15	2013-03-28 01:20:39.590467	2013-03-28 01:20:39.590467	26
+64	8	2013-03-28 01:20:39.593428	2013-03-28 01:20:39.593428	26
+65	16	2013-03-28 01:20:39.59595	2013-03-28 01:20:39.59595	26
+68	6	2013-03-28 01:44:05.391596	2013-03-28 01:44:05.391596	6
+69	10	2013-03-28 01:44:05.394322	2013-03-28 01:44:05.394322	6
+79	7	2013-04-05 16:13:48.323069	2013-04-05 16:13:48.323069	27
+80	9	2013-04-05 16:13:48.332029	2013-04-05 16:13:48.332029	27
+81	17	2013-04-05 16:13:48.341013	2013-04-05 16:13:48.341013	27
+85	15	2013-04-05 18:56:47.086945	2013-04-05 18:56:47.086945	29
+86	8	2013-04-05 18:56:47.097459	2013-04-05 18:56:47.097459	29
+87	16	2013-04-05 18:56:47.107504	2013-04-05 18:56:47.107504	29
+521	11	2020-09-20 21:21:00.642112	2020-09-20 21:21:00.642112	81
+684	18	2022-01-10 11:45:58.690684	2022-01-10 11:45:58.690684	75
+685	21	2022-01-10 11:49:05.929309	2022-01-10 11:49:05.929309	38
+25	1	2013-01-20 00:30:44.912037	2013-01-20 00:30:44.912037	15
+26	10	2013-01-20 00:30:44.938692	2013-01-20 00:30:44.938692	15
+686	9	2022-01-10 11:49:05.934758	2022-01-10 11:49:05.934758	38
+687	11	2022-01-10 11:49:05.939635	2022-01-10 11:49:05.939635	38
+33	9	2013-01-20 01:03:16.197571	2013-01-20 01:03:16.197571	16
+688	32	2022-01-13 20:54:16.058058	2022-01-13 20:54:16.058058	87
+689	30	2022-01-13 20:54:16.063706	2022-01-13 20:54:16.063706	87
+669	26	2022-01-05 21:43:08.585293	2022-01-05 21:43:08.585293	73
+149	5	2014-05-17 12:35:52.122448	2014-05-17 12:35:52.122448	37
+150	8	2014-05-17 12:35:52.133956	2014-05-17 12:35:52.133956	37
+672	14	2022-01-10 11:21:20.67074	2022-01-10 11:21:20.67074	14
+393	19	2019-03-07 22:05:12.34874	2019-03-07 22:05:12.34874	68
+394	21	2019-03-07 22:10:15.958474	2019-03-07 22:10:15.958474	59
+237	18	2016-08-01 16:59:31.463289	2016-08-01 16:59:31.463289	52
+238	5	2016-08-01 16:59:31.470255	2016-08-01 16:59:31.470255	52
+239	18	2016-08-01 17:00:18.628472	2016-08-01 17:00:18.628472	49
+162	11	2014-10-09 17:18:44.728089	2014-10-09 17:18:44.728089	30
+675	14	2022-01-10 11:24:54.36432	2022-01-10 11:24:54.36432	74
+676	8	2022-01-10 11:24:54.369086	2022-01-10 11:24:54.369086	74
+247	19	2016-08-05 11:39:07.542653	2016-08-05 11:39:07.542653	51
+169	5	2014-11-03 23:30:04.558152	2014-11-03 23:30:04.558152	41
+172	9	2015-01-04 21:35:15.002672	2015-01-04 21:35:15.002672	35
+175	17	2015-01-04 21:39:23.484924	2015-01-04 21:39:23.484924	39
+250	19	2016-08-05 12:02:03.811572	2016-08-05 12:02:03.811572	40
+181	10	2015-01-04 22:13:33.793967	2015-01-04 22:13:33.793967	42
+184	18	2015-01-04 23:21:23.556368	2015-01-04 23:21:23.556368	43
+185	5	2015-01-04 23:21:23.567593	2015-01-04 23:21:23.567593	43
+410	7	2019-06-10 20:19:22.354383	2019-06-10 20:19:22.354383	7
+412	1	2019-06-10 20:19:22.37285	2019-06-10 20:19:22.37285	7
+338	21	2018-12-21 20:19:40.548503	2018-12-21 20:19:40.548503	66
+339	5	2018-12-21 20:19:40.555481	2018-12-21 20:19:40.555481	66
+537	21	2021-01-04 20:49:41.57467	2021-01-04 20:49:41.57467	83
+538	28	2021-01-04 20:49:41.582213	2021-01-04 20:49:41.582213	83
+445	21	2019-06-10 22:28:06.185876	2019-06-10 22:28:06.185876	62
+632	14	2022-01-05 20:02:40.402393	2022-01-05 20:02:40.402393	92
+493	28	2020-06-15 15:27:55.779648	2020-06-15 15:27:55.779648	54
+634	13	2022-01-05 20:07:42.721888	2022-01-05 20:07:42.721888	82
+495	23	2020-06-15 15:34:09.215624	2020-06-15 15:34:09.215624	65
+635	13	2022-01-05 20:10:05.519543	2022-01-05 20:10:05.519543	13
+497	28	2020-06-15 15:34:09.234324	2020-06-15 15:34:09.234324	65
+636	21	2022-01-05 20:10:05.524248	2022-01-05 20:10:05.524248	13
+637	31	2022-01-05 20:16:55.050659	2022-01-05 20:16:55.050659	88
+638	9	2022-01-05 20:16:55.055614	2022-01-05 20:16:55.055614	88
+639	26	2022-01-05 20:16:55.060266	2022-01-05 20:16:55.060266	88
+640	11	2022-01-05 20:21:12.626426	2022-01-05 20:21:12.626426	71
+462	17	2020-02-19 17:17:17.1457	2020-02-19 17:17:17.1457	53
+499	9	2020-06-15 15:36:58.096735	2020-06-15 15:36:58.096735	19
+500	28	2020-06-15 15:36:58.105762	2020-06-15 15:36:58.105762	19
+\.
+
+
+--
+-- TOC entry 3181 (class 0 OID 18154)
+-- Dependencies: 225
+-- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.work_translations (id, work_id, locale, title, description, techniques, place, created_at, updated_at) FROM stdin;
+10	9	es	E qui libri (s) II	<p>\r\n\tCORPOLOGIA 9</p>\r\n<p>\r\n\tEquilibri, de aequilibrium: aequus = igual y libra=balanza, peso He (a)qu&iacute; He a qui&eacute;n libris: de los libros o de los libres de libertas: volver a la madre</p>\r\n<p>\r\n\tFragmento del proceso del equilibrio de lecturas abiertas y cruzadas del peso propio i el exterior, del cuerpo &iacute;ntimo delante del cuerpo p&uacute;blico de factores intencionados o involuntarios, de la acci&oacute;n de fuerzas que implico o se implican y contrarestan m&uacute;tuamente, de los v&iacute;nculos de la palabra-voz y la palabra-papel, el papel de la relaci&oacute;n, de la (con)fusi&oacute;n de estratos de percepci&oacute;n i memoria en la armon&iacute;a del conjunto.</p>\r\n<p>\r\n\tLos factores (siempre) cambiantes niegan un estado de equilibrio estable, un resultado, y evidencian un proceso puro de incesante movimento que tiende a la justeza y la armon&iacute;a en la unidad.</p>\r\n<p>\r\n\t...et qui est libre?</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 23:01:43.390395	2013-03-27 23:42:28.181869
+6	6	ca	ZeNits / 1	<p>\r\n\tPoemes d&#39;Eva Puig. Exposici&oacute; CTN La Floresta</p>\r\n	tècnica mixta sobre fusta	\N	2013-01-04 20:32:20.744798	2013-03-28 01:44:05.514606
+11	10	ca	anima(l), U	<p>\r\n\tAlma mater. Coto vedado. Caza y captura de interrogantes abiertos, pero encadenados en espiral, sobre la identidad en desequilibrio entre consciencia espiritual y cuerpo de especie animal capaz de olvidar que lo es, era y ser&aacute;. Memoria embrionaria de origen que niega, domestica, objetualiza y crea imaginarios</p>\r\n<p>\r\n\t&iquest;para entender o redimirse? &iquest;Por casualidad? &iquest;Por curiosidad?</p>\r\n<p>\r\n\tDesvelar la condici&oacute;n b&aacute;sica de nuestra animalidad subraya la condici&oacute;n humana. U. In secula seculorum...</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\thttp://www.avui.cat/noticia/article/5-cultura/19-cultura/378596-el-fem11-ja-bull.html</p>\r\n	\N	FEM / Centre Cultural La Mercè / Girona	2013-01-05 00:35:49.828799	2013-01-05 00:38:00.877773
+12	11	ca	Dinergia I,II,III	<p>\r\n\tDinergia I - Llavors... Dinergia II - Armonia Diat&eacute;ssaron&nbsp; Dinergia III - Auria ad infinitum &nbsp;Materials: Dinergia I: Llavor natural, Fil de coure, paper, pedra, respecte&nbsp; Dinergia II: Llavor natural, Fil de coure, paper i tinta, vidre, agra&iuml;ment&nbsp; Dinergia III: Petxina natural, Fil de coure, pedra de lava, mirall, amor &nbsp;</p>\r\n<p>\r\n\t&quot;Dinergia: Els processos i patrons b&agrave;s&igrave;cs de formaci&oacute; i creaci&oacute;, amb els seus l&iacute;mits estrictes i les proporcions &agrave;uries omnipresents, ens reflecteixen en petit format la perfecci&oacute; infinita de l&#39;armonia i pres&egrave;ncia del tot etern, il.limitat, aix&iacute; com l&#39;abs&egrave;ncia de fronteres entre ci&egrave;ncia, art, filosofia i misticisme.&quot;</p>\r\n<p>\r\n\tFESTIVAL MaMa d&#39;Art Contemporani, Madremanya, Girona</p>\r\n		\N	2013-01-05 00:51:53.536201	2013-01-05 00:55:50.542169
+13	12	ca	musical ment	<p>\r\n\tL&#39;obra &eacute;s una instal.laci&oacute;/performance col.lectiva on conflueixen l&rsquo;escultura, el so i el moviment, creant un di&agrave;leg interdisciplinar entre la mat&egrave;ria, el silenci i l&rsquo;expressi&oacute; corporal.&nbsp;&nbsp;&nbsp;\r\n\t&nbsp;\r\n\tUna escultura sonora &eacute;s l&rsquo;element central i fil conductor de la composici&oacute; musical i ; a trav&eacute;s del silenci i el so s&#39;experimenta amb l&rsquo;efecte que el ritme i la m&uacute;sica tenen sobre la ment, el cos i els sentiments.&nbsp; El moviment del cos dibuixa l&#39;espai i acciona, tra&ccedil;a camins paral.lels.\r\n\tL&#39;escultura de ferro i fusta, de 3m d&#39;al&ccedil;ada i di&agrave;metre, estructura l&#39;espai del moviment; l&#39;espectador es pot moure al voltant de l&#39;acci&oacute; i percebre el conjunt des de diverses perspectives visuals i sonores.</p>\r\n<p>\r\n\tEscultura i direcci&oacute;: Yago Del&agrave;s\r\n\tFotografia: Mireia Tor\r\n\tM&uacute;sics i artistes: Yago Del&agrave;s, X&egrave;nia Gassull, Adri&agrave; L&oacute;pez, N&uacute;ria Mad&iacute;, Simon Saura, Ruth Soler, Jordi Vinyoles, Mireia Zantop</p>\r\n	\N	Casa de Cultura de Girona / Plaça de la Vila,Viladrau / Festival de percussió, Centelles	2013-01-05 01:21:09.043867	2013-01-05 01:21:09.064496
+14	13	ca	constelaccions	<p>\r\n\tAcci&oacute; in&egrave;dita realitzada amb Elisabetta Balasso.</p>\r\n	dibuix sobre pell	\N	2013-01-05 01:30:15.252021	2013-01-05 01:30:15.48331
+15	14	ca	AflorA		calcografia i serigrafia	\N	2013-01-05 01:36:10.271251	2013-01-05 01:36:10.275731
+16	15	ca	impro	<p>\r\n\tRosa Abuchaibe, Hanneke Ilse, Mireia Zantop (23 Marzo.2012, 18h, Laberinto de Ariadna)</p>\r\n<p>\r\n\tRosa Abuchaibe, poeta, escribe relatos y versos.</p>\r\n<p>\r\n\tHanneke Ilse, trompetista, toca en varios grupos y cultiva desde hace a&ntilde;os diversos estilos musicales.</p>\r\n<p>\r\n\tMireia Zantop, pintora, grabadora y performer, trabaja sobre los lenguajes del cuerpo en su obra pl&aacute;stica y esc&eacute;nica.</p>\r\n<p>\r\n\tEn esta pieza se reencuentran tres lenguajes art&iacute;sticos. La m&uacute;sica, la palabra y el movimiento se complementan en un todo fruto de la conexi&oacute;n entre las personas, el aqu&iacute; y el ahora. Es el arte ef&iacute;mero de la improvisaci&oacute;n.</p>\r\n<p>\r\n\tImparte: Anna Rossell</p>\r\n	\N	Ateneu Barcelonès, Barcelona	2013-01-05 01:58:06.680323	2013-01-20 00:30:45.073577
+9	9	ca	E qui libri (s) II	<p>performance a CORPOLOGIA 9</p>\r\n	\N	Antic Teatre, Barcelona	2013-01-04 22:53:54.222335	2013-04-05 19:05:22.008013
+17	16	ca	OUROBOROS (veus?)	<p>\r\n\tInsaciable, Ouroboros, el monstre que es menja a s&iacute; mateix.<br />\r\n\tCicle infinit?<br />\r\n\tEl m&eacute;s contradictori del proc&eacute;s &eacute;s que l&#39;acusat de provocar-lo i la v&iacute;ctima de les seves conseq&uuml;&egrave;ncies &eacute;s la mateixa: el monstre, tu, jo.</p>\r\n	\N	Brossa, caos i art | Exposició a Casa Elizalde | Barcelona	2013-01-20 00:53:58.813752	2013-01-20 00:55:10.001451
+40	34	en	sum(us)	<p>CORPOLOGIA 13 en el marc de l&#39;exposici&oacute; <strong>Cargol treu banya</strong>.</p>\r\n\r\n<p>sum(us)</p>\r\n\r\n<p>I<br />\r\nsum (lat.): s&oacute;c (cat.), soy (es.)<br />\r\nsumus (lat.): som (cat.), somos (es.)</p>\r\n\r\n<p>s&oacute;c<br />\r\n(s)i som<br />\r\nsi hi som</p>\r\n\r\n<p>II<br />\r\nsum (eng.): suma<br />\r\nus (eng.): nosaltres (cat.), nosotros (es.)<br />\r\nus (cat.): os, a vosotros, to you</p>\r\n\r\n<p>sumant-nos&nbsp; som.<br />\r\nSumeu-nos<br />\r\nsumeu-vos<br />\r\nsomieu-vos</p>\r\n\r\n<p>&quot;...que tots els espectadors passin a l&#39;acci&oacute;.&quot;</p>\r\n\r\n<p>Nos habebat, nos habebit humus.</p>\r\n\r\n<p>Entretant:<br />\r\ntemps de consci&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/83686197">https://vimeo.com/83686197</a></p>\r\n\r\n<p><a href="https://vimeo.com/user14560762">https://vimeo.com/user14560762</a></p>\r\n	\N	Casa Elizalde, Barcelona	2014-05-17 12:13:12.6868	2014-05-17 12:19:18.303007
+62	57	ca	Flux(Us)	<p><strong>La Muga Caula</strong>, trobada Internacional de poesia d&#39;acci&oacute; i performance</p>\r\n\r\n<p>panta rei - tot unit en la difer&egrave;ncia</p>\r\n\r\n<p><a href="http://lamugacaula.cat">http://lamugacaula.cat</a></p>\r\n\r\n<p>fotografia: <a href="http://pacojusticia.com">http://pacojusticia.com</a></p>\r\n	\N	Les Escaules, Girona	2016-10-19 22:59:40.435486	2017-02-19 23:10:21.240546
+67	62	ca	DONAR VEU...i veure més	<p>Acci&oacute; performativa a l&rsquo;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar entorn de les (des)igualtats de g&egrave;nere.</p>\r\n\r\n<p>Creaci&oacute; i realitzaci&oacute;: <strong>Les Mireies - projecte art&iacute;stic i social</strong> ( Mireia Chalamanch i Mireia Zantop)</p>\r\n	\N	Espai públic de municipis de comarques de Barcelona	2017-06-01 23:33:01.197827	2019-06-10 22:20:51.268437
+26	24	es	S/T: sin título	<p>\r\n\tCorpologia 10</p>\r\n<p>\r\n\tPuerta de entrada: portada en blanco.<br />\r\n\tEntre m&iacute; y todos, tiempo com&uacute;n i dos libros sin un solo t&iacute;tulo.<br />\r\n\tPuerta dos, portadores.<br />\r\n\tSe unen, p&aacute;gina a p&aacute;gina, en un cuerpo que no quiere dividirse. Se diferencian por palabra y pensamiento propio, se encuentran entre l&iacute;neas.<br />\r\n\tPuerta tres, al p&uacute;blico.<br />\r\n\tEje de equilibrio. Cruce de enlace mientras act&uacute;a la fuerza del roce y la tensi&oacute;n, atenci&oacute;n.<br />\r\n\tV&iacute;nculo fr&aacute;gil pero contundente arn&eacute;s m&uacute;tuo que aguanta el instante, el tiempo justo. Pueden ser horas, segundos, seg&uacute;n.</p>\r\n<p>\r\n\t<br />\r\n\t&quot;por favor, con calma, os pido que pens&eacute;is un t&iacute;tulo para esta acci&oacute;n. Cuando lo teng&aacute;is, levantad la mano derecha.&quot;<br />\r\n\t...<br />\r\n\tdigo ssss/t.<br />\r\n\tescribo S/T</p>\r\n<p>\r\n\t&quot;Gracias. Yo tambi&eacute;n prometo no decirlo nunca a nadie.&quot;</p>\r\n<p>\r\n\t(y no dud&eacute;is que me muero de ganas de saberlos)</p>\r\n<p>\r\n\tSujeto subjetivo sujetado a dos bandas. Reflejo-reflexi&oacute;n de experiencia.<br />\r\n\tCada uno es titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 23:34:12.941673	2013-03-27 23:34:13.0084
+18	17	ca	úters |	<p>\r\n\tArts i lletres de la m&agrave;. Exposici&oacute; amb Rosa Abuchaibe, Gloria Andrade, Pedro Blanco i Javier Quintanilla. Pati Llimona, Barcelona</p>\r\n	tècnica mixta sobre paper	\N	2013-01-20 01:01:02.209471	2013-03-28 00:07:10.428195
+28	26	ca	El celler i +	<p>\r\n\tportades de t&iacute;tols de Noah Gordon per a Editorial Roca</p>\r\n		\N	2013-03-28 00:59:08.741807	2013-03-28 00:59:08.741807
+19	18	ca	Itaca | pas a dos	<p>\r\n\tPerformance amb Eva Puig<br />\r\n\t<br />\r\n\t&Iacute;TACA<br />\r\n\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />\r\n\tQuan surts per fer el viatge cap a &Iacute;taca,<br />\r\n\thas de pregar que el cam&iacute; sigui llarg,<br />\r\n\tple d&#39;aventures, ple de coneixen&ccedil;a.<br />\r\n\tEls Lestr&iacute;gons i els C&iacute;clops,<br />\r\n\tl&#39;a&iuml;rat Posid&oacute;, no te n&#39;esfereixis:<br />\r\n\ts&oacute;n coses que en el teu cam&iacute; no trobar&agrave;s,<br />\r\n\tno, mai, si el pensament se&#39;t mant&eacute; alt, si una emoci&oacute; escollida<br />\r\n\tet toca l&#39;esperit i el cos alhora.<br />\r\n\tEls Lestr&iacute;gons i els C&iacute;clops,<br />\r\n\tel fero&ccedil; Posid&oacute;, mai no ser&agrave; que els topis<br />\r\n\tsi no els portes amb tu dins la teva &agrave;nima,<br />\r\n\tsi no &eacute;s la teva &agrave;nima que els dre&ccedil;a davant teu.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tHas de pregar que el cam&iacute; sigui llarg.<br />\r\n\tQue siguin moltes les matinades d&#39;estiu<br />\r\n\tque, amb quina delectan&ccedil;a, amb quina joia!<br />\r\n\tentrar&agrave;s en un port que els teus ulls ignoraven;<br />\r\n\tque et puguis aturar en mercats fenicis<br />\r\n\ti comprar-hi les bones coses que s&#39;hi exhibeixen,<br />\r\n\tcoral i nacres, ambres i banussos<br />\r\n\ti delicats perfums de tota mena:<br />\r\n\ttanta abundor com puguis de perfums delicats;<br />\r\n\tque vagis a ciutats d&#39;Egipte, a moltes,<br />\r\n\tper aprendre i aprendre dels que saben.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tSempre tingues al cor la idea d&#39;&Iacute;taca.<br />\r\n\tHas d&#39;arribar-hi, &eacute;s el teu dest&iacute;.<br />\r\n\tPer&ograve; no forcis gens la travessia.<br />\r\n\t&Eacute;s preferible que duri molts anys<br />\r\n\ti que ja siguis vell quan fondegis a l&#39;illa,<br />\r\n\tric de tot el que haur&agrave;s guanyat fent cam&iacute;,<br />\r\n\tsense esperar que t&#39;hagi de dar riqueses &Iacute;taca.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\t&Iacute;taca t&#39;ha donat el bell viatge.<br />\r\n\tSense ella no hauries pas sortit cap a fer-lo.<br />\r\n\tRes m&eacute;s no t&eacute; que et pugui ja donar.<br />\r\n\t&nbsp;&nbsp;&nbsp;<br />\r\n\tI si la trobes pobra, no &eacute;s que &Iacute;taca t&#39;hagi enganyat.<br />\r\n\tSavi com b&eacute; t&#39;has fet, amb tanta experi&egrave;ncia,<br />\r\n\tja haur&agrave;s pogut comprendre qu&egrave; volen dir les &Iacute;taques.<br />\r\n\t&nbsp;&nbsp;<br />\r\n\tK.P.KAVAFIS, 1911<br />\r\n\tTrad. C. Riba</p>\r\n	\N	Teatre Sants i CCBesós, Barcelona	2013-01-20 02:15:46.404718	2013-01-22 03:07:57.16442
+24	23	ca	6 senses (consentidOsinsentido)	<p>\r\n\tPerformance i instal.lacio a l&#39;exposicio Dones amb sentit&#39;s a carrec de Roser Girona</p>\r\n<p>\r\n\tDaU al sis sentits<br />\r\n\t(en clau de tu)</p>\r\n<p>\r\n\tSents?<br />\r\n\tSents cent ocells i l&#39;harmonia.<br />\r\n\tSents sons i suau son.<br />\r\n\tSents sol als ulls clucs, veus el que vols.<br />\r\n\tImagines la imatge, anotes el que notes:<br />\r\n\tCreus i crees imaginaccions.<br />\r\n\tSents la car&iacute;cia i la intenci&oacute;.<br />\r\n\tSents la mel i la seva llengua dol&ccedil;a.&nbsp;<br />\r\n\tSents l&#39;aroma del caf&egrave; i ensums el que sents.<br />\r\n\tT&#39;he sentit, t&eacute; sentit.<br />\r\n\tT&#39;afecta l&#39;afecte i l&#39;efecte del sent-i-ment.<br />\r\n\tI el sis&egrave; sentit m&eacute;s que el com&uacute;.</p>\r\n<p>\r\n\tAssents, dissents, consents i pressents en present.<br />\r\n\tHo sents: ergo ets<br />\r\n\tun tot sensible<br />\r\n\tamb sentit(s)</p>\r\n<p>\r\n\t&nbsp;</p>\r\n<p>\r\n\tTot i ser negat per irreprodu&iuml;ble i indemostrable, el sis&egrave; sentit t&eacute; nom propi. Segons Ramon Llull, els cinc sentits tradicionals proporcionen dades massa disperses per ser copsades per la ment. Defineix l&#39;afat, el sis&egrave; sentit com una facultat unificadora que atorga un concepte a les diferents sensacions que permet comunicar-lo mitjan&ccedil;ant la paraula.<br />\r\n\tLa neuroci&egrave;ncia ara explora el sis&egrave; sentit o la visi&oacute; mental premonit&ograve;ria dels canvis abans que es produeixin. El cervell crea patrons de mem&ograve;ria que s&oacute;n la font de la intuici&oacute;. Els mecanismes resten impredictibles, segurament, perque no els reconeixem prou com una forma complement&agrave;ria de la percepci&oacute;. Encara.</p>\r\n	\N	CCBarceloneta	2013-03-22 00:11:07.040939	2013-03-27 21:32:24.077723
+29	27	ca	Sí, lent, sí, silenci		\N		2013-04-05 15:05:10.533417	2013-04-05 15:53:49.048616
+31	29	ca	Grafies d'una mirada a Sarrià	<p>Quadern de viatge pel barri de Sarri&agrave; en una primavera. Llibre de la colecci&oacute; Carnet de Voyage editat per l&#39;Ajuntament de Barcelona.</p>\r\n	tècnica mixta sobre paper	\N	2013-04-05 18:53:18.958475	2013-04-05 18:56:47.283683
+8	8	ca	dues Veus nues	<p>Exposici&oacute; i instal.laci&oacute; d&#39;obra sobre paper i poemes de Rosa Abuchaibe. Performance, improvisaci&oacute; d&#39;art i poesia amb Rosa Abuchaibe. Vil.la Florida, Barcelona</p>\r\n	mixta sobre paper 	\N	2013-01-04 20:55:14.000793	2013-04-05 19:27:48.627716
+25	24	ca	S/T: sense títol	<p>Porta-1 d&#39;entrada: portada en blanc.<br />\r\nEntre mi i tots, temps com&uacute; i dos llibres sense un sol t&iacute;tol.<br />\r\nPorta-do(r)s.<br />\r\nS&#39;uneixen, p&agrave;gina a p&agrave;gina, en un cos que no vol dividir-se. Es diferencien per paraula i pensament propi, es troben entre l&iacute;nies.<br />\r\nPorta tres: em porta al p&uacute;blic.<br />\r\nEix d&#39;equilibri. Cru&iuml;lla d&#39;enlla&ccedil; mentre actua la for&ccedil;a del frec i la tensi&oacute;, atenci&oacute;.<br />\r\nLligam fr&agrave;gil per&ograve; contundent arn&eacute;s mutu que aguanta el instant, el temps just. Poden ser hores, segons.<br />\r\nPorta quatre mosquetons i corda que recorda: no estem nuats.</p>\r\n\r\n<p>&quot;Sisplau, amb la calma, us demano que penseu un t&iacute;tol per a aquesta acci&oacute;. Quan el tingueu, aixequeu la m&agrave; dreta.&quot;<br />\r\n...<br />\r\ndic: ssss/t.<br />\r\nescric S/T</p>\r\n\r\n<p>&quot;Gr&agrave;cies.<br />\r\nJo tamb&eacute; prometo no dir-ho mai a ning&uacute;.&quot;</p>\r\n\r\n<p>(i no dubteu que em moro de ganes de saber-los)</p>\r\n\r\n<p>Subjecte subjectat a dues bandes, reflexe-reflexi&oacute; d&#39;experi&egrave;ncia.<br />\r\nCadasc&uacute; n&#39;&eacute;s titular.</p>\r\n	\N	La Plaça, Celrà	2013-03-27 21:35:26.168316	2013-04-05 19:00:00.761269
+66	61	ca	we were waiting for you	<p>Festival FLARE 3</p>\r\n\r\n<p>col&middot;lectiu d&#39;investigaci&oacute; d&#39;art d&#39;acci&oacute; <strong>ocells al cap:</strong></p>\r\n\r\n<p>Denys Blacker, Nat&agrave;lia Espinet, Victoria Grey, Helena Hunter, Marta Vergony&oacute;s, Sabina Vilagut, Lesley Yendell, Mireia Zantop</p>\r\n\r\n<p><a href="https://flare707.wordpress.com/">https://flare707.wordpress.com/</a></p>\r\n	\N	Vane Gallery, Newcastle, GB	2017-06-01 23:01:04.874164	2017-06-01 23:09:35.10061
+88	85	ca	SI i/o NO, torno i no torno	<p>Video-acci&oacute; per a l&#39;Exposici&oacute; Plurivisions de Fel&iacute;cia Fuster</p>\r\n\r\n<p>Realitzaci&oacute; del v&iacute;deo: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-04-08 21:04:22.995001	2021-04-08 21:31:03.886253
+32	30	ca	axis salus: homenatge al bon metge	<p>Premi al bon metge</p>\r\n\r\n<p>Paraules recollides en el proc&eacute;s de creaci&oacute; de l&#39;escultura -que acompanyaren el premi en composicions cal.ligr&agrave;fiques &uacute;niques- i que envolten l&#39;excel.l&egrave;ncia del bon metge. Valors i virtuts que van m&eacute;s enll&agrave; del coneixement cient&iacute;fic i l&#39;ex`peri&egrave;ncia fruit d&#39;estudis i praxis.&nbsp; Tenen m&eacute;s a veure amb la saviesa human&iacute;stica, el com usar el saber, com tractar el cos i l&#39;&agrave;nima de la persona. Nos&oacute;n mesurables, per&ograve; els reconeixem quan est&agrave;n presents.</p>\r\n\r\n<p>La pe&ccedil;a contempla la relaci&oacute; metge-pacient, tot i asim&egrave;trica, com un tot org&agrave;nic amb una base compartida, com un equillibri delicat, per&ograve; just, com un viatge profund a un centre com&uacute;, com una comunicaci&oacute; clara d&#39;escolta m&uacute;tua en la que parla el silenci.</p>\r\n\r\n<p>Tot el meu agra&iuml;ment i reconeixement a l&#39;equip de SEPAR i a tots els metges que dia a dia cultiven conscientment aquests valors que ens trascendeixen i fan m&eacute;s humans.</p>\r\n	escultura de bronze	\N	2013-08-20 12:50:53.349579	2013-08-20 12:50:53.349579
+33	30	es	axis salus: homenaje al buen médico. Premio SEPAR	<p>Premio al Buen M&eacute;dico</p>\r\n\r\n<p>En el proceso de creaci&oacute;n de la escultura, recog&iacute; palabras&nbsp; -que acompa&ntilde;ar&aacute;n el premio- y que envuelven la excelencia del buen m&eacute;dico. Una larga lista de valores y virtudes que van m&aacute;s all&aacute; del conocimiento cient&iacute;fico y la experiencia fruto de estudios y praxis. Tienen m&aacute;s que ver con la sabidur&iacute;a humana de c&oacute;mo usar ese saber, de c&oacute;mo tratar el cuerpo y el alma de la persona. No se pueden medir, pero se reconocen cuando est&aacute;n presentes.<br />\r\nLa pieza contempla la relaci&oacute;n m&eacute;dico-paciente, aunque asim&eacute;trica, como un todo org&aacute;nico con una base compartida, como un equilibrio delicado, pero justo, como un viaje profundo, como una comunicaci&oacute;n clara y de escucha m&uacute;tua en la que tambi&eacute;n habla e lsilencio.</p>\r\n\r\n<p>Todo mi agradecimiento y reconocimiento al equipo de Separ y a todos los m&eacute;dicos que, d&iacute;a a d&iacute;a, cultivan conscientemente estos valores preciosos que nos trascienden y hacen m&aacute;s seres humanos.</p>\r\n	escultura de bronce	\N	2013-08-20 12:52:14.3328	2013-08-20 12:53:55.06822
+34	30	en	axis salus: hommage to the good doctor	<p>Good Physician Award<br />\r\n<br />\r\nIn the process of creating the sculpture, picked words that accompany the award-and excellence involving good doctor. A long list of values ​​and virtues that go beyond scientific knowledge and experience result of research and practice. They have more to do with the wisdom of how to use this knowledge, how to treat the body and soul of the person. Can not be measured, but are recognized when present.<br />\r\nThe piece includes the doctor-patient relationship, although asymmetric, as an organic whole with a shared basis, as a delicate balance, but just as a trip deep, as clear communication and mutual listening which also silences speak.<br />\r\n<br />\r\nAll my thanks and appreciation to Separ team and all physicians who, day by day, consciously cultivate these precious values ​​transcend and make us more human.</p>\r\n	bronze sculpture	\N	2013-08-20 12:58:58.389429	2013-08-20 12:58:58.393426
+36	33	ca	fent volar coloms	<p>Fent volar coloms s&#39;ha gestat durant el temps de conviv&egrave;ncia amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una s&egrave;rie de peces breus que incorporen tamb&eacute; elements sonors.</p>\r\n\r\n<p>Transitem tamb&eacute; per 11 v&iacute;deo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agra&iuml;ments a l&#39;equip de l&#39;Antic, Clara Bes, Pau Compte, Andr&eacute;s Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>\r\n	\N	Antic Teatre, Barcelona	2013-12-06 12:49:29.127486	2013-12-06 12:57:36.416638
+37	34	ca	sum(us)	<p>Corpologia 13 en el marc de l&#39;exposici&oacute; <strong>Cargol treu banya</strong></p>\r\n	\N	Casa Elizalde, Barcelona	2013-12-06 13:04:41.823364	2013-12-06 13:04:41.823364
+39	36	ca	despunxar	<p>Acci&oacute; po&egrave;tica amb Al&egrave;xia Lleonart en el marc de l&#39;exposici&oacute; d&#39;obra original Esbarzers.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/&nbsp;</p>\r\n	\N	Llibreria Papasseit, Manresa	2013-12-06 13:20:59.623252	2013-12-06 13:20:59.623252
+56	51	ca	pomps of the subsoil	<p>Col&middot;lectiu d&#39;art d&#39;acci&oacute; OCELLS AL CAP:</p>\r\n\r\n<p>participen: Denys Blacker, Natalia Espinet, Juliette Murphy, Montse Ser&oacute;, Marta Vergony&oacute;s, Ada Vilar&oacute;, Lesley Yendell, Mireia Zantop</p>\r\n	\N	FESTIVAL ESCENA POBLENOU, Can Felipa, Barcelona	2016-08-01 16:18:35.356281	2016-08-05 11:37:55.053477
+41	36	en	despunxar	<p><strong>Acci&oacute; po&egrave;tica amb Al&egrave;xia Lleonart</strong> en el marc de la seva exposici&oacute; d&#39;obra original <strong>Esbarzers.</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/&nbsp;</p>\r\n	\N	Llibreria Papasseit, Manresa	2014-05-17 12:17:29.478349	2014-05-17 12:17:29.484756
+38	35	ca	Quina és la pregunta?	<p>25 de novembre: Dia per a la eradicaci&oacute; de la viol&egrave;ncia de g&egrave;nere</p>\r\n\r\n<p>Acci&oacute; al carrer amb Mireia Chalamanc i instal.laci&oacute; a la Capella de Sant Corneli</p>\r\n\r\n<p>&ldquo;A poc a poc al endinsar-me a l&rsquo;ambient del mercat amb actitud de receptivitat van anar sorgint complicitats, mirades, apropaments, fins que em vaig sentir submergida a un flux de respostes i preguntes que anaven donant sentit a les nostres pres&egrave;ncies. Receptacles d&rsquo;emocions, pensaments, paraules, comentaris, intimitats, reaccions, necessitats&hellip; en el tap&iacute;s d&rsquo;aquesta Acci&oacute; vaig quedar impregnada de dolor, de veus callades, de veus silenciades, i al mateix temps, impregnada de possibilitats, d&rsquo;escletxes, de veus manifestades, de veus agra&iuml;des, de diversitat de veus i d&rsquo;experi&egrave;ncies.&rdquo;</p>\r\n\r\n<p>&ldquo;Una de les certeses que vaig sentir &eacute;s que durant la nostra acci&oacute; erem alhora subtils emissores i receptores, per&ograve;, sobre tot, canals a trav&eacute;s dels quals permetiem que afluessin, s&#39;expres&eacute;ssin i prengu&eacute;ssin forma verbal, -conscient o inconscientment- alguns pensaments, opinions i sentiments que solen restar soterrats.</p>\r\n\r\n<p>I parlo sempre del tot: nosaltres i els altres, l&#39;espai d d&#39;aquesta trobada &iacute;ntima en l&#39;espai p&uacute;blic nom&eacute;s podia sorgir de l&#39;escolta, la reflexi&oacute; i la sinceritat m&uacute;tua.</p>\r\n\r\n<p>Varem ser full en blanc per a paraules &ldquo;indici&rdquo;, que assenyalen t&iacute;midament moltes hist&ograve;ries que compartim poc i solen ser m&eacute;s silenciades que explicades. &Eacute;s tab&uacute; all&ograve; del que no se&#39;n parla. Em va sorprendre les visions i percepcions de la viol&egrave;ncia, i com alguns neguen ser capa&ccedil;os de sentir-la o recon&egrave;ixer-la, tant com a agents passius o actius. Em va alegrar veure que les persones, amb independ&egrave;ncia de g&egrave;nere, edat o condici&oacute; social, desitgen obrir el di&agrave;leg, cercar respostes i, amb clara determinaci&oacute;, aportar de la seva part per l&#39;eradicaci&oacute; de la viol&egrave;ncia.</p>\r\n	\N	Mercat i capella de Sant Corneli, Cardedeu	2013-12-06 13:07:21.047497	2015-01-04 21:35:15.140994
+35	31	ca	A...Z 5/5 (f)acts	<p>(f)acts</p>\r\n\r\n<p>1/5: A&#39;s rain as poem as...</p>\r\n\r\n<p>2/5: pienso, luego... o no</p>\r\n\r\n<p>3/5: yo no he sido</p>\r\n\r\n<p>4/5: entrar saliendo o salir entrando</p>\r\n\r\n<p>5/5: a room, espai habitat</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Experimental Room Festival, Barcelona	2013-09-05 14:59:31.67866	2015-09-20 18:03:57.753149
+97	92	ca	obra gràfica	<p>Exposem a Bilbao al Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	gravat calcogràfic i serigrafia sobre diversos papers i suports	\N	2021-11-19 20:17:29.236969	2021-11-20 13:40:31.601172
+91	87	es	Over and over, again and again 	<p>Video-performance con Denys Blacker.</p>\r\n\r\n<p>Proceso creativo colectivo sobre migraciones con Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) e Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>Presentado en Regional Cultural Centre Letterkenny Co.Donegal en oto&ntilde;o de 2021</p>\r\n\r\n<p>WILD SWANS: https://www.bernadettehopkins.com/wild-swans-performance-art.html</p>\r\n	\N	Madremanya, Girona/ Donegal, Ireland	2021-09-13 17:22:20.910774	2021-12-16 21:38:29.44898
+46	40	ca	BIRDS-ocells al cap	<p><br />\r\nActivitat vinculada a l&#39;exposici&oacute;<strong>&nbsp;Allan Kaprow. Altres maneres</strong>&nbsp;a la Fundaci&oacute; Antoni T&agrave;pies, Barcelona</p>\r\n\r\n<p><br />\r\nPerformance:&nbsp;Punt de trobada a Can Obert, Madremanya &nbsp;10h - 13h<br />\r\nPosta en com&uacute;:&nbsp;Can Obert, Madremanya 16h -18h</p>\r\n\r\n<p><br />\r\nDe&nbsp;Birds&nbsp;(Ocells) a&nbsp;Tenir ocells al cap&nbsp;<br />\r\nA partir de la proposta de treballar al voltant de l&rsquo;obra&nbsp;de Kaprow i en con&egrave;ixer el seu vincle amb la Womanhouse, decidim recrear la pe&ccedil;a&nbsp;Birds. En el proc&eacute;s de &ldquo;reinvenci&oacute;&rdquo; que proposa el mateix Kaprow ens interessa anar m&eacute;s enll&agrave; de la partitura proposada, i explorar, en aquesta intervenci&oacute; en plena natura, la locuci&oacute; &ldquo;tenir ocells al cap&rdquo;.</p>\r\n\r\n<p><br />\r\nCoordinadores de la reinvenci&oacute;:&nbsp;Denys Blacker i Marta Vergony&oacute;s<br />\r\nAmb la participaci&oacute; de:&nbsp;Montse Ser&oacute;,&nbsp;Ada Vilar&oacute;,&nbsp;Lesley Yendell,&nbsp;Paloma Orts,&nbsp;Nat&agrave;lia Espinet,&nbsp;N&uacute;ria Icl&egrave;sies,&nbsp;Mar Serinya,&nbsp;Clara Gar&iacute;,&nbsp;J&uacute;lia Falgas i Mireia Zantop.<br />\r\n<a href="http://www.fundaciotapies.org/site/spip.php?rubrique1274">http://www.fundaciotapies.org/site/spip.php?rubrique1274</a></p>\r\n	\N	Madremanya	2014-05-17 13:01:15.49841	2016-08-05 12:02:03.841509
+42	33	en	fent volar coloms	<p>Fent volar coloms s&#39;ha gestat durant el temps de conviv&egrave;ncia amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una s&egrave;rie de peces breus que incorporen tamb&eacute; elements sonors.</p>\r\n\r\n<p>Transitem tamb&eacute; per 11 v&iacute;deo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agra&iuml;ments a l&#39;equip de l&#39;Antic, Clara Bes, Pau Compte, Andr&eacute;s Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p><a href="http://vimeo.com/81280599">http://vimeo.com/81280599</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>\r\n	\N	Antic Teatre, Barcelona	2014-05-17 12:23:54.04395	2014-05-17 12:23:54.048024
+43	37	ca	(n)ombrares 	<p><strong>(n)ombrares</strong> es basa en la relaci&oacute; amb la pr&ograve;pia ombra en relaci&oacute; amb el nombre d&#39;ombres i el nombre d&#39;ares que percebem conscientment i podem nombrar</p>\r\n\r\n<p>(fent segments subjectius de la unitat flu&iuml;da del tot).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Anotacions marginals:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>La meva ombra m&#39;acompanya des del meu enllumenament.</p>\r\n\r\n<p>&Eacute;s variable - particular, privada (tamb&eacute; de llibertat) y p&uacute;blica, &uacute;nica y m&uacute;ltiple, impert&egrave;rrita i adaptable, singular o plural,</p>\r\n\r\n<p>i sempre sincr&ograve;nica.</p>\r\n\r\n<p>&Eacute;s tots els meus jos i nos. Tenim una bona relaci&oacute;.</p>\r\n\r\n<p>&Eacute;s la meva ombra de la guarda.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Relaci&oacute; d&#39;ares t&ograve;nics per preposicions &agrave;tones</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>a l&#39;ombra (parlo i beso)</p>\r\n\r\n<p>amb l&#39;ombra ( em defineixo i m&#39;abra&ccedil;o)</p>\r\n\r\n<p>de l&#39;ombra (neixo i s&oacute;c inseparable. S&eacute; que no la puc matar sense morir en</p>\r\n\r\n<p>l&#39;intent - o tu i jo o ni tu ni jo)</p>\r\n\r\n<p>en l&#39;ombra (que m&#39;acull, m&#39;esmunyo)</p>\r\n\r\n<p>per l&#39;ombra (interpreto forma i acci&oacute; segons la llum de la mirada)</p>\r\n\r\n<p>per a l&#39;ombra (un got de vi, que tra&ccedil;a i revela la seva ess&egrave;ncia incorp&ograve;ria)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>subtext, flash-acci&oacute; imagin&agrave;ria:</p>\r\n\r\n<p>En algun moment vaig pensar en proposar de reunir-nos tots els corpologistes abra&ccedil;ats i mirar uns instants l&#39;ombra com&uacute;, fer-li una foto amb flash com a evid&egrave;ncia absoluta de la seva pres&egrave;ncia ef&iacute;mera i la incapacitat de retenir-la. Per&ograve; ja havia descartat la opci&oacute; de matar l&#39;ombra... segueixo jaient amb ella.</p>\r\n	\N	Sant Hilari Sacalm	2014-05-17 12:35:52.148102	2014-05-17 12:35:52.148102
+45	39	ca	els polissons	<p>Disturbanitats:</p>\r\n\r\n<p>Performance-Acci&oacute; sonora amb instruments tradicionals tocats instintivament, comprovant la hip&ograve;tesi harm&ograve;nica de la teoria del caos a la recerca de la biologia primordial.</p>\r\n\r\n<p>Els Polissons estan formats per artistes transdisciplinars que conreen tant la creaci&oacute; en directe com t&egrave;cniques m&eacute;s el&middot;laborades del m&oacute;n de les arts visuals, liter&agrave;ries, esc&egrave;niques i musicals. Aquest projecte beu de fonts dada&iacute;stes amb precedents de treball en grups d&#39;improvisaci&oacute; i investigaci&oacute; musical.</p>\r\n\r\n<p>Participen:</p>\r\n\r\n<p>Joan Vinuesa&nbsp;<a href="http://www.joanvinuesabaliu.info"> www.joanvinuesabaliu.info</a>&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p>Aleix Antillach <a href="http://www.leix.org">www.leix.org</a>&nbsp;</p>\r\n\r\n<p>Eva Puig <a href="http://www.estranhaformadevida.com">www.estranhaformadevida.com</a></p>\r\n\r\n<p>Col&middot;labora: Ona Mestre</p>\r\n\r\n<p>contacte: elspolissons@gmail.com</p>\r\n	\N	XIV Festival Perpetracions - Antologia Animal, Sant Martí, Barcelona	2014-05-17 12:59:00.763419	2014-07-17 22:28:58.029492
+84	81	ca	gota · gota	<p>Artistes a cel obert</p>\r\n\r\n<p>Taller de Montse Ser&oacute;, a Rupi&agrave;, i exposici&oacute; al Museu de la Terrissa de Quart.</p>\r\n	Ceràmica i instal·lació amb aigua i objectes.	\N	2020-02-19 17:54:40.924657	2020-02-19 18:03:44.48378
+44	38	ca	ad hoc	<p>s&egrave;rie de accions/intervencions improvisades ad hoc</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	moviment i relació amb i entre els objets trouvés, acció i escultura efímera	\N	2014-05-17 12:58:04.890932	2015-01-04 21:41:51.477027
+83	78	ca	Thyllandsias	<p>viure amb poc i d&#39;all&ograve; (aparentment) immaterial</p>\r\n	Escultura d'alabastre	\N	2020-02-14 21:53:45.80356	2020-09-21 12:36:37.639959
+70	65	ca	Desig Per(z)ones	<p><strong>art participatiu a l&#39;espai p&uacute;blic. Pe&ccedil;a entorn de les relacions afectives i la sexualitat</strong></p>\r\n\r\n<p>Acci&oacute;-performance i instal&middot;laci&oacute; col&middot;lectiva fruit de la participaci&oacute; i la reflexi&oacute; individual generant un di&agrave;leg entre espai p&uacute;blic i espai &iacute;ntim, visibilitzant la diversitat de qualsevol forma de sentir per expressar tot all&ograve; silenciat, envoltat de prejudicis i tab&uacute;s.</p>\r\n\r\n<p><strong>Les Mireies</strong>, projecte art&iacute;stic i social,</p>\r\n\r\n<p>som Mireia Chalamanch i Mireia Zantop</p>\r\n	\N	Espai públic de 23 municipis del Barcelonès	2018-08-22 15:06:01.767606	2020-06-15 15:22:31.23499
+106	72	es	cap cap	<p><strong>Festival de Land-art</strong> ArtiGavarres, 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Proyecto de cocreaci&oacute;n con Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	escultures efímeres de palla 	\N	2022-01-05 21:06:26.094854	2022-01-05 21:06:26.097595
+82	77	ca	DE VEU · EN VEU	<p><strong>les Mireies, </strong>projecte art&iacute;stic i social</p>\r\n\r\n<p>Mireia Chalamanch i Mireia Zantop</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://vimeo.com/337385523">https://vimeo.com/337385523 </a></p>\r\n\r\n<p><a href="https://vimeo.com/490838260">https://vimeo.com/490838260</a></p>\r\n\r\n<p>De VEU en VEU neix de la necessitat de fer-vos c&ograve;mplices d&rsquo;algunes de les m&eacute;s de 3.500 veus que hem recollit fent la performance DONAR VEU al llarg d&rsquo;aquests 5 anys.</p>\r\n\r\n<p>La pe&ccedil;a vol ser una invitaci&oacute; a l&rsquo;escolta, a la reflexi&oacute;, aix&iacute; com la presa de consci&egrave;ncia de la diversitat d&rsquo;experi&egrave;ncies entorn a temes com la viol&egrave;ncia masclista, la (des)igualtat i la diversitat sexual i de g&egrave;nere.</p>\r\n	\N	Can Manyé, Alella	2019-06-10 22:08:30.884277	2021-01-04 21:07:14.45751
+107	67	es	ip(sum), id(est)	<p>Acci&oacute;n en la Fundaci&oacute;n Valvi en el marco del festival Inundart, Girona</p>\r\n\r\n<p>1 de julio de 2018</p>\r\n	Performance, dibujo con el cuerpo, yeso, carbón, saliva y agua.	\N	2022-01-05 21:12:29.961094	2022-01-05 21:12:29.963527
+47	41	ca	present% o saltAl'ara	<p>CORPOLOGIA 15</p>\r\n\r\n<p>16 accions de 4 minuts.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Em presenten, em presento amb la pres&egrave;ncia, presento el t&iacute;tol:</p>\r\n\r\n<p><strong>PRESENT%</strong>: t&iacute;tol I pensat anteriorment (del passat)</p>\r\n\r\n<p>salal&#39;ara: t&iacute;tol II pensat just abans de l&#39;acci&oacute; (en un salt a l&#39;ara)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Presento i ofereixo com a present</p>\r\n\r\n<p>els objectes que m&#39;acompanyen:</p>\r\n\r\n<p>un paper blanc rod&oacute; fet a m&agrave; que porta a sobre una bossa plena de sal i 2 vells despertadors negres -d&#39;aquells que fan tic-tac i riiing percutint les dues campanes-</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Volia preguntar -quina hora &eacute;s?, per&ograve; com, sigui quina sigui, ja no &eacute;s, no vaig posar els rellotges a l&#39;hora que &eacute;s/era, si no a l&#39;hora primera i &uacute;ltima de la nostra mesura del temps: 0.00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Inici</p>\r\n\r\n<p>Sincronia = sense cronos? No cr&ograve;nic? Alhora? Tot</p>\r\n\r\n<p>A-sincronia de 2 rellotges:</p>\r\n\r\n<p>Una dimensi&oacute; del temps absoluta, mesurable. Tremolo mentre dono corda al rellotge</p>\r\n\r\n<p>L&#39;altra dimensi&oacute;, relativa, el temps percebut, l&#39;ara propi. Em calmo</p>\r\n\r\n<p>S&oacute;c a sobre del paper en blanc. Al meu eix i a l&#39;axis tempus 0:00</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Salalcor, salalgust, nusalasal, nusalcap.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mossego la sal, la sento present en tota la boca en tot moment</p>\r\n\r\n<p>Tra&ccedil;o i salo un cercle/cicle en el sentit del rellotge. al ritme propi que l&#39;acci&oacute; em permet. Estic a les seves mans, s&oacute;c llapis d&#39;una voluntat invisible d&#39;aven&ccedil; imparable, fins a tancar el cercle, una acci&oacute; rodona</p>\r\n\r\n<p>Torno a l&#39;eix vertical, absurd i em desdibuixo canviant de dimensi&oacute;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara sala&#39;m! Em salo i gaudeixo tot el temps immensurable del plaer</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Eix de balan&ccedil;a, amb un rellotge a cada m&agrave; -el que mesura el temps i el que no-, em concentro en la pres&egrave;ncia (present tense!), un ara buit i ple d&#39;acci&oacute; al que li queda poc temps, 30? 10? segons. Ara cent/sent per cent</p>\r\n\r\n<p>...ara riiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing sincr&ograve;nic</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara em sorpr&egrave;n que els aplaudiments cobreixin el so de les alarmes: un fi fos amb un altre</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Ara d&#39;eixo d&#39;estar, esborro l&#39;eix de la mesura del temps i el seu contrari: marxo</p>\r\n\r\n<p>M&#39;emporto el paper rod&oacute;, la illa blanca de centre i cercle.</p>\r\n\r\n<p>Resta un espai negre sense sal: abs&egrave;ncia.</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	l'Ateneu, Celrà	2014-05-17 13:20:04.158385	2014-11-03 23:29:42.94207
+48	42	ca	d'accions i diccions	<p>&nbsp;</p>\r\n\r\n<p>(en el marc de <strong>Poesia als parcs 2014)</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Acci&oacute; po&egrave;tica que allibera un accionari d&#39;un diccionari</p>\r\n\r\n<p>Acci&oacute; d&#39;aviacci&oacute; de reacci&oacute; a la dicci&oacute;</p>\r\n\r\n<p>Plegats, pleguem</p>\r\n\r\n<p>cadasc&uacute; un avi&oacute;, paraula de paper. Cadasc&uacute; en la direcci&oacute; del vol que vol</p>\r\n\r\n<p><strong>Dicci&oacute; al vent</strong></p>\r\n\r\n<p><strong>acci&oacute; al present</strong></p>\r\n\r\n<p><strong>text al context.</strong></p>\r\n\r\n<p><a href="https://www.facebook.com/poesiaalsparcs"><strong>https://www.facebook.com/poesiaalsparcs</strong></a></p>\r\n	\N	 Ermita de Sant Feliuet de Savassona	2015-01-04 22:05:21.205506	2015-01-04 22:13:33.965796
+49	43	ca	esClau	<p>acci&oacute; que complementa un poema llegit als 4 vents unes setmanes abans a l&#39;ermita de Sant Feliu de Savassona (gr&agrave;cies, Ester i Carles):</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>CAP ESCLAU.</p>\r\n\r\n<p>t&eacute; la clau</p>\r\n\r\n<p>cau el cap,</p>\r\n\r\n<p>cau de cap</p>\r\n\r\n<p>cau l&#39;esclau del cap (esclau clau)</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>i l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau de l&#39;esclau</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>els claus cauen de cap per les escales</p>\r\n\r\n<p>&Eacute;s clau: tens la clau.</p>\r\n\r\n<p>La clau de sol.</p>\r\n\r\n<p>Cap &eacute;s clau.</p>\r\n\r\n<p><a href="http://corpologialiveart.blogspot.com.es/">http://corpologialiveart.blogspot.com.es/</a></p>\r\n	\N	Antic Teatre, Barcelona	2015-01-04 23:00:44.744179	2015-01-04 23:21:25.218318
+50	44	ca	estOna		intervenció efímera	\N	2015-01-05 00:13:38.832743	2015-07-02 23:53:58.583162
+51	46	ca	FRee WILL (x veure +) 	<p><strong>free will</strong> &ndash; lliure albir. Lit.: lliure voluntat</p>\r\n\r\n<p>t&iacute;tol i tema triats per incertesa metaf&iacute;sica.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>(x veure +)</strong></p>\r\n\r\n<p>acci&oacute; sense acci&oacute;</p>\r\n\r\n<p>i veure</p>\r\n\r\n<p>veure-us</p>\r\n\r\n<p>obrir el llibre a l&#39;albir.</p>\r\n\r\n<p>A trav&eacute;s del llibre,</p>\r\n\r\n<p>veure amb ulls que no veuen,</p>\r\n\r\n<p>veure +</p>\r\n\r\n<p>Coneixe-ment</p>\r\n\r\n<p>en un altre sentit.</p>\r\n\r\n<p>La informaci&oacute; embena els ulls</p>\r\n\r\n<p>x a veure +</p>\r\n\r\n<p>la imatge interior encertada,</p>\r\n\r\n<p>la intenci&oacute; certa</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>allibero els o/u(ll)s.</p>\r\n\r\n<p>o van on volen</p>\r\n\r\n<p>o van on vull</p>\r\n\r\n<p>o van on havien d&#39;anar</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>...dansa lliure a l&#39;albir.</p>\r\n	\N	Cicle d'Art d'Acció La Carbonera, Girona 	2015-07-03 00:07:38.029673	2015-07-03 00:12:11.465762
+52	47	ca	elGrandTour	<p>Sin&egrave;rgies i elements trobats autour del proc&eacute;s creatiu basat en la intu&iuml;ci&oacute;.</p>\r\n\r\n<p>Acci&oacute; col&middot;lectiva amb Denys Blacker, Carlus Camps, Natalia Espinet, Rotnip, Lesley Yendell, Mireia Zantop.</p>\r\n\r\n<p>en el marc del Grand Tour:</p>\r\n\r\n<p>Del 26/08 al 13/09/2015, de la Nau C&ocirc;clea a St. Feliu de Gu&iacute;xols, 350km a peu en tres setmanes. Obra d&#39;artistes visuals, ballarins, poetes, m&uacute;sics i performers.</p>\r\n\r\n<p><a href="http://elgrandtour.net">http://elgrandtour.net</a></p>\r\n	\N	Madremanya, Girona	2015-09-27 22:40:27.703182	2015-09-27 22:42:43.772683
+53	48	ca	pEs&pressió	<p>(EX-PRESSI&Oacute; &eacute;s-cultura?)</p>\r\n\r\n<p>c&agrave;rrega visible:</p>\r\n\r\n<p>- b&agrave;scula</p>\r\n\r\n<p>- 3 maletes de viatge carregades volunt&agrave;riament amb llibres de pes relatiu i involuntari</p>\r\n\r\n<p>- 5 kg de cadenes</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>pes del cap</p>\r\n\r\n<p>pes del cap en cadenes</p>\r\n\r\n<p>al cap, el pes del cap en cadenes (pressi&oacute;)</p>\r\n\r\n<p>pes del cos</p>\r\n\r\n<p>pes del cos en llibres</p>\r\n\r\n<p>construcci&oacute;; s&#39;aguanta per pressi&oacute; del cap</p>\r\n\r\n<p>a sobre, pes de les cadenes, s&#39;aguanta per pressi&oacute; del cos, agenollat</p>\r\n\r\n<p>cos de cap, cos de pes (equilibri per pressi&oacute;)</p>\r\n\r\n<p>pel propi pes de la pres(si)&oacute;</p>\r\n\r\n<p>la consci&egrave;ncia defineix el moment d&#39;alliberacci&oacute;</p>\r\n	\N	Antic Teatre, Barcelona	2016-08-01 15:36:44.498892	2016-08-01 15:36:44.498892
+54	49	ca	aux bleux aigus d'acier et de cristal	<p>Festival Pepe Sales, Homenatge a Ren&eacute;e Vivien</p>\r\n\r\n<p>Marta Vergony&oacute;s i Mireia Zantop</p>\r\n	\N	Auditori de La Mercè, Girona	2016-08-01 15:46:04.562559	2016-08-01 15:48:05.399932
+58	53	ca	FluxUs	<p>MUGA CAULA 2016.</p>\r\n\r\n<p>Performance en el Museu de l&#39;Empord&agrave;.</p>\r\n\r\n<p>Exposici&oacute; material gr&agrave;fic i audiovisual de la Muga Caula.</p>\r\n\r\n<p>Homenatge.</p>\r\n	\N	Museu de l'Empordà, Figueres	2016-08-01 17:43:57.124514	2020-02-19 17:17:17.26401
+101	82	es	Phoscenes	<p>Dibujos del confinamiento, exposici&oacute;n del 18 de septiembre al 30 de octubre 2020 en Lapek (Lavern Subirats) i Madremanya (Girona).</p>\r\n	mixta s/ papel	\N	2022-01-05 20:06:46.252987	2022-01-05 20:07:42.792587
+57	52	ca	eventuall	<p>Corpologia 20</p>\r\n\r\n<p>(tra&ccedil;os al vent eventual del ventall)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Preparacci&oacute;:</strong></p>\r\n\r\n<p>un llibre-poema a l&#39;aire lliure.</p>\r\n\r\n<p><strong>Inspiracci&oacute;:</strong></p>\r\n\r\n<p>inspiro i escric, sense fer correccions.</p>\r\n\r\n<p><strong>Ventilacci&oacute;:</strong></p>\r\n\r\n<p>el vent del ventall de possibilitats selecciona el que ha de ser sentit:</p>\r\n\r\n<p>Acci&oacute; eventual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Nota visual: llibre i ventall, ess&egrave;ncies congruents.</p>\r\n\r\n<p>Nota musical: sis p&agrave;gines d&#39;ai -res muts.</p>\r\n\r\n<p>Nota de peu:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>(ai-)</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>....</p>\r\n\r\n<p>RESS&Ograve;</p>\r\n	\N	La Fàbrica, Celrà	2016-08-01 16:58:26.654279	2016-08-01 16:58:26.654279
+71	66	ca	per se	<p>N&ordm;5 CORPOLOGIA&gt;25</p>\r\n\r\n<p>Inauguraci&oacute; de l&#39;exposici&oacute; de Denys Blacker<strong> Mapes ef&iacute;mers, complicitats i sincronies</strong></p>\r\n\r\n<p>Instal&middot;laci&oacute; a l&#39;aparador de la sala d&#39;exposicions del 14 al 21 de juny per gentilesa de Denys Blacker.</p>\r\n	\N	Bòlit Centre D'Art Contemporani, Girona	2018-08-22 15:12:28.300594	2018-12-21 20:09:58.560882
+61	56	ca	cromoSomX	<p>Corpologia 24.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Reflexi&oacute; intuitiva</p>\r\n\r\n<p>que assenyala identitats,</p>\r\n\r\n<p>emmiralla all&ograve; propi i apropiat,</p>\r\n\r\n<p>com&uacute; i diferenciador.</p>\r\n\r\n<p>Relaci&oacute; de poder d&#39;oposats i equilibri</p>\r\n\r\n<p>entre desig i perm&iacute;s rec&iacute;proc</p>\r\n\r\n<p>entre forma i fons de la unitat dual.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>x (fem.) Present en refleXi&oacute;, seXe i eXpressi&oacute; de g&egrave;nere.</strong></p>\r\n\r\n<p>Lletra de l&#39;alfabet. Signe de multiplicaci&oacute;. Signe que representa la inc&ograve;gnita que no es vol o pot dir.</p>\r\n\r\n<p>Signe de creuament. Signe que defineix un punt en l&#39;espai. Cromosoma sexual present en mascles i femelles de l&#39;esp&egrave;cie humana.</p>\r\n	\N	Matèric Cuerpo/Objeto/Espacio. L'Hospitalet de Llobregat	2016-10-19 22:54:30.251459	2017-06-02 00:09:34.318544
+68	63	ca	Flux (...)	<p>La Muga Caula, Trobada internacional de poesia d&#39;acci&oacute; i performance</p>\r\n	\N	Les Escaules, Girona.	2017-06-02 00:01:33.881666	2018-08-22 14:36:16.870776
+72	67	ca	ip(sum), id(est)	<p>Acci&oacute; a la Fundaci&oacute; Valvi en el marc del festival Inundart, Girona</p>\r\n\r\n<p>1 de juliol de 2018</p>\r\n	Performance, dibuix amb el cos, carbó, saliva i aigua.	\N	2018-08-22 15:22:59.132785	2018-12-21 20:56:16.075856
+73	68	ca	quid de la qüestió	<p>NIT DE PERFORMANCE&nbsp; 18 d&#39;agost, 2018. Continuum d&#39;accions paral&middot;leles a l&#39;esgl&eacute;sia de Sta Ll&uacute;cia i La Carbonera en el marc de l&#39;exposici&oacute; <strong>&quot;Mapes ef&iacute;mers, complicitats i sincronies&quot;</strong>, B&ograve;lit centre d&#39;Art Contemporani, Girona</p>\r\n\r\n<p>Ocells al Cap, col&middot;lectiu d&#39;art d&#39;acci&oacute;:</p>\r\n\r\n<p>Marina Barsy, Marcela Contreras, Hellen Collard, Nat&agrave;lia Espinet, Pir&ograve;mana d&#39;Arg&oacute;s, Anita Ponton, Sandra Johnston, Montse Ser&oacute;, Holly Slingsby, Martine Viale, Ada Vilar&oacute;, Lesley Yendell, Mireia Zantop</p>\r\n	\N	Església de Sta. Llúcia, Girona	2018-08-22 15:29:30.559934	2018-12-21 21:13:46.396649
+74	69	ca	Ipse Ipsa Ipsum(em)	<p>2n cicle<strong> PARLEM CONTEMPORANI?</strong></p>\r\n\r\n<p>Ipse, ipsa, ipsum(em)</p>\r\n\r\n<p>[del llat&iacute;, ell mateix, ella mateixa, un mateix] + [del llat&iacute;, soc] + [del catal&agrave;, sumem]</p>\r\n\r\n<p>: acci&oacute; entre rastres d&#39;identitats estimades.</p>\r\n\r\n<p>Entre: cicles d&#39;entrar sortint, de definir desdibuixant, del flux de relacions interrogants.</p>\r\n	\N	Convent de les Arts, Alcover	2019-01-18 23:45:26.102019	2019-01-28 20:30:00.140779
+69	64	ca	fluxus	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposici&oacute; col&middot;lectiva homenatge a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Vent&oacute;s, Figueres.</strong></p>\r\n\r\n<p>Obra-acci&oacute; iniciada abans de la inauguraci&oacute;, completant-se durant l&#39;exposici&oacute;.</p>\r\n	tinta i aigua sobre paper, bossa de suero i equip de perfusió, picarols	\N	2017-06-02 00:41:14.374509	2019-01-28 20:37:54.476589
+64	59	ca	idenDitat	<p>Festival Flors i Violes.</p>\r\n\r\n<p>Introducci&oacute; i veu: Francesc Oui</p>\r\n\r\n<p><a href="http://francescoui.com">http://francescoui.com</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Fundació Cuixart, Palafrugell	2017-06-01 22:46:09.186381	2019-03-07 22:10:16.110711
+59	54	ca	DONAR VEU al desig	<p>Performance participativa a l&#39;espai p&uacute;blic per generar reflexi&oacute; i consci&egrave;ncia personal i social sobre all&ograve; que solem silenciar.</p>\r\n\r\n<p><strong>les Mireies</strong> som Mireia Chalamanc i Mireia Zantop</p>\r\n	\N	Espai públic de Manlleu, Torelló, Tona i Vic	2016-08-01 17:50:44.223621	2020-06-15 15:27:55.925838
+79	74	ca	paisatge líquid	<p><strong>Exposici&oacute; col&middot;lectiva i taller &quot;La pell com a paisatge&quot;</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell i Mireia Zantop</p>\r\n\r\n<p>a La Pedrera, Subirats.</p>\r\n\r\n<p>&nbsp;</p>\r\n	obra original sobre paper i obra gràfica	\N	2019-06-10 20:41:51.28195	2020-02-19 17:23:07.108279
+78	73	ca	trans form/morf I-VII		manipulació de materials naturals	\N	2019-04-15 11:41:07.655355	2019-04-15 11:41:07.655355
+75	70	ca	PetrAperta	<p>improvisacions en proc&eacute;s: di&agrave;leg amb la pedra</p>\r\n\r\n<p>des del 2018</p>\r\n		\N	2019-01-28 21:07:00.401383	2020-09-20 21:15:52.235421
+7	7	ca	possibles IMpossibles	<p>un cos, dos cossos, una acci&oacute; sobre els propis l&iacute;mits i la cooperaci&oacute;</p>\r\n\r\n<p>Co-creaci&oacute; i realitzaci&oacute; amb Norma Ros</p>\r\n\r\n<p>&nbsp;</p>\r\n	\N	Sala Calassanç / Barcelona	2013-01-04 20:49:50.041175	2019-06-10 20:19:22.443508
+80	75	ca	EnClauDeBes	<p>Instal.lacci&oacute; po&egrave;tica</p>\r\n\r\n<p><strong>Fisures</strong> I Trobada i Mostra d&#39;Art Multidisciplinari de Palafolls</p>\r\n\r\n<p>acci&oacute;: 12 de juliol de 2014</p>\r\n	escala de fusta, martell, claus, paper fet a mà, roba de lli, alfabets, branques de diferents arbres i arbustos, pintallavis marró	\N	2019-06-10 21:35:33.868726	2019-06-10 21:35:33.868726
+81	76	ca	gravat 9	<p>Accions fotogravades i poesies visuals (s&egrave;ries continus-discontinus i rius de cel)</p>\r\n\r\n<p>Exposici&oacute; col&middot;lectiva a La Mirada expandida i Can Bast&eacute;, Barcelona</p>\r\n	fotogravat	\N	2019-06-10 21:53:37.333636	2020-02-14 20:58:34.799422
+76	71	ca	entrar sortint, sortir entrant		Escultura d'alabastre	\N	2019-03-07 22:44:50.238451	2020-02-14 21:07:05.797199
+60	55	ca	DONAR VEU... i fer un pas	<p>Performance participativa de llarga durada en l&#39;espai p&uacute;blic per donar veu a all&ograve; que solem silenciar</p>\r\n\r\n<p>entorn de la <strong>viol&egrave;ncia de g&egrave;nere</strong></p>\r\n\r\n<p><strong>Les Mireies</strong> som Mireia Chalamanch i Mireia Zantop</p>\r\n	\N	Igualada, Sta. Margarida de Montbui i Vilanova del Camí, Conca d'Òdena	2016-08-01 17:54:00.857897	2020-06-15 15:43:34.388645
+102	13	es	constelacciones	<p>Acci&oacute;n in&eacute;dita realizada con Elisabetta Balasso.</p>\r\n	dibujo sobre piel	\N	2022-01-05 20:10:05.54647	2022-01-05 20:10:05.549086
+20	19	ca	TABOo... Ser/reS. Cos/soC	<p>Performance participativa de llarga durada i instal.laci&oacute; a INUND&#39;ART 2010.</p>\r\n\r\n<p>Paraules del que es silencia.<br />\r\nQuant acceptem? Quant tolerem? Som tan lliures (de prejudicis) com creiem?</p>\r\n\r\n<p>Reflexi&oacute; sobre el concepte del tab&uacute;. Reflexe de la nostra mirada sobre el ser i el cos,&nbsp; relaci&oacute; amb la intenci&oacute; en la projecci&oacute; subjectiva i el prejudici socio-cultural implicat a l&#39;hora de identificar les seves subtils aparences simb&ograve;liques.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>La construcci&oacute; de la instal.laci&oacute; &eacute;s un work on progress al llarg de dues jornades d&#39;inundart. Eix de la primera jornada: RES versus SER; Eix de la segona part: S&Oacute;C versus COS.</p>\r\n	\N	Centre Cultural La Mercè, Girona	2013-01-20 02:38:43.499575	2020-06-15 15:36:58.247221
+77	72	ca	cap cap	<p>&nbsp;</p>\r\n\r\n<p><strong>Festival de Land-art</strong> ArtiGavarres 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Projecte de co-creaci&oacute; amb Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	escultures efímeres de palla 	\N	2019-04-10 23:03:30.950809	2020-06-15 15:40:15.938341
+85	82	ca	Phoscenes	<p>Dibuixos del Confinament, Exposici&oacute; del 18 de setembre al 30 d&#39;octubre 2020 a Lapek i Madremanya</p>\r\n	mixtes	\N	2020-09-21 08:55:36.139032	2020-10-14 22:53:13.951877
+86	83	ca	(des)CUIDAR	<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href="https://lesmireies.com/descuidar">https://lesmireies.com/descuidar</a></p>\r\n	\N	Puig-reig, St.Joan de V., St.Antoni V. i Folgueroles, 	2021-01-04 20:46:08.768568	2021-01-04 20:49:41.681774
+104	76	es	gravat 9	<p><strong>Acciones fotograbadas y poes&iacute;as visuales</strong> (serie cont&iacute;nuos-discont&iacute;nuos y serie r&iacute;os de cielo)</p>\r\n\r\n<p>Exposici&oacute;n colectiva en La Mirada Expandida y Can Bast&eacute;, Barcelona</p>\r\n	fotograbado	\N	2022-01-05 20:25:20.171489	2022-01-05 20:26:16.346682
+87	84	ca	entre línies, 8ple8buit, veure +	<p>D&#39;ANADA I TORNADA Viatges d&#39;Arts entre Lletres a la Fundaci&oacute; Brossa de Barcelona. Cicle a cura d&#39;Ester Xargay.</p>\r\n\r\n<p>3 accions po&egrave;tiques i 1 video-acci&oacute;, i una presentaci&oacute; de l&#39;obra recent de poesia visual. Amb Ester Xargay i Jordi Aligu&eacute;.</p>\r\n\r\n<p><a href="https://www.fundaciojoanbrossa.cat/arts-entre-lletres/">https://www.fundaciojoanbrossa.cat/arts-entre-lletres/</a></p>\r\n\r\n<p><a href="https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898">https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898</a></p>\r\n	\N	Fundació Brossa, Barcelona	2021-01-04 20:54:14.346009	2021-08-31 23:06:56.970755
+90	87	ca	over and over, again and again	<p>Madremanya, Girona/ Donegal, Ireland<br />\r\n<br />\r\n08/08/2021<br />\r\n<br />\r\nV&iacute;deo-performance amb Denys Blacker <a href="https://denysblacker.com">https://denysblacker.com</a><br />\r\nProc&eacute;s creatiu col&middot;lectiu sobre migracions amb Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) i Isa Fontbona.<br />\r\nV&iacute;deo: Mar Ximenis<br />\r\nPresentat en Regional Cultural Centri Letterkenny Co.Donegal a la tardor de 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-08-31 23:10:08.833939	2022-01-13 20:54:16.142262
+94	87	en	over and over, again and again	<p>Video-performance with Denys Blacker&nbsp;</p>\r\n\r\n<p>Group Process on mygrations with Marina Barsy, Denys Blacker Aodan McCardle, Sandra Johnson, Bernmadette Hopkins (curator in charge) and Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>To be exhibited, in the Regional Cultural Centre Letterkenny Co.Donegal in the Autumn 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>\r\n	\N	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	2021-09-26 16:57:03.774287	2021-11-19 22:01:54.690653
+93	88	en	ULL! agulles	<p>&nbsp;festival&nbsp; MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreaci&oacute; i coproducci&oacute; d&#39;ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge ind&ograve;mit i domesticat. Juguem amb l&rsquo;escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Cat&agrave;leg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instal·lació amb estaques.	\N	2021-09-20 20:36:36.429491	2021-09-20 20:36:36.432545
+92	88	ca	ULL! agulles	<p>festival de Land Art MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreaci&oacute; i coproducci&oacute; d&#39;ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge ind&ograve;mit i domesticat. Juguem amb l&rsquo;escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Cat&agrave;leg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instal·lació amb estaques.	\N	2021-09-20 19:33:22.589456	2021-09-26 17:13:49.856907
+96	85	es	SI i/o NO, torno i no torno	<p>Video-acci&oacute;n para la Exposici&oacute;n itinerante <strong>Plurivisions de Fel&iacute;cia Fuster</strong></p>\r\n\r\n<p>Realizaci&oacute;n del video: Adolf Alca&ntilde;iz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>\r\n	\N	Arts Santa Mònica, Barcelona	2021-09-26 20:50:13.269672	2021-09-26 20:50:13.272148
+100	92	es	obra gráfica	<p>Estaremos en Bilbao en el Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	grabado calcográfico i serigrafía sobre diversos papeles i soportes	\N	2021-11-20 13:40:05.73467	2022-01-05 20:02:40.480179
+99	92	en	prints	<p>&nbsp;FIG Bilbao al Festival Internacional de Grabado y arte sobre papel: Eul&agrave;lia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>\r\n	gravat calcogràfic i serigrafia sobre diversos papers i suports	\N	2021-11-20 13:37:15.600703	2021-11-20 13:37:15.603289
+98	88	es	ULL! agulles	<p>Festival de Land Art MICROSCOPIES</p>\r\n\r\n<p>Manresa, 2021</p>\r\n\r\n<p>Cocreaci&oacute;n i coproducci&oacute;n de ALEIX ANTILLACH y MIREIA ZANTOP</p>\r\n\r\n<p>Construyendo, as&iacute; como dibujando, miramos, conocemos y, tal vez, reconocemos. Jugamos con el paisaje ind&oacute;mito y el domesticado. Jugamos con la escala, el tama&ntilde;o y la medida que nuestra mirada conjuga.</p>\r\n\r\n<p>Cat&aacute;logo virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Prensa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>\r\n	Instalación efímera en el paisaje	\N	2021-11-19 21:41:37.138667	2022-01-05 20:16:55.148213
+103	71	es	entrar saliendo, salir entrando		Escultura de alabastro	\N	2022-01-05 20:21:12.669864	2022-01-05 20:21:12.67258
+109	44	es	estOna	<p>Intervenci&oacute;n ef&iacute;mera en el sector &quot;Ona&quot; en la Alta Garrotxa.</p>\r\n\r\n<p>ona = ola</p>\r\n\r\n<p>estona = rato</p>\r\n\r\n<p>est = este, punto cardinal, o es, del lat&iacute;n</p>\r\n\r\n<p>visibilizaci&oacute;n de una l&iacute;nea de est-ratos</p>\r\n\r\n<p>&nbsp;</p>\r\n	intervención efímera	\N	2022-01-05 21:31:18.943235	2022-01-05 21:38:07.451519
+108	64	es	fluxus	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposici&oacute;n colectiva en homenaje a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Vent&oacute;s, Figueres.</strong></p>\r\n\r\n<p>Acci&oacute;n-instalaci&oacute;n iniciada antes de la inauguraci&oacute;n, completando-se durante la exposici&oacute;.</p>\r\n	tintas sobre papel, bolsa de suero, equipo de perfusión, cascabels	\N	2022-01-05 21:18:23.188331	2022-01-05 21:20:49.99799
+110	73	es	trans form/morf I-VII		manipulación,transformación, reubicación de materiales naturales 	\N	2022-01-05 21:43:08.66151	2022-01-05 21:43:08.663907
+112	75	es	EnClaveDeBes(os)	<p>Instalacci&oacute;n po&eacute;tica</p>\r\n\r\n<p><strong>Fisures</strong> I Encuentro y Muestra de Arte Multidisciplinario de Palafolls</p>\r\n\r\n<p>acci&oacute;n: 12 de julio de 2014</p>\r\n	Escalera, martillo, clavos, papel hecho a mano, ropa de lino, alfabetos, sonidos, ramas, pintalabios	\N	2022-01-10 11:45:29.813529	2022-01-10 11:45:58.782086
+111	14	es	AflorA	<p>Exposici&oacute;n de obra gr&aacute;fica original, Sin&egrave;rgia, Vic.</p>\r\n	calcografía y serigrafía	\N	2022-01-05 21:50:21.122443	2022-01-10 11:21:20.719942
+105	74	es	paisaje líquido	<p><strong>Exposici&oacute;n colectiva y taller &quot;La piel como paisaje&quot;</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell y Mireia Zantop</p>\r\n\r\n<p>en La Pedrera, Subirats.</p>\r\n\r\n<p>&nbsp;</p>\r\n	obra original sobre papel y obra gráfica	\N	2022-01-05 20:33:13.007013	2022-01-10 11:22:41.06805
+113	38	es	ad hoc	<p>serie de acciones e intervenciones improvisadas ad hoc</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	movimiento y relación con y entre los objets trouvés, acción, escultura e instalación efímera	\N	2022-01-10 11:49:06.041888	2022-01-10 11:49:06.044599
+\.
+
+
+--
+-- TOC entry 3191 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.ckeditor_assets_id_seq', 1, false);
 
 
 --
--- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3192 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 294, true);
 
 
 --
--- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3193 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.image_translations_id_seq', 594, true);
 
 
 --
--- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3194 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.images_id_seq', 472, true);
 
 
 --
--- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3195 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.page_translations_id_seq', 4, true);
 
 
 --
--- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3196 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.pages_id_seq', 2, true);
 
 
 --
--- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3197 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.section_translations_id_seq', 30, true);
 
 
 --
--- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3198 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.sections_id_seq', 20, true);
 
 
 --
--- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3199 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.tag_translations_id_seq', 93, true);
 
 
 --
--- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3200 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.taggings_id_seq', 690, true);
 
 
 --
--- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3201 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.tags_id_seq', 35, true);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3202 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 1, false);
+SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
--- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3203 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.work_translations_id_seq', 113, true);
 
 
 --
--- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+-- TOC entry 3204 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.works_id_seq', 92, true);
 
+
+-- Completed on 2022-04-01 00:09:24 CEST
 
 --
 -- PostgreSQL database dump complete

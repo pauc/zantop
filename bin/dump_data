@@ -1,0 +1,11 @@
+!#/usr/bin/env sh
+
+pg_dump --data-only \
+        --no-owner \
+        --verbose \
+        --exclude-table-data=users \
+        --host=localhost \
+        --port=${ZANTOP_DATABASE_PORT:-5432} \
+        --username=$ZANTOP_DATABASE_USER \
+        --dbname=zantop_development \
+        --file="db/initial_db_data.sql"

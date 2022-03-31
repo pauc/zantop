@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2013_04_02_185036) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_31_204131) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -107,13 +107,12 @@ ActiveRecord::Schema[7.0].define(version: 2013_04_02_185036) do
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
-    t.bigint "tag_id"
-    t.string "taggable_type", limit: 255
-    t.bigint "taggable_id"
+    t.bigint "tag_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.bigint "work_id", null: false
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
-    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable_type_and_taggable_id"
+    t.index ["work_id"], name: "index_taggings_on_work_id"
   end
 
   create_table "tags", id: :serial, force: :cascade do |t|
@@ -169,4 +168,6 @@ ActiveRecord::Schema[7.0].define(version: 2013_04_02_185036) do
     t.index ["slug_es"], name: "index_works_on_slug_es", unique: true
   end
 
+  add_foreign_key "taggings", "tags", on_delete: :cascade
+  add_foreign_key "taggings", "works", on_delete: :cascade
 end
