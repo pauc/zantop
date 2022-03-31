@@ -26,15 +26,26 @@ Lint/AmbiguousBlockAssociation:
   Exclude:
     - spec/**/*
 
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  AllowBracesOnProceduralOneLiners: true
+
 Style/Documentation:
   Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
   EnforcedStyle: double_quotes
 
-Style/FrozenStringLiteralComment:
+Style/SymbolArray:
   Enabled: false
+  MinSize: 4
 
 RSpec/MultipleExpectations:
   Max: 5
+
+RSpec/ExampleLength:
+  Max: 25
