@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 `PGPASSWORD=#{ENV.fetch("ZANTOP_DATABASE_PASSWORD", "zantop")} \
  psql \
    -h ${ZANTOP_DATABASE_HOST:-localhost} \
