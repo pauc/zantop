@@ -5,7 +5,7 @@
 -- Dumped from database version 13.4
 -- Dumped by pg_dump version 13.6 (Ubuntu 13.6-1.pgdg21.10+1)
 
--- Started on 2022-04-01 00:50:57 CEST
+-- Started on 2022-04-01 00:55:59 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,8 +19,8 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 3188 (class 0 OID 18628)
--- Dependencies: 229
+-- TOC entry 3174 (class 0 OID 18628)
+-- Dependencies: 227
 -- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -31,18 +31,8 @@ schema_sha1	0b5a714bf73401531270d3dc34459f9795a8d5e7	2022-03-31 22:27:25.007082	
 
 
 --
--- TOC entry 3161 (class 0 OID 18449)
+-- TOC entry 3149 (class 0 OID 18462)
 -- Dependencies: 201
--- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.ckeditor_assets (id, data_file_name, data_content_type, data_file_size, assetable_id, assetable_type, type, width, height, created_at, updated_at) FROM stdin;
-\.
-
-
---
--- TOC entry 3163 (class 0 OID 18462)
--- Dependencies: 203
 -- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -213,8 +203,8 @@ COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_a
 
 
 --
--- TOC entry 3165 (class 0 OID 18473)
--- Dependencies: 205
+-- TOC entry 3151 (class 0 OID 18473)
+-- Dependencies: 203
 -- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -751,8 +741,8 @@ COPY public.image_translations (id, image_id, locale, credits, created_at, updat
 
 
 --
--- TOC entry 3186 (class 0 OID 18606)
--- Dependencies: 227
+-- TOC entry 3172 (class 0 OID 18606)
+-- Dependencies: 225
 -- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -832,8 +822,8 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 
 
 --
--- TOC entry 3167 (class 0 OID 18486)
--- Dependencies: 207
+-- TOC entry 3153 (class 0 OID 18486)
+-- Dependencies: 205
 -- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1245,8 +1235,8 @@ COPY public.images (id, image, "position", created_at, updated_at, video, work_i
 
 
 --
--- TOC entry 3169 (class 0 OID 18498)
--- Dependencies: 209
+-- TOC entry 3155 (class 0 OID 18498)
+-- Dependencies: 207
 -- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1259,8 +1249,8 @@ COPY public.page_translations (id, page_id, locale, title, body, created_at, upd
 
 
 --
--- TOC entry 3171 (class 0 OID 18511)
--- Dependencies: 211
+-- TOC entry 3157 (class 0 OID 18511)
+-- Dependencies: 209
 -- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1271,8 +1261,8 @@ COPY public.pages (id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 3187 (class 0 OID 18620)
--- Dependencies: 228
+-- TOC entry 3173 (class 0 OID 18620)
+-- Dependencies: 226
 -- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1281,12 +1271,13 @@ COPY public.schema_migrations (version) FROM stdin;
 20220331204131
 20220331222052
 20220331223522
+20220331224759
 \.
 
 
 --
--- TOC entry 3173 (class 0 OID 18519)
--- Dependencies: 213
+-- TOC entry 3159 (class 0 OID 18519)
+-- Dependencies: 211
 -- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1325,8 +1316,8 @@ COPY public.section_translations (id, section_id, locale, title, body, created_a
 
 
 --
--- TOC entry 3175 (class 0 OID 18532)
--- Dependencies: 215
+-- TOC entry 3161 (class 0 OID 18532)
+-- Dependencies: 213
 -- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1355,8 +1346,8 @@ COPY public.sections (id, "position", created_at, updated_at, work_id) FROM stdi
 
 
 --
--- TOC entry 3177 (class 0 OID 18541)
--- Dependencies: 217
+-- TOC entry 3163 (class 0 OID 18541)
+-- Dependencies: 215
 -- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1437,8 +1428,8 @@ COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) 
 
 
 --
--- TOC entry 3181 (class 0 OID 18564)
--- Dependencies: 221
+-- TOC entry 3167 (class 0 OID 18564)
+-- Dependencies: 219
 -- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1471,8 +1462,8 @@ COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, tagging
 
 
 --
--- TOC entry 3179 (class 0 OID 18554)
--- Dependencies: 219
+-- TOC entry 3165 (class 0 OID 18554)
+-- Dependencies: 217
 -- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1598,8 +1589,8 @@ COPY public.taggings (id, tag_id, created_at, updated_at, work_id) FROM stdin;
 
 
 --
--- TOC entry 3184 (class 0 OID 18593)
--- Dependencies: 225
+-- TOC entry 3170 (class 0 OID 18593)
+-- Dependencies: 223
 -- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -1706,17 +1697,8 @@ COPY public.work_translations (id, work_id, locale, title, description, techniqu
 
 
 --
--- TOC entry 3194 (class 0 OID 0)
+-- TOC entry 3180 (class 0 OID 0)
 -- Dependencies: 200
--- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.ckeditor_assets_id_seq', 1, false);
-
-
---
--- TOC entry 3195 (class 0 OID 0)
--- Dependencies: 202
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1724,8 +1706,8 @@ SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 294, true);
 
 
 --
--- TOC entry 3196 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 3181 (class 0 OID 0)
+-- Dependencies: 202
 -- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1733,8 +1715,8 @@ SELECT pg_catalog.setval('public.image_translations_id_seq', 594, true);
 
 
 --
--- TOC entry 3197 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 3182 (class 0 OID 0)
+-- Dependencies: 204
 -- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1742,8 +1724,8 @@ SELECT pg_catalog.setval('public.images_id_seq', 472, true);
 
 
 --
--- TOC entry 3198 (class 0 OID 0)
--- Dependencies: 208
+-- TOC entry 3183 (class 0 OID 0)
+-- Dependencies: 206
 -- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1751,8 +1733,8 @@ SELECT pg_catalog.setval('public.page_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 3199 (class 0 OID 0)
--- Dependencies: 210
+-- TOC entry 3184 (class 0 OID 0)
+-- Dependencies: 208
 -- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1760,8 +1742,8 @@ SELECT pg_catalog.setval('public.pages_id_seq', 2, true);
 
 
 --
--- TOC entry 3200 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 3185 (class 0 OID 0)
+-- Dependencies: 210
 -- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1769,8 +1751,8 @@ SELECT pg_catalog.setval('public.section_translations_id_seq', 30, true);
 
 
 --
--- TOC entry 3201 (class 0 OID 0)
--- Dependencies: 214
+-- TOC entry 3186 (class 0 OID 0)
+-- Dependencies: 212
 -- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1778,8 +1760,8 @@ SELECT pg_catalog.setval('public.sections_id_seq', 20, true);
 
 
 --
--- TOC entry 3202 (class 0 OID 0)
--- Dependencies: 216
+-- TOC entry 3187 (class 0 OID 0)
+-- Dependencies: 214
 -- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1787,8 +1769,8 @@ SELECT pg_catalog.setval('public.tag_translations_id_seq', 93, true);
 
 
 --
--- TOC entry 3203 (class 0 OID 0)
--- Dependencies: 218
+-- TOC entry 3188 (class 0 OID 0)
+-- Dependencies: 216
 -- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1796,8 +1778,8 @@ SELECT pg_catalog.setval('public.taggings_id_seq', 690, true);
 
 
 --
--- TOC entry 3204 (class 0 OID 0)
--- Dependencies: 220
+-- TOC entry 3189 (class 0 OID 0)
+-- Dependencies: 218
 -- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1805,8 +1787,8 @@ SELECT pg_catalog.setval('public.tags_id_seq', 35, true);
 
 
 --
--- TOC entry 3205 (class 0 OID 0)
--- Dependencies: 222
+-- TOC entry 3190 (class 0 OID 0)
+-- Dependencies: 220
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1814,8 +1796,8 @@ SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
--- TOC entry 3206 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 3191 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -1823,15 +1805,15 @@ SELECT pg_catalog.setval('public.work_translations_id_seq', 113, true);
 
 
 --
--- TOC entry 3207 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 3192 (class 0 OID 0)
+-- Dependencies: 224
 -- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.works_id_seq', 92, true);
 
 
--- Completed on 2022-04-01 00:50:57 CEST
+-- Completed on 2022-04-01 00:55:59 CEST
 
 --
 -- PostgreSQL database dump complete
