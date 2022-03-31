@@ -1,8 +1,24 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
+  def title(title = nil)
+    title += " | " unless title.nil?
+    content_for(:title) { title }
+  end
+
+  def page_title(title)
+    strip_tags(title)
+      .then(&method(:title))
+
+    content_for(:page_title) {
+      content_tag(:h1, title, id: "main_title")
+    }
+  end
+
   def site_name
     tag = home? ? :h1 : :span
-    img_src = home? ? 'MireiaZantop.png' : 'MZ.png'
-    title = home? ? nil : t('home')
+    img_src = home? ? "MireiaZantop.png" : "MZ.png"
+    title = home? ? nil : t("home")
 
     content_tag(
       tag,
@@ -12,9 +28,9 @@ module ApplicationHelper
           alt: "Mireia Zantop"
         ),
         home_path,
-        title: title
+        title:
       ),
-      id: 'site_name'
+      id: "site_name"
     )
   end
 
@@ -23,11 +39,11 @@ module ApplicationHelper
     classes << "with_sidebar" if sidebar?
     classes << "no-home" unless home?
 
-    classes.join(' ')
+    classes.join(" ")
   end
 
   def home?
-    controller.controller_name == 'dashboards' && controller.action_name == 'home'
+    controller.controller_name == "dashboards" && controller.action_name == "home"
   end
 
   def active_link?(url)
@@ -36,26 +52,19 @@ module ApplicationHelper
 
   def page_name
     case controller.controller_name
-    when 'action_works'
-      t('menu.action_art')
-    when 'visual_works'
-      t('menu.visual_art')
-    when 'dashboards'
-      t('menu.about') if controller.action_name == 'about'
-    when 'contact_messages'
-      t('menu.contact')
+    when "action_works"
+      t("menu.action_art")
+    when "visual_works"
+      t("menu.visual_art")
+    when "dashboards"
+      t("menu.about") if controller.action_name == "about"
+    when "contact_messages"
+      t("menu.contact")
     end
   end
-
-  private
 
   def sidebar?
     (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
-  end
-
-  def page_title(title = nil)
-    title += ' | ' unless title.nil?
-    content_for(:title) { title }
   end
 end

@@ -5,3 +5,5 @@
    -p ${ZANTOP_DATABASE_PORT:-5432} \
    -d ${ZANTOP_DATABASE_NAME:-zantop_development} \
  < db/initial_db_data.sql`
+
+User.create!(email: "example@example.com", password: "secret")

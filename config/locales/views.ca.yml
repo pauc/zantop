@@ -12,7 +12,6 @@ ca:
   deleted: Contingut esborrat.
   delete: Esborrar
   edit: Editar
-  invalid_login: Dades incorrectes.
   restricted_access: Accés restringit. T'has d'identificar abans.
   untranslated_conten: Oops! Ho sentim, aquest contingut no està traduït al català
   updated: Contingut actualitzat.
@@ -33,6 +32,9 @@ ca:
   add_image_or_video: Afegeix una imatge o vídeo
   remove_image_or_video: Esborra aquesta imatge o vídeo
 
+  contact_messages:
+    create:
+      confirmation: "Missatge enviat correctament. Gràcies!!"
   menu:
     about: Bio
     action_art: "Art d'acció"
@@ -45,6 +47,8 @@ ca:
     page_gap: " ... "
 
   sessions:
+    create:
+      invalid_login: Usuari o password incorrectes
     new:
       title: Iniciar sessió
 

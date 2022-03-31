@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
   </head>
+
   <body class="<%= body_classes %>">
-    <%#<%= render 'session_bar' if current_user? %>
+    <%= render 'session_bar' if current_user? %>
+
     <%= render 'header' %>
+
     <div class="container">
       <%= render 'flash_messages' %>
-      <%= yield :page_header %>
+
+      <%= yield :page_title %>
+
       <div id="main" role="main">
         <div class="content">
           <%= yield %>
@@ -19,6 +24,7 @@
       </div>
       <%#<%= render 'sidebar' if sidebar? %>
     </div>
+
     <%= render 'footer' %>
     <%#<%= javascript_include_tag "application" %>
     <%#<%= javascript_include_tag "ckeditor/init" if current_user? %>
