@@ -24,6 +24,8 @@ ARG USER_GID=1000
 RUN addgroup --gid $USER_GID $USERNAME &&\
     adduser --shell /bin/bash --disabled-password --uid $USER_UID --ingroup $USERNAME $USERNAME 
 
+RUN chown -R developer:developer /usr/local/bundle
+
 WORKDIR /app
 
 RUN yarn install --check-files
