@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BetterImages < ActiveRecord::Migration[7.0]
   def change
     change_table :images, bulk: true do |t|

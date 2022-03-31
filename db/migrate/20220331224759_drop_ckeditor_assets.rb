@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DropCkeditorAssets < ActiveRecord::Migration[7.0]
   def change
     drop_table :ckeditor_assets, id: :serial do |t|
@@ -11,8 +13,8 @@ class DropCkeditorAssets < ActiveRecord::Migration[7.0]
       t.integer "height"
       t.datetime "created_at", precision: nil, null: false
       t.datetime "updated_at", precision: nil, null: false
-      t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-      t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+      t.index %w[assetable_type assetable_id], name: "idx_ckeditor_assetable"
+      t.index %w[assetable_type type assetable_id], name: "idx_ckeditor_assetable_type"
     end
   end
 end

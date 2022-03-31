@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BetterTaggings < ActiveRecord::Migration[7.0]
   def change
     change_table :taggings, bulk: true do |t|

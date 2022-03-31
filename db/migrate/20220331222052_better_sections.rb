@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BetterSections < ActiveRecord::Migration[7.0]
   def change
     change_table :sections, bulk: true do |t|
