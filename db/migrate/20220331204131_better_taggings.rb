@@ -17,9 +17,8 @@ class BetterTaggings < ActiveRecord::Migration[7.0]
       end
     end
 
-    change_column_null :taggings, :work_id, false
-
     change_table :taggings, bulk: true do |t|
+      t.change_null :work_id, false
       t.remove_index column: [:taggable_type, :taggable_id]
       t.remove :taggable_id, type: :bigint
       t.remove :taggable_type, type: :string, limit: 255
