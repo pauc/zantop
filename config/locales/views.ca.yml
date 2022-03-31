@@ -32,6 +32,9 @@ ca:
   add_image_or_video: Afegeix una imatge o vídeo
   remove_image_or_video: Esborra aquesta imatge o vídeo
 
+  contact_messages:
+    create:
+      confirmation: "Missatge enviat correctament. Gràcies!!"
   menu:
     about: Bio
     action_art: "Art d'acció"

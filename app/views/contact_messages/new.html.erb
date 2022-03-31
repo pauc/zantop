@@ -1,6 +1,4 @@
-<% page_title(page_name) %>
-
-<h1 id="section_header"><%= t('menu.contact') %></h1>
+<% page_title t("menu.contact") %>
 
 <%= simple_form_for @contact_message do |f| %>
   <%= f.error_notification %>
