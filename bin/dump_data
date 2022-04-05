@@ -4,6 +4,8 @@ pg_dump --data-only \
         --no-owner \
         --verbose \
         --exclude-table-data=users \
+        --exclude-table-data=ar_internal_metadata \
+        --exclude-table-data=schema_migrations \
         --host=localhost \
         --port=${ZANTOP_DATABASE_PORT:-5432} \
         --username=$ZANTOP_DATABASE_USER \

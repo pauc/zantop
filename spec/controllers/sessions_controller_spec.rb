@@ -8,6 +8,7 @@ RSpec.describe SessionsController, type: :controller do
       user = User.create!(email: "example@example.com", password: "secret")
 
       params = {
+        locale: "ca",
         session: {
           email: "example@example.com",
           password: "secret"
@@ -24,6 +25,7 @@ RSpec.describe SessionsController, type: :controller do
       User.create!(email: "example@example.com", password: "secret")
 
       params = {
+        locale: "ca",
         session: {
           email: "example@example.com",
           password: "secret"
@@ -32,11 +34,12 @@ RSpec.describe SessionsController, type: :controller do
 
       post(:create, params:)
 
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/ca")
     end
 
     it "shows an error message if the credentials are invalid" do
       params = {
+        locale: "ca",
         session: {
           email: "mac@mec.mic",
           password: "secret"
@@ -50,6 +53,7 @@ RSpec.describe SessionsController, type: :controller do
 
     it "doesn't sign in the user if the credentials are invalid" do
       params = {
+        locale: "ca",
         session: {
           email: "mac@mec.mic",
           password: "secret"
@@ -68,14 +72,14 @@ RSpec.describe SessionsController, type: :controller do
 
       session[:user_id] = user.id
 
-      expect { get :destroy }
+      expect { get :destroy, params: { locale: :ca } }
         .to change(controller, :current_user)
         .from(user)
         .to(nil)
     end
 
     it "redirects to the front page" do
-      expect(delete(:destroy)).to redirect_to("/")
+      expect(delete(:destroy, params: { locale: :ca })).to redirect_to("/ca")
     end
   end
 end

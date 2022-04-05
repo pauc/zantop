@@ -19,7 +19,9 @@ gem "bootsnap", require: false
 # Make forms easier to manage
 gem "simple_form"
 
-# Allow you to translate paths of the site: pagename.com/help --> pagename.com/ayuda
+# i18n
+gem "accept_language"
+gem "globalize"
 gem "route_translator", "~> 12.1.0"
 
 group :development, :test do

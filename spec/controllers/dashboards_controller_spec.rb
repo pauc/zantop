@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe DashboardsController, type: :controller do
   describe "GET home" do
     it do
-      get :home, params: { locale: "en" }
+      get :front, params: { locale: "en" }
 
       expect(response).to have_http_status(:ok)
     end

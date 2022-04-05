@@ -2,12 +2,19 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  around_action :set_locale_from_url
   helper_method :current_user, :current_user?
 
   private
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    locale = params[:locale]
+
+    return if locale && I18n.available_locales.map(&:to_s).include?(locale)
+
+    location = request.fullpath
+
+    redirect_to "/#{locale_from_headers}#{location}"
   end
 
   def current_user
@@ -18,5 +25,13 @@ class ApplicationController < ActionController::Base
 
   def current_user?
     !!current_user
+  end
+
+  def locale_from_headers
+    return I18n.default_locale unless (header = request.headers["HTTP_ACCEPT_LANGUAGE"])
+
+    AcceptLanguage
+      .parse(header)
+      .match(*I18n.available_locales) || I18n.default_locale
   end
 end
