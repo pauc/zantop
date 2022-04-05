@@ -16,9 +16,9 @@ module ApplicationHelper
   end
 
   def site_name
-    tag = home? ? :h1 : :span
-    img_src = home? ? "MireiaZantop.png" : "MZ.png"
-    title = home? ? nil : t("home")
+    tag = front? ? :h1 : :span
+    img_src = front? ? "MireiaZantop.png" : "MZ.png"
+    title = front? ? nil : t("home")
 
     content_tag(
       tag,
@@ -27,7 +27,7 @@ module ApplicationHelper
           img_src,
           alt: "Mireia Zantop"
         ),
-        home_path,
+        root_path,
         title:
       ),
       id: "site_name"
@@ -37,13 +37,13 @@ module ApplicationHelper
   def body_classes
     classes = [controller.controller_name, controller.action_name]
     classes << "with_sidebar" if sidebar?
-    classes << "no-home" unless home?
+    classes << "no-front" unless front?
 
     classes.join(" ")
   end
 
-  def home?
-    controller.controller_name == "dashboards" && controller.action_name == "home"
+  def front?
+    controller.controller_name == "dashboards" && controller.action_name == "front"
   end
 
   def active_link?(url)
@@ -64,7 +64,7 @@ module ApplicationHelper
   end
 
   def sidebar?
-    (!home? && %w[new edit admin].exclude?(controller.action_name)) ||
+    (!front? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
   end
 end

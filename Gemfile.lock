@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    accept_language (2.0.2)
     actioncable (7.0.2.3)
       actionpack (= 7.0.2.3)
       activesupport (= 7.0.2.3)
@@ -92,6 +93,10 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    globalize (6.1.0)
+      activemodel (>= 4.2, < 7.1)
+      activerecord (>= 4.2, < 7.1)
+      request_store (~> 1.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     io-wait (0.2.1)
@@ -172,6 +177,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.2.1)
+    request_store (1.5.1)
+      rack (>= 1.4)
     rexml (3.2.5)
     route_translator (12.1.0)
       actionpack (>= 5.2, < 7.1)
@@ -262,10 +269,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  accept_language
   bcrypt (~> 3.1.17)
   bootsnap
   byebug
   capybara (>= 3.26)
+  globalize
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.6)
