@@ -39,6 +39,6 @@ module Zantop
 
     config.i18n.available_locales = [:ca, :en, :es]
     config.i18n.default_locale    = :ca
-    config.i18n_fallbacks         = true
+    config.i18n.fallbacks         = true
   end
 end

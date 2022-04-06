@@ -5,7 +5,7 @@ class Image < ActiveRecord::Base
 
   # clean_fields :credits
 
-  belongs_to :illustrated, polymorphic: true, counter_cache: true
+  belongs_to :work
 
   attr_accessor :image, :video, :credits, :image_cache
 
