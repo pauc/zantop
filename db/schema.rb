@@ -34,17 +34,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_31_224759) do
     t.index ["locale"], name: "index_image_translations_on_locale"
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "image"
-    t.integer "illustrated_id"
-    t.string "illustrated_type"
+  create_table "images", id: :serial, force: :cascade do |t|
+    t.string "image", limit: 255
     t.integer "position"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["illustrated_id", "illustrated_type"], name: "index_images_on_illustrated_id_and_illustrated_type"
-  end
-
-  create_table "work_translations", force: :cascade do |t|
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.string "video", limit: 255
     t.bigint "work_id", null: false
     t.index ["work_id"], name: "index_images_on_work_id"
   end
@@ -131,22 +126,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_31_224759) do
     t.string "locale", limit: 255
     t.string "title", limit: 255
     t.text "description"
-    t.string "techniques"
-    t.string "place"
+    t.string "techniques", limit: 255
+    t.string "place", limit: 255
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["locale"], name: "index_work_translations_on_locale"
     t.index ["work_id"], name: "index_work_translations_on_work_id"
   end
 
-  create_table "works", force: :cascade do |t|
-    t.string "slug_en"
-    t.string "slug_es"
-    t.string "slug_ca"
+  create_table "works", id: :serial, force: :cascade do |t|
+    t.string "slug_en", limit: 255
+    t.string "slug_es", limit: 255
+    t.string "slug_ca", limit: 255
     t.date "realization_date"
-    t.string "dimensions"
+    t.string "dimensions", limit: 255
     t.integer "position"
-    t.string "type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "type", limit: 255
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.boolean "published", default: false
+    t.integer "images_count", default: 0
     t.index ["slug_ca"], name: "index_works_on_slug_ca", unique: true
     t.index ["slug_en"], name: "index_works_on_slug_en", unique: true
     t.index ["slug_es"], name: "index_works_on_slug_es", unique: true
