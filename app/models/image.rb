@@ -27,13 +27,13 @@ class Image < ApplicationRecord
   private
 
   def image_xor_video
-    if image.present? and video.present?
+    if image.present? && video.present?
       errors.add(:image, "Només imatge o video, no tots dos")
       errors.add(:video, "Només imatge o video, no tots dos")
       return false
     end
 
-    if image.blank? and video.blank?
+    if image.blank? && video.blank?
       errors.add(:image, "Has d'indicar una imatge o vídeo")
       errors.add(:video, "Has d'indicar una imatge o vídeo")
       false
