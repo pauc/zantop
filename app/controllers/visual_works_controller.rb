@@ -15,7 +15,7 @@ class VisualWorksController < ApplicationController
 
   def index
     @published_works = VisualWork.all.includes(:translations)
-    render template: 'works/works_list'
+    render template: "works/works_list"
   end
 
   # def show

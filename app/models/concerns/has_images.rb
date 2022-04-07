@@ -1,4 +1,5 @@
-module HasImages extend ActiveSupport::Concern
+module HasImages
+  extend ActiveSupport::Concern
   included do
     attr_accessor :images_attributes
 

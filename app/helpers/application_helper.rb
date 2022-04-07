@@ -64,7 +64,7 @@ module ApplicationHelper
   end
 
   def view_more(destination)
-    content_tag "p", link_to( raw(t('view_more') + " &rarr;"), destination ), class: 'view-more'
+    content_tag "p", link_to(raw(t("view_more") + " &rarr;"), destination), class: "view-more"
   end
 
   private

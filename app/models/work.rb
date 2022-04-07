@@ -15,6 +15,6 @@ class Work < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   def first_image
-    self.images.where('image is not null').first.try(:image).try(:medium)
+    images.where.not(image: nil).first.try(:image).try(:medium)
   end
 end

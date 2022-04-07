@@ -24,10 +24,10 @@ module Zantop
     config.load_defaults 7.0
 
     # Make concerns routes visible
-    config.autoload_paths += %W(
+    config.autoload_paths += %W[
       #{config.root}/app/models/concerns
       #{config.root}/app/controllers/concerns
-    )
+    ]
 
     # Configuration for the application, engines, and railties goes here.
     #
