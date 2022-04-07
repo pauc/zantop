@@ -12,7 +12,8 @@ class Work < ApplicationRecord
 
   validates :title, presence: true
 
-  # scope :published, -> { where(published: true) }
+  scope :published, -> { where(published: true) }
+
   def first_image
     self.images.where('image is not null').first.try(:image).try(:medium)
   end
