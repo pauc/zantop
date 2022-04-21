@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module WorksHelper
   def default_image_for_works
     image_tag "mz-comodin.png"
@@ -50,7 +48,8 @@ module WorksHelper
 
     html = "<div class='work-tags'>"
     html << "#{t('categories')}: "
-    html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
+    # html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
+    html << work.tags.map { |tag| tag.slug_es }.join(", ")
     html << "</div>"
     html.html_safe
   end
