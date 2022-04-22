@@ -24,9 +24,9 @@ class Work < ApplicationRecord
     conditions_array_for_taggings = [self.tags.map { |t| "tag_id = ?" }
                                      .join(" OR ")]
     self.tags.each { |t| conditions_array_for_taggings << t.id }
-    work_ids_from_taggings = Tagging.select("DISTINCT taggable_id").
+    work_ids_from_taggings = Tagging.select("DISTINCT work_id").
       where(conditions_array_for_taggings).
-      where("taggable_id != ?", self.id)
+      where("work_id != ?", self.id)
     self.class.published.where(id: work_ids_from_taggings).limit(5).
       includes(:translations)
   end
