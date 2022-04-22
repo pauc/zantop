@@ -20,8 +20,7 @@ class ActionWorksController < ApplicationController
 
   def show
     @work = ActionWork.find(params[:id])
-    # @related_works = @work.related
-    @related_works = []
+    @related_works = @work.related
 
     flash.now[:alert] = t('untranslated_content') unless @work.has_translation?(I18n.locale)
 
