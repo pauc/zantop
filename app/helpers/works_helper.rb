@@ -48,8 +48,7 @@ module WorksHelper
 
     html = "<div class='work-tags'>"
     html << "#{t('categories')}: "
-    # html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
-    html << work.tags.map { |tag| tag.slug_es }.join(", ")
+    html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
     html << "</div>"
     html.html_safe
   end

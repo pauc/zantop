@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     resources :visual_works
     resources :action_works
 
+    # Tags
+    resources :tags, except: [:new, :edit] do
+      get 'admin', on: :collection
+    end
+
     get "contact", to: "contact_messages#new"
     resources :contact_messages, only: [:create]
 
