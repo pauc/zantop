@@ -2,6 +2,7 @@
 
 class Work < ApplicationRecord
   include HasImages
+  include HasSections
   include SlugConcern
 
   has_many :taggings, dependent: :destroy
