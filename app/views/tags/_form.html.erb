@@ -1,0 +1,11 @@
+<%= div_for category, class: "#{'untranslated_tag' if category.untranslated?}" do |tag| %>
+  <%= simple_form_for tag, remote: true do |form| %>
+    <h3><%= tag.name %>:</h3>
+    <% I18n.available_locales.each do |locale| %>
+      <%= form.input :"name_#{locale}", input_html: { name: "tag[name][#{locale}]", size: 18 } %>
+    <% end %><br />
+    <%= form.button :submit %>
+    <%= link_to t('delete'), tag_path(tag), method: :delete,
+        confirm: "Segur que vols esborrar aquesta etiqueta?", class: "btn_wrng" %>
+  <% end %>
+<% end %>

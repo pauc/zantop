@@ -8,8 +8,8 @@ class Tag < ApplicationRecord
   # extend FriendlyId
   # friendly_id :name, use: [:slugged, :simple_i18n, :history]
 
-  has_many :works, through: :taggings, source: :taggable, source_type: "Work"
   has_many :taggings, dependent: :destroy
+  has_many :works, through: :taggings, source: :work
 
   # attr_accessor :name
 
