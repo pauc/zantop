@@ -19,12 +19,11 @@ class VisualWorksController < ApplicationController
   end
 
   def show
-    @visual_work = VisualWork.find(params[:id])
-    # @related_works = @visual_work.related
+    @work = VisualWork.find(params[:id])
+    # @related_works = @work.related
     @related_works = []
 
-
-    flash.now[:alert] = t('untranslated_content') unless @visual_work.has_translation?(I18n.locale)
+    flash.now[:alert] = t('untranslated_content') unless @work.has_translation?(I18n.locale)
 
     render template: 'works/show'
   end

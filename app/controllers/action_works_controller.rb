@@ -19,9 +19,13 @@ class ActionWorksController < ApplicationController
   end
 
   def show
-    flash.now[:alert] = t('untranslated_content') unless action_work.
-      has_translation?(I18n.locale)
-    respond_with action_work, template: 'works/show'
+    @work = ActionWork.find(params[:id])
+    # @related_works = @work.related
+    @related_works = []
+
+    flash.now[:alert] = t('untranslated_content') unless @work.has_translation?(I18n.locale)
+
+    render template: 'works/show'
   end
 
   # def new
