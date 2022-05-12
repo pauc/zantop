@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "boot"
 
 require "rails"
@@ -23,6 +25,12 @@ module Zantop
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # Make concerns routes visible
+    config.autoload_paths += %W[
+      #{config.root}/app/models/concerns
+      #{config.root}/app/controllers/concerns
+    ]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -33,6 +41,6 @@ module Zantop
 
     config.i18n.available_locales = [:ca, :en, :es]
     config.i18n.default_locale    = :ca
-    config.i18n_fallbacks         = true
+    config.i18n.fallbacks         = true
   end
 end

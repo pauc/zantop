@@ -63,6 +63,12 @@ module ApplicationHelper
     end
   end
 
+  def view_more(destination)
+    content_tag "p", link_to(raw("#{t('view_more')} &rarr;"), destination), class: "view-more"
+  end
+
+  private
+
   def sidebar?
     (!front? && %w[new edit admin].exclude?(controller.action_name)) ||
       controller.controller_name == "contact_messages"
