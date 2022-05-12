@@ -1,0 +1,42 @@
+.work {
+  display: flex;
+
+  &.odd {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  &.even {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .image-container{
+    flex: 1;
+
+    img {
+      width: 90%;
+      box-shadow: 0 0 6px 1px rgba(77,28,34,.61);
+
+      &:hover {
+        box-shadow: 0 0 8px 2px rgba(77,28,34,.80);
+      }
+    }
+  }
+
+  .info-container{
+    flex: 3;
+
+    p {
+      margin: 0;
+    }
+
+    .work-title {
+      margin: 0;
+    }
+
+    .work-description {
+      margin-top: 1em;
+    }
+  }
+}

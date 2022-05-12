@@ -24,6 +24,9 @@ gem "accept_language"
 gem "globalize"
 gem "route_translator", "~> 12.1.0"
 
+# Pagination
+gem 'will_paginate', '~> 3.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]

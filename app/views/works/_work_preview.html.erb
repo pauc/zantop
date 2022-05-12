@@ -1,0 +1,16 @@
+<div class="work <%= cycle('odd', 'even') %>">
+  <% cache [I18n.locale, :work_preview, work] do %>
+    <div class="image-container">
+      <%= link_to (work.first_image.present? ?
+                    image_tag(work.first_image) :
+                    default_image_for_works), work %>
+      <%= view_more work %>
+    </div>
+    <div class="info-container">
+      <%= content_tag(:h2, link_to(work.title, work), class: "work-title") %>
+      <%= print_work_place(work) %>
+      <%= print_work_date(work) %>
+      <%= print_work_truncated_description(work) %>
+    </div>
+  <% end %>
+</div>
