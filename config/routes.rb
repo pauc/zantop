@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   localized do
+    # Sessions
     resource :session, only: [:create, :destroy]
     get :login, to: "sessions#new"
     get :logout, to: "sessions#destroy"
