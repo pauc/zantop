@@ -34,7 +34,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       format.html { respond_with category, location: admin_tags_path }
-      format.js { render 'update' }
+      format.js { render "update" }
     end
   end
 
@@ -45,7 +45,5 @@ class TagsController < ApplicationController
     respond_with category, location: admin_tags_path
   end
 
-  def admin
-
-  end
+  def admin; end
 end

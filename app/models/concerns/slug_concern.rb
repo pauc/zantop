@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SlugConcern
   extend ActiveSupport::Concern
 
@@ -11,16 +13,12 @@ module SlugConcern
   end
 
   def slug
-    result = self.send("slug_#{I18n.locale}")
-    if result.blank?
-      self.send("slug_#{I18n.default_locale}")
-    else 
-      result
-    end
+    result = send("slug_#{I18n.locale}")
+    result.presence || send("slug_#{I18n.default_locale}")
   end
 
-  def has_translation?(locale)
+  def translation?(locale)
     translation = translations.select { |tr| tr.locale == locale }
-    !translation.blank?
+    translation.present?
   end
 end

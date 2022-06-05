@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WorksHelper
   def default_image_for_works
     image_tag "mz-comodin.png"
@@ -62,7 +64,7 @@ module WorksHelper
   end
 
   def translation_info(work, locale)
-    css_class = work.has_translation?(locale) ? "translated" : "untranslated"
+    css_class = work.translation?(locale) ? "translated" : "untranslated"
     I18n.with_locale(locale) do
       link_to t(locale), url_for_edit_work(work), class: css_class
     end

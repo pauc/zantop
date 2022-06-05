@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
     # Tags
     resources :tags, except: [:new, :edit] do
-      get 'admin', on: :collection
+      get "admin", on: :collection
     end
 
     get "contact", to: "contact_messages#new"
