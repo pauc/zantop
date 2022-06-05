@@ -1,0 +1,46 @@
+<% content_for :sidebar do %>
+  <% cache [I18n.locale, :related_works, @work] do %>
+    <% unless @related_works.empty? %>
+      <div class="sidebar-block">
+        <h2><%= t 'works.labels.related' %></h2>
+        <ul class="related-works vertical-list">
+          <% @related_works.each do |w| %>
+            <li>
+              <%= link_to w.title, w %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<%= page_title @work.title %>
+
+<% cache [I18n.locale, :show, @work] do %>
+  <%= print_work_place @work%>
+  <%= print_work_date @work%>
+  <% unless @work.images.empty? %>
+    <div id="image_gallery_container">
+      <div id="galleria">
+        <% @work.images.includes(:translations).each do |image| %>
+          <% if image.image? %>
+            <%= link_to image_tag(image.image.thumb.to_s, data: { title: image.credits }),
+              image.image.to_s %>
+            <% end %>
+          <% if image.video? %>
+            <%= link_to content_tag(:span, "Watch this video", class: "video",
+                                    data: {title: image.credits }),
+              image.video %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <%= print_work_field @work, :techniques %>
+  <%= print_work_field @work, :dimensions %>
+  <%= print_work_description @work%>
+  <% unless @work.sections.empty? %>
+    <%= render @work.sections %>
+  <% end %>
+  <%= print_work_tags @work%>
+<% end %>

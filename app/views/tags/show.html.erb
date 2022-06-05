@@ -1,0 +1,7 @@
+<%= page_title @category.name.capitalize %>
+
+<% cache [I18n.locale, :show, @category] do %>
+  <div class="works-list">
+    <%= render partial: 'works/work_preview', collection: @published_works, as: :work %>
+  </div>
+<% end %>

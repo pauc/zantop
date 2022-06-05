@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_locale,
+                :set_tags
+
   around_action :set_locale_from_url
   helper_method :current_user, :current_user?
 
@@ -15,6 +17,10 @@ class ApplicationController < ActionController::Base
     location = request.fullpath
 
     redirect_to "/#{locale_from_headers}#{location}"
+  end
+
+  def set_tags
+    @enabled_tags = Tag.enabled.includes(:translations)
   end
 
   def current_user

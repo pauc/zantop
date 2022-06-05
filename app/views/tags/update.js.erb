@@ -1,0 +1,6 @@
+$("div#tag_<%= category.id %>").replaceWith('<%= j render 'form' %>');
+var miniflash = $('<div/>', {
+  text: 'Actualitzat',
+  style: 'background: yellow; position: absolute; top: 0; padding: 0.5em'
+}).prependTo("div#tag_<%= category.id %>");
+miniflash.fadeOut(2000);

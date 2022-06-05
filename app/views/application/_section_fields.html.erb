@@ -1,0 +1,9 @@
+<div class="sort-field">
+  <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
+</div>
+<%= f.input :title %>
+<%= f.input :body, as: :text, input_html: { rows: 4,
+                                            class: "rich-text-area",
+                                            required: false } %>
+<%= f.hidden_field :position, type: "hidden" %>
+<%= f.link_to_remove "Remove this section", class: "btn_wrng" %>

@@ -8,17 +8,37 @@ html {
 body {
   background: $grey image_url('ricepaper2.png');
   margin: 0;
+
+  .container {
+    max-width: 1240px;
+    padding: 0 2.5%;
+    margin: 0 auto;
+    //@include clearfix;
+  }
+
+  &.no-front {
+    padding-top: 2em;
+
+    #main {
+      display: inline-block;
+      width: 79%;
+      vertical-align: top;
+    }
+
+    #sidebar {
+      display: inline-block;
+      width: 20%;
+
+      li {
+        list-style: none;
+        margin: 0.5em 0;
+      }
+    }
+  }
 }
 
-body.no-front {
-  padding-top: 2em;
-}
-
-.container {
-  max-width: 1240px;
-  padding: 0 2.5%;
-  margin: 0 auto;
-  //@include clearfix;
+h1 {
+  margin: 0.25em 0;
 }
 
 #site_name {
@@ -27,10 +47,6 @@ body.no-front {
   img {
     width: 100%;
   }
-}
-
-#main {
-  width: 100%;
 }
 
 #flash_messages {
