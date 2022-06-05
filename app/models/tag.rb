@@ -21,7 +21,7 @@ class Tag < ApplicationRecord
   def self.enabled
     select("DISTINCT(tags.id), tags.*")
       .joins("JOIN taggings ON tags.id = taggings.tag_id
-           JOIN works ON works.id = taggings.taggable_id
+           JOIN works ON works.id = taggings.work_id
            WHERE works.published = true")
   end
 

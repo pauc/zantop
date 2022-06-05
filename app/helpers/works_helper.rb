@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module WorksHelper
   def default_image_for_works
     image_tag "mz-comodin.png"
