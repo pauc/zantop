@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resource :session, only: [:create, :destroy]
-
   localized do
+    resource :session, only: [:create, :destroy]
     get :login, to: "sessions#new"
     get :logout, to: "sessions#destroy"
 
