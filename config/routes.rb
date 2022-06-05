@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     resources :visual_works
     resources :action_works
 
+    # Works
+    resources :works, only: [] do
+      get 'admin', on: :collection
+      post :sort, on: :collection
+    end
+
     # Tags
     resources :tags, except: [:new, :edit] do
       get "admin", on: :collection

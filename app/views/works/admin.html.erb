@@ -1,0 +1,19 @@
+<ul id="works" class="sortable-list" data-resource="works" data-action="sort" data-order="DESC">
+  <% works.try(:each) do |work| %>
+    <li id="work_<%= work.id %>" <%= ' class=unpublished' if !work.published? %>>
+      <span class="handle"></span>
+      <%= link_to work.title, work, class: "work_title" %></h4>
+      <% if !work.published? %>
+        <span class="unpublished">(no publicat)</span>
+      <% end %>
+      <small>- <%= link_to "editar", url_for_edit_work(work) %></small>
+      <div class="translations-info">
+        <% [:ca, :es, :en].each do |locale| %>
+          <div class="translation-<%= locale %>">
+            <%= translation_info(work, locale) %>
+          </div>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
