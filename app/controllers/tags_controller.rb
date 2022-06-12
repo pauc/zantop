@@ -2,14 +2,10 @@
 
 class TagsController < ApplicationController
   # include Finder
-  # include Authorization
-  # respond_to :html
-
-  # expose(:categories) { Tag.includes(:translations) }
-  # expose(:category) { Tag.find(params[:id]) }
-  # expose(:published_works) { category.works.published.includes(:translations) }
+  include Authorization
 
   def index
+    @categories = Tag.includes(:translations)
     respond_to do |format|
       format.json { render json: Tag.tokens(params[:q]) }
     end
@@ -42,8 +38,10 @@ class TagsController < ApplicationController
     @category = Tag.find(params[:id])
 
     flash.notice = "Esborrat" if @category.destroy
-    respond_with category, location: admin_tags_path
+    respond_with @category, location: admin_tags_path
   end
 
-  def admin; end
+  def admin
+    @categories = Tag.includes(:translations)
+  end
 end
