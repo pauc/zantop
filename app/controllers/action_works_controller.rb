@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class ActionWorksController < ApplicationController
+  include Authorization
   # include Sortable
   # include Finder
-  # include Authorization
   # include CreateWithDefaultLocale
   # respond_to :html
 
@@ -27,9 +27,9 @@ class ActionWorksController < ApplicationController
     render template: "works/show"
   end
 
-  # def new
-  #   respond_with action_work
-  # end
+  def new
+    @action_work = ActionWork.new
+  end
 
   # def create
   #   flash.notice = t('created') if action_work.save
