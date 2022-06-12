@@ -1,5 +1,5 @@
 <ul id="works" class="sortable-list" data-resource="works" data-action="sort" data-order="DESC">
-  <% works.try(:each) do |work| %>
+  <% @works.try(:each) do |work| %>
     <li id="work_<%= work.id %>" <%= ' class=unpublished' if !work.published? %>>
       <span class="handle"></span>
       <%= link_to work.title, work, class: "work_title" %></h4>
