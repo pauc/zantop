@@ -7,10 +7,13 @@ Rails.application.routes.draw do
     get :login, to: "sessions#new"
     get :logout, to: "sessions#destroy"
 
+    # Users
+    resources :users, except: [:index, :show, :destroy]
+
+    # Works
     resources :visual_works
     resources :action_works
 
-    # Works
     resources :works, only: [] do
       get 'admin', on: :collection
       post :sort, on: :collection
