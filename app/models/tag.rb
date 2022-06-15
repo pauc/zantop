@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class Tag < ApplicationRecord
-  include SlugConcern
+  include HasSlugs
+
+  friendly_id :name, use: [:slugged, :simple_i18n, :history]
 
   translates :name
-
-  # extend FriendlyId
-  # friendly_id :name, use: [:slugged, :simple_i18n, :history]
 
   has_many :taggings, dependent: :destroy
   has_many :works, through: :taggings, source: :work
