@@ -3,14 +3,16 @@
 class Work < ApplicationRecord
   include HasImages
   include HasSections
-  include SlugConcern
+  include HasSlugs
+
+  friendly_id :title, use: [:slugged, :simple_i18n, :history]
+
+  translates :title, :description, :techniques, :place
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_many :sections, dependent: :destroy
   has_many :images, dependent: :destroy
-
-  translates :title, :description, :techniques, :place
 
   validates :title, presence: true
 
