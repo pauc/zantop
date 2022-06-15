@@ -3,11 +3,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "bcrypt", "~> 3.1.17"
+gem "friendly_id", "~> 5.4.0"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.6"
 gem "rails", "7.0.2.3"
+
 # Use SCSS for stylesheets
-gem "bcrypt", "~> 3.1.17"
 gem "sass-rails", ">= 6"
 
 # Use Active Storage variant
@@ -25,11 +27,12 @@ gem "globalize"
 gem "route_translator", "~> 12.1.0"
 
 # Pagination
-gem 'will_paginate', '~> 3.1'
+gem "will_paginate", "~> 3.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "debug", ">= 1.0.0"
   gem "rspec-rails", "~> 5.0.0"
   gem "rubocop"
   gem "rubocop-rails"
@@ -52,6 +55,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 3.26"
+  gem "factory_bot_rails"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
