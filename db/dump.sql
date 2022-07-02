@@ -3,9 +3,7 @@
 --
 
 -- Dumped from database version 13.4
--- Dumped by pg_dump version 13.6 (Ubuntu 13.6-1.pgdg21.10+1)
-
--- Started on 2022-04-05 23:16:08 CEST
+-- Dumped by pg_dump version 13.7 (Ubuntu 13.7-1.pgdg21.10+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,181 +17,187 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 3148 (class 0 OID 16783)
--- Dependencies: 201
--- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at) FROM stdin;
-277	group-process	32	Tag	2021-09-26 16:49:29.329393
-16	corpologia	5	Tag	2013-01-04 20:22:42.080227
-18	zenits-1	6	Work	2013-01-04 20:32:20.781848
-21	live-drawing	7	Tag	2013-01-04 20:49:45.169516
-22	possibles-impossibles	7	Work	2013-01-04 20:49:50.058707
-24	dues-veus-nues	8	Work	2013-01-04 20:55:14.033332
-25	instal-laci	9	Tag	2013-01-04 21:08:26.942934
-30	instal-lation	9	Tag	2013-01-04 21:11:42.491167
-37	e-qui-libri-s-ii	9	Work	2013-01-04 22:53:54.309538
-38	anima-l-u	10	Work	2013-01-05 00:35:49.845803
-39	dinergia-i-ii-iii	11	Work	2013-01-05 00:51:53.5636
-42	musical-ment	12	Work	2013-01-05 01:21:09.076696
-44	constelaccions	13	Work	2013-01-05 01:30:15.499152
-46	aflora	14	Work	2013-01-05 01:36:10.283705
-47	improvisar	15	Work	2013-01-05 01:58:06.695745
-280	proces-col-lectiu	32	Tag	2021-09-26 16:54:23.549571
-281	group-process--4	32	Tag	2021-09-26 16:54:23.563309
-282	proceso-colectivo	32	Tag	2021-09-26 16:54:23.576575
-54	paintings	6	Tag	2013-01-05 01:59:24.504772
-55	pintura	6	Tag	2013-01-05 01:59:24.523608
-57	obra-sobre-paper	8	Tag	2013-01-05 01:59:30.848381
-61	poetry	10	Tag	2013-01-05 01:59:34.008002
-69	prints	14	Tag	2013-01-05 01:59:49.094415
-70	obra-grafica-original	14	Tag	2013-01-05 01:59:49.122038
-71	impro	15	Work	2013-01-20 00:30:45.097375
-72	ouroboros-veus	16	Work	2013-01-20 00:53:58.84628
-73	uters	17	Work	2013-01-20 01:01:02.256225
-74	itaca-pas-a-dos	18	Work	2013-01-20 02:15:46.419908
-77	taboo-ser-res-cos-soc	19	Work	2013-01-20 02:38:43.5135
-85	6-senses--7	23	Work	2013-03-22 00:11:07.047606
-86	6-senses-consentidosinsentido	23	Work	2013-03-27 21:32:24.085653
-87	s-t-sin-titulo	24	Work	2013-03-27 21:35:26.196542
-89	el-celler-i--2	26	Work	2013-03-28 00:59:08.763383
-101	work-on-paper	8	Tag	2013-03-30 20:34:49.755064
-102	obra-sobre-papel	8	Tag	2013-03-30 20:34:49.783355
-104	si-lent-si-silenci	27	Work	2013-04-05 15:05:10.580186
-108	grafies-d-una-mirada-a-sarria	29	Work	2013-04-05 18:53:18.984708
-109	s-t-sense-titol	24	Work	2013-04-05 19:00:00.78391
-111	axis-salus-homenaje-al-buen-medico-premio-separ	30	Work	2013-08-20 12:53:55.078103
-112	axis-salus-hommage-to-the-good-doctor	30	Work	2013-08-20 12:58:58.405243
-113	a-z-5-5-f-acts	31	Work	2013-09-05 14:59:31.694005
-114	fent-volar-coloms	33	Work	2013-12-06 12:49:29.150227
-115	sum-us	34	Work	2013-12-06 13:04:41.830294
-116	quina-es-la-pregunta	35	Work	2013-12-06 13:07:21.05641
-117	despunxar	36	Work	2013-12-06 13:20:59.631277
-118	n-ombrares	37	Work	2014-05-17 12:35:52.164693
-119	ad-hoc-al-lloc	38	Work	2014-05-17 12:58:04.90134
-120	polissons	39	Work	2014-05-17 12:59:00.773155
-121	birds-ocells-al-cap	40	Work	2014-05-17 13:01:15.511937
-122	present-o-saltal-ara	41	Work	2014-05-17 13:20:04.167981
-123	els-polissons	39	Work	2014-07-17 22:28:58.050178
-124	axis-salus-homenatge-al-bon-metge	30	Work	2014-10-09 17:19:07.935541
-125	ad-hoc	38	Work	2015-01-04 21:41:51.492076
-126	d-accions-i-diccions	42	Work	2015-01-04 22:05:21.220762
-128	esclau	43	Work	2015-01-04 23:00:44.753569
-132	estona	44	Work	2015-01-05 00:13:38.843641
-133	free-will-x-veure	46	Work	2015-07-03 00:07:38.042621
-151	elgrandtour	47	Work	2015-09-27 22:40:27.716354
-152	pes-pressio	48	Work	2016-08-01 15:36:44.514509
-153	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	49	Work	2016-08-01 15:46:04.570841
-155	aux-bleux-aigus-d-acier-et-de-cristal--2	49	Work	2016-08-01 15:48:05.409903
-156	pomps-of-the-subsoil	51	Work	2016-08-01 16:18:35.364208
-157	eventuall	52	Work	2016-08-01 16:58:26.661855
-158	fluxus	53	Work	2016-08-01 17:43:57.132116
-159	donar-veu-al-desig	54	Work	2016-08-01 17:50:44.231874
-160	donar-veu-fer-un-pas	55	Work	2016-08-01 17:54:00.865555
-161	cromosomx	56	Work	2016-10-19 22:54:30.29125
-162	tot-fluxus	57	Work	2016-10-19 22:59:40.444079
-163	flux-us	57	Work	2017-02-19 23:10:21.263902
-165	idenditat	59	Work	2017-06-01 22:46:09.195209
-168	we-were-waiting-for-you--2	61	Work	2017-06-01 23:01:04.883158
-169	donar-veu-i-veure-mes	62	Work	2017-06-01 23:33:01.207476
-170	flux-u	63	Work	2017-06-02 00:01:33.89065
-171	fluxus--2	64	Work	2017-06-02 00:41:14.383949
-172	flux	63	Work	2018-08-22 14:36:16.887405
-174	desig-per-z-ones	65	Work	2018-08-22 15:06:01.778152
-175	per-se	66	Work	2018-08-22 15:12:28.308362
-177	ip-sum-id-est	67	Work	2018-08-22 15:22:59.142841
-179	quid-de-la-questio	68	Work	2018-08-22 15:29:30.567705
-182	ipse-ipsa-ipsum-em	69	Work	2019-01-18 23:45:26.10968
-183	proces-in-solid	70	Work	2019-01-28 21:07:00.410046
-184	entrar-sortint-sortir-entrant	71	Work	2019-03-07 22:44:50.245614
-284	gravats	92	Work	2021-11-19 20:17:29.246789
-186	cap-cap	72	Work	2019-04-10 23:03:30.958381
-187	trans-form-morf-i-vii	73	Work	2019-04-15 11:41:07.669373
-188	accio	21	Tag	2019-06-10 20:05:38.53404
-285	prints	92	Work	2021-11-20 13:37:15.609501
-286	obra-grafica	92	Work	2021-11-20 13:40:05.743944
-191	paisatge-liquid	74	Work	2019-06-10 20:41:51.289634
-192	enclaudebes	75	Work	2019-06-10 21:35:33.87648
-287	constelacciones	13	Work	2022-01-05 20:10:05.556017
-194	gravat9	76	Work	2019-06-10 21:53:37.34139
-288	entrar-saliendo-salir-entrando	71	Work	2022-01-05 20:21:12.678863
-289	paisaje-liquido	74	Work	2022-01-05 20:50:40.917296
-197	donar-veu-i-fer-un-pas	55	Work	2019-06-10 21:56:47.210592
-198	de-veu-en-veu	77	Work	2019-06-10 22:08:30.894399
-199	gravat-9	76	Work	2020-02-14 20:56:02.883574
-200	petraperta	70	Work	2020-02-14 21:04:33.105898
-201	thyllandsias	78	Work	2020-02-14 21:53:45.811803
-202	s-o-gota-a-gota	81	Work	2020-02-19 17:54:40.933021
-203	gota-gota	81	Work	2020-02-19 18:01:52.472334
-291	obra-original-sobre-paper	35	Tag	2022-01-05 21:21:36.340074
-206	accio-artistica-i-social	23	Tag	2020-06-15 15:31:19.5223
-292	original-work-on-paper	35	Tag	2022-01-05 21:21:36.355226
-293	obra-original-sobre-papel	35	Tag	2022-01-05 21:21:36.36721
-294	enclavedebes-os	75	Work	2022-01-10 11:45:29.824039
-214	phoscenes	82	Work	2020-09-21 08:55:36.149383
-218	des-cuidar	83	Work	2021-01-04 20:46:08.884519
-219	entrelinies-8ple8buit	84	Work	2021-01-04 20:54:14.354195
-220	entre-linies-8ple8buit-veure	84	Work	2021-01-04 20:55:21.787664
-221	i-o-torno-i-no-torno	85	Work	2021-04-08 21:04:23.004487
-223	si-i-o-no-torno-i-no-torno	85	Work	2021-04-08 21:31:03.896342
-227	wild-swans	87	Work	2021-08-31 23:10:08.83917
-228	over-and-over-again-and-again	87	Work	2021-09-13 17:22:20.925913
-229	art-efimer	31	Tag	2021-09-20 19:33:22.477462
-230	ull-agulles	88	Work	2021-09-20 19:33:22.594526
-231	accio-artistica-social	23	Tag	2021-09-20 19:36:53.841147
-232	social-art-performance	23	Tag	2021-09-20 19:36:53.855784
-233	accion-artistica-social	23	Tag	2021-09-20 19:36:53.869026
-234	accio-col-lectiva	19	Tag	2021-09-20 19:36:55.658244
-235	collective-performance	19	Tag	2021-09-20 19:36:55.671384
-236	accion-colectiva	19	Tag	2021-09-20 19:36:55.686552
-237	accio-poetica	18	Tag	2021-09-20 19:36:57.265862
-238	poetry--2	18	Tag	2021-09-20 19:36:57.278927
-239	accion-poetica	18	Tag	2021-09-20 19:36:57.29333
-240	accio-sonora	17	Tag	2021-09-20 19:36:59.17633
-241	sound-action	17	Tag	2021-09-20 19:36:59.193611
-242	accion-sonora	17	Tag	2021-09-20 19:36:59.209679
-243	ephemeral-art	31	Tag	2021-09-20 19:37:01.111925
-244	arte-efimero	31	Tag	2021-09-20 19:37:01.125897
-245	art-participatiu	28	Tag	2021-09-20 19:37:03.213451
-246	participatory-art	28	Tag	2021-09-20 19:37:03.230092
-247	arte-participativo	28	Tag	2021-09-20 19:37:03.245504
-248	dansa	1	Tag	2021-09-20 19:37:06.319359
-249	dance	1	Tag	2021-09-20 19:37:06.334841
-250	danza	1	Tag	2021-09-20 19:37:06.349234
-251	dibuix	13	Tag	2021-09-20 19:37:07.723576
-252	drawing	13	Tag	2021-09-20 19:37:07.748149
-253	dibujo	13	Tag	2021-09-20 19:37:07.761374
-254	sculpture	11	Tag	2021-09-20 19:37:08.964353
-255	escultura	11	Tag	2021-09-20 19:37:08.976701
-256	il-lustracio	15	Tag	2021-09-20 19:37:11.211667
-257	illustration	15	Tag	2021-09-20 19:37:11.22489
-258	ilustracion	15	Tag	2021-09-20 19:37:11.237544
-259	instal-lacio	9	Tag	2021-09-20 19:37:13.025223
-260	instalation	9	Tag	2021-09-20 19:37:13.037116
-261	instalacion	9	Tag	2021-09-20 19:37:13.048885
-262	land-art-o-art-natura	26	Tag	2021-09-20 19:37:15.640688
-263	land-art	26	Tag	2021-09-20 19:37:15.652926
-264	llibre	16	Tag	2021-09-20 19:37:20.001252
-265	book	16	Tag	2021-09-20 19:37:20.013448
-266	libro	16	Tag	2021-09-20 19:37:20.026703
-267	performance	21	Tag	2021-09-20 19:37:23.48247
-268	performance--2	21	Tag	2021-09-20 19:37:23.493662
-269	accion	21	Tag	2021-09-20 19:37:23.505331
-270	poetry--3	10	Tag	2021-09-20 19:37:25.218974
-271	poesia	10	Tag	2021-09-20 19:37:25.232987
-272	visual-poetry	27	Tag	2021-09-20 19:37:26.765614
-273	poesia-visual	27	Tag	2021-09-20 19:37:26.780888
-274	video-accio	30	Tag	2021-09-20 19:37:28.393461
-275	video-performance	30	Tag	2021-09-20 19:37:28.405798
-276	video-accion	30	Tag	2021-09-20 19:37:28.418593
+COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2022-04-05 21:10:37.484198	2022-04-05 21:10:37.484198
+schema_sha1	a26bce749f032e2b20b97767a3bbefd03a66d219	2022-04-05 21:10:37.500763	2022-04-05 21:10:37.500763
 \.
 
 
 --
--- TOC entry 3150 (class 0 OID 16794)
--- Dependencies: 203
--- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: friendly_id_slugs; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_at, scope) FROM stdin;
+277	group-process	32	Tag	2021-09-26 16:49:29.329393	\N
+16	corpologia	5	Tag	2013-01-04 20:22:42.080227	\N
+18	zenits-1	6	Work	2013-01-04 20:32:20.781848	\N
+21	live-drawing	7	Tag	2013-01-04 20:49:45.169516	\N
+22	possibles-impossibles	7	Work	2013-01-04 20:49:50.058707	\N
+24	dues-veus-nues	8	Work	2013-01-04 20:55:14.033332	\N
+25	instal-laci	9	Tag	2013-01-04 21:08:26.942934	\N
+30	instal-lation	9	Tag	2013-01-04 21:11:42.491167	\N
+37	e-qui-libri-s-ii	9	Work	2013-01-04 22:53:54.309538	\N
+38	anima-l-u	10	Work	2013-01-05 00:35:49.845803	\N
+39	dinergia-i-ii-iii	11	Work	2013-01-05 00:51:53.5636	\N
+42	musical-ment	12	Work	2013-01-05 01:21:09.076696	\N
+44	constelaccions	13	Work	2013-01-05 01:30:15.499152	\N
+46	aflora	14	Work	2013-01-05 01:36:10.283705	\N
+47	improvisar	15	Work	2013-01-05 01:58:06.695745	\N
+280	proces-col-lectiu	32	Tag	2021-09-26 16:54:23.549571	\N
+281	group-process--4	32	Tag	2021-09-26 16:54:23.563309	\N
+282	proceso-colectivo	32	Tag	2021-09-26 16:54:23.576575	\N
+54	paintings	6	Tag	2013-01-05 01:59:24.504772	\N
+55	pintura	6	Tag	2013-01-05 01:59:24.523608	\N
+57	obra-sobre-paper	8	Tag	2013-01-05 01:59:30.848381	\N
+61	poetry	10	Tag	2013-01-05 01:59:34.008002	\N
+69	prints	14	Tag	2013-01-05 01:59:49.094415	\N
+70	obra-grafica-original	14	Tag	2013-01-05 01:59:49.122038	\N
+71	impro	15	Work	2013-01-20 00:30:45.097375	\N
+72	ouroboros-veus	16	Work	2013-01-20 00:53:58.84628	\N
+73	uters	17	Work	2013-01-20 01:01:02.256225	\N
+74	itaca-pas-a-dos	18	Work	2013-01-20 02:15:46.419908	\N
+77	taboo-ser-res-cos-soc	19	Work	2013-01-20 02:38:43.5135	\N
+85	6-senses--7	23	Work	2013-03-22 00:11:07.047606	\N
+86	6-senses-consentidosinsentido	23	Work	2013-03-27 21:32:24.085653	\N
+87	s-t-sin-titulo	24	Work	2013-03-27 21:35:26.196542	\N
+89	el-celler-i--2	26	Work	2013-03-28 00:59:08.763383	\N
+101	work-on-paper	8	Tag	2013-03-30 20:34:49.755064	\N
+102	obra-sobre-papel	8	Tag	2013-03-30 20:34:49.783355	\N
+104	si-lent-si-silenci	27	Work	2013-04-05 15:05:10.580186	\N
+108	grafies-d-una-mirada-a-sarria	29	Work	2013-04-05 18:53:18.984708	\N
+109	s-t-sense-titol	24	Work	2013-04-05 19:00:00.78391	\N
+111	axis-salus-homenaje-al-buen-medico-premio-separ	30	Work	2013-08-20 12:53:55.078103	\N
+112	axis-salus-hommage-to-the-good-doctor	30	Work	2013-08-20 12:58:58.405243	\N
+113	a-z-5-5-f-acts	31	Work	2013-09-05 14:59:31.694005	\N
+114	fent-volar-coloms	33	Work	2013-12-06 12:49:29.150227	\N
+115	sum-us	34	Work	2013-12-06 13:04:41.830294	\N
+116	quina-es-la-pregunta	35	Work	2013-12-06 13:07:21.05641	\N
+117	despunxar	36	Work	2013-12-06 13:20:59.631277	\N
+118	n-ombrares	37	Work	2014-05-17 12:35:52.164693	\N
+119	ad-hoc-al-lloc	38	Work	2014-05-17 12:58:04.90134	\N
+120	polissons	39	Work	2014-05-17 12:59:00.773155	\N
+121	birds-ocells-al-cap	40	Work	2014-05-17 13:01:15.511937	\N
+122	present-o-saltal-ara	41	Work	2014-05-17 13:20:04.167981	\N
+123	els-polissons	39	Work	2014-07-17 22:28:58.050178	\N
+124	axis-salus-homenatge-al-bon-metge	30	Work	2014-10-09 17:19:07.935541	\N
+125	ad-hoc	38	Work	2015-01-04 21:41:51.492076	\N
+126	d-accions-i-diccions	42	Work	2015-01-04 22:05:21.220762	\N
+128	esclau	43	Work	2015-01-04 23:00:44.753569	\N
+132	estona	44	Work	2015-01-05 00:13:38.843641	\N
+133	free-will-x-veure	46	Work	2015-07-03 00:07:38.042621	\N
+151	elgrandtour	47	Work	2015-09-27 22:40:27.716354	\N
+152	pes-pressio	48	Work	2016-08-01 15:36:44.514509	\N
+153	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	49	Work	2016-08-01 15:46:04.570841	\N
+155	aux-bleux-aigus-d-acier-et-de-cristal--2	49	Work	2016-08-01 15:48:05.409903	\N
+156	pomps-of-the-subsoil	51	Work	2016-08-01 16:18:35.364208	\N
+157	eventuall	52	Work	2016-08-01 16:58:26.661855	\N
+158	fluxus	53	Work	2016-08-01 17:43:57.132116	\N
+159	donar-veu-al-desig	54	Work	2016-08-01 17:50:44.231874	\N
+160	donar-veu-fer-un-pas	55	Work	2016-08-01 17:54:00.865555	\N
+161	cromosomx	56	Work	2016-10-19 22:54:30.29125	\N
+162	tot-fluxus	57	Work	2016-10-19 22:59:40.444079	\N
+163	flux-us	57	Work	2017-02-19 23:10:21.263902	\N
+165	idenditat	59	Work	2017-06-01 22:46:09.195209	\N
+168	we-were-waiting-for-you--2	61	Work	2017-06-01 23:01:04.883158	\N
+169	donar-veu-i-veure-mes	62	Work	2017-06-01 23:33:01.207476	\N
+170	flux-u	63	Work	2017-06-02 00:01:33.89065	\N
+171	fluxus--2	64	Work	2017-06-02 00:41:14.383949	\N
+172	flux	63	Work	2018-08-22 14:36:16.887405	\N
+174	desig-per-z-ones	65	Work	2018-08-22 15:06:01.778152	\N
+175	per-se	66	Work	2018-08-22 15:12:28.308362	\N
+177	ip-sum-id-est	67	Work	2018-08-22 15:22:59.142841	\N
+179	quid-de-la-questio	68	Work	2018-08-22 15:29:30.567705	\N
+182	ipse-ipsa-ipsum-em	69	Work	2019-01-18 23:45:26.10968	\N
+183	proces-in-solid	70	Work	2019-01-28 21:07:00.410046	\N
+184	entrar-sortint-sortir-entrant	71	Work	2019-03-07 22:44:50.245614	\N
+284	gravats	92	Work	2021-11-19 20:17:29.246789	\N
+186	cap-cap	72	Work	2019-04-10 23:03:30.958381	\N
+187	trans-form-morf-i-vii	73	Work	2019-04-15 11:41:07.669373	\N
+188	accio	21	Tag	2019-06-10 20:05:38.53404	\N
+285	prints	92	Work	2021-11-20 13:37:15.609501	\N
+286	obra-grafica	92	Work	2021-11-20 13:40:05.743944	\N
+191	paisatge-liquid	74	Work	2019-06-10 20:41:51.289634	\N
+192	enclaudebes	75	Work	2019-06-10 21:35:33.87648	\N
+287	constelacciones	13	Work	2022-01-05 20:10:05.556017	\N
+194	gravat9	76	Work	2019-06-10 21:53:37.34139	\N
+288	entrar-saliendo-salir-entrando	71	Work	2022-01-05 20:21:12.678863	\N
+289	paisaje-liquido	74	Work	2022-01-05 20:50:40.917296	\N
+197	donar-veu-i-fer-un-pas	55	Work	2019-06-10 21:56:47.210592	\N
+198	de-veu-en-veu	77	Work	2019-06-10 22:08:30.894399	\N
+199	gravat-9	76	Work	2020-02-14 20:56:02.883574	\N
+200	petraperta	70	Work	2020-02-14 21:04:33.105898	\N
+201	thyllandsias	78	Work	2020-02-14 21:53:45.811803	\N
+202	s-o-gota-a-gota	81	Work	2020-02-19 17:54:40.933021	\N
+203	gota-gota	81	Work	2020-02-19 18:01:52.472334	\N
+291	obra-original-sobre-paper	35	Tag	2022-01-05 21:21:36.340074	\N
+206	accio-artistica-i-social	23	Tag	2020-06-15 15:31:19.5223	\N
+292	original-work-on-paper	35	Tag	2022-01-05 21:21:36.355226	\N
+293	obra-original-sobre-papel	35	Tag	2022-01-05 21:21:36.36721	\N
+294	enclavedebes-os	75	Work	2022-01-10 11:45:29.824039	\N
+214	phoscenes	82	Work	2020-09-21 08:55:36.149383	\N
+218	des-cuidar	83	Work	2021-01-04 20:46:08.884519	\N
+219	entrelinies-8ple8buit	84	Work	2021-01-04 20:54:14.354195	\N
+220	entre-linies-8ple8buit-veure	84	Work	2021-01-04 20:55:21.787664	\N
+221	i-o-torno-i-no-torno	85	Work	2021-04-08 21:04:23.004487	\N
+223	si-i-o-no-torno-i-no-torno	85	Work	2021-04-08 21:31:03.896342	\N
+227	wild-swans	87	Work	2021-08-31 23:10:08.83917	\N
+228	over-and-over-again-and-again	87	Work	2021-09-13 17:22:20.925913	\N
+229	art-efimer	31	Tag	2021-09-20 19:33:22.477462	\N
+230	ull-agulles	88	Work	2021-09-20 19:33:22.594526	\N
+231	accio-artistica-social	23	Tag	2021-09-20 19:36:53.841147	\N
+232	social-art-performance	23	Tag	2021-09-20 19:36:53.855784	\N
+233	accion-artistica-social	23	Tag	2021-09-20 19:36:53.869026	\N
+234	accio-col-lectiva	19	Tag	2021-09-20 19:36:55.658244	\N
+235	collective-performance	19	Tag	2021-09-20 19:36:55.671384	\N
+236	accion-colectiva	19	Tag	2021-09-20 19:36:55.686552	\N
+237	accio-poetica	18	Tag	2021-09-20 19:36:57.265862	\N
+238	poetry--2	18	Tag	2021-09-20 19:36:57.278927	\N
+239	accion-poetica	18	Tag	2021-09-20 19:36:57.29333	\N
+240	accio-sonora	17	Tag	2021-09-20 19:36:59.17633	\N
+241	sound-action	17	Tag	2021-09-20 19:36:59.193611	\N
+242	accion-sonora	17	Tag	2021-09-20 19:36:59.209679	\N
+243	ephemeral-art	31	Tag	2021-09-20 19:37:01.111925	\N
+244	arte-efimero	31	Tag	2021-09-20 19:37:01.125897	\N
+245	art-participatiu	28	Tag	2021-09-20 19:37:03.213451	\N
+246	participatory-art	28	Tag	2021-09-20 19:37:03.230092	\N
+247	arte-participativo	28	Tag	2021-09-20 19:37:03.245504	\N
+248	dansa	1	Tag	2021-09-20 19:37:06.319359	\N
+249	dance	1	Tag	2021-09-20 19:37:06.334841	\N
+250	danza	1	Tag	2021-09-20 19:37:06.349234	\N
+251	dibuix	13	Tag	2021-09-20 19:37:07.723576	\N
+252	drawing	13	Tag	2021-09-20 19:37:07.748149	\N
+253	dibujo	13	Tag	2021-09-20 19:37:07.761374	\N
+254	sculpture	11	Tag	2021-09-20 19:37:08.964353	\N
+255	escultura	11	Tag	2021-09-20 19:37:08.976701	\N
+256	il-lustracio	15	Tag	2021-09-20 19:37:11.211667	\N
+257	illustration	15	Tag	2021-09-20 19:37:11.22489	\N
+258	ilustracion	15	Tag	2021-09-20 19:37:11.237544	\N
+259	instal-lacio	9	Tag	2021-09-20 19:37:13.025223	\N
+260	instalation	9	Tag	2021-09-20 19:37:13.037116	\N
+261	instalacion	9	Tag	2021-09-20 19:37:13.048885	\N
+262	land-art-o-art-natura	26	Tag	2021-09-20 19:37:15.640688	\N
+263	land-art	26	Tag	2021-09-20 19:37:15.652926	\N
+264	llibre	16	Tag	2021-09-20 19:37:20.001252	\N
+265	book	16	Tag	2021-09-20 19:37:20.013448	\N
+266	libro	16	Tag	2021-09-20 19:37:20.026703	\N
+267	performance	21	Tag	2021-09-20 19:37:23.48247	\N
+268	performance--2	21	Tag	2021-09-20 19:37:23.493662	\N
+269	accion	21	Tag	2021-09-20 19:37:23.505331	\N
+270	poetry--3	10	Tag	2021-09-20 19:37:25.218974	\N
+271	poesia	10	Tag	2021-09-20 19:37:25.232987	\N
+272	visual-poetry	27	Tag	2021-09-20 19:37:26.765614	\N
+273	poesia-visual	27	Tag	2021-09-20 19:37:26.780888	\N
+274	video-accio	30	Tag	2021-09-20 19:37:28.393461	\N
+275	video-performance	30	Tag	2021-09-20 19:37:28.405798	\N
+276	video-accion	30	Tag	2021-09-20 19:37:28.418593	\N
+\.
+
+
+--
+-- Data for Name: image_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.image_translations (id, image_id, locale, credits, created_at, updated_at) FROM stdin;
@@ -729,9 +733,7 @@ COPY public.image_translations (id, image_id, locale, credits, created_at, updat
 
 
 --
--- TOC entry 3171 (class 0 OID 16927)
--- Dependencies: 225
--- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: works; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "position", type, created_at, updated_at, published, images_count) FROM stdin;
@@ -810,9 +812,7 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 
 
 --
--- TOC entry 3152 (class 0 OID 16807)
--- Dependencies: 205
--- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.images (id, image, "position", created_at, updated_at, video, work_id) FROM stdin;
@@ -1223,9 +1223,7 @@ COPY public.images (id, image, "position", created_at, updated_at, video, work_i
 
 
 --
--- TOC entry 3154 (class 0 OID 16819)
--- Dependencies: 207
--- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: page_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.page_translations (id, page_id, locale, title, body, created_at, updated_at) FROM stdin;
@@ -1237,9 +1235,7 @@ COPY public.page_translations (id, page_id, locale, title, body, created_at, upd
 
 
 --
--- TOC entry 3156 (class 0 OID 16832)
--- Dependencies: 209
--- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.pages (id, created_at, updated_at) FROM stdin;
@@ -1249,9 +1245,20 @@ COPY public.pages (id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 3158 (class 0 OID 16840)
--- Dependencies: 211
--- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.schema_migrations (version) FROM stdin;
+20220331224759
+20220331204131
+20220331222052
+20220331223522
+20220406153731
+\.
+
+
+--
+-- Data for Name: section_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.section_translations (id, section_id, locale, title, body, created_at, updated_at) FROM stdin;
@@ -1289,9 +1296,7 @@ COPY public.section_translations (id, section_id, locale, title, body, created_a
 
 
 --
--- TOC entry 3160 (class 0 OID 16853)
--- Dependencies: 213
--- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: sections; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.sections (id, "position", created_at, updated_at, work_id) FROM stdin;
@@ -1319,9 +1324,7 @@ COPY public.sections (id, "position", created_at, updated_at, work_id) FROM stdi
 
 
 --
--- TOC entry 3162 (class 0 OID 16862)
--- Dependencies: 215
--- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: tag_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) FROM stdin;
@@ -1401,9 +1404,7 @@ COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) 
 
 
 --
--- TOC entry 3166 (class 0 OID 16885)
--- Dependencies: 219
--- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: tags; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count) FROM stdin;
@@ -1435,9 +1436,7 @@ COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, tagging
 
 
 --
--- TOC entry 3164 (class 0 OID 16875)
--- Dependencies: 217
--- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: taggings; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.taggings (id, tag_id, created_at, updated_at, work_id) FROM stdin;
@@ -1562,9 +1561,16 @@ COPY public.taggings (id, tag_id, created_at, updated_at, work_id) FROM stdin;
 
 
 --
--- TOC entry 3169 (class 0 OID 16914)
--- Dependencies: 223
--- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.users (id, name, email, admin, password_digest, created_at, updated_at) FROM stdin;
+2	\N	example@example.com	f	$2a$12$ppgW87WSAlIm7zuvzF.QvOwy.lC25yRJatOLEBGOHOVVdEveFDALS	2022-04-05 21:10:51.570191	2022-04-05 21:10:51.570191
+\.
+
+
+--
+-- Data for Name: work_translations; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.work_translations (id, work_id, locale, title, description, techniques, place, created_at, updated_at) FROM stdin;
@@ -1670,123 +1676,95 @@ COPY public.work_translations (id, work_id, locale, title, description, techniqu
 
 
 --
--- TOC entry 3177 (class 0 OID 0)
--- Dependencies: 200
--- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 294, true);
 
 
 --
--- TOC entry 3178 (class 0 OID 0)
--- Dependencies: 202
--- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: image_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.image_translations_id_seq', 594, true);
 
 
 --
--- TOC entry 3179 (class 0 OID 0)
--- Dependencies: 204
--- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.images_id_seq', 472, true);
 
 
 --
--- TOC entry 3180 (class 0 OID 0)
--- Dependencies: 206
--- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: page_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.page_translations_id_seq', 4, true);
 
 
 --
--- TOC entry 3181 (class 0 OID 0)
--- Dependencies: 208
--- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: pages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.pages_id_seq', 2, true);
 
 
 --
--- TOC entry 3182 (class 0 OID 0)
--- Dependencies: 210
--- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.section_translations_id_seq', 30, true);
 
 
 --
--- TOC entry 3183 (class 0 OID 0)
--- Dependencies: 212
--- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.sections_id_seq', 20, true);
 
 
 --
--- TOC entry 3184 (class 0 OID 0)
--- Dependencies: 214
--- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: tag_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.tag_translations_id_seq', 93, true);
 
 
 --
--- TOC entry 3185 (class 0 OID 0)
--- Dependencies: 216
--- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.taggings_id_seq', 690, true);
 
 
 --
--- TOC entry 3186 (class 0 OID 0)
--- Dependencies: 218
--- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.tags_id_seq', 35, true);
 
 
 --
--- TOC entry 3187 (class 0 OID 0)
--- Dependencies: 220
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 2, true);
 
 
 --
--- TOC entry 3188 (class 0 OID 0)
--- Dependencies: 222
--- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.work_translations_id_seq', 113, true);
 
 
 --
--- TOC entry 3189 (class 0 OID 0)
--- Dependencies: 224
--- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
 SELECT pg_catalog.setval('public.works_id_seq', 92, true);
 
-
--- Completed on 2022-04-05 23:16:08 CEST
 
 --
 -- PostgreSQL database dump complete
