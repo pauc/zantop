@@ -7,7 +7,7 @@ require "rails"
 require "active_model/railtie"
 # require "active_job/railtie"
 require "active_record/railtie"
-# require "active_storage/engine"
+require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 # require "action_mailbox/engine"
@@ -42,5 +42,7 @@ module Zantop
     config.i18n.available_locales = [:ca, :en, :es]
     config.i18n.default_locale    = :ca
     config.i18n.fallbacks         = true
+
+    config.active_storage.service = :local
   end
 end

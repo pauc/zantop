@@ -12,8 +12,10 @@ gem "rails", "7.0.2.3"
 # Use SCSS for stylesheets
 gem "sass-rails", ">= 6"
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+# Image processing
+gem "image_processing", "~> 1.12"
+gem "image_optim"
+gem "image_optim_pack"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
