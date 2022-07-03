@@ -7,13 +7,14 @@ class Image < ApplicationRecord
 
   belongs_to :work
 
-  attr_accessor :image, :video, :credits, :image_cache
-
   translates :credits
 
-  # mount_uploader :image, ImageUploader
-
   validate :image_xor_video
+
+  has_one_attached :image do |attachable|
+    attachable.variant :thumb,  resize_to_fit:  [100, 100]
+    attachable.variant :medium, resize_to_fill: [400, 400]
+  end
 
   # acts_as_list scope: 'illustrated_id=#{illustrated_id} and
   #                      illustrated_type=\'#{illustrated_type}\''
@@ -30,13 +31,11 @@ class Image < ApplicationRecord
     if image.present? && video.present?
       errors.add(:image, "Només imatge o video, no tots dos")
       errors.add(:video, "Només imatge o video, no tots dos")
-      return false
     end
 
     if image.blank? && video.blank?
       errors.add(:image, "Has d'indicar una imatge o vídeo")
       errors.add(:video, "Has d'indicar una imatge o vídeo")
-      false
     end
   end
 end

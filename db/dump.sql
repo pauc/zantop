@@ -17,6 +17,30 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Data for Name: active_storage_blobs; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.active_storage_blobs (id, key, filename, content_type, metadata, service_name, byte_size, checksum, created_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: active_storage_attachments; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.active_storage_attachments (id, name, record_type, record_id, blob_id, created_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: active_storage_variant_records; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.active_storage_variant_records (id, blob_id, variation_digest) FROM stdin;
+\.
+
+
+--
 -- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
@@ -815,7 +839,7 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 -- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-COPY public.images (id, image, "position", created_at, updated_at, video, work_id) FROM stdin;
+COPY public.images (id, deprecated_image, "position", created_at, updated_at, video, work_id) FROM stdin;
 142	sum_us_2.jpeg	3	2014-05-17 12:13:09.261653	2014-05-17 12:19:36.777841		34
 465	DSC_0106-004.jpg	6	2021-09-26 20:13:56.480034	2022-01-13 20:54:16.123605		87
 197	20140706_164949.jpg	1	2015-01-05 00:13:34.13966	2022-01-05 21:38:07.42288		44
@@ -1254,6 +1278,8 @@ COPY public.schema_migrations (version) FROM stdin;
 20220331222052
 20220331223522
 20220406153731
+20220702222104
+20220703004311
 \.
 
 
@@ -1676,6 +1702,27 @@ COPY public.work_translations (id, work_id, locale, title, description, techniqu
 
 
 --
+-- Name: active_storage_attachments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+--
+
+SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 1, true);
+
+
+--
+-- Name: active_storage_blobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+--
+
+SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 1, true);
+
+
+--
+-- Name: active_storage_variant_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+--
+
+SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 1, false);
+
+
+--
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
@@ -1693,7 +1740,7 @@ SELECT pg_catalog.setval('public.image_translations_id_seq', 594, true);
 -- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.images_id_seq', 472, true);
+SELECT pg_catalog.setval('public.images_id_seq', 473, true);
 
 
 --

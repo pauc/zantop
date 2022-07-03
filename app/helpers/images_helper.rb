@@ -2,14 +2,14 @@
 
 module ImagesHelper
   def preview_image(work)
-    media = work.images.first
-    if media.present? && media.type == "image"
-      image_tag media.image.medium
-    elsif media.present? && media.type == "video"
-      image_tag("abustany_Movie_reel.svg", class: "video unprocessed",
-                                           "data-video": media.video)
-    else
-      default_image_for_works
+    return default_image_for_works unless (media = work.images.first)
+
+    if media.type == "video"
+      return image_tag("abustany_Movie_reel.svg",
+                       class: "video unprocessed",
+                       "data-video": media.video)
     end
+
+    image_tag(media.image.variant(:medium))
   end
 end
