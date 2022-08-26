@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include SessionsHelper
+
   before_action :set_locale,
                 :set_tags
 
@@ -21,16 +23,6 @@ class ApplicationController < ActionController::Base
 
   def set_tags
     @enabled_tags = Tag.enabled.includes(:translations)
-  end
-
-  def current_user
-    return unless session[:user_id]
-
-    @current_user ||= User.find(session[:user_id])
-  end
-
-  def current_user?
-    !!current_user
   end
 
   def locale_from_headers

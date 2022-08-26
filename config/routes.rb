@@ -1,14 +1,23 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resource :session, only: [:create, :destroy]
-
   localized do
+    # Sessions
+    resource :session, only: [:create, :destroy]
     get :login, to: "sessions#new"
     get :logout, to: "sessions#destroy"
 
+    # Users
+    resources :users, except: [:index, :show, :destroy]
+
+    # Works
     resources :visual_works
     resources :action_works
+
+    resources :works, only: [] do
+      get 'admin', on: :collection
+      post :sort, on: :collection
+    end
 
     # Tags
     resources :tags, except: [:new, :edit] do

@@ -1,14 +1,14 @@
 <div id="admin_bar">
   <div class="container">
     <div id='session_controls'>
-      <%# <%= link_to t('change_password'), edit_user_path(current_user) %>
+      <%= link_to t('change_password'), edit_user_path(current_user) %>
       <%= link_to 'Sortir', logout_path, class: "logout" %>
     </div>
     <div id="generic_controls">
-      <%# <%= link_to "Crear treball d'acció", new_action_work_path %>
-      <%# <%= link_to "Crear treball visual", new_visual_work_path %>
-      <%# <%= link_to "Ordenar treballs", admin_works_path %>
-      <%# <%= link_to "Administrar tags", admin_tags_path %>
+      <%= link_to "Crear treball d'acció", new_action_work_path %>
+      <%= link_to "Crear treball visual", new_visual_work_path %>
+      <%= link_to "Ordenar treballs", admin_works_path %>
+      <%= link_to "Administrar tags", admin_tags_path %>
     </div>
     <div id="content_controls">
       <%# <%= raw send("#{controller.controller_name}_#{controller.action_name}_content_controls") %>
