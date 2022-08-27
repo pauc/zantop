@@ -18,3 +18,5 @@ test:
 production:
   <<: *default
   database: zantop_production
+  username: <%= Rails.application.credentials.dig(:db, :username) %>
+  password: <%= Rails.application.credentials.dig(:db, :password) %>
