@@ -38,17 +38,17 @@
     left: -0.5em;
     border-width: 0.5em;
     border-style: solid;
-    -moz-border-image: image-url('torn_edges_border.png') 10 10 repeat;
-    -webkit-border-image: image-url('torn_edges_border.png') 10 10 repeat;
-    -o-border-image: image-url('torn_edges_border.png') 10 10 repeat;
-    border-image: image-url('torn_edges_border.png') 10 10 repeat;
+    -moz-border-image: asset-url('torn_edges_border.png') 10 10 repeat;
+    -webkit-border-image: asset-url('torn_edges_border.png') 10 10 repeat;
+    -o-border-image: asset-url('torn_edges_border.png') 10 10 repeat;
+    border-image: asset-url('torn_edges_border.png') 10 10 repeat;
     text-align: center;
     font-size: 1.3em;
 
     a {
       display: block;
       position: relative;
-      background: image-url('paper.png') 50% 50%;
+      background: asset-url('paper.png') 50% 50%;
     }
   }
 }
