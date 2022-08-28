@@ -13,9 +13,9 @@ gem "rails", "7.0.2.3"
 gem "sass-rails", ">= 6"
 
 # Image processing
-gem "image_processing", "~> 1.12"
 gem "image_optim"
 gem "image_optim_pack"
+gem "image_processing", "~> 1.12"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -41,6 +41,15 @@ group :development, :test do
 end
 
 group :development do
+  # Deployments
+  gem "bcrypt_pbkdf",       require: false
+  gem "capistrano",         require: false
+  gem "capistrano3-puma",   require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano-rails",   require: false
+  gem "capistrano-rbenv",   require: false
+  gem "ed25519",            require: false
+
   gem "listen", "~> 3.3"
   # Display performance information such as SQL time and flame graphs for each request
   # in your browser.
