@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale,
                 :set_tags
 
+  before_action do
+    ActiveStorage::Current.url_options = { host: request.host }
+  end
+
   around_action :set_locale_from_url
   helper_method :current_user, :current_user?
 
