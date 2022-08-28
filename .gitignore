@@ -28,3 +28,5 @@ yarn-debug.log*
 .yarn-integrity
 spec/examples.txt
 uploads
+
+/config/credentials/production.key
