@@ -30,3 +30,6 @@ spec/examples.txt
 uploads
 
 /config/credentials/production.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

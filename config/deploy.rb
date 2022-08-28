@@ -20,6 +20,11 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all
 
+# nvm
+set :nvm_type, :user
+set :nvm_node, "v" + File.readlines(".tool-versions", chomp: true).find { |line| line.sub!(/\Anodejs /, "") }
+set :nvm_map_bins, %w{node npm yarn sass}
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -32,7 +37,8 @@ set :rbenv_roles, :all
 
 # Default value for :linked_files is []
 append :linked_files, "config/credentials/production.key",
-                      "config/credentials/production.yml.enc"
+                      "config/credentials/production.yml.enc",
+                      ".nvmrc"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log",
@@ -40,7 +46,8 @@ append :linked_dirs, "log",
                      "tmp/cache",
                      "tmp/sockets",
                      "public",
-                     "uploads"
+                     "uploads",
+                     "node_modules"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

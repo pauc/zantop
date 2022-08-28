@@ -3,14 +3,18 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby "3.1.1"
+
+gem "rails", "7.0.2.3"
+
 gem "bcrypt", "~> 3.1.17"
 gem "friendly_id", "~> 5.4.0"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.6"
-gem "rails", "7.0.2.3"
 
-# Use SCSS for stylesheets
-gem "sass-rails", ">= 6"
+# Assets
+gem "cssbundling-rails"
+gem "sprockets-rails"
 
 # Image processing
 gem "image_optim"
@@ -46,6 +50,7 @@ group :development do
   gem "capistrano",         require: false
   gem "capistrano3-puma",   require: false
   gem "capistrano-bundler", require: false
+  gem "capistrano-nvm",     require: false
   gem "capistrano-rails",   require: false
   gem "capistrano-rbenv",   require: false
   gem "ed25519",            require: false

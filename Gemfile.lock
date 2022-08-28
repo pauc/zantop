@@ -85,6 +85,8 @@ GEM
       sshkit (>= 1.9.0)
     capistrano-bundler (2.1.0)
       capistrano (~> 3.1)
+    capistrano-nvm (0.0.7)
+      capistrano (~> 3.1)
     capistrano-rails (1.6.2)
       capistrano (~> 3.1)
       capistrano-bundler (>= 1.1, < 3)
@@ -146,8 +148,6 @@ GEM
     image_size (3.0.2)
     in_threads (1.6.0)
     io-wait (0.2.1)
-    jsbundling-rails (1.0.3)
-      railties (>= 6.0.0)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -275,14 +275,6 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -302,7 +294,6 @@ GEM
       net-ssh (>= 2.8.0)
     strscan (3.0.1)
     thor (1.2.1)
-    tilt (2.0.10)
     timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -330,6 +321,7 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
+  capistrano-nvm
   capistrano-rails
   capistrano-rbenv
   capistrano3-puma
@@ -342,7 +334,6 @@ DEPENDENCIES
   image_optim
   image_optim_pack
   image_processing (~> 1.12)
-  jsbundling-rails
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.6)
@@ -353,7 +344,6 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
-  sassc-rails
   selenium-webdriver (>= 4.0.0.rc1)
   simple_form
   sprockets-rails
