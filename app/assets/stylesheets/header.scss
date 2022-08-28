@@ -54,7 +54,7 @@
     position: relative;
 
     &:before {
-      background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 0;
+      background: transparent asset-url('torn_edges_barra_menu.png') repeat-x 0 0;
       position: absolute;
       content: " ";
       width: 100%;
@@ -63,7 +63,7 @@
     }
 
     &:after {
-      background: transparent image-url('torn_edges_barra_menu.png') repeat-x 0 100%;
+      background: transparent asset-url('torn_edges_barra_menu.png') repeat-x 0 100%;
       position: absolute;
       content: " ";
       width: 100%;
