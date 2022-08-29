@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+docker-compose up -d db
+
 if ! foreman version &> /dev/null
 then
   echo "Installing foreman..."

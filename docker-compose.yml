@@ -1,3 +1,5 @@
+---
+
 x-database-credentials: &database_credentials
   ZANTOP_DATABASE_HOST: zantop_db
   ZANTOP_DATABASE_USER: zantop
@@ -41,12 +43,6 @@ services:
       <<: *rails_dev_environment
     ports:
       - "3000:3000"
-
-  spring:
-    <<: *app_config
-    command: bin/spring server
-    environment:
-      <<: *rails_dev_environment
 
 networks:
   default:

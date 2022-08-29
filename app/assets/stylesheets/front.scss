@@ -1,14 +1,15 @@
 .front {
+  #main {
+    margin-top: 2.5rem;
+  }
+
   #works {
-    margin-left: -3.333333%;
-    // @include clearfix;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
 
     .work {
-      width: 30%;
       position: relative;
-      float: left;
-      margin-left: 3.333333%;
-      margin-top: 3.333333%;
       background: black;
 
       a.work-preview {
@@ -54,9 +55,19 @@
 }
 
 #pagination {
-  clear: both;
   margin-top: 2em;
   text-align: center;
+
+  span, em, a {
+    min-width: 1em;
+    padding: .2em;
+    border: 1px solid $clear_grey;
+    text-decoration: none;
+  }
+
+  .gap {
+    border: none;
+  }
 }
 
 /* Per a efecte de fadeIn si està activat el javascript */

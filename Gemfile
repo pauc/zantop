@@ -56,11 +56,9 @@ group :development do
   gem "ed25519",            require: false
 
   gem "listen", "~> 3.3"
-  # Display performance information such as SQL time and flame graphs for each request
-  # in your browser.
-  # Can be configured to work on production as well see:
-  # https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem "rack-mini-profiler", "~> 2.0"
+
+  gem "guard-livereload", "~> 2.5"
+  gem "rack-livereload", "~> 0.3.17"
 end
 
 group :test do
