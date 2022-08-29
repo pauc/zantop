@@ -19,7 +19,7 @@ class Work < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   def first_image
-    images.where.not(image: nil).first.try(:image).try(:medium)
+    images.with_attached_image.first&.image&.variant(:medium)
   end
 
   def related
