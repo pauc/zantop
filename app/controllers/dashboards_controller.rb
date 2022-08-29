@@ -4,9 +4,18 @@ class DashboardsController < ApplicationController
   # include Authorization
 
   def front
-    @front_works = Work
-                   .published
-                   .includes(:translations)
-                   .paginate(page: params[:page], per_page: 12)
+    @works = Work
+             .published
+             .includes(:translations)
+             .paginate(page: params[:page], per_page: 12)
+  end
+
+  def more_works
+    works = Work
+            .published
+            .includes(:translations)
+            .paginate(page: params.fetch(:page), per_page: 12)
+
+    render partial: "works", locals: { works: works }
   end
 end

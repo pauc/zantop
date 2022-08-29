@@ -14,6 +14,7 @@ gem "puma", "~> 5.6"
 
 # Assets
 gem "cssbundling-rails"
+gem "jsbundling-rails"
 gem "sprockets-rails"
 
 # Image processing
@@ -42,6 +43,9 @@ group :development, :test do
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
+
+  gem "guard-rspec"
+  gem "libnotify"
 end
 
 group :development do
@@ -57,8 +61,8 @@ group :development do
 
   gem "listen", "~> 3.3"
 
-  gem "guard-livereload", "~> 2.5"
-  gem "rack-livereload", "~> 0.3.17"
+  gem "guard-livereload", "~> 2.5",    require: false
+  gem "rack-livereload",  "~> 0.3.17"
 end
 
 group :test do

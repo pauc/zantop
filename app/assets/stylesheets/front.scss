@@ -16,7 +16,6 @@
         width: 100%;
         padding: 50% 0;
         display: block;
-        line-height: 0;
         box-shadow: 0 0 6px 1px rgba(77,28,34,.61);
 
         img {
@@ -55,18 +54,21 @@
 }
 
 #pagination {
-  margin-top: 2em;
+  margin-top: 3rem;
   text-align: center;
+  font-size: 1.875rem;
 
-  span, em, a {
-    min-width: 1em;
-    padding: .2em;
-    border: 1px solid $clear_grey;
-    text-decoration: none;
-  }
+  .pagination {
+    span, em, a {
+      min-width: 1rem;
+      padding: .2rem;
+      border: 1px solid $clear_grey;
+      text-decoration: none;
+    }
 
-  .gap {
-    border: none;
+    .gap {
+      border: none;
+    }
   }
 }
 

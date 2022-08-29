@@ -29,6 +29,8 @@
 
     .info-container{
       flex: 2.7;
+      max-height: 18rem;
+      overflow: hidden;
 
       p {
         margin: 0;

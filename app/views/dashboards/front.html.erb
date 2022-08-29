@@ -1,7 +1,11 @@
 <div id='works'>
-  <%= render partial: 'works', locals: { works: @front_works } %>
+  <%= render "works", works: @works %>
 </div>
-<div id="pagination" data-alt_text="&laquo; <%= t('get_more_works') %> &raquo;">
-  <%= will_paginate @front_works %>
+
+<div id="pagination"
+     data-behaviour="front-page-pagination"
+     data-alt-text="&laquo; <%= t('get_more_works') %> &raquo;"
+     data-total-pages="<%= @works.total_pages %>">
+  <%= will_paginate @works %>
 </div>
 

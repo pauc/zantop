@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html class="no-script">
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= yield :title %>ZANTOP</title>
     <%= stylesheet_link_tag "application", media: "all" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "public", defer: true %>
+    <%= javascript_include_tag "admin", defer: true if current_user? %>
   </head>
 
   <body class="<%= body_classes %>">
@@ -26,15 +28,5 @@
     </div>
 
     <%= render 'footer' %>
-    <%#<%= javascript_include_tag "application" %>
-    <%#<%= javascript_include_tag "ckeditor/init" if current_user? %>
-    <%#<%= javascript_include_tag "admin" if current_user? %>
-    <script type="text/javascript" charset="utf-8">
-      $(document).ajaxSend(function(e, xhr, options) {
-        var token = $("meta[name='csrf-token']").attr("content");
-        xhr.setRequestHeader("X-CSRF-Token", token);
-      });
-    </script>
-    <%#<%= render "ga" if Rails.env.production? and !current_user? %>
   </body>
 </html>

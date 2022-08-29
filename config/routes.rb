@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get "about", to: "dashboards#about"
 
     root to: "dashboards#front"
+    get "more_works", to: "dashboards#more_works"
   end
 
   get "/", to: "dashboards#front"
