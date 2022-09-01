@@ -16,14 +16,19 @@
 
     <div class="container">
       <%= render 'flash_messages' %>
+    </div>
 
+    <div class="container">
       <%= yield :page_title %>
+    </div>
 
+    <div class="container main-container">
       <div id="main" role="main">
         <div class="content">
           <%= yield %>
         </div>
       </div>
+
       <%= render 'sidebar' if sidebar? %>
     </div>
 

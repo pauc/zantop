@@ -36,6 +36,9 @@ gem "route_translator", "~> 12.1.0"
 # Pagination
 gem "will_paginate", "~> 3.1"
 
+# Truncate HTML content
+gem "html_truncator"
+
 group :development, :test do
   gem "debug"
 

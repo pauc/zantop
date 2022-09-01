@@ -91,30 +91,6 @@ a:hover, .front .work:hover .work-title a {
   }
 }
 
-/* Estils de fonts per a la pàgina d'inici */
-.front {
-  #brand, #main_menu {
-    div a {
-      font-size: 4em;
-      //@include transition(color 0.25s ease-in-out);
-
-      &:hover {
-        color: #ac4a19;
-        //@include transition(color 0.25s ease-in-out);
-      }
-    }
-
-    i {
-      font-size: 2.5em;
-      font-style: normal;
-    }
-  }
-
-  .work-title {
-    font-size: 1.3em
-  }
-}
-
 /* Per als formularis */
 label{
   line-height: 1.7;

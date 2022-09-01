@@ -1,8 +1,10 @@
 .works-list {
+  margin-top: 2rem;
+
   .work {
-    margin: 1rem 0;
-    padding: 1rem 0;
+    margin-bottom: 2.25rem;
     display: flex;
+    justify-content: space-between;
 
     &.odd {
       flex-direction: row;
@@ -29,12 +31,6 @@
 
     .info-container{
       flex: 2.7;
-      max-height: 18rem;
-      overflow: hidden;
-
-      p {
-        margin: 0;
-      }
 
       .work-title {
         margin: 0;
