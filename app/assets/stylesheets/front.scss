@@ -1,4 +1,21 @@
 .front {
+  #brand, #main_menu {
+    div a {
+      font-size: 4em;
+      //@include transition(color 0.25s ease-in-out);
+
+      &:hover {
+        color: #ac4a19;
+        //@include transition(color 0.25s ease-in-out);
+      }
+    }
+
+    i {
+      font-size: 2.5em;
+      font-style: normal;
+    }
+  }
+
   #main {
     margin-top: 2.5rem;
   }
@@ -32,10 +49,10 @@
   }
 
   .work-title {
-    width: 100%;
+    width: calc(100% + 1.5rem);
     position: absolute;
     bottom: -6px;
-    left: -0.5em;
+    left: -0.75rem;
     border-width: 0.5em;
     border-style: solid;
     -moz-border-image: asset-url('torn_edges_border.png') 10 10 repeat;
@@ -43,7 +60,7 @@
     -o-border-image: asset-url('torn_edges_border.png') 10 10 repeat;
     border-image: asset-url('torn_edges_border.png') 10 10 repeat;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.625rem;
 
     a {
       display: block;

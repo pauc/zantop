@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const paginationContainer = document.querySelector("[data-behaviour='front-page-pagination']")
+
+  if (!paginationContainer) {
+    return
+  }
+
   const replacementText     = paginationContainer.dataset.altText
   const replacementLink     = document.createElement("a")
   const contentContainer    = document.getElementById("works")

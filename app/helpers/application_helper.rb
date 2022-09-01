@@ -36,7 +36,7 @@ module ApplicationHelper
 
   def body_classes
     classes = [controller.controller_name, controller.action_name]
-    classes << "with_sidebar" if sidebar?
+    classes << "with-sidebar" if sidebar?
     classes << "no-front" unless front?
 
     classes.join(" ")
