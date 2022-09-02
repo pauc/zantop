@@ -16,6 +16,6 @@ class DashboardsController < ApplicationController
             .includes(:translations)
             .paginate(page: params.fetch(:page), per_page: 12)
 
-    render partial: "works", locals: { works: works }
+    render partial: "works", locals: { works: }
   end
 end

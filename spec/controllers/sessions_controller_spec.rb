@@ -72,14 +72,14 @@ RSpec.describe SessionsController, type: :controller do
 
       session[:user_id] = user.id
 
-      expect { get :destroy, params: { locale: :ca } }
+      expect { get :destroy, params: { locale: "ca" } }
         .to change(controller, :current_user)
         .from(user)
         .to(nil)
     end
 
     it "redirects to the front page" do
-      expect(delete(:destroy, params: { locale: :ca })).to redirect_to("/ca")
+      expect(delete(:destroy, params: { locale: "ca" })).to redirect_to("/ca")
     end
   end
 end

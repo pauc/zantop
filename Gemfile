@@ -41,6 +41,7 @@ gem "html_truncator"
 
 group :development, :test do
   gem "debug"
+  gem "method_source"
 
   gem "rspec-rails", "~> 5.0.0"
   gem "rubocop"

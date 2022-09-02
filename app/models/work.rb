@@ -4,6 +4,7 @@ class Work < ApplicationRecord
   include HasImages
   include HasSections
   include HasSlugs
+  include HasTranslations
 
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 

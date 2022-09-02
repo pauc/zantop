@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resource :session, only: [:create, :destroy]
 
   localized do
-    get :login, to: "sessions#new"
-    get :logout, to: "sessions#destroy"
+    post :session, to: "sessions#create"
+    get  :login,   to: "sessions#new"
+    get  :logout,  to: "sessions#destroy"
 
     resources :visual_works
     resources :action_works
