@@ -7,22 +7,16 @@ class ActionWorksController < ApplicationController
   # include CreateWithDefaultLocale
   # respond_to :html
 
-  # expose(:action_works)
-  # expose(:action_work)
-  # expose(:work) { action_work }
-  # expose(:published_works) { ActionWork.published.includes(:translations) }
-  # expose(:related_works) { work.related }
-
   def index
     @published_works = ActionWork.all.includes(:translations)
-    render template: "works/works_list"
+    render "works/works_list"
   end
 
   def show
     @work = ActionWork.find(params[:id])
     @related_works = @work.related
 
-    flash.now[:alert] = t("untranslated_content") unless @work.has_translation?(I18n.locale)
+    flash.now[:alert] = t("untranslated_content") unless @work.translated_into?(I18n.locale)
 
     render template: "works/show"
   end

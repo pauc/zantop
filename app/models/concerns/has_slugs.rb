@@ -19,11 +19,6 @@ module HasSlugs
     public_send("slug_#{I18n.locale}") || public_send("slug_#{I18n.default_locale}")
   end
 
-  def translation?(locale)
-    translation = translations.select { |tr| tr.locale == locale }
-    translation.present?
-  end
-
   module ClassMethods
     private
 
