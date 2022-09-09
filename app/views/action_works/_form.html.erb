@@ -1,0 +1,48 @@
+<%= simple_form_for work_form,
+                    url: :action_works,
+                    html: { multipart: true, data: { behaviour: "work-form" } } do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%#= f.input :tag_tokens,
+              label: "Tags:",
+              input_html: { :"data-locale" => I18n.locale,
+                            :"data-preload" => @work.tags.to_json } %>
+
+  <fieldset class="sortable-fieldset sections">
+    <legend>Seccions extra</legend>
+    <% work_form.sections.each do |section| %>
+      <%= render "section_fields", form: f, section: section %>
+    <% end %>
+    <%= button_tag "Afegir secció",
+                   type: :button,
+                   class: "btn btn-flashy btn-smaller",
+                   data: { behaviour: "add-record" } %>
+  </fieldset>
+
+  <fieldset class="sortable-fieldset images">
+    <legend>Imatges i vídeos</legend>
+    <% work_form.images.each do |image| %>
+      <%= render "image_fields", form: f, image: image %>
+    <% end %>
+    <%= button_tag "Afegir imatge o vídeo",
+                   type: :button,
+                   class: "btn btn-flashy btn-smaller",
+                   data: { behaviour: "add-record" } %>
+  </fieldset>
+
+  <%= f.input :place %>
+  <%= f.input :realization_date, input_html: { type: :date } %>
+  <%= f.input :published, as: :boolean, inline_label: "Publicat?", label: false %>
+
+  <%= f.button :submit, work_form.submit_button_text, class: "btn btn-flashy" %>
+
+  <template id="template-for-sections">
+    <%= render "section_fields", form: f, section: Section.new(id: 0) %>
+  </template>
+
+  <template id="template-for-images">
+    <%= render "image_fields", form: f, image: Image.new(id: 0) %>
+  </template>
+<% end %>

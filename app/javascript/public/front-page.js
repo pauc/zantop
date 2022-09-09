@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(urlForMoreContent)
       .then(result => result.text())
       .then(content => {
-        contentContainer.lastElementChild.insertAdjacentHTML("afterend", content)
+        contentContainer.insertAdjacentHTML("beforeend", content)
       })
 
     currentPage += 1

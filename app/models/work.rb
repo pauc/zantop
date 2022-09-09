@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Work < ApplicationRecord
-  include HasImages
-  include HasSections
   include HasSlugs
   include HasTranslations
 

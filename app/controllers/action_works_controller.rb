@@ -9,6 +9,7 @@ class ActionWorksController < ApplicationController
 
   def index
     @published_works = ActionWork.all.includes(:translations)
+
     render "works/works_list"
   end
 
@@ -21,26 +22,51 @@ class ActionWorksController < ApplicationController
     render template: "works/show"
   end
 
-  # def new
-  #   respond_with action_work
-  # end
+  def new
+    @work_form = ActionWorkForm.new
 
-  # def create
-  #   flash.notice = t('created') if action_work.save
-  #   respond_with action_work
-  # end
+    render :new
+  end
 
-  # def edit
-  #   respond_with action_work
-  # end
+  def create
+    @work_form = ActionWorkForm.new(**action_work_params)
 
-  # def update
-  #   flash.notice = t('updated') if action_work.save
-  #   respond_with action_work
-  # end
+    if @work_form.submit
+      flash.notice = t("created")
 
-  # def destroy
-  #   flash.notice = t("deleted") if action_work.destroy
-  #   respond_with action_work, location: action_works_path
-  # end
+      redirect_to action_works_path and return
+    end
+
+    render :new
+  end
+
+  def edit
+    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
+
+    render :edit
+  end
+
+  def update
+    raise NotImplementedError
+  end
+
+  def destroy
+    ActionWork.find(params[:id]).destroy!
+
+    redirect_to action_works_path, notice: t("deleted")
+  end
+
+  private
+
+  def action_work_params
+    params
+      .require(:action_work_form)
+      .permit(:title,
+              :description,
+              :place,
+              :realization_date,
+              :published,
+              section_attributes: [:title, :body, :position],
+              image_attributes: [:image, :video, :credits, :position])
+  end
 end

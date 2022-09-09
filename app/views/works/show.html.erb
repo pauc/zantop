@@ -1,3 +1,12 @@
+<% content_for :admin_bar_second_row do %>
+  <%= link_to "Editar", { action: :edit }, class: "btn" %>
+  <%= link_to "Esborrar",
+              action_work_path(@work),
+              method: :delete,
+              class: "btn btn-danger",
+              data: { confirm: "Segur que ho vols esborrar?" } %>
+<% end %>
+
 <% content_for :sidebar do %>
   <% cache [I18n.locale, :related_works, @work] do %>
     <% unless @related_works.empty? %>
@@ -19,6 +28,7 @@
 <% cache [I18n.locale, :show, @work] do %>
   <%= print_work_place @work%>
   <%= print_work_date @work%>
+
   <% unless @work.images.empty? %>
     <div id="image_gallery_container">
       <div id="galleria">
@@ -35,11 +45,14 @@
       </div>
     </div>
   <% end %>
+
   <%= print_work_field @work, :techniques %>
   <%= print_work_field @work, :dimensions %>
   <%= print_work_description @work%>
+
   <% unless @work.sections.empty? %>
     <%= render @work.sections %>
   <% end %>
+
   <%= print_work_tags @work%>
 <% end %>

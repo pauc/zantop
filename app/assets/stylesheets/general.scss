@@ -24,10 +24,7 @@ body {
   }
 
   &.no-front {
-    padding-top: 2em;
-
-    #main {
-    }
+    padding-top: 2.5rem;
 
     #sidebar {
       min-width: 15rem;
@@ -41,6 +38,17 @@ body {
         list-style: none;
         margin: 0.625rem 0;
       }
+    }
+  }
+}
+
+#flash-messages {
+  .alert {
+    padding: .75rem;
+    border-radius: 1rem;
+
+    &.alert-notice {
+      background-color: #94ff94;
     }
   }
 }

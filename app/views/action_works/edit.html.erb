@@ -1,0 +1,6 @@
+<%= page_title(t(".title", work: @work_form.title)) %>
+
+<% content_for :admin_bar_second_row do %>
+  <%= link_to "Tornar", :back, class: "btn" %>
+<% end %>
+<%= render "form", work_form: @work_form %>
