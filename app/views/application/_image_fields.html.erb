@@ -1,21 +1,19 @@
 <div class="fields">
-  <%= form.simple_fields_for "section_attributes[]", section do |fields| %>
+  <%= form.simple_fields_for "image_attributes[]", image do |fields| %>
     <div class="sorting-controls">
       <a href="javascript:void(0)" data-behaviour="move-up">⬆️</a>
       <a href="javascript:void(0)" data-behaviour="move-down">⬇️</a>
     </div>
 
-    <%= fields.input :title %>
-    <%= fields.input :body,
+    <%= fields.input :image %>
+    <%= fields.input :video %>
+    <%= fields.input :credits,
                      as: :text,
                      input_html: { rows: 4, class: "rich-text-area" } %>
     <%= fields.input :position,
                      as: :hidden,
                      input_html: { data: { attribute: "position" } } %>
-    <%= fields.input :_destroy,
-                     as: :hidden,
-                     input_html: { data: { attribute: "_destroy" } } %>
-    <%= button_tag "Esborrar secció",
+    <%= button_tag "Esborrar imatge",
                    type: :button,
                    class: "push-right btn btn-danger btn-smaller",
                    data: { behaviour: "remove-record" } %>

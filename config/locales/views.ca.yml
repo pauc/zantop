@@ -9,11 +9,12 @@ ca:
   change_password: Canviar contrassenya
   create: Crear
   created: "Contingut creat correctament. Ole!"
-  deleted: Contingut esborrat.
+  deleted: Contingut esborrat 👍
   delete: Esborrar
   edit: Editar
   restricted_access: Accés restringit. T'has d'identificar abans.
-  untranslated_conten: Oops! Ho sentim, aquest contingut no està traduït al català
+  untranslated_conten:
+    Oops! Ho sentim, aquest contingut no està traduït al català
   updated: Contingut actualitzat.
 
   under_construction: En construcció
@@ -95,8 +96,3 @@ ca:
   tags:
     works_list:
       title: "%{category}"
-
-  about_the_code:
-    html: El codi font d'aquest lloc web està disponible per ser copiat, estudiat
-          o criticat a <a href="http://github.com/pauc/zantop">http://github.com/pauc/zantop</a>.
-          Per qualsevol dubte o suggeriment podeu contactar

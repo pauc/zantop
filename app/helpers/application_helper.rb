@@ -7,12 +7,9 @@ module ApplicationHelper
   end
 
   def page_title(title)
-    strip_tags(title)
-      .then(&method(:title))
+    strip_tags(title).then(&method(:title))
 
-    content_for(:page_title) {
-      content_tag(:h1, title, id: "main_title")
-    }
+    content_for(:page_title) { content_tag(:h1, title.html_safe, id: "main_title") } # rubocop:disable Rails/OutputSafety
   end
 
   def site_name
