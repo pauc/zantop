@@ -32,21 +32,23 @@ class ActionWorkForm
       work.save
 
       sections.each do |section|
-        section.save if section.has_changes_to_save?
+        section.destroy! if section.marked_for_destruction?
+        section.save! if section.has_changes_to_save?
       end
 
       images.each do |image|
-        image.save if image.has_changes_to_save
+        image.destroy! if image.marked_for_destruction?
+        image.save! if image.has_changes_to_save
       end
     end
   end
 
-  def section_attributes=(attributes)
-    set_attributes_for(association: work.sections, attributes:)
+  def section_attributes=(assoc_attributes)
+    set_attributes_for(association: work.sections, assoc_attributes:)
   end
 
-  def image_attributes=(attributes)
-    set_attributes_for(association: work.images, attributes:)
+  def image_attributes=(assoc_attributes)
+    set_attributes_for(association: work.images, assoc_attributes:)
   end
 
   def submit_button_text
@@ -59,19 +61,25 @@ class ActionWorkForm
 
   attr_reader :work
 
-  def set_attributes_for(association:, attributes:)
-    attributes.each do |id, attrs|
+  def set_attributes_for(association:, assoc_attributes:)
+    assoc_attributes.each do |id, attributes|
       id = Integer(id)
 
       if id > 999_999_999_999_000
-        association.build(attrs)
+        association.build(attributes)
 
         next
       end
 
-      association
-        .find { |section| section.id == id }
-        .assign_attributes(attrs)
+      record = association.find { |section| section.id == id }
+
+      if ActiveModel::Type::Boolean.new.cast(attributes.delete(:_destroy))
+        record.mark_for_destruction
+
+        next
+      end
+
+      record.assign_attributes(attributes)
     end
   end
 end

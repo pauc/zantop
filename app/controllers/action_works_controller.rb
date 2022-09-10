@@ -66,7 +66,7 @@ class ActionWorksController < ApplicationController
               :place,
               :realization_date,
               :published,
-              section_attributes: [:title, :body, :position],
-              image_attributes: [:image, :video, :credits, :position])
+              section_attributes: [:title, :body, :position, :_destroy],
+              image_attributes: [:image, :video, :credits, :position, :_destroy])
   end
 end

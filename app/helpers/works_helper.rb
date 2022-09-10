@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Rails/OutputSafety
 module WorksHelper
   def default_image_for_works
     image_tag "mz-comodin.png"
@@ -28,8 +31,7 @@ module WorksHelper
   def print_work_truncated_description(work)
     return unless work.respond_to?("description") && work.description.present?
 
-    # description = truncate_html( work.description, length: 300, omission: ' ...', separator: ' ' )
-    description = HTML_Truncator.truncate(work.description, 300, length_in_chars: true)
+    description = HTML_Truncator.truncate(work.description.to_s, 35)
     "<div class='work-description'>#{description}</div>".html_safe
   end
 
@@ -68,3 +70,4 @@ module WorksHelper
     end
   end
 end
+# rubocop:disable Rails/OutputSafety

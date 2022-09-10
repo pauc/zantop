@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupAddingNestedRecords(form, "sections")
   setupAddingNestedRecords(form, "images")
+  setupRemovingNestedRecords(form)
   setupPositionControls(form)
 })
 
@@ -30,9 +31,10 @@ const setupAddingNestedRecords = (form, associationName) => {
 }
 
 const addRecord = (button, fieldset, template, virtualId) => {
-  const content = template.content.cloneNode(true)
-  const inputs = content.querySelectorAll("input, textarea")
-  const labels = content.querySelectorAll("label")
+  const content     = template.content.cloneNode(true)
+  const inputs      = content.querySelectorAll("input:not(.trix-input, .trix-button), textarea:not(.trix-input, .trix-button)")
+  const labels      = content.querySelectorAll("label")
+  const trixEditors = content.querySelectorAll("trix-editor")
 
   virtualId += 999_999_999_999_000
 
@@ -45,23 +47,58 @@ const addRecord = (button, fieldset, template, virtualId) => {
     label.attributes.for.value = label.attributes.for.value.replace("_0_", `_new-record-${virtualId}_`)
   })
 
+  trixEditors.forEach(trixEditor => {
+    trixEditor.id = trixEditor.id.replace("_0_", `_new-record-${virtualId}_`)
+    trixEditor.setAttribute("input", trixEditor.getAttribute("input").replace("_0_", `_new-record-${virtualId}_`))
+  })
+
   setupPositionControls(content)
 
   fieldset.insertBefore(content, button)
   setPositionValues(fieldset)
 }
 
-const setupPositionControls = element => {
-  element.querySelectorAll("[data-behaviour='move-up'], [data-behaviour='move-down']").forEach(control => {
-    control.addEventListener("click", event => {
-      let direction = "up"
+const setupRemovingNestedRecords = form => {
+  form.addEventListener("click", event => {
+    const clickedElement = event.target
 
-      if (event.target.dataset.behaviour === "move-down") {
-        direction = "down"
-      }
+    if (clickedElement.dataset.behaviour !== "remove-record") {
+      return
+    }
 
-      changePosition(event.target.closest(".fields"), direction)
-    })
+    const fields = clickedElement.closest(".fields")
+
+    if (fields.dataset.newRecord === "true") {
+      fields.remove()
+
+      return
+    }
+
+    const _destroyInput = fields.querySelector("[data-attribute='_destroy']")
+
+    _destroyInput.value = "true"
+
+    fields.insertAdjacentElement("beforebegin", _destroyInput)
+
+    fields.remove()
+  })
+}
+
+const setupPositionControls = form => {
+  form.addEventListener("click", event => {
+    const clickedElement = event.target
+
+    if (!["move-up", "move-down"].includes(clickedElement.dataset.behaviour)) {
+      return
+    }
+
+    let direction = "up"
+
+    if (clickedElement.dataset.behaviour === "move-down") {
+      direction = "down"
+    }
+
+    changePosition(clickedElement.closest(".fields"), direction)
   })
 }
 

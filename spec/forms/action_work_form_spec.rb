@@ -2,7 +2,7 @@
 
 RSpec.describe ActionWorkForm do
   describe "#submit" do
-    it "it creates a new work" do
+    it "creates a new work" do
       attributes = { title: "Jurimuri", description: "Buasca muasca" }
 
       expect { described_class.new(**attributes).submit }
@@ -72,6 +72,41 @@ RSpec.describe ActionWorkForm do
         .and change { section2.reload.title }
         .from("Section 2")
         .to("The second section")
+    end
+
+    it "removes sections" do
+      work = create(:action_work)
+
+      section1 = Section.create!(
+        work_id: work.id,
+        title: "Section 1",
+        body: "Body for section 1",
+        position: 1
+      )
+      section2 = Section.create!(
+        work_id: work.id,
+        title: "Section 2",
+        body: "Body for section 2",
+        position: 2
+      )
+
+      attributes = {
+        title: work.title,
+        section_attributes: {
+          section1.id.to_s => {
+            _destroy: "true"
+          },
+          section2.id.to_s => {
+            title: "The second section",
+            body: "Body for section 2",
+            position: 2
+          }
+        }
+      }
+
+      expect { described_class.new(work:, **attributes).submit }
+        .to change(work.sections, :count)
+        .by(-1)
     end
 
     it "updates a work" do

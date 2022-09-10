@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class Image < ApplicationRecord
-  # include UserInputCleaner
+  translates :credits
 
-  # clean_fields :credits
+  has_rich_text :credits
 
   belongs_to :work
-
-  translates :credits
 
   validate :image_xor_video
 

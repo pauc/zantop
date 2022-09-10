@@ -16,6 +16,10 @@ AllCops:
 Layout/LineLength:
   Max: 100
 
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
 Metrics/BlockLength:
   Exclude:
     - config/**/*
@@ -27,9 +31,11 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 20
 
-Lint/AmbiguousBlockAssociation:
-  Exclude:
-    - spec/**/*
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 5
 
 Style/BlockDelimiters:
   EnforcedStyle: semantic
@@ -48,9 +54,3 @@ Style/StringLiterals:
 Style/SymbolArray:
   Enabled: false
   MinSize: 4
-
-RSpec/MultipleExpectations:
-  Max: 5
-
-RSpec/ExampleLength:
-  Max: 25

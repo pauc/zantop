@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class Section < ApplicationRecord
-  # include UserInputCleaner
-  # clean_fields :body
+  translates :title, :body
 
-  validates :body, presence: true
+  has_rich_text :body
 
   belongs_to :work
 
-  translates :title, :body
+  validates :body, presence: true
 
   # acts_as_list scope: 'content_id=#{content_id} and content_type=\'#{content_type}\''
   # default_scope :order => 'position'

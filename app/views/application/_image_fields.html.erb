@@ -7,12 +7,13 @@
 
     <%= fields.input :image %>
     <%= fields.input :video %>
-    <%= fields.input :credits,
-                     as: :text,
-                     input_html: { rows: 4, class: "rich-text-area" } %>
+    <%= fields.input :credits, as: :rich_text_area %>
     <%= fields.input :position,
                      as: :hidden,
                      input_html: { data: { attribute: "position" } } %>
+    <%= fields.input :_destroy,
+                     as: :hidden,
+                     input_html: { data: { attribute: "_destroy" } } %>
     <%= button_tag "Esborrar imatge",
                    type: :button,
                    class: "push-right btn btn-danger btn-smaller",
