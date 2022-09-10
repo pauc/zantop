@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Section < ApplicationRecord
-  translates :title, :body
+  include HasTranslations
 
-  has_rich_text :body
+  translates :title, plain: true
+  translates :body
 
   belongs_to :work
 

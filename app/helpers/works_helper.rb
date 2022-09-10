@@ -39,7 +39,7 @@ module WorksHelper
     return unless work.respond_to?(field) && work.send(field).present?
 
     field_translation = t("works.labels.#{field}")
-    html = "<div class='work-#{field}'>"
+    html = +"<div class='work-#{field}'>"
     html << "<p><strong>#{field_translation}:</strong> #{work.send(field)}</p>"
     html << "</div>"
     html.html_safe
@@ -48,7 +48,7 @@ module WorksHelper
   def print_work_tags(work)
     return unless work.tags.size.positive?
 
-    html = "<div class='work-tags'>"
+    html = +"<div class='work-tags'>"
     html << "#{t('categories')}: "
     html << work.tags.map { |tag| link_to(tag.name, tag) }.join(", ")
     html << "</div>"

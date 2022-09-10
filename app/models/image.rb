@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Image < ApplicationRecord
-  translates :credits
+  include HasTranslations
 
-  has_rich_text :credits
+  translates :credits
 
   belongs_to :work
 

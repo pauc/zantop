@@ -1,6 +1,7 @@
 ---
 
 require:
+  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
 
@@ -46,6 +47,9 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
+
+Style/KeywordParametersOrder:
+  Enabled: false
 
 Style/StringLiterals:
   Enabled: true

@@ -135,10 +135,6 @@ GEM
     fspath (3.1.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    globalize (6.1.0)
-      activemodel (>= 4.2, < 7.1)
-      activerecord (>= 4.2, < 7.1)
-      request_store (~> 1.0)
     guard (2.18.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -200,6 +196,12 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    mobility (1.2.9)
+      i18n (>= 0.6.10, < 2)
+      request_store (~> 1.0)
+    mobility-actiontext (1.1.1)
+      actiontext (>= 6.0)
+      mobility (~> 1.2)
     msgpack (1.4.5)
     multi_json (1.15.0)
     nenv (0.3.0)
@@ -317,6 +319,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.16.0)
       parser (>= 3.1.1.0)
+    rubocop-performance (1.15.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rails (2.14.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
@@ -383,7 +388,6 @@ DEPENDENCIES
   ed25519
   factory_bot_rails
   friendly_id (~> 5.4.0)
-  globalize
   guard-livereload (~> 2.5)
   guard-rspec
   html_truncator
@@ -394,6 +398,8 @@ DEPENDENCIES
   libnotify
   listen (~> 3.3)
   method_source
+  mobility (~> 1.2.9)
+  mobility-actiontext
   pg (~> 1.1)
   puma (~> 5.6)
   rack-livereload (~> 0.3.17)
@@ -401,6 +407,7 @@ DEPENDENCIES
   route_translator (~> 12.1.0)
   rspec-rails (~> 5.0.0)
   rubocop
+  rubocop-performance
   rubocop-rails
   rubocop-rspec
   selenium-webdriver (>= 4.0.0.rc1)

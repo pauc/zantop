@@ -32,7 +32,7 @@
   <% unless @work.images.empty? %>
     <div id="image_gallery_container">
       <div id="galleria">
-        <% @work.images.includes(:translations).each do |image| %>
+        <% @work.images.includes(:rich_text_translations).each do |image| %>
           <% if image.image.present? %>
             <%= link_to image_tag(image.image.variant(:thumb), data: { title: image.credits }),
                         image.image.to_s %>

@@ -30,7 +30,8 @@ gem "simple_form"
 
 # i18n
 gem "accept_language"
-gem "globalize"
+gem "mobility", "~> 1.2.9"
+gem "mobility-actiontext"
 gem "route_translator", "~> 12.1.0"
 
 # Pagination
@@ -43,13 +44,15 @@ group :development, :test do
   gem "debug"
   gem "method_source"
 
-  gem "rspec-rails", "~> 5.0.0"
-  gem "rubocop"
-  gem "rubocop-rails"
-  gem "rubocop-rspec"
-
   gem "guard-rspec"
   gem "libnotify"
+  gem "rspec-rails", "~> 5.0.0"
+
+  gem "rubocop",             require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails",       require: false
+  gem "rubocop-rspec",       require: false
+
 end
 
 group :development do

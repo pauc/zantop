@@ -5,10 +5,10 @@ class ActionWorksController < ApplicationController
   # include Finder
   # include Authorization
   # include CreateWithDefaultLocale
-  # respond_to :html
 
   def index
-    @published_works = ActionWork.all.includes(:translations)
+    @published_works = ActionWork.includes(:plain_text_translations,
+                                           :rich_text_translations)
 
     render "works/works_list"
   end
