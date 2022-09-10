@@ -8,7 +8,8 @@ class VisualWorksController < ApplicationController
   # respond_to :html
 
   def index
-    @published_works = VisualWork.all.includes(:translations)
+    @published_works = VisualWork.includes(:plain_text_translations,
+                                           :rich_text_translations)
     render "works/works_list"
   end
 
@@ -21,26 +22,51 @@ class VisualWorksController < ApplicationController
     render template: "works/show"
   end
 
-  # def new
-  #   respond_with visual_work
-  # end
+  def new
+    @work_form = VisualWorkForm.new
 
-  # def create
-  #   flash.notice = t('Created') if visual_work.save
-  #   respond_with visual_work
-  # end
+    render :new
+  end
 
-  # def edit
-  #   respond_with visual_work
-  # end
+  def create
+    @work_form = VisualWorkForm.new(**visual_work_params)
 
-  # def update
-  #   flash.notice = t('updated') if visual_work.save
-  #   respond_with visual_work
-  # end
+    if @work_form.submit
+      flash.notice = t("created")
 
-  # def destroy
-  #   flash.notice = t("deleted") if visual_work.destroy
-  #   respond_with visual_work, location: visual_works_path
-  # end
+      redirect_to visual_works_path and return
+    end
+
+    render :new
+  end
+
+  def edit
+    @work_form = VisualWorkForm.new(work: VisualWork.find(params[:id]))
+
+    render :edit
+  end
+
+  def update
+    raise NotImplementedError
+  end
+
+  def destroy
+    VisualWork.find(params[:id]).destroy!
+
+    redirect_to visual_works_path, notice: t("deleted")
+  end
+
+  private
+
+  def visual_work_params
+    params
+      .require(:visual_work_form)
+      .permit(:title,
+              :description,
+              :place,
+              :realization_date,
+              :published,
+              section_attributes: [:title, :body, :position, :_destroy],
+              image_attributes: [:image, :video, :credits, :position, :_destroy])
+  end
 end

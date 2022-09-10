@@ -20,7 +20,613 @@ SET row_security = off;
 -- Data for Name: action_text_rich_texts; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
-COPY public.action_text_rich_texts (id, name, body, record_type, record_id, created_at, updated_at) FROM stdin;
+COPY public.action_text_rich_texts (id, name, body, record_type, record_id, created_at, updated_at, locale) FROM stdin;
+3110	body	<p><strong>acció-homenatge</strong> al silenci propi</p>\r\n\r\n<p>del fluïr en el pas del temps</p>\r\n\r\n<p>gota a gota</p>\r\n\r\n<p>ressò del procés en trans-formació amb la matèria (pròpia)</p>\r\n\r\n<p>rastre de l'escolta en obrir-se pas endins</p>	Section	16	2022-09-10 17:47:24.624575	2022-09-10 17:47:24.624575	ca
+3111	body	<p>Obrint-se camí a partir de la ressonància interna sentida en apropar-me a l’obra de la F.F., l’acció és el bocí d’un moment de pas cap a allò inestable i immaterial. Vol honrar-lo amb la presència i convidar tant els lligams com els llindars entre la lírica del so de sorra i/o seda , i la intuició que es desperta de la mà del ritme imprès en blanc sense negre, en el si del tant sí com no, en l’I/O. Una proposta del mo(vi)ment visible com a vas comunicant i/o acord i/o simbiosi i/o vaivé entre buits i plens. Per veure i viure la forma. L’acció comença i acaba, i alhora desitja traçar el brot d’un parèntesi dins de POESIA, sense article. És la teva i la meva, la del núvol i la de la Felícia.</p>	Section	17	2022-09-10 17:47:24.635976	2022-09-10 17:47:24.635976	ca
+3112	title	Ull viu! agulles	Section	18	2022-09-10 17:47:24.644545	2022-09-10 17:47:24.644545	ca
+3113	body	<p>Responent al repte microscopista de fer visible l’invisible, retorcem el llenguatge. Plantats davant la majestuositat tel·lúrica del Montserrat, aquest indret quàntic que és lleuger i pesat, llunyà i proper i tou i dur, i alguns antònims simultanis més, des dels plans de la Torre Lluvià posem fil a l’agulla i parem compte, ull viu! Seguint el fil de les agulles plantem una composició ressonant, una perspectiva significativa que conviu amb les altres, poètiques, estètiques, presents.</p>\r\n\r\n<p>Observem el fet petit (des d’aquí). Construint, com dibuixant, mirem, coneixem i potser reconeixem. Reconeixem la pulsió ancestral per la connexió vertical terra-cel; el menhir, el xiprer, les agulles de Montserrat...</p>\r\n\r\n<p>Ens agrada fer torres de cagarrines a la platja i ens magnetitza el massís petri i aquí juguem, perquè art i joc són matisos, són lluïssors d’un mateix ser.</p>\r\n\r\n<p>Juguem amb els elements agrícoles i la seva tecnologia, el paisatge indòmit i el domesticat.</p>\r\n\r\n<p>Juguem amb l’escala, la mida i la mesura, la posició de l’espectador, l’humà que veu el món, el fons, la figura i una ambigüitat metonímica manifesta en la seva cohabitació.</p>\r\n\r\n<p>Juguem amb els ingredients transrealistes i amb els codis propis dels llenguatges en joc.</p>\r\n\r\n<p>Conjuguem.</p>\r\n\r\n<p>Aleix Antillach i Mireia Zantop : Col·laboren intermitentment,</p>\r\n\r\n<p>mesclant els seus mons, fets de disciplines i indisciplines</p>\r\n\r\n<p>diverses. L’arquitectura, la dansa, la performance, les arts</p>\r\n\r\n<p>visuals i les lletres. Inquiets tastaolletes, de gra i de palla.</p>	Section	18	2022-09-10 17:47:24.656843	2022-09-10 17:47:24.656843	ca
+3114	title	Ull viu! agulles	Section	18	2022-09-10 17:47:24.672499	2022-09-10 17:47:24.672499	en
+3115	body	<p>Responent al repte microscopista de fer visible l’invisible, retorcem el llenguatge. Plantats davant la majestuositat tel·lúrica del Montserrat, aquest indret quàntic que és lleuger i pesat, llunyà i proper i tou i dur, i alguns antònims simultanis més, des dels plans de la Torre Lluvià posem fil a l’agulla i parem compte, ull viu! Seguint el fil de les agulles plantem una composició ressonant, una perspectiva significativa que conviu amb les altres, poètiques, estètiques, presents.</p>\r\n\r\n<p>Observem el fet petit (des d’aquí). Construint, com dibuixant, mirem, coneixem i potser reconeixem. Reconeixem la pulsió ancestral per la connexió vertical terra-cel; el menhir, el xiprer, les agulles de Montserrat...</p>\r\n\r\n<p>Ens agrada fer torres de cagarrines a la platja i ens magnetitza el massís petri i aquí juguem, perquè art i joc són matisos, són lluïssors d’un mateix ser.</p>\r\n\r\n<p>Juguem amb els elements agrícoles i la seva tecnologia, el paisatge indòmit i el domesticat.</p>\r\n\r\n<p>Juguem amb l’escala, la mida i la mesura, la posició de l’espectador, l’humà que veu el món, el fons, la figura i una ambigüitat metonímica manifesta en la seva cohabitació.</p>\r\n\r\n<p>Juguem amb els ingredients transrealistes i amb els codis propis dels llenguatges en joc.</p>\r\n\r\n<p>Conjuguem.</p>\r\n\r\n<p>Aleix Antillach i Mireia Zantop : Col·laboren intermitentment,</p>\r\n\r\n<p>mesclant els seus mons, fets de disciplines i indisciplines</p>\r\n\r\n<p>diverses. L’arquitectura, la dansa, la performance, les arts</p>\r\n\r\n<p>visuals i les lletres. Inquiets tastaolletes, de gra i de palla.</p>	Section	18	2022-09-10 17:47:24.70031	2022-09-10 17:47:24.70031	en
+3116	body	<p>* cap cap, título intraducible</p>\r\n\r\n<p>cap, del catalán: cabeza, cabo, ningún, ninguna, cabe</p>	Section	20	2022-09-10 17:47:24.716681	2022-09-10 17:47:24.716681	es
+3117	title	(Questions) about going to and going away from	Section	19	2022-09-10 17:47:24.732397	2022-09-10 17:47:24.732397	es
+3118	body	<p>The fortune’s roulette turns the wheel and it’s cycles of repetition, range and power. I hear ancestral<br>\r\nvoices and dream where the bird will nest best. An inner dissociation when moving: Which parts<br>\r\nleave, which parts do not leave?<br>\r\nDiaspora of the genome, not just my own, perhaps an appropriated, adopted one. How long is the<br>\r\nwhile I’m neither/nor or still/not yet?<br>\r\nIs the present self a place of permanence, an axis? Do migratory birds flight to or flight from? A<br>\r\ngeneration later, do you go to or come back to? Progress-process idea. What pulls or pushes the<br>\r\ndirection and intention of a step: motivation or fear? Do I move or am I being displaced?<br>\r\nMoving from a safe place like going beyond the known. The horizon, as a nonexisting place, a<br>\r\nvisual illusion, a utopian dartboard, moves as we approach. What vision do you need to start<br>\r\nwalking?</p>	Section	19	2022-09-10 17:47:24.75025	2022-09-10 17:47:24.75025	es
+3119	body	<p><br>\r\nLa acción se abre camino a partir de la resonancia interna sentida al acercarme a la obra de F.F., es el pedazo de un momento hacia aquello inestable e inmaterial. Quiere honrarlo con la presencia e invitar tanto los vínculos como los umbrales entre la lírica del sonido de arena y/o seda, y la intuición que se despierta de la mano del ritmo impreso y presente en blanco sin negro, en el seno del tanto sí como no, en el I/O. Una propuesta de lo visible como vaso comunicante y/o acuerdo y/o simbiosis y/o vaivén entre vacíos y llenos. Para ver y vivir la forma. La acción empieza y acaba, y a la vez desea trazar, como un brote, un paréntesis dentro de POESÍA, sin artículo. Es la tuya y es la mía, la de la nube y la de la Felícia.<br>\r\n </p>	Section	17	2022-09-10 17:47:24.767939	2022-09-10 17:47:24.767939	es
+3120	body	<p><strong>Acción</strong> a con de entre por para contra según sin como hasta en parte a fuerza de hacia desde a causa de igual a diferente de de acuerdo con en relación a en proceso</p>\r\n\r\n<p><strong>de rastros y creencias de identitades estimadas.</strong></p>	Section	13	2022-09-10 17:47:24.787748	2022-09-10 17:47:24.787748	es
+3121	title	Ull viu! agulles	Section	18	2022-09-10 17:47:24.80946	2022-09-10 17:47:24.80946	es
+3419	title	constelacciones	Work	13	2022-09-10 17:47:28.476348	2022-09-10 17:47:28.476348	es
+3420	description	<p>Acción inédita realizada con Elisabetta Balasso.</p>	Work	13	2022-09-10 17:47:28.491355	2022-09-10 17:47:28.491355	es
+3122	body	<p>Responent al repte microscopista de fer visible l’invisible, retorcem el llenguatge. Plantats davant la majestuositat tel·lúrica del Montserrat, aquest indret quàntic que és lleuger i pesat, llunyà i proper i tou i dur, i alguns antònims simultanis més, des dels plans de la Torre Lluvià posem fil a l’agulla i parem compte, ull viu! Seguint el fil de les agulles plantem una composició ressonant, una perspectiva significativa que conviu amb les altres, poètiques, estètiques, presents.</p>\r\n\r\n<p>Observem el fet petit (des d’aquí). Construint, com dibuixant, mirem, coneixem i potser reconeixem. Reconeixem la pulsió ancestral per la connexió vertical terra-cel; el menhir, el xiprer, les agulles de Montserrat...</p>\r\n\r\n<p>Ens agrada fer torres de cagarrines a la platja i ens magnetitza el massís petri i aquí juguem, perquè art i joc són matisos, són lluïssors d’un mateix ser.</p>\r\n\r\n<p>Juguem amb els elements agrícoles i la seva tecnologia, el paisatge indòmit i el domesticat.</p>\r\n\r\n<p>Juguem amb l’escala, la mida i la mesura, la posició de l’espectador, l’humà que veu el món, el fons, la figura i una ambigüitat metonímica manifesta en la seva cohabitació.</p>\r\n\r\n<p>Juguem amb els ingredients transrealistes i amb els codis propis dels llenguatges en joc.</p>\r\n\r\n<p>Conjuguem.</p>\r\n\r\n<p>Aleix Antillach i Mireia Zantop : Col·laboren intermitentment,</p>\r\n\r\n<p>mesclant els seus mons, fets de disciplines i indisciplines</p>\r\n\r\n<p>diverses. L’arquitectura, la dansa, la performance, les arts</p>\r\n\r\n<p>visuals i les lletres. Inquiets tastaolletes, de gra i de palla.</p>	Section	18	2022-09-10 17:47:24.835924	2022-09-10 17:47:24.835924	es
+3123	title	(Preguntas) sobre ir a y alejarse de	Section	19	2022-09-10 17:47:24.867696	2022-09-10 17:47:24.867696	en
+3124	body	<p><strong>Migración: (Preguntas) sobre ir a y alejarse de</strong></p>\r\n\r\n<p>Gira la rueda de la fortuna con sus ciclos de repetición, rango y poder. Escucho</p>\r\n\r\n<p>voces ancestrales, sueño sobre dónde anidará mejor el pájaro. Percibo una disociación interna al moverme: qué partes se van, ¿qué partes se quedan?</p>\r\n\r\n<p>Diáspora del genoma, no solo el mío, tal vez uno apropiado, adoptado. ¿Cuánto dura el lapso del “no soy ni de aquí ni de allí”, o del “soy todavía y aún no soy”.</p>\r\n\r\n<p>¿Es el yo presente un lugar de permanencia, un eje? ¿Las aves migratorias vuelan hacia o se van de un lugar? Una generación después, ¿vas o vuelves? Idea de progreso-proceso. Lo que estira o empuja la dirección y la intención de un paso es motivación? O es miedo? ¿Me mudo o estoy siendo desplazada?</p>\r\n\r\n<p>Salir de un lugar seguro es como ir más allá de lo conocido. El horizonte, como lugar inexistente, es una ilusión visual, una diana utópica, que se aleja a medida que nos acercamos.</p>\r\n\r\n<p><strong>¿Qué visión necesitas para empezar a caminar?</strong></p>	Section	19	2022-09-10 17:47:24.881135	2022-09-10 17:47:24.881135	en
+3125	title	estimado paisaje interior y exterior	Section	15	2022-09-10 17:47:24.890772	2022-09-10 17:47:24.890772	es
+3126	body	<p>Estimado paisaje, templo que contemplo mientras me contempla. Sobre el papel te diluyes; se desdibuja aquella definición de «la porción de territorio que el ojo puede reconocer y representar des de un punto de vista». Fluyes cuerpo adentro por todos mis órganos de percepción, que inclyen el sexto sentido. Como el humus del inconsciente que nutre y acompaña en el ritual de paso por el propio panorama, un lugar tan íntimo i tan común, que aflora y toma forma de obra.</p>\r\n\r\n<p>La mirada, serena y salvaje, baila por estos parajes interiores y exteriores porque quiere ver más, y sigue el ritmo que generan los interrogantes. Surgen imágenes que me guían por el bosque intuitivo allí donde sus formas se vuelven significativas.</p>\r\n\r\n<p>El paisatge líquido bebe de muchas fuentes y se materializa de muchas maneras. Asocia conceptos, creencias y formas. Lo articulan lenguajes familiares conjuntamente con otras interpretaciones subjectivas. Una visión que se expresa para ser compartida, pero fluctúa por diferentes niveles de lectura. Como una persona, como una poesía, como una acción.</p>	Section	15	2022-09-10 17:47:24.90215	2022-09-10 17:47:24.90215	es
+2881	credits	<p>\r\n\tL'a muse</p>	Image	40	2022-09-10 17:47:21.808624	2022-09-10 17:47:21.808624	ca
+2882	credits	<p>\r\n\tImpostura</p>	Image	41	2022-09-10 17:47:21.831712	2022-09-10 17:47:21.831712	ca
+2883	credits	<p>\r\n\túter</p>	Image	42	2022-09-10 17:47:21.847644	2022-09-10 17:47:21.847644	ca
+2884	credits	<p>\r\n\tYa no hay horizonte.<br>\r\n\tAlguien camina<br>\r\n\tsin dejar huella ni sombra.</p>	Image	3	2022-09-10 17:47:21.860841	2022-09-10 17:47:21.860841	ca
+2885	credits	<p>\r\n\tEl viento despeina<br>\r\n\tlas hierbas. Piedras<br>\r\n\ten el camino del agua.</p>	Image	92	2022-09-10 17:47:21.872168	2022-09-10 17:47:21.872168	ca
+2886	credits	<p>\r\n\tLa hoja, a punto<br>\r\n\tde caer, tiembla.<br>\r\n\tSopla el viento.</p>	Image	93	2022-09-10 17:47:21.884921	2022-09-10 17:47:21.884921	ca
+2887	credits	<p>\r\n\tCien hormigas<br>\r\n\tresiguen el crepúsculo<br>\r\n\tque nadie camina.</p>	Image	94	2022-09-10 17:47:21.894267	2022-09-10 17:47:21.894267	ca
+2888	credits	<p>\r\n\tBaile de paraguas.<br>\r\n\tRamblas abajo.<br>\r\n\tUn gato se moja.</p>	Image	95	2022-09-10 17:47:21.902942	2022-09-10 17:47:21.902942	ca
+2889	credits	<p>\r\n\tLa risa rompe<br>\r\n\tla pesadez de la tarde.<br>\r\n\tSonríe una nube.</p>	Image	96	2022-09-10 17:47:21.915057	2022-09-10 17:47:21.915057	ca
+2890	credits	<p>\r\n\tFa sostenido.<br>\r\n\tUnos dedos acarician.<br>\r\n\tLa piel de la tecla.</p>	Image	97	2022-09-10 17:47:21.923788	2022-09-10 17:47:21.923788	ca
+2891	credits	<p>\r\n\tPalabras como humo<br>\r\n\tcorretean por la cama.<br>\r\n\tLa noche escucha y calla.</p>	Image	98	2022-09-10 17:47:21.936386	2022-09-10 17:47:21.936386	ca
+2892	credits	<p>\r\n\tCae la gota.<br>\r\n\tCírculos concéntricos.<br>\r\n\tLa luna danza.</p>	Image	99	2022-09-10 17:47:21.948759	2022-09-10 17:47:21.948759	ca
+2893	credits	<p>foto: joanseculi.com</p>	Image	111	2022-09-10 17:47:21.961644	2022-09-10 17:47:21.961644	ca
+2894	credits	<p>Foto: Clara Bes</p>	Image	127	2022-09-10 17:47:21.971405	2022-09-10 17:47:21.971405	ca
+2895	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	128	2022-09-10 17:47:21.98305	2022-09-10 17:47:21.98305	ca
+2896	credits	<p>Foto: Clara Bes</p>	Image	129	2022-09-10 17:47:21.997415	2022-09-10 17:47:21.997415	ca
+2897	credits	<p>Foto: Clara Bes</p>	Image	130	2022-09-10 17:47:22.007755	2022-09-10 17:47:22.007755	ca
+2898	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	131	2022-09-10 17:47:22.01813	2022-09-10 17:47:22.01813	ca
+2899	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	132	2022-09-10 17:47:22.029308	2022-09-10 17:47:22.029308	ca
+2900	credits	<p>Obra d'Alèxia Lleonart</p>	Image	139	2022-09-10 17:47:22.03841	2022-09-10 17:47:22.03841	ca
+2901	credits	<p>Foto: Denys Blacker</p>	Image	140	2022-09-10 17:47:22.048002	2022-09-10 17:47:22.048002	en
+2902	credits	<p>Obra d'Alèxia Lleonart</p>	Image	139	2022-09-10 17:47:22.06022	2022-09-10 17:47:22.06022	en
+2903	credits	<p>Foto: Clara Bes</p>	Image	127	2022-09-10 17:47:22.068911	2022-09-10 17:47:22.068911	en
+2904	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	128	2022-09-10 17:47:22.077595	2022-09-10 17:47:22.077595	en
+2905	credits	<p>Foto: Clara Bes</p>	Image	129	2022-09-10 17:47:22.091184	2022-09-10 17:47:22.091184	en
+2906	credits	<p>Foto: Clara Bes</p>	Image	130	2022-09-10 17:47:22.10512	2022-09-10 17:47:22.10512	en
+2907	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	131	2022-09-10 17:47:22.116351	2022-09-10 17:47:22.116351	en
+2908	credits	<p>Foto: Alessia Bombaci/Antic Teatre</p>	Image	132	2022-09-10 17:47:22.128934	2022-09-10 17:47:22.128934	en
+2909	credits	<p>Foto Denys Blacker</p>	Image	147	2022-09-10 17:47:22.139083	2022-09-10 17:47:22.139083	ca
+2910	credits	<p>fotos: Denys Blacker</p>	Image	169	2022-09-10 17:47:22.150145	2022-09-10 17:47:22.150145	ca
+2911	credits	<p>Fotos: Ester Xargay</p>	Image	178	2022-09-10 17:47:22.163326	2022-09-10 17:47:22.163326	ca
+2912	credits	<p>Foto: Ester Xargay</p>\r\n\r\n<p>Daniel Ruiz Trillo llegint els seus poemes</p>	Image	183	2022-09-10 17:47:22.178219	2022-09-10 17:47:22.178219	ca
+2913	credits	<p>Foto: Denys Blacker</p>	Image	185	2022-09-10 17:47:22.190923	2022-09-10 17:47:22.190923	ca
+2914	credits	<p>Foto: Denys Blacker</p>	Image	186	2022-09-10 17:47:22.202846	2022-09-10 17:47:22.202846	ca
+2915	credits	<p>Foto: Denys Blacker</p>	Image	187	2022-09-10 17:47:22.216946	2022-09-10 17:47:22.216946	ca
+2916	credits	<p>Foto: Denys Blacker</p>	Image	188	2022-09-10 17:47:22.229376	2022-09-10 17:47:22.229376	ca
+2917	credits	<p>Foto: Denys Blacker</p>	Image	189	2022-09-10 17:47:22.238649	2022-09-10 17:47:22.238649	ca
+2918	credits	<p>Foto: Denys Blacker</p>	Image	190	2022-09-10 17:47:22.250338	2022-09-10 17:47:22.250338	ca
+2919	credits	<p>Foto: Denys Blacker</p>	Image	192	2022-09-10 17:47:22.262336	2022-09-10 17:47:22.262336	ca
+2920	credits	<p>Foto: Denys Blacker</p>	Image	193	2022-09-10 17:47:22.273429	2022-09-10 17:47:22.273429	ca
+2921	credits	<p>Foto: Denys Blacker</p>	Image	194	2022-09-10 17:47:22.282751	2022-09-10 17:47:22.282751	ca
+2922	credits	<p>Disseny: Gresolart</p>	Image	196	2022-09-10 17:47:22.291231	2022-09-10 17:47:22.291231	ca
+2923	credits	<p>Foto: Denys Blacker</p>	Image	204	2022-09-10 17:47:22.30348	2022-09-10 17:47:22.30348	ca
+2924	credits	<p>Foto: Denys Blacker</p>	Image	205	2022-09-10 17:47:22.312451	2022-09-10 17:47:22.312451	ca
+2925	credits	<p>Foto: Denys Blacker</p>	Image	206	2022-09-10 17:47:22.320836	2022-09-10 17:47:22.320836	ca
+2926	credits	<p>Foto: Denys Blacker</p>	Image	208	2022-09-10 17:47:22.330799	2022-09-10 17:47:22.330799	ca
+2927	credits	<p>Photo: Uma Bunnag</p>	Image	212	2022-09-10 17:47:22.340666	2022-09-10 17:47:22.340666	ca
+2928	credits	<p>Photo: Uma Bunnag</p>	Image	213	2022-09-10 17:47:22.349537	2022-09-10 17:47:22.349537	ca
+2929	credits	<p>Photo: Uma Bunnag</p>	Image	214	2022-09-10 17:47:22.370948	2022-09-10 17:47:22.370948	ca
+2930	credits	<p>Photo: Uma Bunnag</p>	Image	215	2022-09-10 17:47:22.380158	2022-09-10 17:47:22.380158	ca
+2931	credits	<p>Photo: Uma Bunnag</p>	Image	216	2022-09-10 17:47:22.388102	2022-09-10 17:47:22.388102	ca
+2932	credits	<p>Photo: Uma Bunnag</p>	Image	217	2022-09-10 17:47:22.396543	2022-09-10 17:47:22.396543	ca
+2933	credits	<p>Photo: Uma Bunnag</p>	Image	218	2022-09-10 17:47:22.407989	2022-09-10 17:47:22.407989	ca
+2934	credits	<p>Photo: Uma Bunnag</p>	Image	219	2022-09-10 17:47:22.419924	2022-09-10 17:47:22.419924	ca
+2935	credits	<p>Photo: Uma Bunnag</p>	Image	220	2022-09-10 17:47:22.43134	2022-09-10 17:47:22.43134	ca
+2936	credits	<p>Photo: Uma Bunnag</p>	Image	221	2022-09-10 17:47:22.443634	2022-09-10 17:47:22.443634	ca
+2937	credits	<p>Foto: Denys Blacker</p>	Image	233	2022-09-10 17:47:22.456441	2022-09-10 17:47:22.456441	ca
+2938	credits	<p>Foto: Denys Blacker</p>	Image	234	2022-09-10 17:47:22.467225	2022-09-10 17:47:22.467225	ca
+2939	credits	<p>Foto: Denys Blacker</p>	Image	236	2022-09-10 17:47:22.478915	2022-09-10 17:47:22.478915	ca
+2940	credits	<p>Foto: Denys Blacker</p>	Image	237	2022-09-10 17:47:22.490923	2022-09-10 17:47:22.490923	ca
+2941	credits	<p>Foto: Denys Blacker</p>	Image	238	2022-09-10 17:47:22.501301	2022-09-10 17:47:22.501301	ca
+2942	credits	<p>Foto: Denys Blacker</p>	Image	239	2022-09-10 17:47:22.513425	2022-09-10 17:47:22.513425	ca
+2943	credits	<p>Foto: Denys Blacker</p>	Image	240	2022-09-10 17:47:22.526079	2022-09-10 17:47:22.526079	ca
+2944	credits	<p>Foto: Denys Blacker</p>	Image	241	2022-09-10 17:47:22.536254	2022-09-10 17:47:22.536254	ca
+2945	credits	<p>Foto: Mar Serinyà</p>	Image	243	2022-09-10 17:47:22.548378	2022-09-10 17:47:22.548378	ca
+2946	credits	<p>Foto: Mar Serinyà</p>	Image	244	2022-09-10 17:47:22.560286	2022-09-10 17:47:22.560286	ca
+2947	credits	<p>Foto Denys Blacker</p>	Image	255	2022-09-10 17:47:22.571042	2022-09-10 17:47:22.571042	ca
+2948	credits	<p>Foto Denys Blacker</p>	Image	256	2022-09-10 17:47:22.583015	2022-09-10 17:47:22.583015	ca
+2949	credits	<p>Foto Ferran Blancafort</p>	Image	257	2022-09-10 17:47:22.594691	2022-09-10 17:47:22.594691	ca
+2950	credits	<p>Foto Denys Blacker</p>	Image	258	2022-09-10 17:47:22.605296	2022-09-10 17:47:22.605296	ca
+2951	credits	<p>Foto Denys Blacker</p>	Image	259	2022-09-10 17:47:22.616292	2022-09-10 17:47:22.616292	ca
+2952	credits	<p>Foto Joan Casellas</p>	Image	260	2022-09-10 17:47:22.62625	2022-09-10 17:47:22.62625	ca
+2953	credits	<p>Foto: Sachiyo Kaneko</p>	Image	261	2022-09-10 17:47:22.635407	2022-09-10 17:47:22.635407	ca
+2954	credits	<p>Foto Joan Casellas</p>	Image	262	2022-09-10 17:47:22.645466	2022-09-10 17:47:22.645466	ca
+2955	credits	<p>Foto Joan Casellas</p>	Image	263	2022-09-10 17:47:22.655248	2022-09-10 17:47:22.655248	ca
+2956	credits	<p>Foto: Sachiyo Kaneko</p>	Image	264	2022-09-10 17:47:22.666023	2022-09-10 17:47:22.666023	ca
+2957	credits	<p>Foto: Sachiyo Kaneko</p>	Image	265	2022-09-10 17:47:22.675971	2022-09-10 17:47:22.675971	ca
+2958	credits	<p>Foto: Sachiyo Kaneko</p>	Image	266	2022-09-10 17:47:22.687271	2022-09-10 17:47:22.687271	ca
+2959	credits	<p>Foto: Clàudia Serrahima</p>	Image	245	2022-09-10 17:47:22.697253	2022-09-10 17:47:22.697253	ca
+2960	credits	<p>Foto: Clàudia Serrahima</p>	Image	246	2022-09-10 17:47:22.706829	2022-09-10 17:47:22.706829	ca
+2961	credits	<p>Foto: Clàudia Serrahima</p>	Image	247	2022-09-10 17:47:22.717782	2022-09-10 17:47:22.717782	ca
+2962	credits	<p>Foto: Clàudia Serrahima</p>	Image	248	2022-09-10 17:47:22.729042	2022-09-10 17:47:22.729042	ca
+2963	credits	<p>Foto: Clàudia Serrahima</p>	Image	249	2022-09-10 17:47:22.738983	2022-09-10 17:47:22.738983	ca
+2964	credits	<p>Foto: Clàudia Serrahima</p>	Image	250	2022-09-10 17:47:22.749553	2022-09-10 17:47:22.749553	ca
+2965	credits	<p>Foto: Clàudia Serrahima</p>	Image	251	2022-09-10 17:47:22.76105	2022-09-10 17:47:22.76105	ca
+2966	credits	<p>Foto: Clàudia Serrahima</p>	Image	252	2022-09-10 17:47:22.771058	2022-09-10 17:47:22.771058	ca
+2967	credits	<p>Foto: Clàudia Serrahima</p>	Image	253	2022-09-10 17:47:22.781415	2022-09-10 17:47:22.781415	ca
+2968	credits	<p>Foto: Clàudia Serrahima</p>	Image	254	2022-09-10 17:47:22.798094	2022-09-10 17:47:22.798094	ca
+2969	credits	<p>Foto: Mireia Prat</p>	Image	268	2022-09-10 17:47:22.818641	2022-09-10 17:47:22.818641	ca
+2970	credits	<p>Foto: Mireia Prat</p>	Image	269	2022-09-10 17:47:22.834883	2022-09-10 17:47:22.834883	ca
+2971	credits	<p>Foto: Denys Blacker</p>	Image	274	2022-09-10 17:47:22.846103	2022-09-10 17:47:22.846103	ca
+2972	credits	<p>Foto: Denys Blacker</p>	Image	275	2022-09-10 17:47:22.858249	2022-09-10 17:47:22.858249	ca
+2973	credits	<p>Foto: Denys Blacker</p>	Image	276	2022-09-10 17:47:22.870827	2022-09-10 17:47:22.870827	ca
+2974	credits	<p>Foto: Denys Blacker</p>	Image	277	2022-09-10 17:47:22.881575	2022-09-10 17:47:22.881575	ca
+2975	credits	<p>Foto: Paco Justicia</p>\r\n\r\n<p> </p>	Image	282	2022-09-10 17:47:22.895891	2022-09-10 17:47:22.895891	ca
+2976	credits	<p>foto: Rosa Ballarin</p>	Image	283	2022-09-10 17:47:22.910884	2022-09-10 17:47:22.910884	ca
+2977	credits	<p>foto: Rosa Ballarin</p>	Image	284	2022-09-10 17:47:22.922956	2022-09-10 17:47:22.922956	ca
+2978	credits	<p>foto: Rosa Ballarin</p>	Image	285	2022-09-10 17:47:22.934882	2022-09-10 17:47:22.934882	ca
+2979	credits	<p>foto: Rosa Ballarin</p>	Image	286	2022-09-10 17:47:22.944496	2022-09-10 17:47:22.944496	ca
+2980	credits	<p>foto: Rosa Ballarin</p>	Image	287	2022-09-10 17:47:22.953494	2022-09-10 17:47:22.953494	ca
+2981	credits	<p>foto: Rosa Ballarin</p>	Image	288	2022-09-10 17:47:22.96579	2022-09-10 17:47:22.96579	ca
+2982	credits	<p>foto: Rosa Ballarin</p>	Image	289	2022-09-10 17:47:22.974525	2022-09-10 17:47:22.974525	ca
+2983	credits	<p>foto: Rosa Ballarin</p>	Image	290	2022-09-10 17:47:22.983849	2022-09-10 17:47:22.983849	ca
+2984	credits	<p>foto: Rosa Ballarin</p>	Image	291	2022-09-10 17:47:22.993521	2022-09-10 17:47:22.993521	ca
+2985	credits	<p>foto: Rosa Ballarin</p>	Image	292	2022-09-10 17:47:23.004018	2022-09-10 17:47:23.004018	ca
+2986	credits	<p>Foto: Arto Polus</p>	Image	293	2022-09-10 17:47:23.014031	2022-09-10 17:47:23.014031	ca
+2987	credits	<p>Foto: Vanessa Massons</p>	Image	294	2022-09-10 17:47:23.023222	2022-09-10 17:47:23.023222	ca
+2988	credits	<p>Foto: Paco Justicia</p>	Image	297	2022-09-10 17:47:23.033814	2022-09-10 17:47:23.033814	ca
+2989	credits	<p>Foto: Josep Sou</p>	Image	298	2022-09-10 17:47:23.047041	2022-09-10 17:47:23.047041	ca
+2990	credits	<p>Foto: Paco Justicia</p>	Image	299	2022-09-10 17:47:23.057592	2022-09-10 17:47:23.057592	ca
+2991	credits	<p>Foto: Paco Justicia</p>	Image	300	2022-09-10 17:47:23.072052	2022-09-10 17:47:23.072052	ca
+2992	credits	<p>Foto: Paco Justicia</p>	Image	308	2022-09-10 17:47:23.084471	2022-09-10 17:47:23.084471	ca
+2993	credits	<p>Foto: Paco Justicia</p>	Image	309	2022-09-10 17:47:23.093868	2022-09-10 17:47:23.093868	ca
+2994	credits	<p>Foto: Paco Justicia</p>	Image	310	2022-09-10 17:47:23.105114	2022-09-10 17:47:23.105114	ca
+2995	credits	<p>Foto: Paco Justicia</p>	Image	311	2022-09-10 17:47:23.117243	2022-09-10 17:47:23.117243	ca
+2996	credits	<p>Foto: Belén Herrero</p>	Image	312	2022-09-10 17:47:23.131491	2022-09-10 17:47:23.131491	ca
+2997	credits	<p>Foto Sara Ruiz</p>	Image	314	2022-09-10 17:47:23.15104	2022-09-10 17:47:23.15104	ca
+2998	credits	<p>Foto: Sara Ruiz</p>	Image	315	2022-09-10 17:47:23.166742	2022-09-10 17:47:23.166742	ca
+2999	credits	<p>Foto: Sara Ruiz</p>	Image	316	2022-09-10 17:47:23.184474	2022-09-10 17:47:23.184474	ca
+3000	credits	<p>Photo Denys Blacker</p>	Image	326	2022-09-10 17:47:23.202917	2022-09-10 17:47:23.202917	ca
+3001	credits	<p>Photo Denys Blacker</p>	Image	327	2022-09-10 17:47:23.222363	2022-09-10 17:47:23.222363	ca
+3002	credits	<p>Photo Denys Blacker</p>	Image	328	2022-09-10 17:47:23.242975	2022-09-10 17:47:23.242975	ca
+3003	credits	<p>cos cosit (després de despreniment)</p>	Image	355	2022-09-10 17:47:23.262965	2022-09-10 17:47:23.262965	ca
+3004	credits	<p>Photo Denys Blacker</p>	Image	330	2022-09-10 17:47:23.289555	2022-09-10 17:47:23.289555	ca
+3005	credits	<p>Foto: Carme Ors</p>	Image	334	2022-09-10 17:47:23.299564	2022-09-10 17:47:23.299564	ca
+3006	credits	<p>Foto: Aleix Vallverdú</p>	Image	342	2022-09-10 17:47:23.313533	2022-09-10 17:47:23.313533	ca
+3007	credits	<p>Foto: Aleix Vallverdú</p>	Image	343	2022-09-10 17:47:23.325917	2022-09-10 17:47:23.325917	ca
+3008	credits	<p>Foto: Aleix Vallverdú</p>	Image	344	2022-09-10 17:47:23.337512	2022-09-10 17:47:23.337512	ca
+3009	credits	<p>Photo Denys Blacker</p>	Image	346	2022-09-10 17:47:23.349696	2022-09-10 17:47:23.349696	ca
+3010	credits	<p>riualles</p>	Image	352	2022-09-10 17:47:23.359108	2022-09-10 17:47:23.359108	ca
+3011	credits	<p>vimet(era)</p>	Image	353	2022-09-10 17:47:23.368545	2022-09-10 17:47:23.368545	ca
+3012	credits	<p>common</p>	Image	354	2022-09-10 17:47:23.38109	2022-09-10 17:47:23.38109	ca
+3013	credits	<p>sec(q)ualles</p>	Image	356	2022-09-10 17:47:23.391267	2022-09-10 17:47:23.391267	ca
+3014	credits	<p>funambòlia</p>	Image	357	2022-09-10 17:47:23.401098	2022-09-10 17:47:23.401098	ca
+3015	credits	<p>cordada</p>	Image	358	2022-09-10 17:47:23.412624	2022-09-10 17:47:23.412624	ca
+3016	credits	<p>Exposició col·lectiva d'escultures en pedra a la Biblioteca de Teià</p>	Image	347	2022-09-10 17:47:23.423821	2022-09-10 17:47:23.423821	ca
+3017	credits	<p>obra de Lesley Yendell</p>	Image	367	2022-09-10 17:47:23.435866	2022-09-10 17:47:23.435866	ca
+3018	credits	<p>Foto: Marta Carreté</p>	Image	371	2022-09-10 17:47:23.448856	2022-09-10 17:47:23.448856	ca
+3019	credits	<p>Foto Marta Carreté</p>	Image	375	2022-09-10 17:47:23.461259	2022-09-10 17:47:23.461259	ca
+3020	credits	<p>Foto: Adolf Alcañiz</p>	Image	435	2022-09-10 17:47:23.471179	2022-09-10 17:47:23.471179	ca
+3021	credits	<p>Foto: Adolf Alcañiz</p>	Image	436	2022-09-10 17:47:23.4828	2022-09-10 17:47:23.4828	ca
+3022	credits	<p>Foto: Goretti Estengre</p>	Image	437	2022-09-10 17:47:23.49436	2022-09-10 17:47:23.49436	ca
+3023	credits	<p>Foto: Adolf Alcañiz</p>	Image	438	2022-09-10 17:47:23.509495	2022-09-10 17:47:23.509495	ca
+3024	credits	<p>Foto: Goretti Estengre</p>	Image	439	2022-09-10 17:47:23.522399	2022-09-10 17:47:23.522399	ca
+3025	credits	<p>Foto Joana de Querol</p>	Image	441	2022-09-10 17:47:23.533941	2022-09-10 17:47:23.533941	ca
+3026	credits	<p>Foto: Joana de Querol</p>	Image	442	2022-09-10 17:47:23.549254	2022-09-10 17:47:23.549254	ca
+3027	credits	<p>foto: Isa Fontbona</p>	Image	445	2022-09-10 17:47:23.564708	2022-09-10 17:47:23.564708	es
+3028	credits	<p>Foto: Isa Fontbona</p>	Image	445	2022-09-10 17:47:23.577487	2022-09-10 17:47:23.577487	en
+3029	credits	<p>Foto: Isa Fontbona</p>	Image	446	2022-09-10 17:47:23.593639	2022-09-10 17:47:23.593639	en
+3030	credits	<p>Foto: Isa Fontbona</p>	Image	447	2022-09-10 17:47:23.609824	2022-09-10 17:47:23.609824	en
+3031	credits	<p>Foto: Isa Fontbona</p>	Image	448	2022-09-10 17:47:23.624954	2022-09-10 17:47:23.624954	en
+3032	credits	<p>Foto: Adolf Alcañiz</p>	Image	435	2022-09-10 17:47:23.63653	2022-09-10 17:47:23.63653	es
+3033	credits	<p>Foto: Adolf Alcañiz</p>	Image	436	2022-09-10 17:47:23.649839	2022-09-10 17:47:23.649839	es
+3034	credits	<p>Foto: Goretti Estengre</p>	Image	437	2022-09-10 17:47:23.660113	2022-09-10 17:47:23.660113	es
+3035	credits	<p>Foto: Adolf Alcañiz</p>	Image	438	2022-09-10 17:47:23.670601	2022-09-10 17:47:23.670601	es
+3036	credits	<p>Foto: Goretti Estengre</p>	Image	439	2022-09-10 17:47:23.683578	2022-09-10 17:47:23.683578	es
+3037	credits	<p>Mireia Zantop</p>	Image	466	2022-09-10 17:47:23.693422	2022-09-10 17:47:23.693422	ca
+3038	credits	<p>Mireia Zantop</p>	Image	467	2022-09-10 17:47:23.702864	2022-09-10 17:47:23.702864	ca
+3039	credits	<p>Mireia Zantop</p>	Image	468	2022-09-10 17:47:23.712772	2022-09-10 17:47:23.712772	ca
+3040	credits	<p>Mireia Zantop</p>\r\n\r\n<p><strong>Atadalasalas</strong></p>	Image	469	2022-09-10 17:47:23.722306	2022-09-10 17:47:23.722306	ca
+3041	credits	<p>Mireia Zantop</p>	Image	470	2022-09-10 17:47:23.735354	2022-09-10 17:47:23.735354	ca
+3042	credits	<p>Mireia Zantop</p>	Image	471	2022-09-10 17:47:23.746123	2022-09-10 17:47:23.746123	ca
+3043	credits	<p>Mireia Zantop</p>	Image	472	2022-09-10 17:47:23.757748	2022-09-10 17:47:23.757748	ca
+3044	credits	<p>O.dumonde</p>	Image	466	2022-09-10 17:47:23.766778	2022-09-10 17:47:23.766778	en
+3045	credits	<p>(des)equilibris</p>	Image	467	2022-09-10 17:47:23.775154	2022-09-10 17:47:23.775154	en
+3046	credits	<p>(s)omni</p>	Image	468	2022-09-10 17:47:23.785027	2022-09-10 17:47:23.785027	en
+3047	credits	<p> </p>\r\n\r\n<p><strong>Atadalasalas</strong></p>	Image	469	2022-09-10 17:47:23.795759	2022-09-10 17:47:23.795759	en
+3048	credits	<p>Acord</p>	Image	470	2022-09-10 17:47:23.803976	2022-09-10 17:47:23.803976	en
+3049	credits	<p>pietà</p>	Image	471	2022-09-10 17:47:23.812728	2022-09-10 17:47:23.812728	en
+3050	credits	<p>coeurage</p>	Image	472	2022-09-10 17:47:23.822937	2022-09-10 17:47:23.822937	en
+3051	credits	<p>O.dumonde</p>	Image	466	2022-09-10 17:47:23.835875	2022-09-10 17:47:23.835875	es
+3052	credits	<p>(des)equilibrio</p>	Image	467	2022-09-10 17:47:23.846047	2022-09-10 17:47:23.846047	es
+3053	credits	<p>sueño, senza tempo</p>	Image	468	2022-09-10 17:47:23.856575	2022-09-10 17:47:23.856575	es
+3054	credits	<p>pietá</p>	Image	471	2022-09-10 17:47:23.866725	2022-09-10 17:47:23.866725	es
+3055	credits	<p>coeurage</p>	Image	472	2022-09-10 17:47:23.875794	2022-09-10 17:47:23.875794	es
+3056	credits	<p>Atadalasalas</p>	Image	469	2022-09-10 17:47:23.885234	2022-09-10 17:47:23.885234	es
+3057	credits	<p>acuerdo</p>	Image	470	2022-09-10 17:47:23.895744	2022-09-10 17:47:23.895744	es
+3060	credits	<p>Exposición colectiva de escultura en piedra en la Biblioteca de Teià</p>	Image	347	2022-09-10 17:47:23.927674	2022-09-10 17:47:23.927674	es
+3061	credits	<p>zarzAmores</p>	Image	368	2022-09-10 17:47:23.939597	2022-09-10 17:47:23.939597	es
+3062	credits	<p>Orchidée (instalación y serie Orgasmo)<br>\r\n </p>	Image	369	2022-09-10 17:47:23.952613	2022-09-10 17:47:23.952613	es
+3063	credits	<p>Ave del paraíso (instalación y serie Orgasmo)<br>\r\n </p>	Image	370	2022-09-10 17:47:23.964835	2022-09-10 17:47:23.964835	es
+3064	credits	<p>obra de Lesley Yendell</p>	Image	367	2022-09-10 17:47:23.975199	2022-09-10 17:47:23.975199	es
+3065	credits	<p>funambulista</p>	Image	363	2022-09-10 17:47:23.984028	2022-09-10 17:47:23.984028	es
+3066	credits	<p>riualles</p>	Image	352	2022-09-10 17:47:23.9955	2022-09-10 17:47:23.9955	es
+3067	credits	<p>vimet(era)</p>	Image	353	2022-09-10 17:47:24.006832	2022-09-10 17:47:24.006832	es
+3068	credits	<p>common</p>	Image	354	2022-09-10 17:47:24.017798	2022-09-10 17:47:24.017798	es
+3069	credits	<p>cos cosit (després de despreniment)</p>	Image	355	2022-09-10 17:47:24.028871	2022-09-10 17:47:24.028871	es
+3070	credits	<p>sec(q)ualles</p>	Image	356	2022-09-10 17:47:24.043072	2022-09-10 17:47:24.043072	es
+3071	credits	<p>funambòlia</p>	Image	357	2022-09-10 17:47:24.053388	2022-09-10 17:47:24.053388	es
+3072	credits	<p>cordada</p>	Image	358	2022-09-10 17:47:24.062399	2022-09-10 17:47:24.062399	es
+3073	credits	<p>Foto: Marta Carreté</p>	Image	371	2022-09-10 17:47:24.072423	2022-09-10 17:47:24.072423	es
+3074	credits	<p>Foto Marta Carreté</p>	Image	375	2022-09-10 17:47:24.086782	2022-09-10 17:47:24.086782	es
+3078	title	Contact	Page	2	2022-09-10 17:47:24.1798	2022-09-10 17:47:24.1798	ca
+3079	body	The contact-page	Page	2	2022-09-10 17:47:24.192076	2022-09-10 17:47:24.192076	ca
+3080	title	About	Page	1	2022-09-10 17:47:24.20242	2022-09-10 17:47:24.20242	ca
+3081	body	<p>mireia zantop zigzageja en l'u,<br>\r\ntreballa amb els llenguatges visuals i del cos,</p>\r\n\r\n<p>en l'art d'acció, relaciona identitats en l'espai/temps de confluència de mirades i intencions</p>\r\n\r\n<p>performance participativa a l'espai públic: <a href="http://www.lesmireies.com">http://www.lesmireies.com</a></p>\r\n\r\n<p>+ info: hola@mireiazantop.com</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>	Page	1	2022-09-10 17:47:24.213131	2022-09-10 17:47:24.213131	ca
+3082	title	About	Page	1	2022-09-10 17:47:24.222145	2022-09-10 17:47:24.222145	es
+3195	name	ephemeral art	Tag	31	2022-09-10 17:47:25.749285	2022-09-10 17:47:25.749285	en
+3196	name	arte efímero	Tag	31	2022-09-10 17:47:25.76694	2022-09-10 17:47:25.76694	es
+3197	name	land-art o art natura	Tag	26	2022-09-10 17:47:25.783496	2022-09-10 17:47:25.783496	ca
+3083	body	<p><strong>Mireia Zantop</strong> zigzaguea en la unidad poliédrica, trabaja con los lenguajes visuales y del cuerpo.</p>\r\n\r\n<p>en el arte de acción, ese cajón transdisciplinario, conjuga identidades y las relaciona con la poesía del espacio/tiempo.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Para una mayor confluencia de miradas e intenciones, para dar voz y presencia a aquello que solemos silenciar de forma individual y colectiva, surgieron</p>\r\n\r\n<p><strong>les mireies,</strong> un proyecto de performance participativa en el espacio público <a href="http://www.lesmireies.com">http://www.lesmireies.com</a></p>\r\n\r\n<p> </p>\r\n\r\n<p>+ info: hola@mireiazantop.com</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>	Page	1	2022-09-10 17:47:24.233416	2022-09-10 17:47:24.233416	es
+3084	title	About	Page	1	2022-09-10 17:47:24.243512	2022-09-10 17:47:24.243512	en
+3085	body	<p>Mireia Zantop zigzags in the polyhedral unit, and works both with visual and presential body languages.</p>\r\n\r\n<p>In performance art she works with identities' crossovers and immaterial questions that affect us in presential space/time poems.</p>\r\n\r\n<p>She is member of OCELLS AL CAP collective <a href="https://ocellsalcap.com/">https://ocellsalcap.com/</a> and CORPOLOGIA <a href="https://corpologialiveart.blogspot.com/">https://corpologialiveart.blogspot.com/</a></p>\r\n\r\n<p>LES MIREIES <a href="http://www.lesmireies.com">http://www.lesmireies.com</a> is a participatory performance project in the public space created with the intention to give voice to what we usually silence both individually and collectively<br>\r\n </p>\r\n\r\n<p>more info: <strong>hola@mireiazantop.com</strong></p>	Page	1	2022-09-10 17:47:24.256493	2022-09-10 17:47:24.256493	en
+3086	title	agraïments	Section	2	2022-09-10 17:47:24.303351	2022-09-10 17:47:24.303351	ca
+3087	body	<p>(fè d'errata)a la pàgina dels crèdits hauria de figurar, escrit a mà:</p>\r\n\r\n<p>AgraÏda</p>\r\n\r\n<p>a les saurines de idees,<br>\r\nal pare Jordi i als meus,<br>\r\nals amables del camí<br>\r\ni a tot allò que m'atrau i em permet veure més enllà de la forma.  <br>\r\nA tu.</p>	Section	2	2022-09-10 17:47:24.317479	2022-09-10 17:47:24.317479	ca
+3088	title	CANON de SINEQUANONS	Section	1	2022-09-10 17:47:24.32657	2022-09-10 17:47:24.32657	ca
+3089	body	<p>veure per crear<br>\r\ncrear per veure<br>\r\nviure per veure<br>\r\n(i da capo)</p>	Section	1	2022-09-10 17:47:24.336247	2022-09-10 17:47:24.336247	ca
+3090	body	<p>Equilibri, de aequilibrium: aequus = igual i libra=balança, pes i aquí. i a qui? libris: dels llibres o dels lliures. libertas: tornar a la mare</p>\r\n\r\n<p>Fragment del procés d'equilibri de lectures obertes i creuades del pes propi i l'exterior, del cos íntim davant del cos públic dels factors intencionats o involuntaris, de l'acció de forces que implico o s'impliquen i contrarresten mútuament, dels vincles de la paraula-veu i la paraula-paper, paper del lligam, de la (con)fusió dels estrats de percepció i memòria en l'harmonia de la unitat.</p>\r\n\r\n<p>Els factors (sempre) canviants neguen un estat d'equilibri estable, un resultat, i evidencien un procés pur d'infinit moviment tendint a la justesa i l'harmonia en la unitat.</p>\r\n\r\n<p>...Et qui est libre?</p>	Section	3	2022-09-10 17:47:24.349865	2022-09-10 17:47:24.349865	ca
+3091	body	<p>Fruit d'un procés d'anada i tornada de creació poètica que s'endinsa en els llenguatges de la paraula, el traç pictòric i l'expressió corporal, dues artistes presenten aquesta exposició i una performance.</p>	Section	4	2022-09-10 17:47:24.360022	2022-09-10 17:47:24.360022	ca
+3092	title	EXPERIMENTAL ROOM FESTIVAL	Section	5	2022-09-10 17:47:24.369629	2022-09-10 17:47:24.369629	ca
+3093	body	<p>EXPERIMENTAL ROOM FESTIVAL<br>\r\nExperiencias escénicas íntimas y personales en espacios no convencionales1ª edición Performance, Teatro Experimental, Nuevas Dramaturgias, Arte Vivo, Arte de Acción…<br>\r\nConcepto y dirección: María Stoyanova Organiza: Atelier Escènic Stoyanova, La Cháchara Espai d’art i ideas y Colectivo Irimi<br>\r\nEXPERIMENTAL ROOM FESTIVAL PROGRAMA de las PERFORMANCES días 12, 13 y 14 de julio del 2013<br>\r\nViernes, 12<br>\r\n19:00h Apertura oficial del festival 19:30h Performance/Acción a cargo de Mireia Zantop (Performer y artista plástica) – Artista invitada 20:30h “Alquimia para los que todavía no encontraron su lugar” de Beatriz López 21:30h “1’40×2’00” de Bea González 23:00h “Más allá de mi rincón” de Ana Laura López *** Instalación – performance de larga duración – “Cartas a Lars Von Trier” de Gemma Inglés *** DJ SergiOh<br>\r\nSábado, 13<br>\r\n17:00h “Raíces – memorias para no olvidar” de Carmen Sillero 18:30h “Alquimia para los que todavía no encontraron su lugar” de Beatriz López 20:00h Nick Prescott (concierto) – Artista invitado 21:30h “Soy más fea de lo que parezco” de Sonia Ezquerra *** Instalación – performance de larga duración – “Los rostros del silencio” de Carmina Pérez *** DJ SergiOh<br>\r\nDomingo, 14<br>\r\n17:00h Acciones Colectivo IRIMI 18:00h “Desaparecer” de Graciela Contreras 19:30h “Más allá de mi rincón” de Ana Laura López 20:30h “Línea y Nudo – mitología griega contemporánea” de Alkyoni Bouchalaki *** Instalación – performance de larga duración – “Sin colorantes ni azúcares añadidos” de Konstantina Titkova 22:00h Cierre del festival<br>\r\nArtistas invitados: Mireia Zantop, SergiOh! dj y Nick Prescott (música) entre otros.<br>\r\nProducción ejecutiva: Karel Mena Diseño de iluminación: Toni Alonso Audiovisuales: EAST SIDE CONNECTION Servicio de catering: “El nieto de la yaya”<br>\r\n**Todas las performances, excepto las de los artistas invitados, son fruto del trabajo realizado dentro del #Laboratorio de solos del Atelier Escénic Stoyanova<br>\r\nTeasers de las performances: https://vimeo.com/channels/experimentalroom<br>\r\nBono contribución: 10€ por día<br>\r\nPLAZAS LIMITADAS Reservas al mail: atelierescenic@gmail.com<br>\r\nLUGAR: La Cháchara espai d’art i ideas, carrer d’n Blanco, 15 – Pl. de Sants, Barcelona<br>\r\nMás información:<br>\r\nwww.atelierescenic.com www.lachachara.info www.mariastoyanova.com</p>\r\n\r\n<p> </p>	Section	5	2022-09-10 17:47:24.382181	2022-09-10 17:47:24.382181	ca
+3094	body	<p>Accions:</p>\r\n\r\n<p>1.Sols calçats i Skip</p>\r\n\r\n<p>2. Homenatge a l'operari, Niu</p>\r\n\r\n<p>3. La bolsa, la vida</p>\r\n\r\n<p>4. trio de cordes</p>\r\n\r\n<p>5. trio global</p>\r\n\r\n<p>6. Circuit cons</p>\r\n\r\n<p>7. Atac al cor</p>\r\n\r\n<p>8. Composició aleatòria en equilibri</p>\r\n\r\n<p>9. los murmuradores</p>\r\n\r\n<p>10. Psicomantra</p>\r\n\r\n<p>11. Amar a la ramA</p>\r\n\r\n<p>Video-accions:</p>\r\n\r\n<p>1. trampA (Homenatge a B)</p>\r\n\r\n<p>2. Fluxus</p>\r\n\r\n<p>3. unOu</p>\r\n\r\n<p>4.tacones sobre ruedas</p>\r\n\r\n<p>5. Ritme mut</p>\r\n\r\n<p>6.Escletxa de censura</p>\r\n\r\n<p>7. Sóc soc</p>\r\n\r\n<p>8.Faldilles al vent</p>\r\n\r\n<p>9. Hombres fritos</p>\r\n\r\n<p>10.GlobOus</p>\r\n\r\n<p>11. Tres al plat</p>	Section	6	2022-09-10 17:47:24.399387	2022-09-10 17:47:24.399387	ca
+3095	body	<p>Accions:</p>\r\n\r\n<p>1.Sols calçats i Skip</p>\r\n\r\n<p>2. Homenatge a l'operari, Niu</p>\r\n\r\n<p>3. La bolsa, la vida</p>\r\n\r\n<p>4. trio de cordes</p>\r\n\r\n<p>5. trio global</p>\r\n\r\n<p>6. Circuit cons</p>\r\n\r\n<p>7. Atac al cor</p>\r\n\r\n<p>8. Composició aleatòria en equilibri</p>\r\n\r\n<p>9. los murmuradores</p>\r\n\r\n<p>10. Psicomantra</p>\r\n\r\n<p>11. Amar a la ramA</p>\r\n\r\n<p>Video-accions:</p>\r\n\r\n<p>1. trampA (Homenatge a B)</p>\r\n\r\n<p>2. Fluxus</p>\r\n\r\n<p>3. unOu</p>\r\n\r\n<p>4.tacones sobre ruedas</p>\r\n\r\n<p>5. Ritme mut</p>\r\n\r\n<p>6.Escletxa de censura</p>\r\n\r\n<p>7. Sóc soc</p>\r\n\r\n<p>8.Faldilles al vent</p>\r\n\r\n<p>9. Hombres fritos</p>\r\n\r\n<p>10.GlobOus</p>\r\n\r\n<p>11. Tres al plat</p>	Section	6	2022-09-10 17:47:24.420632	2022-09-10 17:47:24.420632	en
+3096	title	Informe de Carles H. Mor	Section	7	2022-09-10 17:47:24.430069	2022-09-10 17:47:24.430069	ca
+3198	name	group process	Tag	32	2022-09-10 17:47:25.795012	2022-09-10 17:47:25.795012	en
+3199	name	proceso colectivo	Tag	32	2022-09-10 17:47:25.80518	2022-09-10 17:47:25.80518	es
+3200	name	obra original sobre papel	Tag	35	2022-09-10 17:47:25.817818	2022-09-10 17:47:25.817818	es
+3201	name	obra original sobre paper	Tag	35	2022-09-10 17:47:25.827116	2022-09-10 17:47:25.827116	ca
+3202	name	original work on paper	Tag	35	2022-09-10 17:47:25.836419	2022-09-10 17:47:25.836419	en
+3203	title	E qui libri (s) II	Work	9	2022-09-10 17:47:25.899812	2022-09-10 17:47:25.899812	es
+3097	body	<p>POESIA ALS PARCS 2014</p>\r\n\r\n<p> </p>\r\n\r\n<p>ESPAI NATURAL DE LES GUILLERIES-SAVASSONA<br>\r\nDATA: diumenge 12 d'octubre.</p>\r\n\r\n<p>MUNICIPI: Tavèrnoles.</p>\r\n\r\n<p>HORA: 12 h.</p>\r\n\r\n<p>ACTES: Recital de poesia.</p>\r\n\r\n<p>LLOC: Ermita de Sant Feliuet de Savassona.</p>\r\n\r\n<p>Temps meteorològic: bo.</p>\r\n\r\n<p>Puntualitat de l'acte: el quart d’hora acadèmic.</p>\r\n\r\n<p>Puntualitat del públic: el quart d’hora acadèmic.</p>\r\n\r\n<p>Presentació de l'acte: Carles Hac Mor i Ester Xargay.</p>\r\n\r\n<p>Autoria de l'acte: Daniel Ruiz-Trillo i Mireia Zantop.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Cadires: pedrissos, un banc i un parell de cadires.</p>\r\n\r\n<p>Assistència: unes trenta persones.</p>\r\n\r\n<p>Acceptació del públic: molt bona, i amb una gran participació.<br>\r\nDifusió: la pròpia de Poesia als Parcs.</p>\r\n\r\n<p>Observacions: A diferència de l'any passat, enguany al recital no hi va acudir cap gos, i aquesta manca sobtada d'interès caní per la poesia va ser comentada per tothom. En canvi, la presència de formigues va ser notable, fins al punt que una de les corrues d'aquests insectes va traspassar l'entrepà d'un nen que així es va quedar sense esmorzar, mentre una dona ja gran era atacada per una mena de mosquit que va sortir furiosament de la porta de l'ermita, tal vegada impulsat per un rampell líric de Sant Feliuet. I el més curiós de tot és que tant els poemes del poeta com els de la poetessa van fer joc amb aquelles manifestacions insectívoles. En efecte, hi van predominar els poemes molt breus, alguns de minúsculs, i tots d'una gran qualitat subtil, enginyosa i personal, amb un humor tothora delicat que va captivar els espectadors. El recital pròpiament dit va acabar amb una acció poètica, proposada per Mireia Zantop i que va consistir en la confecció i el llançament d'avions de paper des de les grans pedres que fan de mirador sobre el riu Ter. Per acabar, hi va haver dos espontanis: l'ermità i cèlebre folklorista Xavier Roviró va recitar de memòria un poema llarg de Mossèn Cinto Verdaguer que versava sobre la vida sexual de dos rius d'aquella comarca; i una noia, que lluïa una samarreta verda que s'adeia amb tots els colors del verd d'aquell paratge, va expressar en silenci, subliminalment, unes emocions tan íntimes i excelses que només van ser captades pels espectadors més atents.</p>	Section	7	2022-09-10 17:47:24.463229	2022-09-10 17:47:24.463229	ca
+3098	title	Descripció/Notes	Section	8	2022-09-10 17:47:24.47762	2022-09-10 17:47:24.47762	ca
+3234	title	Flux(Us)	Work	57	2022-09-10 17:47:26.256722	2022-09-10 17:47:26.256722	ca
+3235	description	<p><strong>La Muga Caula</strong>, trobada Internacional de poesia d'acció i performance</p>\r\n\r\n<p>panta rei - tot unit en la diferència</p>\r\n\r\n<p><a href="http://lamugacaula.cat">http://lamugacaula.cat</a></p>\r\n\r\n<p>fotografia: <a href="http://pacojusticia.com">http://pacojusticia.com</a></p>	Work	57	2022-09-10 17:47:26.266958	2022-09-10 17:47:26.266958	ca
+3236	place	Les Escaules, Girona	Work	57	2022-09-10 17:47:26.275413	2022-09-10 17:47:26.275413	ca
+3237	title	DONAR VEU...i veure més	Work	62	2022-09-10 17:47:26.285684	2022-09-10 17:47:26.285684	ca
+3487	name	metacroqueta	Tag	37	2022-09-10 23:57:47.531908	2022-09-10 23:57:47.531908	ca
+3441	description	<div><br>Madremanya, Girona/ Donegal, Ireland<br> <br> 08/08/2021<br> <br> Vídeo-performance amb Denys Blacker <a href="https://denysblacker.com">https://denysblacker.com</a><br> Procés creatiu col·lectiu sobre migracions amb Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) i Isa Fontbona.<br> Vídeo: Mar Ximenis<br> Presentat en Regional Cultural Centri Letterkenny Co.Donegal a la tardor de 2021<br><br></div><div><br>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html<br></a><br></div>	Work	87	2022-09-10 17:47:28.831514	2022-09-10 23:57:47.714469	ca
+3130	body	<div><br>La ruleta de la fortuna gira la seva roda en cicles de repetició, rang i potència. Escolto veus ancestrals<br>  i somnio on l'ocell nia millor. Una dissociació interna mentre ens movem: Quines parts marxen, quines parts es resisteixen a marxar?<br> Diàspora del genoma, no només la meva, potser una altra, apropiada perquè l'hem adoptat. Quant de temps hi ha<br> mentre no soc ni d'aquí/ni d'allà o encara no he marxat del tot / encara no he arribat?<br> L'un mateix, present, és un lloc de permanència, un eix? Els ocells migradors van o venen de? Una<br> generació més tard, els fills van a o tornen a? La idea del procés en progrés. Què és el que estira o empeny, marcant la<br> direcció i la intenció d'un pas: motivació o por? Em moc o estic sent desplaçat?<br> Marxar d'un lloc segur és com anar més enllà del que coneixem. L'horitzó, com a lloc inexistent, una il·lusió visual, un quadre d'art utòpic, es mou a mesura que ens apropem. Quina visió necessites per començar a caminar?<br><br></div>	Section	19	2022-09-10 17:47:24.943456	2022-09-10 23:57:47.759944	ca
+3077	credits	<div><br>Foto: Isa Fontbona<br><br></div>	Image	465	2022-09-10 17:47:24.126024	2022-09-10 23:57:47.796751	ca
+3058	credits	<div><br>Foto: Isa Fontbona<br><br></div>	Image	445	2022-09-10 17:47:23.904092	2022-09-10 23:57:47.822539	ca
+3059	credits	<div><br>Foto: Isa Fontbona<br><br></div>	Image	446	2022-09-10 17:47:23.915641	2022-09-10 23:57:47.845575	ca
+3075	credits	<div><br>Foto: Isa Fontbona<br><br></div>	Image	447	2022-09-10 17:47:24.098202	2022-09-10 23:57:47.872037	ca
+3076	credits	<div><br>Foto: Isa Fontbona<br><br></div>	Image	448	2022-09-10 17:47:24.112675	2022-09-10 23:57:47.898122	ca
+3099	body	<p>En entrar a la sala, cada persona que vol, obté un(a) clau. Ningú el rebutja.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Inici: estirada al terra sota una escala de pintor obertA. En cada esglaó hi ha clavats claus que impedeixen pujar-hi. Amb la mobilitat limitada, allibero les mans. Un clau en la mà esquerra, trec del cor una clau amb la dreta (estava calenta). A l'inrevés, observo el públic, a través de l'ull de la clau i amb la punta del clau dirigida a la mirada.</p>\r\n\r\n<p>Observo l'escala des del terra. Decisió: inici d'acció. Surto de sota, m'aixeco. Dic: cap esclau!</p>\r\n\r\n<p>Amb un martell pico un a un els claus dels travessers de fusta, que cauen al terra.</p>\r\n\r\n<p>Recito articulant, en silenci, el poema ...cau l'esclau, i l'esclau de l'esclau...</p>\r\n\r\n<p>Silenci.</p>\r\n\r\n<p>Començo a recollir els claus del terra clavant-los en una bossa teixida que duc sobre el cor. Quan ja no hi ha claus al terra, cau un clau del públic.</p>\r\n\r\n<p>I un altre.</p>\r\n\r\n<p>I comencen a ploure claus a l'escenari.</p>\r\n\r\n<p>Algunes persones baixen i els porten en mà. Accelero, m'emociono, recullo fins a l'últim clau que tira en Carles H. El convido a apropar-se. ?. Denys recull el clau i me'l posa a la bossa.</p>\r\n\r\n<p>Pujo a l'escala. En el penúltim esglaó, em despenjo la bossa, i, amb les punxes de tots els claus mirant enfora, me la poso al cap:</p>\r\n\r\n<p>cap és clau.</p>\r\n\r\n<p>Mà al cor.</p>\r\n\r\n<p> </p>\r\n\r\n<p>En passejar per la ciutat amb l'escala sota el braç, li enviava somriures a en Joan Brossa.</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Era acció oberta a uns quants fins. Podia avançar de diferents maneres, sola, amb participació o presència dels presents. O no. La certesa es revela durant.</strong></p>\r\n\r\n<p><strong>A partir del moment en que l'acció esdevé, pren la seva forma imaginable.</strong></p>	Section	8	2022-09-10 17:47:24.497332	2022-09-10 17:47:24.497332	ca
+3100	body	<p><br>\r\nad hoc<br>\r\n<br>\r\ncreated or done for a particular purpose as necessary<br>\r\n </p>	Section	9	2022-09-10 17:47:24.506669	2022-09-10 17:47:24.506669	ca
+3101	title	Corpologia 24	Section	10	2022-09-10 17:47:24.515693	2022-09-10 17:47:24.515693	ca
+3102	body	<p><a href="http://corpologialiveart.blogspot.com.es">http://corpologialiveart.blogspot.com.es</a></p>\r\n\r\n<p>CORPOLOGIA es una trobada independent y lliure d'un grup d'artistes y persones amb ganes d'investigar el present a través de l'acció. El format de las obres és lliure y d'una màxima duració de 10 minuts cada una.</p>	Section	10	2022-09-10 17:47:24.528359	2022-09-10 17:47:24.528359	ca
+3103	body	<p>Sóc a</p>\r\n\r\n<p>amb</p>\r\n\r\n<p>de</p>\r\n\r\n<p>en</p>\r\n\r\n<p>Sóc entre</p>\r\n\r\n<p>per</p>\r\n\r\n<p>contra</p>\r\n\r\n<p>Sóc segons</p>\r\n\r\n<p>sense</p>\r\n\r\n<p>cap</p>\r\n\r\n<p>a força de</p>\r\n\r\n<p>cos</p>\r\n\r\n<p>Sóc en part</p>\r\n\r\n<p>des de</p>\r\n\r\n<p>fins a</p>\r\n\r\n<p>vers</p>\r\n\r\n<p>Sóc també</p>\r\n\r\n<p>igual a</p>\r\n\r\n<p>diferent de</p>\r\n\r\n<p>Sóc , a més,</p>\r\n\r\n<p>a causa de</p>\r\n\r\n<p>al costat de</p>\r\n\r\n<p>front a (tu)</p>\r\n\r\n<p>en procés.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Sóc qui viu, veu, veus, vols veure?</p>\r\n\r\n<p>Mireia Zantop</p>	Section	11	2022-09-10 17:47:24.547812	2022-09-10 17:47:24.547812	ca
+3104	title	Per se	Section	12	2022-09-10 17:47:24.560573	2022-09-10 17:47:24.560573	ca
+3105	body	<p>(by itself, in itself, of itself, through itself, itself as such, in essence, by bit's very nature, essentially)</p>\r\n\r\n<p> </p>\r\n\r\n<p>Una persona, un objecte – és ... per sí mateix?</p>\r\n\r\n<p> </p>\r\n\r\n<p>O es defineix a través de l'acció?</p>\r\n\r\n<p>La intenció?</p>\r\n\r\n<p>La interpretació?</p>	Section	12	2022-09-10 17:47:24.5719	2022-09-10 17:47:24.5719	ca
+3106	body	<p><strong>Acció</strong> a amb de entre per contra segons sense com fins a en part a força de vers des de a causa de igual a diferent de d'acord amb en relació a en procés</p>\r\n\r\n<p><strong>de rastres i creences d'identitats estimades.</strong></p>	Section	13	2022-09-10 17:47:24.581759	2022-09-10 17:47:24.581759	ca
+3107	body	<p>En aquesta acció/instal.lació  es relacionen aspectes dels llenguatges del cos alhora subtils i essencials en la nostra comunicació quotidiana. En ser efímers, el sentit del seu rastre canvia en tota lectura posterior.</p>\r\n\r\n<p>L'articulació d'alguns alfabets naturals i culturals a través del cos tindrà lloc en l'acció de llarga durada creada específicament in situ, en interacció amb l'entorn per fer i desfer poesia sonora. Cada moviment, cada traç, cada fonema besarà l'ara. El que queda, són formes per reviure o reinterpretar, arqueologies de la memòria.</p>	Section	14	2022-09-10 17:47:24.593614	2022-09-10 17:47:24.593614	ca
+3108	title	estimat paisatge interior i exterior	Section	15	2022-09-10 17:47:24.602819	2022-09-10 17:47:24.602819	ca
+3109	body	<p>Estimat paisatge, temple que contemplo mentre em contempla. Sobre el paper et dilueixes; es desdibuixa aquella definició de «la porció de territori que l'ull pot reconèixer i representar des d'un punt de vista». Flueixes cos endins per tots els meus òrgans de percepció, que inclouen el sisè sentit. Com l'humus inconscient que nodreix i acompanya en el ritual de pas pel propi panorama, tan íntim i tan comú, que aflora en forma d'obra.</p>\r\n\r\n<p>La mirada, serena i salvatge, balla per aquests paratges interiors i exteriors perquè vol veure més, i genera interrogants. Sorgeixen imatges que em guien pel bosc intuïtiu on les seves formes es tornen significants.</p>\r\n\r\n<p> </p>\r\n\r\n<p>El paisatge líquid beu de moltes fonts i s'expressa de moltes maneres. Associa conceptes, creences i formes. L'articulen llenguatges familiars conjuntament amb altres interpretacions subjectives. Una visió que s'expressa per ser compartida, però fluctua per diferents nivells de lectura. Com una persona, com una poesia, com una acció.</p>	Section	15	2022-09-10 17:47:24.613424	2022-09-10 17:47:24.613424	ca
+3289	description	<p>Col·lectiu d'art d'acció OCELLS AL CAP:</p>\r\n\r\n<p>participen: Denys Blacker, Natalia Espinet, Juliette Murphy, Montse Seró, Marta Vergonyós, Ada Vilaró, Lesley Yendell, Mireia Zantop</p>	Work	51	2022-09-10 17:47:26.936094	2022-09-10 17:47:26.936094	ca
+3127	body	<p>En esta acción/instalación se relacionan diferentes aspectos tan sutiles como esenciales de los lenguajes corporales que usamos en nuestra comunicación cotidiana. Al ser efímeros, el sentido de su rastro cambia en tota lectura posterior.</p>\r\n\r\n<p>La articulación de algunos alfabetos naturales y culturales a través del cuerpo tiene lugar en la acción de larga durada creada específicamente in situ, en interacción con el entorno para hacer y deshacer poesía sonora. Cada movimiento, cada trazo, cada fonema besará el ahora. Lo que queda, son formas para ser reinterpretadas: arqueologías de la memoria.</p>	Section	14	2022-09-10 17:47:24.912705	2022-09-10 17:47:24.912705	es
+3128	body	<p><br>\r\nad hoc<br>\r\n<br>\r\ncreated or done for a particular purpose as necessary<br>\r\n </p>	Section	9	2022-09-10 17:47:24.922334	2022-09-10 17:47:24.922334	es
+3129	title	(Preguntes) sobre l'anar cap a o l'anar-se'n de	Section	19	2022-09-10 17:47:24.932601	2022-09-10 17:47:24.932601	ca
+3131	name	dansa	Tag	1	2022-09-10 17:47:25.003618	2022-09-10 17:47:25.003618	ca
+3132	name	dance	Tag	1	2022-09-10 17:47:25.016412	2022-09-10 17:47:25.016412	en
+3133	name	danza	Tag	1	2022-09-10 17:47:25.02587	2022-09-10 17:47:25.02587	es
+3134	name	corpologia	Tag	5	2022-09-10 17:47:25.035045	2022-09-10 17:47:25.035045	ca
+3135	name	corpologia	Tag	5	2022-09-10 17:47:25.047142	2022-09-10 17:47:25.047142	en
+3136	name	corpologia	Tag	5	2022-09-10 17:47:25.057114	2022-09-10 17:47:25.057114	es
+3137	name	pintura	Tag	6	2022-09-10 17:47:25.066889	2022-09-10 17:47:25.066889	ca
+3138	name	paintings	Tag	6	2022-09-10 17:47:25.080396	2022-09-10 17:47:25.080396	en
+3139	name	pintura	Tag	6	2022-09-10 17:47:25.090342	2022-09-10 17:47:25.090342	es
+3140	name	live-drawing	Tag	7	2022-09-10 17:47:25.100271	2022-09-10 17:47:25.100271	ca
+3141	name	live-drawing	Tag	7	2022-09-10 17:47:25.113335	2022-09-10 17:47:25.113335	en
+3142	name	live-drawing	Tag	7	2022-09-10 17:47:25.12216	2022-09-10 17:47:25.12216	es
+3143	name	obra sobre paper	Tag	8	2022-09-10 17:47:25.131596	2022-09-10 17:47:25.131596	ca
+3144	name	poesia	Tag	10	2022-09-10 17:47:25.144032	2022-09-10 17:47:25.144032	ca
+3145	name	poetry	Tag	10	2022-09-10 17:47:25.156767	2022-09-10 17:47:25.156767	en
+3146	name	poesía	Tag	10	2022-09-10 17:47:25.168598	2022-09-10 17:47:25.168598	es
+3147	name	instalación	Tag	9	2022-09-10 17:47:25.181577	2022-09-10 17:47:25.181577	es
+3148	name	instalation	Tag	9	2022-09-10 17:47:25.191354	2022-09-10 17:47:25.191354	en
+3149	name	work on paper	Tag	8	2022-09-10 17:47:25.201142	2022-09-10 17:47:25.201142	en
+3150	name	escultura	Tag	11	2022-09-10 17:47:25.213124	2022-09-10 17:47:25.213124	ca
+3151	name	dibuix	Tag	13	2022-09-10 17:47:25.222553	2022-09-10 17:47:25.222553	ca
+3152	name	obra gràfica original	Tag	14	2022-09-10 17:47:25.235087	2022-09-10 17:47:25.235087	ca
+3153	name	sculpture	Tag	11	2022-09-10 17:47:25.25058	2022-09-10 17:47:25.25058	en
+3154	name	escultura	Tag	11	2022-09-10 17:47:25.260375	2022-09-10 17:47:25.260375	es
+3155	name	drawing	Tag	13	2022-09-10 17:47:25.269939	2022-09-10 17:47:25.269939	en
+3156	name	dibujo	Tag	13	2022-09-10 17:47:25.282372	2022-09-10 17:47:25.282372	es
+3157	name	prints	Tag	14	2022-09-10 17:47:25.292629	2022-09-10 17:47:25.292629	en
+3158	name	obra gráfica original	Tag	14	2022-09-10 17:47:25.301581	2022-09-10 17:47:25.301581	es
+3159	name	llibre	Tag	16	2022-09-10 17:47:25.313455	2022-09-10 17:47:25.313455	ca
+3160	name	book	Tag	16	2022-09-10 17:47:25.328295	2022-09-10 17:47:25.328295	en
+3161	name	libro	Tag	16	2022-09-10 17:47:25.340652	2022-09-10 17:47:25.340652	es
+3162	name	ilustración	Tag	15	2022-09-10 17:47:25.35331	2022-09-10 17:47:25.35331	es
+3163	name	illustration	Tag	15	2022-09-10 17:47:25.364914	2022-09-10 17:47:25.364914	en
+3164	name	obra sobre papel	Tag	8	2022-09-10 17:47:25.378855	2022-09-10 17:47:25.378855	es
+3165	name	acció sonora	Tag	17	2022-09-10 17:47:25.3918	2022-09-10 17:47:25.3918	ca
+3166	name	sound action	Tag	17	2022-09-10 17:47:25.40883	2022-09-10 17:47:25.40883	en
+3167	name	acción sonora	Tag	17	2022-09-10 17:47:25.42958	2022-09-10 17:47:25.42958	es
+3168	name	acció poètica	Tag	18	2022-09-10 17:47:25.441978	2022-09-10 17:47:25.441978	ca
+3169	name	acció col.lectiva	Tag	19	2022-09-10 17:47:25.451094	2022-09-10 17:47:25.451094	ca
+3170	name	land art	Tag	26	2022-09-10 17:47:25.464239	2022-09-10 17:47:25.464239	es
+3171	name	collective performance	Tag	19	2022-09-10 17:47:25.477144	2022-09-10 17:47:25.477144	en
+3172	name	acción colectiva	Tag	19	2022-09-10 17:47:25.487111	2022-09-10 17:47:25.487111	es
+3173	name	acción poética	Tag	18	2022-09-10 17:47:25.500182	2022-09-10 17:47:25.500182	es
+3174	name	performance	Tag	21	2022-09-10 17:47:25.51062	2022-09-10 17:47:25.51062	en
+3175	name	procés col·lectiu	Tag	32	2022-09-10 17:47:25.519137	2022-09-10 17:47:25.519137	ca
+3176	name	il·lustració	Tag	15	2022-09-10 17:47:25.529304	2022-09-10 17:47:25.529304	ca
+3177	name	instal·lació	Tag	9	2022-09-10 17:47:25.541603	2022-09-10 17:47:25.541603	ca
+3178	name	poetry	Tag	18	2022-09-10 17:47:25.551062	2022-09-10 17:47:25.551062	en
+3179	name	social art performance	Tag	23	2022-09-10 17:47:25.562704	2022-09-10 17:47:25.562704	en
+3180	name	acción artística social	Tag	23	2022-09-10 17:47:25.574678	2022-09-10 17:47:25.574678	es
+3181	name	performance	Tag	21	2022-09-10 17:47:25.58729	2022-09-10 17:47:25.58729	es
+3182	name	land-art	Tag	26	2022-09-10 17:47:25.599427	2022-09-10 17:47:25.599427	en
+3183	name	poesia visual	Tag	27	2022-09-10 17:47:25.611456	2022-09-10 17:47:25.611456	ca
+3184	name	visual poetry	Tag	27	2022-09-10 17:47:25.621052	2022-09-10 17:47:25.621052	en
+3185	name	poesía visual	Tag	27	2022-09-10 17:47:25.632752	2022-09-10 17:47:25.632752	es
+3186	name	art participatiu	Tag	28	2022-09-10 17:47:25.643707	2022-09-10 17:47:25.643707	ca
+3187	name	acció artística social	Tag	23	2022-09-10 17:47:25.656031	2022-09-10 17:47:25.656031	ca
+3188	name	participatory art	Tag	28	2022-09-10 17:47:25.668171	2022-09-10 17:47:25.668171	en
+3189	name	arte participativo	Tag	28	2022-09-10 17:47:25.678997	2022-09-10 17:47:25.678997	es
+3190	name	performance	Tag	21	2022-09-10 17:47:25.69201	2022-09-10 17:47:25.69201	ca
+3191	name	video-acció	Tag	30	2022-09-10 17:47:25.703188	2022-09-10 17:47:25.703188	ca
+3192	name	video performance	Tag	30	2022-09-10 17:47:25.716123	2022-09-10 17:47:25.716123	en
+3193	name	video-acción	Tag	30	2022-09-10 17:47:25.726887	2022-09-10 17:47:25.726887	es
+3194	name	art efímer	Tag	31	2022-09-10 17:47:25.737865	2022-09-10 17:47:25.737865	ca
+3204	description	<p>\r\n\tCORPOLOGIA 9</p>\r\n<p>\r\n\tEquilibri, de aequilibrium: aequus = igual y libra=balanza, peso He (a)quí He a quién libris: de los libros o de los libres de libertas: volver a la madre</p>\r\n<p>\r\n\tFragmento del proceso del equilibrio de lecturas abiertas y cruzadas del peso propio i el exterior, del cuerpo íntimo delante del cuerpo público de factores intencionados o involuntarios, de la acción de fuerzas que implico o se implican y contrarestan mútuamente, de los vínculos de la palabra-voz y la palabra-papel, el papel de la relación, de la (con)fusión de estratos de percepción i memoria en la armonía del conjunto.</p>\r\n<p>\r\n\tLos factores (siempre) cambiantes niegan un estado de equilibrio estable, un resultado, y evidencian un proceso puro de incesante movimento que tiende a la justeza y la armonía en la unidad.</p>\r\n<p>\r\n\t...et qui est libre?</p>	Work	9	2022-09-10 17:47:25.912442	2022-09-10 17:47:25.912442	es
+3205	place	Antic Teatre, Barcelona	Work	9	2022-09-10 17:47:25.921736	2022-09-10 17:47:25.921736	es
+3206	title	ZeNits / 1	Work	6	2022-09-10 17:47:25.934364	2022-09-10 17:47:25.934364	ca
+3207	description	<p>\r\n\tPoemes d'Eva Puig. Exposició CTN La Floresta</p>	Work	6	2022-09-10 17:47:25.943818	2022-09-10 17:47:25.943818	ca
+3208	techniques	tècnica mixta sobre fusta	Work	6	2022-09-10 17:47:25.952697	2022-09-10 17:47:25.952697	ca
+3209	title	anima(l), U	Work	10	2022-09-10 17:47:25.963981	2022-09-10 17:47:25.963981	ca
+3210	description	<p>\r\n\tAlma mater. Coto vedado. Caza y captura de interrogantes abiertos, pero encadenados en espiral, sobre la identidad en desequilibrio entre consciencia espiritual y cuerpo de especie animal capaz de olvidar que lo es, era y será. Memoria embrionaria de origen que niega, domestica, objetualiza y crea imaginarios</p>\r\n<p>\r\n\t¿para entender o redimirse? ¿Por casualidad? ¿Por curiosidad?</p>\r\n<p>\r\n\tDesvelar la condición básica de nuestra animalidad subraya la condición humana. U. In secula seculorum...</p>\r\n<p>\r\n\t </p>\r\n<p>\r\n\thttp://www.avui.cat/noticia/article/5-cultura/19-cultura/378596-el-fem11-ja-bull.html</p>	Work	10	2022-09-10 17:47:25.978318	2022-09-10 17:47:25.978318	ca
+3211	place	FEM / Centre Cultural La Mercè / Girona	Work	10	2022-09-10 17:47:25.988254	2022-09-10 17:47:25.988254	ca
+3212	title	Dinergia I,II,III	Work	11	2022-09-10 17:47:26.000287	2022-09-10 17:47:26.000287	ca
+3213	description	<p>\r\n\tDinergia I - Llavors... Dinergia II - Armonia Diatéssaron  Dinergia III - Auria ad infinitum  Materials: Dinergia I: Llavor natural, Fil de coure, paper, pedra, respecte  Dinergia II: Llavor natural, Fil de coure, paper i tinta, vidre, agraïment  Dinergia III: Petxina natural, Fil de coure, pedra de lava, mirall, amor  </p>\r\n<p>\r\n\t"Dinergia: Els processos i patrons bàsìcs de formació i creació, amb els seus límits estrictes i les proporcions àuries omnipresents, ens reflecteixen en petit format la perfecció infinita de l'armonia i presència del tot etern, il.limitat, així com l'absència de fronteres entre ciència, art, filosofia i misticisme."</p>\r\n<p>\r\n\tFESTIVAL MaMa d'Art Contemporani, Madremanya, Girona</p>	Work	11	2022-09-10 17:47:26.009887	2022-09-10 17:47:26.009887	ca
+3214	title	musical ment	Work	12	2022-09-10 17:47:26.021751	2022-09-10 17:47:26.021751	ca
+3215	description	<p>\r\n\tL'obra és una instal.lació/performance col.lectiva on conflueixen l’escultura, el so i el moviment, creant un diàleg interdisciplinar entre la matèria, el silenci i l’expressió corporal.   \r\n\t \r\n\tUna escultura sonora és l’element central i fil conductor de la composició musical i ; a través del silenci i el so s'experimenta amb l’efecte que el ritme i la música tenen sobre la ment, el cos i els sentiments.  El moviment del cos dibuixa l'espai i acciona, traça camins paral.lels.\r\n\tL'escultura de ferro i fusta, de 3m d'alçada i diàmetre, estructura l'espai del moviment; l'espectador es pot moure al voltant de l'acció i percebre el conjunt des de diverses perspectives visuals i sonores.</p>\r\n<p>\r\n\tEscultura i direcció: Yago Delàs\r\n\tFotografia: Mireia Tor\r\n\tMúsics i artistes: Yago Delàs, Xènia Gassull, Adrià López, Núria Madí, Simon Saura, Ruth Soler, Jordi Vinyoles, Mireia Zantop</p>	Work	12	2022-09-10 17:47:26.036418	2022-09-10 17:47:26.036418	ca
+3216	place	Casa de Cultura de Girona / Plaça de la Vila,Viladrau / Festival de percussió, Centelles	Work	12	2022-09-10 17:47:26.048404	2022-09-10 17:47:26.048404	ca
+3217	title	constelaccions	Work	13	2022-09-10 17:47:26.059066	2022-09-10 17:47:26.059066	ca
+3218	description	<p>\r\n\tAcció inèdita realitzada amb Elisabetta Balasso.</p>	Work	13	2022-09-10 17:47:26.071906	2022-09-10 17:47:26.071906	ca
+3219	techniques	dibuix sobre pell	Work	13	2022-09-10 17:47:26.082098	2022-09-10 17:47:26.082098	ca
+3220	title	AflorA	Work	14	2022-09-10 17:47:26.09081	2022-09-10 17:47:26.09081	ca
+3221	techniques	calcografia i serigrafia	Work	14	2022-09-10 17:47:26.100686	2022-09-10 17:47:26.100686	ca
+3222	title	impro	Work	15	2022-09-10 17:47:26.112079	2022-09-10 17:47:26.112079	ca
+3223	description	<p>\r\n\tRosa Abuchaibe, Hanneke Ilse, Mireia Zantop (23 Marzo.2012, 18h, Laberinto de Ariadna)</p>\r\n<p>\r\n\tRosa Abuchaibe, poeta, escribe relatos y versos.</p>\r\n<p>\r\n\tHanneke Ilse, trompetista, toca en varios grupos y cultiva desde hace años diversos estilos musicales.</p>\r\n<p>\r\n\tMireia Zantop, pintora, grabadora y performer, trabaja sobre los lenguajes del cuerpo en su obra plástica y escénica.</p>\r\n<p>\r\n\tEn esta pieza se reencuentran tres lenguajes artísticos. La música, la palabra y el movimiento se complementan en un todo fruto de la conexión entre las personas, el aquí y el ahora. Es el arte efímero de la improvisación.</p>\r\n<p>\r\n\tImparte: Anna Rossell</p>	Work	15	2022-09-10 17:47:26.122257	2022-09-10 17:47:26.122257	ca
+3224	place	Ateneu Barcelonès, Barcelona	Work	15	2022-09-10 17:47:26.131937	2022-09-10 17:47:26.131937	ca
+3225	title	E qui libri (s) II	Work	9	2022-09-10 17:47:26.144012	2022-09-10 17:47:26.144012	ca
+3226	description	<p>performance a CORPOLOGIA 9</p>	Work	9	2022-09-10 17:47:26.152499	2022-09-10 17:47:26.152499	ca
+3227	place	Antic Teatre, Barcelona	Work	9	2022-09-10 17:47:26.162118	2022-09-10 17:47:26.162118	ca
+3228	title	OUROBOROS (veus?)	Work	16	2022-09-10 17:47:26.174028	2022-09-10 17:47:26.174028	ca
+3229	description	<p>\r\n\tInsaciable, Ouroboros, el monstre que es menja a sí mateix.<br>\r\n\tCicle infinit?<br>\r\n\tEl més contradictori del procés és que l'acusat de provocar-lo i la víctima de les seves conseqüències és la mateixa: el monstre, tu, jo.</p>	Work	16	2022-09-10 17:47:26.184875	2022-09-10 17:47:26.184875	ca
+3230	place	Brossa, caos i art | Exposició a Casa Elizalde | Barcelona	Work	16	2022-09-10 17:47:26.201054	2022-09-10 17:47:26.201054	ca
+3231	title	sum(us)	Work	34	2022-09-10 17:47:26.218332	2022-09-10 17:47:26.218332	en
+3232	description	<p>CORPOLOGIA 13 en el marc de l'exposició <strong>Cargol treu banya</strong>.</p>\r\n\r\n<p>sum(us)</p>\r\n\r\n<p>I<br>\r\nsum (lat.): sóc (cat.), soy (es.)<br>\r\nsumus (lat.): som (cat.), somos (es.)</p>\r\n\r\n<p>sóc<br>\r\n(s)i som<br>\r\nsi hi som</p>\r\n\r\n<p>II<br>\r\nsum (eng.): suma<br>\r\nus (eng.): nosaltres (cat.), nosotros (es.)<br>\r\nus (cat.): os, a vosotros, to you</p>\r\n\r\n<p>sumant-nos  som.<br>\r\nSumeu-nos<br>\r\nsumeu-vos<br>\r\nsomieu-vos</p>\r\n\r\n<p>"...que tots els espectadors passin a l'acció."</p>\r\n\r\n<p>Nos habebat, nos habebit humus.</p>\r\n\r\n<p>Entretant:<br>\r\ntemps de consciència.</p>\r\n\r\n<p> </p>\r\n\r\n<p><a href="https://vimeo.com/83686197">https://vimeo.com/83686197</a></p>\r\n\r\n<p><a href="https://vimeo.com/user14560762">https://vimeo.com/user14560762</a></p>	Work	34	2022-09-10 17:47:26.235277	2022-09-10 17:47:26.235277	en
+3233	place	Casa Elizalde, Barcelona	Work	34	2022-09-10 17:47:26.245528	2022-09-10 17:47:26.245528	en
+3238	description	<p>Acció performativa a l’espai públic per donar veu a allò que solem silenciar entorn de les (des)igualtats de gènere.</p>\r\n\r\n<p>Creació i realització: <strong>Les Mireies - projecte artístic i social</strong> ( Mireia Chalamanch i Mireia Zantop)</p>	Work	62	2022-09-10 17:47:26.295109	2022-09-10 17:47:26.295109	ca
+3239	place	Espai públic de municipis de comarques de Barcelona	Work	62	2022-09-10 17:47:26.304448	2022-09-10 17:47:26.304448	ca
+3240	title	S/T: sin título	Work	24	2022-09-10 17:47:26.315507	2022-09-10 17:47:26.315507	es
+3241	description	<p>\r\n\tCorpologia 10</p>\r\n<p>\r\n\tPuerta de entrada: portada en blanco.<br>\r\n\tEntre mí y todos, tiempo común i dos libros sin un solo título.<br>\r\n\tPuerta dos, portadores.<br>\r\n\tSe unen, página a página, en un cuerpo que no quiere dividirse. Se diferencian por palabra y pensamiento propio, se encuentran entre líneas.<br>\r\n\tPuerta tres, al público.<br>\r\n\tEje de equilibrio. Cruce de enlace mientras actúa la fuerza del roce y la tensión, atención.<br>\r\n\tVínculo frágil pero contundente arnés mútuo que aguanta el instante, el tiempo justo. Pueden ser horas, segundos, según.</p>\r\n<p>\r\n\t<br>\r\n\t"por favor, con calma, os pido que penséis un título para esta acción. Cuando lo tengáis, levantad la mano derecha."<br>\r\n\t...<br>\r\n\tdigo ssss/t.<br>\r\n\tescribo S/T</p>\r\n<p>\r\n\t"Gracias. Yo también prometo no decirlo nunca a nadie."</p>\r\n<p>\r\n\t(y no dudéis que me muero de ganas de saberlos)</p>\r\n<p>\r\n\tSujeto subjetivo sujetado a dos bandas. Reflejo-reflexión de experiencia.<br>\r\n\tCada uno es titular.</p>	Work	24	2022-09-10 17:47:26.342031	2022-09-10 17:47:26.342031	es
+3242	place	La Plaça, Celrà	Work	24	2022-09-10 17:47:26.357073	2022-09-10 17:47:26.357073	es
+3243	title	úters |	Work	17	2022-09-10 17:47:26.372534	2022-09-10 17:47:26.372534	ca
+3244	description	<p>\r\n\tArts i lletres de la mà. Exposició amb Rosa Abuchaibe, Gloria Andrade, Pedro Blanco i Javier Quintanilla. Pati Llimona, Barcelona</p>	Work	17	2022-09-10 17:47:26.383303	2022-09-10 17:47:26.383303	ca
+3245	techniques	tècnica mixta sobre paper	Work	17	2022-09-10 17:47:26.395386	2022-09-10 17:47:26.395386	ca
+3246	title	El celler i +	Work	26	2022-09-10 17:47:26.41179	2022-09-10 17:47:26.41179	ca
+3247	description	<p>\r\n\tportades de títols de Noah Gordon per a Editorial Roca</p>	Work	26	2022-09-10 17:47:26.42666	2022-09-10 17:47:26.42666	ca
+3248	title	Itaca | pas a dos	Work	18	2022-09-10 17:47:26.438408	2022-09-10 17:47:26.438408	ca
+3249	description	<p>\r\n\tPerformance amb Eva Puig<br>\r\n\t<br>\r\n\tÍTACA<br>\r\n\t          <br>\r\n\tQuan surts per fer el viatge cap a Ítaca,<br>\r\n\thas de pregar que el camí sigui llarg,<br>\r\n\tple d'aventures, ple de coneixença.<br>\r\n\tEls Lestrígons i els Cíclops,<br>\r\n\tl'aïrat Posidó, no te n'esfereixis:<br>\r\n\tsón coses que en el teu camí no trobaràs,<br>\r\n\tno, mai, si el pensament se't manté alt, si una emoció escollida<br>\r\n\tet toca l'esperit i el cos alhora.<br>\r\n\tEls Lestrígons i els Cíclops,<br>\r\n\tel feroç Posidó, mai no serà que els topis<br>\r\n\tsi no els portes amb tu dins la teva ànima,<br>\r\n\tsi no és la teva ànima que els dreça davant teu.<br>\r\n\t  <br>\r\n\tHas de pregar que el camí sigui llarg.<br>\r\n\tQue siguin moltes les matinades d'estiu<br>\r\n\tque, amb quina delectança, amb quina joia!<br>\r\n\tentraràs en un port que els teus ulls ignoraven;<br>\r\n\tque et puguis aturar en mercats fenicis<br>\r\n\ti comprar-hi les bones coses que s'hi exhibeixen,<br>\r\n\tcoral i nacres, ambres i banussos<br>\r\n\ti delicats perfums de tota mena:<br>\r\n\ttanta abundor com puguis de perfums delicats;<br>\r\n\tque vagis a ciutats d'Egipte, a moltes,<br>\r\n\tper aprendre i aprendre dels que saben.<br>\r\n\t  <br>\r\n\tSempre tingues al cor la idea d'Ítaca.<br>\r\n\tHas d'arribar-hi, és el teu destí.<br>\r\n\tPerò no forcis gens la travessia.<br>\r\n\tÉs preferible que duri molts anys<br>\r\n\ti que ja siguis vell quan fondegis a l'illa,<br>\r\n\tric de tot el que hauràs guanyat fent camí,<br>\r\n\tsense esperar que t'hagi de dar riqueses Ítaca.<br>\r\n\t  <br>\r\n\tÍtaca t'ha donat el bell viatge.<br>\r\n\tSense ella no hauries pas sortit cap a fer-lo.<br>\r\n\tRes més no té que et pugui ja donar.<br>\r\n\t   <br>\r\n\tI si la trobes pobra, no és que Ítaca t'hagi enganyat.<br>\r\n\tSavi com bé t'has fet, amb tanta experiència,<br>\r\n\tja hauràs pogut comprendre què volen dir les Ítaques.<br>\r\n\t  <br>\r\n\tK.P.KAVAFIS, 1911<br>\r\n\tTrad. C. Riba</p>	Work	18	2022-09-10 17:47:26.447672	2022-09-10 17:47:26.447672	ca
+3250	place	Teatre Sants i CCBesós, Barcelona	Work	18	2022-09-10 17:47:26.457545	2022-09-10 17:47:26.457545	ca
+3251	title	6 senses (consentidOsinsentido)	Work	23	2022-09-10 17:47:26.46992	2022-09-10 17:47:26.46992	ca
+3252	description	<p>\r\n\tPerformance i instal.lacio a l'exposicio Dones amb sentit's a carrec de Roser Girona</p>\r\n<p>\r\n\tDaU al sis sentits<br>\r\n\t(en clau de tu)</p>\r\n<p>\r\n\tSents?<br>\r\n\tSents cent ocells i l'harmonia.<br>\r\n\tSents sons i suau son.<br>\r\n\tSents sol als ulls clucs, veus el que vols.<br>\r\n\tImagines la imatge, anotes el que notes:<br>\r\n\tCreus i crees imaginaccions.<br>\r\n\tSents la carícia i la intenció.<br>\r\n\tSents la mel i la seva llengua dolça. <br>\r\n\tSents l'aroma del cafè i ensums el que sents.<br>\r\n\tT'he sentit, té sentit.<br>\r\n\tT'afecta l'afecte i l'efecte del sent-i-ment.<br>\r\n\tI el sisè sentit més que el comú.</p>\r\n<p>\r\n\tAssents, dissents, consents i pressents en present.<br>\r\n\tHo sents: ergo ets<br>\r\n\tun tot sensible<br>\r\n\tamb sentit(s)</p>\r\n<p>\r\n\t </p>\r\n<p>\r\n\tTot i ser negat per irreproduïble i indemostrable, el sisè sentit té nom propi. Segons Ramon Llull, els cinc sentits tradicionals proporcionen dades massa disperses per ser copsades per la ment. Defineix l'afat, el sisè sentit com una facultat unificadora que atorga un concepte a les diferents sensacions que permet comunicar-lo mitjançant la paraula.<br>\r\n\tLa neurociència ara explora el sisè sentit o la visió mental premonitòria dels canvis abans que es produeixin. El cervell crea patrons de memòria que són la font de la intuició. Els mecanismes resten impredictibles, segurament, perque no els reconeixem prou com una forma complementària de la percepció. Encara.</p>	Work	23	2022-09-10 17:47:26.480514	2022-09-10 17:47:26.480514	ca
+3253	place	CCBarceloneta	Work	23	2022-09-10 17:47:26.490012	2022-09-10 17:47:26.490012	ca
+3254	title	Sí, lent, sí, silenci	Work	27	2022-09-10 17:47:26.503277	2022-09-10 17:47:26.503277	ca
+3255	title	Grafies d'una mirada a Sarrià	Work	29	2022-09-10 17:47:26.512791	2022-09-10 17:47:26.512791	ca
+3256	description	<p>Quadern de viatge pel barri de Sarrià en una primavera. Llibre de la colecció Carnet de Voyage editat per l'Ajuntament de Barcelona.</p>	Work	29	2022-09-10 17:47:26.522161	2022-09-10 17:47:26.522161	ca
+3257	techniques	tècnica mixta sobre paper	Work	29	2022-09-10 17:47:26.534107	2022-09-10 17:47:26.534107	ca
+3258	title	dues Veus nues	Work	8	2022-09-10 17:47:26.54428	2022-09-10 17:47:26.54428	ca
+3259	description	<p>Exposició i instal.lació d'obra sobre paper i poemes de Rosa Abuchaibe. Performance, improvisació d'art i poesia amb Rosa Abuchaibe. Vil.la Florida, Barcelona</p>	Work	8	2022-09-10 17:47:26.55447	2022-09-10 17:47:26.55447	ca
+3260	techniques	mixta sobre paper	Work	8	2022-09-10 17:47:26.566561	2022-09-10 17:47:26.566561	ca
+3261	title	S/T: sense títol	Work	24	2022-09-10 17:47:26.576616	2022-09-10 17:47:26.576616	ca
+3290	place	FESTIVAL ESCENA POBLENOU, Can Felipa, Barcelona	Work	51	2022-09-10 17:47:26.947986	2022-09-10 17:47:26.947986	ca
+3291	title	despunxar	Work	36	2022-09-10 17:47:26.957724	2022-09-10 17:47:26.957724	en
+3421	techniques	dibujo sobre piel	Work	13	2022-09-10 17:47:28.502815	2022-09-10 17:47:28.502815	es
+3422	title	TABOo... Ser/reS. Cos/soC	Work	19	2022-09-10 17:47:28.511701	2022-09-10 17:47:28.511701	ca
+3262	description	<p>Porta-1 d'entrada: portada en blanc.<br>\r\nEntre mi i tots, temps comú i dos llibres sense un sol títol.<br>\r\nPorta-do(r)s.<br>\r\nS'uneixen, pàgina a pàgina, en un cos que no vol dividir-se. Es diferencien per paraula i pensament propi, es troben entre línies.<br>\r\nPorta tres: em porta al públic.<br>\r\nEix d'equilibri. Cruïlla d'enllaç mentre actua la força del frec i la tensió, atenció.<br>\r\nLligam fràgil però contundent arnés mutu que aguanta el instant, el temps just. Poden ser hores, segons.<br>\r\nPorta quatre mosquetons i corda que recorda: no estem nuats.</p>\r\n\r\n<p>"Sisplau, amb la calma, us demano que penseu un títol per a aquesta acció. Quan el tingueu, aixequeu la mà dreta."<br>\r\n...<br>\r\ndic: ssss/t.<br>\r\nescric S/T</p>\r\n\r\n<p>"Gràcies.<br>\r\nJo també prometo no dir-ho mai a ningú."</p>\r\n\r\n<p>(i no dubteu que em moro de ganes de saber-los)</p>\r\n\r\n<p>Subjecte subjectat a dues bandes, reflexe-reflexió d'experiència.<br>\r\nCadascú n'és titular.</p>	Work	24	2022-09-10 17:47:26.587096	2022-09-10 17:47:26.587096	ca
+3263	place	La Plaça, Celrà	Work	24	2022-09-10 17:47:26.597323	2022-09-10 17:47:26.597323	ca
+3264	title	we were waiting for you	Work	61	2022-09-10 17:47:26.608541	2022-09-10 17:47:26.608541	ca
+3265	description	<p>Festival FLARE 3</p>\r\n\r\n<p>col·lectiu d'investigació d'art d'acció <strong>ocells al cap:</strong></p>\r\n\r\n<p>Denys Blacker, Natàlia Espinet, Victoria Grey, Helena Hunter, Marta Vergonyós, Sabina Vilagut, Lesley Yendell, Mireia Zantop</p>\r\n\r\n<p><a href="https://flare707.wordpress.com/">https://flare707.wordpress.com/</a></p>	Work	61	2022-09-10 17:47:26.618782	2022-09-10 17:47:26.618782	ca
+3266	place	Vane Gallery, Newcastle, GB	Work	61	2022-09-10 17:47:26.628779	2022-09-10 17:47:26.628779	ca
+3267	title	SI i/o NO, torno i no torno	Work	85	2022-09-10 17:47:26.669584	2022-09-10 17:47:26.669584	ca
+3268	description	<p>Video-acció per a l'Exposició Plurivisions de Felícia Fuster</p>\r\n\r\n<p>Realització del vídeo: Adolf Alcañiz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>	Work	85	2022-09-10 17:47:26.69299	2022-09-10 17:47:26.69299	ca
+3269	place	Arts Santa Mònica, Barcelona	Work	85	2022-09-10 17:47:26.711356	2022-09-10 17:47:26.711356	ca
+3270	title	axis salus: homenatge al bon metge	Work	30	2022-09-10 17:47:26.721951	2022-09-10 17:47:26.721951	ca
+3271	description	<p>Premi al bon metge</p>\r\n\r\n<p>Paraules recollides en el procés de creació de l'escultura -que acompanyaren el premi en composicions cal.ligràfiques úniques- i que envolten l'excel.lència del bon metge. Valors i virtuts que van més enllà del coneixement científic i l'ex`periència fruit d'estudis i praxis.  Tenen més a veure amb la saviesa humanística, el com usar el saber, com tractar el cos i l'ànima de la persona. Nosón mesurables, però els reconeixem quan estàn presents.</p>\r\n\r\n<p>La peça contempla la relació metge-pacient, tot i asimètrica, com un tot orgànic amb una base compartida, com un equillibri delicat, però just, com un viatge profund a un centre comú, com una comunicació clara d'escolta mútua en la que parla el silenci.</p>\r\n\r\n<p>Tot el meu agraïment i reconeixement a l'equip de SEPAR i a tots els metges que dia a dia cultiven conscientment aquests valors que ens trascendeixen i fan més humans.</p>	Work	30	2022-09-10 17:47:26.73386	2022-09-10 17:47:26.73386	ca
+3272	techniques	escultura de bronze	Work	30	2022-09-10 17:47:26.745614	2022-09-10 17:47:26.745614	ca
+3273	title	axis salus: homenaje al buen médico. Premio SEPAR	Work	30	2022-09-10 17:47:26.758415	2022-09-10 17:47:26.758415	es
+3274	description	<p>Premio al Buen Médico</p>\r\n\r\n<p>En el proceso de creación de la escultura, recogí palabras  -que acompañarán el premio- y que envuelven la excelencia del buen médico. Una larga lista de valores y virtudes que van más allá del conocimiento científico y la experiencia fruto de estudios y praxis. Tienen más que ver con la sabiduría humana de cómo usar ese saber, de cómo tratar el cuerpo y el alma de la persona. No se pueden medir, pero se reconocen cuando están presentes.<br>\r\nLa pieza contempla la relación médico-paciente, aunque asimétrica, como un todo orgánico con una base compartida, como un equilibrio delicado, pero justo, como un viaje profundo, como una comunicación clara y de escucha mútua en la que también habla e lsilencio.</p>\r\n\r\n<p>Todo mi agradecimiento y reconocimiento al equipo de Separ y a todos los médicos que, día a día, cultivan conscientemente estos valores preciosos que nos trascienden y hacen más seres humanos.</p>	Work	30	2022-09-10 17:47:26.770282	2022-09-10 17:47:26.770282	es
+3275	techniques	escultura de bronce	Work	30	2022-09-10 17:47:26.781864	2022-09-10 17:47:26.781864	es
+3276	title	axis salus: hommage to the good doctor	Work	30	2022-09-10 17:47:26.791042	2022-09-10 17:47:26.791042	en
+3277	description	<p>Good Physician Award<br>\r\n<br>\r\nIn the process of creating the sculpture, picked words that accompany the award-and excellence involving good doctor. A long list of values ​​and virtues that go beyond scientific knowledge and experience result of research and practice. They have more to do with the wisdom of how to use this knowledge, how to treat the body and soul of the person. Can not be measured, but are recognized when present.<br>\r\nThe piece includes the doctor-patient relationship, although asymmetric, as an organic whole with a shared basis, as a delicate balance, but just as a trip deep, as clear communication and mutual listening which also silences speak.<br>\r\n<br>\r\nAll my thanks and appreciation to Separ team and all physicians who, day by day, consciously cultivate these precious values ​​transcend and make us more human.</p>	Work	30	2022-09-10 17:47:26.800245	2022-09-10 17:47:26.800245	en
+3278	techniques	bronze sculpture	Work	30	2022-09-10 17:47:26.813199	2022-09-10 17:47:26.813199	en
+3279	title	fent volar coloms	Work	33	2022-09-10 17:47:26.821959	2022-09-10 17:47:26.821959	ca
+3280	description	<p>Fent volar coloms s'ha gestat durant el temps de convivència amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una sèrie de peces breus que incorporen també elements sonors.</p>\r\n\r\n<p>Transitem també per 11 vídeo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agraïments a l'equip de l'Antic, Clara Bes, Pau Compte, Andrés Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p> </p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>	Work	33	2022-09-10 17:47:26.836955	2022-09-10 17:47:26.836955	ca
+3281	place	Antic Teatre, Barcelona	Work	33	2022-09-10 17:47:26.84996	2022-09-10 17:47:26.84996	ca
+3282	title	sum(us)	Work	34	2022-09-10 17:47:26.859796	2022-09-10 17:47:26.859796	ca
+3283	description	<p>Corpologia 13 en el marc de l'exposició <strong>Cargol treu banya</strong></p>	Work	34	2022-09-10 17:47:26.869062	2022-09-10 17:47:26.869062	ca
+3284	place	Casa Elizalde, Barcelona	Work	34	2022-09-10 17:47:26.881318	2022-09-10 17:47:26.881318	ca
+3285	title	despunxar	Work	36	2022-09-10 17:47:26.890172	2022-09-10 17:47:26.890172	ca
+3286	description	<p>Acció poètica amb Alèxia Lleonart en el marc de l'exposició d'obra original Esbarzers.</p>\r\n\r\n<p> </p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/ </p>	Work	36	2022-09-10 17:47:26.900032	2022-09-10 17:47:26.900032	ca
+3287	place	Llibreria Papasseit, Manresa	Work	36	2022-09-10 17:47:26.910439	2022-09-10 17:47:26.910439	ca
+3288	title	pomps of the subsoil	Work	51	2022-09-10 17:47:26.924167	2022-09-10 17:47:26.924167	ca
+3292	description	<p><strong>Acció poètica amb Alèxia Lleonart</strong> en el marc de la seva exposició d'obra original <strong>Esbarzers.</strong></p>\r\n\r\n<p> </p>\r\n\r\n<p>http://blog.papasseit.cat/el-raco-de-lart/ </p>	Work	36	2022-09-10 17:47:26.968404	2022-09-10 17:47:26.968404	en
+3293	place	Llibreria Papasseit, Manresa	Work	36	2022-09-10 17:47:26.979594	2022-09-10 17:47:26.979594	en
+3294	title	Quina és la pregunta?	Work	35	2022-09-10 17:47:26.989608	2022-09-10 17:47:26.989608	ca
+3295	description	<p>25 de novembre: Dia per a la eradicació de la violència de gènere</p>\r\n\r\n<p>Acció al carrer amb Mireia Chalamanc i instal.lació a la Capella de Sant Corneli</p>\r\n\r\n<p>“A poc a poc al endinsar-me a l’ambient del mercat amb actitud de receptivitat van anar sorgint complicitats, mirades, apropaments, fins que em vaig sentir submergida a un flux de respostes i preguntes que anaven donant sentit a les nostres presències. Receptacles d’emocions, pensaments, paraules, comentaris, intimitats, reaccions, necessitats… en el tapís d’aquesta Acció vaig quedar impregnada de dolor, de veus callades, de veus silenciades, i al mateix temps, impregnada de possibilitats, d’escletxes, de veus manifestades, de veus agraïdes, de diversitat de veus i d’experiències.”</p>\r\n\r\n<p>“Una de les certeses que vaig sentir és que durant la nostra acció erem alhora subtils emissores i receptores, però, sobre tot, canals a través dels quals permetiem que afluessin, s'expreséssin i prenguéssin forma verbal, -conscient o inconscientment- alguns pensaments, opinions i sentiments que solen restar soterrats.</p>\r\n\r\n<p>I parlo sempre del tot: nosaltres i els altres, l'espai d d'aquesta trobada íntima en l'espai públic només podia sorgir de l'escolta, la reflexió i la sinceritat mútua.</p>\r\n\r\n<p>Varem ser full en blanc per a paraules “indici”, que assenyalen tímidament moltes històries que compartim poc i solen ser més silenciades que explicades. És tabú allò del que no se'n parla. Em va sorprendre les visions i percepcions de la violència, i com alguns neguen ser capaços de sentir-la o reconèixer-la, tant com a agents passius o actius. Em va alegrar veure que les persones, amb independència de gènere, edat o condició social, desitgen obrir el diàleg, cercar respostes i, amb clara determinació, aportar de la seva part per l'eradicació de la violència.</p>	Work	35	2022-09-10 17:47:27.001566	2022-09-10 17:47:27.001566	ca
+3296	place	Mercat i capella de Sant Corneli, Cardedeu	Work	35	2022-09-10 17:47:27.012389	2022-09-10 17:47:27.012389	ca
+3297	title	A...Z 5/5 (f)acts	Work	31	2022-09-10 17:47:27.024595	2022-09-10 17:47:27.024595	ca
+3298	description	<p>(f)acts</p>\r\n\r\n<p>1/5: A's rain as poem as...</p>\r\n\r\n<p>2/5: pienso, luego... o no</p>\r\n\r\n<p>3/5: yo no he sido</p>\r\n\r\n<p>4/5: entrar saliendo o salir entrando</p>\r\n\r\n<p>5/5: a room, espai habitat</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>	Work	31	2022-09-10 17:47:27.03646	2022-09-10 17:47:27.03646	ca
+3299	place	Experimental Room Festival, Barcelona	Work	31	2022-09-10 17:47:27.047594	2022-09-10 17:47:27.047594	ca
+3300	title	obra gràfica	Work	92	2022-09-10 17:47:27.05815	2022-09-10 17:47:27.05815	ca
+3301	description	<p>Exposem a Bilbao al Festival Internacional de Grabado y arte sobre papel: Eulàlia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>	Work	92	2022-09-10 17:47:27.067532	2022-09-10 17:47:27.067532	ca
+3302	techniques	gravat calcogràfic i serigrafia sobre diversos papers i suports	Work	92	2022-09-10 17:47:27.078082	2022-09-10 17:47:27.078082	ca
+3303	title	Over and over, again and again	Work	87	2022-09-10 17:47:27.089325	2022-09-10 17:47:27.089325	es
+3304	description	<p>Video-performance con Denys Blacker.</p>\r\n\r\n<p>Proceso creativo colectivo sobre migraciones con Marina Barsy, Denys Blacker, Aodan McCardle, Sandra Johnson, Bernadette Hopkins (curadora) e Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>Presentado en Regional Cultural Centre Letterkenny Co.Donegal en otoño de 2021</p>\r\n\r\n<p>WILD SWANS: https://www.bernadettehopkins.com/wild-swans-performance-art.html</p>	Work	87	2022-09-10 17:47:27.099072	2022-09-10 17:47:27.099072	es
+3305	place	Madremanya, Girona/ Donegal, Ireland	Work	87	2022-09-10 17:47:27.108415	2022-09-10 17:47:27.108415	es
+3306	title	BIRDS-ocells al cap	Work	40	2022-09-10 17:47:27.120088	2022-09-10 17:47:27.120088	ca
+3307	description	<p><br>\r\nActivitat vinculada a l'exposició<strong> Allan Kaprow. Altres maneres</strong> a la Fundació Antoni Tàpies, Barcelona</p>\r\n\r\n<p><br>\r\nPerformance: Punt de trobada a Can Obert, Madremanya  10h - 13h<br>\r\nPosta en comú: Can Obert, Madremanya 16h -18h</p>\r\n\r\n<p><br>\r\nDe Birds (Ocells) a Tenir ocells al cap <br>\r\nA partir de la proposta de treballar al voltant de l’obra de Kaprow i en conèixer el seu vincle amb la Womanhouse, decidim recrear la peça Birds. En el procés de “reinvenció” que proposa el mateix Kaprow ens interessa anar més enllà de la partitura proposada, i explorar, en aquesta intervenció en plena natura, la locució “tenir ocells al cap”.</p>\r\n\r\n<p><br>\r\nCoordinadores de la reinvenció: Denys Blacker i Marta Vergonyós<br>\r\nAmb la participació de: Montse Seró, Ada Vilaró, Lesley Yendell, Paloma Orts, Natàlia Espinet, Núria Iclèsies, Mar Serinya, Clara Garí, Júlia Falgas i Mireia Zantop.<br>\r\n<a href="http://www.fundaciotapies.org/site/spip.php?rubrique1274">http://www.fundaciotapies.org/site/spip.php?rubrique1274</a></p>	Work	40	2022-09-10 17:47:27.130824	2022-09-10 17:47:27.130824	ca
+3308	place	Madremanya	Work	40	2022-09-10 17:47:27.140028	2022-09-10 17:47:27.140028	ca
+3309	title	fent volar coloms	Work	33	2022-09-10 17:47:27.150952	2022-09-10 17:47:27.150952	en
+3310	description	<p>Fent volar coloms s'ha gestat durant el temps de convivència amb alguns materials i elements de treball entre les tres persones que operem amb ells i nosaltres. Del laboratori han sortit una sèrie de peces breus que incorporen també elements sonors.</p>\r\n\r\n<p>Transitem també per 11 vídeo-accions de curta durada.</p>\r\n\r\n<p>Som els responsables del producte final.</p>\r\n\r\n<p>Lucho Hermosilla, Ona Mestre, Mireia Zantop.</p>\r\n\r\n<p>Agraïments a l'equip de l'Antic, Clara Bes, Pau Compte, Andrés Acebes, Mar, Jordi Nebot, Lesley Yendell.</p>\r\n\r\n<p><a href="http://vimeo.com/81280599">http://vimeo.com/81280599</a></p>\r\n\r\n<p> </p>\r\n\r\n<p><a href="http://www.anticteatre.com">http://www.anticteatre.com</a></p>	Work	33	2022-09-10 17:47:27.163806	2022-09-10 17:47:27.163806	en
+3311	place	Antic Teatre, Barcelona	Work	33	2022-09-10 17:47:27.173209	2022-09-10 17:47:27.173209	en
+3312	title	(n)ombrares	Work	37	2022-09-10 17:47:27.183	2022-09-10 17:47:27.183	ca
+3369	description	<p>Corpologia 20</p>\r\n\r\n<p>(traços al vent eventual del ventall)</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Preparacció:</strong></p>\r\n\r\n<p>un llibre-poema a l'aire lliure.</p>\r\n\r\n<p><strong>Inspiracció:</strong></p>\r\n\r\n<p>inspiro i escric, sense fer correccions.</p>\r\n\r\n<p><strong>Ventilacció:</strong></p>\r\n\r\n<p>el vent del ventall de possibilitats selecciona el que ha de ser sentit:</p>\r\n\r\n<p>Acció eventual.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Nota visual: llibre i ventall, essències congruents.</p>\r\n\r\n<p>Nota musical: sis pàgines d'ai -res muts.</p>\r\n\r\n<p>Nota de peu:</p>\r\n\r\n<p> </p>\r\n\r\n<p>(ai-)</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>SO</p>\r\n\r\n<p>TO</p>\r\n\r\n<p>TOT</p>\r\n\r\n<p>O</p>\r\n\r\n<p>RES</p>\r\n\r\n<p>....</p>\r\n\r\n<p>RESSÒ</p>	Work	52	2022-09-10 17:47:27.89191	2022-09-10 17:47:27.89191	ca
+3370	place	La Fàbrica, Celrà	Work	52	2022-09-10 17:47:27.902574	2022-09-10 17:47:27.902574	ca
+3371	title	per se	Work	66	2022-09-10 17:47:27.912047	2022-09-10 17:47:27.912047	ca
+3313	description	<p><strong>(n)ombrares</strong> es basa en la relació amb la pròpia ombra en relació amb el nombre d'ombres i el nombre d'ares que percebem conscientment i podem nombrar</p>\r\n\r\n<p>(fent segments subjectius de la unitat fluïda del tot).</p>\r\n\r\n<p> </p>\r\n\r\n<p>Anotacions marginals:</p>\r\n\r\n<p> </p>\r\n\r\n<p>La meva ombra m'acompanya des del meu enllumenament.</p>\r\n\r\n<p>És variable - particular, privada (també de llibertat) y pública, única y múltiple, impertèrrita i adaptable, singular o plural,</p>\r\n\r\n<p>i sempre sincrònica.</p>\r\n\r\n<p>És tots els meus jos i nos. Tenim una bona relació.</p>\r\n\r\n<p>És la meva ombra de la guarda.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Relació d'ares tònics per preposicions àtones</p>\r\n\r\n<p> </p>\r\n\r\n<p>a l'ombra (parlo i beso)</p>\r\n\r\n<p>amb l'ombra ( em defineixo i m'abraço)</p>\r\n\r\n<p>de l'ombra (neixo i sóc inseparable. Sé que no la puc matar sense morir en</p>\r\n\r\n<p>l'intent - o tu i jo o ni tu ni jo)</p>\r\n\r\n<p>en l'ombra (que m'acull, m'esmunyo)</p>\r\n\r\n<p>per l'ombra (interpreto forma i acció segons la llum de la mirada)</p>\r\n\r\n<p>per a l'ombra (un got de vi, que traça i revela la seva essència incorpòria)</p>\r\n\r\n<p> </p>\r\n\r\n<p>subtext, flash-acció imaginària:</p>\r\n\r\n<p>En algun moment vaig pensar en proposar de reunir-nos tots els corpologistes abraçats i mirar uns instants l'ombra comú, fer-li una foto amb flash com a evidència absoluta de la seva presència efímera i la incapacitat de retenir-la. Però ja havia descartat la opció de matar l'ombra... segueixo jaient amb ella.</p>	Work	37	2022-09-10 17:47:27.201296	2022-09-10 17:47:27.201296	ca
+3314	place	Sant Hilari Sacalm	Work	37	2022-09-10 17:47:27.21385	2022-09-10 17:47:27.21385	ca
+3315	title	els polissons	Work	39	2022-09-10 17:47:27.226911	2022-09-10 17:47:27.226911	ca
+3316	description	<p>Disturbanitats:</p>\r\n\r\n<p>Performance-Acció sonora amb instruments tradicionals tocats instintivament, comprovant la hipòtesi harmònica de la teoria del caos a la recerca de la biologia primordial.</p>\r\n\r\n<p>Els Polissons estan formats per artistes transdisciplinars que conreen tant la creació en directe com tècniques més el·laborades del món de les arts visuals, literàries, escèniques i musicals. Aquest projecte beu de fonts dadaístes amb precedents de treball en grups d'improvisació i investigació musical.</p>\r\n\r\n<p>Participen:</p>\r\n\r\n<p>Joan Vinuesa <a href="http://www.joanvinuesabaliu.info"> www.joanvinuesabaliu.info</a>   </p>\r\n\r\n<p>Aleix Antillach <a href="http://www.leix.org">www.leix.org</a> </p>\r\n\r\n<p>Eva Puig <a href="http://www.estranhaformadevida.com">www.estranhaformadevida.com</a></p>\r\n\r\n<p>Col·labora: Ona Mestre</p>\r\n\r\n<p>contacte: elspolissons@gmail.com</p>	Work	39	2022-09-10 17:47:27.239098	2022-09-10 17:47:27.239098	ca
+3317	place	XIV Festival Perpetracions - Antologia Animal, Sant Martí, Barcelona	Work	39	2022-09-10 17:47:27.248152	2022-09-10 17:47:27.248152	ca
+3318	title	gota · gota	Work	81	2022-09-10 17:47:27.259686	2022-09-10 17:47:27.259686	ca
+3319	description	<p>Artistes a cel obert</p>\r\n\r\n<p>Taller de Montse Seró, a Rupià, i exposició al Museu de la Terrissa de Quart.</p>	Work	81	2022-09-10 17:47:27.271056	2022-09-10 17:47:27.271056	ca
+3320	techniques	Ceràmica i instal·lació amb aigua i objectes.	Work	81	2022-09-10 17:47:27.284219	2022-09-10 17:47:27.284219	ca
+3321	title	ad hoc	Work	38	2022-09-10 17:47:27.296374	2022-09-10 17:47:27.296374	ca
+3322	description	<p>sèrie de accions/intervencions improvisades ad hoc</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>	Work	38	2022-09-10 17:47:27.308944	2022-09-10 17:47:27.308944	ca
+3323	techniques	moviment i relació amb i entre els objets trouvés, acció i escultura efímera	Work	38	2022-09-10 17:47:27.318816	2022-09-10 17:47:27.318816	ca
+3324	title	Thyllandsias	Work	78	2022-09-10 17:47:27.329232	2022-09-10 17:47:27.329232	ca
+3325	description	<p>viure amb poc i d'allò (aparentment) immaterial</p>	Work	78	2022-09-10 17:47:27.340615	2022-09-10 17:47:27.340615	ca
+3326	techniques	Escultura d'alabastre	Work	78	2022-09-10 17:47:27.353451	2022-09-10 17:47:27.353451	ca
+3327	title	Desig Per(z)ones	Work	65	2022-09-10 17:47:27.365467	2022-09-10 17:47:27.365467	ca
+3328	description	<p><strong>art participatiu a l'espai públic. Peça entorn de les relacions afectives i la sexualitat</strong></p>\r\n\r\n<p>Acció-performance i instal·lació col·lectiva fruit de la participació i la reflexió individual generant un diàleg entre espai públic i espai íntim, visibilitzant la diversitat de qualsevol forma de sentir per expressar tot allò silenciat, envoltat de prejudicis i tabús.</p>\r\n\r\n<p><strong>Les Mireies</strong>, projecte artístic i social,</p>\r\n\r\n<p>som Mireia Chalamanch i Mireia Zantop</p>	Work	65	2022-09-10 17:47:27.382014	2022-09-10 17:47:27.382014	ca
+3329	place	Espai públic de 23 municipis del Barcelonès	Work	65	2022-09-10 17:47:27.392874	2022-09-10 17:47:27.392874	ca
+3330	title	cap cap	Work	72	2022-09-10 17:47:27.40315	2022-09-10 17:47:27.40315	es
+3331	description	<p><strong>Festival de Land-art</strong> ArtiGavarres, 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Proyecto de cocreación con Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p> </p>	Work	72	2022-09-10 17:47:27.413646	2022-09-10 17:47:27.413646	es
+3332	techniques	escultures efímeres de palla	Work	72	2022-09-10 17:47:27.422433	2022-09-10 17:47:27.422433	es
+3333	title	DE VEU · EN VEU	Work	77	2022-09-10 17:47:27.433483	2022-09-10 17:47:27.433483	ca
+3334	description	<p><strong>les Mireies, </strong>projecte artístic i social</p>\r\n\r\n<p>Mireia Chalamanch i Mireia Zantop</p>\r\n\r\n<p> </p>\r\n\r\n<p><a href="https://vimeo.com/337385523">https://vimeo.com/337385523 </a></p>\r\n\r\n<p><a href="https://vimeo.com/490838260">https://vimeo.com/490838260</a></p>\r\n\r\n<p>De VEU en VEU neix de la necessitat de fer-vos còmplices d’algunes de les més de 3.500 veus que hem recollit fent la performance DONAR VEU al llarg d’aquests 5 anys.</p>\r\n\r\n<p>La peça vol ser una invitació a l’escolta, a la reflexió, així com la presa de consciència de la diversitat d’experiències entorn a temes com la violència masclista, la (des)igualtat i la diversitat sexual i de gènere.</p>	Work	77	2022-09-10 17:47:27.446177	2022-09-10 17:47:27.446177	ca
+3335	place	Can Manyé, Alella	Work	77	2022-09-10 17:47:27.458087	2022-09-10 17:47:27.458087	ca
+3336	title	ip(sum), id(est)	Work	67	2022-09-10 17:47:27.470238	2022-09-10 17:47:27.470238	es
+3337	description	<p>Acción en la Fundación Valvi en el marco del festival Inundart, Girona</p>\r\n\r\n<p>1 de julio de 2018</p>	Work	67	2022-09-10 17:47:27.482145	2022-09-10 17:47:27.482145	es
+3338	techniques	Performance, dibujo con el cuerpo, yeso, carbón, saliva y agua.	Work	67	2022-09-10 17:47:27.490751	2022-09-10 17:47:27.490751	es
+3339	title	present% o saltAl'ara	Work	41	2022-09-10 17:47:27.501242	2022-09-10 17:47:27.501242	ca
+3372	description	<p>Nº5 CORPOLOGIA&gt;25</p>\r\n\r\n<p>Inauguració de l'exposició de Denys Blacker<strong> Mapes efímers, complicitats i sincronies</strong></p>\r\n\r\n<p>Instal·lació a l'aparador de la sala d'exposicions del 14 al 21 de juny per gentilesa de Denys Blacker.</p>	Work	66	2022-09-10 17:47:27.92448	2022-09-10 17:47:27.92448	ca
+3373	place	Bòlit Centre D'Art Contemporani, Girona	Work	66	2022-09-10 17:47:27.934303	2022-09-10 17:47:27.934303	ca
+3374	title	cromoSomX	Work	56	2022-09-10 17:47:27.943071	2022-09-10 17:47:27.943071	ca
+3340	description	<p>CORPOLOGIA 15</p>\r\n\r\n<p>16 accions de 4 minuts.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Em presenten, em presento amb la presència, presento el títol:</p>\r\n\r\n<p><strong>PRESENT%</strong>: títol I pensat anteriorment (del passat)</p>\r\n\r\n<p>salal'ara: títol II pensat just abans de l'acció (en un salt a l'ara)</p>\r\n\r\n<p> </p>\r\n\r\n<p>Presento i ofereixo com a present</p>\r\n\r\n<p>els objectes que m'acompanyen:</p>\r\n\r\n<p>un paper blanc rodó fet a mà que porta a sobre una bossa plena de sal i 2 vells despertadors negres -d'aquells que fan tic-tac i riiing percutint les dues campanes-</p>\r\n\r\n<p> </p>\r\n\r\n<p>Volia preguntar -quina hora és?, però com, sigui quina sigui, ja no és, no vaig posar els rellotges a l'hora que és/era, si no a l'hora primera i última de la nostra mesura del temps: 0.00</p>\r\n\r\n<p> </p>\r\n\r\n<p>Inici</p>\r\n\r\n<p>Sincronia = sense cronos? No crònic? Alhora? Tot</p>\r\n\r\n<p>A-sincronia de 2 rellotges:</p>\r\n\r\n<p>Una dimensió del temps absoluta, mesurable. Tremolo mentre dono corda al rellotge</p>\r\n\r\n<p>L'altra dimensió, relativa, el temps percebut, l'ara propi. Em calmo</p>\r\n\r\n<p>Sóc a sobre del paper en blanc. Al meu eix i a l'axis tempus 0:00</p>\r\n\r\n<p> </p>\r\n\r\n<p>Salalcor, salalgust, nusalasal, nusalcap.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Mossego la sal, la sento present en tota la boca en tot moment</p>\r\n\r\n<p>Traço i salo un cercle/cicle en el sentit del rellotge. al ritme propi que l'acció em permet. Estic a les seves mans, sóc llapis d'una voluntat invisible d'avenç imparable, fins a tancar el cercle, una acció rodona</p>\r\n\r\n<p>Torno a l'eix vertical, absurd i em desdibuixo canviant de dimensió</p>\r\n\r\n<p> </p>\r\n\r\n<p>Ara sala'm! Em salo i gaudeixo tot el temps immensurable del plaer</p>\r\n\r\n<p> </p>\r\n\r\n<p>Eix de balança, amb un rellotge a cada mà -el que mesura el temps i el que no-, em concentro en la presència (present tense!), un ara buit i ple d'acció al que li queda poc temps, 30? 10? segons. Ara cent/sent per cent</p>\r\n\r\n<p>...ara riiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiing sincrònic</p>\r\n\r\n<p> </p>\r\n\r\n<p>Ara em sorprèn que els aplaudiments cobreixin el so de les alarmes: un fi fos amb un altre</p>\r\n\r\n<p> </p>\r\n\r\n<p>Ara d'eixo d'estar, esborro l'eix de la mesura del temps i el seu contrari: marxo</p>\r\n\r\n<p>M'emporto el paper rodó, la illa blanca de centre i cercle.</p>\r\n\r\n<p>Resta un espai negre sense sal: absència.</p>\r\n\r\n<p> </p>	Work	41	2022-09-10 17:47:27.521416	2022-09-10 17:47:27.521416	ca
+3341	place	l'Ateneu, Celrà	Work	41	2022-09-10 17:47:27.530504	2022-09-10 17:47:27.530504	ca
+3342	title	d'accions i diccions	Work	42	2022-09-10 17:47:27.546356	2022-09-10 17:47:27.546356	ca
+3343	description	<p> </p>\r\n\r\n<p>(en el marc de <strong>Poesia als parcs 2014)</strong></p>\r\n\r\n<p> </p>\r\n\r\n<p>Acció poètica que allibera un accionari d'un diccionari</p>\r\n\r\n<p>Acció d'aviacció de reacció a la dicció</p>\r\n\r\n<p>Plegats, pleguem</p>\r\n\r\n<p>cadascú un avió, paraula de paper. Cadascú en la direcció del vol que vol</p>\r\n\r\n<p><strong>Dicció al vent</strong></p>\r\n\r\n<p><strong>acció al present</strong></p>\r\n\r\n<p><strong>text al context.</strong></p>\r\n\r\n<p><a href="https://www.facebook.com/poesiaalsparcs"><strong>https://www.facebook.com/poesiaalsparcs</strong></a></p>	Work	42	2022-09-10 17:47:27.560186	2022-09-10 17:47:27.560186	ca
+3344	place	Ermita de Sant Feliuet de Savassona	Work	42	2022-09-10 17:47:27.571451	2022-09-10 17:47:27.571451	ca
+3345	title	esClau	Work	43	2022-09-10 17:47:27.582107	2022-09-10 17:47:27.582107	ca
+3346	description	<p>acció que complementa un poema llegit als 4 vents unes setmanes abans a l'ermita de Sant Feliu de Savassona (gràcies, Ester i Carles):</p>\r\n\r\n<p> </p>\r\n\r\n<p>CAP ESCLAU.</p>\r\n\r\n<p>té la clau</p>\r\n\r\n<p>cau el cap,</p>\r\n\r\n<p>cau de cap</p>\r\n\r\n<p>cau l'esclau del cap (esclau clau)</p>\r\n\r\n<p>i l'esclau de l'esclau</p>\r\n\r\n<p>i l'esclau de l'esclau de l'esclau</p>\r\n\r\n<p>i l'esclau de l'esclau de l'esclau de l'esclau</p>\r\n\r\n<p>i l'esclau de l'esclau de l'esclau de l'esclau de l'esclau</p>\r\n\r\n<p> </p>\r\n\r\n<p>els claus cauen de cap per les escales</p>\r\n\r\n<p>És clau: tens la clau.</p>\r\n\r\n<p>La clau de sol.</p>\r\n\r\n<p>Cap és clau.</p>\r\n\r\n<p><a href="http://corpologialiveart.blogspot.com.es/">http://corpologialiveart.blogspot.com.es/</a></p>	Work	43	2022-09-10 17:47:27.595648	2022-09-10 17:47:27.595648	ca
+3347	place	Antic Teatre, Barcelona	Work	43	2022-09-10 17:47:27.60942	2022-09-10 17:47:27.60942	ca
+3348	title	estOna	Work	44	2022-09-10 17:47:27.618138	2022-09-10 17:47:27.618138	ca
+3349	techniques	intervenció efímera	Work	44	2022-09-10 17:47:27.627475	2022-09-10 17:47:27.627475	ca
+3350	title	FRee WILL (x veure +)	Work	46	2022-09-10 17:47:27.638129	2022-09-10 17:47:27.638129	ca
+3351	description	<p><strong>free will</strong> – lliure albir. Lit.: lliure voluntat</p>\r\n\r\n<p>títol i tema triats per incertesa metafísica.</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>(x veure +)</strong></p>\r\n\r\n<p>acció sense acció</p>\r\n\r\n<p>i veure</p>\r\n\r\n<p>veure-us</p>\r\n\r\n<p>obrir el llibre a l'albir.</p>\r\n\r\n<p>A través del llibre,</p>\r\n\r\n<p>veure amb ulls que no veuen,</p>\r\n\r\n<p>veure +</p>\r\n\r\n<p>Coneixe-ment</p>\r\n\r\n<p>en un altre sentit.</p>\r\n\r\n<p>La informació embena els ulls</p>\r\n\r\n<p>x a veure +</p>\r\n\r\n<p>la imatge interior encertada,</p>\r\n\r\n<p>la intenció certa</p>\r\n\r\n<p> </p>\r\n\r\n<p>allibero els o/u(ll)s.</p>\r\n\r\n<p>o van on volen</p>\r\n\r\n<p>o van on vull</p>\r\n\r\n<p>o van on havien d'anar</p>\r\n\r\n<p> </p>\r\n\r\n<p>...dansa lliure a l'albir.</p>	Work	46	2022-09-10 17:47:27.65745	2022-09-10 17:47:27.65745	ca
+3352	place	Cicle d'Art d'Acció La Carbonera, Girona	Work	46	2022-09-10 17:47:27.667697	2022-09-10 17:47:27.667697	ca
+3353	title	elGrandTour	Work	47	2022-09-10 17:47:27.68085	2022-09-10 17:47:27.68085	ca
+3354	description	<p>Sinèrgies i elements trobats autour del procés creatiu basat en la intuïció.</p>\r\n\r\n<p>Acció col·lectiva amb Denys Blacker, Carlus Camps, Natalia Espinet, Rotnip, Lesley Yendell, Mireia Zantop.</p>\r\n\r\n<p>en el marc del Grand Tour:</p>\r\n\r\n<p>Del 26/08 al 13/09/2015, de la Nau Côclea a St. Feliu de Guíxols, 350km a peu en tres setmanes. Obra d'artistes visuals, ballarins, poetes, músics i performers.</p>\r\n\r\n<p><a href="http://elgrandtour.net">http://elgrandtour.net</a></p>	Work	47	2022-09-10 17:47:27.692678	2022-09-10 17:47:27.692678	ca
+3355	place	Madremanya, Girona	Work	47	2022-09-10 17:47:27.702987	2022-09-10 17:47:27.702987	ca
+3356	title	pEs&amp;pressió	Work	48	2022-09-10 17:47:27.714569	2022-09-10 17:47:27.714569	ca
+3357	description	<p>(EX-PRESSIÓ és-cultura?)</p>\r\n\r\n<p>càrrega visible:</p>\r\n\r\n<p>- bàscula</p>\r\n\r\n<p>- 3 maletes de viatge carregades voluntàriament amb llibres de pes relatiu i involuntari</p>\r\n\r\n<p>- 5 kg de cadenes</p>\r\n\r\n<p> </p>\r\n\r\n<p>pes del cap</p>\r\n\r\n<p>pes del cap en cadenes</p>\r\n\r\n<p>al cap, el pes del cap en cadenes (pressió)</p>\r\n\r\n<p>pes del cos</p>\r\n\r\n<p>pes del cos en llibres</p>\r\n\r\n<p>construcció; s'aguanta per pressió del cap</p>\r\n\r\n<p>a sobre, pes de les cadenes, s'aguanta per pressió del cos, agenollat</p>\r\n\r\n<p>cos de cap, cos de pes (equilibri per pressió)</p>\r\n\r\n<p>pel propi pes de la pres(si)ó</p>\r\n\r\n<p>la consciència defineix el moment d'alliberacció</p>	Work	48	2022-09-10 17:47:27.728734	2022-09-10 17:47:27.728734	ca
+3358	place	Antic Teatre, Barcelona	Work	48	2022-09-10 17:47:27.740132	2022-09-10 17:47:27.740132	ca
+3359	title	aux bleux aigus d'acier et de cristal	Work	49	2022-09-10 17:47:27.751289	2022-09-10 17:47:27.751289	ca
+3360	description	<p>Festival Pepe Sales, Homenatge a Renée Vivien</p>\r\n\r\n<p>Marta Vergonyós i Mireia Zantop</p>	Work	49	2022-09-10 17:47:27.767077	2022-09-10 17:47:27.767077	ca
+3361	place	Auditori de La Mercè, Girona	Work	49	2022-09-10 17:47:27.782555	2022-09-10 17:47:27.782555	ca
+3362	title	FluxUs	Work	53	2022-09-10 17:47:27.793763	2022-09-10 17:47:27.793763	ca
+3363	description	<p>MUGA CAULA 2016.</p>\r\n\r\n<p>Performance en el Museu de l'Empordà.</p>\r\n\r\n<p>Exposició material gràfic i audiovisual de la Muga Caula.</p>\r\n\r\n<p>Homenatge.</p>	Work	53	2022-09-10 17:47:27.803418	2022-09-10 17:47:27.803418	ca
+3364	place	Museu de l'Empordà, Figueres	Work	53	2022-09-10 17:47:27.814318	2022-09-10 17:47:27.814318	ca
+3365	title	Phoscenes	Work	82	2022-09-10 17:47:27.825773	2022-09-10 17:47:27.825773	es
+3366	description	<p>Dibujos del confinamiento, exposición del 18 de septiembre al 30 de octubre 2020 en Lapek (Lavern Subirats) i Madremanya (Girona).</p>	Work	82	2022-09-10 17:47:27.834334	2022-09-10 17:47:27.834334	es
+3367	techniques	mixta s/ papel	Work	82	2022-09-10 17:47:27.843556	2022-09-10 17:47:27.843556	es
+3368	title	eventuall	Work	52	2022-09-10 17:47:27.861902	2022-09-10 17:47:27.861902	ca
+3375	description	<p>Corpologia 24.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Reflexió intuitiva</p>\r\n\r\n<p>que assenyala identitats,</p>\r\n\r\n<p>emmiralla allò propi i apropiat,</p>\r\n\r\n<p>comú i diferenciador.</p>\r\n\r\n<p>Relació de poder d'oposats i equilibri</p>\r\n\r\n<p>entre desig i permís recíproc</p>\r\n\r\n<p>entre forma i fons de la unitat dual.</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>x (fem.) Present en refleXió, seXe i eXpressió de gènere.</strong></p>\r\n\r\n<p>Lletra de l'alfabet. Signe de multiplicació. Signe que representa la incògnita que no es vol o pot dir.</p>\r\n\r\n<p>Signe de creuament. Signe que defineix un punt en l'espai. Cromosoma sexual present en mascles i femelles de l'espècie humana.</p>	Work	56	2022-09-10 17:47:27.95779	2022-09-10 17:47:27.95779	ca
+3376	place	Matèric Cuerpo/Objeto/Espacio. L'Hospitalet de Llobregat	Work	56	2022-09-10 17:47:27.967404	2022-09-10 17:47:27.967404	ca
+3377	title	Flux (...)	Work	63	2022-09-10 17:47:27.978317	2022-09-10 17:47:27.978317	ca
+3378	description	<p>La Muga Caula, Trobada internacional de poesia d'acció i performance</p>	Work	63	2022-09-10 17:47:27.989904	2022-09-10 17:47:27.989904	ca
+3379	place	Les Escaules, Girona.	Work	63	2022-09-10 17:47:28.001932	2022-09-10 17:47:28.001932	ca
+3380	title	ip(sum), id(est)	Work	67	2022-09-10 17:47:28.014348	2022-09-10 17:47:28.014348	ca
+3381	description	<p>Acció a la Fundació Valvi en el marc del festival Inundart, Girona</p>\r\n\r\n<p>1 de juliol de 2018</p>	Work	67	2022-09-10 17:47:28.025071	2022-09-10 17:47:28.025071	ca
+3382	techniques	Performance, dibuix amb el cos, carbó, saliva i aigua.	Work	67	2022-09-10 17:47:28.038907	2022-09-10 17:47:28.038907	ca
+3383	title	quid de la qüestió	Work	68	2022-09-10 17:47:28.048491	2022-09-10 17:47:28.048491	ca
+3384	description	<p>NIT DE PERFORMANCE  18 d'agost, 2018. Continuum d'accions paral·leles a l'església de Sta Llúcia i La Carbonera en el marc de l'exposició <strong>"Mapes efímers, complicitats i sincronies"</strong>, Bòlit centre d'Art Contemporani, Girona</p>\r\n\r\n<p>Ocells al Cap, col·lectiu d'art d'acció:</p>\r\n\r\n<p>Marina Barsy, Marcela Contreras, Hellen Collard, Natàlia Espinet, Piròmana d'Argós, Anita Ponton, Sandra Johnston, Montse Seró, Holly Slingsby, Martine Viale, Ada Vilaró, Lesley Yendell, Mireia Zantop</p>	Work	68	2022-09-10 17:47:28.058398	2022-09-10 17:47:28.058398	ca
+3385	place	Església de Sta. Llúcia, Girona	Work	68	2022-09-10 17:47:28.073209	2022-09-10 17:47:28.073209	ca
+3386	title	Ipse Ipsa Ipsum(em)	Work	69	2022-09-10 17:47:28.086907	2022-09-10 17:47:28.086907	ca
+3387	description	<p>2n cicle<strong> PARLEM CONTEMPORANI?</strong></p>\r\n\r\n<p>Ipse, ipsa, ipsum(em)</p>\r\n\r\n<p>[del llatí, ell mateix, ella mateixa, un mateix] + [del llatí, soc] + [del català, sumem]</p>\r\n\r\n<p>: acció entre rastres d'identitats estimades.</p>\r\n\r\n<p>Entre: cicles d'entrar sortint, de definir desdibuixant, del flux de relacions interrogants.</p>	Work	69	2022-09-10 17:47:28.100602	2022-09-10 17:47:28.100602	ca
+3388	place	Convent de les Arts, Alcover	Work	69	2022-09-10 17:47:28.111781	2022-09-10 17:47:28.111781	ca
+3389	title	fluxus	Work	64	2022-09-10 17:47:28.124397	2022-09-10 17:47:28.124397	ca
+3390	description	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposició col·lectiva homenatge a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Ventós, Figueres.</strong></p>\r\n\r\n<p>Obra-acció iniciada abans de la inauguració, completant-se durant l'exposició.</p>	Work	64	2022-09-10 17:47:28.137328	2022-09-10 17:47:28.137328	ca
+3391	techniques	tinta i aigua sobre paper, bossa de suero i equip de perfusió, picarols	Work	64	2022-09-10 17:47:28.148068	2022-09-10 17:47:28.148068	ca
+3392	title	idenDitat	Work	59	2022-09-10 17:47:28.156861	2022-09-10 17:47:28.156861	ca
+3393	description	<p>Festival Flors i Violes.</p>\r\n\r\n<p>Introducció i veu: Francesc Oui</p>\r\n\r\n<p><a href="http://francescoui.com">http://francescoui.com</a></p>\r\n\r\n<p> </p>	Work	59	2022-09-10 17:47:28.167846	2022-09-10 17:47:28.167846	ca
+3394	place	Fundació Cuixart, Palafrugell	Work	59	2022-09-10 17:47:28.178792	2022-09-10 17:47:28.178792	ca
+3395	title	DONAR VEU al desig	Work	54	2022-09-10 17:47:28.188884	2022-09-10 17:47:28.188884	ca
+3396	description	<p>Performance participativa a l'espai públic per generar reflexió i consciència personal i social sobre allò que solem silenciar.</p>\r\n\r\n<p><strong>les Mireies</strong> som Mireia Chalamanc i Mireia Zantop</p>	Work	54	2022-09-10 17:47:28.199364	2022-09-10 17:47:28.199364	ca
+3397	place	Espai públic de Manlleu, Torelló, Tona i Vic	Work	54	2022-09-10 17:47:28.212394	2022-09-10 17:47:28.212394	ca
+3398	title	paisatge líquid	Work	74	2022-09-10 17:47:28.229247	2022-09-10 17:47:28.229247	ca
+3399	description	<p><strong>Exposició col·lectiva i taller "La pell com a paisatge"</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell i Mireia Zantop</p>\r\n\r\n<p>a La Pedrera, Subirats.</p>\r\n\r\n<p> </p>	Work	74	2022-09-10 17:47:28.248384	2022-09-10 17:47:28.248384	ca
+3400	techniques	obra original sobre paper i obra gràfica	Work	74	2022-09-10 17:47:28.258829	2022-09-10 17:47:28.258829	ca
+3401	title	trans form/morf I-VII	Work	73	2022-09-10 17:47:28.269564	2022-09-10 17:47:28.269564	ca
+3402	techniques	manipulació de materials naturals	Work	73	2022-09-10 17:47:28.28169	2022-09-10 17:47:28.28169	ca
+3403	title	PetrAperta	Work	70	2022-09-10 17:47:28.297246	2022-09-10 17:47:28.297246	ca
+3404	description	<p>improvisacions en procés: diàleg amb la pedra</p>\r\n\r\n<p>des del 2018</p>	Work	70	2022-09-10 17:47:28.306981	2022-09-10 17:47:28.306981	ca
+3405	title	possibles IMpossibles	Work	7	2022-09-10 17:47:28.318091	2022-09-10 17:47:28.318091	ca
+3406	description	<p>un cos, dos cossos, una acció sobre els propis límits i la cooperació</p>\r\n\r\n<p>Co-creació i realització amb Norma Ros</p>\r\n\r\n<p> </p>	Work	7	2022-09-10 17:47:28.328179	2022-09-10 17:47:28.328179	ca
+3407	place	Sala Calassanç / Barcelona	Work	7	2022-09-10 17:47:28.339301	2022-09-10 17:47:28.339301	ca
+3408	title	EnClauDeBes	Work	75	2022-09-10 17:47:28.350252	2022-09-10 17:47:28.350252	ca
+3409	description	<p>Instal.lacció poètica</p>\r\n\r\n<p><strong>Fisures</strong> I Trobada i Mostra d'Art Multidisciplinari de Palafolls</p>\r\n\r\n<p>acció: 12 de juliol de 2014</p>	Work	75	2022-09-10 17:47:28.362807	2022-09-10 17:47:28.362807	ca
+3410	techniques	escala de fusta, martell, claus, paper fet a mà, roba de lli, alfabets, branques de diferents arbres i arbustos, pintallavis marró	Work	75	2022-09-10 17:47:28.371638	2022-09-10 17:47:28.371638	ca
+3411	title	gravat 9	Work	76	2022-09-10 17:47:28.381128	2022-09-10 17:47:28.381128	ca
+3412	description	<p>Accions fotogravades i poesies visuals (sèries continus-discontinus i rius de cel)</p>\r\n\r\n<p>Exposició col·lectiva a La Mirada expandida i Can Basté, Barcelona</p>	Work	76	2022-09-10 17:47:28.394544	2022-09-10 17:47:28.394544	ca
+3413	techniques	fotogravat	Work	76	2022-09-10 17:47:28.405512	2022-09-10 17:47:28.405512	ca
+3414	title	entrar sortint, sortir entrant	Work	71	2022-09-10 17:47:28.41787	2022-09-10 17:47:28.41787	ca
+3415	techniques	Escultura d'alabastre	Work	71	2022-09-10 17:47:28.42917	2022-09-10 17:47:28.42917	ca
+3416	title	DONAR VEU... i fer un pas	Work	55	2022-09-10 17:47:28.43914	2022-09-10 17:47:28.43914	ca
+3417	description	<p>Performance participativa de llarga durada en l'espai públic per donar veu a allò que solem silenciar</p>\r\n\r\n<p>entorn de la <strong>violència de gènere</strong></p>\r\n\r\n<p><strong>Les Mireies</strong> som Mireia Chalamanch i Mireia Zantop</p>	Work	55	2022-09-10 17:47:28.450413	2022-09-10 17:47:28.450413	ca
+3418	place	Igualada, Sta. Margarida de Montbui i Vilanova del Camí, Conca d'Òdena	Work	55	2022-09-10 17:47:28.461235	2022-09-10 17:47:28.461235	ca
+3423	description	<p>Performance participativa de llarga durada i instal.lació a INUND'ART 2010.</p>\r\n\r\n<p>Paraules del que es silencia.<br>\r\nQuant acceptem? Quant tolerem? Som tan lliures (de prejudicis) com creiem?</p>\r\n\r\n<p>Reflexió sobre el concepte del tabú. Reflexe de la nostra mirada sobre el ser i el cos,  relació amb la intenció en la projecció subjectiva i el prejudici socio-cultural implicat a l'hora de identificar les seves subtils aparences simbòliques.</p>\r\n\r\n<p> </p>\r\n\r\n<p>La construcció de la instal.lació és un work on progress al llarg de dues jornades d'inundart. Eix de la primera jornada: RES versus SER; Eix de la segona part: SÓC versus COS.</p>	Work	19	2022-09-10 17:47:28.524634	2022-09-10 17:47:28.524634	ca
+3424	place	Centre Cultural La Mercè, Girona	Work	19	2022-09-10 17:47:28.537888	2022-09-10 17:47:28.537888	ca
+3425	title	cap cap	Work	72	2022-09-10 17:47:28.554031	2022-09-10 17:47:28.554031	ca
+3426	description	<p> </p>\r\n\r\n<p><strong>Festival de Land-art</strong> ArtiGavarres 2019</p>\r\n\r\n<p><a href="http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto">http://www.artigavarres.cat/galeria.php?idc=2#prettyPhoto</a></p>\r\n\r\n<p>Projecte de co-creació amb Aleix Antillach</p>\r\n\r\n<p><a href="http://leix.org">http://leix.org</a></p>\r\n\r\n<p> </p>	Work	72	2022-09-10 17:47:28.57426	2022-09-10 17:47:28.57426	ca
+3427	techniques	escultures efímeres de palla	Work	72	2022-09-10 17:47:28.594657	2022-09-10 17:47:28.594657	ca
+3428	title	Phoscenes	Work	82	2022-09-10 17:47:28.608304	2022-09-10 17:47:28.608304	ca
+3429	description	<p>Dibuixos del Confinament, Exposició del 18 de setembre al 30 d'octubre 2020 a Lapek i Madremanya</p>	Work	82	2022-09-10 17:47:28.628516	2022-09-10 17:47:28.628516	ca
+3430	techniques	mixtes	Work	82	2022-09-10 17:47:28.643793	2022-09-10 17:47:28.643793	ca
+3431	title	(des)CUIDAR	Work	83	2022-09-10 17:47:28.66717	2022-09-10 17:47:28.66717	ca
+3432	description	<p> </p>\r\n\r\n<p> </p>\r\n\r\n<p><a href="https://lesmireies.com/descuidar">https://lesmireies.com/descuidar</a></p>	Work	83	2022-09-10 17:47:28.705033	2022-09-10 17:47:28.705033	ca
+3433	place	Puig-reig, St.Joan de V., St.Antoni V. i Folgueroles,	Work	83	2022-09-10 17:47:28.715937	2022-09-10 17:47:28.715937	ca
+3434	title	gravat 9	Work	76	2022-09-10 17:47:28.72997	2022-09-10 17:47:28.72997	es
+3435	description	<p><strong>Acciones fotograbadas y poesías visuales</strong> (serie contínuos-discontínuos y serie ríos de cielo)</p>\r\n\r\n<p>Exposición colectiva en La Mirada Expandida y Can Basté, Barcelona</p>	Work	76	2022-09-10 17:47:28.740081	2022-09-10 17:47:28.740081	es
+3436	techniques	fotograbado	Work	76	2022-09-10 17:47:28.750027	2022-09-10 17:47:28.750027	es
+3437	title	entre línies, 8ple8buit, veure +	Work	84	2022-09-10 17:47:28.76232	2022-09-10 17:47:28.76232	ca
+3438	description	<p>D'ANADA I TORNADA Viatges d'Arts entre Lletres a la Fundació Brossa de Barcelona. Cicle a cura d'Ester Xargay.</p>\r\n\r\n<p>3 accions poètiques i 1 video-acció, i una presentació de l'obra recent de poesia visual. Amb Ester Xargay i Jordi Aligué.</p>\r\n\r\n<p><a href="https://www.fundaciojoanbrossa.cat/arts-entre-lletres/">https://www.fundaciojoanbrossa.cat/arts-entre-lletres/</a></p>\r\n\r\n<p><a href="https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898">https://www.nuvol.com/llibres/poesia/art-entre-lletres-lletres-entre-art-136898</a></p>	Work	84	2022-09-10 17:47:28.784981	2022-09-10 17:47:28.784981	ca
+3439	place	Fundació Brossa, Barcelona	Work	84	2022-09-10 17:47:28.803614	2022-09-10 17:47:28.803614	ca
+3440	title	over and over, again and again	Work	87	2022-09-10 17:47:28.819537	2022-09-10 17:47:28.819537	ca
+3442	place	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	Work	87	2022-09-10 17:47:28.842812	2022-09-10 17:47:28.842812	ca
+3443	title	over and over, again and again	Work	87	2022-09-10 17:47:28.852063	2022-09-10 17:47:28.852063	en
+3444	description	<p>Video-performance with Denys Blacker </p>\r\n\r\n<p>Group Process on mygrations with Marina Barsy, Denys Blacker Aodan McCardle, Sandra Johnson, Bernmadette Hopkins (curator in charge) and Isa Fontbona.</p>\r\n\r\n<p>Video: Mar Ximenis</p>\r\n\r\n<p>To be exhibited, in the Regional Cultural Centre Letterkenny Co.Donegal in the Autumn 2021</p>\r\n\r\n<p>WILD SWANS: <a href="https://www.bernadettehopkins.com/wild-swans-performance-art.html">https://www.bernadettehopkins.com/wild-swans-performance-art.html</a></p>	Work	87	2022-09-10 17:47:28.863652	2022-09-10 17:47:28.863652	en
+3445	place	Madremanya (Spain), San Juan (Puerto Rico) and Donegal (Ireland)	Work	87	2022-09-10 17:47:28.879506	2022-09-10 17:47:28.879506	en
+3446	title	ULL! agulles	Work	88	2022-09-10 17:47:28.890745	2022-09-10 17:47:28.890745	en
+3447	description	<p> festival  MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreació i coproducció d'ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge indòmit i domesticat. Juguem amb l’escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Catàleg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>	Work	88	2022-09-10 17:47:28.904796	2022-09-10 17:47:28.904796	en
+3448	techniques	Instal·lació amb estaques.	Work	88	2022-09-10 17:47:28.917339	2022-09-10 17:47:28.917339	en
+3449	title	ULL! agulles	Work	88	2022-09-10 17:47:28.929237	2022-09-10 17:47:28.929237	ca
+3450	description	<p>festival de Land Art MICROSCOPIES 2021</p>\r\n\r\n<p>Cocreació i coproducció d'ALEIX ANTILLACH I MIREIA ZANTOP</p>\r\n\r\n<p>Construint, com dibuixant, mirem, coneixem i potser reconeixem. Juguem amb el paisatge indòmit i domesticat. Juguem amb l’escala, la mida i la mesura que la nostra mirada conjuga.</p>\r\n\r\n<p>Catàleg virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Premsa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>	Work	88	2022-09-10 17:47:28.947107	2022-09-10 17:47:28.947107	ca
+3451	techniques	Instal·lació amb estaques.	Work	88	2022-09-10 17:47:28.958586	2022-09-10 17:47:28.958586	ca
+3452	title	SI i/o NO, torno i no torno	Work	85	2022-09-10 17:47:28.973115	2022-09-10 17:47:28.973115	es
+3453	description	<p>Video-acción para la Exposición itinerante <strong>Plurivisions de Felícia Fuster</strong></p>\r\n\r\n<p>Realización del video: Adolf Alcañiz</p>\r\n\r\n<p><a href="https://tempsarts.cat/felicia-fuster-plurivisions/">https://tempsarts.cat/felicia-fuster-plurivisions/</a></p>	Work	85	2022-09-10 17:47:28.98807	2022-09-10 17:47:28.98807	es
+3454	place	Arts Santa Mònica, Barcelona	Work	85	2022-09-10 17:47:29.002589	2022-09-10 17:47:29.002589	es
+3455	title	obra gráfica	Work	92	2022-09-10 17:47:29.020469	2022-09-10 17:47:29.020469	es
+3456	description	<p>Estaremos en Bilbao en el Festival Internacional de Grabado y arte sobre papel: Eulàlia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>	Work	92	2022-09-10 17:47:29.032925	2022-09-10 17:47:29.032925	es
+3457	techniques	grabado calcográfico i serigrafía sobre diversos papeles i soportes	Work	92	2022-09-10 17:47:29.045334	2022-09-10 17:47:29.045334	es
+3458	title	prints	Work	92	2022-09-10 17:47:29.056311	2022-09-10 17:47:29.056311	en
+3459	description	<p> FIG Bilbao al Festival Internacional de Grabado y arte sobre papel: Eulàlia Espasa, Bess Frimog, Roser Sales, Mireia Zantop.</p>\r\n\r\n<p><a href="http://www.figbilbao.com">http://www.figbilbao.com</a></p>\r\n\r\n<p><a href="https://figonlinefair.com/artista/mireia-zantop/">https://figonlinefair.com/artista/mireia-zantop/</a></p>	Work	92	2022-09-10 17:47:29.068634	2022-09-10 17:47:29.068634	en
+3460	techniques	gravat calcogràfic i serigrafia sobre diversos papers i suports	Work	92	2022-09-10 17:47:29.081421	2022-09-10 17:47:29.081421	en
+3461	title	ULL! agulles	Work	88	2022-09-10 17:47:29.090228	2022-09-10 17:47:29.090228	es
+3462	description	<p>Festival de Land Art MICROSCOPIES</p>\r\n\r\n<p>Manresa, 2021</p>\r\n\r\n<p>Cocreación i coproducción de ALEIX ANTILLACH y MIREIA ZANTOP</p>\r\n\r\n<p>Construyendo, así como dibujando, miramos, conocemos y, tal vez, reconocemos. Jugamos con el paisaje indómito y el domesticado. Jugamos con la escala, el tamaño y la medida que nuestra mirada conjuga.</p>\r\n\r\n<p>Catálogo virtual: <a href="https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/">https://meandremanresa.com/2021/08/20/propera-sortida/microscopies_2021/</a></p>\r\n\r\n<p>Prensa: <a href="https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet">https://www.naciodigital.cat/manresa/noticia/98872/segona-microscopies-es-fara-torre-lluvia-amb-obres-efimeres-permanent-angels-freixanet</a></p>	Work	88	2022-09-10 17:47:29.10134	2022-09-10 17:47:29.10134	es
+3463	techniques	Instalación efímera en el paisaje	Work	88	2022-09-10 17:47:29.113464	2022-09-10 17:47:29.113464	es
+3464	title	entrar saliendo, salir entrando	Work	71	2022-09-10 17:47:29.12868	2022-09-10 17:47:29.12868	es
+3465	techniques	Escultura de alabastro	Work	71	2022-09-10 17:47:29.152204	2022-09-10 17:47:29.152204	es
+3466	title	estOna	Work	44	2022-09-10 17:47:29.176742	2022-09-10 17:47:29.176742	es
+3467	description	<p>Intervención efímera en el sector "Ona" en la Alta Garrotxa.</p>\r\n\r\n<p>ona = ola</p>\r\n\r\n<p>estona = rato</p>\r\n\r\n<p>est = este, punto cardinal, o es, del latín</p>\r\n\r\n<p>visibilización de una línea de est-ratos</p>\r\n\r\n<p> </p>	Work	44	2022-09-10 17:47:29.205976	2022-09-10 17:47:29.205976	es
+3468	techniques	intervención efímera	Work	44	2022-09-10 17:47:29.220749	2022-09-10 17:47:29.220749	es
+3469	title	fluxus	Work	64	2022-09-10 17:47:29.234951	2022-09-10 17:47:29.234951	es
+3470	description	<p>Festival La Muga Caula</p>\r\n\r\n<p><strong>Exposición colectiva en homenaje a Ben Patterson. </strong></p>\r\n\r\n<p><strong>Galeria Dolors Ventós, Figueres.</strong></p>\r\n\r\n<p>Acción-instalación iniciada antes de la inauguración, completando-se durante la exposició.</p>	Work	64	2022-09-10 17:47:29.248823	2022-09-10 17:47:29.248823	es
+3471	techniques	tintas sobre papel, bolsa de suero, equipo de perfusión, cascabels	Work	64	2022-09-10 17:47:29.258624	2022-09-10 17:47:29.258624	es
+3472	title	trans form/morf I-VII	Work	73	2022-09-10 17:47:29.268911	2022-09-10 17:47:29.268911	es
+3473	techniques	manipulación,transformación, reubicación de materiales naturales	Work	73	2022-09-10 17:47:29.280917	2022-09-10 17:47:29.280917	es
+3474	title	EnClaveDeBes(os)	Work	75	2022-09-10 17:47:29.292571	2022-09-10 17:47:29.292571	es
+3475	description	<p>Instalacción poética</p>\r\n\r\n<p><strong>Fisures</strong> I Encuentro y Muestra de Arte Multidisciplinario de Palafolls</p>\r\n\r\n<p>acción: 12 de julio de 2014</p>	Work	75	2022-09-10 17:47:29.304647	2022-09-10 17:47:29.304647	es
+3476	techniques	Escalera, martillo, clavos, papel hecho a mano, ropa de lino, alfabetos, sonidos, ramas, pintalabios	Work	75	2022-09-10 17:47:29.315969	2022-09-10 17:47:29.315969	es
+3477	title	AflorA	Work	14	2022-09-10 17:47:29.325442	2022-09-10 17:47:29.325442	es
+3478	description	<p>Exposición de obra gráfica original, Sinèrgia, Vic.</p>	Work	14	2022-09-10 17:47:29.336792	2022-09-10 17:47:29.336792	es
+3479	techniques	calcografía y serigrafía	Work	14	2022-09-10 17:47:29.347923	2022-09-10 17:47:29.347923	es
+3480	title	paisaje líquido	Work	74	2022-09-10 17:47:29.356709	2022-09-10 17:47:29.356709	es
+3481	description	<p><strong>Exposición colectiva y taller "La piel como paisaje"</strong></p>\r\n\r\n<p>de Tatiana Blanc, Eva Miquel, Victoria Raval, Lesley Yendell y Mireia Zantop</p>\r\n\r\n<p>en La Pedrera, Subirats.</p>\r\n\r\n<p> </p>	Work	74	2022-09-10 17:47:29.368398	2022-09-10 17:47:29.368398	es
+3482	techniques	obra original sobre papel y obra gráfica	Work	74	2022-09-10 17:47:29.379985	2022-09-10 17:47:29.379985	es
+3483	title	ad hoc	Work	38	2022-09-10 17:47:29.391753	2022-09-10 17:47:29.391753	es
+3484	description	<p>serie de acciones e intervenciones improvisadas ad hoc</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>	Work	38	2022-09-10 17:47:29.4055	2022-09-10 17:47:29.4055	es
+3485	techniques	movimiento y relación con y entre los objets trouvés, acción, escultura e instalación efímera	Work	38	2022-09-10 17:47:29.417749	2022-09-10 17:47:29.417749	es
 \.
 
 
@@ -510,6 +1116,7 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 1215	0e72bijk51avtztoekmo70gps7xc	MZantop_4.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	25274	1vxijlELDbMCd2LShJ9nmQ==	2022-08-31 00:17:46.865702
 1218	htz1zkctsf7wqyir9uenwzi1c592	portada.sarria.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	40770	ZtAPWwzkPZiKzES8Tzg6Kw==	2022-09-01 20:09:18.913438
 1223	dupstuhfwrgzgbcxi1dj6bwic239	Mireia_Zantop__sin_rgia.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	29577	R/K97sQBc4qceCM5SyhSmw==	2022-09-01 20:09:22.380932
+1241	hsrda3o5dg2sl29eyntvmv4ijy7q	100_0591.jpg	image/jpeg	{"identified":true,"width":100,"height":58,"analyzed":true}	local	2465	R7i+nhhVib1tEhkHq60Zfg==	2022-09-10 15:34:42.242527
 1188	jpeqz5a2oiga41gyo5mptf4ic25h	Mireia_Zantop_Accio_.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	43081	08hTeSODCvRgpzukx9wRZA==	2022-08-29 23:29:36.261548
 1192	20rmh84ovvadbis6oitok5rz44zp	P1110547baixa.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22991	sktlUGyaiGMCHeNb1SXGSQ==	2022-08-29 23:29:36.73878
 1199	tq8b0r6y6mroxn8kzbhsbmlejgx9	DSC_0583.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	18077	Jihxuc/Vf/u54JDKKpNysA==	2022-08-29 23:29:37.344106
@@ -518,6 +1125,7 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 1216	ktogcqqiz2lhgjogvlyfbuefbjfd	DSCF1045.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22360	sWAM3gby6mfcFW7Rt4J21w==	2022-08-31 00:17:46.868706
 1219	q7e4ylf0fvvgfgcd2dmwr4c7qvkx	1_Alguien_camina...jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	20424	fzwNscwHAZVTb72VviWzYg==	2022-09-01 20:09:18.917163
 1225	rs8o7b3xlczb6krptkec66ql5k5i	constelacciones_2008.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	26006	DNuGfhViZ/TARfpn+67hTw==	2022-09-01 20:09:22.41049
+1242	77yj87fv5fl9dfd6oxpivh6twi9q	100_0602.jpg	image/jpeg	{"identified":true,"width":100,"height":90,"analyzed":true}	local	2752	ylHtwB5prAHhpxjmpzEsNw==	2022-09-10 15:34:42.24748
 1189	x33j3h4twhd3wli6j3akw35ih2zs	IMG_2095.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	10317	sDstU3RRo14tapa0fxs3iA==	2022-08-29 23:29:36.269736
 1193	ugon4i7qi2aehy9bamggr7liffu3	DSC01109-102.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	19449	v7rPRHEQJ8Uk4v9X99Y9RA==	2022-08-29 23:29:36.758598
 1197	uk48g4vhikk6omfq5rjqaawbxmrl	DSC_0037.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	8976	E+Zj0gTyqnPfCweFiVjYHQ==	2022-08-29 23:29:37.244934
@@ -528,6 +1136,7 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 1220	qfazqj7y1c63n1hsiz5vzwwk3uo9	DSCN1209_2.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	19092	RoMJAM4oONkqrI6P3210Ow==	2022-09-01 20:09:18.921592
 1222	ybsda7khv3dkl5yyry67drwn0vsk	Instal.laci__monos_labos.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	15467	c8Na1ONe7k9vOgl3AOSUFA==	2022-09-01 20:09:22.371706
 1227	lz7tjxt74urm30gywa4orbppwlfc	sala_ruinas2.2.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	12114	9kXbdNgiq2PAlfTQLNQ+3g==	2022-09-01 20:09:22.75976
+1243	fc2y9op6ed67ynt8ydg7m3fts2ba	DSC05840.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2611	1KVST1Nntl4LX53VMWBYcA==	2022-09-10 15:34:42.251087
 1191	o2s7b3b7aa2n0ejsplz0vdracjgb	IMG-20210315-WA0017.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	56989	HDHcms78Byus7k30L66utg==	2022-08-29 23:29:36.302421
 1195	4wh10qao0hv6wrrtnf5s56l1x4h3	Programa_Perpetraci_ns_Interior.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	49145	T4Gx42lFt+HvlbLYpqrafw==	2022-08-29 23:29:36.873394
 1201	iv9e3bsbasji75ehsdn6r4jg3z2f	generart25nov.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	35279	KGh/z1x0WMnETb7cbue05Q==	2022-08-29 23:29:37.518648
@@ -536,6 +1145,8 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 1214	x45lvvq1anu6xyjgwartbfwd5bw5	fent_volar_coloms.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	48390	QBivyjDgBFeVzA78HYOolw==	2022-08-29 23:29:38.621783
 1221	sidvpouli59163ht8anz4tr8vj8o	DSC03862.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22198	HaQNMVqxSDQSrJ2mnbU5GA==	2022-09-01 20:09:22.333131
 1226	xuilm4m6b89kbmj3h5h8hy0ghda3	DSCF5838_cavar.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	30956	XpwoGcz+oU+gUk7rCNUK9g==	2022-09-01 20:09:22.754968
+1244	d7l5iczij3qjy1ouel4hr5s67z3h	DINERGIA_I-Armonia_Diatessaron.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	1889	qbgY67jYm6cRc4gBN4bXuw==	2022-09-10 16:11:04.694213
+1250	c0fr7k7fh6z3mpl84abbvo5dxdnj	Vil.la_Florida_venus.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2368	FzO2tbVassln8TbH6oWrBg==	2022-09-10 16:16:39.866384
 1196	30r7fmzuoo7htietowitqztxomex	Captura_de_pantalla_de_2021-09-01_01-17-09.png	image/png	{"identified":true,"width":400,"height":400,"analyzed":true}	local	133851	VycuqKvOOYsqKL8WY8gRvw==	2022-08-29 23:29:36.906931
 1200	oeik9oeyupcjizhj2l00fokn72t6	DSCF4623.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32115	uTy5qw+PPELoRVhuuqOgxg==	2022-08-29 23:29:37.35917
 1204	bnz0sjehls38qain6fi5opjvc9w2	_MG_3737.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14663	nTjxwLwEWyMutAP1Sz1t7g==	2022-08-29 23:29:37.794708
@@ -543,18 +1154,40 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 1213	hcshdxyxovm1ey9n5v65hi8264vc	Mireia.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	18350	YvS4MUfnZp4dehWzDZ6unA==	2022-08-29 23:29:38.608032
 1224	65qm2ipl305frolzlvcg25dgvytu	09-La_Bodega_Rustica.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	33467	n1/DArNjC2t2nrNrOlfe5g==	2022-09-01 20:09:22.402982
 1228	3iv45j2hulft859evz3y4tjarmum	IMG_20180928_164827.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14235	RJMDIln2ZvhSYTWXx/7KsQ==	2022-09-01 20:09:25.895365
+1245	mcapn396udv8gr4yy2dlax2yfiuf	DINERGIAIII-Armonia_ad_infinitum.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	1731	MZF+sRGNFhqW88tE0qDTZA==	2022-09-10 16:11:04.69759
+1251	c6vs8jeu2q7v4woxye939tak822w	Instal.laci__monos_labos.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	1857	SVuNZbJo0/w4KnqR5RQB3g==	2022-09-10 16:16:39.869783
 1229	1cj5jduamyxrtfc35pfmg1a3wy4s	_20191228_100620.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32045	7jyALx5ukm+yu7cnFkNelQ==	2022-09-01 21:15:39.170536
+1246	kaur7ztuvyxijcpldxn4snazrmwo	DINERGIA_I-Llavors.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2276	xhNb/jey5OfSSm7vzDSbBw==	2022-09-10 16:11:04.700384
 1230	0rhhk453qeohgry1bugrdnjhmyrf	separ_2014.4sala_AUDITORIO.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	21721	Zg7jRl6EePveZp02PR0HxA==	2022-09-01 21:15:39.396143
+1247	mxxlsikfp2w9rdy4379brnv8d04t	DSC03862.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2267	361nUK1UNSQ2oeVMj0vUhw==	2022-09-10 16:11:04.711814
+1249	8fzq9mdyv3zl5u137kfr8eogdf0k	P1000490.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	1752	QTAUsnxk8hqVJJGq1SNPHw==	2022-09-10 16:16:39.860495
 1231	3vw74jhdutxvf58yy0tzju5y473m	IMG_20191225_133646_151.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2185	dm/NUCaqXfFZAVJREGzLuw==	2022-09-01 23:41:44.528881
+1248	sp9b3xwn0f5fhv7w52oyz9ywkn7i	DSC03863.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2847	dlf5QDlc6Tlw5sh4nEWjdw==	2022-09-10 16:11:04.816591
 1232	e8fgzn2ijgpg5t49ktniriim28rj	IMG_20191225_132357_968.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2621	JeMRhPz/GDRIo/QEpJPWxw==	2022-09-01 23:41:44.535306
+1252	csux4xmtba3oc56alnzhflpgwf3a	DSC_0106-004.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2669	VTGSy6KrH24AhACMA1PJKQ==	2022-09-10 17:47:43.543323
 1233	ij6r75io74ahhpertlzcimhu2mpf	IMG_20190831_132411_157.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3262	P3utZABPQJq7xrKJGN7GQw==	2022-09-01 23:41:44.540981
+1253	rmi7pqxh48xhlcu4be8j794dtmo1	Copy_of_DSC_0046-001.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2532	ipmKFBW+Yc6kRGWjFIhgRw==	2022-09-10 17:47:43.545901
 1234	i678fl9bvitybnyfdo079s1r09qu	_20191228_100620.jpg	image/jpeg	{"identified":true,"width":76,"height":100,"analyzed":true}	local	2685	uumUgofb9BtWCR17cniH9w==	2022-09-01 23:41:44.550056
+1254	sn6pan5nteqaq1z5cna4mo30v630	DSC_0079-004.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2614	o2qqZVJfZJwehtsPX68jwQ==	2022-09-10 17:47:43.555042
 1235	n39xgnngkss2b4ryozz7pfay3i4s	IMG_20201016_172309.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2839	EoBMnUGi8HWq546xN1r0Kg==	2022-09-02 00:03:42.569438
 1240	6gacuqv9dk3km53bwjyri9kj0m3d	des_cuidar_accionant_IMG-20200308-WA0020.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3848	jkZgO3DnPlX3LRdBtXYJkw==	2022-09-02 00:03:43.010257
+1255	9zx6vdz5cdg034wqhg83bh8xklna	DSC_0083-001.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2554	iETB0dVESFE3A7ARgcTG/A==	2022-09-10 17:47:43.705286
 1236	2wjmi7xlqu59cgpnnzl28nplrgcu	IMG_20200308_180723_115.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2380	l7iUE8WUkSpMkVRGy66SHQ==	2022-09-02 00:03:42.573788
+1256	lwkjiqyom83cfm98odtwueqv6m2z	CanFelipa_39.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1815	4VjUX0nspnW501zTnRmljA==	2022-09-10 19:39:29.520429
+1261	vhmdd2b1z8ahu2jg64ub7fr9ahsf	CanFelipa_28.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1428	01bCkI5Js3YrKHp8zuNwfA==	2022-09-10 19:39:29.966352
+1266	wt2n6t1i19u7v5bflbb611ibth6u	imagesNoah_presentaci_n.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	2991	V0tSE530zhB+uHs2Dgh0XQ==	2022-09-10 19:39:46.669618
 1237	885tn757yea82f2ydln3cfy2wpct	IMG-20200924-WA0005.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2687	EGY8fva9NSV4JDihx0HA2A==	2022-09-02 00:03:42.576307
+1257	az8ik5cu4ehf7i1zylpo5s6sm77d	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1820	jF1HXSNA5I1U7FKlApN6+g==	2022-09-10 19:39:29.527885
+1263	5wm1gwcwkkk4xoao8lkmndepv74r	CanFelipa_67.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1802	I0azm6mfyeVe90tMQXXCvQ==	2022-09-10 19:39:30.1443
 1238	vimlk6prehgkd7c4ryxheoduvx96	IMG-20200308-WA0039.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2713	T/WndxxsyTSGZiF3y/D9Pg==	2022-09-02 00:03:42.579406
+1258	ovqxhvtsaaur9z0g67big0kim357	CanFelipa_09.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1515	u1VS+yUslN0MtXa9MDP6mg==	2022-09-10 19:39:29.556226
+1265	1a6w9lvxn106xbinwuyhoq74zuv4	LA_DOCTORA_COLE__Noah_Gordon_.jpg	image/jpeg	{"identified":true,"width":66,"height":100,"analyzed":true}	local	3245	Z/A5gjDwGba8zrPH1DU0Vw==	2022-09-10 19:39:46.650289
 1239	0y6ay65b2d2g4nnb9rquq0dlyens	__retocat.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2224	nVtW3dUWVV+s8gaPKXGokQ==	2022-09-02 00:03:42.588986
+1259	oyax26jyfwj2lt4eqvmky1lkhspz	CanFelipa_17.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1857	Vb/57qJREKhzfJ8FuEikpQ==	2022-09-10 19:39:29.565426
+1267	e58d7pf73vx8xu1hupblf9jqkkyf	09-La_Bodega_Rustica.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	3278	uhq+EjE8SSAiNmo1y5Rhgw==	2022-09-10 19:39:46.746528
+1260	5txoigvbxxesre535j9ewxkdulgb	CanFelipa_26.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2020	Kp0BJbc+I46Yw/62U3Ibcw==	2022-09-10 19:39:29.586687
+1262	cm1vaqbwxkdiau9a6n5azvun9s9b	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1749	WtIkUiVU8w1/nTCxDTsipQ==	2022-09-10 19:39:30.010587
+1264	6g0tzvl19y3u6dcj6acehligrrrq	CanFelipa_62.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1765	Oat/NzrfLM66Q7Wx/gUsOg==	2022-09-10 19:39:30.417203
 1144	8nx50fhpfufn0qmllbu6c3yju4xe	corpologia_25_5_Girona_2_retocada.jpeg	image/jpeg	{"identified":true,"width":100,"height":66,"analyzed":true}	local	1797	CWDBqnEJaLyNSDGk8IcnPg==	2022-08-29 23:03:03.718015
 1149	it88bly42oob3eq2fvkrlrrr045f	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1696	2iujtVQPvO2Hi0JJ1boiTg==	2022-08-29 23:03:04.137643
 1155	xb5uouikvyucvwaywgw46s4xt80l	IMG-20150128-WA0000.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3001	t1YvyZFhEFiU2v42JbIr2g==	2022-08-29 23:03:04.534864
@@ -1107,6 +1740,33 @@ COPY public.active_storage_attachments (id, name, record_type, record_id, blob_i
 1238	image	ActiveStorage::VariantRecord	132	1238	2022-09-02 00:03:42.594251
 1239	image	ActiveStorage::VariantRecord	134	1239	2022-09-02 00:03:42.599905
 1240	image	ActiveStorage::VariantRecord	135	1240	2022-09-02 00:03:43.013635
+1241	image	ActiveStorage::VariantRecord	136	1243	2022-09-10 15:34:42.254316
+1242	image	ActiveStorage::VariantRecord	137	1241	2022-09-10 15:34:42.255954
+1243	image	ActiveStorage::VariantRecord	138	1242	2022-09-10 15:34:42.258733
+1244	image	ActiveStorage::VariantRecord	139	1244	2022-09-10 16:11:04.703618
+1245	image	ActiveStorage::VariantRecord	142	1245	2022-09-10 16:11:04.707499
+1246	image	ActiveStorage::VariantRecord	140	1246	2022-09-10 16:11:04.714488
+1247	image	ActiveStorage::VariantRecord	141	1247	2022-09-10 16:11:04.726079
+1248	image	ActiveStorage::VariantRecord	143	1248	2022-09-10 16:11:04.825874
+1249	image	ActiveStorage::VariantRecord	144	1249	2022-09-10 16:16:39.8736
+1250	image	ActiveStorage::VariantRecord	146	1250	2022-09-10 16:16:39.877267
+1251	image	ActiveStorage::VariantRecord	145	1251	2022-09-10 16:16:39.884251
+1252	image	ActiveStorage::VariantRecord	148	1252	2022-09-10 17:47:43.55128
+1253	image	ActiveStorage::VariantRecord	147	1253	2022-09-10 17:47:43.559708
+1254	image	ActiveStorage::VariantRecord	149	1254	2022-09-10 17:47:43.562421
+1255	image	ActiveStorage::VariantRecord	150	1255	2022-09-10 17:47:43.709164
+1256	image	ActiveStorage::VariantRecord	153	1256	2022-09-10 19:39:29.53322
+1257	image	ActiveStorage::VariantRecord	152	1257	2022-09-10 19:39:29.536388
+1258	image	ActiveStorage::VariantRecord	151	1258	2022-09-10 19:39:29.563148
+1259	image	ActiveStorage::VariantRecord	154	1259	2022-09-10 19:39:29.576603
+1260	image	ActiveStorage::VariantRecord	155	1260	2022-09-10 19:39:29.596694
+1261	image	ActiveStorage::VariantRecord	156	1261	2022-09-10 19:39:30.013061
+1262	image	ActiveStorage::VariantRecord	157	1262	2022-09-10 19:39:30.019334
+1263	image	ActiveStorage::VariantRecord	158	1263	2022-09-10 19:39:30.184149
+1264	image	ActiveStorage::VariantRecord	159	1264	2022-09-10 19:39:30.421414
+1265	image	ActiveStorage::VariantRecord	160	1265	2022-09-10 19:39:46.663036
+1266	image	ActiveStorage::VariantRecord	161	1266	2022-09-10 19:39:46.685778
+1267	image	ActiveStorage::VariantRecord	162	1267	2022-09-10 19:39:46.755311
 \.
 
 
@@ -1250,6 +1910,33 @@ COPY public.active_storage_variant_records (id, blob_id, variation_digest) FROM 
 133	1070	wj2EsykI81rCJCK6QU6D9xirR/c=
 134	1073	wj2EsykI81rCJCK6QU6D9xirR/c=
 135	1074	wj2EsykI81rCJCK6QU6D9xirR/c=
+136	725	JkDIZZBvzep28tKq9zM7WlqeP9s=
+137	724	JkDIZZBvzep28tKq9zM7WlqeP9s=
+138	723	JkDIZZBvzep28tKq9zM7WlqeP9s=
+139	718	JkDIZZBvzep28tKq9zM7WlqeP9s=
+140	719	JkDIZZBvzep28tKq9zM7WlqeP9s=
+141	717	JkDIZZBvzep28tKq9zM7WlqeP9s=
+142	720	JkDIZZBvzep28tKq9zM7WlqeP9s=
+143	721	JkDIZZBvzep28tKq9zM7WlqeP9s=
+144	873	wj2EsykI81rCJCK6QU6D9xirR/c=
+145	710	JkDIZZBvzep28tKq9zM7WlqeP9s=
+146	711	JkDIZZBvzep28tKq9zM7WlqeP9s=
+147	1087	wj2EsykI81rCJCK6QU6D9xirR/c=
+148	1098	wj2EsykI81rCJCK6QU6D9xirR/c=
+149	1088	wj2EsykI81rCJCK6QU6D9xirR/c=
+150	1089	wj2EsykI81rCJCK6QU6D9xirR/c=
+151	916	wj2EsykI81rCJCK6QU6D9xirR/c=
+152	913	wj2EsykI81rCJCK6QU6D9xirR/c=
+153	914	wj2EsykI81rCJCK6QU6D9xirR/c=
+154	912	wj2EsykI81rCJCK6QU6D9xirR/c=
+155	915	wj2EsykI81rCJCK6QU6D9xirR/c=
+156	911	wj2EsykI81rCJCK6QU6D9xirR/c=
+157	908	wj2EsykI81rCJCK6QU6D9xirR/c=
+158	909	wj2EsykI81rCJCK6QU6D9xirR/c=
+159	910	wj2EsykI81rCJCK6QU6D9xirR/c=
+160	776	wj2EsykI81rCJCK6QU6D9xirR/c=
+161	777	wj2EsykI81rCJCK6QU6D9xirR/c=
+162	775	wj2EsykI81rCJCK6QU6D9xirR/c=
 \.
 
 
@@ -1430,6 +2117,7 @@ COPY public.friendly_id_slugs (id, slug, sluggable_id, sluggable_type, created_a
 274	video-accio	30	Tag	2021-09-20 19:37:28.393461	\N
 275	video-performance	30	Tag	2021-09-20 19:37:28.405798	\N
 276	video-accion	30	Tag	2021-09-20 19:37:28.418593	\N
+298	metacroqueta	37	Tag	2022-09-10 23:57:47.562225	\N
 \.
 
 
@@ -1974,77 +2662,77 @@ COPY public.image_translations (id, image_id, locale, credits, created_at, updat
 --
 
 COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, "position", type, created_at, updated_at, published, images_count) FROM stdin;
-83	des-cuidar	des-cuidar	des-cuidar	2020-03-08	\N	66	ActionWork	2021-01-04 20:46:03.849595	2021-01-04 20:49:41.618875	f	7
-78	thyllandsias	thyllandsias	thyllandsias	2019-02-14	petites	64	VisualWork	2020-02-14 21:53:45.784852	2020-10-14 23:00:12.393682	f	4
-82	phoscenes	phoscenes	phoscenes	2020-09-20	15x20cm y 21x30cm	65	VisualWork	2020-09-21 08:55:36.118883	2022-01-05 20:07:42.746165	t	8
-72	cap-cap	cap-cap	cap-cap	2019-04-10	4 x 2 x 2m cada cap	60	VisualWork	2019-04-10 23:03:30.93674	2022-01-05 21:06:26.043782	t	4
-70	proces-in-solid	proces-in-solid	petraperta	2020-01-28		57	VisualWork	2019-01-28 21:07:00.386441	2020-09-20 21:15:52.229861	f	0
-68	quid-de-la-questio	quid-de-la-questio	quid-de-la-questio	2018-08-18	\N	55	ActionWork	2018-08-22 15:29:30.538993	2020-09-20 20:50:24.952837	t	5
-66	per-se	per-se	per-se	2018-06-15	\N	53	ActionWork	2018-08-22 15:12:28.262887	2020-09-20 20:50:24.991831	t	5
-65	desig-per-z-ones	desig-per-z-ones	desig-per-z-ones	2018-06-28	\N	52	ActionWork	2018-08-22 15:06:01.745665	2020-09-20 20:50:25.025151	t	8
-44	estona	estona	estona	2014-01-04	200m x 4h	34	VisualWork	2015-01-05 00:13:34.134193	2022-01-05 21:38:07.421219	t	5
-67	ip-sum-id-est	ip-sum-id-est	ip-sum-id-est	2018-08-22	diàmetro: 35cm	54	VisualWork	2018-08-22 15:22:59.105854	2022-01-05 21:12:29.898868	t	7
-71	entrar-sortint-sortir-entrant	entrar-saliendo-salir-entrando	entrar-sortint-sortir-entrant	2019-03-07	22 x 20 x 10 cm	58	VisualWork	2019-03-07 22:44:49.704275	2022-01-05 20:21:12.642688	t	3
-73	trans-form-morf-i-vii	trans-form-morf-i-vii	trans-form-morf-i-vii	2018-04-15		59	VisualWork	2019-04-15 11:41:03.226797	2022-01-05 21:43:08.606615	t	7
-81	s-o-gota-a-gota	s-o-gota-a-gota	gota-gota	2017-02-19	50 x 50 x 175cm	51	VisualWork	2020-02-19 17:54:40.91911	2020-09-20 21:21:00.647538	f	0
-63	flux-u	flux-u	flux	2016-09-09	\N	50	ActionWork	2017-06-02 00:01:30.321383	2020-09-20 20:50:25.005059	t	5
-62	donar-veu-i-veure-mes	donar-veu-i-veure-mes	donar-veu-i-veure-mes	2017-03-08	\N	49	ActionWork	2017-06-01 23:32:58.900866	2020-09-20 20:50:25.012495	t	12
-57	tot-fluxus	tot-fluxus	flux-us	2016-09-17	\N	46	ActionWork	2016-10-19 22:59:40.404894	2020-09-20 20:50:24.893548	t	5
-56	cromosomx	cromosomx	cromosomx	2016-10-01	\N	45	ActionWork	2016-10-19 22:54:27.41393	2020-09-20 20:50:24.881316	t	4
-51	pomps-of-the-subsoil	pomps-of-the-subsoil	pomps-of-the-subsoil	2015-11-06	\N	43	ActionWork	2016-08-01 16:18:28.208002	2016-08-05 11:39:07.587787	t	10
-54	donar-veu-al-desig	donar-veu-al-desig	donar-veu-al-desig	2015-12-12	\N	42	ActionWork	2016-08-01 17:50:44.208163	2020-09-20 20:50:25.018978	t	5
-53	fluxus	fluxus	fluxus	2016-07-29	\N	41	ActionWork	2016-08-01 17:43:51.781812	2020-09-20 20:50:25.039552	t	8
-52	eventuall	eventuall	eventuall	2015-07-31	\N	40	ActionWork	2016-08-01 16:58:23.594865	2016-08-01 16:59:31.49856	t	5
-64	fluxus--2	fluxus--2	fluxus--2	2016-06-02	3 x 1 x 1,75m	44	VisualWork	2017-06-02 00:41:09.680582	2022-01-05 21:20:49.963678	t	6
-55	donar-veu-fer-un-pas	donar-veu-fer-un-pas	donar-veu-i-fer-un-pas	2015-03-08	\N	39	ActionWork	2016-08-01 17:54:00.844746	2020-09-20 20:50:25.046377	t	6
-49	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	aux-bleux-aigus-d-acier-et-de-cristal--2	2015-01-27	\N	38	ActionWork	2016-08-01 15:46:03.101867	2016-08-01 17:00:18.671453	t	2
-48	pes-pressio	pes-pressio	pes-pressio	2015-10-22	\N	37	ActionWork	2016-08-01 15:36:37.797864	2020-09-20 20:50:24.913002	t	10
-47	elgrandtour	elgrandtour	elgrandtour	2015-08-27	\N	36	ActionWork	2015-09-27 22:40:21.937473	2015-09-27 22:42:43.6855	t	10
-46	free-will-x-veure	free-will-x-veure	free-will-x-veure	2015-05-29	\N	35	ActionWork	2015-07-03 00:07:34.077024	2020-09-20 20:50:24.906908	t	6
-43	esclau	esclau	esclau	2014-12-07	\N	33	ActionWork	2015-01-04 23:00:32.867555	2015-01-04 23:21:24.331086	t	11
-42	d-accions-i-diccions	d-accions-i-diccions	d-accions-i-diccions	2014-10-12	\N	32	ActionWork	2015-01-04 22:05:04.756829	2015-01-04 22:13:33.864906	t	7
-41	present-o-saltal-ara	present-o-saltal-ara	present-o-saltal-ara	2014-04-25	\N	31	ActionWork	2014-05-17 13:20:04.134108	2020-09-20 20:50:24.966677	t	9
-38	ad-hoc-al-lloc	ad-hoc	ad-hoc	2014-05-17	de 5cm a 30m de diámetro	27	VisualWork	2014-05-17 12:58:01.573508	2022-01-10 11:49:05.968889	t	7
-92	prints	obra-grafica	obra-grafica	2021-11-19		71	VisualWork	2021-11-19 20:17:25.43168	2022-01-05 20:02:40.427619	t	7
-74	paisatge-liquid	paisaje-liquido	paisatge-liquid	2019-06-10	varias	61	VisualWork	2019-06-10 20:41:47.106447	2022-01-10 11:24:54.400521	t	10
-87	over-and-over-again-and-again	over-and-over-again-and-again	over-and-over-again-and-again	2021-08-08	\N	69	ActionWork	2021-08-31 23:10:08.820784	2022-01-13 20:54:16.093342	t	5
-85	i-o-torno-i-no-torno	si-i-o-no-torno-i-no-torno	si-i-o-no-torno-i-no-torno	2021-03-22	\N	68	ActionWork	2021-04-08 21:04:22.982108	2021-09-26 20:50:13.214682	t	6
-84	entrelinies-8ple8buit	entrelinies-8ple8buit	entre-linies-8ple8buit-veure	2020-11-16	\N	67	ActionWork	2021-01-04 20:54:14.332123	2021-08-31 23:06:53.60256	t	4
-69	ipse-ipsa-ipsum-em	ipse-ipsa-ipsum-em	ipse-ipsa-ipsum-em	2019-01-12	\N	56	ActionWork	2019-01-18 23:45:25.386543	2020-09-20 20:50:24.946269	t	4
-61	we-were-waiting-for-you--2	we-were-waiting-for-you--2	we-were-waiting-for-you--2	2017-05-04	\N	48	ActionWork	2017-06-01 23:00:44.560054	2018-12-22 17:31:52.27902	t	1
-59	idenditat	idenditat	idenditat	2017-04-29	\N	47	ActionWork	2017-06-01 22:46:00.441816	2020-09-20 20:50:24.959875	t	10
-40	birds-ocells-al-cap	birds-ocells-al-cap	birds-ocells-al-cap	2014-05-10	\N	29	ActionWork	2014-05-17 13:01:15.490385	2016-08-05 12:02:03.827813	t	1
-39	polissons	polissons	els-polissons	2014-05-31	\N	28	ActionWork	2014-05-17 12:59:00.756984	2020-09-20 20:50:24.979295	t	6
-37	n-ombrares	n-ombrares	n-ombrares	2013-06-22	\N	26	ActionWork	2014-05-17 12:35:47.228536	2020-09-20 20:50:24.939653	t	6
-36	despunxar	despunxar	despunxar	2013-11-09	\N	25	ActionWork	2013-12-06 13:20:53.584595	2020-09-20 20:50:24.919016	t	6
-35	quina-es-la-pregunta	quina-es-la-pregunta	quina-es-la-pregunta	2013-11-25	\N	24	ActionWork	2013-12-06 13:07:19.832531	2020-09-20 20:50:24.972956	t	5
-34	sum-us	sum-us	sum-us	2013-11-22	\N	23	ActionWork	2013-12-06 13:04:41.818596	2020-09-20 20:50:24.925366	t	7
-33	fent-volar-coloms	fent-volar-coloms	fent-volar-coloms	2013-11-28	\N	22	ActionWork	2013-12-06 12:49:22.391758	2020-09-20 20:50:24.932879	t	7
-31	a-z-5-5-f-acts	a-z-5-5-f-acts	a-z-5-5-f-acts	2013-07-12	\N	21	ActionWork	2013-09-05 14:59:30.581912	2020-09-20 20:50:24.887363	t	1
-30	axis-salus-hommage-to-the-good-doctor	axis-salus-homenaje-al-buen-medico-premio-separ	axis-salus-homenatge-al-bon-metge	2013-08-20	11,5 x 14 x 13 cm	20	VisualWork	2013-08-20 12:50:53.330132	2014-10-09 17:19:05.582834	f	2
-29	grafies-d-una-mirada-a-sarria	grafies-d-una-mirada-a-sarria	grafies-d-una-mirada-a-sarria	2012-04-05	18 x 23 cm	19	VisualWork	2013-04-05 18:53:13.913679	2013-04-05 18:56:47.172902	t	8
-27	si-lent-si-silenci	si-lent-si-silenci	si-lent-si-silenci	2013-04-05	\N	18	ActionWork	2013-04-05 15:05:10.489553	2020-09-20 20:50:24.862163	f	0
-24	s-t-sin-titulo	s-t-sin-titulo	s-t-sense-titol	2013-02-23	\N	17	ActionWork	2013-03-27 21:35:26.163119	2020-09-20 20:50:24.874958	t	10
-75	enclaudebes	enclavedebes-os	enclaudebes	2014-06-10	Sala de exposiciones del MiD	30	VisualWork	2019-06-10 21:35:27.166925	2022-01-10 11:45:58.720538	t	10
-6	zenits-1	zenits-1	zenits-1	2011-09-16	30 x 39,5 cm	6	VisualWork	2013-01-04 20:32:19.488412	2013-03-28 01:44:05.424587	t	10
-12	musical-ment	musical-ment	musical-ment	2011-08-15	\N	5	ActionWork	2013-01-05 01:21:06.678029	2020-09-21 12:33:25.921228	t	4
-11	dinergia-i-ii-iii	dinergia-i-ii-iii	dinergia-i-ii-iii	2009-01-05		4	VisualWork	2013-01-05 00:51:50.446447	2013-01-05 00:56:53.398888	t	5
-26	el-celler-i--2	el-celler-i--2	el-celler-i--2	2008-03-28		3	VisualWork	2013-03-28 00:59:05.058178	2013-03-28 01:20:39.603891	t	3
-8	dues-veus-nues	dues-veus-nues	dues-veus-nues	2011-04-01		2	VisualWork	2013-01-04 20:55:13.990187	2020-09-20 20:50:24.900473	t	3
-7	possibles-impossibles	possibles-impossibles	possibles-impossibles	2011-04-28	\N	1	ActionWork	2013-01-04 20:49:48.47245	2020-09-20 20:50:24.985554	t	3
-14	aflora	aflora	aflora	2011-01-05		8	VisualWork	2013-01-05 01:36:09.623864	2022-01-10 11:21:20.689562	t	5
-13	constelaccions	constelacciones	constelaccions	2008-01-05		9	VisualWork	2013-01-05 01:30:14.33089	2022-01-05 20:10:05.535745	t	1
-88	ull-agulles	ull-agulles	ull-agulles	2021-09-20	Un trozo de campo en Torre Lluvià. O también: de aquí a Montserrat	70	VisualWork	2021-09-20 19:33:22.557705	2022-01-05 20:16:55.089635	t	8
-77	de-veu-en-veu	de-veu-en-veu	de-veu-en-veu	2019-03-06	\N	63	ActionWork	2019-06-10 22:08:30.86874	2021-08-31 23:07:42.432665	f	3
-23	6-senses--7	6-senses--7	6-senses-consentidosinsentido	2013-03-07	\N	16	ActionWork	2013-03-22 00:11:06.526061	2020-09-20 20:50:24.851568	t	5
-9	e-qui-libri-s-ii	e-qui-libri-s-ii	e-qui-libri-s-ii	2012-09-27	\N	15	ActionWork	2013-01-04 22:53:52.680536	2020-09-20 20:50:24.868469	t	11
-17	uters	uters	uters	2010-01-20		14	VisualWork	2013-01-20 01:01:01.351696	2013-03-28 00:07:10.388773	t	3
-19	taboo-ser-res-cos-soc	taboo-ser-res-cos-soc	taboo-ser-res-cos-soc	2010-05-02	\N	13	ActionWork	2013-01-20 02:38:39.839034	2020-09-20 20:50:25.03206	t	7
-16	ouroboros-veus	ouroboros-veus	ouroboros-veus	2011-09-06	\N	12	ActionWork	2013-01-20 00:53:54.408037	2020-09-20 20:50:24.836661	t	8
-10	anima-l-u	anima-l-u	anima-l-u	2011-03-09	\N	11	ActionWork	2013-01-05 00:35:47.123185	2020-09-20 20:50:24.808167	t	4
-15	improvisar	improvisar	impro	2012-03-23	\N	10	ActionWork	2013-01-05 01:58:04.864981	2020-09-20 20:50:24.829423	t	3
-18	itaca-pas-a-dos	itaca-pas-a-dos	itaca-pas-a-dos	2009-06-22	\N	7	ActionWork	2013-01-20 02:15:44.616616	2020-09-20 20:50:24.844214	t	3
-76	gravat9	gravat-9	gravat-9	2019-06-10	varias	62	VisualWork	2019-06-10 21:53:33.118572	2022-01-05 20:26:16.304672	t	7
+92	prints	obra-grafica	obra-grafica	2021-11-19		71	VisualWork	2021-11-19 20:17:25.43168	2022-09-10 17:47:29.082556	t	7
+11	dinergia-i-ii-iii	dinergia-i-ii-iii	dinergia-i-ii-iii	2009-01-05		4	VisualWork	2013-01-05 00:51:50.446447	2022-09-10 17:47:26.011283	t	5
+44	estona	estona	estona	2014-01-04	200m x 4h	34	VisualWork	2015-01-05 00:13:34.134193	2022-09-10 17:47:29.222856	t	5
+64	fluxus--2	fluxus--2	fluxus--2	2016-06-02	3 x 1 x 1,75m	44	VisualWork	2017-06-02 00:41:09.680582	2022-09-10 17:47:29.259779	t	6
+59	idenditat	idenditat	idenditat	2017-04-29	\N	47	ActionWork	2017-06-01 22:46:00.441816	2022-09-10 17:47:28.179818	t	10
+27	si-lent-si-silenci	si-lent-si-silenci	si-lent-si-silenci	2013-04-05	\N	18	ActionWork	2013-04-05 15:05:10.489553	2022-09-10 17:47:26.504507	f	0
+26	el-celler-i--2	el-celler-i--2	el-celler-i--2	2008-03-28		3	VisualWork	2013-03-28 00:59:05.058178	2022-09-10 17:47:26.428382	t	3
+8	dues-veus-nues	dues-veus-nues	dues-veus-nues	2011-04-01		2	VisualWork	2013-01-04 20:55:13.990187	2022-09-10 17:47:26.568172	t	3
+24	s-t-sin-titulo	s-t-sin-titulo	s-t-sense-titol	2013-02-23	\N	17	ActionWork	2013-03-27 21:35:26.163119	2022-09-10 17:47:26.598977	t	10
+54	donar-veu-al-desig	donar-veu-al-desig	donar-veu-al-desig	2015-12-12	\N	42	ActionWork	2016-08-01 17:50:44.208163	2022-09-10 17:47:28.21354	t	5
+81	s-o-gota-a-gota	s-o-gota-a-gota	gota-gota	2017-02-19	50 x 50 x 175cm	51	VisualWork	2020-02-19 17:54:40.91911	2022-09-10 17:47:27.286187	f	0
+61	we-were-waiting-for-you--2	we-were-waiting-for-you--2	we-were-waiting-for-you--2	2017-05-04	\N	48	ActionWork	2017-06-01 23:00:44.560054	2022-09-10 17:47:26.630156	t	1
+36	despunxar	despunxar	despunxar	2013-11-09	\N	25	ActionWork	2013-12-06 13:20:53.584595	2022-09-10 17:47:26.981844	t	6
+51	pomps-of-the-subsoil	pomps-of-the-subsoil	pomps-of-the-subsoil	2015-11-06	\N	43	ActionWork	2016-08-01 16:18:28.208002	2022-09-10 17:47:26.949323	t	10
+40	birds-ocells-al-cap	birds-ocells-al-cap	birds-ocells-al-cap	2014-05-10	\N	29	ActionWork	2014-05-17 13:01:15.490385	2022-09-10 17:47:27.141211	t	1
+33	fent-volar-coloms	fent-volar-coloms	fent-volar-coloms	2013-11-28	\N	22	ActionWork	2013-12-06 12:49:22.391758	2022-09-10 17:47:27.174423	t	7
+34	sum-us	sum-us	sum-us	2013-11-22	\N	23	ActionWork	2013-12-06 13:04:41.818596	2022-09-10 17:47:26.882432	t	7
+57	tot-fluxus	tot-fluxus	flux-us	2016-09-17	\N	46	ActionWork	2016-10-19 22:59:40.404894	2022-09-10 17:47:26.27693	t	5
+62	donar-veu-i-veure-mes	donar-veu-i-veure-mes	donar-veu-i-veure-mes	2017-03-08	\N	49	ActionWork	2017-06-01 23:32:58.900866	2022-09-10 17:47:26.305643	t	12
+12	musical-ment	musical-ment	musical-ment	2011-08-15	\N	5	ActionWork	2013-01-05 01:21:06.678029	2022-09-10 17:47:26.049819	t	4
+35	quina-es-la-pregunta	quina-es-la-pregunta	quina-es-la-pregunta	2013-11-25	\N	24	ActionWork	2013-12-06 13:07:19.832531	2022-09-10 17:47:27.013961	t	5
+31	a-z-5-5-f-acts	a-z-5-5-f-acts	a-z-5-5-f-acts	2013-07-12	\N	21	ActionWork	2013-09-05 14:59:30.581912	2022-09-10 17:47:27.050008	t	1
+52	eventuall	eventuall	eventuall	2015-07-31	\N	40	ActionWork	2016-08-01 16:58:23.594865	2022-09-10 17:47:27.903637	t	5
+66	per-se	per-se	per-se	2018-06-15	\N	53	ActionWork	2018-08-22 15:12:28.262887	2022-09-10 17:47:27.935376	t	5
+56	cromosomx	cromosomx	cromosomx	2016-10-01	\N	45	ActionWork	2016-10-19 22:54:27.41393	2022-09-10 17:47:27.968406	t	4
+55	donar-veu-fer-un-pas	donar-veu-fer-un-pas	donar-veu-i-fer-un-pas	2015-03-08	\N	39	ActionWork	2016-08-01 17:54:00.844746	2022-09-10 17:47:28.462369	t	6
+46	free-will-x-veure	free-will-x-veure	free-will-x-veure	2015-05-29	\N	35	ActionWork	2015-07-03 00:07:34.077024	2022-09-10 17:47:27.669435	t	6
+47	elgrandtour	elgrandtour	elgrandtour	2015-08-27	\N	36	ActionWork	2015-09-27 22:40:21.937473	2022-09-10 17:47:27.704347	t	10
+48	pes-pressio	pes-pressio	pes-pressio	2015-10-22	\N	37	ActionWork	2016-08-01 15:36:37.797864	2022-09-10 17:47:27.741895	t	10
+53	fluxus	fluxus	fluxus	2016-07-29	\N	41	ActionWork	2016-08-01 17:43:51.781812	2022-09-10 17:47:27.816195	t	8
+38	ad-hoc-al-lloc	ad-hoc	ad-hoc	2014-05-17	de 5cm a 30m de diámetro	27	VisualWork	2014-05-17 12:58:01.573508	2022-09-10 17:47:29.418907	t	7
+83	des-cuidar	des-cuidar	des-cuidar	2020-03-08	\N	66	ActionWork	2021-01-04 20:46:03.849595	2022-09-10 17:47:28.717212	f	7
+84	entrelinies-8ple8buit	entrelinies-8ple8buit	entre-linies-8ple8buit-veure	2020-11-16	\N	67	ActionWork	2021-01-04 20:54:14.332123	2022-09-10 17:47:28.806414	t	4
+30	axis-salus-hommage-to-the-good-doctor	axis-salus-homenaje-al-buen-medico-premio-separ	axis-salus-homenatge-al-bon-metge	2013-08-20	11,5 x 14 x 13 cm	20	VisualWork	2013-08-20 12:50:53.330132	2022-09-10 17:47:26.814365	f	2
+85	i-o-torno-i-no-torno	si-i-o-no-torno-i-no-torno	si-i-o-no-torno-i-no-torno	2021-03-22	\N	68	ActionWork	2021-04-08 21:04:22.982108	2022-09-10 17:47:29.005242	t	6
+63	flux-u	flux-u	flux	2016-09-09	\N	50	ActionWork	2017-06-02 00:01:30.321383	2022-09-10 17:47:28.003115	t	5
+67	ip-sum-id-est	ip-sum-id-est	ip-sum-id-est	2018-08-22	diàmetro: 35cm	54	VisualWork	2018-08-22 15:22:59.105854	2022-09-10 17:47:28.040502	t	7
+41	present-o-saltal-ara	present-o-saltal-ara	present-o-saltal-ara	2014-04-25	\N	31	ActionWork	2014-05-17 13:20:04.134108	2022-09-10 17:47:27.532478	t	9
+42	d-accions-i-diccions	d-accions-i-diccions	d-accions-i-diccions	2014-10-12	\N	32	ActionWork	2015-01-04 22:05:04.756829	2022-09-10 17:47:27.572735	t	7
+43	esclau	esclau	esclau	2014-12-07	\N	33	ActionWork	2015-01-04 23:00:32.867555	2022-09-10 17:47:27.610616	t	11
+72	cap-cap	cap-cap	cap-cap	2019-04-10	4 x 2 x 2m cada cap	60	VisualWork	2019-04-10 23:03:30.93674	2022-09-10 17:47:28.598117	t	4
+68	quid-de-la-questio	quid-de-la-questio	quid-de-la-questio	2018-08-18	\N	55	ActionWork	2018-08-22 15:29:30.538993	2022-09-10 17:47:28.075139	t	5
+78	thyllandsias	thyllandsias	thyllandsias	2019-02-14	petites	64	VisualWork	2020-02-14 21:53:45.784852	2022-09-10 17:47:27.355209	f	4
+65	desig-per-z-ones	desig-per-z-ones	desig-per-z-ones	2018-06-28	\N	52	ActionWork	2018-08-22 15:06:01.745665	2022-09-10 17:47:27.394395	t	8
+82	phoscenes	phoscenes	phoscenes	2020-09-20	15x20cm y 21x30cm	65	VisualWork	2020-09-21 08:55:36.118883	2022-09-10 17:47:28.6476	t	8
+74	paisatge-liquid	paisaje-liquido	paisatge-liquid	2019-06-10	varias	61	VisualWork	2019-06-10 20:41:47.106447	2022-09-10 17:47:29.38111	t	10
+73	trans-form-morf-i-vii	trans-form-morf-i-vii	trans-form-morf-i-vii	2018-04-15		59	VisualWork	2019-04-15 11:41:03.226797	2022-09-10 17:47:29.282656	t	7
+70	proces-in-solid	proces-in-solid	petraperta	2020-01-28		57	VisualWork	2019-01-28 21:07:00.386441	2022-09-10 17:47:28.308136	f	0
+7	possibles-impossibles	possibles-impossibles	possibles-impossibles	2011-04-28	\N	1	ActionWork	2013-01-04 20:49:48.47245	2022-09-10 17:47:28.340894	t	3
+69	ipse-ipsa-ipsum-em	ipse-ipsa-ipsum-em	ipse-ipsa-ipsum-em	2019-01-12	\N	56	ActionWork	2019-01-18 23:45:25.386543	2022-09-10 17:47:28.112842	t	4
+71	entrar-sortint-sortir-entrant	entrar-saliendo-salir-entrando	entrar-sortint-sortir-entrant	2019-03-07	22 x 20 x 10 cm	58	VisualWork	2019-03-07 22:44:49.704275	2022-09-10 17:47:29.156614	t	3
+75	enclaudebes	enclavedebes-os	enclaudebes	2014-06-10	Sala de exposiciones del MiD	30	VisualWork	2019-06-10 21:35:27.166925	2022-09-10 17:47:29.317445	t	10
+37	n-ombrares	n-ombrares	n-ombrares	2013-06-22	\N	26	ActionWork	2014-05-17 12:35:47.228536	2022-09-10 17:47:27.215734	t	6
+39	polissons	polissons	els-polissons	2014-05-31	\N	28	ActionWork	2014-05-17 12:59:00.756984	2022-09-10 17:47:27.249257	t	6
+87	over-and-over-again-and-again	over-and-over-again-and-again	over-and-over-again-and-again	2021-08-08	\N	69	ActionWork	2021-08-31 23:10:08.820784	2022-09-10 23:57:47.729884	t	5
+49	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	sonet-i-tes-yeux-aux-bleux-aigus-d-acier-et-de-cristal	aux-bleux-aigus-d-acier-et-de-cristal--2	2015-01-27	\N	38	ActionWork	2016-08-01 15:46:03.101867	2022-09-10 17:47:27.784519	t	2
+6	zenits-1	zenits-1	zenits-1	2011-09-16	30 x 39,5 cm	6	VisualWork	2013-01-04 20:32:19.488412	2022-09-10 17:47:25.954102	t	10
+10	anima-l-u	anima-l-u	anima-l-u	2011-03-09	\N	11	ActionWork	2013-01-05 00:35:47.123185	2022-09-10 17:47:25.989536	t	4
+13	constelaccions	constelacciones	constelaccions	2008-01-05		9	VisualWork	2013-01-05 01:30:14.33089	2022-09-10 17:47:28.503938	t	1
+19	taboo-ser-res-cos-soc	taboo-ser-res-cos-soc	taboo-ser-res-cos-soc	2010-05-02	\N	13	ActionWork	2013-01-20 02:38:39.839034	2022-09-10 17:47:28.539661	t	7
+76	gravat9	gravat-9	gravat-9	2019-06-10	varias	62	VisualWork	2019-06-10 21:53:33.118572	2022-09-10 17:47:28.751541	t	7
+15	improvisar	improvisar	impro	2012-03-23	\N	10	ActionWork	2013-01-05 01:58:04.864981	2022-09-10 17:47:26.133586	t	3
+9	e-qui-libri-s-ii	e-qui-libri-s-ii	e-qui-libri-s-ii	2012-09-27	\N	15	ActionWork	2013-01-04 22:53:52.680536	2022-09-10 17:47:26.163615	t	11
+16	ouroboros-veus	ouroboros-veus	ouroboros-veus	2011-09-06	\N	12	ActionWork	2013-01-20 00:53:54.408037	2022-09-10 17:47:26.205158	t	8
+17	uters	uters	uters	2010-01-20		14	VisualWork	2013-01-20 01:01:01.351696	2022-09-10 17:47:26.396581	t	3
+88	ull-agulles	ull-agulles	ull-agulles	2021-09-20	Un trozo de campo en Torre Lluvià. O también: de aquí a Montserrat	70	VisualWork	2021-09-20 19:33:22.557705	2022-09-10 17:47:29.114654	t	8
+18	itaca-pas-a-dos	itaca-pas-a-dos	itaca-pas-a-dos	2009-06-22	\N	7	ActionWork	2013-01-20 02:15:44.616616	2022-09-10 17:47:26.459721	t	3
+14	aflora	aflora	aflora	2011-01-05		8	VisualWork	2013-01-05 01:36:09.623864	2022-09-10 17:47:29.349031	t	5
+23	6-senses--7	6-senses--7	6-senses-consentidosinsentido	2013-03-07	\N	16	ActionWork	2013-03-22 00:11:06.526061	2022-09-10 17:47:26.491667	t	5
+29	grafies-d-una-mirada-a-sarria	grafies-d-una-mirada-a-sarria	grafies-d-una-mirada-a-sarria	2012-04-05	18 x 23 cm	19	VisualWork	2013-04-05 18:53:13.913679	2022-09-10 17:47:26.535214	t	8
+77	de-veu-en-veu	de-veu-en-veu	de-veu-en-veu	2019-03-06	\N	63	ActionWork	2019-06-10 22:08:30.86874	2022-09-10 17:47:27.459875	f	3
 \.
 
 
@@ -2053,277 +2741,278 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 --
 
 COPY public.images (id, deprecated_image, "position", created_at, updated_at, video, work_id) FROM stdin;
-145	\N	6	2014-05-17 12:13:11.895863	2014-05-17 12:19:36.806395	https://vimeo.com/83686197	34
-7	Instal.laci__monos_labos.JPG	2	2013-01-04 21:08:33.070994	2022-07-03 01:36:15.600322		8
-199	20140706_165129.jpg	3	2015-01-05 00:13:36.036211	2022-07-03 01:37:06.460123		44
-200	20140706_164738.jpg	4	2015-01-05 00:13:36.897578	2022-07-03 01:37:07.027577		44
-201	20140706_165245.jpg	5	2015-01-05 00:13:37.994038	2022-07-03 01:37:07.714057		44
-204	IMG_1468.jpeg	1	2015-07-03 00:07:34.082814	2022-07-03 01:37:07.91078		46
-212	IMG_2324.jpeg	1	2015-09-27 22:40:21.943151	2022-07-03 01:37:09.155686		47
-146	CORPOLOGIA_13.jpeg	7	2014-05-17 12:13:11.921266	2022-07-03 01:36:50.405519		34
-148	DSC_0038retoc.jpeg	2	2014-05-17 12:35:48.040542	2022-07-03 01:36:50.861388		37
-149	DSC_0044_copia.jpeg	3	2014-05-17 12:35:48.913866	2022-07-03 01:36:51.15734		37
-128	Coloms_circuit1_A.Bombaci.jpg	4	2013-12-06 12:49:23.917396	2022-07-03 01:36:44.812736		33
-129	Coloms_Cordes1_ClaraBes.jpg	5	2013-12-06 12:49:25.10811	2022-07-03 01:36:45.117866		33
-130	Coloms_Globos_ClaraBes.jpg	6	2013-12-06 12:49:25.735747	2022-07-03 01:36:45.407462		33
-132	Coloms_Murmuradores_A.Bombaci.jpg	8	2013-12-06 12:49:27.235642	2022-07-03 01:36:45.847264		33
-133	generart25nov.jpg	2	2013-12-06 13:07:19.838038	2022-07-03 01:36:46.110871		35
-134	despunxa1.JPG	1	2013-12-06 13:20:53.588822	2022-07-03 01:36:46.616679		36
-150	DSC_0047_copia.jpeg	4	2014-05-17 12:35:49.755477	2022-07-03 01:36:51.35293		37
-151	DSC_0048_copiaretocada.jpeg	5	2014-05-17 12:35:50.614842	2022-07-03 01:36:51.57486		37
-152	DSC_0051_copia.jpeg	6	2014-05-17 12:35:51.284079	2022-07-03 01:36:51.817021		37
-156	Programa_Perpetraci_ns_Interior.jpg	3	2014-07-17 22:28:50.898452	2022-07-03 01:36:52.242409		39
-158	140531-XIV_Perpetracions-Antologia_Animal-500.jpg	2	2014-07-17 22:28:53.187017	2022-07-03 01:36:53.387471		39
-171	IMG_2108.jpeg	3	2014-11-03 23:26:03.616212	2022-07-03 01:36:57.727703		41
-172	IMG_2116.jpeg	4	2014-11-03 23:26:04.397945	2022-07-03 01:36:57.864409		41
-173	IMG_2117.jpeg	5	2014-11-03 23:26:05.244875	2022-07-03 01:36:58.068102		41
-174	IMG_2127.jpeg	6	2014-11-03 23:26:06.004775	2022-07-03 01:36:58.191964		41
-136	despunxa3.JPG	3	2013-12-06 13:20:55.176573	2022-07-03 01:36:47.394523		36
-137	despunxa4.JPG	4	2013-12-06 13:20:55.929314	2022-07-03 01:36:47.808486		36
-138	despunxaFi.JPG	5	2013-12-06 13:20:56.96195	2022-07-03 01:36:48.14429		36
-139	esbarzer_obrAl_xia1.JPG	6	2013-12-06 13:20:58.326664	2022-07-03 01:36:48.523872		36
-140	DSC_0583.jpeg	1	2014-05-17 12:13:07.524387	2022-07-03 01:36:48.88441		34
-141	sum_us_1.jpeg	2	2014-05-17 12:13:08.49483	2022-07-03 01:36:49.196095		34
-175	IMG_2131.jpeg	7	2014-11-03 23:26:06.6773	2022-07-03 01:36:58.326542		41
-176	IMG_2132.jpeg	8	2014-11-03 23:26:07.299663	2022-07-03 01:36:58.441424		41
-177	IMG_2134.jpeg	9	2014-11-03 23:26:07.928066	2022-07-03 01:36:58.560125		41
-178	Mireia_Zantop_Accio_.JPG	2	2015-01-04 22:05:04.762646	2022-07-03 01:36:58.998345		42
-179	Fulls_Accio__Mireia.JPG	3	2015-01-04 22:05:10.596075	2022-07-03 01:36:59.530419		42
-164	P1130300.JPG	4	2014-07-17 22:55:52.957072	2022-07-03 01:36:55.889859		35
-135	despunxa2.JPG	2	2013-12-06 13:20:54.370403	2022-07-03 01:36:47.033948		36
-143	sum_us_3.jpeg	4	2014-05-17 12:13:10.103452	2022-07-03 01:36:49.786783		34
-144	DSC_0621.jpeg	5	2014-05-17 12:13:10.913218	2022-07-03 01:36:50.190717		34
-127	Coloms_Laminas1_ClaraBes.jpg	3	2013-12-06 12:49:23.33067	2022-07-03 01:36:44.536627		33
-165	P1130321.JPG	5	2014-07-17 22:55:53.937621	2022-07-03 01:36:56.373987		35
-170	IMG_2104.jpeg	2	2014-11-03 23:26:02.782895	2022-07-03 01:36:57.546926		41
-159	140531-XIV_Perpetracions-Antologia_Animal-504.jpg	4	2014-07-17 22:28:54.317382	2022-07-03 01:36:53.901403		39
-160	140531-XIV_Perpetracions-Antologia_Animal-506.jpg	5	2014-07-17 22:28:55.469747	2022-07-03 01:36:54.368237		39
-161	140531-XIV_Perpetracions-Antologia_Animal-496.jpg	6	2014-07-17 22:28:56.851237	2022-07-03 01:36:54.796863		39
-162	P1130261.JPG	1	2014-07-17 22:55:51.029461	2022-07-03 01:36:55.140763		35
-163	P1130264.JPG	3	2014-07-17 22:55:51.976218	2022-07-03 01:36:55.510211		35
-168	Separ_20143Sala_AUDITORIO.jpg	3	2014-10-09 17:19:06.903811	2022-07-03 01:36:57.21413		30
-169	IMG_2095.jpeg	1	2014-11-03 23:21:44.115417	2022-07-03 01:36:57.348387		41
-180	Pu_blic02.JPG	4	2015-01-04 22:05:11.538994	2022-07-03 01:37:00.016044		42
-213	IMG_2334.jpeg	2	2015-09-27 22:40:22.503104	2022-07-03 01:37:09.29523		47
-181	Mireia_Zantop_01.JPG	5	2015-01-04 22:05:12.485475	2022-07-03 01:37:00.612485		42
-182	PanorGUILLERIES_accio_.jpg	6	2015-01-04 22:05:18.447944	2022-07-03 01:37:01.016421		42
-183	Daniel_Ruiz-_Trillo_02.JPG	7	2015-01-04 22:05:19.521168	2022-07-03 01:37:01.404245		42
-184	Mireia_i_Blai_en_accio_.JPG	8	2015-01-04 22:05:20.243222	2022-07-03 01:37:01.992293		42
-185	IMG_6760.jpeg	2	2015-01-04 23:00:32.874014	2022-07-03 01:37:02.205689		43
-186	IMG_6764.jpeg	3	2015-01-04 23:00:33.717678	2022-07-03 01:37:02.451245		43
-187	IMG_6767.jpeg	4	2015-01-04 23:00:34.42342	2022-07-03 01:37:02.716352		43
-188	IMG_6772.jpeg	5	2015-01-04 23:00:35.082099	2022-07-03 01:37:02.890177		43
-189	IMG_6775.jpeg	6	2015-01-04 23:00:35.765695	2022-07-03 01:37:03.052706		43
-190	IMG_6798.jpeg	7	2015-01-04 23:00:41.430322	2022-07-03 01:37:03.261817		43
-191	IMG_6812.jpeg	8	2015-01-04 23:00:42.015798	2022-07-03 01:37:03.425777		43
-192	IMG_6819.jpeg	9	2015-01-04 23:00:42.650881	2022-07-03 01:37:03.587902		43
-193	IMG_6827.jpeg	10	2015-01-04 23:00:43.296168	2022-07-03 01:37:03.745125		43
-194	IMG_6834.jpeg	11	2015-01-04 23:00:44.045373	2022-07-03 01:37:03.94099		43
-196	tarja_birds.jpeg	1	2015-01-04 23:23:54.778561	2022-07-03 01:37:04.613528		40
-197	20140706_164949.jpg	1	2015-01-05 00:13:34.13966	2022-07-03 01:37:05.217895		44
-198	20140706_164949.jpg	2	2015-01-05 00:13:35.07326	2022-07-03 01:37:05.822152		44
-214	IMG_2423.jpeg	3	2015-09-27 22:40:23.059602	2022-07-03 01:37:09.437681		47
-252	CanFelipa_39.jpg	8	2016-08-01 16:18:33.389819	2022-07-03 01:37:21.959746		51
-253	CanFelipa_26.jpg	9	2016-08-01 16:18:33.944432	2022-07-03 01:37:22.28041		51
-254	CanFelipa_09.jpg	10	2016-08-01 16:18:34.704063	2022-07-03 01:37:22.464027		51
-111	_MG_3737.jpg	2	2013-09-05 14:59:30.592008	2022-07-03 01:36:43.763176		31
-465	DSC_0106-004.jpg	6	2021-09-26 20:13:56.480034	2022-07-03 01:41:27.089799		87
-126	fent_volar_coloms.jpg	2	2013-12-06 12:49:22.440575	2022-07-03 01:36:44.205717		33
-215	IMG_2411.jpeg	4	2015-09-27 22:40:23.590348	2022-07-03 01:37:09.587902		47
-216	IMG_2450.jpeg	5	2015-09-27 22:40:24.149661	2022-07-03 01:37:09.803668		47
-217	IMG_2464.jpeg	6	2015-09-27 22:40:24.767326	2022-07-03 01:37:09.944704		47
-218	IMG_2489.jpeg	7	2015-09-27 22:40:25.303337	2022-07-03 01:37:10.08716		47
-250	CanFelipa_17.jpg	6	2016-08-01 16:18:31.863956	2022-07-03 01:37:21.165076		51
-251	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	7	2016-08-01 16:18:32.497636	2022-07-03 01:37:21.54192		51
-10	Vil.la_Florida_venus.JPG	3	2013-01-04 21:08:34.695465	2022-07-03 01:36:16.044738		8
-229	poesie.JPG	2	2015-09-27 23:08:19.111853	2022-07-03 01:37:14.599465		14
-230	Strelitzia_Delitzia.JPG	3	2015-09-27 23:08:19.725425	2022-07-03 01:37:14.855416		14
-468	ZANTOP_-_ESSENSETEMPO.jpg	3	2021-11-19 20:17:26.510295	2022-07-03 01:41:28.157776		92
-231	AromaMagn_lia.JPG	4	2015-09-27 23:08:20.445711	2022-07-03 01:37:15.194481		14
-272	DSCF2813.JPG	5	2016-08-05 11:55:28.179231	2022-07-03 01:37:28.488402		55
-273	DSCF2805.JPG	6	2016-08-05 11:55:28.906122	2022-07-03 01:37:29.04475		55
-276	IMG_9786.jpeg	4	2016-10-19 22:54:28.983146	2022-07-03 01:37:30.076817		56
-277	IMG_9790.jpeg	5	2016-10-19 22:54:29.548586	2022-07-03 01:37:30.360679		56
-232	Rosaflordepell.JPG	5	2015-09-27 23:08:21.133874	2022-07-03 01:37:15.587646		14
-233	IMG_6061.jpeg	1	2016-08-01 15:36:37.806751	2022-07-03 01:37:15.915389		48
-262	DSCF0447_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	3	2016-08-01 17:43:53.096192	2022-07-03 01:37:24.644594		53
-207	IMG_1492.jpeg	4	2015-07-03 00:07:36.100125	2022-07-03 01:37:08.439776		46
-208	IMG_1499.jpeg	5	2015-07-03 00:07:36.731664	2022-07-03 01:37:08.609917		46
-210	IMG_1513.jpeg	6	2015-07-03 00:10:52.871909	2022-07-03 01:37:08.764662		46
-220	IMG_2533.jpeg	9	2015-09-27 22:40:26.521271	2022-07-03 01:37:10.365772		47
-221	IMG_2574.jpeg	10	2015-09-27 22:40:27.133208	2022-07-03 01:37:10.591559		47
-235	IMG_6073.jpeg	3	2016-08-01 15:36:39.109254	2022-07-03 01:37:16.382265		48
-237	IMG_6096.jpeg	5	2016-08-01 15:36:40.455173	2022-07-03 01:37:17.023285		48
-238	IMG_6103.jpeg	6	2016-08-01 15:36:41.15213	2022-07-03 01:37:17.287333		48
-239	IMG_6108.jpeg	7	2016-08-01 15:36:41.756187	2022-07-03 01:37:17.542087		48
-240	IMG_6111.jpeg	8	2016-08-01 15:36:42.522787	2022-07-03 01:37:17.90729		48
-241	IMG_6112.jpeg	9	2016-08-01 15:36:43.071126	2022-07-03 01:37:18.242019		48
-242	Corpologia_21_.jpg	11	2016-08-01 15:36:43.611145	2022-07-03 01:37:18.700934		48
-243	IMG-20150128-WA0000.jpg	1	2016-08-01 15:46:03.253903	2022-07-03 01:37:19.038031		49
-244	IMG-20150128-WA0001.jpg	2	2016-08-01 15:46:03.943581	2022-07-03 01:37:19.407352		49
-280	Performance__Donar_veu_al_desig__Tona_2015__1_.jpg	4	2017-02-19 20:39:17.854188	2022-07-03 01:37:32.023024		54
-284	DSCF4634.JPG	4	2017-06-01 22:46:01.688096	2022-07-03 01:38:45.341206		59
-257	foto_eventuall_ferran_blancafort.jpeg	3	2016-08-01 16:58:24.83924	2022-07-03 01:37:23.201729		52
-258	eventuall3.jpeg	4	2016-08-01 16:58:25.430252	2022-07-03 01:37:23.420501		52
-259	eventuall4.jpeg	5	2016-08-01 16:58:26.030722	2022-07-03 01:37:23.668899		52
-260	Cartell_ME_expo_cartells_2016.jpg	1	2016-08-01 17:43:51.787056	2022-07-03 01:37:24.001568		53
-261	RIMG0068.jpg	2	2016-08-01 17:43:52.564463	2022-07-03 01:37:24.330368		53
-246	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	2	2016-08-01 16:18:29.249618	2022-07-03 01:37:19.988753		51
-247	CanFelipa_67.jpg	3	2016-08-01 16:18:29.973361	2022-07-03 01:37:20.217704		51
-281	DONAR_VEU_AL_DESIG_.jpg	3	2017-02-19 20:39:18.691339	2022-07-03 01:37:32.398696		54
-234	IMG_6068.jpeg	2	2016-08-01 15:36:38.491222	2022-07-03 01:37:16.163004		48
-264	RIMG0087.jpg	5	2016-08-01 17:43:54.791985	2022-07-03 01:37:25.298367		53
-265	RIMG0082.jpg	6	2016-08-01 17:43:55.413798	2022-07-03 01:37:25.569557		53
-266	RIMG0084.jpg	7	2016-08-01 17:43:55.963678	2022-07-03 01:37:25.83186		53
-267	ZANTOP_A_BEN1_amb_dibuix_fotos_Joan_Casellas_Arxiu_Aire.jpg	8	2016-08-01 17:43:56.508431	2022-07-03 01:37:26.124048		53
-268	DSCF2590.JPG	1	2016-08-05 11:55:25.381222	2022-07-03 01:37:26.571337		55
-269	DSCF2682.JPG	2	2016-08-05 11:55:25.971894	2022-07-03 01:37:27.086622		55
-248	CanFelipa_62.jpg	4	2016-08-01 16:18:30.582471	2022-07-03 01:37:20.57687		51
-249	CanFelipa_28.jpg	5	2016-08-01 16:18:31.269166	2022-07-03 01:37:20.888384		51
-255	eventuall0.jpeg	1	2016-08-01 16:58:23.602299	2022-07-03 01:37:22.70316		52
-256	eventuall2.jpeg	2	2016-08-01 16:58:24.28788	2022-07-03 01:37:23.010594		52
-263	DSCF0459_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	4	2016-08-01 17:43:53.868735	2022-07-03 01:37:24.933815		53
-469	ZANTOP_-_1._ATADALASALAS.jpg	4	2021-11-19 20:17:27.044482	2022-07-03 01:41:28.592812		92
-270	DSCF2762.JPG	3	2016-08-05 11:55:26.72496	2022-07-03 01:37:27.531222		55
-271	DSCF2792.JPG	4	2016-08-05 11:55:27.471995	2022-07-03 01:37:27.994351		55
-470	ZANTOP_-_acord.jpg	5	2021-11-19 20:17:27.623496	2022-07-03 01:41:29.012649		92
-471	ZANTOP_-_2._piet_.jpg	6	2021-11-19 20:17:28.155184	2022-07-03 01:41:29.550989		92
-278	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	1	2017-02-19 20:39:16.13435	2022-07-03 01:37:31.031661		54
-472	zantop_-_coeurage_.jpg	7	2021-11-19 20:17:28.730148	2022-07-03 01:41:29.857933		92
-285	DSCF4650.JPG	5	2017-06-01 22:46:02.788109	2022-07-03 01:38:45.714272		59
-205	IMG_1475.jpeg	2	2015-07-03 00:07:34.957377	2022-07-03 01:37:08.071222		46
-279	VIC2.jpg	5	2017-02-19 20:39:17.166702	2022-07-03 01:37:31.4823		54
-282	MIREIAZANTOP6.png	1	2017-02-19 23:46:47.237139	2022-07-03 01:38:44.509779		57
-347	almost_finished.jpg	1	2019-03-07 22:44:49.708459	2022-07-03 01:39:34.560163		71
-467	ZANTOP_-_EQUILIBRIS.jpg	2	2021-11-19 20:17:26.068301	2022-07-03 01:41:27.766816		92
-315	corpologia_25_5_Girona_3_retocada.jpeg	3	2018-12-21 20:09:56.734044	2022-07-03 01:39:25.715847		66
-286	DSCF4658.JPG	6	2017-06-01 22:46:03.486229	2022-07-03 01:38:46.148036		59
-344	P1110558baixa.jpg	3	2019-01-28 20:29:59.198321	2022-07-03 01:39:33.554501		69
-287	DSCF4653.JPG	7	2017-06-01 22:46:04.360941	2022-07-03 01:38:46.52478		59
-288	DSCF4659.JPG	8	2017-06-01 22:46:05.059504	2022-07-03 01:38:46.952376		59
-290	DSCF4662.JPG	9	2017-06-01 22:46:06.732934	2022-07-03 01:38:47.697754		59
-308	MIREIAZANTOP8.jpg	4	2017-06-02 00:58:05.531724	2022-07-03 01:39:23.461938		57
-309	MIREIAZANTOP15.jpg	7	2017-06-02 00:58:06.343089	2022-07-03 01:39:23.921749		57
-310	MIREIAZANTOP22.jpg	8	2017-06-02 00:58:07.212784	2022-07-03 01:39:24.431832		57
-311	MIREIAZANTOP23.jpg	9	2017-06-02 00:58:07.992327	2022-07-03 01:39:24.702923		57
-312	donar_veu..._desig_Manlleu_2016.jpg	2	2017-06-02 01:10:47.004524	2022-07-03 01:39:24.989255		54
-314	corpologia_25_5_Girona_2_retocada.jpeg	2	2018-12-21 20:09:56.202489	2022-07-03 01:39:25.30713		66
-316	corpologia_25_5_Girona_4_retocada.jpeg	4	2018-12-21 20:09:57.972727	2022-07-03 01:39:26.079243		66
-359	IMG_20190125_162217.jpg	2	2019-04-15 12:26:32.177041	2022-07-03 01:39:41.804626		71
-451	DSCF5849torre_lluvi_.JPG	6	2021-09-20 20:07:22.107389	2022-07-03 01:41:23.761398		88
-421	M.ZANTOP_phoscenes_aiguada_A4.jpg	8	2020-10-14 22:48:45.660183	2022-07-03 01:40:00.718193		82
-423	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	7	2020-10-14 22:48:46.750917	2022-07-03 01:40:01.48193		82
-317	be___IMG-3930.JPG	5	2018-12-21 20:15:06.236806	2022-07-03 01:39:26.647751		66
-319	be__IMG-3931.JPG	7	2018-12-21 20:19:42.204608	2022-07-03 01:39:27.093525		66
-335	DSCF4982baixa.jpg	1	2019-01-28 20:12:16.001142	2022-07-03 01:39:31.253485		65
-343	P1110555_aleix_vallverd__baixa.jpg	2	2019-01-28 20:29:58.684495	2022-07-03 01:39:33.281313		69
-206	IMG_1491.jpeg	3	2015-07-03 00:07:35.567417	2022-07-03 01:37:08.247856		46
-350	cap1_IMG_20190405_181244_013.jpg	4	2019-04-15 10:49:25.108785	2022-07-03 01:39:36.465569		72
-371	DSCN1209_2.jpg	3	2019-06-10 21:35:27.171697	2022-07-03 01:39:46.101283		75
-299	MIREIAZANTOP51.jpg	3	2017-06-02 00:01:31.926976	2022-07-03 01:39:20.079997		63
-300	MIREIAZANTOP59.jpg	4	2017-06-02 00:01:32.570647	2022-07-03 01:39:20.397917		63
-301	IMG-20161002-WA0002.jpg	5	2017-06-02 00:01:33.317075	2022-07-03 01:39:20.738285		63
-302	DSCF3668.JPG	1	2017-06-02 00:41:09.692566	2022-07-03 01:39:21.173362		64
-303	DSCF3662.JPG	2	2017-06-02 00:41:10.548581	2022-07-03 01:39:21.436364		64
-295	Puig-Reig_2017.JPG	2	2017-06-01 23:32:59.696835	2022-07-03 01:38:49.795726		62
-296	matar_1_2017.JPG	3	2017-06-01 23:33:00.456423	2022-07-03 01:38:50.26832		62
-297	MIREIAZANTOP42.png	1	2017-06-02 00:01:30.333086	2022-07-03 01:39:19.220105		63
-298	Josep_Sou_IMG_4360.JPG	2	2017-06-02 00:01:31.258369	2022-07-03 01:39:19.673468		63
-321	P1050649_redimensionat_amb_gwenvi_i_1024_.jpg	4	2018-12-21 20:56:13.139631	2022-07-03 01:39:27.849881		67
-322	P1050656_redimensionat.jpg	5	2018-12-21 20:56:13.647604	2022-07-03 01:39:28.131638		67
-324	P1050670.jpg	7	2018-12-21 20:56:14.726737	2022-07-03 01:39:28.808004		67
-293	DSC01109-102.jpeg	1	2017-06-01 23:00:44.565565	2022-07-03 01:38:48.715544		61
-294	IMG_20170519_184422.jpg	1	2017-06-01 23:32:58.907326	2022-07-03 01:38:49.309468		62
-363	MZantop.JPG	4	2019-06-10 20:41:48.213093	2022-07-03 01:39:43.206504		74
-325	P1050683_redimensionat.jpg	8	2018-12-21 20:56:15.458615	2022-07-03 01:39:29.056739		67
-351	cap_1_contrallumIMG_20190405_174610_478.jpg	5	2019-04-15 10:49:25.782141	2022-07-03 01:39:36.91563		72
-348	cap_2_IMG_20190405_174933_504.jpg	2	2019-04-15 10:49:23.935701	2022-07-03 01:39:35.268422		72
-326	IMG_6115.JPG	1	2018-12-21 21:13:42.52006	2022-07-03 01:39:29.468797		68
-304	DSCF3670.JPG	3	2017-06-02 00:41:11.311246	2022-07-03 01:39:21.736394		64
-305	DSCF3683.JPG	4	2017-06-02 00:41:12.07919	2022-07-03 01:39:22.143047		64
-306	DSCF3681.JPG	5	2017-06-02 00:41:12.821488	2022-07-03 01:39:22.558281		64
-307	DSCF3656.JPG	6	2017-06-02 00:41:13.630177	2022-07-03 01:39:22.992663		64
-313	inundart_ph_72ppi.jpg	2	2018-08-22 21:50:17.041856	2022-07-03 01:39:25.132884		67
-320	72ppi_rocs_de_lluna.jpg	3	2018-12-21 20:24:03.738858	2022-07-03 01:39:27.574904		67
-328	IMG_6130.JPG	3	2018-12-21 21:13:43.994911	2022-07-03 01:39:30.188087		68
-330	IMG_6183.JPG	5	2018-12-21 21:13:45.579316	2022-07-03 01:39:30.561886		68
-334	P1060009baixant_qualitatjpg.jpg	2	2019-01-28 19:08:01.449546	2022-07-03 01:39:30.926717		65
-354	SOM.Escultura_equilibri_ONA.JPG	3	2019-04-15 11:41:04.569538	2022-07-03 01:39:38.676049		73
-356	20150118_131247.jpg	5	2019-04-15 11:41:05.696436	2022-07-03 01:39:39.870014		73
-357	funambuliaIMG_20171104_161244.jpg	6	2019-04-15 11:41:06.382746	2022-07-03 01:39:40.570874		73
-346	IMG_6180.JPG	4	2019-03-07 22:05:14.173587	2022-07-03 01:39:34.088819		68
-225	20140706_171308.jpg	5	2015-09-27 23:03:10.960936	2022-07-03 01:37:12.614711		38
-336	DSCF5039baixa.jpg	3	2019-01-28 20:12:16.582016	2022-07-03 01:39:31.536081		65
-349	capcap_2.jpg	3	2019-04-15 10:49:24.570936	2022-07-03 01:39:35.765967		72
-292	DSCF4671.JPG	11	2017-06-01 22:46:08.290143	2022-07-03 01:38:48.475773		59
-291	DSCF4665.JPG	10	2017-06-01 22:46:07.448056	2022-07-03 01:38:48.105645		59
-337	P1060026baixa.jpg	4	2019-01-28 20:12:17.046974	2022-07-03 01:39:31.794603		65
-338	DSCF5004.JPG	5	2019-01-28 20:12:17.606523	2022-07-03 01:39:32.142108		65
-340	IMG-20180115-WA0028baixa.jpg	7	2019-01-28 20:12:18.586861	2022-07-03 01:39:32.569579		65
-341	IMG-20180115-WA0024baixa.jpg	8	2019-01-28 20:12:19.193854	2022-07-03 01:39:32.800579		65
-226	DSCF1265.JPG	6	2015-09-27 23:03:11.692762	2022-07-03 01:37:13.112373		38
-227	DSCF1556.JPG	7	2015-09-27 23:03:12.575381	2022-07-03 01:37:13.814461		38
-228	DSCF1525.JPG	8	2015-09-27 23:03:13.339641	2022-07-03 01:37:14.380685		38
-283	DSCF4623.JPG	3	2017-06-01 22:46:00.447742	2022-07-03 01:38:44.954767		59
-289	DSCF4661.JPG	2	2017-06-01 22:46:05.850788	2022-07-03 01:38:47.336579		59
-342	P1110547baixa.jpg	1	2019-01-28 20:29:58.211152	2022-07-03 01:39:33.036825		69
-50	DSC02327.JPG	5	2013-01-20 02:38:42.018621	2022-07-03 01:36:28.881181		19
-355	cos_cosit_IMG_20171101_155853.jpg	4	2019-04-15 11:41:05.195215	2022-07-03 01:39:39.277882		73
-327	IMG_6129.JPG	2	2018-12-21 21:13:43.243946	2022-07-03 01:39:29.805597		68
-426	IMG_20190831_132411_157.jpg	3	2020-10-14 23:00:13.677558	2022-07-03 01:40:03.557028		78
-435	IMG-20210315-WA0017.jpg	2	2021-04-08 21:31:00.11372	2022-07-03 01:40:08.584639		85
-375	DSCN1288.JPG	6	2019-06-10 21:35:29.826105	2022-07-03 01:39:47.61486		75
-358	cordada_IMG_20171101_162351.jpg	7	2019-04-15 11:41:06.993407	2022-07-03 01:39:41.426757		73
-436	IMG-20210315-WA0016.jpg	3	2021-04-08 21:31:00.766945	2022-07-03 01:40:09.230028		85
-373	2014-08-05_11-44-56.jpg	2	2019-06-10 21:35:28.533335	2022-07-03 01:39:46.909316		75
-374	2014-08-05_12-09-46.jpg	5	2019-06-10 21:35:29.172985	2022-07-03 01:39:47.226459		75
-376	2014-08-05_11-39-24.jpg	7	2019-06-10 21:35:30.433734	2022-07-03 01:39:48.052756		75
-377	2014-08-05_11-40-12.jpg	8	2019-06-10 21:35:31.143949	2022-07-03 01:39:48.478582		75
-378	2014-08-05_12-20-18.jpg	9	2019-06-10 21:35:31.876559	2022-07-03 01:39:48.823438		75
-379	2014-08-05_11-37-52.jpg	10	2019-06-10 21:35:32.523608	2022-07-03 01:39:49.239118		75
-397	DSCF4797.JPG	4	2019-06-10 22:26:59.31811	2022-07-03 01:39:56.083917		62
-398	DSCF4408.JPG	5	2019-06-10 22:27:00.122651	2022-07-03 01:39:56.740669		62
-364	mzantop_3.JPG	5	2019-06-10 20:41:48.737315	2022-07-03 01:39:43.46088		74
-360	IMG-20190225-WA0007.jpeg	3	2019-04-15 12:26:32.71858	2022-07-03 01:39:42.210427		71
-372	2014-08-05_11-33-00.jpg	4	2019-06-10 21:35:27.857342	2022-07-03 01:39:46.518309		75
-361	MZantop_4.jpg	2	2019-06-10 20:41:47.113692	2022-07-03 01:39:42.506807		74
-366	IMG_20190518_124322_433.jpg	11	2019-06-10 20:41:50.057323	2022-07-03 01:39:44.446084		74
-368	MZantop_2_girat_a_dreta.jpg	3	2019-06-10 21:02:37.531284	2022-07-03 01:39:45.183415		74
-437	IMG-20210313-WA0009.jpg	4	2021-04-08 21:31:01.477819	2022-07-03 01:40:09.977944		85
-438	IMG-20210315-WA0011.jpg	5	2021-04-08 21:31:02.10316	2022-07-03 01:40:10.434837		85
-439	IMG-20210313-WA0004.jpg	6	2021-04-08 21:31:02.73683	2022-07-03 01:40:10.841285		85
-449	DSCF5838_cavar.JPG	4	2021-09-20 20:07:20.285475	2022-07-03 01:41:22.655284		88
-450	DSCF5843_clavant.JPG	3	2021-09-20 20:07:21.236949	2022-07-03 01:41:23.224756		88
-345	IMG_20190112_132919baixaMZ.jpg	4	2019-01-28 20:29:59.700083	2022-07-03 01:39:33.819931		69
-222	DSCF1045.JPG	2	2015-09-27 23:03:08.941238	2022-07-03 01:37:10.998481		38
-223	DSCF1058.JPG	3	2015-09-27 23:03:09.713415	2022-07-03 01:37:11.452558		38
-399	nav_s_2016.JPG	6	2019-06-10 22:27:00.871318	2022-07-03 01:39:57.295642		62
-400	IMG_9343.argentona.JPG	7	2019-06-10 22:27:01.572114	2022-07-03 01:39:57.705491		62
-424	_20191228_100620.JPG	1	2020-10-14 23:00:12.399023	2022-07-03 01:40:01.951798		78
-425	IMG_20191225_133646_151.jpg	2	2020-10-14 23:00:13.002663	2022-07-03 01:40:02.63508		78
-51	DSC02347.JPG	6	2013-01-20 02:38:42.463264	2022-07-03 01:36:29.34242		19
+10	Vil.la_Florida_venus.JPG	3	2013-01-04 21:08:34.695465	2022-09-10 14:59:21.011754		8
+201	20140706_165245.jpg	5	2015-01-05 00:13:37.994038	2022-09-10 14:59:26.899368		44
+130	Coloms_Globos_ClaraBes.jpg	6	2013-12-06 12:49:25.735747	2022-09-10 17:47:22.107033		33
+215	IMG_2411.jpeg	4	2015-09-27 22:40:23.590348	2022-09-10 17:47:22.381441		47
+216	IMG_2450.jpeg	5	2015-09-27 22:40:24.149661	2022-09-10 17:47:22.389232		47
+217	IMG_2464.jpeg	6	2015-09-27 22:40:24.767326	2022-09-10 17:47:22.397695		47
+134	despunxa1.JPG	1	2013-12-06 13:20:53.588822	2022-09-10 14:59:21.297263		36
+149	DSC_0044_copia.jpeg	3	2014-05-17 12:35:48.913866	2022-09-10 14:59:21.533581		37
+150	DSC_0047_copia.jpeg	4	2014-05-17 12:35:49.755477	2022-09-10 14:59:21.551037		37
+185	IMG_6760.jpeg	2	2015-01-04 23:00:32.874014	2022-09-10 17:47:22.193767		43
+127	Coloms_Laminas1_ClaraBes.jpg	3	2013-12-06 12:49:23.33067	2022-09-10 17:47:22.070067		33
+148	DSC_0038retoc.jpeg	2	2014-05-17 12:35:48.040542	2022-09-10 14:59:21.521366		37
+133	generart25nov.jpg	2	2013-12-06 13:07:19.838038	2022-09-10 14:59:21.132264		35
+135	despunxa2.JPG	2	2013-12-06 13:20:54.370403	2022-09-10 14:59:21.31316		36
+136	despunxa3.JPG	3	2013-12-06 13:20:55.176573	2022-09-10 14:59:21.330197		36
+151	DSC_0048_copiaretocada.jpeg	5	2014-05-17 12:35:50.614842	2022-09-10 14:59:21.563685		37
+152	DSC_0051_copia.jpeg	6	2014-05-17 12:35:51.284079	2022-09-10 14:59:21.576344		37
+156	Programa_Perpetraci_ns_Interior.jpg	3	2014-07-17 22:28:50.898452	2022-09-10 14:59:21.590445		39
+158	140531-XIV_Perpetracions-Antologia_Animal-500.jpg	2	2014-07-17 22:28:53.187017	2022-09-10 14:59:21.616434		39
+159	140531-XIV_Perpetracions-Antologia_Animal-504.jpg	4	2014-07-17 22:28:54.317382	2022-09-10 14:59:21.629287		39
+172	IMG_2116.jpeg	4	2014-11-03 23:26:04.397945	2022-09-10 14:59:21.806912		41
+173	IMG_2117.jpeg	5	2014-11-03 23:26:05.244875	2022-09-10 14:59:21.820739		41
+174	IMG_2127.jpeg	6	2014-11-03 23:26:06.004775	2022-09-10 14:59:21.834027		41
+175	IMG_2131.jpeg	7	2014-11-03 23:26:06.6773	2022-09-10 14:59:21.8513		41
+138	despunxaFi.JPG	5	2013-12-06 13:20:56.96195	2022-09-10 14:59:21.357808		36
+139	esbarzer_obrAl_xia1.JPG	6	2013-12-06 13:20:58.326664	2022-09-10 17:47:22.061327		36
+126	fent_volar_coloms.jpg	2	2013-12-06 12:49:22.440575	2022-09-10 14:59:21.388718		33
+140	DSC_0583.jpeg	1	2014-05-17 12:13:07.524387	2022-09-10 17:47:22.049789		34
+141	sum_us_1.jpeg	2	2014-05-17 12:13:08.49483	2022-09-10 14:59:21.235393		34
+143	sum_us_3.jpeg	4	2014-05-17 12:13:10.103452	2022-09-10 14:59:21.25524		34
+176	IMG_2132.jpeg	8	2014-11-03 23:26:07.299663	2022-09-10 14:59:21.863362		41
+177	IMG_2134.jpeg	9	2014-11-03 23:26:07.928066	2022-09-10 14:59:21.876793		41
+187	IMG_6767.jpeg	4	2015-01-04 23:00:34.42342	2022-09-10 17:47:22.218732		43
+179	Fulls_Accio__Mireia.JPG	3	2015-01-04 22:05:10.596075	2022-09-10 14:59:21.907247		42
+180	Pu_blic02.JPG	4	2015-01-04 22:05:11.538994	2022-09-10 14:59:21.921215		42
+165	P1130321.JPG	5	2014-07-17 22:55:53.937621	2022-09-10 14:59:21.721164		35
+137	despunxa4.JPG	4	2013-12-06 13:20:55.929314	2022-09-10 14:59:21.343843		36
+144	DSC_0621.jpeg	5	2014-05-17 12:13:10.913218	2022-09-10 14:59:21.265047		34
+145	\N	6	2014-05-17 12:13:11.895863	2022-09-10 14:59:21.274998	https://vimeo.com/83686197	34
+132	Coloms_Murmuradores_A.Bombaci.jpg	8	2013-12-06 12:49:27.235642	2022-09-10 17:47:22.130495		33
+168	Separ_20143Sala_AUDITORIO.jpg	3	2014-10-09 17:19:06.903811	2022-09-10 14:59:21.74855		30
+171	IMG_2108.jpeg	3	2014-11-03 23:26:03.616212	2022-09-10 14:59:21.793679		41
+160	140531-XIV_Perpetracions-Antologia_Animal-506.jpg	5	2014-07-17 22:28:55.469747	2022-09-10 14:59:21.645713		39
+161	140531-XIV_Perpetracions-Antologia_Animal-496.jpg	6	2014-07-17 22:28:56.851237	2022-09-10 14:59:21.659848		39
+162	P1130261.JPG	1	2014-07-17 22:55:51.029461	2022-09-10 14:59:21.676989		35
+163	P1130264.JPG	3	2014-07-17 22:55:51.976218	2022-09-10 14:59:21.691132		35
+164	P1130300.JPG	4	2014-07-17 22:55:52.957072	2022-09-10 14:59:21.703977		35
+186	IMG_6764.jpeg	3	2015-01-04 23:00:33.717678	2022-09-10 17:47:22.204369		43
+170	IMG_2104.jpeg	2	2014-11-03 23:26:02.782895	2022-09-10 14:59:21.781491		41
+181	Mireia_Zantop_01.JPG	5	2015-01-04 22:05:12.485475	2022-09-10 14:59:21.93112		42
+218	IMG_2489.jpeg	7	2015-09-27 22:40:25.303337	2022-09-10 17:47:22.409611		47
+182	PanorGUILLERIES_accio_.jpg	6	2015-01-04 22:05:18.447944	2022-09-10 14:59:21.941338		42
+184	Mireia_i_Blai_en_accio_.JPG	8	2015-01-04 22:05:20.243222	2022-09-10 14:59:21.95478		42
+189	IMG_6775.jpeg	6	2015-01-04 23:00:35.765695	2022-09-10 17:47:22.239718		43
+188	IMG_6772.jpeg	5	2015-01-04 23:00:35.082099	2022-09-10 17:47:22.231329		43
+190	IMG_6798.jpeg	7	2015-01-04 23:00:41.430322	2022-09-10 17:47:22.252242		43
+192	IMG_6819.jpeg	9	2015-01-04 23:00:42.650881	2022-09-10 17:47:22.26394		43
+193	IMG_6827.jpeg	10	2015-01-04 23:00:43.296168	2022-09-10 17:47:22.274509		43
+194	IMG_6834.jpeg	11	2015-01-04 23:00:44.045373	2022-09-10 17:47:22.283883		43
+196	tarja_birds.jpeg	1	2015-01-04 23:23:54.778561	2022-09-10 17:47:22.292689		40
+191	IMG_6812.jpeg	8	2015-01-04 23:00:42.015798	2022-09-10 14:59:22.095415		43
+204	IMG_1468.jpeg	1	2015-07-03 00:07:34.082814	2022-09-10 17:47:22.304566		46
+212	IMG_2324.jpeg	1	2015-09-27 22:40:21.943151	2022-09-10 17:47:22.341809		47
+213	IMG_2334.jpeg	2	2015-09-27 22:40:22.503104	2022-09-10 17:47:22.350766		47
+214	IMG_2423.jpeg	3	2015-09-27 22:40:23.059602	2022-09-10 17:47:22.37218		47
+198	20140706_164949.jpg	2	2015-01-05 00:13:35.07326	2022-09-10 14:59:26.857371		44
+199	20140706_165129.jpg	3	2015-01-05 00:13:36.036211	2022-09-10 14:59:26.867682		44
+200	20140706_164738.jpg	4	2015-01-05 00:13:36.897578	2022-09-10 14:59:26.883699		44
+250	CanFelipa_17.jpg	6	2016-08-01 16:18:31.863956	2022-09-10 17:47:22.751389		51
+111	_MG_3737.jpg	2	2013-09-05 14:59:30.592008	2022-09-10 17:47:21.962754		31
+128	Coloms_circuit1_A.Bombaci.jpg	4	2013-12-06 12:49:23.917396	2022-09-10 17:47:22.078878		33
+197	20140706_164949.jpg	1	2015-01-05 00:13:34.13966	2022-09-10 14:59:26.846711		44
+129	Coloms_Cordes1_ClaraBes.jpg	5	2013-12-06 12:49:25.10811	2022-09-10 17:47:22.093657		33
+169	IMG_2095.jpeg	1	2014-11-03 23:21:44.115417	2022-09-10 17:47:22.152067		41
+7	Instal.laci__monos_labos.JPG	2	2013-01-04 21:08:33.070994	2022-09-10 14:59:21.000473		8
+183	Daniel_Ruiz-_Trillo_02.JPG	7	2015-01-04 22:05:19.521168	2022-09-10 17:47:22.180401		42
+251	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	7	2016-08-01 16:18:32.497636	2022-09-10 17:47:22.762356		51
+252	CanFelipa_39.jpg	8	2016-08-01 16:18:33.389819	2022-09-10 17:47:22.772269		51
+253	CanFelipa_26.jpg	9	2016-08-01 16:18:33.944432	2022-09-10 17:47:22.782811		51
+254	CanFelipa_09.jpg	10	2016-08-01 16:18:34.704063	2022-09-10 17:47:22.800939		51
+178	Mireia_Zantop_Accio_.JPG	2	2015-01-04 22:05:04.762646	2022-09-10 17:47:22.164792		42
+146	CORPOLOGIA_13.jpeg	7	2014-05-17 12:13:11.921266	2022-09-10 14:59:21.285058		34
+465	DSC_0106-004.jpg	6	2021-09-26 20:13:56.480034	2022-09-10 23:57:47.804914		87
+231	AromaMagn_lia.JPG	4	2015-09-27 23:08:20.445711	2022-09-10 14:59:27.064053		14
+232	Rosaflordepell.JPG	5	2015-09-27 23:08:21.133874	2022-09-10 14:59:27.076163		14
+423	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	7	2020-10-14 22:48:46.750917	2022-09-10 14:59:26.351004		82
+220	IMG_2533.jpeg	9	2015-09-27 22:40:26.521271	2022-09-10 17:47:22.432876		47
+273	DSCF2805.JPG	6	2016-08-05 11:55:28.906122	2022-09-10 14:59:23.438586		55
+285	DSCF4650.JPG	5	2017-06-01 22:46:02.788109	2022-09-10 17:47:22.936228		59
+286	DSCF4658.JPG	6	2017-06-01 22:46:03.486229	2022-09-10 17:47:22.945612		59
+278	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	1	2017-02-19 20:39:16.13435	2022-09-10 14:59:23.50901		54
+239	IMG_6108.jpeg	7	2016-08-01 15:36:41.756187	2022-09-10 17:47:22.51453		48
+240	IMG_6111.jpeg	8	2016-08-01 15:36:42.522787	2022-09-10 17:47:22.527885		48
+246	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	2	2016-08-01 16:18:29.249618	2022-09-10 17:47:22.708052		51
+234	IMG_6068.jpeg	2	2016-08-01 15:36:38.491222	2022-09-10 17:47:22.468904		48
+210	IMG_1513.jpeg	6	2015-07-03 00:10:52.871909	2022-09-10 14:59:22.336239		46
+237	IMG_6096.jpeg	5	2016-08-01 15:36:40.455173	2022-09-10 17:47:22.492597		48
+238	IMG_6103.jpeg	6	2016-08-01 15:36:41.15213	2022-09-10 17:47:22.502804		48
+230	Strelitzia_Delitzia.JPG	3	2015-09-27 23:08:19.725425	2022-09-10 14:59:27.05237		14
+241	IMG_6112.jpeg	9	2016-08-01 15:36:43.071126	2022-09-10 17:47:22.537828		48
+243	IMG-20150128-WA0000.jpg	1	2016-08-01 15:46:03.253903	2022-09-10 17:47:22.549469		49
+244	IMG-20150128-WA0001.jpg	2	2016-08-01 15:46:03.943581	2022-09-10 17:47:22.562041		49
+255	eventuall0.jpeg	1	2016-08-01 16:58:23.602299	2022-09-10 17:47:22.572314		52
+256	eventuall2.jpeg	2	2016-08-01 16:58:24.28788	2022-09-10 17:47:22.584347		52
+242	Corpologia_21_.jpg	11	2016-08-01 15:36:43.611145	2022-09-10 14:59:22.806195		48
+257	foto_eventuall_ferran_blancafort.jpeg	3	2016-08-01 16:58:24.83924	2022-09-10 17:47:22.596394		52
+258	eventuall3.jpeg	4	2016-08-01 16:58:25.430252	2022-09-10 17:47:22.606493		52
+259	eventuall4.jpeg	5	2016-08-01 16:58:26.030722	2022-09-10 17:47:22.61769		52
+281	DONAR_VEU_AL_DESIG_.jpg	3	2017-02-19 20:39:18.691339	2022-09-10 14:59:23.54388		54
+290	DSCF4662.JPG	9	2017-06-01 22:46:06.732934	2022-09-10 17:47:22.985076		59
+262	DSCF0447_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	3	2016-08-01 17:43:53.096192	2022-09-10 17:47:22.646982		53
+263	DSCF0459_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	4	2016-08-01 17:43:53.868735	2022-09-10 17:47:22.657239		53
+264	RIMG0087.jpg	5	2016-08-01 17:43:54.791985	2022-09-10 17:47:22.667305		53
+265	RIMG0082.jpg	6	2016-08-01 17:43:55.413798	2022-09-10 17:47:22.677506		53
+266	RIMG0084.jpg	7	2016-08-01 17:43:55.963678	2022-09-10 17:47:22.688386		53
+269	DSCF2682.JPG	2	2016-08-05 11:55:25.971894	2022-09-10 17:47:22.836594		55
+276	IMG_9786.jpeg	4	2016-10-19 22:54:28.983146	2022-09-10 17:47:22.872354		56
+287	DSCF4653.JPG	7	2017-06-01 22:46:04.360941	2022-09-10 17:47:22.954675		59
+235	IMG_6073.jpeg	3	2016-08-01 15:36:39.109254	2022-09-10 14:59:22.704698		48
+248	CanFelipa_62.jpg	4	2016-08-01 16:18:30.582471	2022-09-10 17:47:22.730293		51
+249	CanFelipa_28.jpg	5	2016-08-01 16:18:31.269166	2022-09-10 17:47:22.740234		51
+267	ZANTOP_A_BEN1_amb_dibuix_fotos_Joan_Casellas_Arxiu_Aire.jpg	8	2016-08-01 17:43:56.508431	2022-09-10 14:59:23.019377		53
+268	DSCF2590.JPG	1	2016-08-05 11:55:25.381222	2022-09-10 17:47:22.821784		55
+284	DSCF4634.JPG	4	2017-06-01 22:46:01.688096	2022-09-10 17:47:22.924955		59
+270	DSCF2762.JPG	3	2016-08-05 11:55:26.72496	2022-09-10 14:59:23.404071		55
+277	IMG_9790.jpeg	5	2016-10-19 22:54:29.548586	2022-09-10 17:47:22.883346		56
+282	MIREIAZANTOP6.png	1	2017-02-19 23:46:47.237139	2022-09-10 17:47:22.897899		57
+260	Cartell_ME_expo_cartells_2016.jpg	1	2016-08-01 17:43:51.787056	2022-09-10 17:47:22.627391		53
+261	RIMG0068.jpg	2	2016-08-01 17:43:52.564463	2022-09-10 17:47:22.636527		53
+247	CanFelipa_67.jpg	3	2016-08-01 16:18:29.973361	2022-09-10 17:47:22.719444		51
+467	ZANTOP_-_EQUILIBRIS.jpg	2	2021-11-19 20:17:26.068301	2022-09-10 17:47:23.847276		92
+271	DSCF2792.JPG	4	2016-08-05 11:55:27.471995	2022-09-10 14:59:23.414863		55
+272	DSCF2813.JPG	5	2016-08-05 11:55:28.179231	2022-09-10 14:59:23.426702		55
+471	ZANTOP_-_2._piet_.jpg	6	2021-11-19 20:17:28.155184	2022-09-10 17:47:23.867766		92
+468	ZANTOP_-_ESSENSETEMPO.jpg	3	2021-11-19 20:17:26.510295	2022-09-10 17:47:23.8589		92
+279	VIC2.jpg	5	2017-02-19 20:39:17.166702	2022-09-10 14:59:23.521009		54
+451	DSCF5849torre_lluvi_.JPG	6	2021-09-20 20:07:22.107389	2022-09-10 14:59:25.993368		88
+308	MIREIAZANTOP8.jpg	4	2017-06-02 00:58:05.531724	2022-09-10 17:47:23.08581		57
+221	IMG_2574.jpeg	10	2015-09-27 22:40:27.133208	2022-09-10 17:47:22.444804		47
+233	IMG_6061.jpeg	1	2016-08-01 15:36:37.806751	2022-09-10 17:47:22.458271		48
+280	Performance__Donar_veu_al_desig__Tona_2015__1_.jpg	4	2017-02-19 20:39:17.854188	2022-09-10 14:59:23.53197		54
+288	DSCF4659.JPG	8	2017-06-01 22:46:05.059504	2022-09-10 17:47:22.96696		59
+229	poesie.JPG	2	2015-09-27 23:08:19.111853	2022-09-10 14:59:27.039788		14
+347	almost_finished.jpg	1	2019-03-07 22:44:49.708459	2022-09-10 17:47:23.929496		71
+205	IMG_1475.jpeg	2	2015-07-03 00:07:34.957377	2022-09-10 17:47:22.313518		46
+309	MIREIAZANTOP15.jpg	7	2017-06-02 00:58:06.343089	2022-09-10 17:47:23.095162		57
+359	IMG_20190125_162217.jpg	2	2019-04-15 12:26:32.177041	2022-09-10 14:59:26.398077		71
+310	MIREIAZANTOP22.jpg	8	2017-06-02 00:58:07.212784	2022-09-10 17:47:23.106629		57
+311	MIREIAZANTOP23.jpg	9	2017-06-02 00:58:07.992327	2022-09-10 17:47:23.119364		57
+312	donar_veu..._desig_Manlleu_2016.jpg	2	2017-06-02 01:10:47.004524	2022-09-10 17:47:23.135287		54
+314	corpologia_25_5_Girona_2_retocada.jpeg	2	2018-12-21 20:09:56.202489	2022-09-10 17:47:23.152403		66
+315	corpologia_25_5_Girona_3_retocada.jpeg	3	2018-12-21 20:09:56.734044	2022-09-10 17:47:23.16986		66
+316	corpologia_25_5_Girona_4_retocada.jpeg	4	2018-12-21 20:09:57.972727	2022-09-10 17:47:23.187691		66
+343	P1110555_aleix_vallverd__baixa.jpg	2	2019-01-28 20:29:58.684495	2022-09-10 17:47:23.328138		69
+344	P1110558baixa.jpg	3	2019-01-28 20:29:59.198321	2022-09-10 17:47:23.339464		69
+317	be___IMG-3930.JPG	5	2018-12-21 20:15:06.236806	2022-09-10 14:59:24.064571		66
+469	ZANTOP_-_1._ATADALASALAS.jpg	4	2021-11-19 20:17:27.044482	2022-09-10 17:47:23.886552		92
+470	ZANTOP_-_acord.jpg	5	2021-11-19 20:17:27.623496	2022-09-10 17:47:23.896794		92
+421	M.ZANTOP_phoscenes_aiguada_A4.jpg	8	2020-10-14 22:48:45.660183	2022-09-10 14:59:26.362109		82
+472	zantop_-_coeurage_.jpg	7	2021-11-19 20:17:28.730148	2022-09-10 17:47:23.877065		92
+319	be__IMG-3931.JPG	7	2018-12-21 20:19:42.204608	2022-09-10 14:59:24.076315		66
+335	DSCF4982baixa.jpg	1	2019-01-28 20:12:16.001142	2022-09-10 14:59:24.249622		65
+206	IMG_1491.jpeg	3	2015-07-03 00:07:35.567417	2022-09-10 17:47:22.322028		46
+208	IMG_1499.jpeg	5	2015-07-03 00:07:36.731664	2022-09-10 17:47:22.333054		46
+207	IMG_1492.jpeg	4	2015-07-03 00:07:36.100125	2022-09-10 14:59:22.306337		46
+313	inundart_ph_72ppi.jpg	2	2018-08-22 21:50:17.041856	2022-09-10 14:59:26.682904		67
+374	2014-08-05_12-09-46.jpg	5	2019-06-10 21:35:29.172985	2022-09-10 14:59:27.127461		75
+356	20150118_131247.jpg	5	2019-04-15 11:41:05.696436	2022-09-10 17:47:24.044777		73
+301	IMG-20161002-WA0002.jpg	5	2017-06-02 00:01:33.317075	2022-09-10 14:59:23.83993		63
+303	DSCF3662.JPG	2	2017-06-02 00:41:10.548581	2022-09-10 14:59:26.782422		64
+304	DSCF3670.JPG	3	2017-06-02 00:41:11.311246	2022-09-10 14:59:26.793161		64
+305	DSCF3683.JPG	4	2017-06-02 00:41:12.07919	2022-09-10 14:59:26.808715		64
+296	matar_1_2017.JPG	3	2017-06-01 23:33:00.456423	2022-09-10 14:59:23.769556		62
+326	IMG_6115.JPG	1	2018-12-21 21:13:42.52006	2022-09-10 17:47:23.208491		68
+327	IMG_6129.JPG	2	2018-12-21 21:13:43.243946	2022-09-10 17:47:23.22488		68
+328	IMG_6130.JPG	3	2018-12-21 21:13:43.994911	2022-09-10 17:47:23.247787		68
+324	P1050670.jpg	7	2018-12-21 20:56:14.726737	2022-09-10 14:59:26.747501		67
+325	P1050683_redimensionat.jpg	8	2018-12-21 20:56:15.458615	2022-09-10 14:59:26.760618		67
+302	DSCF3668.JPG	1	2017-06-02 00:41:09.692566	2022-09-10 14:59:26.771788		64
+300	MIREIAZANTOP59.jpg	4	2017-06-02 00:01:32.570647	2022-09-10 17:47:23.07399		63
+295	Puig-Reig_2017.JPG	2	2017-06-01 23:32:59.696835	2022-09-10 14:59:23.753424		62
+366	IMG_20190518_124322_433.jpg	11	2019-06-10 20:41:50.057323	2022-09-10 14:59:26.606628		74
+358	cordada_IMG_20171101_162351.jpg	7	2019-04-15 11:41:06.993407	2022-09-10 17:47:24.064005		73
+346	IMG_6180.JPG	4	2019-03-07 22:05:14.173587	2022-09-10 17:47:23.350909		68
+350	cap1_IMG_20190405_181244_013.jpg	4	2019-04-15 10:49:25.108785	2022-09-10 14:59:26.658455		72
+375	DSCN1288.JPG	6	2019-06-10 21:35:29.826105	2022-09-10 17:47:24.088583		75
+306	DSCF3681.JPG	5	2017-06-02 00:41:12.821488	2022-09-10 14:59:26.824163		64
+307	DSCF3656.JPG	6	2017-06-02 00:41:13.630177	2022-09-10 14:59:26.836083		64
+283	DSCF4623.JPG	3	2017-06-01 22:46:00.447742	2022-09-10 17:47:22.913061		59
+320	72ppi_rocs_de_lluna.jpg	3	2018-12-21 20:24:03.738858	2022-09-10 14:59:26.698317		67
+321	P1050649_redimensionat_amb_gwenvi_i_1024_.jpg	4	2018-12-21 20:56:13.139631	2022-09-10 14:59:26.710246		67
+322	P1050656_redimensionat.jpg	5	2018-12-21 20:56:13.647604	2022-09-10 14:59:26.721117		67
+438	IMG-20210315-WA0011.jpg	5	2021-04-08 21:31:02.10316	2022-09-10 17:47:23.672129		85
+330	IMG_6183.JPG	5	2018-12-21 21:13:45.579316	2022-09-10 17:47:23.290675		68
+336	DSCF5039baixa.jpg	3	2019-01-28 20:12:16.582016	2022-09-10 14:59:24.264948		65
+289	DSCF4661.JPG	2	2017-06-01 22:46:05.850788	2022-09-10 17:47:22.975847		59
+368	MZantop_2_girat_a_dreta.jpg	3	2019-06-10 21:02:37.531284	2022-09-10 17:47:23.940673		74
+373	2014-08-05_11-44-56.jpg	2	2019-06-10 21:35:28.533335	2022-09-10 14:59:27.088578		75
+349	capcap_2.jpg	3	2019-04-15 10:49:24.570936	2022-09-10 14:59:26.646733		72
+227	DSCF1556.JPG	7	2015-09-27 23:03:12.575381	2022-09-10 14:59:27.276876		38
+337	P1060026baixa.jpg	4	2019-01-28 20:12:17.046974	2022-09-10 14:59:24.280154		65
+351	cap_1_contrallumIMG_20190405_174610_478.jpg	5	2019-04-15 10:49:25.782141	2022-09-10 14:59:26.671269		72
+299	MIREIAZANTOP51.jpg	3	2017-06-02 00:01:31.926976	2022-09-10 17:47:23.05896		63
+298	Josep_Sou_IMG_4360.JPG	2	2017-06-02 00:01:31.258369	2022-09-10 17:47:23.048686		63
+338	DSCF5004.JPG	5	2019-01-28 20:12:17.606523	2022-09-10 14:59:24.291599		65
+340	IMG-20180115-WA0028baixa.jpg	7	2019-01-28 20:12:18.586861	2022-09-10 14:59:24.358461		65
+341	IMG-20180115-WA0024baixa.jpg	8	2019-01-28 20:12:19.193854	2022-09-10 14:59:24.374907		65
+334	P1060009baixant_qualitatjpg.jpg	2	2019-01-28 19:08:01.449546	2022-09-10 17:47:23.301263		65
+228	DSCF1525.JPG	8	2015-09-27 23:03:13.339641	2022-09-10 14:59:27.28926		38
+292	DSCF4671.JPG	11	2017-06-01 22:46:08.290143	2022-09-10 17:47:23.005144		59
+377	2014-08-05_11-40-12.jpg	8	2019-06-10 21:35:31.143949	2022-09-10 14:59:27.16605		75
+294	IMG_20170519_184422.jpg	1	2017-06-01 23:32:58.907326	2022-09-10 17:47:23.024471		62
+297	MIREIAZANTOP42.png	1	2017-06-02 00:01:30.333086	2022-09-10 17:47:23.035091		63
+345	IMG_20190112_132919baixaMZ.jpg	4	2019-01-28 20:29:59.700083	2022-09-10 14:59:24.435236		69
+51	DSC02347.JPG	6	2013-01-20 02:38:42.463264	2022-09-10 14:59:25.028097		19
+223	DSCF1058.JPG	3	2015-09-27 23:03:09.713415	2022-09-10 14:59:27.227492		38
+355	cos_cosit_IMG_20171101_155853.jpg	4	2019-04-15 11:41:05.195215	2022-09-10 17:47:24.03029		73
+436	IMG-20210315-WA0016.jpg	3	2021-04-08 21:31:00.766945	2022-09-10 17:47:23.651135		85
+354	SOM.Escultura_equilibri_ONA.JPG	3	2019-04-15 11:41:04.569538	2022-09-10 17:47:24.019109		73
+439	IMG-20210313-WA0004.jpg	6	2021-04-08 21:31:02.73683	2022-09-10 17:47:23.685118		85
+397	DSCF4797.JPG	4	2019-06-10 22:26:59.31811	2022-09-10 14:59:24.914353		62
+361	MZantop_4.jpg	2	2019-06-10 20:41:47.113692	2022-09-10 14:59:26.500538		74
+357	funambuliaIMG_20171104_161244.jpg	6	2019-04-15 11:41:06.382746	2022-09-10 17:47:24.054557		73
+363	MZantop.JPG	4	2019-06-10 20:41:48.213093	2022-09-10 17:47:23.985167		74
+376	2014-08-05_11-39-24.jpg	7	2019-06-10 21:35:30.433734	2022-09-10 14:59:27.153778		75
+378	2014-08-05_12-20-18.jpg	9	2019-06-10 21:35:31.876559	2022-09-10 14:59:27.178209		75
+379	2014-08-05_11-37-52.jpg	10	2019-06-10 21:35:32.523608	2022-09-10 14:59:27.190731		75
+222	DSCF1045.JPG	2	2015-09-27 23:03:08.941238	2022-09-10 14:59:27.214443		38
+293	DSC01109-102.jpeg	1	2017-06-01 23:00:44.565565	2022-09-10 17:47:23.015135		61
+398	DSCF4408.JPG	5	2019-06-10 22:27:00.122651	2022-09-10 14:59:24.926059		62
+399	nav_s_2016.JPG	6	2019-06-10 22:27:00.871318	2022-09-10 14:59:24.938077		62
+371	DSCN1209_2.jpg	3	2019-06-10 21:35:27.171697	2022-09-10 17:47:24.074095		75
+291	DSCF4665.JPG	10	2017-06-01 22:46:07.448056	2022-09-10 17:47:22.995214		59
+348	cap_2_IMG_20190405_174933_504.jpg	2	2019-04-15 10:49:23.935701	2022-09-10 14:59:26.634964		72
+364	mzantop_3.JPG	5	2019-06-10 20:41:48.737315	2022-09-10 14:59:26.526465		74
+372	2014-08-05_11-33-00.jpg	4	2019-06-10 21:35:27.857342	2022-09-10 14:59:27.116119		75
+435	IMG-20210315-WA0017.jpg	2	2021-04-08 21:31:00.11372	2022-09-10 17:47:23.638455		85
+450	DSCF5843_clavant.JPG	3	2021-09-20 20:07:21.236949	2022-09-10 14:59:25.958902		88
+449	DSCF5838_cavar.JPG	4	2021-09-20 20:07:20.285475	2022-09-10 14:59:25.970603		88
+437	IMG-20210313-WA0009.jpg	4	2021-04-08 21:31:01.477819	2022-09-10 17:47:23.661495		85
+360	IMG-20190225-WA0007.jpeg	3	2019-04-15 12:26:32.71858	2022-09-10 14:59:26.409217		71
+342	P1110547baixa.jpg	1	2019-01-28 20:29:58.211152	2022-09-10 17:47:23.314699		69
+225	20140706_171308.jpg	5	2015-09-27 23:03:10.960936	2022-09-10 14:59:27.251992		38
+226	DSCF1265.JPG	6	2015-09-27 23:03:11.692762	2022-09-10 14:59:27.264414		38
+400	IMG_9343.argentona.JPG	7	2019-06-10 22:27:01.572114	2022-09-10 14:59:24.949272		62
+50	DSC02327.JPG	5	2013-01-20 02:38:42.018621	2022-09-10 14:59:25.016695		19
+425	IMG_20191225_133646_151.jpg	2	2020-10-14 23:00:13.002663	2022-09-10 14:59:25.154483		78
+426	IMG_20190831_132411_157.jpg	3	2020-10-14 23:00:13.677558	2022-09-10 14:59:25.170278		78
+424	_20191228_100620.JPG	1	2020-10-14 23:00:12.399023	2022-09-10 14:59:25.138998		78
 39	\N	8	2013-01-20 00:53:58.799125	2013-01-20 01:03:16.222161	http://www.youtube.com/watch?v=AAvuvEJFgx8	16
-395	IMG_9343.argentona.JPG	11	2019-06-10 22:26:51.79918	2022-07-03 01:39:55.084968		62
-383	IMG_20180928_165542.jpg	4	2019-06-10 21:53:34.237062	2022-07-03 01:39:50.688409		76
-387	IMG_20180928_170858.jpg	5	2019-06-10 21:53:36.315178	2022-07-03 01:39:52.071423		76
-56	DSCF1197.JPG	2	2013-03-27 21:32:21.804513	2022-07-03 01:36:30.476751		23
-396	cardedeu2_2013.JPG	12	2019-06-10 22:26:52.460067	2022-07-03 01:39:55.600504		62
-416	M.ZANTOP_phoscenes_TINTA_a4.jpg	1	2020-10-14 22:48:42.546855	2022-07-03 01:39:58.632031		82
-417	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	2	2020-10-14 22:48:43.199496	2022-07-03 01:39:59.145441		82
-370	MZantop_S.JPG	8	2019-06-10 21:02:38.640197	2022-07-03 01:39:45.701061		74
-381	IMG_20180928_164827.jpg	1	2019-06-10 21:53:33.123029	2022-07-03 01:39:49.93873		76
-3	1_Alguien_camina...JPG	2	2013-01-04 20:32:19.49924	2022-07-03 01:36:14.343752		6
-382	Gravat-Nou-cuadrado.jpg	7	2019-06-10 21:53:33.591413	2022-07-03 01:39:50.21848		76
-418	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	5	2020-10-14 22:48:43.798913	2022-07-03 01:39:59.502947		82
-420	M.ZANTOP_phoscenes_mute_a5_.jpg	6	2020-10-14 22:48:45.015193	2022-07-03 01:40:00.352553		82
-388	IMG_20180928_170923.jpg	6	2019-06-10 21:53:36.81654	2022-07-03 01:39:52.4502		76
-386	IMG_20180928_165940.jpg	3	2019-06-10 21:53:35.78219	2022-07-03 01:39:51.64655		76
-392	DSCF4797.JPG	9	2019-06-10 22:26:49.589438	2022-07-03 01:39:53.993232		62
-394	nav_s_2016.JPG	10	2019-06-10 22:26:51.016655	2022-07-03 01:39:54.600913		62
-384	IMG_20180928_164531.jpg	2	2019-06-10 21:53:34.726339	2022-07-03 01:39:51.014129		76
-422	M.ZANTOP_phoscenes_P_TALS_A4.jpg	3	2020-10-14 22:48:46.128891	2022-07-03 01:40:01.130585		82
-440	IMG-20210313-WA0010.jpg	7	2021-04-08 21:31:03.285654	2022-07-03 01:40:11.547433		85
-362	_20190412_193903.JPG	6	2019-06-10 20:41:47.574948	2022-07-03 01:39:42.902367		74
+396	cardedeu2_2013.JPG	12	2019-06-10 22:26:52.460067	2022-09-10 14:59:24.902298		62
+386	IMG_20180928_165940.jpg	3	2019-06-10 21:53:35.78219	2022-09-10 14:59:26.442998		76
+382	Gravat-Nou-cuadrado.jpg	7	2019-06-10 21:53:33.591413	2022-09-10 14:59:26.487768		76
+57	DSCF1203.JPG	3	2013-03-27 21:32:22.726841	2022-09-10 14:59:20.095003		23
+52	DSC02355.JPG	7	2013-01-20 02:38:42.961502	2022-09-10 14:59:25.039549		19
+422	M.ZANTOP_phoscenes_P_TALS_A4.jpg	3	2020-10-14 22:48:46.128891	2022-09-10 14:59:26.279924		82
+420	M.ZANTOP_phoscenes_mute_a5_.jpg	6	2020-10-14 22:48:45.015193	2022-09-10 14:59:26.339411		82
+392	DSCF4797.JPG	9	2019-06-10 22:26:49.589438	2022-09-10 14:59:24.866909		62
+362	_20190412_193903.JPG	6	2019-06-10 20:41:47.574948	2022-09-10 14:59:26.537934		74
+97	4_Mi_sostenido...JPG	8	2013-03-28 01:35:02.330805	2022-09-10 17:47:21.925014		6
+387	IMG_20180928_170858.jpg	5	2019-06-10 21:53:36.315178	2022-09-10 14:59:26.465176		76
+27	constelacciones_2008.JPG	1	2013-01-05 01:30:14.338425	2022-09-10 14:59:26.373526		13
+418	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	5	2020-10-14 22:48:43.798913	2022-09-10 14:59:26.328815		82
+55	DSCF1204.JPG	1	2013-03-22 00:11:06.530617	2022-09-10 14:59:20.072228		23
+40	sala_ruinas2.2.JPG	1	2013-01-20 01:01:01.484063	2022-09-10 17:47:21.810507		17
+388	IMG_20180928_170923.jpg	6	2019-06-10 21:53:36.81654	2022-09-10 14:59:26.476292		76
+394	nav_s_2016.JPG	10	2019-06-10 22:26:51.016655	2022-09-10 14:59:24.878455		62
+395	IMG_9343.argentona.JPG	11	2019-06-10 22:26:51.79918	2022-09-10 14:59:24.890863		62
+383	IMG_20180928_165542.jpg	4	2019-06-10 21:53:34.237062	2022-09-10 14:59:26.454294		76
+416	M.ZANTOP_phoscenes_TINTA_a4.jpg	1	2020-10-14 22:48:42.546855	2022-09-10 14:59:26.202423		82
+440	IMG-20210313-WA0010.jpg	7	2021-04-08 21:31:03.285654	2022-09-10 14:59:25.835601		85
+42	uters3.jpg	3	2013-01-20 01:52:34.332986	2022-09-10 17:47:21.849137		17
 16	ANA_RITA_RODRIGUES_FEM_2011_PAR_8711.jpg	3	2013-01-05 00:35:48.681777	2022-07-03 01:36:17.484129		10
 17	ANA_RITA_RODRIGUES_FEM_2011_PAR_8749.jpg	4	2013-01-05 00:35:49.187735	2022-07-03 01:36:17.773681		10
 18	DSC03862.JPG	1	2013-01-05 00:51:50.455758	2022-07-03 01:36:18.083453		11
@@ -2335,8 +3024,8 @@ COPY public.images (id, deprecated_image, "position", created_at, updated_at, vi
 24	100_0602.JPG	2	2013-01-05 01:21:07.409764	2022-07-03 01:36:20.508244		12
 25	100_0591.JPG	3	2013-01-05 01:21:07.933597	2022-07-03 01:36:20.823096		12
 26	DSC05840.JPG	4	2013-01-05 01:21:08.405276	2022-07-03 01:36:21.201069		12
-27	constelacciones_2008.JPG	1	2013-01-05 01:30:14.338425	2022-07-03 01:36:21.529921		13
-28	Mireia_Zantop__sin_rgia.jpg	1	2013-01-05 01:36:09.63012	2022-07-03 01:36:21.868838		14
+381	IMG_20180928_164827.jpg	1	2019-06-10 21:53:33.123029	2022-09-10 14:59:26.420532		76
+384	IMG_20180928_164531.jpg	2	2019-06-10 21:53:34.726339	2022-09-10 14:59:26.431517		76
 31	ATENEU_ph.jpg	3	2013-01-05 01:58:06.208474	2022-07-03 01:36:22.866561		15
 33	Performance_mireia__1_.JPG	2	2013-01-20 00:53:55.463728	2022-07-03 01:36:23.507847		16
 32	inici.JPG	1	2013-01-20 00:53:54.415123	2022-07-03 01:36:23.192548		16
@@ -2348,114 +3037,113 @@ COPY public.images (id, deprecated_image, "position", created_at, updated_at, vi
 36	5_canvi_enquadr..JPG	5	2013-01-20 00:53:57.168344	2022-07-03 01:36:24.484809		16
 37	Performance_mireia__6_.JPG	6	2013-01-20 00:53:57.624964	2022-07-03 01:36:24.791348		16
 38	Performance_mireia__4_.JPG	7	2013-01-20 00:53:58.209417	2022-07-03 01:36:25.192337		16
-40	sala_ruinas2.2.JPG	1	2013-01-20 01:01:01.484063	2022-07-03 01:36:25.481165		17
-41	obra_s._paper__ter.jpg	2	2013-01-20 01:52:33.550087	2022-07-03 01:36:25.736004		17
-42	uters3.jpg	3	2013-01-20 01:52:34.332986	2022-07-03 01:36:26.069745		17
+93	6_La_hoja_tiembla...JPG	4	2013-03-28 01:35:00.10358	2022-09-10 17:47:21.886159		6
+94	5_Cien_hormigas...JPG	5	2013-03-28 01:35:00.649683	2022-09-10 17:47:21.895424		6
+85	09-La_Bodega_Rustica.jpg	1	2013-03-28 00:59:06.353876	2022-09-10 14:59:20.471004		26
 43	Mireia.JPG	1	2013-01-20 02:15:44.637816	2022-07-03 01:36:26.382405		18
 44	Juntas.JPG	2	2013-01-20 02:15:45.293899	2022-07-03 01:36:26.693611		18
 45	Eva.JPG	3	2013-01-20 02:15:45.925373	2022-07-03 01:36:26.942063		18
-52	DSC02355.JPG	7	2013-01-20 02:38:42.961502	2022-07-03 01:36:29.777414		19
-55	DSCF1204.JPG	1	2013-03-22 00:11:06.530617	2022-07-03 01:36:30.147979		23
-57	DSCF1203.JPG	3	2013-03-27 21:32:22.726841	2022-07-03 01:36:30.819758		23
-58	DSCF1208.JPG	4	2013-03-27 21:32:23.182231	2022-07-03 01:36:31.267195		23
-59	DSCF1214.JPG	5	2013-03-27 21:32:23.638224	2022-07-03 01:36:31.661298		23
-60	DSC_0250.jpeg	1	2013-03-27 23:34:07.471372	2022-07-03 01:36:31.868134		24
-61	DSC_0248.jpeg	2	2013-03-27 23:34:08.434289	2022-07-03 01:36:32.026589		24
-62	DSC_0261.jpeg	3	2013-03-27 23:34:08.845453	2022-07-03 01:36:32.224198		24
-63	DSC_0266.jpeg	4	2013-03-27 23:34:09.259986	2022-07-03 01:36:32.50815		24
-64	DSC_0278.jpeg	5	2013-03-27 23:34:09.750427	2022-07-03 01:36:32.668222		24
-65	DSC_0288.jpeg	6	2013-03-27 23:34:10.13677	2022-07-03 01:36:32.811303		24
-85	09-La_Bodega_Rustica.jpg	1	2013-03-28 00:59:06.353876	2022-07-03 01:36:35.435444		26
-86	LA_DOCTORA_COLE__Noah_Gordon_.jpg	2	2013-03-28 00:59:06.821734	2022-07-03 01:36:35.587858		26
-89	imagesNoah_presentaci_n.jpg	3	2013-03-28 00:59:07.958679	2022-07-03 01:36:35.732668		26
-91	1_Alguien_camina.sense_marc.JPG	1	2013-03-28 01:29:42.952631	2022-07-03 01:36:36.155244		6
-92	2_El_viento_despeina...JPG	3	2013-03-28 01:34:59.55755	2022-07-03 01:36:36.485126		6
-93	6_La_hoja_tiembla...JPG	4	2013-03-28 01:35:00.10358	2022-07-03 01:36:36.845648		6
-94	5_Cien_hormigas...JPG	5	2013-03-28 01:35:00.649683	2022-07-03 01:36:37.438173		6
-96	7_La_risa_rompe...JPG	7	2013-03-28 01:35:01.740548	2022-07-03 01:36:38.310413		6
-97	4_Mi_sostenido...JPG	8	2013-03-28 01:35:02.330805	2022-07-03 01:36:38.771643		6
-98	8_Palabras_como_humo...JPG	9	2013-03-28 01:35:02.85449	2022-07-03 01:36:39.186104		6
-99	3_La_luna_danza...JPG	10	2013-03-28 01:35:03.373662	2022-07-03 01:36:39.572012		6
-102	portada.sarria.jpg	3	2013-04-05 18:53:13.922329	2022-07-03 01:36:40.087415		29
-103	contraportada.jpg	4	2013-04-05 18:53:14.954064	2022-07-03 01:36:40.547353		29
-104	vila-cecilia-1.jpg	5	2013-04-05 18:53:15.430279	2022-07-03 01:36:40.990038		29
-105	orlandai-1.jpg	6	2013-04-05 18:53:16.02135	2022-07-03 01:36:41.494904		29
-147	DSC_0037.jpeg	1	2014-05-17 12:35:47.239267	2022-07-03 01:36:50.616497		37
-211	P1000490.jpg	4	2015-09-25 01:15:08.350715	2022-07-03 01:37:09.02995		8
-224	20130623_164338.jpg	4	2015-09-27 23:03:10.280082	2022-07-03 01:37:12.037538		38
-275	IMG_9780.jpeg	2	2016-10-19 22:54:28.283388	2022-07-03 01:37:29.755781		56
-369	MZantop_O.JPG	7	2019-06-10 21:02:38.167094	2022-07-03 01:39:45.435654		74
-13	\N	3	2013-01-04 22:56:20.429668	2013-04-05 19:05:21.858828	https://vimeo.com/53101599	9
-73	DSC_0052GUT.jpeg	6	2013-03-27 23:42:27.255255	2022-07-03 01:36:34.07214		9
-5	Survival27.jpeg	2	2013-01-04 20:49:49.126706	2022-07-03 01:36:14.943449		7
-46	DSC02215.JPG	1	2013-01-20 02:38:39.844998	2022-07-03 01:36:27.340542		19
-47	dsc3697.jpg	2	2013-01-20 02:38:40.653374	2022-07-03 01:36:27.516295		19
-48	DSC02225.JPG	3	2013-01-20 02:38:41.050996	2022-07-03 01:36:27.969881		19
-68	DSC_0260.jpeg	8	2013-03-27 23:34:11.498207	2022-07-03 01:36:33.138891		24
-69	DSC_0298.jpeg	9	2013-03-27 23:34:11.894663	2022-07-03 01:36:33.31875		24
-70	DSC_0301.jpeg	10	2013-03-27 23:34:12.526364	2022-07-03 01:36:33.500258		24
-71	DSC_0037.jpeg	4	2013-03-27 23:42:26.398666	2022-07-03 01:36:33.657366		9
-72	DSC_0043GUT.jpeg	5	2013-03-27 23:42:26.852704	2022-07-03 01:36:33.834325		9
-75	DSC_0058.jpeg	7	2013-03-27 23:48:29.790516	2022-07-03 01:36:34.237188		9
-76	DSC_0060.jpeg	8	2013-03-27 23:48:30.29204	2022-07-03 01:36:34.421687		9
-77	DSC_0063.jpeg	9	2013-03-27 23:48:30.704229	2022-07-03 01:36:34.617576		9
-78	DSC_0065.jpeg	11	2013-03-27 23:48:31.096866	2022-07-03 01:36:34.791469		9
-79	DSC_0067GUT.jpeg	12	2013-03-27 23:48:31.482008	2022-07-03 01:36:34.961956		9
-80	DSC_0069GUT.jpeg	1	2013-03-27 23:48:31.885727	2022-07-03 01:36:35.132724		9
-95	9_Baile_de_paraguas...JPG	6	2013-03-28 01:35:01.228049	2022-07-03 01:36:37.931272		6
-106	orlandai.jpg	7	2013-04-05 18:53:16.536748	2022-07-03 01:36:41.97467		29
-107	can-caralleu-3.jpg	8	2013-04-05 18:53:17.149893	2022-07-03 01:36:42.363098		29
-108	torto-la-valencia.jpg	9	2013-04-05 18:53:17.649576	2022-07-03 01:36:42.934306		29
-109	pino.jpg	10	2013-04-05 18:53:18.276834	2022-07-03 01:36:43.514967		29
-131	Coloms_amaralarama1_A.Bombaci.jpg	7	2013-12-06 12:49:26.396816	2022-07-03 01:36:45.641245		33
-142	sum_us_2.jpeg	3	2014-05-17 12:13:09.261653	2022-07-03 01:36:49.518331		34
-157	140531-XIV_Perpetracions-Antologia_Animal-487.jpg	1	2014-07-17 22:28:51.970185	2022-07-03 01:36:52.910631		39
-167	separ_2014.4sala_AUDITORIO.jpg	2	2014-10-09 17:19:05.601242	2022-07-03 01:36:56.763044		30
-195	tarja_antic_c18_captura.jpg	12	2015-01-04 23:21:24.45957	2022-07-03 01:37:04.237844		43
-219	IMG_2539.jpeg	8	2015-09-27 22:40:25.950144	2022-07-03 01:37:10.228837		47
-236	IMG_6090.jpeg	4	2016-08-01 15:36:39.720092	2022-07-03 01:37:16.739797		48
-274	IMG_9772.jpeg	3	2016-10-19 22:54:27.438028	2022-07-03 01:37:29.398761		56
-323	ph_72_ppi_peus_redimensionat.jpg	6	2018-12-21 20:56:14.15072	2022-07-03 01:39:28.526984		67
-339	IMG-20180716-WA0015baixa.jpg	6	2019-01-28 20:12:18.105904	2022-07-03 01:39:32.355381		65
-353	IMG-20150907-WA0003.jpg	2	2019-04-15 11:41:03.904461	2022-07-03 01:39:38.135105		73
-365	cartell_i_info_de_taller.jpg	9	2019-06-10 20:41:49.27616	2022-07-03 01:39:44.047783		74
-367	IMG_20190518_124507_084.jpg	10	2019-06-10 20:41:50.63583	2022-07-03 01:39:44.865811		74
-380	2014-08-05_11-30-34.jpg	11	2019-06-10 21:35:33.12261	2022-07-03 01:39:49.62581		75
-389	IMG-20190307-WA0001.jpg	1	2019-06-10 22:14:22.905657	2022-07-03 01:39:52.878599		77
-390	IMG-20190307-WA0002.jpg	2	2019-06-10 22:14:23.390512	2022-07-03 01:39:53.17079		77
-391	IMG-20190304-WA0006.jpg	3	2019-06-10 22:14:23.870381	2022-07-03 01:39:53.454386		77
-401	cardedeu2_2013.JPG	8	2019-06-10 22:27:02.109431	2022-07-03 01:39:58.229792		62
-419	M.ZANTOP_phoscenes._tinta_a4.jpg	4	2020-10-14 22:48:44.416543	2022-07-03 01:39:59.967119		82
-427	IMG_20191225_132357_968.jpg	4	2020-10-14 23:00:14.377944	2022-07-03 01:40:04.110625		78
-428	IMG-20200924-WA0012.jpg	3	2021-01-04 20:46:03.875771	2022-07-03 01:40:04.688232		83
-429	IMG-20200924-WA0005.jpg	1	2021-01-04 20:46:04.668456	2022-07-03 01:40:05.417314		83
-430	IMG_20201016_172309.jpg	5	2021-01-04 20:46:05.229157	2022-07-03 01:40:05.791608		83
-431	IMG_20200308_180723_115.jpg	6	2021-01-04 20:46:05.97429	2022-07-03 01:40:06.434228		83
-432	__retocat.jpg	2	2021-01-04 20:46:06.621335	2022-07-03 01:40:06.94617		83
-433	des_cuidar_accionant_IMG-20200308-WA0020.jpg	7	2021-01-04 20:46:07.418947	2022-07-03 01:40:07.690541		83
-434	IMG-20200308-WA0039.jpg	4	2021-01-04 20:46:08.219791	2022-07-03 01:40:07.958264		83
-441	Captura_de_pantalla_de_2021-09-01_01-17-09.png	1	2021-08-31 23:06:53.606217	2022-07-03 01:41:02.968887		84
-442	arts_entre_lletres_foto_joana_querol.png	2	2021-08-31 23:06:54.498915	2022-07-03 01:41:19.076289		84
-443	IMG-20201116-WA0010.jpg	3	2021-08-31 23:06:55.454014	2022-07-03 01:41:19.406832		84
-444	IMG-20201116-WA0013.jpg	4	2021-08-31 23:06:56.217747	2022-07-03 01:41:19.784791		84
-445	DSC_0037__copia_.JPG	2	2021-09-13 17:24:30.658413	2022-07-03 01:41:20.348631		87
-446	Copy_of_DSC_0046-001.jpg	3	2021-09-13 17:24:31.590234	2022-07-03 01:41:20.791691		87
-447	DSC_0079-004.jpg	4	2021-09-13 17:24:32.495359	2022-07-03 01:41:21.408555		87
-448	DSC_0083-001.jpg	5	2021-09-13 17:24:33.382089	2022-07-03 01:41:22.051488		87
-452	IMG_20210827_195621_103agulles_al_pal.jpg	5	2021-09-20 20:07:22.99403	2022-07-03 01:41:24.36419		88
-453	P9650800_grup_estaques_i_estaques_fons.JPG	7	2021-09-20 20:07:23.810454	2022-07-03 01:41:25.006358		88
-454	IMG_20210829_084447_1amb_cam__.jpg	8	2021-09-20 20:07:24.763822	2022-07-03 01:41:25.44143		88
-455	P9650824_caminet_i_pal_agulles.JPG	9	2021-09-20 20:07:25.716215	2022-07-03 01:41:25.960055		88
-456	IMG_20210829_084622_1encaix.jpg	2	2021-09-20 20:07:26.604314	2022-07-03 01:41:26.419887		88
-466	ZANTOP_-_4._Odumonde.JPG	1	2021-11-19 20:17:25.438748	2022-07-03 01:41:27.486988		92
-4	Possible_Foto.jpg	1	2013-01-04 20:49:48.478672	2022-07-03 01:36:14.700187		7
-6	Survival29.jpeg	3	2013-01-04 20:49:49.544329	2022-07-03 01:36:15.137311		7
-12	DSC_0062GUT.jpeg	2	2013-01-04 22:53:52.694505	2022-07-03 01:36:16.286044		9
+417	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	2	2020-10-14 22:48:43.199496	2022-09-10 14:59:26.268469		82
+56	DSCF1197.JPG	2	2013-03-27 21:32:21.804513	2022-09-10 14:59:20.083968		23
+58	DSCF1208.JPG	4	2013-03-27 21:32:23.182231	2022-09-10 14:59:20.107055		23
+59	DSCF1214.JPG	5	2013-03-27 21:32:23.638224	2022-09-10 14:59:20.119603		23
+61	DSC_0248.jpeg	2	2013-03-27 23:34:08.434289	2022-09-10 14:59:20.761752		24
+62	DSC_0261.jpeg	3	2013-03-27 23:34:08.845453	2022-09-10 14:59:20.773794		24
+63	DSC_0266.jpeg	4	2013-03-27 23:34:09.259986	2022-09-10 14:59:20.785736		24
+64	DSC_0278.jpeg	5	2013-03-27 23:34:09.750427	2022-09-10 14:59:20.805264		24
+65	DSC_0288.jpeg	6	2013-03-27 23:34:10.13677	2022-09-10 14:59:20.833549		24
+92	2_El_viento_despeina...JPG	3	2013-03-28 01:34:59.55755	2022-09-10 17:47:21.873943		6
+86	LA_DOCTORA_COLE__Noah_Gordon_.jpg	2	2013-03-28 00:59:06.821734	2022-09-10 14:59:20.486542		26
+89	imagesNoah_presentaci_n.jpg	3	2013-03-28 00:59:07.958679	2022-09-10 14:59:20.502308		26
+91	1_Alguien_camina.sense_marc.JPG	1	2013-03-28 01:29:42.952631	2022-09-10 14:59:20.515096		6
+96	7_La_risa_rompe...JPG	7	2013-03-28 01:35:01.740548	2022-09-10 17:47:21.916251		6
+98	8_Palabras_como_humo...JPG	9	2013-03-28 01:35:02.85449	2022-09-10 17:47:21.938561		6
+99	3_La_luna_danza...JPG	10	2013-03-28 01:35:03.373662	2022-09-10 17:47:21.950182		6
+147	DSC_0037.jpeg	1	2014-05-17 12:35:47.239267	2022-09-10 17:47:22.140591		37
+275	IMG_9780.jpeg	2	2016-10-19 22:54:28.283388	2022-09-10 17:47:22.860803		56
+369	MZantop_O.JPG	7	2019-06-10 21:02:38.167094	2022-09-10 17:47:23.954808		74
+370	MZantop_S.JPG	8	2019-06-10 21:02:38.640197	2022-09-10 17:47:23.966374		74
+102	portada.sarria.jpg	3	2013-04-05 18:53:13.922329	2022-09-10 14:59:20.654999		29
+103	contraportada.jpg	4	2013-04-05 18:53:14.954064	2022-09-10 14:59:20.66862		29
+104	vila-cecilia-1.jpg	5	2013-04-05 18:53:15.430279	2022-09-10 14:59:20.679767		29
+105	orlandai-1.jpg	6	2013-04-05 18:53:16.02135	2022-09-10 14:59:20.691812		29
+60	DSC_0250.jpeg	1	2013-03-27 23:34:07.471372	2022-09-10 14:59:20.75026		24
+211	P1000490.jpg	4	2015-09-25 01:15:08.350715	2022-09-10 14:59:22.35377		8
+3	1_Alguien_camina...JPG	2	2013-01-04 20:32:19.49924	2022-09-10 17:47:21.862745		6
+224	20130623_164338.jpg	4	2015-09-27 23:03:10.280082	2022-09-10 14:59:27.239283		38
+41	obra_s._paper__ter.jpg	2	2013-01-20 01:52:33.550087	2022-09-10 17:47:21.833797		17
+28	Mireia_Zantop__sin_rgia.jpg	1	2013-01-05 01:36:09.63012	2022-09-10 14:59:27.027365		14
+75	DSC_0058.jpeg	7	2013-03-27 23:48:29.790516	2022-09-10 14:59:20.313707		9
+353	IMG-20150907-WA0003.jpg	2	2019-04-15 11:41:03.904461	2022-09-10 17:47:24.008307		73
+47	dsc3697.jpg	2	2013-01-20 02:38:40.653374	2022-09-10 14:59:24.983566		19
+427	IMG_20191225_132357_968.jpg	4	2020-10-14 23:00:14.377944	2022-09-10 14:59:25.182088		78
+428	IMG-20200924-WA0012.jpg	3	2021-01-04 20:46:03.875771	2022-09-10 14:59:25.192329		83
+142	sum_us_2.jpeg	3	2014-05-17 12:13:09.261653	2022-09-10 14:59:21.245309		34
+441	Captura_de_pantalla_de_2021-09-01_01-17-09.png	1	2021-08-31 23:06:53.606217	2022-09-10 17:47:23.535014		84
+157	140531-XIV_Perpetracions-Antologia_Animal-487.jpg	1	2014-07-17 22:28:51.970185	2022-09-10 14:59:21.60276		39
+76	DSC_0060.jpeg	8	2013-03-27 23:48:30.29204	2022-09-10 14:59:20.325263		9
+77	DSC_0063.jpeg	9	2013-03-27 23:48:30.704229	2022-09-10 14:59:20.336569		9
+79	DSC_0067GUT.jpeg	12	2013-03-27 23:48:31.482008	2022-09-10 14:59:20.364265		9
+80	DSC_0069GUT.jpeg	1	2013-03-27 23:48:31.885727	2022-09-10 14:59:20.376288		9
+245	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	1	2016-08-01 16:18:28.223363	2022-09-10 17:47:22.698343		51
+106	orlandai.jpg	7	2013-04-05 18:53:16.536748	2022-09-10 14:59:20.703746		29
+107	can-caralleu-3.jpg	8	2013-04-05 18:53:17.149893	2022-09-10 14:59:20.715618		29
+108	torto-la-valencia.jpg	9	2013-04-05 18:53:17.649576	2022-09-10 14:59:20.727477		29
+109	pino.jpg	10	2013-04-05 18:53:18.276834	2022-09-10 14:59:20.73911		29
+66	DSC_0292.jpeg	7	2013-03-27 23:34:10.59682	2022-09-10 14:59:20.864387		24
+68	DSC_0260.jpeg	8	2013-03-27 23:34:11.498207	2022-09-10 14:59:20.896056		24
+69	DSC_0298.jpeg	9	2013-03-27 23:34:11.894663	2022-09-10 14:59:20.92985		24
+70	DSC_0301.jpeg	10	2013-03-27 23:34:12.526364	2022-09-10 14:59:20.942064		24
+167	separ_2014.4sala_AUDITORIO.jpg	2	2014-10-09 17:19:05.601242	2022-09-10 14:59:21.735049		30
+195	tarja_antic_c18_captura.jpg	12	2015-01-04 23:21:24.45957	2022-09-10 14:59:22.154767		43
+274	IMG_9772.jpeg	3	2016-10-19 22:54:27.438028	2022-09-10 17:47:22.847492		56
+442	arts_entre_lletres_foto_joana_querol.png	2	2021-08-31 23:06:54.498915	2022-09-10 17:47:23.552499		84
+389	IMG-20190307-WA0001.jpg	1	2019-06-10 22:14:22.905657	2022-09-10 14:59:23.250777		77
+390	IMG-20190307-WA0002.jpg	2	2019-06-10 22:14:23.390512	2022-09-10 14:59:23.263308		77
+4	Possible_Foto.jpg	1	2013-01-04 20:49:48.478672	2022-09-10 14:59:24.620287		7
+5	Survival27.jpeg	2	2013-01-04 20:49:49.126706	2022-09-10 14:59:24.631588		7
+48	DSC02225.JPG	3	2013-01-20 02:38:41.050996	2022-09-10 14:59:24.995015		19
+49	DSC02239.JPG	4	2013-01-20 02:38:41.521906	2022-09-10 14:59:25.005765		19
+380	2014-08-05_11-30-34.jpg	11	2019-06-10 21:35:33.12261	2022-09-10 14:59:27.202968		75
+339	IMG-20180716-WA0015baixa.jpg	6	2019-01-28 20:12:18.105904	2022-09-10 14:59:24.340524		65
+131	Coloms_amaralarama1_A.Bombaci.jpg	7	2013-12-06 12:49:26.396816	2022-09-10 17:47:22.118269		33
+429	IMG-20200924-WA0005.jpg	1	2021-01-04 20:46:04.668456	2022-09-10 14:59:25.204787		83
+431	IMG_20200308_180723_115.jpg	6	2021-01-04 20:46:05.97429	2022-09-10 14:59:25.232282		83
+432	__retocat.jpg	2	2021-01-04 20:46:06.621335	2022-09-10 14:59:25.242733		83
+433	des_cuidar_accionant_IMG-20200308-WA0020.jpg	7	2021-01-04 20:46:07.418947	2022-09-10 14:59:25.253714		83
+434	IMG-20200308-WA0039.jpg	4	2021-01-04 20:46:08.219791	2022-09-10 14:59:25.266223		83
+466	ZANTOP_-_4._Odumonde.JPG	1	2021-11-19 20:17:25.438748	2022-09-10 17:47:23.837608		92
+367	IMG_20190518_124507_084.jpg	10	2019-06-10 20:41:50.63583	2022-09-10 17:47:23.976457		74
+443	IMG-20201116-WA0010.jpg	3	2021-08-31 23:06:55.454014	2022-09-10 14:59:25.409751		84
+444	IMG-20201116-WA0013.jpg	4	2021-08-31 23:06:56.217747	2022-09-10 14:59:25.421461		84
+352	Escultura_sadernes_ONA.jpg	1	2019-04-15 11:41:03.231274	2022-09-10 17:47:23.997574		73
+365	cartell_i_info_de_taller.jpg	9	2019-06-10 20:41:49.27616	2022-09-10 14:59:26.581024		74
+456	IMG_20210829_084622_1encaix.jpg	2	2021-09-20 20:07:26.604314	2022-09-10 14:59:25.947135		88
+453	P9650800_grup_estaques_i_estaques_fons.JPG	7	2021-09-20 20:07:23.810454	2022-09-10 14:59:26.004891		88
+95	9_Baile_de_paraguas...JPG	6	2013-03-28 01:35:01.228049	2022-09-10 17:47:21.904214		6
+454	IMG_20210829_084447_1amb_cam__.jpg	8	2021-09-20 20:07:24.763822	2022-09-10 14:59:26.016764		88
+323	ph_72_ppi_peus_redimensionat.jpg	6	2018-12-21 20:56:14.15072	2022-09-10 14:59:26.732056		67
+452	IMG_20210827_195621_103agulles_al_pal.jpg	5	2021-09-20 20:07:22.99403	2022-09-10 14:59:25.982189		88
+455	P9650824_caminet_i_pal_agulles.JPG	9	2021-09-20 20:07:25.716215	2022-09-10 14:59:26.028916		88
+419	M.ZANTOP_phoscenes._tinta_a4.jpg	4	2020-10-14 22:48:44.416543	2022-09-10 14:59:26.2913		82
+219	IMG_2539.jpeg	8	2015-09-27 22:40:25.950144	2022-09-10 17:47:22.421825		47
+236	IMG_6090.jpeg	4	2016-08-01 15:36:39.720092	2022-09-10 17:47:22.480057		48
+12	DSC_0062GUT.jpeg	2	2013-01-04 22:53:52.694505	2022-09-10 14:59:20.95448		9
+71	DSC_0037.jpeg	4	2013-03-27 23:42:26.398666	2022-09-10 14:59:20.96681		9
+72	DSC_0043GUT.jpeg	5	2013-03-27 23:42:26.852704	2022-09-10 14:59:20.978392		9
+73	DSC_0052GUT.jpeg	6	2013-03-27 23:42:27.255255	2022-09-10 14:59:20.989513		9
+401	cardedeu2_2013.JPG	8	2019-06-10 22:27:02.109431	2022-09-10 14:59:24.960195		62
+46	DSC02215.JPG	1	2013-01-20 02:38:39.844998	2022-09-10 14:59:24.972086		19
 14	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	1	2013-01-05 00:35:47.142951	2022-07-03 01:36:16.675833		10
-49	DSC02239.JPG	4	2013-01-20 02:38:41.521906	2022-07-03 01:36:28.424528		19
-66	DSC_0292.jpeg	7	2013-03-27 23:34:10.59682	2022-07-03 01:36:33.00068		24
-245	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	1	2016-08-01 16:18:28.223363	2022-07-03 01:37:19.725406		51
-352	Escultura_sadernes_ONA.jpg	1	2019-04-15 11:41:03.231274	2022-07-03 01:39:37.469374		73
+430	IMG_20201016_172309.jpg	5	2021-01-04 20:46:05.229157	2022-09-10 14:59:25.220452		83
+78	DSC_0065.jpeg	11	2013-03-27 23:48:31.096866	2022-09-10 14:59:20.351824		9
+391	IMG-20190304-WA0006.jpg	3	2019-06-10 22:14:23.870381	2022-09-10 14:59:23.275965		77
+6	Survival29.jpeg	3	2013-01-04 20:49:49.544329	2022-09-10 14:59:24.643097		7
+13	\N	3	2013-01-04 22:56:20.429668	2022-09-10 14:59:20.301175	https://vimeo.com/53101599	9
+445	DSC_0037__copia_.JPG	2	2021-09-13 17:24:30.658413	2022-09-10 23:57:47.830887		87
+446	Copy_of_DSC_0046-001.jpg	3	2021-09-13 17:24:31.590234	2022-09-10 23:57:47.856757		87
+447	DSC_0079-004.jpg	4	2021-09-13 17:24:32.495359	2022-09-10 23:57:47.88029		87
+448	DSC_0083-001.jpg	5	2021-09-13 17:24:33.382089	2022-09-10 23:57:47.906829		87
 \.
 
 
@@ -2476,8 +3164,8 @@ COPY public.page_translations (id, page_id, locale, title, body, created_at, upd
 --
 
 COPY public.pages (id, created_at, updated_at) FROM stdin;
-2	2012-10-29 18:37:00.455895	2012-10-29 18:37:00.455895
-1	2012-10-29 18:37:00.367104	2022-02-11 11:18:01.353326
+2	2012-10-29 18:37:00.455895	2022-09-10 17:47:24.193866
+1	2012-10-29 18:37:00.367104	2022-09-10 17:47:24.257757
 \.
 
 
@@ -2494,6 +3182,7 @@ COPY public.schema_migrations (version) FROM stdin;
 20220702222104
 20220703004311
 20220909224320
+20220910125235
 \.
 
 
@@ -2540,26 +3229,26 @@ COPY public.section_translations (id, section_id, locale, title, body, created_a
 --
 
 COPY public.sections (id, "position", created_at, updated_at, work_id) FROM stdin;
-1	1	2013-04-05 18:53:18.872714	2013-04-05 18:56:47.25782	29
-2	2	2013-04-05 18:53:18.942055	2013-04-05 18:56:47.269763	29
-3	1	2013-04-05 19:05:21.993125	2013-04-05 19:05:21.993125	9
-15	1	2020-02-19 17:23:07.09484	2022-01-10 11:24:54.455101	74
-14	1	2019-06-10 21:35:33.857657	2022-01-10 11:45:58.774972	75
-6	1	2013-12-06 12:49:29.105921	2014-05-17 12:23:54.024482	33
-9	1	2015-09-20 18:10:41.186507	2022-01-10 11:49:06.032702	38
-19	1	2021-09-20 20:29:33.793828	2022-01-13 20:54:16.132685	87
-7	1	2015-01-04 22:05:21.141442	2015-01-04 22:13:33.949414	42
-8	1	2015-01-04 23:00:44.731254	2015-01-04 23:21:25.201969	43
-5	1	2013-09-05 14:59:31.645367	2015-09-20 18:04:25.996863	31
-4	1	2013-04-05 19:27:48.599027	2015-09-25 01:15:09.45399	8
-10	1	2016-10-19 22:54:30.208476	2017-06-02 00:09:34.299605	56
-12	1	2018-08-22 15:12:28.282722	2018-12-21 20:19:42.844153	66
-11	1	2017-06-01 22:46:09.171663	2019-03-07 22:10:16.100687	59
-16	1	2020-02-19 18:07:36.343326	2020-02-19 18:09:01.869408	81
-17	1	2021-04-08 21:31:03.854723	2021-09-26 20:50:13.261414	85
-18	1	2021-09-20 19:33:22.580133	2022-01-05 20:16:55.139998	88
-20	1	2022-01-05 21:06:26.087117	2022-01-05 21:06:26.087117	72
-13	1	2018-08-22 15:22:59.119266	2022-01-05 21:12:29.953006	67
+19	1	2021-09-20 20:29:33.793828	2022-09-10 23:57:47.772153	87
+2	2	2013-04-05 18:53:18.942055	2022-09-10 17:47:24.318751	29
+1	1	2013-04-05 18:53:18.872714	2022-09-10 17:47:24.337771	29
+3	1	2013-04-05 19:05:21.993125	2022-09-10 17:47:24.351468	9
+4	1	2013-04-05 19:27:48.599027	2022-09-10 17:47:24.361448	8
+5	1	2013-09-05 14:59:31.645367	2022-09-10 17:47:24.383917	31
+6	1	2013-12-06 12:49:29.105921	2022-09-10 17:47:24.422145	33
+7	1	2015-01-04 22:05:21.141442	2022-09-10 17:47:24.46584	42
+8	1	2015-01-04 23:00:44.731254	2022-09-10 17:47:24.49876	43
+10	1	2016-10-19 22:54:30.208476	2022-09-10 17:47:24.529498	56
+11	1	2017-06-01 22:46:09.171663	2022-09-10 17:47:24.549289	59
+12	1	2018-08-22 15:12:28.282722	2022-09-10 17:47:24.573137	66
+16	1	2020-02-19 18:07:36.343326	2022-09-10 17:47:24.626344	81
+20	1	2022-01-05 21:06:26.087117	2022-09-10 17:47:24.719626	72
+17	1	2021-04-08 21:31:03.854723	2022-09-10 17:47:24.771473	85
+13	1	2018-08-22 15:22:59.119266	2022-09-10 17:47:24.789158	67
+18	1	2021-09-20 19:33:22.580133	2022-09-10 17:47:24.839647	88
+15	1	2020-02-19 17:23:07.09484	2022-09-10 17:47:24.903451	74
+14	1	2019-06-10 21:35:33.857657	2022-09-10 17:47:24.914146	75
+9	1	2015-09-20 18:10:41.186507	2022-09-10 17:47:24.923688	38
 \.
 
 
@@ -2648,30 +3337,31 @@ COPY public.tag_translations (id, tag_id, locale, name, created_at, updated_at) 
 --
 
 COPY public.tags (id, created_at, updated_at, slug_en, slug_es, slug_ca, taggings_count) FROM stdin;
-13	2013-01-05 01:30:12.281032	2022-01-05 20:10:05.551677	drawing	dibujo	dibuix	2
-32	2021-09-26 16:49:29.307532	2022-01-13 20:54:16.145591	group-process--4	proceso-colectivo	proces-col-lectiu	1
-30	2021-04-08 21:30:55.578699	2022-01-13 20:54:16.146657	video-performance	video-accion	video-accio	2
-21	2015-01-05 00:13:25.83929	2022-01-13 20:54:16.147283	performance--2	accion	performance	15
-26	2019-04-10 23:03:30.908422	2022-01-05 21:43:08.666358	land-art	land-art	land-art-o-art-natura	4
-35	2022-01-05 21:20:49.910361	2022-01-05 21:21:36.35917	original-work-on-paper	obra-original-sobre-papel	obra-original-sobre-paper	1
-31	2021-09-20 19:33:22.462251	2022-01-05 20:16:55.151516	ephemeral-art	arte-efimero	art-efimer	1
-19	2015-01-04 23:23:54.260462	2021-09-20 19:36:55.676141	collective-performance	accion-colectiva	accio-col-lectiva	4
-17	2013-04-05 15:02:44.11078	2021-09-20 19:36:59.199289	sound-action	accion-sonora	accio-sonora	5
-28	2020-06-15 15:27:55.712575	2021-09-20 19:37:03.235076	participatory-art	arte-participativo	art-participatiu	5
-10	2013-01-04 21:08:26.956849	2022-01-10 11:45:58.784477	poetry--3	poesia	poesia	8
-5	2013-01-04 20:22:42.066845	2021-09-20 19:37:04.749941	corpologia	corpologia	corpologia	11
-8	2013-01-04 20:55:13.933435	2022-01-10 11:45:58.785941	work-on-paper	obra-sobre-papel	obra-sobre-paper	7
-18	2015-01-04 23:00:30.003142	2022-01-10 11:45:58.786469	poetry--2	accion-poetica	accio-poetica	5
-1	2012-10-29 18:42:31.567016	2021-09-20 19:37:06.339597	dance	danza	dansa	4
-6	2013-01-04 20:32:18.180271	2019-06-10 21:02:35.326056	paintings	pintura	pintura	1
-23	2018-08-22 15:06:01.704448	2022-01-05 21:06:26.100184	social-art-performance	accion-artistica-social	accio-artistica-social	5
-14	2013-01-05 01:36:08.807148	2022-01-10 11:24:54.46517	prints	obra-grafica-original	obra-grafica-original	4
-15	2013-01-20 02:25:58.66069	2021-09-20 19:37:11.22905	illustration	ilustracion	il-lustracio	2
-7	2013-01-04 20:49:45.143651	2022-01-05 21:12:29.966798	live-drawing	live-drawing	live-drawing	4
-9	2013-01-04 21:08:26.907543	2022-01-10 11:49:06.048257	instalation	instalacion	instal-lacio	14
-27	2019-06-10 21:53:24.906665	2022-01-05 20:26:16.350061	visual-poetry	poesia-visual	poesia-visual	1
-11	2013-01-05 00:55:50.500097	2022-01-10 11:49:06.048927	sculpture	escultura	escultura	8
-16	2013-01-20 02:25:58.696969	2021-09-20 19:37:20.017604	book	libro	llibre	3
+6	2013-01-04 20:32:18.180271	2022-09-10 17:47:25.091571	paintings	pintura	pintura	1
+28	2020-06-15 15:27:55.712575	2022-09-10 17:47:25.680504	participatory-art	arte-participativo	art-participatiu	5
+21	2015-01-05 00:13:25.83929	2022-09-10 17:47:25.693245	performance--2	accion	performance	15
+7	2013-01-04 20:49:45.143651	2022-09-10 17:47:25.123386	live-drawing	live-drawing	live-drawing	4
+30	2021-04-08 21:30:55.578699	2022-09-10 17:47:25.728274	video-performance	video-accion	video-accio	2
+10	2013-01-04 21:08:26.956849	2022-09-10 17:47:25.170079	poetry--3	poesia	poesia	8
+31	2021-09-20 19:33:22.462251	2022-09-10 17:47:25.77004	ephemeral-art	arte-efimero	art-efimer	1
+26	2019-04-10 23:03:30.908422	2022-09-10 17:47:25.785319	land-art	land-art	land-art-o-art-natura	4
+32	2021-09-26 16:49:29.307532	2022-09-10 17:47:25.806705	group-process--4	proceso-colectivo	proces-col-lectiu	1
+35	2022-01-05 21:20:49.910361	2022-09-10 17:47:25.837875	original-work-on-paper	obra-original-sobre-papel	obra-original-sobre-paper	1
+11	2013-01-05 00:55:50.500097	2022-09-10 17:47:25.262449	sculpture	escultura	escultura	8
+13	2013-01-05 01:30:12.281032	2022-09-10 17:47:25.283632	drawing	dibujo	dibuix	2
+37	2022-09-10 23:57:47.528919	2022-09-10 23:57:47.536019	metacroqueta	metacroqueta	metacroqueta	1
+14	2013-01-05 01:36:08.807148	2022-09-10 17:47:25.302665	prints	obra-grafica-original	obra-grafica-original	4
+16	2013-01-20 02:25:58.696969	2022-09-10 17:47:25.343648	book	libro	llibre	3
+8	2013-01-04 20:55:13.933435	2022-09-10 17:47:25.380787	work-on-paper	obra-sobre-papel	obra-sobre-paper	7
+17	2013-04-05 15:02:44.11078	2022-09-10 17:47:25.431971	sound-action	accion-sonora	accio-sonora	5
+19	2015-01-04 23:23:54.260462	2022-09-10 17:47:25.488613	collective-performance	accion-colectiva	accio-col-lectiva	4
+15	2013-01-20 02:25:58.66069	2022-09-10 17:47:25.531455	illustration	ilustracion	il-lustracio	2
+9	2013-01-04 21:08:26.907543	2022-09-10 17:47:25.542996	instalation	instalacion	instal-lacio	14
+18	2015-01-04 23:00:30.003142	2022-09-10 17:47:25.552496	poetry--2	accion-poetica	accio-poetica	5
+1	2012-10-29 18:42:31.567016	2022-09-10 17:47:25.027216	dance	danza	dansa	4
+5	2013-01-04 20:22:42.066845	2022-09-10 17:47:25.058637	corpologia	corpologia	corpologia	11
+27	2019-06-10 21:53:24.906665	2022-09-10 17:47:25.634612	visual-poetry	poesia-visual	poesia-visual	1
+23	2018-08-22 15:06:01.704448	2022-09-10 17:47:25.658379	social-art-performance	accion-artistica-social	accio-artistica-social	5
 \.
 
 
@@ -2797,6 +3487,7 @@ COPY public.taggings (id, tag_id, created_at, updated_at, work_id) FROM stdin;
 462	17	2020-02-19 17:17:17.1457	2020-02-19 17:17:17.1457	53
 499	9	2020-06-15 15:36:58.096735	2020-06-15 15:36:58.096735	19
 500	28	2020-06-15 15:36:58.105762	2020-06-15 15:36:58.105762	19
+692	37	2022-09-10 23:57:47.586299	2022-09-10 23:57:47.586299	87
 \.
 
 
@@ -2919,35 +3610,35 @@ COPY public.work_translations (id, work_id, locale, title, description, techniqu
 -- Name: action_text_rich_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.action_text_rich_texts_id_seq', 1, false);
+SELECT pg_catalog.setval('public.action_text_rich_texts_id_seq', 3487, true);
 
 
 --
 -- Name: active_storage_attachments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 1240, true);
+SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 1267, true);
 
 
 --
 -- Name: active_storage_blobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 1240, true);
+SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 1267, true);
 
 
 --
 -- Name: active_storage_variant_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 135, true);
+SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 162, true);
 
 
 --
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 295, true);
+SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 298, true);
 
 
 --
@@ -3003,14 +3694,14 @@ SELECT pg_catalog.setval('public.tag_translations_id_seq', 93, true);
 -- Name: taggings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.taggings_id_seq', 690, true);
+SELECT pg_catalog.setval('public.taggings_id_seq', 692, true);
 
 
 --
 -- Name: tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.tags_id_seq', 35, true);
+SELECT pg_catalog.setval('public.tags_id_seq', 37, true);
 
 
 --
@@ -3024,14 +3715,14 @@ SELECT pg_catalog.setval('public.users_id_seq', 2, true);
 -- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.work_translations_id_seq', 114, true);
+SELECT pg_catalog.setval('public.work_translations_id_seq', 115, true);
 
 
 --
 -- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.works_id_seq', 93, true);
+SELECT pg_catalog.setval('public.works_id_seq', 94, true);
 
 
 --

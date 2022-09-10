@@ -6,9 +6,8 @@ class Work < ApplicationRecord
 
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
 
-  translates :title, :description, :techniques, :place
-
-  has_rich_text :description
+  translates :title, :techniques, :place, plain: true
+  translates :description
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
@@ -24,13 +23,16 @@ class Work < ApplicationRecord
   end
 
   def related
-    conditions_array_for_taggings = [tags.map { |_t| "tag_id = ?" }
-                                         .join(" OR ")]
+    conditions_array_for_taggings = [tags.map { |_t| "tag_id = ?" }.join(" OR ")]
     tags.each { |t| conditions_array_for_taggings << t.id }
     work_ids_from_taggings = Tagging.select("DISTINCT work_id")
                                     .where(conditions_array_for_taggings)
                                     .where.not(work_id: id)
-    self.class.published.where(id: work_ids_from_taggings).limit(5)
-        .includes(:translations)
+    self
+      .class
+      .published
+      .where(id: work_ids_from_taggings)
+      .limit(5)
+      .includes(:plain_text_translations)
   end
 end

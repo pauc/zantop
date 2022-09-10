@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_tags
-    @enabled_tags = Tag.enabled.includes(:translations)
+    @enabled_tags = Tag.enabled.includes(:plain_text_translations)
   end
 
   def current_user

@@ -2,6 +2,7 @@
 
 require "fileutils"
 
+desc "Migrates images from the old Carrierwave system to ActiveStorage"
 task migrate_images: :environment do
   tmp_dir = Rails.root.join("tmp/uploads")
   FileUtils.mkdir_p(tmp_dir)

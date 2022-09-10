@@ -29,13 +29,14 @@ ca:
         name_ca: "Català:"
         name_en: "Anglès:"
         name_es: "Castellà:"
+        year: "Any:"
 
       contact_message:
         from_email: "El teu correu:"
         from_name: "El teu nom:"
         subject: "Assumpte:"
         text: "Text:"
-        send: Enviar
+        send: "Enviar"
 
     hints:
       users:

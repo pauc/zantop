@@ -2,10 +2,11 @@
 
 class Tag < ApplicationRecord
   include HasSlugs
+  include HasTranslations
 
   friendly_id :name, use: [:slugged, :simple_i18n, :history]
 
-  translates :name
+  translates :name, plain: true
 
   has_many :taggings, dependent: :destroy
   has_many :works, through: :taggings, source: :work
