@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 13.4
--- Dumped by pg_dump version 13.7 (Ubuntu 13.7-1.pgdg21.10+1)
+-- Dumped by pg_dump version 13.8 (Ubuntu 13.8-1.pgdg22.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,10 +17,553 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Data for Name: action_text_rich_texts; Type: TABLE DATA; Schema: public; Owner: zantop
+--
+
+COPY public.action_text_rich_texts (id, name, body, record_type, record_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
 -- Data for Name: active_storage_blobs; Type: TABLE DATA; Schema: public; Owner: zantop
 --
 
 COPY public.active_storage_blobs (id, key, filename, content_type, metadata, service_name, byte_size, checksum, created_at) FROM stdin;
+722	iookpykpzy0sxm312uxo6lshcuna	DSC05616bona.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	235642	OeeOlD9exa17swU5Z47yVA==	2022-07-03 01:36:20.16183
+723	c6i233sfa3qbnnoj49bwrosom3tg	100_0602.JPG	image/jpeg	{"identified":true,"width":1004,"height":900,"analyzed":true}	local	78250	ToiANb9ydTQTVoDbhxk9PQ==	2022-07-03 01:36:20.50463
+724	oojy23sbk13ygsfzox2zj2viyyua	100_0591.JPG	image/jpeg	{"identified":true,"width":1200,"height":695,"analyzed":true}	local	86959	+kR/FUdhi+9wSKA3Z+o79g==	2022-07-03 01:36:20.819541
+725	0kj7ltupvmwjnk97unop45dp6adn	DSC05840.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	78480	n0frOYbOXSnbjzXHwZxWEA==	2022-07-03 01:36:21.197449
+726	h23sxvstrwb62d51hzk61xy4daak	constelacciones_2008.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	88418	h+NvuSZcPeL4yFs2gdI9QA==	2022-07-03 01:36:21.526333
+727	jsb52uwq8owbuwg98dcla0u1zsmi	Mireia_Zantop__sin_rgia.jpg	image/jpeg	{"identified":true,"width":960,"height":720,"analyzed":true}	local	65337	iSCHHNTg6bVr1fHParMp2Q==	2022-07-03 01:36:21.865174
+728	u0vub8x9throtcarz8p591qnmj4d	IMGP1552.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	113395	5G9rtVNj23n8H2mO5AwjiA==	2022-07-03 01:36:22.382742
+729	lc08rbbaizru2uo5me6bbbgvkern	invitaci_n_performance_ateneu.jpg	image/jpeg	{"identified":true,"width":425,"height":555,"analyzed":true}	local	39229	6FlV39u7J9wodh9ZdL9qSA==	2022-07-03 01:36:22.599092
+730	n53st3ri7fh4f9x3gj1mu63j3qxy	ATENEU_ph.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	37472	0IoxSFtMAmgDHepgr8wBCw==	2022-07-03 01:36:22.862778
+731	irsbszfuja3x6q4xlzuibhxpgkke	inici.JPG	image/jpeg	{"identified":true,"width":898,"height":900,"analyzed":true}	local	82170	yy8/38NtyrJXJRwimXLXTQ==	2022-07-03 01:36:23.189042
+732	53ha83qg3n71ncmcuklrjc0ci0wl	Performance_mireia__1_.JPG	image/jpeg	{"identified":true,"width":700,"height":700,"analyzed":true}	local	50294	bWNrLlE3x1hE/Un9s+xGVQ==	2022-07-03 01:36:23.504206
+733	jbcu3ak8avjujsqspi6sh2qgxf62	DSC06520.JPG	image/jpeg	{"identified":true,"width":550,"height":900,"analyzed":true}	local	56529	Q66Q2zuuceKybktK8On76g==	2022-07-03 01:36:23.787736
+734	8tx7knw7rnz52z93qghfi4mo2m3m	Performance_mireia__2_.JPG	image/jpeg	{"identified":true,"width":700,"height":700,"analyzed":true}	local	62918	cFIEWZEr9dcQOcuMJs4amg==	2022-07-03 01:36:24.079598
+735	jvzqkxzgttibfyqwdgthg0ipo1x2	5_canvi_enquadr..JPG	image/jpeg	{"identified":true,"width":895,"height":900,"analyzed":true}	local	92043	hZ+Sfh0TCxQ0+PMFJGsVvA==	2022-07-03 01:36:24.481074
+736	qxh5boliyc78oigizveh767fe80a	Performance_mireia__6_.JPG	image/jpeg	{"identified":true,"width":700,"height":700,"analyzed":true}	local	63475	2SBezuSs6LaqVub3qmSR6Q==	2022-07-03 01:36:24.78763
+737	goz39jdead41jd43wmh544vsr2bv	Performance_mireia__4_.JPG	image/jpeg	{"identified":true,"width":700,"height":700,"analyzed":true}	local	63588	OjF2+h54TOcQHTbguO0gKw==	2022-07-03 01:36:25.188868
+738	qii94javlppz0s3qmpuxx2gdtct6	sala_ruinas2.2.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	37017	X9Xvt0dC12EUqY8p13N85w==	2022-07-03 01:36:25.47731
+739	5u3e7oda8rrek9wn63dv3a09dwkb	obra_s._paper__ter.jpg	image/jpeg	{"identified":true,"width":708,"height":900,"analyzed":true}	local	36014	qlrXy9hlwDgTImywlKNaPw==	2022-07-03 01:36:25.732338
+740	gix0f8z4tzrayzcwkap0064ox5e8	uters3.jpg	image/jpeg	{"identified":true,"width":695,"height":900,"analyzed":true}	local	58755	KjlP3+ZPTIkaXT78viriZQ==	2022-07-03 01:36:26.066
+741	83v8p9xshf5nlo0an7xaiss3q671	Mireia.JPG	image/jpeg	{"identified":true,"width":1200,"height":797,"analyzed":true}	local	52314	vYjG+5ZqgavIZ/Kxwpd5Bw==	2022-07-03 01:36:26.378683
+742	sc8fpbz19u8bc6wk5uxmg2xfcqd4	Juntas.JPG	image/jpeg	{"identified":true,"width":1200,"height":797,"analyzed":true}	local	51438	OzjCdqizvGrOMYVOtYYGGg==	2022-07-03 01:36:26.689726
+743	wl0ano4jhpak077zh2cnglokoyx3	Eva.JPG	image/jpeg	{"identified":true,"width":598,"height":900,"analyzed":true}	local	36241	5KWwC0HyK+D+fng4RMqZXg==	2022-07-03 01:36:26.938464
+744	a18vr5j8ihog8nwq7cpbl3swghpp	DSC02215.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	92370	tzeYTRwZWbCBP1HJXmnovg==	2022-07-03 01:36:27.336159
+745	lc9grazlu5q1qhqk2jq7vjv6jlj6	dsc3697.jpg	image/jpeg	{"identified":true,"width":120,"height":79,"analyzed":true}	local	2137	KR9X/X+5zUDbc0IVhDJpsg==	2022-07-03 01:36:27.512235
+746	txi83b07r7fveqwg7lvp3xrh42k7	DSC02225.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	110008	eZFj1iyZrbqmkBj1qCuukg==	2022-07-03 01:36:27.966008
+747	6a8fzodfl4qv3zos9j0rkl4rm602	DSC02239.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	118661	EpviX/XeN+5aENMoXIBQfw==	2022-07-03 01:36:28.421008
+748	qinkv954ay907oswmg5i3tutu92q	DSC02327.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	102434	Gws060w74i2CgvaQGa9QsQ==	2022-07-03 01:36:28.877695
+749	0rdj33ks5z9lke5wx309morf8uro	DSC02347.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	139985	CQ+9hHLufSfqdrVs5qzV4g==	2022-07-03 01:36:29.338832
+750	3ae57gn5z128fw5xoersj6oyawfx	DSC02355.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	141412	yckluSlmPCkJ1dLF1aCN+w==	2022-07-03 01:36:29.773742
+751	rb4fmbpfau5jrsag8pj3dzhr9w2a	DSCF1204.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	75168	I328JuBYJimIhRsskUtyvA==	2022-07-03 01:36:30.144307
+752	vc0jxinttz76slmqqddtln5he13t	DSCF1197.JPG	image/jpeg	{"identified":true,"width":1173,"height":900,"analyzed":true}	local	53325	bMe/Z7GnEHOsQeL1TpmIkA==	2022-07-03 01:36:30.472783
+753	kkjcc57uy0iattoxwhgt6g53gwbq	DSCF1203.JPG	image/jpeg	{"identified":true,"width":1096,"height":900,"analyzed":true}	local	55191	HMaUCAgA9GdPJpH0ZF+95Q==	2022-07-03 01:36:30.816348
+754	uvpj8mlo7z1jl3t2t9z4r2u639fa	DSCF1208.JPG	image/jpeg	{"identified":true,"width":1116,"height":900,"analyzed":true}	local	86088	t4XSxElO3oNwoopLuC8CQw==	2022-07-03 01:36:31.263604
+755	k5nr7uh7p8mrlgf33mpvejvp7xhm	DSCF1214.JPG	image/jpeg	{"identified":true,"width":1085,"height":900,"analyzed":true}	local	52708	g4nMZRkAaAuoJP7PTKuzDQ==	2022-07-03 01:36:31.658068
+756	b3cofh4hxowd223yh5ucljnh6jah	DSC_0250.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	30924	VLoYbrCdeBotdsCv9gk/Sg==	2022-07-03 01:36:31.864647
+757	ead0za5sfgq8nlpdyh99svokz4zw	DSC_0248.jpeg	image/jpeg	{"identified":true,"width":396,"height":549,"analyzed":true}	local	21973	4A6Vd3xICH/x4AISVEe+fw==	2022-07-03 01:36:32.022871
+758	al30tjn79rze0kglgqkfzux258qe	DSC_0261.jpeg	image/jpeg	{"identified":true,"width":410,"height":564,"analyzed":true}	local	23654	b4psl06rWTMhuH3JFPkIPg==	2022-07-03 01:36:32.220272
+759	ty9rnnv08o8hvz4in6vwaiofcqix	DSC_0266.jpeg	image/jpeg	{"identified":true,"width":426,"height":640,"analyzed":true}	local	25518	K3sgt4GuJXISu+66D68cVQ==	2022-07-03 01:36:32.50396
+760	lz226p7kpw9l54wcryo360gdjyn6	DSC_0278.jpeg	image/jpeg	{"identified":true,"width":554,"height":425,"analyzed":true}	local	17335	PmvvB7gGerNVSmaSo+bJ/A==	2022-07-03 01:36:32.662602
+832	71vy5uz3ww9701u7pv948nfjh9af	separ_2014.4sala_AUDITORIO.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	80650	JwtTBQctMhN5yGR7UiD9xw==	2022-07-03 01:36:56.759394
+853	vnzvji3kdzh68y9gzhmbu98r6saq	IMG_6772.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	16555	ZcYE1Zah3WEr7ajjuA7JVA==	2022-07-03 01:37:02.885924
+854	oy1bj3046zn6ucg3r6wfgei2pmru	IMG_6775.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	13310	v7L4E0wzEThaP+4HNu7mEQ==	2022-07-03 01:37:03.048837
+855	bv54z2sctjjkpnerojx5feqjm2nv	IMG_6798.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	11035	RXqCnWX0zb/yX5jL/9koWg==	2022-07-03 01:37:03.25779
+856	76cuxd3205cn6nosk2sf9fic5ulu	IMG_6812.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	15916	iqG1jJnOwxOk8UEskQ/79A==	2022-07-03 01:37:03.421884
+857	ikrpsjvahix0f9rm2z9sjywm3kuy	IMG_6819.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	10542	/ugltCsUB5dxVjGPoDTDTQ==	2022-07-03 01:37:03.583926
+858	xr4m2vcirsgm9puy312s08v5lsrn	IMG_6827.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	9791	lXwKsbi6HFZapeYfGDNH4g==	2022-07-03 01:37:03.741383
+859	4trt2r5rwuxu33o1jqmn3sq56uaz	IMG_6834.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	11757	Esuj/WhU/+f218OhjfGHOw==	2022-07-03 01:37:03.937028
+860	p6fi3xdsrax089cwq4i1yr9d6rea	tarja_antic_c18_captura.jpg	image/jpeg	{"identified":true,"width":768,"height":545,"analyzed":true}	local	87126	Xvz6wGtC4HTo76u2OlguSw==	2022-07-03 01:37:04.234075
+861	o4wt9f718879e0iz6ftyxzorik6m	tarja_birds.jpeg	image/jpeg	{"identified":true,"width":880,"height":625,"analyzed":true}	local	106869	k5v5vVDbG/t0FtvV2W4iDA==	2022-07-03 01:37:04.609901
+862	5txviaewa1a9dh42fcwcp80rczr1	20140706_164949.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	248709	IjVisb1GifhD/LizEx0QGg==	2022-07-03 01:37:05.21391
+863	vqykipiqjg7om756n2x7vi3k9cam	20140706_164949.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	248709	IjVisb1GifhD/LizEx0QGg==	2022-07-03 01:37:05.818282
+864	v1x621dj1o4zg6we4gd9oc3romg2	20140706_165129.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	266700	hxXF2r6PQ/ws4NvaX/TG+w==	2022-07-03 01:37:06.456169
+865	w99r5mmhqvxgzdqze2882im6n3kz	20140706_164738.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	251885	/i8UvENFhh+1XEiWVqAvFQ==	2022-07-03 01:37:07.023991
+866	wu0fcr08oa6rj367ag204hiinw0r	20140706_165245.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	301909	ECFGpgyTUy+AuFcvMdgojQ==	2022-07-03 01:37:07.710111
+867	x2qdn3vlyngg7cdlhkkmln7i92tf	IMG_1468.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	34959	WfAnxqFxXieH/j4YujSTKQ==	2022-07-03 01:37:07.906924
+868	g5xarpd6cf3waxyhealy4pcr5ayp	IMG_1475.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	11364	ikcpakrrUX67ieg1FAZ0IA==	2022-07-03 01:37:08.067054
+869	ivi6k9pzeg8krdiipnqnbpkxer5i	IMG_1491.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	14178	k5Fll2l7J2HiDh+uLOh73A==	2022-07-03 01:37:08.243799
+870	et12e9eue4uo4n4bosf63x774mh1	IMG_1492.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	3339	3p8sePS6xpJbkKvYye9sNg==	2022-07-03 01:37:08.435896
+871	yrnu7b0ih22bsnecyyblkvnbd569	IMG_1499.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	22957	tIj72AgkABkgtXm8K3oobA==	2022-07-03 01:37:08.605893
+872	mbbjceir28g42p7fznbv264pm49r	IMG_1513.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	16917	/mFkL85D+4JGHqKiy66gUg==	2022-07-03 01:37:08.760684
+873	a51isb6hz5q7zgf64wvm577anv15	P1000490.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	35660	PmpWd5ojAwyw4VZ/UnVT/g==	2022-07-03 01:37:09.026114
+874	w7g3jqe92caltylnpkehzs00uhi2	IMG_2324.jpeg	image/jpeg	{"identified":true,"width":320,"height":180,"analyzed":true}	local	8803	RhFX9nBKi2XKEjJMXF38Bw==	2022-07-03 01:37:09.151721
+875	0cdszyyzjex9cd4kn1xm3jx165lw	IMG_2334.jpeg	image/jpeg	{"identified":true,"width":320,"height":180,"analyzed":true}	local	16373	fvLNDV4rTV/7bXd8nX2zCQ==	2022-07-03 01:37:09.291446
+876	yi4gyg3bmtiazywa7m70hxq2qy7p	IMG_2423.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	17552	JN+JhEw2icHTnK3xIOG5Hg==	2022-07-03 01:37:09.433793
+877	gdrwqvfmmdnyngo89ugphyv6ot2k	IMG_2411.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	16988	zN1xxETw/7uQvTW74LBxRw==	2022-07-03 01:37:09.583835
+878	m01fymyupmcf99264glx234tmb96	IMG_2450.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	20794	MrgFD+OgWDFEgJBDjlbF8w==	2022-07-03 01:37:09.799574
+879	rjytpm3tdevev3vm41xxav0dmlg5	IMG_2464.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	15535	aMyAHXdTioiVicdBfmBHtw==	2022-07-03 01:37:09.939991
+880	58dhcqhzt7gcd4zzidckjxr2sy71	IMG_2489.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	16765	Y0HXagID/yL456ycSo0ebw==	2022-07-03 01:37:10.083042
+881	ky4rjh4upvghj6owlkh69bykvlff	IMG_2539.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	18585	c026XJE/bpRS9RDrUHM/2g==	2022-07-03 01:37:10.225305
+882	c5k8sox2hrvza5f7ilfy6swbu38j	IMG_2533.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	14986	g8cHGgpMoL8kFfImTGdPcg==	2022-07-03 01:37:10.362018
+883	cdpij4ag7o7zw7jlfaehok8k7d3x	IMG_2574.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	21143	1AtuPCvtIu4QFfgTcUVEMw==	2022-07-03 01:37:10.586413
+884	2npn07wse6obd4wgca5om2elsy5g	DSCF1045.JPG	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	87411	7lyxEAaVO7VbgzE4gFeQDA==	2022-07-03 01:37:10.994862
+885	x65vfq3rk26dum22id9nluklx9i1	DSCF1058.JPG	image/jpeg	{"identified":true,"width":1176,"height":900,"analyzed":true}	local	169329	KnnrwyBarjnw/YJ5EpXtqw==	2022-07-03 01:37:11.449009
+761	8onlvs66u3wo4w7s0t00yj7p0tub	DSC_0288.jpeg	image/jpeg	{"identified":true,"width":376,"height":338,"analyzed":true}	local	18120	jy3//TQC2C6+GBEBebRi+Q==	2022-07-03 01:36:32.807561
+762	2j5c3wsc7947aehcwgfaozesqka7	DSC_0292.jpeg	image/jpeg	{"identified":true,"width":341,"height":637,"analyzed":true}	local	23561	6vfyOdu6rwBPqK4MhRoEHg==	2022-07-03 01:36:32.997089
+763	jghgzql2370zjbutj179zqrnpfvk	DSC_0260.jpeg	image/jpeg	{"identified":true,"width":333,"height":384,"analyzed":true}	local	13400	MXnxaykkRLYbKSKjvz6eXQ==	2022-07-03 01:36:33.135172
+764	6dpaqhnxpk1eg30rdgnh2ptzywsk	DSC_0298.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	34829	J9FiDtfIl/IdDNnjYhpubg==	2022-07-03 01:36:33.314955
+765	ewy62w0pejmuv1i6nnl0jxn7urtm	DSC_0301.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	15752	hlXdGWooRZOY+WStFj8eSw==	2022-07-03 01:36:33.49662
+766	0rxo2gufzagd50d3jpovbeirrnkk	DSC_0037.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	9950	UBB0SUnEidKXd0uBFdh/Qg==	2022-07-03 01:36:33.653725
+767	u3mxm6y9f0b3hr6g8q3v53kvl368	DSC_0043GUT.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	9768	lG6DXc8Youj1dMpORKxidg==	2022-07-03 01:36:33.830346
+768	nunsnys3unnkiuu4eaoe1dcgwuam	DSC_0052GUT.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	17687	IIBoyZ0elJILqQtAfg14aQ==	2022-07-03 01:36:34.068581
+769	rp1oemnsu302a9vh85npjwd56kwb	DSC_0058.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	17197	wcQZcsIE/bsDmAfRrg247A==	2022-07-03 01:36:34.23326
+770	aisokg0pxii4w4semg9tvqm7gzk6	DSC_0060.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	24162	rLeXP4ihCSXBRdGoAGFcXg==	2022-07-03 01:36:34.417976
+771	6t9u1icxkrwkxwf1hi3awfy12ygv	DSC_0063.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	19143	VH82Uq8b77WpLNxWcgP+5g==	2022-07-03 01:36:34.613781
+772	3zdcsrr2s2apak48l00c4iv5zjzr	DSC_0065.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	14415	bFJMdLXg9ZgMCDi5O9q/bg==	2022-07-03 01:36:34.787683
+773	xdg9s61j5rc8a46epnguni0ldswt	DSC_0067GUT.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	23107	HVlg47eYFql3R4ORiCUcRw==	2022-07-03 01:36:34.958011
+774	wdlwsxeyn0ip61m2ar9tabqrp4a6	DSC_0069GUT.jpeg	image/jpeg	{"identified":true,"width":426,"height":640,"analyzed":true}	local	19350	+035N4AIXw5+EemAKiPiqQ==	2022-07-03 01:36:35.128758
+775	oshsgusrbsj9pl6743x1bwk6fh3t	09-La_Bodega_Rustica.jpg	image/jpeg	{"identified":true,"width":400,"height":594,"analyzed":true}	local	45331	LqZSxoD7YQNCQKnXGoeHxQ==	2022-07-03 01:36:35.43174
+776	fgfsigj8xec080hpvcrcv48x881k	LA_DOCTORA_COLE__Noah_Gordon_.jpg	image/jpeg	{"identified":true,"width":264,"height":400,"analyzed":true}	local	23797	ILSvYMz71r6/SCRt2nXyEQ==	2022-07-03 01:36:35.584268
+777	5x7juwtsdud049qh7dwerxipjl6k	imagesNoah_presentaci_n.jpg	image/jpeg	{"identified":true,"width":68,"height":102,"analyzed":true}	local	2282	37b/PmZflDolileXJLoaAg==	2022-07-03 01:36:35.728625
+778	q43u445ayd4zkmmck30esx1pjihu	1_Alguien_camina.sense_marc.JPG	image/jpeg	{"identified":true,"width":1110,"height":900,"analyzed":true}	local	84047	Tl2V4rDmB8bysPJ84CGdpA==	2022-07-03 01:36:36.151828
+779	p92rk78ymqi8be7slpxhybaqphny	2_El_viento_despeina...JPG	image/jpeg	{"identified":true,"width":663,"height":900,"analyzed":true}	local	89545	fbwOC7n3prVaTQPuBAy4Bg==	2022-07-03 01:36:36.481318
+780	xnup9elne7pcoc12m2oepkaey0vn	6_La_hoja_tiembla...JPG	image/jpeg	{"identified":true,"width":645,"height":900,"analyzed":true}	local	83238	sbI2RSx5UZpeoMkqAqDvJQ==	2022-07-03 01:36:36.841989
+781	6l5qpwe3tj5kdlr5g8lpslj9j3pa	5_Cien_hormigas...JPG	image/jpeg	{"identified":true,"width":1200,"height":886,"analyzed":true}	local	147978	SuhbdU/USpU/ESadOclv7A==	2022-07-03 01:36:37.434395
+782	m2y54day6nc8wj2jje5t2a2mriu8	9_Baile_de_paraguas...JPG	image/jpeg	{"identified":true,"width":1200,"height":869,"analyzed":true}	local	174792	WJnbZLclzyEowSFLD4TVvg==	2022-07-03 01:36:37.926828
+783	s7tmrd4qdf5rxmp9nau8y5529nfa	7_La_risa_rompe...JPG	image/jpeg	{"identified":true,"width":654,"height":900,"analyzed":true}	local	75841	VzxjTBTmzq/FduKIAcpBYQ==	2022-07-03 01:36:38.306867
+784	lfuefli06zcfmjema35pqrr5qkpk	4_Mi_sostenido...JPG	image/jpeg	{"identified":true,"width":1200,"height":870,"analyzed":true}	local	123457	qsJqMfs9hi0PhM+/T5wdNQ==	2022-07-03 01:36:38.767803
+785	r5f0auvzvmnehw119koasvfir9qb	8_Palabras_como_humo...JPG	image/jpeg	{"identified":true,"width":659,"height":900,"analyzed":true}	local	83245	js/Qj0iIK4Xt3HMY4rMJow==	2022-07-03 01:36:39.182419
+786	052o6v732aa8p0cd4s2383yr6gqd	3_La_luna_danza...JPG	image/jpeg	{"identified":true,"width":642,"height":900,"analyzed":true}	local	102080	oOJAMMcoNO/ZEFbpBXqCNQ==	2022-07-03 01:36:39.568536
+787	zuiqrqfimw6k3sob4ewxltlaw8av	portada.sarria.jpg	image/jpeg	{"identified":true,"width":1040,"height":900,"analyzed":true}	local	152839	HGxFVpfbrsK4o0YeQrKh4w==	2022-07-03 01:36:40.083899
+788	fyuggd2xnlueejwfj2p26tdhjfxd	contraportada.jpg	image/jpeg	{"identified":true,"width":1032,"height":900,"analyzed":true}	local	137850	w9PLhtAyhmEWOcxlOZrLoA==	2022-07-03 01:36:40.543644
+789	dnugy123tnjbhnmgl0blx585jwo0	vila-cecilia-1.jpg	image/jpeg	{"identified":true,"width":1158,"height":900,"analyzed":true}	local	167244	lPzkFekuJ6DfvuyYmBM5RA==	2022-07-03 01:36:40.98627
+790	n73f7413czv9stbfs24e013a3mdv	orlandai-1.jpg	image/jpeg	{"identified":true,"width":1139,"height":900,"analyzed":true}	local	111988	VE5HqnxyjxRZRYHLHoD14w==	2022-07-03 01:36:41.491453
+791	euahk7oigj642pjb2tzsnryyh5v0	orlandai.jpg	image/jpeg	{"identified":true,"width":1200,"height":870,"analyzed":true}	local	248593	AaLTO04BIlqT/XImndr9YQ==	2022-07-03 01:36:41.970946
+792	6ceajp2fejpiy03v1n16thn9bhp6	can-caralleu-3.jpg	image/jpeg	{"identified":true,"width":1037,"height":900,"analyzed":true}	local	80948	ptvfOZMflN3E9mqxmeObtg==	2022-07-03 01:36:42.359486
+793	rscjhk3cumafdhk6z2zgvwf7tf4m	torto-la-valencia.jpg	image/jpeg	{"identified":true,"width":1150,"height":900,"analyzed":true}	local	201165	0APOBU3pzsaNmUBAekSBew==	2022-07-03 01:36:42.930466
+794	bpdc4ss1wcyd5lv9g8atjaha9jkv	pino.jpg	image/jpeg	{"identified":true,"width":1137,"height":900,"analyzed":true}	local	180804	4JPiWbpfnKpdOb+Ot09ALA==	2022-07-03 01:36:43.511354
+795	owfjindn38wf8um88tef68mnfyug	_MG_3737.jpg	image/jpeg	{"identified":true,"width":649,"height":900,"analyzed":true}	local	39839	H1sGOrlBys37WeUjAv486w==	2022-07-03 01:36:43.759614
+796	sia6mlxa8zhem3pq8if0crxes3td	fent_volar_coloms.jpg	image/jpeg	{"identified":true,"width":637,"height":900,"analyzed":true}	local	142511	7hlJrKFgTiuj9ru66RwjPw==	2022-07-03 01:36:44.201939
+797	uwimksmdeftynurduhw8f7pr9kfl	Coloms_Laminas1_ClaraBes.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	55921	AU5BDC8fRWfFz+6ovi4Yrw==	2022-07-03 01:36:44.533043
+798	y8polls3ocu3gw146ucofj9oli1x	Coloms_circuit1_A.Bombaci.jpg	image/jpeg	{"identified":true,"width":800,"height":533,"analyzed":true}	local	28484	JXQ3sw+pePRnoObUdSgdcg==	2022-07-03 01:36:44.80898
+799	m1zsql56i5ja0vfjyh4rj9poyc4z	Coloms_Cordes1_ClaraBes.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	63418	sWUpq8MQIb2YS3PLSGDqTg==	2022-07-03 01:36:45.114152
+800	1h2dxhc33opzo0g7mjt1am5cjvcl	Coloms_Globos_ClaraBes.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	48656	nENlL2Rs78agielAHfX9lg==	2022-07-03 01:36:45.403581
+801	994qampmfb24mc0wx2bmf6hn6c2x	Coloms_amaralarama1_A.Bombaci.jpg	image/jpeg	{"identified":true,"width":800,"height":533,"analyzed":true}	local	44921	6hYOL+O8DC5TGI9xLt9rpQ==	2022-07-03 01:36:45.637527
+802	an6oz8siegdhrw6axtp88hzvpnsc	Coloms_Murmuradores_A.Bombaci.jpg	image/jpeg	{"identified":true,"width":800,"height":533,"analyzed":true}	local	38366	wvKRVLaymgontpvHBjqTDA==	2022-07-03 01:36:45.843794
+803	4y6i7f35c920dir1ogd9adler4pp	generart25nov.jpg	image/jpeg	{"identified":true,"width":642,"height":900,"analyzed":true}	local	407194	14W95GjwnU8W8m2IFI19+Q==	2022-07-03 01:36:46.105362
+804	rz43ebkyr8hdbpcl58sqxg7f6i7j	despunxa1.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	124214	G7oHnV1XJAsRVVlwm5cegw==	2022-07-03 01:36:46.613015
+805	indfsiecf98ynx0cphhtao3f28lg	despunxa2.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	128929	+KXmszTsvesjgcbclIDyiA==	2022-07-03 01:36:47.030168
+806	t0098vmxdfik8kmjmnsk18xgnp4i	despunxa3.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	90288	MRVSMYWFVyxtEvbQfPRczg==	2022-07-03 01:36:47.390772
+807	t5hkjm8u1e79xtsy00zzljchvm2x	despunxa4.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	112754	fD41u3vm0zoOqQJZNWpymA==	2022-07-03 01:36:47.804729
+808	hkrlfgwa0n0z8adghwuzvzyq534m	despunxaFi.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	107040	BgswGnn2lANm8/9GvGjMUw==	2022-07-03 01:36:48.140647
+809	wltors90frc3n6alidzroa4f4u27	esbarzer_obrAl_xia1.JPG	image/jpeg	{"identified":true,"width":1200,"height":799,"analyzed":true}	local	112691	rFaKezuo9DrrXuLKP7iZ7w==	2022-07-03 01:36:48.52022
+810	oywaty7jq1sdnlrgh4qmb5ajlpwb	DSC_0583.jpeg	image/jpeg	{"identified":true,"width":598,"height":900,"analyzed":true}	local	41083	PbYtmYBR+iIH1Nby7DFqTA==	2022-07-03 01:36:48.880661
+811	w0crtecdmnogp2re2yo1wrf01lq9	sum_us_1.jpeg	image/jpeg	{"identified":true,"width":1030,"height":684,"analyzed":true}	local	51796	3sb7qfCinZdPC3XloQaZSg==	2022-07-03 01:36:49.192289
+812	xkwm5pk4kmtbz8fu1ec58k28q10m	sum_us_2.jpeg	image/jpeg	{"identified":true,"width":1030,"height":684,"analyzed":true}	local	41527	Ng97AUzTtoPYwz8pdO+47Q==	2022-07-03 01:36:49.514584
+813	qcnbvx0ha94ybhxttgv3wreblrkh	sum_us_3.jpeg	image/jpeg	{"identified":true,"width":1030,"height":684,"analyzed":true}	local	54784	zB4buyhOpRdoJriOB7ZDQQ==	2022-07-03 01:36:49.782763
+814	6v6f91c344dgv22j2eglmdbw97t0	DSC_0621.jpeg	image/jpeg	{"identified":true,"width":1030,"height":684,"analyzed":true}	local	92641	egcAlCi937NZaHi445I8+A==	2022-07-03 01:36:50.187006
+815	sk4cb68p6wo19puer6vqh4jd72ky	CORPOLOGIA_13.jpeg	image/jpeg	{"identified":true,"width":640,"height":461,"analyzed":true}	local	47128	TUMmQ7wfgj2AAgwUIDOVvA==	2022-07-03 01:36:50.401962
+816	zcv4bieejbx02hk3jjpqbnh7vel7	DSC_0037.jpeg	image/jpeg	{"identified":true,"width":843,"height":580,"analyzed":true}	local	17162	76+Enm91BuB2CJLdbHrjVg==	2022-07-03 01:36:50.612921
+817	jblkdpurq7fvcd1nrys0hq4hnop2	DSC_0038retoc.jpeg	image/jpeg	{"identified":true,"width":650,"height":632,"analyzed":true}	local	43910	4TwZbKprqHex29twvm6iqw==	2022-07-03 01:36:50.857715
+818	ebx60gvsq4tvsthdumzisflkwg0z	DSC_0044_copia.jpeg	image/jpeg	{"identified":true,"width":587,"height":900,"analyzed":true}	local	49065	ebmmUKVaYL4JsgqGFR8qaA==	2022-07-03 01:36:51.153607
+819	9yec24whxjlyma45i3tdojn5rfb6	DSC_0047_copia.jpeg	image/jpeg	{"identified":true,"width":520,"height":574,"analyzed":true}	local	29123	JWk5Y5nYGrPlOKpzbmKvGw==	2022-07-03 01:36:51.349301
+820	57hzb0fmzfnmjgllusqp3xx8bn5c	DSC_0048_copiaretocada.jpeg	image/jpeg	{"identified":true,"width":680,"height":900,"analyzed":true}	local	24116	ZbetKFbRicQLKyJPGR2rqw==	2022-07-03 01:36:51.571211
+821	ln5lalsoppsxmzp3hiab8987ntg1	DSC_0051_copia.jpeg	image/jpeg	{"identified":true,"width":566,"height":900,"analyzed":true}	local	36929	+P/ipwtMuGhVeP8ahkLjSA==	2022-07-03 01:36:51.813347
+822	mggpv3njndjg00yhveg4fk9y7jir	Programa_Perpetraci_ns_Interior.jpg	image/jpeg	{"identified":true,"width":653,"height":900,"analyzed":true}	local	145381	E7xKh+SFzz7TdQI8ju9Hqg==	2022-07-03 01:36:52.23869
+823	8c9ia92nr9i9lg1lo2923vg6wmuw	140531-XIV_Perpetracions-Antologia_Animal-487.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	246563	9iaz0SaPcf6Wm/9EpDC6bw==	2022-07-03 01:36:52.907168
+824	43srf48nnzarbjlgzcjq2atpzhal	140531-XIV_Perpetracions-Antologia_Animal-500.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	194338	9n9/1tk7u+mxSgXUTS/deA==	2022-07-03 01:36:53.38394
+825	7gzj4xm07gr6gaeaql8w3nh73fsb	140531-XIV_Perpetracions-Antologia_Animal-504.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	175622	Ta9/oF/JMEMliJ1hfAa2+g==	2022-07-03 01:36:53.897773
+826	tf2yp8081lxh07jpewt4g2e9iq0e	140531-XIV_Perpetracions-Antologia_Animal-506.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	162454	vv+C5hQnIAOeKMG5Mb2s8w==	2022-07-03 01:36:54.364713
+827	15raz6a3s11p3neu2a325agmqpc8	140531-XIV_Perpetracions-Antologia_Animal-496.jpg	image/jpeg	{"identified":true,"width":599,"height":900,"analyzed":true}	local	128236	fQjU+2XkXQc6LNGTsMR+zg==	2022-07-03 01:36:54.793384
+828	mu3cuvsacct8futn9iqqqk3nry0v	P1130261.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	69832	5soKjXuRVGyIQkfqI3XJng==	2022-07-03 01:36:55.136589
+829	9o6crczfc63pnvjkbeucg8sert3p	P1130264.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	102433	dHMf3WL++NxAWaYgglZwYQ==	2022-07-03 01:36:55.506379
+830	o5ig86zsyo4evvljs3ejd2n50301	P1130300.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	117833	zciIpl/ElNikvAJD3VQSzA==	2022-07-03 01:36:55.88612
+831	bm3918woxezsx74m68vm9zxn1sar	P1130321.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	139922	zKwx3+eiYS3H+18aaPMe4w==	2022-07-03 01:36:56.370112
+706	y3kkdxykhqy58hjfxmcqjzuktxwt	1_Alguien_camina...JPG	image/jpeg	{"identified":true,"width":1063,"height":900,"analyzed":true}	local	100928	cpGVzZCWEjuI+LLNIktgoQ==	2022-07-03 01:36:14.338471
+833	3u1d68ms4t7w87pvfk23hu82ajeb	Separ_20143Sala_AUDITORIO.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	95885	Mzeac/DFWcfc8dJSoH+Pcw==	2022-07-03 01:36:57.210643
+719	7v7miyyk4gubiz3qpi2kzcjj0op5	DINERGIA_I-Llavors.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	40359	BAovVFlDVXxTzOHe5DNMWg==	2022-07-03 01:36:18.762303
+707	ah3prjacmj85muku4hiw9yyqpwm4	Possible_Foto.jpg	image/jpeg	{"identified":true,"width":1200,"height":782,"analyzed":true}	local	64504	UrD0pXb6CSNkLeLACWvY2Q==	2022-07-03 01:36:14.696354
+708	5xizglsacxtyz1vhgvm2s9onkxa8	Survival27.jpeg	image/jpeg	{"identified":true,"width":506,"height":380,"analyzed":true}	local	4400	JaMziJlBJqqHGYrVPO3ADQ==	2022-07-03 01:36:14.938701
+709	pq01z7w3y1vs7wk30deoghj4h01v	Survival29.jpeg	image/jpeg	{"identified":true,"width":515,"height":367,"analyzed":true}	local	4763	DBNCH0mHU92e2TKNy921lg==	2022-07-03 01:36:15.133673
+710	ovj3cuy93ooumx5alypnbwndrox4	Instal.laci__monos_labos.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	99603	6JIXza8O825KBFrhdxs0vg==	2022-07-03 01:36:15.596941
+711	dr6a6watcb7mxzb2uxisw3khnjnx	Vil.la_Florida_venus.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	104058	oA+bNPF6nzvjDCNmGLxk6A==	2022-07-03 01:36:16.041056
+712	vlw63hvafpt33w596yrzqpf7q31a	DSC_0062GUT.jpeg	image/jpeg	{"identified":true,"width":640,"height":426,"analyzed":true}	local	25927	X4a7UfQVnonrWxbKHdk3dw==	2022-07-03 01:36:16.282229
+713	mn1hf7k3m5rth3pf1c1luxidc7xt	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	124243	E0ztzI07p8i2n2CIGlLNsA==	2022-07-03 01:36:16.672404
+714	6gs2754rb34rkx70x7i4gormzzb3	ANA_RITA_RODRIGUES_FEM_2011_PAR_8672.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	139281	B+x5k/8JV4RMcSdlNiV+5w==	2022-07-03 01:36:17.072696
+715	00om7lnx8gjzggx7ybpuyfalj3mx	ANA_RITA_RODRIGUES_FEM_2011_PAR_8711.jpg	image/jpeg	{"identified":true,"width":1200,"height":798,"analyzed":true}	local	129763	0N72IfM1NkFH2vxlxaZ9yQ==	2022-07-03 01:36:17.480425
+716	39z5pctfy0mf4gi8y73ggqje6ttd	ANA_RITA_RODRIGUES_FEM_2011_PAR_8749.jpg	image/jpeg	{"identified":true,"width":599,"height":900,"analyzed":true}	local	102216	JwPx5Itk3C/Pww33fOe0iA==	2022-07-03 01:36:17.770062
+717	ewzd6im0ct1r9mz3o0t1k09h2ont	DSC03862.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	54866	R+kjvNoAnnU269OmKhWgtw==	2022-07-03 01:36:18.07984
+834	0250pph3x2njxv29d918gaw6bc4i	IMG_2095.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	4339	vCzDwfUq5RlpSvzXVpSLQw==	2022-07-03 01:36:57.344515
+718	x2c65eemhy56thosblo4ywg8xza1	DINERGIA_I-Armonia_Diatessaron.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	102041	ouSuZBPrcf3rETSUW+aCDw==	2022-07-03 01:36:18.496356
+720	e0y8yljwsw0myw5a5ndgqbmgadwc	DINERGIAIII-Armonia_ad_infinitum.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	34491	woRJHHYE7SMCGiIH6qQj+A==	2022-07-03 01:36:19.034219
+835	h40w75siim68yqmth5g9ol1tye01	IMG_2104.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	5240	wNqiS7djfd4KY9Liw7mo8w==	2022-07-03 01:36:57.54285
+721	mx2grz53nw48nmrvmmxz700bnntr	DSC03863.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	146219	2tK7u9FSoNM4nccPIgaRAg==	2022-07-03 01:36:19.5135
+836	dtxo8memgan8ya0i220vq2n12mz2	IMG_2108.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	4188	2uhVfra+z6gUbknQgGJ6FA==	2022-07-03 01:36:57.723735
+837	gle6umxa622af04rx5nqrd3w668n	IMG_2116.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	5125	VkGwl2LkLcXqa6DRBvbKnw==	2022-07-03 01:36:57.860692
+838	0jarq71q1dxzx12042rpzajxbto0	IMG_2117.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	8758	K+B+d42jfYYjDvyYFKijgA==	2022-07-03 01:36:58.064011
+839	xj75kan9wa13j1uj2xid6t5a0zqh	IMG_2127.jpeg	image/jpeg	{"identified":true,"width":214,"height":320,"analyzed":true}	local	4212	locPYw1hpx3UUFnYBcyvvw==	2022-07-03 01:36:58.188062
+840	gz3b831fvdaxm3pwi2tjomtswljc	IMG_2131.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	7455	vfx9mvAGQJhOVYx6roFLYA==	2022-07-03 01:36:58.322544
+841	e13pqx0zcdvaa8gy3sl07uht5p9u	IMG_2132.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	3660	FkbutgEsnSq7dDs/TPq76w==	2022-07-03 01:36:58.437264
+842	2vmpaxv1btjfwkceedfrdtp6u7d4	IMG_2134.jpeg	image/jpeg	{"identified":true,"width":320,"height":214,"analyzed":true}	local	4069	U3QwRgkCgwCuLVIGNjmSHw==	2022-07-03 01:36:58.5563
+843	a7ot9kifvfwzn1e3bg15xbfd45k4	Mireia_Zantop_Accio_.JPG	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	163420	k97a/CoZx0dzGMAXhqXlyw==	2022-07-03 01:36:58.994907
+844	9kn4j5ypctxz689iwdpryvazybg5	Fulls_Accio__Mireia.JPG	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	170427	JDeo6SSk/iG/q8kbOryx7Q==	2022-07-03 01:36:59.525408
+845	9klyo3byavh2osaosjuyph7x1f43	Pu_blic02.JPG	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	161669	4xEl96oo4L00UNpsQr5A+w==	2022-07-03 01:37:00.011776
+846	qvsuics7d6a925a0466ozz9p5ctl	Mireia_Zantop_01.JPG	image/jpeg	{"identified":true,"width":1200,"height":886,"analyzed":true}	local	215387	kVr/P2rA/+H5IgszWHwc5w==	2022-07-03 01:37:00.608656
+847	nikyxhi8iq2mob1hyxukbb99co8w	PanorGUILLERIES_accio_.jpg	image/jpeg	{"identified":true,"width":1200,"height":457,"analyzed":true}	local	146308	vCdbCYsTJR8/hhGadGLFrg==	2022-07-03 01:37:01.012515
+848	2k56ymlwa4ddw7699o8kv6lwk4b6	Daniel_Ruiz-_Trillo_02.JPG	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	60636	RQv1raHLbQYdIKtOSUGvXA==	2022-07-03 01:37:01.400544
+849	z9y7rjamwvsmv1eoiyz0p01hdddk	Mireia_i_Blai_en_accio_.JPG	image/jpeg	{"identified":true,"width":1200,"height":856,"analyzed":true}	local	213661	iUhA/qnpC7SgIUJBs6FMig==	2022-07-03 01:37:01.985107
+850	4yhscjdhwnkyxsvb6eynphf4y9hg	IMG_6760.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	26153	Oqs08Unj69p3zUTbBeSEAg==	2022-07-03 01:37:02.201849
+851	8ieudykyuks9b040nbss3n72wsrz	IMG_6764.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	28108	WqjxS9iZsEETcER2ZPCNUQ==	2022-07-03 01:37:02.447486
+852	zrzvz94jsvqaxqap8o2fhwyh7cim	IMG_6767.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	25038	BE0VZBJJgjYvmOj2/sN2fA==	2022-07-03 01:37:02.712303
+886	48yndiguop5rm9y9vg8ttp3cce5c	20130623_164338.jpg	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	198674	uS4KixQvZ8ahy9RpyN0xug==	2022-07-03 01:37:12.033672
+887	ouqenfqd2j2mfbjldakcg2u514ic	20140706_171308.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	210473	rCjN2EyWlT2FsAp9JaDf0w==	2022-07-03 01:37:12.610899
+888	26qm49ezs2etqy3phc2ccrq4uroq	DSCF1265.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	134796	y10mpqJrjDUMdc5TY9ICnQ==	2022-07-03 01:37:13.108582
+889	wtewjq8x6h4du38qusksb7oecbr0	DSCF1556.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	311212	ZzSYSt1w9jVEVxLlCL96LQ==	2022-07-03 01:37:13.809138
+890	qcvbj35vm3aznsr79n0o8j7bidt4	DSCF1525.JPG	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	207184	gBwef3EjVB6CV7QHyCvTBA==	2022-07-03 01:37:14.376368
+891	3ddbu15hq14d44c1viiyapjhoj2a	poesie.JPG	image/jpeg	{"identified":true,"width":359,"height":900,"analyzed":true}	local	23148	vHsFDqJIvGzfLFJzPDVWQg==	2022-07-03 01:37:14.595674
+892	wbkgmrqreay2i1v5alepl3o3voku	Strelitzia_Delitzia.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	41906	e8e845uuZnZA96ylG6geHA==	2022-07-03 01:37:14.850698
+893	u7medlxuy05w8gp6dvi6cc4ub7dy	AromaMagn_lia.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	78078	dK+d065pRx5r4e1LMt2rsw==	2022-07-03 01:37:15.190936
+894	rzsedcl2u4pb4uymg0dclbdfv8h9	Rosaflordepell.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	80307	rg+TP2cSn1Gw3myCrprxmw==	2022-07-03 01:37:15.583813
+895	2r58y02h5k1xv6eto0sufcb7x519	IMG_6061.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	38515	QXbGxhokpKDPluYj2DE27Q==	2022-07-03 01:37:15.911779
+896	9s4qxproqgd4aqq1fi84q3begp93	IMG_6068.jpeg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	23003	Gcn9P6qNwBLxOfhNxT9pBg==	2022-07-03 01:37:16.159288
+897	ys9eow9yo4uk8252f47jef7tjvno	IMG_6073.jpeg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	34136	QveUjZem3Apr47SU/8zV/A==	2022-07-03 01:37:16.378584
+898	iz3bf1zr1te9tlw4l81j0doj36zs	IMG_6090.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	32150	E+9O2tq6OOFG01SkTXn7Sg==	2022-07-03 01:37:16.735827
+899	afern8dnzlzoyvivabfwdgl04r21	IMG_6096.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	40555	Dr2I/0KCZNbuHPI5vniW/g==	2022-07-03 01:37:17.019613
+900	cfav7k5ndrecr2yn3hp8nvla6gqk	IMG_6103.jpeg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	34700	HONUszlhNEIh0OhdRXBccg==	2022-07-03 01:37:17.283515
+901	eel5zjalvftono726gv9wzyugnt0	IMG_6108.jpeg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	20031	zpvCkOu73wuUvbjiMpbijg==	2022-07-03 01:37:17.538185
+902	kypo0h3p886hlqspa3ch3p30gixi	IMG_6111.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	47900	XJNMnTWYkipAzkQSOgV0Ww==	2022-07-03 01:37:17.90344
+903	dm6nk71cffg57hbvvkpl0awhh6ly	IMG_6112.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	48016	FwUqjKFr4+wdSz0gzozD7w==	2022-07-03 01:37:18.238237
+904	a9hh7sskjy69qjkc9zzjkqp2ddbr	Corpologia_21_.jpg	image/jpeg	{"identified":true,"width":1200,"height":846,"analyzed":true}	local	107786	U2BXDVwATF97Nr3P7Ol3Rw==	2022-07-03 01:37:18.697098
+905	y29fve01fwzxgcuiy3fm9i9kuge8	IMG-20150128-WA0000.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	63371	yE3YKytVvA/d2Dlq07a2mw==	2022-07-03 01:37:19.03418
+906	0c6pygt8wxig7bhs2bizy79sr6rl	IMG-20150128-WA0001.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	71529	vr/7c5G06bDf3+WkOYiLxA==	2022-07-03 01:37:19.403785
+907	ibd0jksntmimg7xmt5a0z6gl4t8e	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	37378	RJSwOq/lyEEBCn3bylE96w==	2022-07-03 01:37:19.721758
+908	bapyafck9n29wq176xcxzp2bcqmz	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	48545	MczbsdRGEYUOAcdsgLrzpA==	2022-07-03 01:37:19.98477
+909	xhy8wfp2ub9tq8m1t5fs3kfg2t0v	CanFelipa_67.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	43024	/7vhIJSbNyJjAZrDh5MN0g==	2022-07-03 01:37:20.213942
+910	jh7eawsdn6veagazlh1vv3z95ps9	CanFelipa_62.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	86937	0ko+C1GuP0praUGT5qtXXA==	2022-07-03 01:37:20.573203
+911	clquehxp743xf76k0di1ow5quola	CanFelipa_28.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	47360	k2DT+TeBy2a26pSCQfJgtA==	2022-07-03 01:37:20.884675
+912	f6uklq9ug4w45azzgpgzcsg58x0o	CanFelipa_17.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	41112	vTtAm5VM1oDLLsMvwc0bSA==	2022-07-03 01:37:21.161356
+913	gtyv84ie2di1dbi1ac5xjp804hgj	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	79726	zRQ5d4HWVJaltEatMR7HRA==	2022-07-03 01:37:21.538145
+914	stwo7j5gbvzgfszwzbi5hta62e0u	CanFelipa_39.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	87493	nUXKc2jvE4Tu5uNE5++swA==	2022-07-03 01:37:21.955925
+915	h9o7z68sfkndp6m8gq8o3yishl83	CanFelipa_26.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	62018	A+dOEojWe5ed7iVW9i4v+A==	2022-07-03 01:37:22.276639
+916	fia8pb8yeh63153cx7bvnyvqbe6r	CanFelipa_09.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	30595	UFGFSgCo+HjrlCr8m2qTAg==	2022-07-03 01:37:22.460349
+917	pz6mflgo89u55ilyd7e19dbhvizv	eventuall0.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	41630	9Ygn1CGYLoNsnh7AEpKGbA==	2022-07-03 01:37:22.699606
+918	1stpbcxki84vg4b82v2zjlrhgf0r	eventuall2.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	43781	rjcXlRIuHTiClz2tLjP1uA==	2022-07-03 01:37:23.006926
+919	rl3noqizbd73l9s1vnyeuhgjnjak	foto_eventuall_ferran_blancafort.jpeg	image/jpeg	{"identified":true,"width":574,"height":480,"analyzed":true}	local	35222	Lj+1xG38GZG6rITvpV4+mA==	2022-07-03 01:37:23.197961
+920	qr91eqoqve5l91562ob9uqayn7du	eventuall3.jpeg	image/jpeg	{"identified":true,"width":427,"height":640,"analyzed":true}	local	52095	GSByHvFap+s6mqFICd3cvg==	2022-07-03 01:37:23.416824
+921	xm8p5tl8h7xz8blz5o9yzkh9j38v	eventuall4.jpeg	image/jpeg	{"identified":true,"width":640,"height":427,"analyzed":true}	local	67481	hn0cAsBF8Bvmxw1aBtwcbg==	2022-07-03 01:37:23.665426
+922	hllszxw1c7kxye05qqdsaskkuwx8	Cartell_ME_expo_cartells_2016.jpg	image/jpeg	{"identified":true,"width":572,"height":900,"analyzed":true}	local	100315	y2+zI27GcjBBVWmVNxyXeg==	2022-07-03 01:37:23.996309
+923	5xq1ggezz8da9eatvoopt64bsesk	RIMG0068.jpg	image/jpeg	{"identified":true,"width":1024,"height":768,"analyzed":true}	local	65487	2eaBNyS27EVtPk91QGA7QA==	2022-07-03 01:37:24.326676
+924	muk4ztirpc4onp5t8ejnqw79e4vg	DSCF0447_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	74484	x6XrcQw3X4LqjO6JxyxtGg==	2022-07-03 01:37:24.641001
+925	t06utlqieec39lad6j110prjtp5x	DSCF0459_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	61120	A8h+tnKrtocK1lm1nEMKaw==	2022-07-03 01:37:24.930268
+926	vl66l8wjul3t572yird3vp4crsgs	RIMG0087.jpg	image/jpeg	{"identified":true,"width":1024,"height":768,"analyzed":true}	local	114109	Bdm64TLAcL7y+p/4hwM+Ww==	2022-07-03 01:37:25.294523
+927	pygmeh3islx4k36hoc36z3lx79ql	RIMG0082.jpg	image/jpeg	{"identified":true,"width":1024,"height":768,"analyzed":true}	local	55343	e/RBT4WGz01E5dJHGEUG1g==	2022-07-03 01:37:25.565833
+928	xvauksnl7yggss7969rkidwgv6va	RIMG0084.jpg	image/jpeg	{"identified":true,"width":1024,"height":768,"analyzed":true}	local	45152	pqrjKxWNtOL35v3OnBNIDg==	2022-07-03 01:37:25.827937
+929	x9eaglgtiy96jio2hbj7mtb772rd	ZANTOP_A_BEN1_amb_dibuix_fotos_Joan_Casellas_Arxiu_Aire.jpg	image/jpeg	{"identified":true,"width":1200,"height":618,"analyzed":true}	local	79590	gStboPq4+X+uDgPvrSaPSA==	2022-07-03 01:37:26.120364
+930	fwrswriupttpy2ys2zxqe9g7ev9x	DSCF2590.JPG	image/jpeg	{"identified":true,"width":1079,"height":900,"analyzed":true}	local	155201	9TsgpcSho9+4g+LmLK7nZA==	2022-07-03 01:37:26.567845
+931	gvrkb0uhwcvdukxhdl1jcqqo4i1p	DSCF2682.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	163297	TOJwKIcxLSdwt6WdEeGJxg==	2022-07-03 01:37:27.083183
+932	h1f02relw62kzamfcamtv3qhpskh	DSCF2762.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	135643	PtZsqMQgHC19H6Ppj2Qe2w==	2022-07-03 01:37:27.527638
+933	lmoedig621sf2hummfgfub1p4jrn	DSCF2792.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	148607	iBeFV3hDYyi8gDykR1T5ow==	2022-07-03 01:37:27.990498
+934	7oh26kjzmek4qmnycgntq2vzs8uq	DSCF2813.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	152729	hDC+F/MNGc+Gu7g24RrNLA==	2022-07-03 01:37:28.484572
+935	xsdu3khgsknsouepbrou6hngm7s3	DSCF2805.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	188245	fpsDcS4DWnOLXZ9IT5SGuQ==	2022-07-03 01:37:29.040986
+936	s9ffc6bpagag1arzz6h7nj9vc8n0	IMG_9772.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	78912	R7y9OfRxTux6dpP0X1Idkg==	2022-07-03 01:37:29.394833
+937	ewklqmbhf0cp7t6iyh2se7c3lx6d	IMG_9780.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	66651	/E/1JJbrP0kolDrmvm+Edw==	2022-07-03 01:37:29.751677
+938	dryvdnggmfguwtw6stmhyje16fqs	IMG_9786.jpeg	image/jpeg	{"identified":true,"width":1200,"height":801,"analyzed":true}	local	75267	/XAzY3PMb4Ile5+M8QKuPQ==	2022-07-03 01:37:30.072929
+939	p2ugyazjgem5fw1wyfiv1inqk7lc	IMG_9790.jpeg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	49426	T2OK9vPeLZrh8TqJFTUnsw==	2022-07-03 01:37:30.356735
+940	l6dhk5aro1x8dvu3a9ey0rj30egs	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	264834	+v3vSh2qSqh4gJyXq2fqKw==	2022-07-03 01:37:31.027728
+941	kcwp6jxz399pnxaklv4ofxrj291p	VIC2.jpg	image/jpeg	{"identified":true,"width":1200,"height":820,"analyzed":true}	local	155372	HsHBP6cuXTpOD6les0f3Rg==	2022-07-03 01:37:31.477473
+942	rjmlfaghi45x819qhlrxm7bj30sr	Performance__Donar_veu_al_desig__Tona_2015__1_.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	165297	4+kQORh0S+tyT8mROJS2dQ==	2022-07-03 01:37:32.015119
+943	46q2w1f5f0onjqqf1aovffs2vfh8	DONAR_VEU_AL_DESIG_.jpg	image/jpeg	{"identified":true,"width":1040,"height":720,"analyzed":true}	local	86302	i60616QjGUj0S3D4gOcgUA==	2022-07-03 01:37:32.392909
+944	46kdzr16y71oihb1pkupfipb0n9k	MIREIAZANTOP6.png	image/png	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	1040163	+dO1GlpDzGdYPxLuVq6hOQ==	2022-07-03 01:38:44.505737
+945	vnfkje2q1topiogpivcrwni6u6u9	DSCF4623.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	154225	QPuvlatfqXMn7T0HEe6KRA==	2022-07-03 01:38:44.951168
+946	ejldz6265089bi2jygc6ee8uk4l2	DSCF4634.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	86840	KgQ3D/bnmGBOPATewV8UdA==	2022-07-03 01:38:45.337662
+947	4nie9pl4dmw0aeuo8uowx7dkqj9o	DSCF4650.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	80246	BsxKvsis8eG8TEzpTq345Q==	2022-07-03 01:38:45.710246
+948	xh3cgqga42p1y8wax34om5pifkfp	DSCF4658.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	122172	NG3HlAuE1rOtYf4eZJIrnQ==	2022-07-03 01:38:46.144306
+949	jmbxyi9bq3iv16y5fu2iwqoxwt76	DSCF4653.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	49237	JDFLTt1OCwlzcVly68aXXg==	2022-07-03 01:38:46.52134
+950	9ax535dpuhcf6yvas0zf5l8akkoj	DSCF4659.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	131885	wJwxTFcZ803Q754GWQzhsA==	2022-07-03 01:38:46.948651
+951	r5yyr2bid2kgdtft8inanmilt5bb	DSCF4661.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	51508	KwbgGX+3OgSMDOp3pMDH6Q==	2022-07-03 01:38:47.332761
+952	3jglgnxskq77t5snm80gyt2qwla0	DSCF4662.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	51713	abx22rRo5y6LduVpQJ/hag==	2022-07-03 01:38:47.693941
+953	717mdvi2pd5jv42yjhw44b1b42yd	DSCF4665.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	78851	7IGoDjeEEJv4J56+Wmlpcw==	2022-07-03 01:38:48.101205
+954	xssmthfqh32227st224cyde5khn2	DSCF4671.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	84361	OYuHtp1ptCJuCPyfZs0iIA==	2022-07-03 01:38:48.472004
+955	vm72b9ut8ij4l2gasngnzlx542z5	DSC01109-102.jpeg	image/jpeg	{"identified":true,"width":640,"height":361,"analyzed":true}	local	24254	2DYVJgJcRw9UCV1jXA914g==	2022-07-03 01:38:48.711523
+956	4bfdodfxlwikgbpa44doeplwmylz	IMG_20170519_184422.jpg	image/jpeg	{"identified":true,"width":1200,"height":890,"analyzed":true}	local	236565	91TomhJ+UMts8iLX/HbkNg==	2022-07-03 01:38:49.305273
+957	3tymy0seg2wrn4w8g9dwne2tao3w	Puig-Reig_2017.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	128385	J8ZEs9tJPfN+PTw5Thdskw==	2022-07-03 01:38:49.791941
+958	vuf7ximg7l3enorwndg6yw072qrv	matar_1_2017.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	107381	J7mlkTIIQga4k5fkh3j8rw==	2022-07-03 01:38:50.264521
+959	nkliko7ltvoqm0ixvck2u40cdl2k	MIREIAZANTOP42.png	image/png	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	1886613	v2WeHvVbXawmgAdTtJQclA==	2022-07-03 01:39:19.216718
+960	4v7m6bjx4jjttbklek8gdwtlkfyp	Josep_Sou_IMG_4360.JPG	image/jpeg	{"identified":true,"width":1170,"height":900,"analyzed":true}	local	151910	Jicf5JBxBNuOLhyirqXBGA==	2022-07-03 01:39:19.669799
+961	hci7zmoz5oryc7u02bv2n9wdyvod	MIREIAZANTOP51.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	105785	GRnhwyFK6Q+B532kAitLZQ==	2022-07-03 01:39:20.07627
+962	4jvmo8ds1kxkz3shslm6kdesmbwr	MIREIAZANTOP59.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	95092	YpJwVxDu6rBwPkEjc7WYow==	2022-07-03 01:39:20.394425
+963	gufcqr1j3ehb8q2fnd7f95ymdzhy	IMG-20161002-WA0002.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	80011	2Xgdz7p8s1VAN9NTiHxuNg==	2022-07-03 01:39:20.73453
+964	f39h4sokpo2y97etmza6d4e2e32g	DSCF3668.JPG	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	87521	eMpVkbLcLoNygmBuoCKV/g==	2022-07-03 01:39:21.169542
+965	fe5te5zwjt3z9ztgflxi5w15d4ti	DSCF3662.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	61793	7L9MAhp6rkRFa+ZS0Z1L1w==	2022-07-03 01:39:21.432539
+966	c408ysppk4bd6627slu591bmmcbj	DSCF3670.JPG	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	69606	B+UFqcx5TTPqMyqAQKi18A==	2022-07-03 01:39:21.73217
+967	t2j1j967a0ornsfgupc3brcl558r	DSCF3683.JPG	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	89355	t3NA/UECK5S1l7EybIMNag==	2022-07-03 01:39:22.139214
+968	6gds294try2ddd7olsebuqubn9e2	DSCF3681.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	111185	M8r4ag+x30519haggAC0Rg==	2022-07-03 01:39:22.554395
+969	7hbkjvjk7x6no8b898ep4yewdhls	DSCF3656.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	90093	hbiAnX3akzOwDBj37lPygg==	2022-07-03 01:39:22.98896
+970	04u3m44dx5ageyh2escael5g517u	MIREIAZANTOP8.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	113745	xBpjL8Ob4cW2f+EGc1j4Yg==	2022-07-03 01:39:23.458222
+971	9tcauva32td69sgi98ufdfizlbso	MIREIAZANTOP15.jpg	image/jpeg	{"identified":true,"width":1200,"height":857,"analyzed":true}	local	155788	DgGruTICBX1/7rYy97cFAA==	2022-07-03 01:39:23.91775
+972	ikfdeghf3w6y4wzf1keunl6v0ddz	MIREIAZANTOP22.jpg	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	146262	myKKFSR6Z7qcs49Zgm+Agw==	2022-07-03 01:39:24.427981
+973	koyn6804kn4zc7eito90jj03ysc8	MIREIAZANTOP23.jpg	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	60557	4FQiITExVoNABRBYMEbKsA==	2022-07-03 01:39:24.698566
+974	nxtv302vz5gx4sps8fqa537vrkjr	donar_veu..._desig_Manlleu_2016.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	73862	C/2OL8AlXJbFHa2GuUv+Mw==	2022-07-03 01:39:24.985431
+975	fjhylvvrq6owjieq1whuas0a04o9	inundart_ph_72ppi.jpg	image/jpeg	{"identified":true,"width":225,"height":300,"analyzed":true}	local	11510	YGqH8B7v3K1NPp2Tps7WWQ==	2022-07-03 01:39:25.12893
+976	mdebwusqkckuq1i7vx985i8uyyo5	corpologia_25_5_Girona_2_retocada.jpeg	image/jpeg	{"identified":true,"width":577,"height":379,"analyzed":true}	local	17753	+9b55V0+GE/zUW6zAabs+w==	2022-07-03 01:39:25.302721
+977	gd4xitdk2eho501cwsls4svm3j9i	corpologia_25_5_Girona_3_retocada.jpeg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	104926	ON16UniTtn1Jq+Y79PgS9w==	2022-07-03 01:39:25.711911
+978	qvaev3pv3oimsewtt4i1c5gof0jd	corpologia_25_5_Girona_4_retocada.jpeg	image/jpeg	{"identified":true,"width":1200,"height":844,"analyzed":true}	local	87577	Qhsj2bPTU7a945hsGfGWOQ==	2022-07-03 01:39:26.075448
+979	qe7qwoqpskjmt4j8t5y6uv0zqqkl	be___IMG-3930.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	117260	x5d/eiAOGvDSgfz8ipykVw==	2022-07-03 01:39:26.643871
+980	gga5026vtcrn60l06fpk1ky1no82	be__IMG-3931.JPG	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	124732	Vu/54Zlh9/aSolQuwwKCkw==	2022-07-03 01:39:27.086313
+981	hi3zs31zvg2remk4huksb26dhkxy	72ppi_rocs_de_lluna.jpg	image/jpeg	{"identified":true,"width":1200,"height":788,"analyzed":true}	local	110857	h2nYrBeyXyv8LXGjZg1o5g==	2022-07-03 01:39:27.571203
+982	ic6xbodgzzc0ha9qj30beoyqs9gb	P1050649_redimensionat_amb_gwenvi_i_1024_.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	47143	7RNfAqsV0PeXbAu12xzO3A==	2022-07-03 01:39:27.845813
+983	6316swavk9cldv3bnpveybsbl2f9	P1050656_redimensionat.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	48581	99eAygqdvsfdyhYzTVlU7A==	2022-07-03 01:39:28.127902
+984	mqyzcgg0rmt2x6jj3n3l3op3zj0s	ph_72_ppi_peus_redimensionat.jpg	image/jpeg	{"identified":true,"width":1000,"height":750,"analyzed":true}	local	62192	fZ3lB3M7ZZ5jNRxPaFZRtg==	2022-07-03 01:39:28.523524
+985	swer3023v2aak37ok050jyiuwepd	P1050670.jpg	image/jpeg	{"identified":true,"width":705,"height":900,"analyzed":true}	local	61724	CgzM7+UPlYKSDlXpf5RBBg==	2022-07-03 01:39:28.804345
+986	g1appkva79pmyf4ey9smsn1qzvki	P1050683_redimensionat.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	41713	pPW1zBB+nA3wvk90heCbMQ==	2022-07-03 01:39:29.05286
+987	rpzfwuovtzkeef4bhju5ux3c8qvn	IMG_6115.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	99061	Bm7P13WWYiWcgMRwD1b/lg==	2022-07-03 01:39:29.465011
+988	ih8nm1eura5hsjf4iwj3nyabd50f	IMG_6129.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	78814	d8iZe1DmpVlDURkKXXlRTQ==	2022-07-03 01:39:29.801619
+989	sij307au70tamiyyyadki61zofl2	IMG_6130.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	72955	AfV2Wphfa4wZC5qyrkQKdQ==	2022-07-03 01:39:30.184275
+990	yzywriey8252ehoeo48mk0e0cgbk	IMG_6183.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	107309	T9lXOVIby1TDOS/9Z80PEw==	2022-07-03 01:39:30.557897
+991	blny18qwy67uqjvgxwqrphp2y9qr	P1060009baixant_qualitatjpg.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	97280	pfvUl8P+S1KcXpOvLe+Vfw==	2022-07-03 01:39:30.92281
+992	j3fk7js4qg4nndzpt1qmdhwkcmzp	DSCF4982baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":882,"analyzed":true}	local	82239	T7lGc7FOHQhSgg5F5MOUQg==	2022-07-03 01:39:31.249666
+993	sd4ixh4hw8hcryuqiia1t5508bti	DSCF5039baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":661,"analyzed":true}	local	53998	OUbE+fzA7trR4wrJsvfPMg==	2022-07-03 01:39:31.532261
+994	ma6zpwj6x5nytfrwu0pgbsme4zk6	P1060026baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	48097	iLTV5svEj4NpC35T4o0W6A==	2022-07-03 01:39:31.790604
+995	osj73glcmtbuz9zrc2pjkrfqo8dx	DSCF5004.JPG	image/jpeg	{"identified":true,"width":1200,"height":753,"analyzed":true}	local	89607	OFFKoA4J68a8/6h4rMfh6g==	2022-07-03 01:39:32.138164
+996	encopcithwp264zi1dlsloqtzh6z	IMG-20180716-WA0015baixa.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	31205	iTIQRiuofyr53vxo9f3Zaw==	2022-07-03 01:39:32.351565
+997	jwl29pszu530h17erzj1xu81qamb	IMG-20180115-WA0028baixa.jpg	image/jpeg	{"identified":true,"width":506,"height":900,"analyzed":true}	local	20894	TTjYM9zhsqCDqaRRBZTm0A==	2022-07-03 01:39:32.565711
+998	rijdr6jdktqivqwaretz1o3izibo	IMG-20180115-WA0024baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	52391	EHnkCx138DsvdAAR3ikbgg==	2022-07-03 01:39:32.796756
+999	h62gqpprzndwicgfmcsk0ncz57qp	P1110547baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":802,"analyzed":true}	local	32278	gAZH78gtiYAdBoCRcem6gw==	2022-07-03 01:39:33.032871
+1000	yyz5zreqqvsjp3jac8a5lqwmxzbq	P1110555_aleix_vallverd__baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":802,"analyzed":true}	local	31703	u229N+WNmXLkTvM2WfkuRw==	2022-07-03 01:39:33.277363
+1001	rl4y4dorl5na8ar0oawoxotsccbb	P1110558baixa.jpg	image/jpeg	{"identified":true,"width":1200,"height":802,"analyzed":true}	local	23425	docnmLr9zdXeDyJ8VvQxeg==	2022-07-03 01:39:33.550316
+1002	le3z030hcdj7rbcbdtgcrslrgo0a	IMG_20190112_132919baixaMZ.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	43432	2RPdMsZ7OE15oliTKeR7eA==	2022-07-03 01:39:33.816034
+1003	x8bw6dmy1l6nnq1cdp0ewzkqj2iu	IMG_6180.JPG	image/jpeg	{"identified":true,"width":600,"height":900,"analyzed":true}	local	36788	8WmsetHh6xIwf5nxjDFzSg==	2022-07-03 01:39:34.085002
+1004	2ivgz29mktnp52nh501vtcczljj4	almost_finished.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	133581	MPLGWF1FQ08lcen3HuVbzg==	2022-07-03 01:39:34.556516
+1005	k6bi2eb1ktcxz3v4nckfmow6fulu	cap_2_IMG_20190405_174933_504.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	289719	oPRlprgQ8hYTVH4lHIonjw==	2022-07-03 01:39:35.264717
+1006	lrmso0q1vaisdu6geupufqnp4oa9	capcap_2.jpg	image/jpeg	{"identified":true,"width":1200,"height":802,"analyzed":true}	local	170171	me4JRoMn1sPJstNytZ30Aw==	2022-07-03 01:39:35.761759
+1007	rrlg3185e4i7h2s7ykqrp895zxrj	cap1_IMG_20190405_181244_013.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	246746	7G/xNz6g9ok3ZhkzJPP+mg==	2022-07-03 01:39:36.461776
+1008	ohka6beqoss46wcooxiwclpebtnp	cap_1_contrallumIMG_20190405_174610_478.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	131629	ruHf78pjwf59Wk3oBBLHMg==	2022-07-03 01:39:36.911979
+1009	zrdn5wdi4t9upu24z2yf4eejanux	Escultura_sadernes_ONA.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	230073	v/L22Jjret+cI0S89oqFSA==	2022-07-03 01:39:37.465555
+1010	s2hx4paxi19f2tz7bhey74ubccei	IMG-20150907-WA0003.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	279914	m7jy9m1Ds1XcP21hqFW2Eg==	2022-07-03 01:39:38.131202
+1011	jq9jzr7e9woa1vd8vq7md2tnatzx	SOM.Escultura_equilibri_ONA.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	199534	bphCGsHxvJH9wryFXKI13Q==	2022-07-03 01:39:38.672248
+1012	71idthr96bfccllar745ust9ivgy	cos_cosit_IMG_20171101_155853.jpg	image/jpeg	{"identified":true,"width":1200,"height":784,"analyzed":true}	local	253199	VLrqoPF3ksARv73ZU0GN5g==	2022-07-03 01:39:39.273984
+1013	etljub046zdtno8hfn6m6wuy3oaf	20150118_131247.jpg	image/jpeg	{"identified":true,"width":1200,"height":720,"analyzed":true}	local	226058	6Dq5py7Xa6MJEF2n35NLrw==	2022-07-03 01:39:39.866353
+1014	4kjwpwtbd5f21542y8rjwgfl7vzd	funambuliaIMG_20171104_161244.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	302194	9Ed+4UFHiRFgsXg/tC7uBw==	2022-07-03 01:39:40.567079
+1015	b0kv825nmpkbrypdgnu2bh3upkkz	cordada_IMG_20171101_162351.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	375181	1qB9YaG5v+C1RqbNjR51sg==	2022-07-03 01:39:41.422928
+1016	j1614sxvchu13ku55im19x1lw5l1	IMG_20190125_162217.jpg	image/jpeg	{"identified":true,"width":896,"height":900,"analyzed":true}	local	78374	YmL4iF2dknUYxpJb2EOR5A==	2022-07-03 01:39:41.800871
+1017	u1fopfzhf970fkd9ruhnnpgn15mx	IMG-20190225-WA0007.jpeg	image/jpeg	{"identified":true,"width":1200,"height":783,"analyzed":true}	local	81190	tNdTQ5GqxAAWOzAILU9mzQ==	2022-07-03 01:39:42.206525
+1018	5zf9avmeaxney465nm8nf5gkd6ht	MZantop_4.jpg	image/jpeg	{"identified":true,"width":633,"height":900,"analyzed":true}	local	61972	lNUjiZwwDXVw9GddIPDcjw==	2022-07-03 01:39:42.503097
+1019	4i0xv97pqsy3izw94iezkmnhjdb2	_20190412_193903.JPG	image/jpeg	{"identified":true,"width":684,"height":900,"analyzed":true}	local	106080	lhVPQbRqaX4huTOsfGDVbw==	2022-07-03 01:39:42.8982
+1020	of3q3y23wtubs85kyv75a1jv5kzs	MZantop.JPG	image/jpeg	{"identified":true,"width":658,"height":900,"analyzed":true}	local	78354	SKI/LjXK/KnP5+pcOCwqPw==	2022-07-03 01:39:43.202474
+1021	carcbr5h2fsayqzyb85rmkkpsp5a	mzantop_3.JPG	image/jpeg	{"identified":true,"width":692,"height":900,"analyzed":true}	local	46327	vfrzA/GlA5j3peD3fVNmIA==	2022-07-03 01:39:43.457028
+1022	hx0xd9a8489s3yczujba3igx75mt	cartell_i_info_de_taller.jpg	image/jpeg	{"identified":true,"width":900,"height":900,"analyzed":true}	local	158283	wnj6RFWbswK8GRZEwXfRPw==	2022-07-03 01:39:44.044036
+1023	hi3qqjzkivxiy1qk6khqjkas96z3	IMG_20190518_124322_433.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	105858	1tMEBMIwwyzGhwKINooTsQ==	2022-07-03 01:39:44.442424
+1024	k7hrik33m52ytrlo1g4r55nnwvx0	IMG_20190518_124507_084.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	98881	wbnAx4WSt6LCwpDkpezjow==	2022-07-03 01:39:44.861938
+1025	qaopso07o3qr5h4gujv3otund301	MZantop_2_girat_a_dreta.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	91299	3FLIkAQW7tAvzkvGWbnDpA==	2022-07-03 01:39:45.179747
+1026	k9mbyz3k8aiifx43lz4k3jkb54p3	MZantop_O.JPG	image/jpeg	{"identified":true,"width":736,"height":900,"analyzed":true}	local	39323	3Xaxqc8kuHQn0vLtfW51IA==	2022-07-03 01:39:45.431901
+1027	2lbo64h8qc1csw8gyrdpp2fwp0hh	MZantop_S.JPG	image/jpeg	{"identified":true,"width":759,"height":900,"analyzed":true}	local	46644	hAABHynDsa46SOEanINhUw==	2022-07-03 01:39:45.696422
+1028	3jc5ib4vdme52g8pfgknzcsc17ng	DSCN1209_2.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	83349	3TcUFzLSGmfO8kobsqaJdg==	2022-07-03 01:39:46.097444
+1029	crxwh8b9e3fci6b4eeou086foyw9	2014-08-05_11-33-00.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	90600	fsjumCcaZSAUjmdl2V1QkQ==	2022-07-03 01:39:46.514747
+1030	jqkf8zsfpgjl42i932n6evm4l1ir	2014-08-05_11-44-56.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	41515	bxbnd16ES4Rnik2QFsL3Pg==	2022-07-03 01:39:46.904969
+1031	ep5qdzwgydq0vf5lkqfdzi0lhry6	2014-08-05_12-09-46.jpg	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	45732	HyF9bKlSipIpKLM6cktp6w==	2022-07-03 01:39:47.22258
+1032	wfm4qmyqkbslwn1qvb4sn67kxfda	DSCN1288.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	90233	QkWkWsbUDI0IS4/Vrihz1w==	2022-07-03 01:39:47.611033
+1033	vu8g2cnyv6qebgv5lsouavb8v3sr	2014-08-05_11-39-24.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	78217	mWARNumm0HWBCFvzfQjNDQ==	2022-07-03 01:39:48.048941
+1034	feb6dl54a23nv4zudqnolrwb1lon	2014-08-05_11-40-12.jpg	image/jpeg	{"identified":true,"width":900,"height":1200,"analyzed":true}	local	77464	u9gOLDrxLrnCLXZDDn1a8A==	2022-07-03 01:39:48.47479
+1035	ipcszxq5t1f96in9ayjolwdgq1hx	2014-08-05_12-20-18.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	46935	331K6pUB5Lsq3zuDF3vSKQ==	2022-07-03 01:39:48.819606
+1036	g97g7i9n5vc8qwammf9fbpdzbeam	2014-08-05_11-37-52.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	69731	irzWr7Nu/tHg94X2aao3lA==	2022-07-03 01:39:49.235202
+1037	tu57pv2t538ms5lqq9a14vs56tvk	2014-08-05_11-30-34.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	42782	NkDo8QmIryb4UF2WcTMGeA==	2022-07-03 01:39:49.62195
+1038	smf38b5sz5uppkyiwuob8tc4gw2z	IMG_20180928_164827.jpg	image/jpeg	{"identified":true,"width":893,"height":900,"analyzed":true}	local	51389	KKvEoNGME/jl8O73AirHxQ==	2022-07-03 01:39:49.934652
+1039	bsox8swczn6hv14noawjx5wm3o43	Gravat-Nou-cuadrado.jpg	image/jpeg	{"identified":true,"width":800,"height":800,"analyzed":true}	local	45773	pDGiI+jFiUzUvaw67e04bQ==	2022-07-03 01:39:50.214139
+1040	r85fslztai6ek27acys86hymtk7s	IMG_20180928_165542.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	95464	52Ibyi/WGzGfGA4uWfcLJA==	2022-07-03 01:39:50.684326
+1041	c4w1vd1lhnst3936m6uctfqhyph6	IMG_20180928_164531.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	57874	rN+roQXksGqYz4bIJDOSfw==	2022-07-03 01:39:51.009895
+1042	6jruzmi6uipq6revw1h90a4hlcv2	IMG_20180928_165940.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	108140	AZy1+4bCRJ9m9qw7ufF+EA==	2022-07-03 01:39:51.639663
+1043	irhcfnfi5qn7n7na0de9yqyvb5s7	IMG_20180928_170858.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	108028	451X+JVRHU0XLA7F17QdwA==	2022-07-03 01:39:52.066517
+1044	2m1d9zv1d4ucgck1wm8f4io351l2	IMG_20180928_170923.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	66384	ZlR3YUnpUmwLA5P1QonDtw==	2022-07-03 01:39:52.445242
+1045	fjsmwxvp8x7qyywbhoy0lrawu4jd	IMG-20190307-WA0001.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	55140	3bEBiMjviEJ76uzmKiLlBg==	2022-07-03 01:39:52.874601
+1046	nsbvx3lhyuz48dva1u0qptzpyf0t	IMG-20190307-WA0002.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	60274	jv5Ab2v58PoziU11TdVlQA==	2022-07-03 01:39:53.166488
+1047	6vp1jqc1ebhrzbpekxkkv1a98ynj	IMG-20190304-WA0006.jpg	image/jpeg	{"identified":true,"width":586,"height":714,"analyzed":true}	local	51766	qJksQkaipCipQxfDTjYLbA==	2022-07-03 01:39:53.448825
+1048	xze2260u3mvg6pgpwqdj1mftaudl	DSCF4797.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	135302	xWeJOWc2yXsEYXHaKkKRpw==	2022-07-03 01:39:53.987591
+1049	w3zvry0fxfgrldsqxyei6ua1lra0	nav_s_2016.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	151167	bENIjH9A7GiZLGunGVH6Mw==	2022-07-03 01:39:54.593382
+1050	i3adfori5o1o59iw1ku141v85hqj	IMG_9343.argentona.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	81848	aGj4t3ENsnbOgRs7TyCWwQ==	2022-07-03 01:39:55.080241
+1051	rm5ywvte7t1p2zshskhrr0fzf53o	cardedeu2_2013.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	139922	zKwx3+eiYS3H+18aaPMe4w==	2022-07-03 01:39:55.596484
+1052	e2opes0plmnfkhyxemst4sf96jnt	DSCF4797.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	135302	xWeJOWc2yXsEYXHaKkKRpw==	2022-07-03 01:39:56.079032
+1053	akaoucxouw7lee2i6pkzk2489y0y	DSCF4408.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	205335	PbsZeIEpOV6Ietuei2iB8w==	2022-07-03 01:39:56.736219
+1054	a3ku6f90t5nvwjou33hfx5jxf6il	nav_s_2016.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	151167	bENIjH9A7GiZLGunGVH6Mw==	2022-07-03 01:39:57.291679
+1055	vm063yeditmkjd8silzsr9xs4iw7	IMG_9343.argentona.JPG	image/jpeg	{"identified":true,"width":1200,"height":800,"analyzed":true}	local	81848	aGj4t3ENsnbOgRs7TyCWwQ==	2022-07-03 01:39:57.700748
+1056	ojfwdm2p6nvt9su7m5yzq0p607vn	cardedeu2_2013.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	139922	zKwx3+eiYS3H+18aaPMe4w==	2022-07-03 01:39:58.225377
+1057	lavrqvap434fdwg56jbxrtxh0vvn	M.ZANTOP_phoscenes_TINTA_a4.jpg	image/jpeg	{"identified":true,"width":1200,"height":891,"analyzed":true}	local	78054	iho20bz8wzp4QxbTdcIOHA==	2022-07-03 01:39:58.627634
+1058	mhxxr8j1lc79ie18bf40alpikz87	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	image/jpeg	{"identified":true,"width":1200,"height":888,"analyzed":true}	local	84909	XQlvriiPBjmS4YEKt2VyCA==	2022-07-03 01:39:59.141236
+1059	ocxm6983ltm4jl1mxat5rhg9i3wb	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	image/jpeg	{"identified":true,"width":1200,"height":893,"analyzed":true}	local	48019	iU8BKCdcoK93qMJqEfkhbQ==	2022-07-03 01:39:59.498663
+1060	km88hl7cxnmr2lyzysd0z9dp5s2d	M.ZANTOP_phoscenes._tinta_a4.jpg	image/jpeg	{"identified":true,"width":1200,"height":859,"analyzed":true}	local	106690	Xycsg2Hh/UW73P84mpUO9w==	2022-07-03 01:39:59.962878
+1061	lmz93ouxgpayeesddruo957eztia	M.ZANTOP_phoscenes_mute_a5_.jpg	image/jpeg	{"identified":true,"width":1172,"height":900,"analyzed":true}	local	65192	I9NemuyOU3UBMMRqWbbPgg==	2022-07-03 01:40:00.348529
+1062	x590g407g6zis17nrl01q4ob50fw	M.ZANTOP_phoscenes_aiguada_A4.jpg	image/jpeg	{"identified":true,"width":1200,"height":842,"analyzed":true}	local	51735	UAjtv0kMmsClute9k2INpg==	2022-07-03 01:40:00.713934
+1063	5002kbp9tfcuzf4oe6m3c5104z1b	M.ZANTOP_phoscenes_P_TALS_A4.jpg	image/jpeg	{"identified":true,"width":1200,"height":868,"analyzed":true}	local	76097	p/Owc2xzaxGnwrEfv5+5HA==	2022-07-03 01:40:01.125531
+1064	e1icpold3b5koob1k3krsvyjlq8r	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	37127	l5QBY4Sq0VudfInBCWCMpQ==	2022-07-03 01:40:01.477472
+1065	gz1we8s0ktcq45ty6c8b5fu3o8ov	_20191228_100620.JPG	image/jpeg	{"identified":true,"width":681,"height":900,"analyzed":true}	local	91577	yl1Rl8IfKUMJF2mYPv0hiA==	2022-07-03 01:40:01.943851
+1066	zoshfbdnx9cu43ilob4l8qlru6f5	IMG_20191225_133646_151.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	102560	vAh+Dq06ryUW/gzLWok0dg==	2022-07-03 01:40:02.629276
+1067	6l4kk27c2wocrf5ww78dmufqlg35	IMG_20190831_132411_157.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	283621	30/Huy623wLoZINFC7pdig==	2022-07-03 01:40:03.551889
+1068	vvggvyaphum4am75osb2fgpj6u05	IMG_20191225_132357_968.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	167911	wM4sOpF8dxSAJTRE2s6slw==	2022-07-03 01:40:04.106451
+1069	mphtvnddpebihwmmrletq81nhtrw	IMG-20200924-WA0012.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	178168	sYo6rRLijoWpz8ny3cE2bA==	2022-07-03 01:40:04.681404
+1070	c2831gj0nhgxgo813f463c23jore	IMG-20200924-WA0005.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	163592	KqCaQieOBfgfZEkRgoypPA==	2022-07-03 01:40:05.412845
+1071	ifcluqy2iral9cnqo2p3zqmvlk4g	IMG_20201016_172309.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	91633	MvHvTjso46vGP7vpx5IkaQ==	2022-07-03 01:40:05.787871
+1072	e7qo4m0mf6cdfa9zg3av2ooptqua	IMG_20200308_180723_115.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	139662	n8qZz1UpVR4Yj7eeRmWmEg==	2022-07-03 01:40:06.429655
+1073	e1csm8tqg32t3aw7yjawoe1imyq9	__retocat.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	145648	GHm9jgK98NpbDCXMJb90iA==	2022-07-03 01:40:06.942434
+1074	s0pwnpei678o0zdt4cjrsr5ua246	des_cuidar_accionant_IMG-20200308-WA0020.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	275619	TTZ6fSl2HpkXnuBFxjADtQ==	2022-07-03 01:40:07.686906
+1075	5th9ezpndfl44jkbrp0i8tf4sc95	IMG-20200308-WA0039.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	62030	gjGGysrWa1bDNct7E14uFg==	2022-07-03 01:40:07.954763
+1076	v0zt6yj9z6cdh0jzg8mduik2m7lp	IMG-20210315-WA0017.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	232051	PeVCDB2nw2XVmjqhZp8xJA==	2022-07-03 01:40:08.579993
+1077	m12c32pe7d82u8wrcm778ovcw96h	IMG-20210315-WA0016.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	253324	0FW1l/lzT8Um7NuFGZ9Pbg==	2022-07-03 01:40:09.226376
+1078	lf5o79z5mi5mjakje22zfgkreuv4	IMG-20210313-WA0009.jpg	image/jpeg	{"identified":true,"width":1200,"height":681,"analyzed":true}	local	316390	rz8injj+uWSXtUnYdNeBIA==	2022-07-03 01:40:09.974033
+1079	mgjstegbdfxjplt2bevyvsxho66u	IMG-20210315-WA0011.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	165963	CrkO72kw4HocPhv5tcKC6A==	2022-07-03 01:40:10.431214
+1080	lzjt3534vdevgaed85b5m0ddri8j	IMG-20210313-WA0004.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	102760	8k38E0dISVABLTrU5TiMKw==	2022-07-03 01:40:10.837651
+1081	qq39bi4jl2lyvhx53xic1i4kzv8g	IMG-20210313-WA0010.jpg	image/jpeg	{"identified":true,"width":675,"height":900,"analyzed":true}	local	51641	cineCDC2ceNDZJJOswvUpw==	2022-07-03 01:40:11.543573
+1082	dy0m603o6m6slpw12j9jgip6l0dc	Captura_de_pantalla_de_2021-09-01_01-17-09.png	image/png	{"identified":true,"width":961,"height":539,"analyzed":true}	local	252507	Lt5mL9S51BrEtoPzO6ZpWw==	2022-07-03 01:41:02.96424
+1083	ypvcvnaxgsx8yh7l8fjt97wfo8gy	arts_entre_lletres_foto_joana_querol.png	image/png	{"identified":true,"width":525,"height":353,"analyzed":true}	local	189766	KMRFTDma5iI/7D4YqHu4eg==	2022-07-03 01:41:19.069528
+1084	mjfnq34l3tbegszxk4mrcz3yor1g	IMG-20201116-WA0010.jpg	image/jpeg	{"identified":true,"width":1080,"height":607,"analyzed":true}	local	64659	EI6sNssmB64VgJtfNJhjJw==	2022-07-03 01:41:19.401629
+1085	9ofa07kwtsxl8qfju52icsreqpgm	IMG-20201116-WA0013.jpg	image/jpeg	{"identified":true,"width":1080,"height":607,"analyzed":true}	local	74160	K8bqm5o9yWqxw/+Dim2fUw==	2022-07-03 01:41:19.780689
+1086	mth2rhvd4zvzrfp5y0y0j5toazvr	DSC_0037__copia_.JPG	image/jpeg	{"identified":true,"width":1200,"height":803,"analyzed":true}	local	196795	ALuVyIZsdquyWoDZVLTc9g==	2022-07-03 01:41:20.34448
+1087	v3zta52d5vzwt58hkzzq6odv6h57	Copy_of_DSC_0046-001.jpg	image/jpeg	{"identified":true,"width":1200,"height":803,"analyzed":true}	local	106230	MsbB4ZQ9RvabnZGGuDLc+g==	2022-07-03 01:41:20.784946
+1088	1y222irzckfku8xsmkl6kpmdnb6c	DSC_0079-004.jpg	image/jpeg	{"identified":true,"width":1200,"height":803,"analyzed":true}	local	192286	ZIp+GiLoiapKIMb4skhwqg==	2022-07-03 01:41:21.402724
+1089	1ndmjwmq9g8izmm9fpinlpqbcv0n	DSC_0083-001.jpg	image/jpeg	{"identified":true,"width":1200,"height":803,"analyzed":true}	local	195269	GbqF9dTnXwpwAzM+/1nYTQ==	2022-07-03 01:41:22.047258
+1090	3gecxofdee0fug2kipp6nwb6yt3a	DSCF5838_cavar.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	161654	uPcaJh/yi5jQxqKWrmXGjQ==	2022-07-03 01:41:22.651179
+1091	zghy8xf6njsrp62sdv35qgv079n6	DSCF5843_clavant.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	133234	uR0iHMEBumgIY0Hsij8dEw==	2022-07-03 01:41:23.218535
+1092	t3xz6itlyrxweubgys2imq30qzw9	DSCF5849torre_lluvi_.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	116133	FXYb9k4X6wBe5pBUO8hDgQ==	2022-07-03 01:41:23.757132
+1093	agjfvv2tz5qryuynf2dhxk1g4bxk	IMG_20210827_195621_103agulles_al_pal.jpg	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	171695	q9FyIWJWdLgHmX2p1qCBVQ==	2022-07-03 01:41:24.360068
+1094	rlq99hz39hr1q2ve3h062f0m8rrm	P9650800_grup_estaques_i_estaques_fons.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	212657	pi9d6ma9g1g8aJmf0Wod3Q==	2022-07-03 01:41:25.001298
+1095	097cryr9nqtah44g3ogrvkrbbx15	IMG_20210829_084447_1amb_cam__.jpg	image/jpeg	{"identified":true,"width":506,"height":900,"analyzed":true}	local	115956	ybDrYaLcLwUzFTTcViE30g==	2022-07-03 01:41:25.436439
+1096	7yyfoukdr3kdxnjjh659tsy6d7wt	P9650824_caminet_i_pal_agulles.JPG	image/jpeg	{"identified":true,"width":1200,"height":900,"analyzed":true}	local	131148	QPExT5fVc73YiOzxw5Pjgg==	2022-07-03 01:41:25.955466
+1097	kba4vm6axt2xm86o3k2j2pm2tzhl	IMG_20210829_084622_1encaix.jpg	image/jpeg	{"identified":true,"width":1200,"height":675,"analyzed":true}	local	133034	vlsLzi5GDxVedFr2GrcYTQ==	2022-07-03 01:41:26.415321
+1098	epqzf6u7i4wgyh28h15oecrjigrr	DSC_0106-004.jpg	image/jpeg	{"identified":true,"width":1200,"height":803,"analyzed":true}	local	239072	/r7rPVFNogiW5vfaCwBtnQ==	2022-07-03 01:41:27.084522
+1099	jcokrihmyv2rep85p2f3q639pj7x	ZANTOP_-_4._Odumonde.JPG	image/jpeg	{"identified":true,"width":699,"height":900,"analyzed":true}	local	81376	up1y7NpymFsCCxOVekudFw==	2022-07-03 01:41:27.482562
+1100	4ddfuiirxroal7jyocybdg592q8r	ZANTOP_-_EQUILIBRIS.jpg	image/jpeg	{"identified":true,"width":563,"height":900,"analyzed":true}	local	45917	gf3PJmxEmWb/4c13k2Sd+w==	2022-07-03 01:41:27.762556
+1101	47sslnnacvvzuyh8sjk8zqdtozvg	ZANTOP_-_ESSENSETEMPO.jpg	image/jpeg	{"identified":true,"width":900,"height":675,"analyzed":true}	local	45479	GQ9cB26jmZiBAxB5cFnOaQ==	2022-07-03 01:41:28.15281
+1102	o0nne392e7mbx90of87gcfai28wp	ZANTOP_-_1._ATADALASALAS.jpg	image/jpeg	{"identified":true,"width":743,"height":900,"analyzed":true}	local	117381	VtYbqmyXPRf/8k8Q/4Oa/g==	2022-07-03 01:41:28.586215
+1103	tpetc68fkerx0ojgt9f2i7u4bjyb	ZANTOP_-_acord.jpg	image/jpeg	{"identified":true,"width":725,"height":900,"analyzed":true}	local	103985	dsiug64OqmFoJlzzUFp+EA==	2022-07-03 01:41:29.007753
+1104	1rnd90uya9upkcz8yxp2wabxffmh	ZANTOP_-_2._piet_.jpg	image/jpeg	{"identified":true,"width":758,"height":900,"analyzed":true}	local	121972	KWB/sszvKGLtITkQEWRhxg==	2022-07-03 01:41:29.546569
+1105	k2qol1id095gjityoo9u4am0ia6e	zantop_-_coeurage_.jpg	image/jpeg	{"identified":true,"width":769,"height":900,"analyzed":true}	local	50785	Vz1njqZcEQG65VDMm/37Rw==	2022-07-03 01:41:29.852801
+1108	t7ijau07gfgt065koy31kxz0p8c6	P1060009baixant_qualitatjpg.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	45960	7nMZnyQqy3EEGI6MxC/s4A==	2022-07-03 21:48:57.530012
+1107	0qqonvvpd4s08jinroxrtiuoo849	M.ZANTOP_phoscenes_TINTA_a4.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	21668	Mgy2OEArOopXqk9mMZsLVw==	2022-07-03 21:48:57.482848
+1110	ab9j3xepsa7o1mlcohgpwehcmcic	corpologia_25_5_Girona_2_retocada.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14732	ZfdyK0zokBUKwz7h/ztUtw==	2022-07-03 21:48:57.556897
+1109	qx7xvvvdnaqtehbrycx2w765j59d	cap_2_IMG_20190405_174933_504.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	43648	93NWuIy2SKkwTYWLZqDfRw==	2022-07-03 21:48:57.537824
+1111	s6rd5h3i9505wpwzzoivh1g556dc	20140706_164949.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	51010	n11N1et8jrWAD1bHw5w4Xw==	2022-07-03 21:48:58.064875
+1106	i0z53eni4kcb44bjyo9pogpsk11s	IMG_6115.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	26167	/qbWqwIZNWWmvLgB3yjO7w==	2022-07-03 21:48:57.416447
+1112	xaz3s502w75f2mmpl0amy449lpm1	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	1446	6eaIw+mMPauBq9ZUoh8qgQ==	2022-07-03 21:56:25.665949
+1114	b8qpkajoe4re7ifm7ja6wkradp9a	M.ZANTOP_phoscenes_P_TALS_A4.jpg	image/jpeg	{"identified":true,"width":100,"height":73,"analyzed":true}	local	1838	91jc02tpbQvZ+iBjaoTojA==	2022-07-03 21:56:25.976048
+1113	s9o7npz096c73usbubrqj0wneyl5	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	image/jpeg	{"identified":true,"width":100,"height":74,"analyzed":true}	local	1954	sGbJ6BBLmMzImUo9KjWbTA==	2022-07-03 21:56:25.961868
+1116	podjzon12rqqh6n3skoyrwafms63	M.ZANTOP_phoscenes_TINTA_a4.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2223	Z1IgVCQPAMjslMAgdVZsFQ==	2022-07-03 21:56:26.013205
+1115	itfg5yatd4s0ews4w596qn01y8o7	M.ZANTOP_phoscenes_aiguada_A4.jpg	image/jpeg	{"identified":true,"width":100,"height":70,"analyzed":true}	local	1633	I1zaueB1sbXGl2kAUYCVTg==	2022-07-03 21:56:26.001312
+1117	dt8sdwk1x5bmkfc0l0kt1a2rthay	M.ZANTOP_phoscenes._tinta_a4.jpg	image/jpeg	{"identified":true,"width":100,"height":72,"analyzed":true}	local	2258	2SUyQI5zx241A0DUYvT3DA==	2022-07-03 21:56:26.06652
+1118	hh5pzfz926z0pti35bnau9u95fbo	M.ZANTOP_phoscenes_mute_a5_.jpg	image/jpeg	{"identified":true,"width":100,"height":77,"analyzed":true}	local	1798	axC4uw/uPltTpLjxnEc+Xw==	2022-07-03 21:56:26.318557
+1119	nhk0lcu0hum1awp1ka63no2shcg3	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	1464	aLcSZ5nIA0Y2vUM+YuwpiA==	2022-07-03 21:56:26.421602
+1120	73jg5c4pgxae1x8vlah20e8ouyub	almost_finished.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	39563	yvewN7m2EIBH1Okj5Sm/rA==	2022-08-29 20:58:48.3338
+1121	yjtlsynhmpp63mgx5k4u4gsnjybi	Escultura_sadernes_ONA.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	54649	FM1TfJuaaAlQGoIC3dN0Xw==	2022-08-29 20:58:48.339431
+1122	kizgc2e8ko4iv6i5onix0mp1bpxe	inundart_ph_72ppi.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	23419	xBJUDu3BT+MI1AhDMdyddQ==	2022-08-29 20:58:48.342783
+1124	krs5ja2fdqkbe4cf708ds8bstc69	MIREIAZANTOP6.png	image/png	{"identified":true,"width":400,"height":400,"analyzed":true}	local	225870	1lyWpiOjzQAIEk6pr65Z0w==	2022-08-29 20:58:48.407643
+1123	7i0tai8mlfviqks9q0ovnse8l7mf	MIREIAZANTOP42.png	image/png	{"identified":true,"width":400,"height":400,"analyzed":true}	local	336333	KY7A15LCe479ZWIPFCsvjw==	2022-08-29 20:58:48.403824
+1125	2f8q7cour2val4f2k5ccifkz1g0x	IMG_20170519_184422.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	33869	fI3y3UpnlLknabrjM0opHg==	2022-08-29 20:58:48.844893
+1126	mjum6vp3rsjyroyksugvf6bb4y86	IMG_9772.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	23687	JxRQujUdfTPefCh+D7UeEg==	2022-08-29 21:11:21.440496
+1128	gil4k8nbuup6yriiky5y34dfn3nu	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	15298	mz2HvKf3Rf1V3EhFexGiXQ==	2022-08-29 22:36:10.200145
+1130	1wf04jdbxjkofns2xlxsgooho6ob	Cartell_ME_expo_cartells_2016.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	31738	zz9taWBnTyC9tipLTJNwIQ==	2022-08-29 22:36:10.234555
+1127	0750dzv56444u0sottou5tgopgii	eventuall0.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	30633	4G7lfaZmimwTKpwiNJG6Jg==	2022-08-29 22:36:10.195701
+1131	eb2t5rynueuyfizwfrzr8d3tvs6m	DSCF2590.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	36391	GARYvSRyYMGoFjb6xVLTeQ==	2022-08-29 22:36:10.264449
+1129	c5qt29zrjj3f3cndag466jv7vh7z	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	54056	p04DI6JS1VTge3bFenQa5g==	2022-08-29 22:36:10.211454
+1132	0dbjpx3ldne2ddwer8kmh5y2vxz3	IMG_1468.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	25641	3OaJZb9zksHYJ84gaV91VQ==	2022-08-29 22:36:10.692195
+1133	icxb6rox9dnkes7oxwqeclf1bjmi	IMG_6061.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14314	v7QZyhdqfS+3bdtpXHL+rQ==	2022-08-29 22:36:10.728082
+1135	3jhqs1r1s2i9ltjwsiaeoti7d3gg	IMG-20150128-WA0000.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	18354	MF3hdlnQ/nBvhvXdPbaGmw==	2022-08-29 22:36:10.840714
+1134	t2tbtd535g1m42dq3jfzk8yf2d1q	DSCF3668.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	21402	hzzzkwZffc9uSuuiCwtJLw==	2022-08-29 22:36:10.82867
+1136	t9si6z1s2hyzdt7eok4ysps6h89y	IMG_6760.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	21159	fqvsN+KIQt7Ee5pFoWy3+A==	2022-08-29 22:36:10.862112
+1137	xklw3npwzkywlq3pf9m85r8dp8ys	IMG_2324.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	16847	uJTKg0ZK0OpHgfmtTNJ/Hw==	2022-08-29 22:36:11.186518
+1139	ojnmzv3q19nkoonzmtsw9ztv68zy	cap_1_contrallumIMG_20190405_174610_478.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2475	l735cmpQGw6Pu/etrf3LRw==	2022-08-29 22:42:48.675351
+1141	0ebyrfljkw9p8v6f16kxm0mtxjvp	cap1_IMG_20190405_181244_013.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2862	aHUcmnIzVO7s0Kl/oW444w==	2022-08-29 22:42:48.683485
+1140	2mxxy2vh84kybj352rtqrdvu57ta	capcap_2.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2501	sE9d/YQdDxBI3I/cdBjvQA==	2022-08-29 22:42:48.678222
+1138	e1nuh5kv40gdjm5lzja3akh2scn9	cap_2_IMG_20190405_174933_504.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2675	cu2nZWZNv7CwSZjpWpOZug==	2022-08-29 22:42:48.672193
+1142	4359v2x1hc5wd4yvcjwbcsbqw9fo	IMG-20200924-WA0012.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3238	vTDYBRxbontMuFssgk0N2g==	2022-08-29 23:03:03.698943
+1143	zt38qodr8uhe3c5bw9uhufjar1pi	IMG_6115.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2504	bP8mkwi31rHUk5WWkTDrSA==	2022-08-29 23:03:03.711911
+1145	c9tkybx22z1wf1n417ycce3ecdb7	P1060009baixant_qualitatjpg.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3557	uLXkRlL/HCEW/RQQtWYOKA==	2022-08-29 23:03:03.721113
+1146	o7b9c7o7f0nu17i9ioeity5jkaug	MIREIAZANTOP42.png	image/png	{"identified":true,"width":100,"height":67,"analyzed":true}	local	12843	TUqRf2CyisorZj7KUSE5BQ==	2022-08-29 23:03:03.725463
+1148	ko63yh5hrvazybt6z0cbg7kez7qp	Cartell_ME_expo_cartells_2016.jpg	image/jpeg	{"identified":true,"width":64,"height":100,"analyzed":true}	local	3017	pAcqpxq9svgXXwHaPJ/kZg==	2022-08-29 23:03:04.133184
+1150	8n32od3x0cjxs3xomdv6lo62n0ht	MIREIAZANTOP6.png	image/png	{"identified":true,"width":100,"height":67,"analyzed":true}	local	11883	lBLABwjft+67ukFEquK+gw==	2022-08-29 23:03:04.140535
+1154	3ykodg98acyv9yjxhwrwnaorfm6u	IMG_2324.jpeg	image/jpeg	{"identified":true,"width":100,"height":56,"analyzed":true}	local	2349	eqK8dTxtDHqyUhzvjbyj/w==	2022-08-29 23:03:04.514248
+1156	ff5knfakiu17xsfsobrvxelvw3v6	eventuall0.jpeg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	2918	YOt0aTYXXl7Bh9jvAt0Ylw==	2022-08-29 23:03:04.538936
+1158	m4l5yl4t8e6je378tvrslsdn2tpp	IMG_2095.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1550	4slZ7J+dVZPNoRxVzkIGFw==	2022-08-29 23:03:04.880564
+1164	log12mfe47yeh46rv9hqmoo2dtu7	P1110547baixa.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2666	DyirwxnDSMYTlUeuCcuE/A==	2022-08-29 23:03:05.294744
+1169	apsqq4mt9ffrcngqd7wp6remol7a	tarja_birds.jpeg	image/jpeg	{"identified":true,"width":100,"height":71,"analyzed":true}	local	3383	QbE8CkkfICVWYWiqdUFXNQ==	2022-08-29 23:03:05.654452
+1174	s9qeb8m9mdntxmjxm2hjjj8tnhnp	fent_volar_coloms.jpg	image/jpeg	{"identified":true,"width":71,"height":100,"analyzed":true}	local	3748	nOQiRm23Vopx2n3pPuVBIg==	2022-08-29 23:03:06.076899
+1178	uw409l2dzor7myoz5qf8qoawbl0s	Possible_Foto.jpg	image/jpeg	{"identified":true,"width":100,"height":65,"analyzed":true}	local	2126	pca6W3Ky6q/C4nYD5jzQJg==	2022-08-29 23:03:06.506379
+1186	xupo8e0rkroii584xyc6re72e8pe	inici.jpg	image/jpeg	{"identified":true,"width":100,"height":100,"analyzed":true}	local	3383	m0WaZYFLr/0PBqqjbVQ1tg==	2022-08-29 23:03:06.972144
+1147	zt6u07h7pswv11q6ytaz94lvwjdx	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	image/jpeg	{"identified":true,"width":100,"height":57,"analyzed":true}	local	2442	Q1YlXAlqaDdybhAYmzQkxQ==	2022-08-29 23:03:04.128318
+1152	rhhmso0lfap6ec3i79xgyq9nn5ey	DSCF2590.jpg	image/jpeg	{"identified":true,"width":100,"height":83,"analyzed":true}	local	3282	3jmRaDMp4V+N7wh3s4782w==	2022-08-29 23:03:04.511738
+1157	0x8ndiwyu0nnnipy8dr9orl93p7g	IMG_6760.jpeg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	2033	O4ohQV79R7TbfijK1bgThg==	2022-08-29 23:03:04.833273
+1162	njlvvjvusu39866tdb4q5ed9r5j1	Captura_de_pantalla_de_2021-09-01_01-17-09.png	image/png	{"identified":true,"width":100,"height":56,"analyzed":true}	local	7927	qEFHVsIO/KzGoK87vbctxg==	2022-08-29 23:03:05.279549
+1171	ntrytwa6xokfile4vx4rwjxogbh9	DSC01109-102.jpeg	image/jpeg	{"identified":true,"width":100,"height":56,"analyzed":true}	local	2417	zYKQGZnGuSY0r+pezrM3VQ==	2022-08-29 23:03:05.728129
+1175	s09sqc792yekqg41znxe05jpksgo	DSC_0250.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2713	ILlYx+gtFSqMEWIGUXbGKQ==	2022-08-29 23:03:06.139187
+1181	4s1tidx57c67fim9xpvdy7o7sl3w	DSCF1204.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2235	JfhFWxeheV1+K5ZPzI0Urw==	2022-08-29 23:03:06.545973
+1183	t8q9gryqq8jkko7q62n5yxuq71vj	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2675	4hSTeHO4hi2NjEmOVcPCIw==	2022-08-29 23:03:06.890214
+1151	h30uwe2qj19wwv59fvas308ss891	IMG_9772.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	3338	mPs7/CWsnH/DgXSr4R0Z5A==	2022-08-29 23:03:04.145071
+1153	kstdgzpysmlvhiito724ykqsz04t	IMG_6061.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	1884	sqG0o0j3mOKUPqZ/HDRvdg==	2022-08-29 23:03:04.509079
+1160	3y5dudo0k1lwa835an8j0jnmf1rq	DSC_0037__copia_.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2856	A/g1iYb275GF1DEHz9zAGA==	2022-08-29 23:03:04.936513
+1165	nlvo9drzkct381tmw1n5z15cui3k	IMG-20210315-WA0017.jpg	image/jpeg	{"identified":true,"width":100,"height":57,"analyzed":true}	local	2560	meGRq4M+zomM5fx5XWsxnw==	2022-08-29 23:03:05.3188
+1167	1bu03mwiawantypd67fmu3sf523e	DSC_0037.jpeg	image/jpeg	{"identified":true,"width":100,"height":69,"analyzed":true}	local	1555	jdT0e816CW8PAiV9m4gibA==	2022-08-29 23:03:05.628483
+1172	fc3bemgk26hicepq3prlqrzrtace	DSC_0583.jpeg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	2000	F5LVT84uFGQjA+LwfWMoFg==	2022-08-29 23:03:06.057097
+1180	sxa3yien4sf01q0b27xezov5y61r	IMG-20190307-WA0001.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2770	rGjUGAmSFsF1yobjk0sSWQ==	2022-08-29 23:03:06.538366
+1185	klykldsywpshksx8j4auejthrhyy	IMGP1552.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2498	LX3MgRFmnu/Bwk+PpjodSw==	2022-08-29 23:03:06.947592
+1161	3d71zifndbjp1vml8id8sj5eir39	IMG_1468.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2531	E4aO+2sBnxMA9AgDv6CPtw==	2022-08-29 23:03:04.963328
+1166	yya045ldz7sbxihq22dvu95nw712	DSCF4623.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2873	L4+bFFm2OnBEGWl0K0vX8A==	2022-08-29 23:03:05.343721
+1170	mlv2mzlk57hhansk5syn9n4els03	despunxa1.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	3184	XJ4ddvcZ4JOfq2VwT/ANVw==	2022-08-29 23:03:05.707832
+1176	6onl9h9075cfcsymyygkvca8ft1j	generart25nov.jpg	image/jpeg	{"identified":true,"width":72,"height":100,"analyzed":true}	local	2825	CpdGUAO4NWkVrMwSLmPGhw==	2022-08-29 23:03:06.169008
+1179	878btw6oxvrsvco2bs46vq865wzp	DSC_0062GUT.jpeg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2528	drcq5oZJH2x6QAeni1kFRA==	2022-08-29 23:03:06.521647
+1182	06rf0xu120jd1neej2qov917727m	DSC02215.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	3128	x2rwuUvRTCECTIbqnp9EWw==	2022-08-29 23:03:06.826279
+1187	pc1n8x1xqbwli2jlor8ymn8tybbr	IMG-20200924-WA0012.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	38008	wNA1FFux2GDDTacYJuADHA==	2022-08-29 23:29:35.531216
+1190	bkafg7c8rpmio5z51q3f9l8i5xic	DSC_0037__copia_.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	42212	16guTDIoPUo/mwzkLrg5FQ==	2022-08-29 23:29:36.29845
+1194	8abilvzsdzbua7rdvtpq2ixxcp3m	tarja_birds.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	42004	Up5G5rm1ja5HvZjx0F96nw==	2022-08-29 23:29:36.841608
+1198	zfkd8lbvpmpewg6t5jywxufx8zq7	despunxa1.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32204	K4yxIOGzk6lTiWOaekguGQ==	2022-08-29 23:29:37.333375
+1205	zmdq2rf3r3fx4pqencsn3xcsdqdq	DSC05616bona.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	42830	L+ZIrD9h9PIIiJDuPTXnMA==	2022-08-29 23:29:37.799795
+1207	o0fglpevojvffsi8cmblwkxa260q	DSC_0062GUT.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	20201	wjMMmEaof0A9wUVYr0FgoQ==	2022-08-29 23:29:38.162404
+1215	0e72bijk51avtztoekmo70gps7xc	MZantop_4.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	25274	1vxijlELDbMCd2LShJ9nmQ==	2022-08-31 00:17:46.865702
+1218	htz1zkctsf7wqyir9uenwzi1c592	portada.sarria.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	40770	ZtAPWwzkPZiKzES8Tzg6Kw==	2022-09-01 20:09:18.913438
+1223	dupstuhfwrgzgbcxi1dj6bwic239	Mireia_Zantop__sin_rgia.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	29577	R/K97sQBc4qceCM5SyhSmw==	2022-09-01 20:09:22.380932
+1188	jpeqz5a2oiga41gyo5mptf4ic25h	Mireia_Zantop_Accio_.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	43081	08hTeSODCvRgpzukx9wRZA==	2022-08-29 23:29:36.261548
+1192	20rmh84ovvadbis6oitok5rz44zp	P1110547baixa.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22991	sktlUGyaiGMCHeNb1SXGSQ==	2022-08-29 23:29:36.73878
+1199	tq8b0r6y6mroxn8kzbhsbmlejgx9	DSC_0583.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	18077	Jihxuc/Vf/u54JDKKpNysA==	2022-08-29 23:29:37.344106
+1202	9rrr0phda6ibv65gqwsqrq53auvi	DSC_0250.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22353	okXGW5x+Doc13aCYrjZ9ag==	2022-08-29 23:29:37.771317
+1209	09vd288lpsk58nsjm4fy47fwj7co	DSC02215.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32266	noTKpvlu4l2vAD/yyqTrvw==	2022-08-29 23:29:38.22745
+1216	ktogcqqiz2lhgjogvlyfbuefbjfd	DSCF1045.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22360	sWAM3gby6mfcFW7Rt4J21w==	2022-08-31 00:17:46.868706
+1219	q7e4ylf0fvvgfgcd2dmwr4c7qvkx	1_Alguien_camina...jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	20424	fzwNscwHAZVTb72VviWzYg==	2022-09-01 20:09:18.917163
+1225	rs8o7b3xlczb6krptkec66ql5k5i	constelacciones_2008.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	26006	DNuGfhViZ/TARfpn+67hTw==	2022-09-01 20:09:22.41049
+1189	x33j3h4twhd3wli6j3akw35ih2zs	IMG_2095.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	10317	sDstU3RRo14tapa0fxs3iA==	2022-08-29 23:29:36.269736
+1193	ugon4i7qi2aehy9bamggr7liffu3	DSC01109-102.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	19449	v7rPRHEQJ8Uk4v9X99Y9RA==	2022-08-29 23:29:36.758598
+1197	uk48g4vhikk6omfq5rjqaawbxmrl	DSC_0037.jpeg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	8976	E+Zj0gTyqnPfCweFiVjYHQ==	2022-08-29 23:29:37.244934
+1203	xyxflavu5zyvcgsdte3agfy4beal	Possible_Foto.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	16887	C/nYuKBiT7CBAj7szbRFPg==	2022-08-29 23:29:37.784648
+1210	hmhmzo96fz0bi20wj8gstylxt574	DSCF1204.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	16789	n5Vqojz2p9ROy9VG5UOs5w==	2022-08-29 23:29:38.261248
+1212	1e8z4rtjhultnljl18jc6r0l5ymt	IMGP1552.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	24258	r4pifNRnsML7RtTxEYI8Aw==	2022-08-29 23:29:38.591866
+1217	qz9izk7ok7cwm1ga85qgaevsz8u1	ZANTOP_-_4._Odumonde.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	24265	+wEd7PRQzuiknH2zMP9ooQ==	2022-08-31 00:17:46.872883
+1220	qfazqj7y1c63n1hsiz5vzwwk3uo9	DSCN1209_2.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	19092	RoMJAM4oONkqrI6P3210Ow==	2022-09-01 20:09:18.921592
+1222	ybsda7khv3dkl5yyry67drwn0vsk	Instal.laci__monos_labos.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	15467	c8Na1ONe7k9vOgl3AOSUFA==	2022-09-01 20:09:22.371706
+1227	lz7tjxt74urm30gywa4orbppwlfc	sala_ruinas2.2.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	12114	9kXbdNgiq2PAlfTQLNQ+3g==	2022-09-01 20:09:22.75976
+1191	o2s7b3b7aa2n0ejsplz0vdracjgb	IMG-20210315-WA0017.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	56989	HDHcms78Byus7k30L66utg==	2022-08-29 23:29:36.302421
+1195	4wh10qao0hv6wrrtnf5s56l1x4h3	Programa_Perpetraci_ns_Interior.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	49145	T4Gx42lFt+HvlbLYpqrafw==	2022-08-29 23:29:36.873394
+1201	iv9e3bsbasji75ehsdn6r4jg3z2f	generart25nov.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	35279	KGh/z1x0WMnETb7cbue05Q==	2022-08-29 23:29:37.518648
+1206	ds0vee7h6k4nr7slo3ajkyeck2z3	IMG-20190307-WA0001.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22021	gM/2K8HfHFEqZXYPOtpM7w==	2022-08-29 23:29:37.919658
+1211	72qavfgw7mxiuc4x8bnd6cdfeihp	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	26507	78wzFu+d0VXGQTwnK4gkww==	2022-08-29 23:29:38.309547
+1214	x45lvvq1anu6xyjgwartbfwd5bw5	fent_volar_coloms.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	48390	QBivyjDgBFeVzA78HYOolw==	2022-08-29 23:29:38.621783
+1221	sidvpouli59163ht8anz4tr8vj8o	DSC03862.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	22198	HaQNMVqxSDQSrJ2mnbU5GA==	2022-09-01 20:09:22.333131
+1226	xuilm4m6b89kbmj3h5h8hy0ghda3	DSCF5838_cavar.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	30956	XpwoGcz+oU+gUk7rCNUK9g==	2022-09-01 20:09:22.754968
+1196	30r7fmzuoo7htietowitqztxomex	Captura_de_pantalla_de_2021-09-01_01-17-09.png	image/png	{"identified":true,"width":400,"height":400,"analyzed":true}	local	133851	VycuqKvOOYsqKL8WY8gRvw==	2022-08-29 23:29:36.906931
+1200	oeik9oeyupcjizhj2l00fokn72t6	DSCF4623.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32115	uTy5qw+PPELoRVhuuqOgxg==	2022-08-29 23:29:37.35917
+1204	bnz0sjehls38qain6fi5opjvc9w2	_MG_3737.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14663	nTjxwLwEWyMutAP1Sz1t7g==	2022-08-29 23:29:37.794708
+1208	ec8kbvag31hktao2yxiibhbq0azg	inici.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	23158	KwtuHDkJJzjBh0a2htH9+w==	2022-08-29 23:29:38.20796
+1213	hcshdxyxovm1ey9n5v65hi8264vc	Mireia.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	18350	YvS4MUfnZp4dehWzDZ6unA==	2022-08-29 23:29:38.608032
+1224	65qm2ipl305frolzlvcg25dgvytu	09-La_Bodega_Rustica.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	33467	n1/DArNjC2t2nrNrOlfe5g==	2022-09-01 20:09:22.402982
+1228	3iv45j2hulft859evz3y4tjarmum	IMG_20180928_164827.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	14235	RJMDIln2ZvhSYTWXx/7KsQ==	2022-09-01 20:09:25.895365
+1229	1cj5jduamyxrtfc35pfmg1a3wy4s	_20191228_100620.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	32045	7jyALx5ukm+yu7cnFkNelQ==	2022-09-01 21:15:39.170536
+1230	0rhhk453qeohgry1bugrdnjhmyrf	separ_2014.4sala_AUDITORIO.jpg	image/jpeg	{"identified":true,"width":400,"height":400,"analyzed":true}	local	21721	Zg7jRl6EePveZp02PR0HxA==	2022-09-01 21:15:39.396143
+1231	3vw74jhdutxvf58yy0tzju5y473m	IMG_20191225_133646_151.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2185	dm/NUCaqXfFZAVJREGzLuw==	2022-09-01 23:41:44.528881
+1232	e8fgzn2ijgpg5t49ktniriim28rj	IMG_20191225_132357_968.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2621	JeMRhPz/GDRIo/QEpJPWxw==	2022-09-01 23:41:44.535306
+1233	ij6r75io74ahhpertlzcimhu2mpf	IMG_20190831_132411_157.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3262	P3utZABPQJq7xrKJGN7GQw==	2022-09-01 23:41:44.540981
+1234	i678fl9bvitybnyfdo079s1r09qu	_20191228_100620.jpg	image/jpeg	{"identified":true,"width":76,"height":100,"analyzed":true}	local	2685	uumUgofb9BtWCR17cniH9w==	2022-09-01 23:41:44.550056
+1235	n39xgnngkss2b4ryozz7pfay3i4s	IMG_20201016_172309.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2839	EoBMnUGi8HWq546xN1r0Kg==	2022-09-02 00:03:42.569438
+1240	6gacuqv9dk3km53bwjyri9kj0m3d	des_cuidar_accionant_IMG-20200308-WA0020.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3848	jkZgO3DnPlX3LRdBtXYJkw==	2022-09-02 00:03:43.010257
+1236	2wjmi7xlqu59cgpnnzl28nplrgcu	IMG_20200308_180723_115.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2380	l7iUE8WUkSpMkVRGy66SHQ==	2022-09-02 00:03:42.573788
+1237	885tn757yea82f2ydln3cfy2wpct	IMG-20200924-WA0005.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	2687	EGY8fva9NSV4JDihx0HA2A==	2022-09-02 00:03:42.576307
+1238	vimlk6prehgkd7c4ryxheoduvx96	IMG-20200308-WA0039.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2713	T/WndxxsyTSGZiF3y/D9Pg==	2022-09-02 00:03:42.579406
+1239	0y6ay65b2d2g4nnb9rquq0dlyens	__retocat.jpg	image/jpeg	{"identified":true,"width":75,"height":100,"analyzed":true}	local	2224	nVtW3dUWVV+s8gaPKXGokQ==	2022-09-02 00:03:42.588986
+1144	8nx50fhpfufn0qmllbu6c3yju4xe	corpologia_25_5_Girona_2_retocada.jpeg	image/jpeg	{"identified":true,"width":100,"height":66,"analyzed":true}	local	1797	CWDBqnEJaLyNSDGk8IcnPg==	2022-08-29 23:03:03.718015
+1149	it88bly42oob3eq2fvkrlrrr045f	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	image/jpeg	{"identified":true,"width":67,"height":100,"analyzed":true}	local	1696	2iujtVQPvO2Hi0JJ1boiTg==	2022-08-29 23:03:04.137643
+1155	xb5uouikvyucvwaywgw46s4xt80l	IMG-20150128-WA0000.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	3001	t1YvyZFhEFiU2v42JbIr2g==	2022-08-29 23:03:04.534864
+1159	lrx1w6vxgl9ti6wkhc7frx5j13sv	Mireia_Zantop_Accio_.jpg	image/jpeg	{"identified":true,"width":100,"height":57,"analyzed":true}	local	2839	NbZdTV/qKL1rMIFLtjJMyQ==	2022-08-29 23:03:04.900073
+1163	2xanoapgogg4ohzeum5ze8wjuq88	IMG_20170519_184422.jpg	image/jpeg	{"identified":true,"width":100,"height":74,"analyzed":true}	local	2355	cczq0CFNHu9DBk47KUnEVg==	2022-08-29 23:03:05.283213
+1168	jwj81k7w2nyylmlm7n8ayjnl677i	Programa_Perpetraci_ns_Interior.jpg	image/jpeg	{"identified":true,"width":72,"height":100,"analyzed":true}	local	3262	+EQhNeQLXHDjjAQhGbdFVg==	2022-08-29 23:03:05.646745
+1173	55iy2vux2fde4jn56druriix4n6x	_MG_3737.jpg	image/jpeg	{"identified":true,"width":72,"height":100,"analyzed":true}	local	2162	moXK7wkHZtSl4n5syvvrAg==	2022-08-29 23:03:06.07213
+1177	ziffc7uv7kef7z416tphox82z512	DSC05616bona.jpg	image/jpeg	{"identified":true,"width":100,"height":75,"analyzed":true}	local	4023	7e4fIUEtxYpfsBs4bQFF1w==	2022-08-29 23:03:06.423495
+1184	o8nlv2iarly6qz067j88y998gv4i	Mireia.jpg	image/jpeg	{"identified":true,"width":100,"height":67,"analyzed":true}	local	2475	YSt4s1WIYXMSEmCCuTbmdA==	2022-08-29 23:03:06.938407
 \.
 
 
@@ -29,6 +572,541 @@ COPY public.active_storage_blobs (id, key, filename, content_type, metadata, ser
 --
 
 COPY public.active_storage_attachments (id, name, record_type, record_id, blob_id, created_at) FROM stdin;
+706	image	Image	3	706	2022-07-03 01:36:14.341448
+707	image	Image	4	707	2022-07-03 01:36:14.698412
+708	image	Image	5	708	2022-07-03 01:36:14.9416
+709	image	Image	6	709	2022-07-03 01:36:15.13556
+710	image	Image	7	710	2022-07-03 01:36:15.598733
+711	image	Image	10	711	2022-07-03 01:36:16.043005
+712	image	Image	12	712	2022-07-03 01:36:16.28429
+713	image	Image	14	713	2022-07-03 01:36:16.674289
+714	image	Image	15	714	2022-07-03 01:36:17.074499
+715	image	Image	16	715	2022-07-03 01:36:17.482488
+716	image	Image	17	716	2022-07-03 01:36:17.771951
+717	image	Image	18	717	2022-07-03 01:36:18.081834
+718	image	Image	19	718	2022-07-03 01:36:18.498368
+719	image	Image	20	719	2022-07-03 01:36:18.764338
+720	image	Image	21	720	2022-07-03 01:36:19.036266
+721	image	Image	22	721	2022-07-03 01:36:19.515344
+722	image	Image	23	722	2022-07-03 01:36:20.16389
+723	image	Image	24	723	2022-07-03 01:36:20.506555
+724	image	Image	25	724	2022-07-03 01:36:20.821454
+725	image	Image	26	725	2022-07-03 01:36:21.199434
+726	image	Image	27	726	2022-07-03 01:36:21.528211
+727	image	Image	28	727	2022-07-03 01:36:21.867089
+728	image	Image	29	728	2022-07-03 01:36:22.384668
+729	image	Image	30	729	2022-07-03 01:36:22.601028
+730	image	Image	31	730	2022-07-03 01:36:22.864779
+731	image	Image	32	731	2022-07-03 01:36:23.190937
+732	image	Image	33	732	2022-07-03 01:36:23.506212
+733	image	Image	34	733	2022-07-03 01:36:23.789618
+734	image	Image	35	734	2022-07-03 01:36:24.08156
+735	image	Image	36	735	2022-07-03 01:36:24.483114
+736	image	Image	37	736	2022-07-03 01:36:24.789657
+737	image	Image	38	737	2022-07-03 01:36:25.190732
+738	image	Image	40	738	2022-07-03 01:36:25.479411
+739	image	Image	41	739	2022-07-03 01:36:25.734305
+740	image	Image	42	740	2022-07-03 01:36:26.067972
+741	image	Image	43	741	2022-07-03 01:36:26.380703
+742	image	Image	44	742	2022-07-03 01:36:26.691834
+743	image	Image	45	743	2022-07-03 01:36:26.940412
+744	image	Image	46	744	2022-07-03 01:36:27.338677
+745	image	Image	47	745	2022-07-03 01:36:27.514443
+746	image	Image	48	746	2022-07-03 01:36:27.968168
+747	image	Image	49	747	2022-07-03 01:36:28.422914
+748	image	Image	50	748	2022-07-03 01:36:28.879598
+749	image	Image	51	749	2022-07-03 01:36:29.340787
+750	image	Image	52	750	2022-07-03 01:36:29.775668
+751	image	Image	55	751	2022-07-03 01:36:30.146258
+752	image	Image	56	752	2022-07-03 01:36:30.474922
+753	image	Image	57	753	2022-07-03 01:36:30.818216
+754	image	Image	58	754	2022-07-03 01:36:31.26559
+755	image	Image	59	755	2022-07-03 01:36:31.659837
+756	image	Image	60	756	2022-07-03 01:36:31.866543
+757	image	Image	61	757	2022-07-03 01:36:32.024894
+758	image	Image	62	758	2022-07-03 01:36:32.222318
+759	image	Image	63	759	2022-07-03 01:36:32.50626
+760	image	Image	64	760	2022-07-03 01:36:32.665175
+761	image	Image	65	761	2022-07-03 01:36:32.809567
+762	image	Image	66	762	2022-07-03 01:36:32.998995
+763	image	Image	68	763	2022-07-03 01:36:33.137141
+764	image	Image	69	764	2022-07-03 01:36:33.316996
+765	image	Image	70	765	2022-07-03 01:36:33.49857
+766	image	Image	71	766	2022-07-03 01:36:33.65568
+767	image	Image	72	767	2022-07-03 01:36:33.832518
+768	image	Image	73	768	2022-07-03 01:36:34.07049
+769	image	Image	75	769	2022-07-03 01:36:34.235493
+770	image	Image	76	770	2022-07-03 01:36:34.419942
+771	image	Image	77	771	2022-07-03 01:36:34.615769
+772	image	Image	78	772	2022-07-03 01:36:34.789776
+773	image	Image	79	773	2022-07-03 01:36:34.960174
+774	image	Image	80	774	2022-07-03 01:36:35.130893
+775	image	Image	85	775	2022-07-03 01:36:35.433774
+776	image	Image	86	776	2022-07-03 01:36:35.586179
+777	image	Image	89	777	2022-07-03 01:36:35.730777
+778	image	Image	91	778	2022-07-03 01:36:36.153724
+779	image	Image	92	779	2022-07-03 01:36:36.483424
+780	image	Image	93	780	2022-07-03 01:36:36.843963
+781	image	Image	94	781	2022-07-03 01:36:37.436421
+782	image	Image	95	782	2022-07-03 01:36:37.929184
+783	image	Image	96	783	2022-07-03 01:36:38.308792
+784	image	Image	97	784	2022-07-03 01:36:38.769881
+785	image	Image	98	785	2022-07-03 01:36:39.184432
+786	image	Image	99	786	2022-07-03 01:36:39.570427
+787	image	Image	102	787	2022-07-03 01:36:40.085859
+788	image	Image	103	788	2022-07-03 01:36:40.545648
+789	image	Image	104	789	2022-07-03 01:36:40.988298
+790	image	Image	105	790	2022-07-03 01:36:41.493298
+791	image	Image	106	791	2022-07-03 01:36:41.972956
+792	image	Image	107	792	2022-07-03 01:36:42.361475
+793	image	Image	108	793	2022-07-03 01:36:42.932557
+794	image	Image	109	794	2022-07-03 01:36:43.513335
+795	image	Image	111	795	2022-07-03 01:36:43.761526
+796	image	Image	126	796	2022-07-03 01:36:44.203965
+797	image	Image	127	797	2022-07-03 01:36:44.534995
+798	image	Image	128	798	2022-07-03 01:36:44.810955
+799	image	Image	129	799	2022-07-03 01:36:45.116161
+800	image	Image	130	800	2022-07-03 01:36:45.405632
+801	image	Image	131	801	2022-07-03 01:36:45.639494
+802	image	Image	132	802	2022-07-03 01:36:45.845706
+803	image	Image	133	803	2022-07-03 01:36:46.1086
+804	image	Image	134	804	2022-07-03 01:36:46.615021
+805	image	Image	135	805	2022-07-03 01:36:47.032194
+806	image	Image	136	806	2022-07-03 01:36:47.392834
+807	image	Image	137	807	2022-07-03 01:36:47.80675
+808	image	Image	138	808	2022-07-03 01:36:48.142635
+809	image	Image	139	809	2022-07-03 01:36:48.522225
+810	image	Image	140	810	2022-07-03 01:36:48.882668
+811	image	Image	141	811	2022-07-03 01:36:49.194332
+812	image	Image	142	812	2022-07-03 01:36:49.51661
+813	image	Image	143	813	2022-07-03 01:36:49.784995
+814	image	Image	144	814	2022-07-03 01:36:50.188918
+815	image	Image	146	815	2022-07-03 01:36:50.403866
+816	image	Image	147	816	2022-07-03 01:36:50.614848
+817	image	Image	148	817	2022-07-03 01:36:50.859648
+818	image	Image	149	818	2022-07-03 01:36:51.155632
+819	image	Image	150	819	2022-07-03 01:36:51.351295
+820	image	Image	151	820	2022-07-03 01:36:51.573204
+821	image	Image	152	821	2022-07-03 01:36:51.815323
+822	image	Image	156	822	2022-07-03 01:36:52.240685
+823	image	Image	157	823	2022-07-03 01:36:52.908985
+824	image	Image	158	824	2022-07-03 01:36:53.385875
+825	image	Image	159	825	2022-07-03 01:36:53.899724
+826	image	Image	160	826	2022-07-03 01:36:54.366587
+827	image	Image	161	827	2022-07-03 01:36:54.795259
+828	image	Image	162	828	2022-07-03 01:36:55.138872
+829	image	Image	163	829	2022-07-03 01:36:55.508481
+830	image	Image	164	830	2022-07-03 01:36:55.8881
+831	image	Image	165	831	2022-07-03 01:36:56.372143
+832	image	Image	167	832	2022-07-03 01:36:56.761369
+833	image	Image	168	833	2022-07-03 01:36:57.212541
+834	image	Image	169	834	2022-07-03 01:36:57.346596
+835	image	Image	170	835	2022-07-03 01:36:57.54506
+836	image	Image	171	836	2022-07-03 01:36:57.725854
+837	image	Image	172	837	2022-07-03 01:36:57.862677
+838	image	Image	173	838	2022-07-03 01:36:58.066151
+839	image	Image	174	839	2022-07-03 01:36:58.190125
+840	image	Image	175	840	2022-07-03 01:36:58.324696
+841	image	Image	176	841	2022-07-03 01:36:58.439637
+842	image	Image	177	842	2022-07-03 01:36:58.558389
+843	image	Image	178	843	2022-07-03 01:36:58.996765
+844	image	Image	179	844	2022-07-03 01:36:59.528083
+845	image	Image	180	845	2022-07-03 01:37:00.014103
+846	image	Image	181	846	2022-07-03 01:37:00.61074
+847	image	Image	182	847	2022-07-03 01:37:01.014637
+848	image	Image	183	848	2022-07-03 01:37:01.402488
+849	image	Image	184	849	2022-07-03 01:37:01.988874
+850	image	Image	185	850	2022-07-03 01:37:02.203938
+851	image	Image	186	851	2022-07-03 01:37:02.449514
+852	image	Image	187	852	2022-07-03 01:37:02.714442
+853	image	Image	188	853	2022-07-03 01:37:02.888318
+854	image	Image	189	854	2022-07-03 01:37:03.050917
+855	image	Image	190	855	2022-07-03 01:37:03.259975
+856	image	Image	191	856	2022-07-03 01:37:03.423948
+857	image	Image	192	857	2022-07-03 01:37:03.586062
+858	image	Image	193	858	2022-07-03 01:37:03.743384
+859	image	Image	194	859	2022-07-03 01:37:03.939157
+860	image	Image	195	860	2022-07-03 01:37:04.236089
+861	image	Image	196	861	2022-07-03 01:37:04.611848
+862	image	Image	197	862	2022-07-03 01:37:05.216099
+863	image	Image	198	863	2022-07-03 01:37:05.820373
+864	image	Image	199	864	2022-07-03 01:37:06.458294
+865	image	Image	200	865	2022-07-03 01:37:07.026023
+866	image	Image	201	866	2022-07-03 01:37:07.712258
+867	image	Image	204	867	2022-07-03 01:37:07.90902
+868	image	Image	205	868	2022-07-03 01:37:08.069323
+869	image	Image	206	869	2022-07-03 01:37:08.246014
+870	image	Image	207	870	2022-07-03 01:37:08.437986
+871	image	Image	208	871	2022-07-03 01:37:08.608084
+872	image	Image	210	872	2022-07-03 01:37:08.762835
+873	image	Image	211	873	2022-07-03 01:37:09.02823
+874	image	Image	212	874	2022-07-03 01:37:09.153874
+875	image	Image	213	875	2022-07-03 01:37:09.293425
+876	image	Image	214	876	2022-07-03 01:37:09.435797
+877	image	Image	215	877	2022-07-03 01:37:09.585992
+878	image	Image	216	878	2022-07-03 01:37:09.801717
+879	image	Image	217	879	2022-07-03 01:37:09.942514
+880	image	Image	218	880	2022-07-03 01:37:10.085263
+881	image	Image	219	881	2022-07-03 01:37:10.2272
+882	image	Image	220	882	2022-07-03 01:37:10.364009
+883	image	Image	221	883	2022-07-03 01:37:10.589131
+884	image	Image	222	884	2022-07-03 01:37:10.996789
+885	image	Image	223	885	2022-07-03 01:37:11.450933
+886	image	Image	224	886	2022-07-03 01:37:12.035699
+887	image	Image	225	887	2022-07-03 01:37:12.612929
+888	image	Image	226	888	2022-07-03 01:37:13.110477
+889	image	Image	227	889	2022-07-03 01:37:13.811988
+890	image	Image	228	890	2022-07-03 01:37:14.378745
+891	image	Image	229	891	2022-07-03 01:37:14.597672
+892	image	Image	230	892	2022-07-03 01:37:14.853038
+893	image	Image	231	893	2022-07-03 01:37:15.192868
+894	image	Image	232	894	2022-07-03 01:37:15.585894
+895	image	Image	233	895	2022-07-03 01:37:15.913726
+896	image	Image	234	896	2022-07-03 01:37:16.161195
+897	image	Image	235	897	2022-07-03 01:37:16.38056
+898	image	Image	236	898	2022-07-03 01:37:16.738
+899	image	Image	237	899	2022-07-03 01:37:17.021545
+900	image	Image	238	900	2022-07-03 01:37:17.285596
+901	image	Image	239	901	2022-07-03 01:37:17.540305
+902	image	Image	240	902	2022-07-03 01:37:17.905474
+903	image	Image	241	903	2022-07-03 01:37:18.24031
+904	image	Image	242	904	2022-07-03 01:37:18.699146
+905	image	Image	243	905	2022-07-03 01:37:19.036314
+906	image	Image	244	906	2022-07-03 01:37:19.40575
+907	image	Image	245	907	2022-07-03 01:37:19.723743
+908	image	Image	246	908	2022-07-03 01:37:19.986911
+909	image	Image	247	909	2022-07-03 01:37:20.215882
+910	image	Image	248	910	2022-07-03 01:37:20.575133
+911	image	Image	249	911	2022-07-03 01:37:20.886607
+912	image	Image	250	912	2022-07-03 01:37:21.163277
+913	image	Image	251	913	2022-07-03 01:37:21.540052
+914	image	Image	252	914	2022-07-03 01:37:21.957952
+915	image	Image	253	915	2022-07-03 01:37:22.278638
+916	image	Image	254	916	2022-07-03 01:37:22.462353
+917	image	Image	255	917	2022-07-03 01:37:22.701546
+918	image	Image	256	918	2022-07-03 01:37:23.008804
+919	image	Image	257	919	2022-07-03 01:37:23.199941
+920	image	Image	258	920	2022-07-03 01:37:23.418781
+921	image	Image	259	921	2022-07-03 01:37:23.667284
+922	image	Image	260	922	2022-07-03 01:37:23.999088
+923	image	Image	261	923	2022-07-03 01:37:24.328639
+924	image	Image	262	924	2022-07-03 01:37:24.642973
+925	image	Image	263	925	2022-07-03 01:37:24.932095
+926	image	Image	264	926	2022-07-03 01:37:25.296609
+927	image	Image	265	927	2022-07-03 01:37:25.567832
+928	image	Image	266	928	2022-07-03 01:37:25.830062
+929	image	Image	267	929	2022-07-03 01:37:26.12231
+930	image	Image	268	930	2022-07-03 01:37:26.569729
+931	image	Image	269	931	2022-07-03 01:37:27.085028
+932	image	Image	270	932	2022-07-03 01:37:27.529544
+933	image	Image	271	933	2022-07-03 01:37:27.992508
+934	image	Image	272	934	2022-07-03 01:37:28.486625
+935	image	Image	273	935	2022-07-03 01:37:29.042997
+936	image	Image	274	936	2022-07-03 01:37:29.396963
+937	image	Image	275	937	2022-07-03 01:37:29.753949
+938	image	Image	276	938	2022-07-03 01:37:30.075051
+939	image	Image	277	939	2022-07-03 01:37:30.358876
+940	image	Image	278	940	2022-07-03 01:37:31.029923
+941	image	Image	279	941	2022-07-03 01:37:31.480034
+942	image	Image	280	942	2022-07-03 01:37:32.020168
+943	image	Image	281	943	2022-07-03 01:37:32.39584
+944	image	Image	282	944	2022-07-03 01:38:44.507911
+945	image	Image	283	945	2022-07-03 01:38:44.9531
+946	image	Image	284	946	2022-07-03 01:38:45.339512
+947	image	Image	285	947	2022-07-03 01:38:45.712441
+948	image	Image	286	948	2022-07-03 01:38:46.146334
+949	image	Image	287	949	2022-07-03 01:38:46.523157
+950	image	Image	288	950	2022-07-03 01:38:46.950618
+951	image	Image	289	951	2022-07-03 01:38:47.334838
+952	image	Image	290	952	2022-07-03 01:38:47.695953
+953	image	Image	291	953	2022-07-03 01:38:48.103595
+954	image	Image	292	954	2022-07-03 01:38:48.474006
+955	image	Image	293	955	2022-07-03 01:38:48.71372
+956	image	Image	294	956	2022-07-03 01:38:49.307505
+957	image	Image	295	957	2022-07-03 01:38:49.793941
+958	image	Image	296	958	2022-07-03 01:38:50.266582
+959	image	Image	297	959	2022-07-03 01:39:19.218604
+960	image	Image	298	960	2022-07-03 01:39:19.671785
+961	image	Image	299	961	2022-07-03 01:39:20.07822
+962	image	Image	300	962	2022-07-03 01:39:20.396266
+963	image	Image	301	963	2022-07-03 01:39:20.736515
+964	image	Image	302	964	2022-07-03 01:39:21.171587
+965	image	Image	303	965	2022-07-03 01:39:21.434599
+966	image	Image	304	966	2022-07-03 01:39:21.734422
+967	image	Image	305	967	2022-07-03 01:39:22.141224
+968	image	Image	306	968	2022-07-03 01:39:22.556499
+969	image	Image	307	969	2022-07-03 01:39:22.990967
+970	image	Image	308	970	2022-07-03 01:39:23.460189
+971	image	Image	309	971	2022-07-03 01:39:23.91986
+972	image	Image	310	972	2022-07-03 01:39:24.430068
+973	image	Image	311	973	2022-07-03 01:39:24.700908
+974	image	Image	312	974	2022-07-03 01:39:24.987476
+975	image	Image	313	975	2022-07-03 01:39:25.131017
+976	image	Image	314	976	2022-07-03 01:39:25.305145
+977	image	Image	315	977	2022-07-03 01:39:25.714054
+978	image	Image	316	978	2022-07-03 01:39:26.077502
+979	image	Image	317	979	2022-07-03 01:39:26.645927
+980	image	Image	319	980	2022-07-03 01:39:27.089564
+981	image	Image	320	981	2022-07-03 01:39:27.573136
+982	image	Image	321	982	2022-07-03 01:39:27.847913
+983	image	Image	322	983	2022-07-03 01:39:28.129891
+984	image	Image	323	984	2022-07-03 01:39:28.525301
+985	image	Image	324	985	2022-07-03 01:39:28.806305
+986	image	Image	325	986	2022-07-03 01:39:29.054909
+987	image	Image	326	987	2022-07-03 01:39:29.467052
+988	image	Image	327	988	2022-07-03 01:39:29.803705
+989	image	Image	328	989	2022-07-03 01:39:30.186332
+990	image	Image	330	990	2022-07-03 01:39:30.560027
+991	image	Image	334	991	2022-07-03 01:39:30.924908
+992	image	Image	335	992	2022-07-03 01:39:31.251741
+993	image	Image	336	993	2022-07-03 01:39:31.534321
+994	image	Image	337	994	2022-07-03 01:39:31.792758
+995	image	Image	338	995	2022-07-03 01:39:32.140276
+996	image	Image	339	996	2022-07-03 01:39:32.353594
+997	image	Image	340	997	2022-07-03 01:39:32.567787
+998	image	Image	341	998	2022-07-03 01:39:32.798806
+999	image	Image	342	999	2022-07-03 01:39:33.034939
+1000	image	Image	343	1000	2022-07-03 01:39:33.279449
+1001	image	Image	344	1001	2022-07-03 01:39:33.55263
+1002	image	Image	345	1002	2022-07-03 01:39:33.81816
+1003	image	Image	346	1003	2022-07-03 01:39:34.087038
+1004	image	Image	347	1004	2022-07-03 01:39:34.558486
+1005	image	Image	348	1005	2022-07-03 01:39:35.266701
+1006	image	Image	349	1006	2022-07-03 01:39:35.764146
+1007	image	Image	350	1007	2022-07-03 01:39:36.463816
+1008	image	Image	351	1008	2022-07-03 01:39:36.913985
+1009	image	Image	352	1009	2022-07-03 01:39:37.467609
+1010	image	Image	353	1010	2022-07-03 01:39:38.133204
+1011	image	Image	354	1011	2022-07-03 01:39:38.674277
+1012	image	Image	355	1012	2022-07-03 01:39:39.276063
+1013	image	Image	356	1013	2022-07-03 01:39:39.868354
+1014	image	Image	357	1014	2022-07-03 01:39:40.569111
+1015	image	Image	358	1015	2022-07-03 01:39:41.424968
+1016	image	Image	359	1016	2022-07-03 01:39:41.802908
+1017	image	Image	360	1017	2022-07-03 01:39:42.208578
+1018	image	Image	361	1018	2022-07-03 01:39:42.50511
+1019	image	Image	362	1019	2022-07-03 01:39:42.900534
+1020	image	Image	363	1020	2022-07-03 01:39:43.204554
+1021	image	Image	364	1021	2022-07-03 01:39:43.459076
+1022	image	Image	365	1022	2022-07-03 01:39:44.046046
+1023	image	Image	366	1023	2022-07-03 01:39:44.444373
+1024	image	Image	367	1024	2022-07-03 01:39:44.863975
+1025	image	Image	368	1025	2022-07-03 01:39:45.181698
+1026	image	Image	369	1026	2022-07-03 01:39:45.43393
+1027	image	Image	370	1027	2022-07-03 01:39:45.698939
+1028	image	Image	371	1028	2022-07-03 01:39:46.099462
+1029	image	Image	372	1029	2022-07-03 01:39:46.516636
+1030	image	Image	373	1030	2022-07-03 01:39:46.907327
+1031	image	Image	374	1031	2022-07-03 01:39:47.224714
+1032	image	Image	375	1032	2022-07-03 01:39:47.613107
+1033	image	Image	376	1033	2022-07-03 01:39:48.050957
+1034	image	Image	377	1034	2022-07-03 01:39:48.476828
+1035	image	Image	378	1035	2022-07-03 01:39:48.821707
+1036	image	Image	379	1036	2022-07-03 01:39:49.237295
+1037	image	Image	380	1037	2022-07-03 01:39:49.624062
+1038	image	Image	381	1038	2022-07-03 01:39:49.936825
+1039	image	Image	382	1039	2022-07-03 01:39:50.216533
+1040	image	Image	383	1040	2022-07-03 01:39:50.686412
+1041	image	Image	384	1041	2022-07-03 01:39:51.012178
+1042	image	Image	386	1042	2022-07-03 01:39:51.644074
+1043	image	Image	387	1043	2022-07-03 01:39:52.06864
+1044	image	Image	388	1044	2022-07-03 01:39:52.447699
+1045	image	Image	389	1045	2022-07-03 01:39:52.876767
+1046	image	Image	390	1046	2022-07-03 01:39:53.168767
+1047	image	Image	391	1047	2022-07-03 01:39:53.451317
+1048	image	Image	392	1048	2022-07-03 01:39:53.990421
+1049	image	Image	394	1049	2022-07-03 01:39:54.596884
+1050	image	Image	395	1050	2022-07-03 01:39:55.083061
+1051	image	Image	396	1051	2022-07-03 01:39:55.598661
+1052	image	Image	397	1052	2022-07-03 01:39:56.081985
+1053	image	Image	398	1053	2022-07-03 01:39:56.738616
+1054	image	Image	399	1054	2022-07-03 01:39:57.293789
+1055	image	Image	400	1055	2022-07-03 01:39:57.702994
+1056	image	Image	401	1056	2022-07-03 01:39:58.227906
+1057	image	Image	416	1057	2022-07-03 01:39:58.629997
+1058	image	Image	417	1058	2022-07-03 01:39:59.143474
+1059	image	Image	418	1059	2022-07-03 01:39:59.501012
+1060	image	Image	419	1060	2022-07-03 01:39:59.965196
+1061	image	Image	420	1061	2022-07-03 01:40:00.350664
+1062	image	Image	421	1062	2022-07-03 01:40:00.71622
+1063	image	Image	422	1063	2022-07-03 01:40:01.128269
+1064	image	Image	423	1064	2022-07-03 01:40:01.47996
+1065	image	Image	424	1065	2022-07-03 01:40:01.948183
+1066	image	Image	425	1066	2022-07-03 01:40:02.632675
+1067	image	Image	426	1067	2022-07-03 01:40:03.554325
+1068	image	Image	427	1068	2022-07-03 01:40:04.108736
+1069	image	Image	428	1069	2022-07-03 01:40:04.684564
+1070	image	Image	429	1070	2022-07-03 01:40:05.415179
+1071	image	Image	430	1071	2022-07-03 01:40:05.789895
+1072	image	Image	431	1072	2022-07-03 01:40:06.432147
+1073	image	Image	432	1073	2022-07-03 01:40:06.944418
+1074	image	Image	433	1074	2022-07-03 01:40:07.688836
+1075	image	Image	434	1075	2022-07-03 01:40:07.956648
+1076	image	Image	435	1076	2022-07-03 01:40:08.582534
+1077	image	Image	436	1077	2022-07-03 01:40:09.228375
+1078	image	Image	437	1078	2022-07-03 01:40:09.976183
+1079	image	Image	438	1079	2022-07-03 01:40:10.433112
+1080	image	Image	439	1080	2022-07-03 01:40:10.839612
+1081	image	Image	440	1081	2022-07-03 01:40:11.545662
+1082	image	Image	441	1082	2022-07-03 01:41:02.966629
+1083	image	Image	442	1083	2022-07-03 01:41:19.074247
+1084	image	Image	443	1084	2022-07-03 01:41:19.40391
+1085	image	Image	444	1085	2022-07-03 01:41:19.782849
+1086	image	Image	445	1086	2022-07-03 01:41:20.346703
+1087	image	Image	446	1087	2022-07-03 01:41:20.78845
+1088	image	Image	447	1088	2022-07-03 01:41:21.405928
+1089	image	Image	448	1089	2022-07-03 01:41:22.049579
+1090	image	Image	449	1090	2022-07-03 01:41:22.65316
+1091	image	Image	450	1091	2022-07-03 01:41:23.222321
+1092	image	Image	451	1092	2022-07-03 01:41:23.759463
+1093	image	Image	452	1093	2022-07-03 01:41:24.362266
+1094	image	Image	453	1094	2022-07-03 01:41:25.003753
+1095	image	Image	454	1095	2022-07-03 01:41:25.439089
+1096	image	Image	455	1096	2022-07-03 01:41:25.958003
+1097	image	Image	456	1097	2022-07-03 01:41:26.417652
+1098	image	Image	465	1098	2022-07-03 01:41:27.08719
+1099	image	Image	466	1099	2022-07-03 01:41:27.484865
+1100	image	Image	467	1100	2022-07-03 01:41:27.764843
+1101	image	Image	468	1101	2022-07-03 01:41:28.155484
+1102	image	Image	469	1102	2022-07-03 01:41:28.590517
+1103	image	Image	470	1103	2022-07-03 01:41:29.010528
+1104	image	Image	471	1104	2022-07-03 01:41:29.548962
+1105	image	Image	472	1105	2022-07-03 01:41:29.855341
+1106	image	ActiveStorage::VariantRecord	1	1106	2022-07-03 21:48:57.44918
+1107	image	ActiveStorage::VariantRecord	2	1107	2022-07-03 21:48:57.508471
+1108	image	ActiveStorage::VariantRecord	3	1108	2022-07-03 21:48:57.540856
+1109	image	ActiveStorage::VariantRecord	5	1109	2022-07-03 21:48:57.547195
+1110	image	ActiveStorage::VariantRecord	4	1110	2022-07-03 21:48:57.566335
+1111	image	ActiveStorage::VariantRecord	6	1111	2022-07-03 21:48:58.068641
+1112	image	ActiveStorage::VariantRecord	7	1112	2022-07-03 21:56:25.67518
+1113	image	ActiveStorage::VariantRecord	8	1113	2022-07-03 21:56:25.979965
+1114	image	ActiveStorage::VariantRecord	9	1114	2022-07-03 21:56:26.00652
+1115	image	ActiveStorage::VariantRecord	11	1116	2022-07-03 21:56:26.022308
+1116	image	ActiveStorage::VariantRecord	10	1115	2022-07-03 21:56:26.028333
+1117	image	ActiveStorage::VariantRecord	12	1117	2022-07-03 21:56:26.084553
+1118	image	ActiveStorage::VariantRecord	13	1118	2022-07-03 21:56:26.323745
+1119	image	ActiveStorage::VariantRecord	14	1119	2022-07-03 21:56:26.426311
+1120	image	ActiveStorage::VariantRecord	17	1120	2022-08-29 20:58:48.345349
+1121	image	ActiveStorage::VariantRecord	15	1122	2022-08-29 20:58:48.351531
+1122	image	ActiveStorage::VariantRecord	16	1121	2022-08-29 20:58:48.356121
+1123	image	ActiveStorage::VariantRecord	19	1124	2022-08-29 20:58:48.416499
+1124	image	ActiveStorage::VariantRecord	18	1123	2022-08-29 20:58:48.424221
+1125	image	ActiveStorage::VariantRecord	20	1125	2022-08-29 20:58:48.848116
+1126	image	ActiveStorage::VariantRecord	21	1126	2022-08-29 21:11:21.445649
+1127	image	ActiveStorage::VariantRecord	23	1127	2022-08-29 22:36:10.207542
+1128	image	ActiveStorage::VariantRecord	22	1128	2022-08-29 22:36:10.215009
+1129	image	ActiveStorage::VariantRecord	24	1129	2022-08-29 22:36:10.226195
+1130	image	ActiveStorage::VariantRecord	25	1130	2022-08-29 22:36:10.251327
+1131	image	ActiveStorage::VariantRecord	26	1131	2022-08-29 22:36:10.280561
+1132	image	ActiveStorage::VariantRecord	27	1132	2022-08-29 22:36:10.708434
+1133	image	ActiveStorage::VariantRecord	28	1133	2022-08-29 22:36:10.755874
+1134	image	ActiveStorage::VariantRecord	29	1134	2022-08-29 22:36:10.83573
+1135	image	ActiveStorage::VariantRecord	30	1135	2022-08-29 22:36:10.857067
+1136	image	ActiveStorage::VariantRecord	31	1136	2022-08-29 22:36:10.871601
+1137	image	ActiveStorage::VariantRecord	32	1137	2022-08-29 22:36:11.193486
+1138	image	ActiveStorage::VariantRecord	34	1139	2022-08-29 22:42:48.690741
+1139	image	ActiveStorage::VariantRecord	33	1138	2022-08-29 22:42:48.697036
+1140	image	ActiveStorage::VariantRecord	36	1141	2022-08-29 22:42:48.701186
+1141	image	ActiveStorage::VariantRecord	35	1140	2022-08-29 22:42:48.706696
+1142	image	ActiveStorage::VariantRecord	40	1142	2022-08-29 23:03:03.714917
+1143	image	ActiveStorage::VariantRecord	39	1143	2022-08-29 23:03:03.728364
+1144	image	ActiveStorage::VariantRecord	37	1144	2022-08-29 23:03:03.732737
+1145	image	ActiveStorage::VariantRecord	38	1146	2022-08-29 23:03:03.737533
+1146	image	ActiveStorage::VariantRecord	41	1145	2022-08-29 23:03:03.745952
+1147	image	ActiveStorage::VariantRecord	44	1148	2022-08-29 23:03:04.143165
+1148	image	ActiveStorage::VariantRecord	42	1149	2022-08-29 23:03:04.149932
+1149	image	ActiveStorage::VariantRecord	43	1147	2022-08-29 23:03:04.147568
+1150	image	ActiveStorage::VariantRecord	46	1151	2022-08-29 23:03:04.156405
+1151	image	ActiveStorage::VariantRecord	45	1150	2022-08-29 23:03:04.158417
+1152	image	ActiveStorage::VariantRecord	49	1153	2022-08-29 23:03:04.518168
+1153	image	ActiveStorage::VariantRecord	48	1154	2022-08-29 23:03:04.522578
+1154	image	ActiveStorage::VariantRecord	47	1152	2022-08-29 23:03:04.528083
+1155	image	ActiveStorage::VariantRecord	50	1155	2022-08-29 23:03:04.542929
+1156	image	ActiveStorage::VariantRecord	51	1156	2022-08-29 23:03:04.547105
+1157	image	ActiveStorage::VariantRecord	52	1157	2022-08-29 23:03:04.842207
+1158	image	ActiveStorage::VariantRecord	53	1158	2022-08-29 23:03:04.891647
+1159	image	ActiveStorage::VariantRecord	54	1159	2022-08-29 23:03:04.925705
+1160	image	ActiveStorage::VariantRecord	55	1160	2022-08-29 23:03:04.944974
+1161	image	ActiveStorage::VariantRecord	56	1161	2022-08-29 23:03:04.973873
+1162	image	ActiveStorage::VariantRecord	58	1162	2022-08-29 23:03:05.292278
+1163	image	ActiveStorage::VariantRecord	59	1163	2022-08-29 23:03:05.298478
+1164	image	ActiveStorage::VariantRecord	57	1164	2022-08-29 23:03:05.31217
+1165	image	ActiveStorage::VariantRecord	60	1165	2022-08-29 23:03:05.328303
+1166	image	ActiveStorage::VariantRecord	61	1166	2022-08-29 23:03:05.350903
+1167	image	ActiveStorage::VariantRecord	62	1167	2022-08-29 23:03:05.64217
+1168	image	ActiveStorage::VariantRecord	64	1168	2022-08-29 23:03:05.662597
+1169	image	ActiveStorage::VariantRecord	63	1169	2022-08-29 23:03:05.676074
+1170	image	ActiveStorage::VariantRecord	65	1170	2022-08-29 23:03:05.714764
+1171	image	ActiveStorage::VariantRecord	66	1171	2022-08-29 23:03:05.745236
+1172	image	ActiveStorage::VariantRecord	67	1172	2022-08-29 23:03:06.065216
+1173	image	ActiveStorage::VariantRecord	68	1173	2022-08-29 23:03:06.093045
+1174	image	ActiveStorage::VariantRecord	69	1174	2022-08-29 23:03:06.096444
+1175	image	ActiveStorage::VariantRecord	70	1175	2022-08-29 23:03:06.147485
+1176	image	ActiveStorage::VariantRecord	71	1176	2022-08-29 23:03:06.177371
+1177	image	ActiveStorage::VariantRecord	72	1177	2022-08-29 23:03:06.428608
+1178	image	ActiveStorage::VariantRecord	73	1178	2022-08-29 23:03:06.516462
+1179	image	ActiveStorage::VariantRecord	74	1179	2022-08-29 23:03:06.532298
+1180	image	ActiveStorage::VariantRecord	75	1180	2022-08-29 23:03:06.55546
+1181	image	ActiveStorage::VariantRecord	76	1181	2022-08-29 23:03:06.559483
+1182	image	ActiveStorage::VariantRecord	77	1182	2022-08-29 23:03:06.832713
+1183	image	ActiveStorage::VariantRecord	78	1183	2022-08-29 23:03:06.906828
+1184	image	ActiveStorage::VariantRecord	79	1184	2022-08-29 23:03:06.944758
+1185	image	ActiveStorage::VariantRecord	80	1185	2022-08-29 23:03:06.963685
+1186	image	ActiveStorage::VariantRecord	81	1186	2022-08-29 23:03:06.98194
+1187	image	ActiveStorage::VariantRecord	82	1187	2022-08-29 23:29:35.538301
+1188	image	ActiveStorage::VariantRecord	84	1188	2022-08-29 23:29:36.283972
+1189	image	ActiveStorage::VariantRecord	83	1189	2022-08-29 23:29:36.28684
+1190	image	ActiveStorage::VariantRecord	86	1190	2022-08-29 23:29:36.312331
+1191	image	ActiveStorage::VariantRecord	85	1191	2022-08-29 23:29:36.320383
+1192	image	ActiveStorage::VariantRecord	88	1192	2022-08-29 23:29:36.747106
+1193	image	ActiveStorage::VariantRecord	87	1193	2022-08-29 23:29:36.783505
+1194	image	ActiveStorage::VariantRecord	89	1194	2022-08-29 23:29:36.857719
+1195	image	ActiveStorage::VariantRecord	90	1195	2022-08-29 23:29:36.890469
+1196	image	ActiveStorage::VariantRecord	91	1196	2022-08-29 23:29:36.916387
+1197	image	ActiveStorage::VariantRecord	92	1197	2022-08-29 23:29:37.254101
+1198	image	ActiveStorage::VariantRecord	93	1198	2022-08-29 23:29:37.348682
+1199	image	ActiveStorage::VariantRecord	94	1199	2022-08-29 23:29:37.35317
+1200	image	ActiveStorage::VariantRecord	95	1200	2022-08-29 23:29:37.371307
+1201	image	ActiveStorage::VariantRecord	96	1201	2022-08-29 23:29:37.529188
+1202	image	ActiveStorage::VariantRecord	97	1202	2022-08-29 23:29:37.77813
+1203	image	ActiveStorage::VariantRecord	98	1203	2022-08-29 23:29:37.790459
+1204	image	ActiveStorage::VariantRecord	100	1205	2022-08-29 23:29:37.808188
+1205	image	ActiveStorage::VariantRecord	99	1204	2022-08-29 23:29:37.811049
+1206	image	ActiveStorage::VariantRecord	101	1206	2022-08-29 23:29:37.927112
+1207	image	ActiveStorage::VariantRecord	102	1207	2022-08-29 23:29:38.186771
+1208	image	ActiveStorage::VariantRecord	103	1208	2022-08-29 23:29:38.223218
+1213	image	ActiveStorage::VariantRecord	108	1213	2022-08-29 23:29:38.618428
+1209	image	ActiveStorage::VariantRecord	104	1209	2022-08-29 23:29:38.253157
+1210	image	ActiveStorage::VariantRecord	105	1210	2022-08-29 23:29:38.271972
+1212	image	ActiveStorage::VariantRecord	107	1212	2022-08-29 23:29:38.605301
+1211	image	ActiveStorage::VariantRecord	106	1211	2022-08-29 23:29:38.317652
+1214	image	ActiveStorage::VariantRecord	109	1214	2022-08-29 23:29:38.629465
+1215	image	ActiveStorage::VariantRecord	110	1215	2022-08-31 00:17:46.878213
+1216	image	ActiveStorage::VariantRecord	112	1216	2022-08-31 00:17:46.881679
+1217	image	ActiveStorage::VariantRecord	111	1217	2022-08-31 00:17:46.885392
+1218	image	ActiveStorage::VariantRecord	114	1218	2022-09-01 20:09:18.926134
+1219	image	ActiveStorage::VariantRecord	115	1219	2022-09-01 20:09:18.931722
+1220	image	ActiveStorage::VariantRecord	113	1220	2022-09-01 20:09:18.934214
+1221	image	ActiveStorage::VariantRecord	116	1221	2022-09-01 20:09:22.3551
+1222	image	ActiveStorage::VariantRecord	118	1222	2022-09-01 20:09:22.377476
+1223	image	ActiveStorage::VariantRecord	117	1223	2022-09-01 20:09:22.387782
+1224	image	ActiveStorage::VariantRecord	119	1224	2022-09-01 20:09:22.40839
+1225	image	ActiveStorage::VariantRecord	120	1225	2022-09-01 20:09:22.417439
+1226	image	ActiveStorage::VariantRecord	121	1226	2022-09-01 20:09:22.764403
+1227	image	ActiveStorage::VariantRecord	122	1227	2022-09-01 20:09:22.768184
+1228	image	ActiveStorage::VariantRecord	123	1228	2022-09-01 20:09:25.900912
+1229	image	ActiveStorage::VariantRecord	124	1229	2022-09-01 21:15:39.177375
+1230	image	ActiveStorage::VariantRecord	125	1230	2022-09-01 21:15:39.402199
+1231	image	ActiveStorage::VariantRecord	126	1231	2022-09-01 23:41:44.537997
+1232	image	ActiveStorage::VariantRecord	127	1232	2022-09-01 23:41:44.544349
+1233	image	ActiveStorage::VariantRecord	128	1233	2022-09-01 23:41:44.553894
+1234	image	ActiveStorage::VariantRecord	129	1234	2022-09-01 23:41:44.566568
+1235	image	ActiveStorage::VariantRecord	130	1236	2022-09-02 00:03:42.582614
+1236	image	ActiveStorage::VariantRecord	131	1235	2022-09-02 00:03:42.586158
+1237	image	ActiveStorage::VariantRecord	133	1237	2022-09-02 00:03:42.591471
+1238	image	ActiveStorage::VariantRecord	132	1238	2022-09-02 00:03:42.594251
+1239	image	ActiveStorage::VariantRecord	134	1239	2022-09-02 00:03:42.599905
+1240	image	ActiveStorage::VariantRecord	135	1240	2022-09-02 00:03:43.013635
 \.
 
 
@@ -37,6 +1115,141 @@ COPY public.active_storage_attachments (id, name, record_type, record_id, blob_i
 --
 
 COPY public.active_storage_variant_records (id, blob_id, variation_digest) FROM stdin;
+1	987	M91c9VrFpBr494LVqt2ovQeA/lk=
+2	1057	ku0PabRttFoyg1lxkOD6CdmOCUE=
+3	991	ku0PabRttFoyg1lxkOD6CdmOCUE=
+4	976	mGHHiovEPBXQkNJBADVOPEuT8nw=
+5	1005	ku0PabRttFoyg1lxkOD6CdmOCUE=
+6	862	ku0PabRttFoyg1lxkOD6CdmOCUE=
+7	1064	wj2EsykI81rCJCK6QU6D9xirR/c=
+8	1058	wj2EsykI81rCJCK6QU6D9xirR/c=
+9	1063	wj2EsykI81rCJCK6QU6D9xirR/c=
+10	1062	wj2EsykI81rCJCK6QU6D9xirR/c=
+11	1057	wj2EsykI81rCJCK6QU6D9xirR/c=
+12	1060	wj2EsykI81rCJCK6QU6D9xirR/c=
+13	1061	wj2EsykI81rCJCK6QU6D9xirR/c=
+14	1059	wj2EsykI81rCJCK6QU6D9xirR/c=
+15	975	ku0PabRttFoyg1lxkOD6CdmOCUE=
+16	1009	ku0PabRttFoyg1lxkOD6CdmOCUE=
+17	1004	ku0PabRttFoyg1lxkOD6CdmOCUE=
+18	959	dvWoyI1NThETC9il+wcjmYkgNFE=
+19	944	dvWoyI1NThETC9il+wcjmYkgNFE=
+20	956	ku0PabRttFoyg1lxkOD6CdmOCUE=
+21	936	mGHHiovEPBXQkNJBADVOPEuT8nw=
+22	907	ku0PabRttFoyg1lxkOD6CdmOCUE=
+23	917	mGHHiovEPBXQkNJBADVOPEuT8nw=
+24	940	ku0PabRttFoyg1lxkOD6CdmOCUE=
+25	922	ku0PabRttFoyg1lxkOD6CdmOCUE=
+26	930	M91c9VrFpBr494LVqt2ovQeA/lk=
+27	867	mGHHiovEPBXQkNJBADVOPEuT8nw=
+28	895	mGHHiovEPBXQkNJBADVOPEuT8nw=
+29	964	M91c9VrFpBr494LVqt2ovQeA/lk=
+30	905	ku0PabRttFoyg1lxkOD6CdmOCUE=
+31	850	mGHHiovEPBXQkNJBADVOPEuT8nw=
+32	874	mGHHiovEPBXQkNJBADVOPEuT8nw=
+33	1005	wj2EsykI81rCJCK6QU6D9xirR/c=
+34	1008	wj2EsykI81rCJCK6QU6D9xirR/c=
+35	1006	wj2EsykI81rCJCK6QU6D9xirR/c=
+36	1007	wj2EsykI81rCJCK6QU6D9xirR/c=
+37	976	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+38	959	kew+Jjn6rrgNk4/Pj4n+LM0hZVg=
+39	987	JkDIZZBvzep28tKq9zM7WlqeP9s=
+40	1069	wj2EsykI81rCJCK6QU6D9xirR/c=
+41	991	wj2EsykI81rCJCK6QU6D9xirR/c=
+42	907	wj2EsykI81rCJCK6QU6D9xirR/c=
+43	940	wj2EsykI81rCJCK6QU6D9xirR/c=
+44	922	wj2EsykI81rCJCK6QU6D9xirR/c=
+45	944	kew+Jjn6rrgNk4/Pj4n+LM0hZVg=
+46	936	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+47	930	JkDIZZBvzep28tKq9zM7WlqeP9s=
+48	874	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+49	895	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+50	905	wj2EsykI81rCJCK6QU6D9xirR/c=
+51	917	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+52	850	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+53	834	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+54	843	JkDIZZBvzep28tKq9zM7WlqeP9s=
+55	1086	JkDIZZBvzep28tKq9zM7WlqeP9s=
+56	867	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+57	999	wj2EsykI81rCJCK6QU6D9xirR/c=
+58	1082	kew+Jjn6rrgNk4/Pj4n+LM0hZVg=
+59	956	wj2EsykI81rCJCK6QU6D9xirR/c=
+60	1076	wj2EsykI81rCJCK6QU6D9xirR/c=
+61	945	JkDIZZBvzep28tKq9zM7WlqeP9s=
+62	816	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+63	861	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+64	822	wj2EsykI81rCJCK6QU6D9xirR/c=
+65	804	JkDIZZBvzep28tKq9zM7WlqeP9s=
+66	955	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+67	810	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+68	795	wj2EsykI81rCJCK6QU6D9xirR/c=
+69	796	wj2EsykI81rCJCK6QU6D9xirR/c=
+70	756	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+71	803	wj2EsykI81rCJCK6QU6D9xirR/c=
+72	722	JkDIZZBvzep28tKq9zM7WlqeP9s=
+73	707	wj2EsykI81rCJCK6QU6D9xirR/c=
+74	712	uGVNt8/KrBA47/Pa9FvWjIjknMY=
+75	1045	wj2EsykI81rCJCK6QU6D9xirR/c=
+76	751	JkDIZZBvzep28tKq9zM7WlqeP9s=
+77	744	JkDIZZBvzep28tKq9zM7WlqeP9s=
+78	713	wj2EsykI81rCJCK6QU6D9xirR/c=
+79	741	JkDIZZBvzep28tKq9zM7WlqeP9s=
+80	728	JkDIZZBvzep28tKq9zM7WlqeP9s=
+81	731	JkDIZZBvzep28tKq9zM7WlqeP9s=
+82	1069	ku0PabRttFoyg1lxkOD6CdmOCUE=
+83	834	mGHHiovEPBXQkNJBADVOPEuT8nw=
+84	843	M91c9VrFpBr494LVqt2ovQeA/lk=
+85	1076	ku0PabRttFoyg1lxkOD6CdmOCUE=
+86	1086	M91c9VrFpBr494LVqt2ovQeA/lk=
+87	955	mGHHiovEPBXQkNJBADVOPEuT8nw=
+88	999	ku0PabRttFoyg1lxkOD6CdmOCUE=
+89	861	mGHHiovEPBXQkNJBADVOPEuT8nw=
+90	822	ku0PabRttFoyg1lxkOD6CdmOCUE=
+91	1082	dvWoyI1NThETC9il+wcjmYkgNFE=
+92	816	mGHHiovEPBXQkNJBADVOPEuT8nw=
+93	804	M91c9VrFpBr494LVqt2ovQeA/lk=
+94	810	mGHHiovEPBXQkNJBADVOPEuT8nw=
+95	945	M91c9VrFpBr494LVqt2ovQeA/lk=
+96	803	ku0PabRttFoyg1lxkOD6CdmOCUE=
+97	756	mGHHiovEPBXQkNJBADVOPEuT8nw=
+98	707	ku0PabRttFoyg1lxkOD6CdmOCUE=
+99	795	ku0PabRttFoyg1lxkOD6CdmOCUE=
+100	722	M91c9VrFpBr494LVqt2ovQeA/lk=
+101	1045	ku0PabRttFoyg1lxkOD6CdmOCUE=
+102	712	mGHHiovEPBXQkNJBADVOPEuT8nw=
+103	731	M91c9VrFpBr494LVqt2ovQeA/lk=
+104	744	M91c9VrFpBr494LVqt2ovQeA/lk=
+105	751	M91c9VrFpBr494LVqt2ovQeA/lk=
+106	713	ku0PabRttFoyg1lxkOD6CdmOCUE=
+107	728	M91c9VrFpBr494LVqt2ovQeA/lk=
+108	741	M91c9VrFpBr494LVqt2ovQeA/lk=
+109	796	ku0PabRttFoyg1lxkOD6CdmOCUE=
+110	1018	ku0PabRttFoyg1lxkOD6CdmOCUE=
+111	1099	M91c9VrFpBr494LVqt2ovQeA/lk=
+112	884	M91c9VrFpBr494LVqt2ovQeA/lk=
+113	1028	ku0PabRttFoyg1lxkOD6CdmOCUE=
+114	787	ku0PabRttFoyg1lxkOD6CdmOCUE=
+115	706	M91c9VrFpBr494LVqt2ovQeA/lk=
+116	717	M91c9VrFpBr494LVqt2ovQeA/lk=
+117	727	ku0PabRttFoyg1lxkOD6CdmOCUE=
+118	710	M91c9VrFpBr494LVqt2ovQeA/lk=
+119	775	ku0PabRttFoyg1lxkOD6CdmOCUE=
+120	726	M91c9VrFpBr494LVqt2ovQeA/lk=
+121	1090	M91c9VrFpBr494LVqt2ovQeA/lk=
+122	738	M91c9VrFpBr494LVqt2ovQeA/lk=
+123	1038	ku0PabRttFoyg1lxkOD6CdmOCUE=
+124	1065	M91c9VrFpBr494LVqt2ovQeA/lk=
+125	832	ku0PabRttFoyg1lxkOD6CdmOCUE=
+126	1066	wj2EsykI81rCJCK6QU6D9xirR/c=
+127	1068	wj2EsykI81rCJCK6QU6D9xirR/c=
+128	1067	wj2EsykI81rCJCK6QU6D9xirR/c=
+129	1065	JkDIZZBvzep28tKq9zM7WlqeP9s=
+130	1072	wj2EsykI81rCJCK6QU6D9xirR/c=
+131	1071	wj2EsykI81rCJCK6QU6D9xirR/c=
+132	1075	wj2EsykI81rCJCK6QU6D9xirR/c=
+133	1070	wj2EsykI81rCJCK6QU6D9xirR/c=
+134	1073	wj2EsykI81rCJCK6QU6D9xirR/c=
+135	1074	wj2EsykI81rCJCK6QU6D9xirR/c=
 \.
 
 
@@ -840,409 +2053,409 @@ COPY public.works (id, slug_en, slug_es, slug_ca, realization_date, dimensions, 
 --
 
 COPY public.images (id, deprecated_image, "position", created_at, updated_at, video, work_id) FROM stdin;
-142	sum_us_2.jpeg	3	2014-05-17 12:13:09.261653	2014-05-17 12:19:36.777841		34
-465	DSC_0106-004.jpg	6	2021-09-26 20:13:56.480034	2022-01-13 20:54:16.123605		87
-197	20140706_164949.jpg	1	2015-01-05 00:13:34.13966	2022-01-05 21:38:07.42288		44
-198	20140706_164949.jpg	2	2015-01-05 00:13:35.07326	2022-01-05 21:38:07.428365		44
-199	20140706_165129.jpg	3	2015-01-05 00:13:36.036211	2022-01-05 21:38:07.433549		44
-200	20140706_164738.jpg	4	2015-01-05 00:13:36.897578	2022-01-05 21:38:07.438725		44
-201	20140706_165245.jpg	5	2015-01-05 00:13:37.994038	2022-01-05 21:38:07.444217		44
-143	sum_us_3.jpeg	4	2014-05-17 12:13:10.103452	2014-05-17 12:19:36.787299		34
-144	DSC_0621.jpeg	5	2014-05-17 12:13:10.913218	2014-05-17 12:19:36.79681		34
 145	\N	6	2014-05-17 12:13:11.895863	2014-05-17 12:19:36.806395	https://vimeo.com/83686197	34
-146	CORPOLOGIA_13.jpeg	7	2014-05-17 12:13:11.921266	2014-05-17 12:19:36.815986		34
-126	fent_volar_coloms.jpg	2	2013-12-06 12:49:22.440575	2014-05-17 12:23:53.943212		33
-127	Coloms_Laminas1_ClaraBes.jpg	3	2013-12-06 12:49:23.33067	2014-05-17 12:23:53.954681		33
-128	Coloms_circuit1_A.Bombaci.jpg	4	2013-12-06 12:49:23.917396	2014-05-17 12:23:53.966097		33
-129	Coloms_Cordes1_ClaraBes.jpg	5	2013-12-06 12:49:25.10811	2014-05-17 12:23:53.977365		33
-130	Coloms_Globos_ClaraBes.jpg	6	2013-12-06 12:49:25.735747	2014-05-17 12:23:53.989034		33
-131	Coloms_amaralarama1_A.Bombaci.jpg	7	2013-12-06 12:49:26.396816	2014-05-17 12:23:54.000458		33
-132	Coloms_Murmuradores_A.Bombaci.jpg	8	2013-12-06 12:49:27.235642	2014-05-17 12:23:54.012019		33
-148	DSC_0038retoc.jpeg	2	2014-05-17 12:35:48.040542	2014-05-17 12:35:48.040542		37
-149	DSC_0044_copia.jpeg	3	2014-05-17 12:35:48.913866	2014-05-17 12:35:48.913866		37
-150	DSC_0047_copia.jpeg	4	2014-05-17 12:35:49.755477	2014-05-17 12:35:49.755477		37
-151	DSC_0048_copiaretocada.jpeg	5	2014-05-17 12:35:50.614842	2014-05-17 12:35:50.614842		37
-152	DSC_0051_copia.jpeg	6	2014-05-17 12:35:51.284079	2014-05-17 12:35:51.284079		37
-169	IMG_2095.jpeg	1	2014-11-03 23:21:44.115417	2014-11-03 23:30:04.64656		41
-170	IMG_2104.jpeg	2	2014-11-03 23:26:02.782895	2014-11-03 23:30:04.658116		41
-171	IMG_2108.jpeg	3	2014-11-03 23:26:03.616212	2014-11-03 23:30:04.670586		41
-172	IMG_2116.jpeg	4	2014-11-03 23:26:04.397945	2014-11-03 23:30:04.684101		41
-134	despunxa1.JPG	1	2013-12-06 13:20:53.588822	2014-05-17 12:17:29.352143		36
-135	despunxa2.JPG	2	2013-12-06 13:20:54.370403	2014-05-17 12:17:29.37483		36
-136	despunxa3.JPG	3	2013-12-06 13:20:55.176573	2014-05-17 12:17:29.39423		36
-137	despunxa4.JPG	4	2013-12-06 13:20:55.929314	2014-05-17 12:17:29.414369		36
-138	despunxaFi.JPG	5	2013-12-06 13:20:56.96195	2014-05-17 12:17:29.435686		36
-139	esbarzer_obrAl_xia1.JPG	6	2013-12-06 13:20:58.326664	2014-05-17 12:17:29.455967		36
-173	IMG_2117.jpeg	5	2014-11-03 23:26:05.244875	2014-11-03 23:30:04.696864		41
-174	IMG_2127.jpeg	6	2014-11-03 23:26:06.004775	2014-11-03 23:30:04.709862		41
-175	IMG_2131.jpeg	7	2014-11-03 23:26:06.6773	2014-11-03 23:30:04.723037		41
-176	IMG_2132.jpeg	8	2014-11-03 23:26:07.299663	2014-11-03 23:30:04.73815		41
-177	IMG_2134.jpeg	9	2014-11-03 23:26:07.928066	2014-11-03 23:30:04.750449		41
-162	P1130261.JPG	1	2014-07-17 22:55:51.029461	2015-01-04 21:35:15.061168		35
-133	generart25nov.jpg	2	2013-12-06 13:07:19.838038	2015-01-04 21:35:15.073346		35
-140	DSC_0583.jpeg	1	2014-05-17 12:13:07.524387	2014-05-17 12:19:36.758508		34
-141	sum_us_1.jpeg	2	2014-05-17 12:13:08.49483	2014-05-17 12:19:36.768148		34
-111	_MG_3737.jpg	2	2013-09-05 14:59:30.592008	2015-09-20 18:04:25.9855		31
-163	P1130264.JPG	3	2014-07-17 22:55:51.976218	2015-01-04 21:35:15.083977		35
-167	separ_2014.4sala_AUDITORIO.jpg	2	2014-10-09 17:19:05.601242	2014-10-09 17:19:05.601242		30
-168	Separ_20143Sala_AUDITORIO.jpg	3	2014-10-09 17:19:06.903811	2014-10-09 17:19:06.903811		30
-157	140531-XIV_Perpetracions-Antologia_Animal-487.jpg	1	2014-07-17 22:28:51.970185	2015-01-04 21:39:23.5612		39
-158	140531-XIV_Perpetracions-Antologia_Animal-500.jpg	2	2014-07-17 22:28:53.187017	2015-01-04 21:39:23.571493		39
-156	Programa_Perpetraci_ns_Interior.jpg	3	2014-07-17 22:28:50.898452	2015-01-04 21:39:23.581667		39
-159	140531-XIV_Perpetracions-Antologia_Animal-504.jpg	4	2014-07-17 22:28:54.317382	2015-01-04 21:39:23.59258		39
-160	140531-XIV_Perpetracions-Antologia_Animal-506.jpg	5	2014-07-17 22:28:55.469747	2015-01-04 21:39:23.603478		39
-164	P1130300.JPG	4	2014-07-17 22:55:52.957072	2015-01-04 21:35:15.09428		35
-165	P1130321.JPG	5	2014-07-17 22:55:53.937621	2015-01-04 21:35:15.105657		35
-161	140531-XIV_Perpetracions-Antologia_Animal-496.jpg	6	2014-07-17 22:28:56.851237	2015-01-04 21:39:23.614231		39
-204	IMG_1468.jpeg	1	2015-07-03 00:07:34.082814	2016-08-01 15:23:05.690642		46
-178	Mireia_Zantop_Accio_.JPG	2	2015-01-04 22:05:04.762646	2015-01-04 22:13:33.868509		42
-179	Fulls_Accio__Mireia.JPG	3	2015-01-04 22:05:10.596075	2015-01-04 22:13:33.880486		42
-180	Pu_blic02.JPG	4	2015-01-04 22:05:11.538994	2015-01-04 22:13:33.891816		42
-181	Mireia_Zantop_01.JPG	5	2015-01-04 22:05:12.485475	2015-01-04 22:13:33.903424		42
-182	PanorGUILLERIES_accio_.jpg	6	2015-01-04 22:05:18.447944	2015-01-04 22:13:33.914513		42
-183	Daniel_Ruiz-_Trillo_02.JPG	7	2015-01-04 22:05:19.521168	2015-01-04 22:13:33.925348		42
-184	Mireia_i_Blai_en_accio_.JPG	8	2015-01-04 22:05:20.243222	2015-01-04 22:13:33.938292		42
-185	IMG_6760.jpeg	2	2015-01-04 23:00:32.874014	2015-01-04 23:21:24.337153		43
-186	IMG_6764.jpeg	3	2015-01-04 23:00:33.717678	2015-01-04 23:21:24.351299		43
-187	IMG_6767.jpeg	4	2015-01-04 23:00:34.42342	2015-01-04 23:21:24.362934		43
-188	IMG_6772.jpeg	5	2015-01-04 23:00:35.082099	2015-01-04 23:21:24.374889		43
-189	IMG_6775.jpeg	6	2015-01-04 23:00:35.765695	2015-01-04 23:21:24.386838		43
-190	IMG_6798.jpeg	7	2015-01-04 23:00:41.430322	2015-01-04 23:21:24.397748		43
-191	IMG_6812.jpeg	8	2015-01-04 23:00:42.015798	2015-01-04 23:21:24.408664		43
-192	IMG_6819.jpeg	9	2015-01-04 23:00:42.650881	2015-01-04 23:21:24.419597		43
-193	IMG_6827.jpeg	10	2015-01-04 23:00:43.296168	2015-01-04 23:21:24.430463		43
-194	IMG_6834.jpeg	11	2015-01-04 23:00:44.045373	2015-01-04 23:21:24.445681		43
-195	tarja_antic_c18_captura.jpg	12	2015-01-04 23:21:24.45957	2015-01-04 23:21:24.45957		43
-196	tarja_birds.jpeg	1	2015-01-04 23:23:54.778561	2016-08-05 12:02:03.830029		40
-250	CanFelipa_17.jpg	6	2016-08-01 16:18:31.863956	2016-08-05 11:39:07.628164		51
-251	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	7	2016-08-01 16:18:32.497636	2016-08-05 11:39:07.635823		51
-252	CanFelipa_39.jpg	8	2016-08-01 16:18:33.389819	2016-08-05 11:39:07.643053		51
-7	Instal.laci__monos_labos.JPG	2	2013-01-04 21:08:33.070994	2015-09-25 01:15:08.332032		8
-253	CanFelipa_26.jpg	9	2016-08-01 16:18:33.944432	2016-08-05 11:39:07.650248		51
-254	CanFelipa_09.jpg	10	2016-08-01 16:18:34.704063	2016-08-05 11:39:07.657667		51
-10	Vil.la_Florida_venus.JPG	3	2013-01-04 21:08:34.695465	2015-09-25 01:15:08.341366		8
-212	IMG_2324.jpeg	1	2015-09-27 22:40:21.943151	2015-09-27 22:42:43.688077		47
-213	IMG_2334.jpeg	2	2015-09-27 22:40:22.503104	2015-09-27 22:42:43.696169		47
-214	IMG_2423.jpeg	3	2015-09-27 22:40:23.059602	2015-09-27 22:42:43.703653		47
-215	IMG_2411.jpeg	4	2015-09-27 22:40:23.590348	2015-09-27 22:42:43.71151		47
-216	IMG_2450.jpeg	5	2015-09-27 22:40:24.149661	2015-09-27 22:42:43.718804		47
-217	IMG_2464.jpeg	6	2015-09-27 22:40:24.767326	2015-09-27 22:42:43.726481		47
-218	IMG_2489.jpeg	7	2015-09-27 22:40:25.303337	2015-09-27 22:42:43.738039		47
-219	IMG_2539.jpeg	8	2015-09-27 22:40:25.950144	2015-09-27 22:42:43.745875		47
-220	IMG_2533.jpeg	9	2015-09-27 22:40:26.521271	2015-09-27 22:42:43.753914		47
-221	IMG_2574.jpeg	10	2015-09-27 22:40:27.133208	2015-09-27 22:42:43.761835		47
-451	DSCF5849torre_lluvi_.JPG	6	2021-09-20 20:07:22.107389	2022-01-05 20:16:55.116017		88
-229	poesie.JPG	2	2015-09-27 23:08:19.111853	2022-01-10 11:21:20.696835		14
-270	DSCF2762.JPG	3	2016-08-05 11:55:26.72496	2020-06-15 15:43:34.353521		55
-271	DSCF2792.JPG	4	2016-08-05 11:55:27.471995	2020-06-15 15:43:34.361136		55
-272	DSCF2813.JPG	5	2016-08-05 11:55:28.179231	2020-06-15 15:43:34.369067		55
-273	DSCF2805.JPG	6	2016-08-05 11:55:28.906122	2020-06-15 15:43:34.377078		55
-230	Strelitzia_Delitzia.JPG	3	2015-09-27 23:08:19.725425	2022-01-10 11:21:20.702232		14
-231	AromaMagn_lia.JPG	4	2015-09-27 23:08:20.445711	2022-01-10 11:21:20.707511		14
-260	Cartell_ME_expo_cartells_2016.jpg	1	2016-08-01 17:43:51.787056	2020-02-19 17:17:17.199745		53
-205	IMG_1475.jpeg	2	2015-07-03 00:07:34.957377	2016-08-01 15:23:05.704427		46
-206	IMG_1491.jpeg	3	2015-07-03 00:07:35.567417	2016-08-01 15:23:05.711299		46
-207	IMG_1492.jpeg	4	2015-07-03 00:07:36.100125	2016-08-01 15:23:05.718411		46
-208	IMG_1499.jpeg	5	2015-07-03 00:07:36.731664	2016-08-01 15:23:05.725063		46
-210	IMG_1513.jpeg	6	2015-07-03 00:10:52.871909	2016-08-01 15:23:05.731716		46
-233	IMG_6061.jpeg	1	2016-08-01 15:36:37.806751	2016-08-01 15:36:37.806751		48
-234	IMG_6068.jpeg	2	2016-08-01 15:36:38.491222	2016-08-01 15:36:38.491222		48
-235	IMG_6073.jpeg	3	2016-08-01 15:36:39.109254	2016-08-01 15:36:39.109254		48
-236	IMG_6090.jpeg	4	2016-08-01 15:36:39.720092	2016-08-01 15:36:39.720092		48
-237	IMG_6096.jpeg	5	2016-08-01 15:36:40.455173	2016-08-01 15:36:40.455173		48
-238	IMG_6103.jpeg	6	2016-08-01 15:36:41.15213	2016-08-01 15:36:41.15213		48
-239	IMG_6108.jpeg	7	2016-08-01 15:36:41.756187	2016-08-01 15:36:41.756187		48
-240	IMG_6111.jpeg	8	2016-08-01 15:36:42.522787	2016-08-01 15:36:42.522787		48
-241	IMG_6112.jpeg	9	2016-08-01 15:36:43.071126	2016-08-01 15:36:43.071126		48
-242	Corpologia_21_.jpg	11	2016-08-01 15:36:43.611145	2016-08-01 15:36:43.611145		48
-278	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	1	2017-02-19 20:39:16.13435	2020-06-15 15:27:55.884133		54
-281	DONAR_VEU_AL_DESIG_.jpg	3	2017-02-19 20:39:18.691339	2020-06-15 15:27:55.899568		54
-255	eventuall0.jpeg	1	2016-08-01 16:58:23.602299	2016-08-01 16:59:31.500941		52
-256	eventuall2.jpeg	2	2016-08-01 16:58:24.28788	2016-08-01 16:59:31.508		52
-257	foto_eventuall_ferran_blancafort.jpeg	3	2016-08-01 16:58:24.83924	2016-08-01 16:59:31.514675		52
-258	eventuall3.jpeg	4	2016-08-01 16:58:25.430252	2016-08-01 16:59:31.521611		52
-259	eventuall4.jpeg	5	2016-08-01 16:58:26.030722	2016-08-01 16:59:31.528989		52
-243	IMG-20150128-WA0000.jpg	1	2016-08-01 15:46:03.253903	2016-08-01 17:00:18.675773		49
-244	IMG-20150128-WA0001.jpg	2	2016-08-01 15:46:03.943581	2016-08-01 17:00:18.685173		49
-279	VIC2.jpg	5	2017-02-19 20:39:17.166702	2020-06-15 15:27:55.914858		54
-232	Rosaflordepell.JPG	5	2015-09-27 23:08:21.133874	2022-01-10 11:21:20.71265		14
-466	ZANTOP_-_4._Odumonde.JPG	1	2021-11-19 20:17:25.438748	2022-01-05 20:02:40.42988		92
-262	DSCF0447_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	3	2016-08-01 17:43:53.096192	2020-02-19 17:17:17.215131		53
-263	DSCF0459_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	4	2016-08-01 17:43:53.868735	2020-02-19 17:17:17.222703		53
-264	RIMG0087.jpg	5	2016-08-01 17:43:54.791985	2020-02-19 17:17:17.230134		53
-265	RIMG0082.jpg	6	2016-08-01 17:43:55.413798	2020-02-19 17:17:17.23757		53
-266	RIMG0084.jpg	7	2016-08-01 17:43:55.963678	2020-02-19 17:17:17.244917		53
-267	ZANTOP_A_BEN1_amb_dibuix_fotos_Joan_Casellas_Arxiu_Aire.jpg	8	2016-08-01 17:43:56.508431	2020-02-19 17:17:17.252907		53
-245	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	1	2016-08-01 16:18:28.223363	2016-08-05 11:39:07.590705		51
-246	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	2	2016-08-01 16:18:29.249618	2016-08-05 11:39:07.598402		51
-247	CanFelipa_67.jpg	3	2016-08-01 16:18:29.973361	2016-08-05 11:39:07.605902		51
-248	CanFelipa_62.jpg	4	2016-08-01 16:18:30.582471	2016-08-05 11:39:07.613852		51
-249	CanFelipa_28.jpg	5	2016-08-01 16:18:31.269166	2016-08-05 11:39:07.621028		51
-467	ZANTOP_-_EQUILIBRIS.jpg	2	2021-11-19 20:17:26.068301	2022-01-05 20:02:40.436737		92
-261	RIMG0068.jpg	2	2016-08-01 17:43:52.564463	2020-02-19 17:17:17.20742		53
-268	DSCF2590.JPG	1	2016-08-05 11:55:25.381222	2020-06-15 15:43:34.334081		55
-468	ZANTOP_-_ESSENSETEMPO.jpg	3	2021-11-19 20:17:26.510295	2022-01-05 20:02:40.443209		92
-469	ZANTOP_-_1._ATADALASALAS.jpg	4	2021-11-19 20:17:27.044482	2022-01-05 20:02:40.449871		92
-269	DSCF2682.JPG	2	2016-08-05 11:55:25.971894	2020-06-15 15:43:34.345566		55
-470	ZANTOP_-_acord.jpg	5	2021-11-19 20:17:27.623496	2022-01-05 20:02:40.457456		92
-282	MIREIAZANTOP6.png	1	2017-02-19 23:46:47.237139	2017-06-02 00:58:05.503473		57
-471	ZANTOP_-_2._piet_.jpg	6	2021-11-19 20:17:28.155184	2022-01-05 20:02:40.464917		92
-472	zantop_-_coeurage_.jpg	7	2021-11-19 20:17:28.730148	2022-01-05 20:02:40.471387		92
-276	IMG_9786.jpeg	4	2016-10-19 22:54:28.983146	2017-06-02 00:09:34.266528		56
-277	IMG_9790.jpeg	5	2016-10-19 22:54:29.548586	2017-06-02 00:09:34.282751		56
-352	Escultura_sadernes_ONA.jpg	1	2019-04-15 11:41:03.231274	2022-01-05 21:43:08.608896		73
-343	P1110555_aleix_vallverd__baixa.jpg	2	2019-01-28 20:29:58.684495	2019-01-28 20:33:59.992447		69
-423	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	7	2020-10-14 22:48:46.750917	2022-01-05 20:07:42.779954		82
-312	donar_veu..._desig_Manlleu_2016.jpg	2	2017-06-02 01:10:47.004524	2020-06-15 15:27:55.891775		54
-280	Performance__Donar_veu_al_desig__Tona_2015__1_.jpg	4	2017-02-19 20:39:17.854188	2020-06-15 15:27:55.907144		54
-335	DSCF4982baixa.jpg	1	2019-01-28 20:12:16.001142	2020-06-15 15:34:09.279257		65
-284	DSCF4634.JPG	4	2017-06-01 22:46:01.688096	2019-03-07 22:10:16.043792		59
-285	DSCF4650.JPG	5	2017-06-01 22:46:02.788109	2019-03-07 22:10:16.05111		59
-286	DSCF4658.JPG	6	2017-06-01 22:46:03.486229	2019-03-07 22:10:16.058319		59
-287	DSCF4653.JPG	7	2017-06-01 22:46:04.360941	2019-03-07 22:10:16.06596		59
-288	DSCF4659.JPG	8	2017-06-01 22:46:05.059504	2019-03-07 22:10:16.073084		59
-290	DSCF4662.JPG	9	2017-06-01 22:46:06.732934	2019-03-07 22:10:16.080152		59
-308	MIREIAZANTOP8.jpg	4	2017-06-02 00:58:05.531724	2017-06-02 00:58:05.531724		57
-309	MIREIAZANTOP15.jpg	7	2017-06-02 00:58:06.343089	2017-06-02 00:58:06.343089		57
-310	MIREIAZANTOP22.jpg	8	2017-06-02 00:58:07.212784	2017-06-02 00:58:07.212784		57
-311	MIREIAZANTOP23.jpg	9	2017-06-02 00:58:07.992327	2017-06-02 00:58:07.992327		57
-344	P1110558baixa.jpg	3	2019-01-28 20:29:59.198321	2019-01-28 20:33:59.999286		69
-421	M.ZANTOP_phoscenes_aiguada_A4.jpg	8	2020-10-14 22:48:45.660183	2022-01-05 20:07:42.785293		82
-347	almost_finished.jpg	1	2019-03-07 22:44:49.708459	2022-01-05 20:21:12.645101		71
-359	IMG_20190125_162217.jpg	2	2019-04-15 12:26:32.177041	2022-01-05 20:21:12.653172		71
-314	corpologia_25_5_Girona_2_retocada.jpeg	2	2018-12-21 20:09:56.202489	2018-12-21 20:19:42.172333		66
-315	corpologia_25_5_Girona_3_retocada.jpeg	3	2018-12-21 20:09:56.734044	2018-12-21 20:19:42.181034		66
-316	corpologia_25_5_Girona_4_retocada.jpeg	4	2018-12-21 20:09:57.972727	2018-12-21 20:19:42.188538		66
-317	be___IMG-3930.JPG	5	2018-12-21 20:15:06.236806	2018-12-21 20:19:42.195869		66
-319	be__IMG-3931.JPG	7	2018-12-21 20:19:42.204608	2018-12-21 20:19:42.204608		66
-353	IMG-20150907-WA0003.jpg	2	2019-04-15 11:41:03.904461	2022-01-05 21:43:08.616558		73
-348	cap_2_IMG_20190405_174933_504.jpg	2	2019-04-15 10:49:23.935701	2022-01-05 21:06:26.046471		72
-366	IMG_20190518_124322_433.jpg	11	2019-06-10 20:41:50.057323	2022-01-10 11:24:54.449676		74
-297	MIREIAZANTOP42.png	1	2017-06-02 00:01:30.333086	2018-12-22 17:28:38.250543		63
-298	Josep_Sou_IMG_4360.JPG	2	2017-06-02 00:01:31.258369	2018-12-22 17:28:38.257233		63
-299	MIREIAZANTOP51.jpg	3	2017-06-02 00:01:31.926976	2018-12-22 17:28:38.264054		63
-300	MIREIAZANTOP59.jpg	4	2017-06-02 00:01:32.570647	2018-12-22 17:28:38.271066		63
-301	IMG-20161002-WA0002.jpg	5	2017-06-02 00:01:33.317075	2018-12-22 17:28:38.277884		63
-293	DSC01109-102.jpeg	1	2017-06-01 23:00:44.565565	2018-12-22 17:31:52.281198		61
-294	IMG_20170519_184422.jpg	1	2017-06-01 23:32:58.907326	2019-06-10 22:28:06.247884		62
-295	Puig-Reig_2017.JPG	2	2017-06-01 23:32:59.696835	2019-06-10 22:28:06.255411		62
-296	matar_1_2017.JPG	3	2017-06-01 23:33:00.456423	2019-06-10 22:28:06.263134		62
-313	inundart_ph_72ppi.jpg	2	2018-08-22 21:50:17.041856	2022-01-05 21:12:29.901187		67
-320	72ppi_rocs_de_lluna.jpg	3	2018-12-21 20:24:03.738858	2022-01-05 21:12:29.909097		67
-321	P1050649_redimensionat_amb_gwenvi_i_1024_.jpg	4	2018-12-21 20:56:13.139631	2022-01-05 21:12:29.91641		67
-291	DSCF4665.JPG	10	2017-06-01 22:46:07.448056	2019-03-07 22:10:16.086911		59
-292	DSCF4671.JPG	11	2017-06-01 22:46:08.290143	2019-03-07 22:10:16.093708		59
-360	IMG-20190225-WA0007.jpeg	3	2019-04-15 12:26:32.71858	2022-01-05 20:21:12.661137		71
-322	P1050656_redimensionat.jpg	5	2018-12-21 20:56:13.647604	2022-01-05 21:12:29.923692		67
-323	ph_72_ppi_peus_redimensionat.jpg	6	2018-12-21 20:56:14.15072	2022-01-05 21:12:29.930961		67
-349	capcap_2.jpg	3	2019-04-15 10:49:24.570936	2022-01-05 21:06:26.05637		72
-345	IMG_20190112_132919baixaMZ.jpg	4	2019-01-28 20:29:59.700083	2019-01-28 20:34:00.006136		69
-324	P1050670.jpg	7	2018-12-21 20:56:14.726737	2022-01-05 21:12:29.93823		67
-302	DSCF3668.JPG	1	2017-06-02 00:41:09.692566	2022-01-05 21:20:49.965156		64
-303	DSCF3662.JPG	2	2017-06-02 00:41:10.548581	2022-01-05 21:20:49.970221		64
-304	DSCF3670.JPG	3	2017-06-02 00:41:11.311246	2022-01-05 21:20:49.97533		64
-305	DSCF3683.JPG	4	2017-06-02 00:41:12.07919	2022-01-05 21:20:49.980764		64
-306	DSCF3681.JPG	5	2017-06-02 00:41:12.821488	2022-01-05 21:20:49.985901		64
-307	DSCF3656.JPG	6	2017-06-02 00:41:13.630177	2022-01-05 21:20:49.991015		64
-326	IMG_6115.JPG	1	2018-12-21 21:13:42.52006	2019-03-07 22:05:14.147243		68
-327	IMG_6129.JPG	2	2018-12-21 21:13:43.243946	2019-03-07 22:05:14.155993		68
-328	IMG_6130.JPG	3	2018-12-21 21:13:43.994911	2019-03-07 22:05:14.164096		68
-350	cap1_IMG_20190405_181244_013.jpg	4	2019-04-15 10:49:25.108785	2022-01-05 21:06:26.06586		72
-354	SOM.Escultura_equilibri_ONA.JPG	3	2019-04-15 11:41:04.569538	2022-01-05 21:43:08.623939		73
-355	cos_cosit_IMG_20171101_155853.jpg	4	2019-04-15 11:41:05.195215	2022-01-05 21:43:08.631319		73
-342	P1110547baixa.jpg	1	2019-01-28 20:29:58.211152	2019-01-28 20:33:59.985004		69
-222	DSCF1045.JPG	2	2015-09-27 23:03:08.941238	2022-01-10 11:49:05.9725		38
-330	IMG_6183.JPG	5	2018-12-21 21:13:45.579316	2019-03-07 22:05:14.810704		68
-346	IMG_6180.JPG	4	2019-03-07 22:05:14.173587	2019-03-07 22:05:14.173587		68
-289	DSCF4661.JPG	2	2017-06-01 22:46:05.850788	2019-03-07 22:10:16.027698		59
-283	DSCF4623.JPG	3	2017-06-01 22:46:00.447742	2019-03-07 22:10:16.036366		59
-334	P1060009baixant_qualitatjpg.jpg	2	2019-01-28 19:08:01.449546	2020-06-15 15:34:09.28773		65
-336	DSCF5039baixa.jpg	3	2019-01-28 20:12:16.582016	2020-06-15 15:34:09.295853		65
-337	P1060026baixa.jpg	4	2019-01-28 20:12:17.046974	2020-06-15 15:34:09.303638		65
-338	DSCF5004.JPG	5	2019-01-28 20:12:17.606523	2020-06-15 15:34:09.312117		65
-223	DSCF1058.JPG	3	2015-09-27 23:03:09.713415	2022-01-10 11:49:05.98181		38
-225	20140706_171308.jpg	5	2015-09-27 23:03:10.960936	2022-01-10 11:49:05.998828		38
-226	DSCF1265.JPG	6	2015-09-27 23:03:11.692762	2022-01-10 11:49:06.007736		38
-227	DSCF1556.JPG	7	2015-09-27 23:03:12.575381	2022-01-10 11:49:06.016108		38
-228	DSCF1525.JPG	8	2015-09-27 23:03:13.339641	2022-01-10 11:49:06.024301		38
-339	IMG-20180716-WA0015baixa.jpg	6	2019-01-28 20:12:18.105904	2020-06-15 15:34:09.320861		65
-340	IMG-20180115-WA0028baixa.jpg	7	2019-01-28 20:12:18.586861	2020-06-15 15:34:09.329313		65
-450	DSCF5843_clavant.JPG	3	2021-09-20 20:07:21.236949	2022-01-05 20:16:55.09776		88
-449	DSCF5838_cavar.JPG	4	2021-09-20 20:07:20.285475	2022-01-05 20:16:55.104164		88
-351	cap_1_contrallumIMG_20190405_174610_478.jpg	5	2019-04-15 10:49:25.782141	2022-01-05 21:06:26.075641		72
-325	P1050683_redimensionat.jpg	8	2018-12-21 20:56:15.458615	2022-01-05 21:12:29.945624		67
-424	_20191228_100620.JPG	1	2020-10-14 23:00:12.399023	2020-10-14 23:00:12.399023		78
-425	IMG_20191225_133646_151.jpg	2	2020-10-14 23:00:13.002663	2020-10-14 23:00:13.002663		78
-373	2014-08-05_11-44-56.jpg	2	2019-06-10 21:35:28.533335	2022-01-10 11:45:58.722232		75
-356	20150118_131247.jpg	5	2019-04-15 11:41:05.696436	2022-01-05 21:43:08.638811		73
-426	IMG_20190831_132411_157.jpg	3	2020-10-14 23:00:13.677558	2020-10-14 23:00:13.677558		78
-371	DSCN1209_2.jpg	3	2019-06-10 21:35:27.171697	2022-01-10 11:45:58.727682		75
-372	2014-08-05_11-33-00.jpg	4	2019-06-10 21:35:27.857342	2022-01-10 11:45:58.733148		75
-374	2014-08-05_12-09-46.jpg	5	2019-06-10 21:35:29.172985	2022-01-10 11:45:58.738507		75
-375	DSCN1288.JPG	6	2019-06-10 21:35:29.826105	2022-01-10 11:45:58.743949		75
-376	2014-08-05_11-39-24.jpg	7	2019-06-10 21:35:30.433734	2022-01-10 11:45:58.749208		75
-377	2014-08-05_11-40-12.jpg	8	2019-06-10 21:35:31.143949	2022-01-10 11:45:58.754498		75
-378	2014-08-05_12-20-18.jpg	9	2019-06-10 21:35:31.876559	2022-01-10 11:45:58.75965		75
-379	2014-08-05_11-37-52.jpg	10	2019-06-10 21:35:32.523608	2022-01-10 11:45:58.764627		75
-361	MZantop_4.jpg	2	2019-06-10 20:41:47.113692	2022-01-10 11:24:54.402272		74
-357	funambuliaIMG_20171104_161244.jpg	6	2019-04-15 11:41:06.382746	2022-01-05 21:43:08.646158		73
-368	MZantop_2_girat_a_dreta.jpg	3	2019-06-10 21:02:37.531284	2022-01-10 11:24:54.40774		74
-358	cordada_IMG_20171101_162351.jpg	7	2019-04-15 11:41:06.993407	2022-01-05 21:43:08.653575		73
-363	MZantop.JPG	4	2019-06-10 20:41:48.213093	2022-01-10 11:24:54.413008		74
-427	IMG_20191225_132357_968.jpg	4	2020-10-14 23:00:14.377944	2020-10-14 23:00:14.377944		78
-364	mzantop_3.JPG	5	2019-06-10 20:41:48.737315	2022-01-10 11:24:54.418402		74
-435	IMG-20210315-WA0017.jpg	2	2021-04-08 21:31:00.11372	2021-09-26 20:50:13.217025		85
-436	IMG-20210315-WA0016.jpg	3	2021-04-08 21:31:00.766945	2021-09-26 20:50:13.224921		85
-437	IMG-20210313-WA0009.jpg	4	2021-04-08 21:31:01.477819	2021-09-26 20:50:13.23258		85
-438	IMG-20210315-WA0011.jpg	5	2021-04-08 21:31:02.10316	2021-09-26 20:50:13.239717		85
-439	IMG-20210313-WA0004.jpg	6	2021-04-08 21:31:02.73683	2021-09-26 20:50:13.246896		85
-341	IMG-20180115-WA0024baixa.jpg	8	2019-01-28 20:12:19.193854	2020-06-15 15:34:09.337388		65
-50	DSC02327.JPG	5	2013-01-20 02:38:42.018621	2020-06-15 15:36:58.206256		19
-51	DSC02347.JPG	6	2013-01-20 02:38:42.463264	2020-06-15 15:36:58.218124		19
-397	DSCF4797.JPG	4	2019-06-10 22:26:59.31811	2019-06-10 22:28:06.270612		62
-398	DSCF4408.JPG	5	2019-06-10 22:27:00.122651	2019-06-10 22:28:06.277868		62
-399	nav_s_2016.JPG	6	2019-06-10 22:27:00.871318	2019-06-10 22:28:06.285202		62
-400	IMG_9343.argentona.JPG	7	2019-06-10 22:27:01.572114	2019-06-10 22:28:06.292523		62
-401	cardedeu2_2013.JPG	8	2019-06-10 22:27:02.109431	2019-06-10 22:28:06.299801		62
-392	DSCF4797.JPG	9	2019-06-10 22:26:49.589438	2019-06-10 22:28:06.307009		62
-381	IMG_20180928_164827.jpg	1	2019-06-10 21:53:33.123029	2022-01-05 20:26:16.306386		76
-384	IMG_20180928_164531.jpg	2	2019-06-10 21:53:34.726339	2022-01-05 20:26:16.31195		76
-52	DSC02355.JPG	7	2013-01-20 02:38:42.961502	2020-06-15 15:36:58.23095		19
-394	nav_s_2016.JPG	10	2019-06-10 22:26:51.016655	2019-06-10 22:28:06.314251		62
-395	IMG_9343.argentona.JPG	11	2019-06-10 22:26:51.79918	2019-06-10 22:28:06.321623		62
-396	cardedeu2_2013.JPG	12	2019-06-10 22:26:52.460067	2019-06-10 22:28:06.32934		62
-362	_20190412_193903.JPG	6	2019-06-10 20:41:47.574948	2022-01-10 11:24:54.423528		74
-369	MZantop_O.JPG	7	2019-06-10 21:02:38.167094	2022-01-10 11:24:54.428621		74
-440	IMG-20210313-WA0010.jpg	7	2021-04-08 21:31:03.285654	2021-09-26 20:50:13.254234		85
-370	MZantop_S.JPG	8	2019-06-10 21:02:38.640197	2022-01-10 11:24:54.433762		74
-416	M.ZANTOP_phoscenes_TINTA_a4.jpg	1	2020-10-14 22:48:42.546855	2022-01-05 20:07:42.747839		82
-417	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	2	2020-10-14 22:48:43.199496	2022-01-05 20:07:42.75346		82
-422	M.ZANTOP_phoscenes_P_TALS_A4.jpg	3	2020-10-14 22:48:46.128891	2022-01-05 20:07:42.75881		82
-386	IMG_20180928_165940.jpg	3	2019-06-10 21:53:35.78219	2022-01-05 20:26:16.317621		76
-383	IMG_20180928_165542.jpg	4	2019-06-10 21:53:34.237062	2022-01-05 20:26:16.323083		76
-387	IMG_20180928_170858.jpg	5	2019-06-10 21:53:36.315178	2022-01-05 20:26:16.328518		76
-388	IMG_20180928_170923.jpg	6	2019-06-10 21:53:36.81654	2022-01-05 20:26:16.333861		76
-382	Gravat-Nou-cuadrado.jpg	7	2019-06-10 21:53:33.591413	2022-01-05 20:26:16.33936		76
-419	M.ZANTOP_phoscenes._tinta_a4.jpg	4	2020-10-14 22:48:44.416543	2022-01-05 20:07:42.764119		82
-418	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	5	2020-10-14 22:48:43.798913	2022-01-05 20:07:42.769596		82
-420	M.ZANTOP_phoscenes_mute_a5_.jpg	6	2020-10-14 22:48:45.015193	2022-01-05 20:07:42.774738		82
-224	20130623_164338.jpg	4	2015-09-27 23:03:10.280082	2022-01-10 11:49:05.990409		38
-14	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	1	2013-01-05 00:35:47.142951	2013-01-05 00:35:47.142951		10
-15	ANA_RITA_RODRIGUES_FEM_2011_PAR_8672.jpg	2	2013-01-05 00:35:48.064251	2013-01-05 00:35:48.064251		10
-16	ANA_RITA_RODRIGUES_FEM_2011_PAR_8711.jpg	3	2013-01-05 00:35:48.681777	2013-01-05 00:35:48.681777		10
-17	ANA_RITA_RODRIGUES_FEM_2011_PAR_8749.jpg	4	2013-01-05 00:35:49.187735	2013-01-05 00:35:49.187735		10
-18	DSC03862.JPG	1	2013-01-05 00:51:50.455758	2013-01-05 00:51:50.455758		11
-19	DINERGIA_I-Armonia_Diatessaron.JPG	2	2013-01-05 00:51:51.344015	2013-01-05 00:51:51.344015		11
-20	DINERGIA_I-Llavors.JPG	3	2013-01-05 00:51:51.988754	2013-01-05 00:51:51.988754		11
-21	DINERGIAIII-Armonia_ad_infinitum.JPG	4	2013-01-05 00:51:52.437608	2013-01-05 00:51:52.437608		11
-22	DSC03863.JPG	5	2013-01-05 00:51:52.871227	2013-01-05 00:51:52.871227		11
-23	DSC05616bona.JPG	1	2013-01-05 01:21:06.684687	2013-01-05 01:21:06.684687		12
-24	100_0602.JPG	2	2013-01-05 01:21:07.409764	2013-01-05 01:21:07.409764		12
-25	100_0591.JPG	3	2013-01-05 01:21:07.933597	2013-01-05 01:21:07.933597		12
-26	DSC05840.JPG	4	2013-01-05 01:21:08.405276	2013-01-05 01:21:08.405276		12
-29	IMGP1552.JPG	1	2013-01-05 01:58:04.875843	2013-01-05 01:58:04.875843		15
-31	ATENEU_ph.jpg	3	2013-01-05 01:58:06.208474	2013-01-05 01:58:06.208474		15
-30	invitaci_n_performance_ateneu.jpg	2	2013-01-05 01:58:05.546197	2013-01-05 01:58:05.546197		15
-32	inici.JPG	1	2013-01-20 00:53:54.415123	2013-01-20 00:53:54.415123		16
-33	Performance_mireia__1_.JPG	2	2013-01-20 00:53:55.463728	2013-01-20 00:53:55.463728		16
-34	DSC06520.JPG	3	2013-01-20 00:53:56.067475	2013-01-20 00:53:56.067475		16
-35	Performance_mireia__2_.JPG	4	2013-01-20 00:53:56.586686	2013-01-20 00:53:56.586686		16
-36	5_canvi_enquadr..JPG	5	2013-01-20 00:53:57.168344	2013-01-20 00:53:57.168344		16
-37	Performance_mireia__6_.JPG	6	2013-01-20 00:53:57.624964	2013-01-20 00:53:57.624964		16
-38	Performance_mireia__4_.JPG	7	2013-01-20 00:53:58.209417	2013-01-20 00:53:58.209417		16
+7	Instal.laci__monos_labos.JPG	2	2013-01-04 21:08:33.070994	2022-07-03 01:36:15.600322		8
+199	20140706_165129.jpg	3	2015-01-05 00:13:36.036211	2022-07-03 01:37:06.460123		44
+200	20140706_164738.jpg	4	2015-01-05 00:13:36.897578	2022-07-03 01:37:07.027577		44
+201	20140706_165245.jpg	5	2015-01-05 00:13:37.994038	2022-07-03 01:37:07.714057		44
+204	IMG_1468.jpeg	1	2015-07-03 00:07:34.082814	2022-07-03 01:37:07.91078		46
+212	IMG_2324.jpeg	1	2015-09-27 22:40:21.943151	2022-07-03 01:37:09.155686		47
+146	CORPOLOGIA_13.jpeg	7	2014-05-17 12:13:11.921266	2022-07-03 01:36:50.405519		34
+148	DSC_0038retoc.jpeg	2	2014-05-17 12:35:48.040542	2022-07-03 01:36:50.861388		37
+149	DSC_0044_copia.jpeg	3	2014-05-17 12:35:48.913866	2022-07-03 01:36:51.15734		37
+128	Coloms_circuit1_A.Bombaci.jpg	4	2013-12-06 12:49:23.917396	2022-07-03 01:36:44.812736		33
+129	Coloms_Cordes1_ClaraBes.jpg	5	2013-12-06 12:49:25.10811	2022-07-03 01:36:45.117866		33
+130	Coloms_Globos_ClaraBes.jpg	6	2013-12-06 12:49:25.735747	2022-07-03 01:36:45.407462		33
+132	Coloms_Murmuradores_A.Bombaci.jpg	8	2013-12-06 12:49:27.235642	2022-07-03 01:36:45.847264		33
+133	generart25nov.jpg	2	2013-12-06 13:07:19.838038	2022-07-03 01:36:46.110871		35
+134	despunxa1.JPG	1	2013-12-06 13:20:53.588822	2022-07-03 01:36:46.616679		36
+150	DSC_0047_copia.jpeg	4	2014-05-17 12:35:49.755477	2022-07-03 01:36:51.35293		37
+151	DSC_0048_copiaretocada.jpeg	5	2014-05-17 12:35:50.614842	2022-07-03 01:36:51.57486		37
+152	DSC_0051_copia.jpeg	6	2014-05-17 12:35:51.284079	2022-07-03 01:36:51.817021		37
+156	Programa_Perpetraci_ns_Interior.jpg	3	2014-07-17 22:28:50.898452	2022-07-03 01:36:52.242409		39
+158	140531-XIV_Perpetracions-Antologia_Animal-500.jpg	2	2014-07-17 22:28:53.187017	2022-07-03 01:36:53.387471		39
+171	IMG_2108.jpeg	3	2014-11-03 23:26:03.616212	2022-07-03 01:36:57.727703		41
+172	IMG_2116.jpeg	4	2014-11-03 23:26:04.397945	2022-07-03 01:36:57.864409		41
+173	IMG_2117.jpeg	5	2014-11-03 23:26:05.244875	2022-07-03 01:36:58.068102		41
+174	IMG_2127.jpeg	6	2014-11-03 23:26:06.004775	2022-07-03 01:36:58.191964		41
+136	despunxa3.JPG	3	2013-12-06 13:20:55.176573	2022-07-03 01:36:47.394523		36
+137	despunxa4.JPG	4	2013-12-06 13:20:55.929314	2022-07-03 01:36:47.808486		36
+138	despunxaFi.JPG	5	2013-12-06 13:20:56.96195	2022-07-03 01:36:48.14429		36
+139	esbarzer_obrAl_xia1.JPG	6	2013-12-06 13:20:58.326664	2022-07-03 01:36:48.523872		36
+140	DSC_0583.jpeg	1	2014-05-17 12:13:07.524387	2022-07-03 01:36:48.88441		34
+141	sum_us_1.jpeg	2	2014-05-17 12:13:08.49483	2022-07-03 01:36:49.196095		34
+175	IMG_2131.jpeg	7	2014-11-03 23:26:06.6773	2022-07-03 01:36:58.326542		41
+176	IMG_2132.jpeg	8	2014-11-03 23:26:07.299663	2022-07-03 01:36:58.441424		41
+177	IMG_2134.jpeg	9	2014-11-03 23:26:07.928066	2022-07-03 01:36:58.560125		41
+178	Mireia_Zantop_Accio_.JPG	2	2015-01-04 22:05:04.762646	2022-07-03 01:36:58.998345		42
+179	Fulls_Accio__Mireia.JPG	3	2015-01-04 22:05:10.596075	2022-07-03 01:36:59.530419		42
+164	P1130300.JPG	4	2014-07-17 22:55:52.957072	2022-07-03 01:36:55.889859		35
+135	despunxa2.JPG	2	2013-12-06 13:20:54.370403	2022-07-03 01:36:47.033948		36
+143	sum_us_3.jpeg	4	2014-05-17 12:13:10.103452	2022-07-03 01:36:49.786783		34
+144	DSC_0621.jpeg	5	2014-05-17 12:13:10.913218	2022-07-03 01:36:50.190717		34
+127	Coloms_Laminas1_ClaraBes.jpg	3	2013-12-06 12:49:23.33067	2022-07-03 01:36:44.536627		33
+165	P1130321.JPG	5	2014-07-17 22:55:53.937621	2022-07-03 01:36:56.373987		35
+170	IMG_2104.jpeg	2	2014-11-03 23:26:02.782895	2022-07-03 01:36:57.546926		41
+159	140531-XIV_Perpetracions-Antologia_Animal-504.jpg	4	2014-07-17 22:28:54.317382	2022-07-03 01:36:53.901403		39
+160	140531-XIV_Perpetracions-Antologia_Animal-506.jpg	5	2014-07-17 22:28:55.469747	2022-07-03 01:36:54.368237		39
+161	140531-XIV_Perpetracions-Antologia_Animal-496.jpg	6	2014-07-17 22:28:56.851237	2022-07-03 01:36:54.796863		39
+162	P1130261.JPG	1	2014-07-17 22:55:51.029461	2022-07-03 01:36:55.140763		35
+163	P1130264.JPG	3	2014-07-17 22:55:51.976218	2022-07-03 01:36:55.510211		35
+168	Separ_20143Sala_AUDITORIO.jpg	3	2014-10-09 17:19:06.903811	2022-07-03 01:36:57.21413		30
+169	IMG_2095.jpeg	1	2014-11-03 23:21:44.115417	2022-07-03 01:36:57.348387		41
+180	Pu_blic02.JPG	4	2015-01-04 22:05:11.538994	2022-07-03 01:37:00.016044		42
+213	IMG_2334.jpeg	2	2015-09-27 22:40:22.503104	2022-07-03 01:37:09.29523		47
+181	Mireia_Zantop_01.JPG	5	2015-01-04 22:05:12.485475	2022-07-03 01:37:00.612485		42
+182	PanorGUILLERIES_accio_.jpg	6	2015-01-04 22:05:18.447944	2022-07-03 01:37:01.016421		42
+183	Daniel_Ruiz-_Trillo_02.JPG	7	2015-01-04 22:05:19.521168	2022-07-03 01:37:01.404245		42
+184	Mireia_i_Blai_en_accio_.JPG	8	2015-01-04 22:05:20.243222	2022-07-03 01:37:01.992293		42
+185	IMG_6760.jpeg	2	2015-01-04 23:00:32.874014	2022-07-03 01:37:02.205689		43
+186	IMG_6764.jpeg	3	2015-01-04 23:00:33.717678	2022-07-03 01:37:02.451245		43
+187	IMG_6767.jpeg	4	2015-01-04 23:00:34.42342	2022-07-03 01:37:02.716352		43
+188	IMG_6772.jpeg	5	2015-01-04 23:00:35.082099	2022-07-03 01:37:02.890177		43
+189	IMG_6775.jpeg	6	2015-01-04 23:00:35.765695	2022-07-03 01:37:03.052706		43
+190	IMG_6798.jpeg	7	2015-01-04 23:00:41.430322	2022-07-03 01:37:03.261817		43
+191	IMG_6812.jpeg	8	2015-01-04 23:00:42.015798	2022-07-03 01:37:03.425777		43
+192	IMG_6819.jpeg	9	2015-01-04 23:00:42.650881	2022-07-03 01:37:03.587902		43
+193	IMG_6827.jpeg	10	2015-01-04 23:00:43.296168	2022-07-03 01:37:03.745125		43
+194	IMG_6834.jpeg	11	2015-01-04 23:00:44.045373	2022-07-03 01:37:03.94099		43
+196	tarja_birds.jpeg	1	2015-01-04 23:23:54.778561	2022-07-03 01:37:04.613528		40
+197	20140706_164949.jpg	1	2015-01-05 00:13:34.13966	2022-07-03 01:37:05.217895		44
+198	20140706_164949.jpg	2	2015-01-05 00:13:35.07326	2022-07-03 01:37:05.822152		44
+214	IMG_2423.jpeg	3	2015-09-27 22:40:23.059602	2022-07-03 01:37:09.437681		47
+252	CanFelipa_39.jpg	8	2016-08-01 16:18:33.389819	2022-07-03 01:37:21.959746		51
+253	CanFelipa_26.jpg	9	2016-08-01 16:18:33.944432	2022-07-03 01:37:22.28041		51
+254	CanFelipa_09.jpg	10	2016-08-01 16:18:34.704063	2022-07-03 01:37:22.464027		51
+111	_MG_3737.jpg	2	2013-09-05 14:59:30.592008	2022-07-03 01:36:43.763176		31
+465	DSC_0106-004.jpg	6	2021-09-26 20:13:56.480034	2022-07-03 01:41:27.089799		87
+126	fent_volar_coloms.jpg	2	2013-12-06 12:49:22.440575	2022-07-03 01:36:44.205717		33
+215	IMG_2411.jpeg	4	2015-09-27 22:40:23.590348	2022-07-03 01:37:09.587902		47
+216	IMG_2450.jpeg	5	2015-09-27 22:40:24.149661	2022-07-03 01:37:09.803668		47
+217	IMG_2464.jpeg	6	2015-09-27 22:40:24.767326	2022-07-03 01:37:09.944704		47
+218	IMG_2489.jpeg	7	2015-09-27 22:40:25.303337	2022-07-03 01:37:10.08716		47
+250	CanFelipa_17.jpg	6	2016-08-01 16:18:31.863956	2022-07-03 01:37:21.165076		51
+251	AdobeBridgeBatchRenameTemp2CanFelipa_02.jpg	7	2016-08-01 16:18:32.497636	2022-07-03 01:37:21.54192		51
+10	Vil.la_Florida_venus.JPG	3	2013-01-04 21:08:34.695465	2022-07-03 01:36:16.044738		8
+229	poesie.JPG	2	2015-09-27 23:08:19.111853	2022-07-03 01:37:14.599465		14
+230	Strelitzia_Delitzia.JPG	3	2015-09-27 23:08:19.725425	2022-07-03 01:37:14.855416		14
+468	ZANTOP_-_ESSENSETEMPO.jpg	3	2021-11-19 20:17:26.510295	2022-07-03 01:41:28.157776		92
+231	AromaMagn_lia.JPG	4	2015-09-27 23:08:20.445711	2022-07-03 01:37:15.194481		14
+272	DSCF2813.JPG	5	2016-08-05 11:55:28.179231	2022-07-03 01:37:28.488402		55
+273	DSCF2805.JPG	6	2016-08-05 11:55:28.906122	2022-07-03 01:37:29.04475		55
+276	IMG_9786.jpeg	4	2016-10-19 22:54:28.983146	2022-07-03 01:37:30.076817		56
+277	IMG_9790.jpeg	5	2016-10-19 22:54:29.548586	2022-07-03 01:37:30.360679		56
+232	Rosaflordepell.JPG	5	2015-09-27 23:08:21.133874	2022-07-03 01:37:15.587646		14
+233	IMG_6061.jpeg	1	2016-08-01 15:36:37.806751	2022-07-03 01:37:15.915389		48
+262	DSCF0447_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	3	2016-08-01 17:43:53.096192	2022-07-03 01:37:24.644594		53
+207	IMG_1492.jpeg	4	2015-07-03 00:07:36.100125	2022-07-03 01:37:08.439776		46
+208	IMG_1499.jpeg	5	2015-07-03 00:07:36.731664	2022-07-03 01:37:08.609917		46
+210	IMG_1513.jpeg	6	2015-07-03 00:10:52.871909	2022-07-03 01:37:08.764662		46
+220	IMG_2533.jpeg	9	2015-09-27 22:40:26.521271	2022-07-03 01:37:10.365772		47
+221	IMG_2574.jpeg	10	2015-09-27 22:40:27.133208	2022-07-03 01:37:10.591559		47
+235	IMG_6073.jpeg	3	2016-08-01 15:36:39.109254	2022-07-03 01:37:16.382265		48
+237	IMG_6096.jpeg	5	2016-08-01 15:36:40.455173	2022-07-03 01:37:17.023285		48
+238	IMG_6103.jpeg	6	2016-08-01 15:36:41.15213	2022-07-03 01:37:17.287333		48
+239	IMG_6108.jpeg	7	2016-08-01 15:36:41.756187	2022-07-03 01:37:17.542087		48
+240	IMG_6111.jpeg	8	2016-08-01 15:36:42.522787	2022-07-03 01:37:17.90729		48
+241	IMG_6112.jpeg	9	2016-08-01 15:36:43.071126	2022-07-03 01:37:18.242019		48
+242	Corpologia_21_.jpg	11	2016-08-01 15:36:43.611145	2022-07-03 01:37:18.700934		48
+243	IMG-20150128-WA0000.jpg	1	2016-08-01 15:46:03.253903	2022-07-03 01:37:19.038031		49
+244	IMG-20150128-WA0001.jpg	2	2016-08-01 15:46:03.943581	2022-07-03 01:37:19.407352		49
+280	Performance__Donar_veu_al_desig__Tona_2015__1_.jpg	4	2017-02-19 20:39:17.854188	2022-07-03 01:37:32.023024		54
+284	DSCF4634.JPG	4	2017-06-01 22:46:01.688096	2022-07-03 01:38:45.341206		59
+257	foto_eventuall_ferran_blancafort.jpeg	3	2016-08-01 16:58:24.83924	2022-07-03 01:37:23.201729		52
+258	eventuall3.jpeg	4	2016-08-01 16:58:25.430252	2022-07-03 01:37:23.420501		52
+259	eventuall4.jpeg	5	2016-08-01 16:58:26.030722	2022-07-03 01:37:23.668899		52
+260	Cartell_ME_expo_cartells_2016.jpg	1	2016-08-01 17:43:51.787056	2022-07-03 01:37:24.001568		53
+261	RIMG0068.jpg	2	2016-08-01 17:43:52.564463	2022-07-03 01:37:24.330368		53
+246	AdobeBridgeBatchRenameTemp12CanFelipa_31.jpg	2	2016-08-01 16:18:29.249618	2022-07-03 01:37:19.988753		51
+247	CanFelipa_67.jpg	3	2016-08-01 16:18:29.973361	2022-07-03 01:37:20.217704		51
+281	DONAR_VEU_AL_DESIG_.jpg	3	2017-02-19 20:39:18.691339	2022-07-03 01:37:32.398696		54
+234	IMG_6068.jpeg	2	2016-08-01 15:36:38.491222	2022-07-03 01:37:16.163004		48
+264	RIMG0087.jpg	5	2016-08-01 17:43:54.791985	2022-07-03 01:37:25.298367		53
+265	RIMG0082.jpg	6	2016-08-01 17:43:55.413798	2022-07-03 01:37:25.569557		53
+266	RIMG0084.jpg	7	2016-08-01 17:43:55.963678	2022-07-03 01:37:25.83186		53
+267	ZANTOP_A_BEN1_amb_dibuix_fotos_Joan_Casellas_Arxiu_Aire.jpg	8	2016-08-01 17:43:56.508431	2022-07-03 01:37:26.124048		53
+268	DSCF2590.JPG	1	2016-08-05 11:55:25.381222	2022-07-03 01:37:26.571337		55
+269	DSCF2682.JPG	2	2016-08-05 11:55:25.971894	2022-07-03 01:37:27.086622		55
+248	CanFelipa_62.jpg	4	2016-08-01 16:18:30.582471	2022-07-03 01:37:20.57687		51
+249	CanFelipa_28.jpg	5	2016-08-01 16:18:31.269166	2022-07-03 01:37:20.888384		51
+255	eventuall0.jpeg	1	2016-08-01 16:58:23.602299	2022-07-03 01:37:22.70316		52
+256	eventuall2.jpeg	2	2016-08-01 16:58:24.28788	2022-07-03 01:37:23.010594		52
+263	DSCF0459_MIREIA_ZANTOP_foto_Joan_Casellas_Arxiu_Aire.JPG	4	2016-08-01 17:43:53.868735	2022-07-03 01:37:24.933815		53
+469	ZANTOP_-_1._ATADALASALAS.jpg	4	2021-11-19 20:17:27.044482	2022-07-03 01:41:28.592812		92
+270	DSCF2762.JPG	3	2016-08-05 11:55:26.72496	2022-07-03 01:37:27.531222		55
+271	DSCF2792.JPG	4	2016-08-05 11:55:27.471995	2022-07-03 01:37:27.994351		55
+470	ZANTOP_-_acord.jpg	5	2021-11-19 20:17:27.623496	2022-07-03 01:41:29.012649		92
+471	ZANTOP_-_2._piet_.jpg	6	2021-11-19 20:17:28.155184	2022-07-03 01:41:29.550989		92
+278	Performance__Donar_veu_al_desig__Tona_2015__6_.jpg	1	2017-02-19 20:39:16.13435	2022-07-03 01:37:31.031661		54
+472	zantop_-_coeurage_.jpg	7	2021-11-19 20:17:28.730148	2022-07-03 01:41:29.857933		92
+285	DSCF4650.JPG	5	2017-06-01 22:46:02.788109	2022-07-03 01:38:45.714272		59
+205	IMG_1475.jpeg	2	2015-07-03 00:07:34.957377	2022-07-03 01:37:08.071222		46
+279	VIC2.jpg	5	2017-02-19 20:39:17.166702	2022-07-03 01:37:31.4823		54
+282	MIREIAZANTOP6.png	1	2017-02-19 23:46:47.237139	2022-07-03 01:38:44.509779		57
+347	almost_finished.jpg	1	2019-03-07 22:44:49.708459	2022-07-03 01:39:34.560163		71
+467	ZANTOP_-_EQUILIBRIS.jpg	2	2021-11-19 20:17:26.068301	2022-07-03 01:41:27.766816		92
+315	corpologia_25_5_Girona_3_retocada.jpeg	3	2018-12-21 20:09:56.734044	2022-07-03 01:39:25.715847		66
+286	DSCF4658.JPG	6	2017-06-01 22:46:03.486229	2022-07-03 01:38:46.148036		59
+344	P1110558baixa.jpg	3	2019-01-28 20:29:59.198321	2022-07-03 01:39:33.554501		69
+287	DSCF4653.JPG	7	2017-06-01 22:46:04.360941	2022-07-03 01:38:46.52478		59
+288	DSCF4659.JPG	8	2017-06-01 22:46:05.059504	2022-07-03 01:38:46.952376		59
+290	DSCF4662.JPG	9	2017-06-01 22:46:06.732934	2022-07-03 01:38:47.697754		59
+308	MIREIAZANTOP8.jpg	4	2017-06-02 00:58:05.531724	2022-07-03 01:39:23.461938		57
+309	MIREIAZANTOP15.jpg	7	2017-06-02 00:58:06.343089	2022-07-03 01:39:23.921749		57
+310	MIREIAZANTOP22.jpg	8	2017-06-02 00:58:07.212784	2022-07-03 01:39:24.431832		57
+311	MIREIAZANTOP23.jpg	9	2017-06-02 00:58:07.992327	2022-07-03 01:39:24.702923		57
+312	donar_veu..._desig_Manlleu_2016.jpg	2	2017-06-02 01:10:47.004524	2022-07-03 01:39:24.989255		54
+314	corpologia_25_5_Girona_2_retocada.jpeg	2	2018-12-21 20:09:56.202489	2022-07-03 01:39:25.30713		66
+316	corpologia_25_5_Girona_4_retocada.jpeg	4	2018-12-21 20:09:57.972727	2022-07-03 01:39:26.079243		66
+359	IMG_20190125_162217.jpg	2	2019-04-15 12:26:32.177041	2022-07-03 01:39:41.804626		71
+451	DSCF5849torre_lluvi_.JPG	6	2021-09-20 20:07:22.107389	2022-07-03 01:41:23.761398		88
+421	M.ZANTOP_phoscenes_aiguada_A4.jpg	8	2020-10-14 22:48:45.660183	2022-07-03 01:40:00.718193		82
+423	M.ZANTOP_phoscenes__AIGUAda__A4.jpg	7	2020-10-14 22:48:46.750917	2022-07-03 01:40:01.48193		82
+317	be___IMG-3930.JPG	5	2018-12-21 20:15:06.236806	2022-07-03 01:39:26.647751		66
+319	be__IMG-3931.JPG	7	2018-12-21 20:19:42.204608	2022-07-03 01:39:27.093525		66
+335	DSCF4982baixa.jpg	1	2019-01-28 20:12:16.001142	2022-07-03 01:39:31.253485		65
+343	P1110555_aleix_vallverd__baixa.jpg	2	2019-01-28 20:29:58.684495	2022-07-03 01:39:33.281313		69
+206	IMG_1491.jpeg	3	2015-07-03 00:07:35.567417	2022-07-03 01:37:08.247856		46
+350	cap1_IMG_20190405_181244_013.jpg	4	2019-04-15 10:49:25.108785	2022-07-03 01:39:36.465569		72
+371	DSCN1209_2.jpg	3	2019-06-10 21:35:27.171697	2022-07-03 01:39:46.101283		75
+299	MIREIAZANTOP51.jpg	3	2017-06-02 00:01:31.926976	2022-07-03 01:39:20.079997		63
+300	MIREIAZANTOP59.jpg	4	2017-06-02 00:01:32.570647	2022-07-03 01:39:20.397917		63
+301	IMG-20161002-WA0002.jpg	5	2017-06-02 00:01:33.317075	2022-07-03 01:39:20.738285		63
+302	DSCF3668.JPG	1	2017-06-02 00:41:09.692566	2022-07-03 01:39:21.173362		64
+303	DSCF3662.JPG	2	2017-06-02 00:41:10.548581	2022-07-03 01:39:21.436364		64
+295	Puig-Reig_2017.JPG	2	2017-06-01 23:32:59.696835	2022-07-03 01:38:49.795726		62
+296	matar_1_2017.JPG	3	2017-06-01 23:33:00.456423	2022-07-03 01:38:50.26832		62
+297	MIREIAZANTOP42.png	1	2017-06-02 00:01:30.333086	2022-07-03 01:39:19.220105		63
+298	Josep_Sou_IMG_4360.JPG	2	2017-06-02 00:01:31.258369	2022-07-03 01:39:19.673468		63
+321	P1050649_redimensionat_amb_gwenvi_i_1024_.jpg	4	2018-12-21 20:56:13.139631	2022-07-03 01:39:27.849881		67
+322	P1050656_redimensionat.jpg	5	2018-12-21 20:56:13.647604	2022-07-03 01:39:28.131638		67
+324	P1050670.jpg	7	2018-12-21 20:56:14.726737	2022-07-03 01:39:28.808004		67
+293	DSC01109-102.jpeg	1	2017-06-01 23:00:44.565565	2022-07-03 01:38:48.715544		61
+294	IMG_20170519_184422.jpg	1	2017-06-01 23:32:58.907326	2022-07-03 01:38:49.309468		62
+363	MZantop.JPG	4	2019-06-10 20:41:48.213093	2022-07-03 01:39:43.206504		74
+325	P1050683_redimensionat.jpg	8	2018-12-21 20:56:15.458615	2022-07-03 01:39:29.056739		67
+351	cap_1_contrallumIMG_20190405_174610_478.jpg	5	2019-04-15 10:49:25.782141	2022-07-03 01:39:36.91563		72
+348	cap_2_IMG_20190405_174933_504.jpg	2	2019-04-15 10:49:23.935701	2022-07-03 01:39:35.268422		72
+326	IMG_6115.JPG	1	2018-12-21 21:13:42.52006	2022-07-03 01:39:29.468797		68
+304	DSCF3670.JPG	3	2017-06-02 00:41:11.311246	2022-07-03 01:39:21.736394		64
+305	DSCF3683.JPG	4	2017-06-02 00:41:12.07919	2022-07-03 01:39:22.143047		64
+306	DSCF3681.JPG	5	2017-06-02 00:41:12.821488	2022-07-03 01:39:22.558281		64
+307	DSCF3656.JPG	6	2017-06-02 00:41:13.630177	2022-07-03 01:39:22.992663		64
+313	inundart_ph_72ppi.jpg	2	2018-08-22 21:50:17.041856	2022-07-03 01:39:25.132884		67
+320	72ppi_rocs_de_lluna.jpg	3	2018-12-21 20:24:03.738858	2022-07-03 01:39:27.574904		67
+328	IMG_6130.JPG	3	2018-12-21 21:13:43.994911	2022-07-03 01:39:30.188087		68
+330	IMG_6183.JPG	5	2018-12-21 21:13:45.579316	2022-07-03 01:39:30.561886		68
+334	P1060009baixant_qualitatjpg.jpg	2	2019-01-28 19:08:01.449546	2022-07-03 01:39:30.926717		65
+354	SOM.Escultura_equilibri_ONA.JPG	3	2019-04-15 11:41:04.569538	2022-07-03 01:39:38.676049		73
+356	20150118_131247.jpg	5	2019-04-15 11:41:05.696436	2022-07-03 01:39:39.870014		73
+357	funambuliaIMG_20171104_161244.jpg	6	2019-04-15 11:41:06.382746	2022-07-03 01:39:40.570874		73
+346	IMG_6180.JPG	4	2019-03-07 22:05:14.173587	2022-07-03 01:39:34.088819		68
+225	20140706_171308.jpg	5	2015-09-27 23:03:10.960936	2022-07-03 01:37:12.614711		38
+336	DSCF5039baixa.jpg	3	2019-01-28 20:12:16.582016	2022-07-03 01:39:31.536081		65
+349	capcap_2.jpg	3	2019-04-15 10:49:24.570936	2022-07-03 01:39:35.765967		72
+292	DSCF4671.JPG	11	2017-06-01 22:46:08.290143	2022-07-03 01:38:48.475773		59
+291	DSCF4665.JPG	10	2017-06-01 22:46:07.448056	2022-07-03 01:38:48.105645		59
+337	P1060026baixa.jpg	4	2019-01-28 20:12:17.046974	2022-07-03 01:39:31.794603		65
+338	DSCF5004.JPG	5	2019-01-28 20:12:17.606523	2022-07-03 01:39:32.142108		65
+340	IMG-20180115-WA0028baixa.jpg	7	2019-01-28 20:12:18.586861	2022-07-03 01:39:32.569579		65
+341	IMG-20180115-WA0024baixa.jpg	8	2019-01-28 20:12:19.193854	2022-07-03 01:39:32.800579		65
+226	DSCF1265.JPG	6	2015-09-27 23:03:11.692762	2022-07-03 01:37:13.112373		38
+227	DSCF1556.JPG	7	2015-09-27 23:03:12.575381	2022-07-03 01:37:13.814461		38
+228	DSCF1525.JPG	8	2015-09-27 23:03:13.339641	2022-07-03 01:37:14.380685		38
+283	DSCF4623.JPG	3	2017-06-01 22:46:00.447742	2022-07-03 01:38:44.954767		59
+289	DSCF4661.JPG	2	2017-06-01 22:46:05.850788	2022-07-03 01:38:47.336579		59
+342	P1110547baixa.jpg	1	2019-01-28 20:29:58.211152	2022-07-03 01:39:33.036825		69
+50	DSC02327.JPG	5	2013-01-20 02:38:42.018621	2022-07-03 01:36:28.881181		19
+355	cos_cosit_IMG_20171101_155853.jpg	4	2019-04-15 11:41:05.195215	2022-07-03 01:39:39.277882		73
+327	IMG_6129.JPG	2	2018-12-21 21:13:43.243946	2022-07-03 01:39:29.805597		68
+426	IMG_20190831_132411_157.jpg	3	2020-10-14 23:00:13.677558	2022-07-03 01:40:03.557028		78
+435	IMG-20210315-WA0017.jpg	2	2021-04-08 21:31:00.11372	2022-07-03 01:40:08.584639		85
+375	DSCN1288.JPG	6	2019-06-10 21:35:29.826105	2022-07-03 01:39:47.61486		75
+358	cordada_IMG_20171101_162351.jpg	7	2019-04-15 11:41:06.993407	2022-07-03 01:39:41.426757		73
+436	IMG-20210315-WA0016.jpg	3	2021-04-08 21:31:00.766945	2022-07-03 01:40:09.230028		85
+373	2014-08-05_11-44-56.jpg	2	2019-06-10 21:35:28.533335	2022-07-03 01:39:46.909316		75
+374	2014-08-05_12-09-46.jpg	5	2019-06-10 21:35:29.172985	2022-07-03 01:39:47.226459		75
+376	2014-08-05_11-39-24.jpg	7	2019-06-10 21:35:30.433734	2022-07-03 01:39:48.052756		75
+377	2014-08-05_11-40-12.jpg	8	2019-06-10 21:35:31.143949	2022-07-03 01:39:48.478582		75
+378	2014-08-05_12-20-18.jpg	9	2019-06-10 21:35:31.876559	2022-07-03 01:39:48.823438		75
+379	2014-08-05_11-37-52.jpg	10	2019-06-10 21:35:32.523608	2022-07-03 01:39:49.239118		75
+397	DSCF4797.JPG	4	2019-06-10 22:26:59.31811	2022-07-03 01:39:56.083917		62
+398	DSCF4408.JPG	5	2019-06-10 22:27:00.122651	2022-07-03 01:39:56.740669		62
+364	mzantop_3.JPG	5	2019-06-10 20:41:48.737315	2022-07-03 01:39:43.46088		74
+360	IMG-20190225-WA0007.jpeg	3	2019-04-15 12:26:32.71858	2022-07-03 01:39:42.210427		71
+372	2014-08-05_11-33-00.jpg	4	2019-06-10 21:35:27.857342	2022-07-03 01:39:46.518309		75
+361	MZantop_4.jpg	2	2019-06-10 20:41:47.113692	2022-07-03 01:39:42.506807		74
+366	IMG_20190518_124322_433.jpg	11	2019-06-10 20:41:50.057323	2022-07-03 01:39:44.446084		74
+368	MZantop_2_girat_a_dreta.jpg	3	2019-06-10 21:02:37.531284	2022-07-03 01:39:45.183415		74
+437	IMG-20210313-WA0009.jpg	4	2021-04-08 21:31:01.477819	2022-07-03 01:40:09.977944		85
+438	IMG-20210315-WA0011.jpg	5	2021-04-08 21:31:02.10316	2022-07-03 01:40:10.434837		85
+439	IMG-20210313-WA0004.jpg	6	2021-04-08 21:31:02.73683	2022-07-03 01:40:10.841285		85
+449	DSCF5838_cavar.JPG	4	2021-09-20 20:07:20.285475	2022-07-03 01:41:22.655284		88
+450	DSCF5843_clavant.JPG	3	2021-09-20 20:07:21.236949	2022-07-03 01:41:23.224756		88
+345	IMG_20190112_132919baixaMZ.jpg	4	2019-01-28 20:29:59.700083	2022-07-03 01:39:33.819931		69
+222	DSCF1045.JPG	2	2015-09-27 23:03:08.941238	2022-07-03 01:37:10.998481		38
+223	DSCF1058.JPG	3	2015-09-27 23:03:09.713415	2022-07-03 01:37:11.452558		38
+399	nav_s_2016.JPG	6	2019-06-10 22:27:00.871318	2022-07-03 01:39:57.295642		62
+400	IMG_9343.argentona.JPG	7	2019-06-10 22:27:01.572114	2022-07-03 01:39:57.705491		62
+424	_20191228_100620.JPG	1	2020-10-14 23:00:12.399023	2022-07-03 01:40:01.951798		78
+425	IMG_20191225_133646_151.jpg	2	2020-10-14 23:00:13.002663	2022-07-03 01:40:02.63508		78
+51	DSC02347.JPG	6	2013-01-20 02:38:42.463264	2022-07-03 01:36:29.34242		19
 39	\N	8	2013-01-20 00:53:58.799125	2013-01-20 01:03:16.222161	http://www.youtube.com/watch?v=AAvuvEJFgx8	16
-43	Mireia.JPG	1	2013-01-20 02:15:44.637816	2013-01-20 02:15:44.637816		18
-147	DSC_0037.jpeg	1	2014-05-17 12:35:47.239267	2014-05-17 12:35:47.239267		37
-211	P1000490.jpg	4	2015-09-25 01:15:08.350715	2015-09-25 01:15:08.350715		8
-275	IMG_9780.jpeg	2	2016-10-19 22:54:28.283388	2017-06-02 00:09:34.231703		56
-44	Juntas.JPG	2	2013-01-20 02:15:45.293899	2013-01-20 02:15:45.293899		18
-45	Eva.JPG	3	2013-01-20 02:15:45.925373	2013-01-20 02:15:45.925373		18
-55	DSCF1204.JPG	1	2013-03-22 00:11:06.530617	2013-03-22 00:11:06.530617		23
-56	DSCF1197.JPG	2	2013-03-27 21:32:21.804513	2013-03-27 21:32:21.804513		23
-57	DSCF1203.JPG	3	2013-03-27 21:32:22.726841	2013-03-27 21:32:22.726841		23
-58	DSCF1208.JPG	4	2013-03-27 21:32:23.182231	2013-03-27 21:32:23.182231		23
-59	DSCF1214.JPG	5	2013-03-27 21:32:23.638224	2013-03-27 21:32:23.638224		23
-42	uters3.jpg	3	2013-01-20 01:52:34.332986	2013-03-28 00:07:10.413976		17
-40	sala_ruinas2.2.JPG	1	2013-01-20 01:01:01.484063	2013-03-28 00:07:10.391367		17
-41	obra_s._paper__ter.jpg	2	2013-01-20 01:52:33.550087	2013-03-28 00:07:10.402939		17
-3	1_Alguien_camina...JPG	2	2013-01-04 20:32:19.49924	2013-03-28 01:44:05.43781		6
-85	09-La_Bodega_Rustica.jpg	1	2013-03-28 00:59:06.353876	2013-03-28 00:59:06.353876		26
-86	LA_DOCTORA_COLE__Noah_Gordon_.jpg	2	2013-03-28 00:59:06.821734	2013-03-28 00:59:06.821734		26
-89	imagesNoah_presentaci_n.jpg	3	2013-03-28 00:59:07.958679	2013-03-28 00:59:07.958679		26
-91	1_Alguien_camina.sense_marc.JPG	1	2013-03-28 01:29:42.952631	2013-03-28 01:29:42.952631		6
-92	2_El_viento_despeina...JPG	3	2013-03-28 01:34:59.55755	2013-03-28 01:44:05.449351		6
-93	6_La_hoja_tiembla...JPG	4	2013-03-28 01:35:00.10358	2013-03-28 01:44:05.45686		6
-94	5_Cien_hormigas...JPG	5	2013-03-28 01:35:00.649683	2013-03-28 01:44:05.463948		6
-95	9_Baile_de_paraguas...JPG	6	2013-03-28 01:35:01.228049	2013-03-28 01:44:05.471771		6
-96	7_La_risa_rompe...JPG	7	2013-03-28 01:35:01.740548	2013-03-28 01:44:05.479513		6
-97	4_Mi_sostenido...JPG	8	2013-03-28 01:35:02.330805	2013-03-28 01:44:05.488069		6
-98	8_Palabras_como_humo...JPG	9	2013-03-28 01:35:02.85449	2013-03-28 01:44:05.496036		6
-99	3_La_luna_danza...JPG	10	2013-03-28 01:35:03.373662	2013-03-28 01:44:05.503628		6
-60	DSC_0250.jpeg	1	2013-03-27 23:34:07.471372	2013-04-05 19:00:00.593354		24
-61	DSC_0248.jpeg	2	2013-03-27 23:34:08.434289	2013-04-05 19:00:00.611956		24
-62	DSC_0261.jpeg	3	2013-03-27 23:34:08.845453	2013-04-05 19:00:00.630106		24
-63	DSC_0266.jpeg	4	2013-03-27 23:34:09.259986	2013-04-05 19:00:00.64634		24
-64	DSC_0278.jpeg	5	2013-03-27 23:34:09.750427	2013-04-05 19:00:00.661749		24
-65	DSC_0288.jpeg	6	2013-03-27 23:34:10.13677	2013-04-05 19:00:00.677245		24
-27	constelacciones_2008.JPG	1	2013-01-05 01:30:14.338425	2022-01-05 20:10:05.538151		13
-28	Mireia_Zantop__sin_rgia.jpg	1	2013-01-05 01:36:09.63012	2022-01-10 11:21:20.691281		14
-102	portada.sarria.jpg	3	2013-04-05 18:53:13.922329	2013-04-05 18:56:47.177478		29
-103	contraportada.jpg	4	2013-04-05 18:53:14.954064	2013-04-05 18:56:47.188265		29
-104	vila-cecilia-1.jpg	5	2013-04-05 18:53:15.430279	2013-04-05 18:56:47.198105		29
-105	orlandai-1.jpg	6	2013-04-05 18:53:16.02135	2013-04-05 18:56:47.208313		29
-106	orlandai.jpg	7	2013-04-05 18:53:16.536748	2013-04-05 18:56:47.218302		29
-107	can-caralleu-3.jpg	8	2013-04-05 18:53:17.149893	2013-04-05 18:56:47.227964		29
-108	torto-la-valencia.jpg	9	2013-04-05 18:53:17.649576	2013-04-05 18:56:47.237816		29
-109	pino.jpg	10	2013-04-05 18:53:18.276834	2013-04-05 18:56:47.247297		29
-66	DSC_0292.jpeg	7	2013-03-27 23:34:10.59682	2013-04-05 19:00:00.693285		24
-68	DSC_0260.jpeg	8	2013-03-27 23:34:11.498207	2013-04-05 19:00:00.709964		24
-69	DSC_0298.jpeg	9	2013-03-27 23:34:11.894663	2013-04-05 19:00:00.726079		24
-70	DSC_0301.jpeg	10	2013-03-27 23:34:12.526364	2013-04-05 19:00:00.741467		24
-80	DSC_0069GUT.jpeg	1	2013-03-27 23:48:31.885727	2013-04-05 19:05:21.831631		9
-12	DSC_0062GUT.jpeg	2	2013-01-04 22:53:52.694505	2013-04-05 19:05:21.842774		9
+395	IMG_9343.argentona.JPG	11	2019-06-10 22:26:51.79918	2022-07-03 01:39:55.084968		62
+383	IMG_20180928_165542.jpg	4	2019-06-10 21:53:34.237062	2022-07-03 01:39:50.688409		76
+387	IMG_20180928_170858.jpg	5	2019-06-10 21:53:36.315178	2022-07-03 01:39:52.071423		76
+56	DSCF1197.JPG	2	2013-03-27 21:32:21.804513	2022-07-03 01:36:30.476751		23
+396	cardedeu2_2013.JPG	12	2019-06-10 22:26:52.460067	2022-07-03 01:39:55.600504		62
+416	M.ZANTOP_phoscenes_TINTA_a4.jpg	1	2020-10-14 22:48:42.546855	2022-07-03 01:39:58.632031		82
+417	M.ZANTOP_phoscenes_PHOSPHORESCENT_A5.jpg	2	2020-10-14 22:48:43.199496	2022-07-03 01:39:59.145441		82
+370	MZantop_S.JPG	8	2019-06-10 21:02:38.640197	2022-07-03 01:39:45.701061		74
+381	IMG_20180928_164827.jpg	1	2019-06-10 21:53:33.123029	2022-07-03 01:39:49.93873		76
+3	1_Alguien_camina...JPG	2	2013-01-04 20:32:19.49924	2022-07-03 01:36:14.343752		6
+382	Gravat-Nou-cuadrado.jpg	7	2019-06-10 21:53:33.591413	2022-07-03 01:39:50.21848		76
+418	M.ZANTOP_phoscenes_a4_NUS_3D.jpg	5	2020-10-14 22:48:43.798913	2022-07-03 01:39:59.502947		82
+420	M.ZANTOP_phoscenes_mute_a5_.jpg	6	2020-10-14 22:48:45.015193	2022-07-03 01:40:00.352553		82
+388	IMG_20180928_170923.jpg	6	2019-06-10 21:53:36.81654	2022-07-03 01:39:52.4502		76
+386	IMG_20180928_165940.jpg	3	2019-06-10 21:53:35.78219	2022-07-03 01:39:51.64655		76
+392	DSCF4797.JPG	9	2019-06-10 22:26:49.589438	2022-07-03 01:39:53.993232		62
+394	nav_s_2016.JPG	10	2019-06-10 22:26:51.016655	2022-07-03 01:39:54.600913		62
+384	IMG_20180928_164531.jpg	2	2019-06-10 21:53:34.726339	2022-07-03 01:39:51.014129		76
+422	M.ZANTOP_phoscenes_P_TALS_A4.jpg	3	2020-10-14 22:48:46.128891	2022-07-03 01:40:01.130585		82
+440	IMG-20210313-WA0010.jpg	7	2021-04-08 21:31:03.285654	2022-07-03 01:40:11.547433		85
+362	_20190412_193903.JPG	6	2019-06-10 20:41:47.574948	2022-07-03 01:39:42.902367		74
+16	ANA_RITA_RODRIGUES_FEM_2011_PAR_8711.jpg	3	2013-01-05 00:35:48.681777	2022-07-03 01:36:17.484129		10
+17	ANA_RITA_RODRIGUES_FEM_2011_PAR_8749.jpg	4	2013-01-05 00:35:49.187735	2022-07-03 01:36:17.773681		10
+18	DSC03862.JPG	1	2013-01-05 00:51:50.455758	2022-07-03 01:36:18.083453		11
+19	DINERGIA_I-Armonia_Diatessaron.JPG	2	2013-01-05 00:51:51.344015	2022-07-03 01:36:18.500085		11
+20	DINERGIA_I-Llavors.JPG	3	2013-01-05 00:51:51.988754	2022-07-03 01:36:18.766084		11
+21	DINERGIAIII-Armonia_ad_infinitum.JPG	4	2013-01-05 00:51:52.437608	2022-07-03 01:36:19.037984		11
+22	DSC03863.JPG	5	2013-01-05 00:51:52.871227	2022-07-03 01:36:19.516948		11
+23	DSC05616bona.JPG	1	2013-01-05 01:21:06.684687	2022-07-03 01:36:20.165706		12
+24	100_0602.JPG	2	2013-01-05 01:21:07.409764	2022-07-03 01:36:20.508244		12
+25	100_0591.JPG	3	2013-01-05 01:21:07.933597	2022-07-03 01:36:20.823096		12
+26	DSC05840.JPG	4	2013-01-05 01:21:08.405276	2022-07-03 01:36:21.201069		12
+27	constelacciones_2008.JPG	1	2013-01-05 01:30:14.338425	2022-07-03 01:36:21.529921		13
+28	Mireia_Zantop__sin_rgia.jpg	1	2013-01-05 01:36:09.63012	2022-07-03 01:36:21.868838		14
+31	ATENEU_ph.jpg	3	2013-01-05 01:58:06.208474	2022-07-03 01:36:22.866561		15
+33	Performance_mireia__1_.JPG	2	2013-01-20 00:53:55.463728	2022-07-03 01:36:23.507847		16
+32	inici.JPG	1	2013-01-20 00:53:54.415123	2022-07-03 01:36:23.192548		16
+34	DSC06520.JPG	3	2013-01-20 00:53:56.067475	2022-07-03 01:36:23.791188		16
+35	Performance_mireia__2_.JPG	4	2013-01-20 00:53:56.586686	2022-07-03 01:36:24.083206		16
+15	ANA_RITA_RODRIGUES_FEM_2011_PAR_8672.jpg	2	2013-01-05 00:35:48.064251	2022-07-03 01:36:17.076		10
+29	IMGP1552.JPG	1	2013-01-05 01:58:04.875843	2022-07-03 01:36:22.386235		15
+30	invitaci_n_performance_ateneu.jpg	2	2013-01-05 01:58:05.546197	2022-07-03 01:36:22.602674		15
+36	5_canvi_enquadr..JPG	5	2013-01-20 00:53:57.168344	2022-07-03 01:36:24.484809		16
+37	Performance_mireia__6_.JPG	6	2013-01-20 00:53:57.624964	2022-07-03 01:36:24.791348		16
+38	Performance_mireia__4_.JPG	7	2013-01-20 00:53:58.209417	2022-07-03 01:36:25.192337		16
+40	sala_ruinas2.2.JPG	1	2013-01-20 01:01:01.484063	2022-07-03 01:36:25.481165		17
+41	obra_s._paper__ter.jpg	2	2013-01-20 01:52:33.550087	2022-07-03 01:36:25.736004		17
+42	uters3.jpg	3	2013-01-20 01:52:34.332986	2022-07-03 01:36:26.069745		17
+43	Mireia.JPG	1	2013-01-20 02:15:44.637816	2022-07-03 01:36:26.382405		18
+44	Juntas.JPG	2	2013-01-20 02:15:45.293899	2022-07-03 01:36:26.693611		18
+45	Eva.JPG	3	2013-01-20 02:15:45.925373	2022-07-03 01:36:26.942063		18
+52	DSC02355.JPG	7	2013-01-20 02:38:42.961502	2022-07-03 01:36:29.777414		19
+55	DSCF1204.JPG	1	2013-03-22 00:11:06.530617	2022-07-03 01:36:30.147979		23
+57	DSCF1203.JPG	3	2013-03-27 21:32:22.726841	2022-07-03 01:36:30.819758		23
+58	DSCF1208.JPG	4	2013-03-27 21:32:23.182231	2022-07-03 01:36:31.267195		23
+59	DSCF1214.JPG	5	2013-03-27 21:32:23.638224	2022-07-03 01:36:31.661298		23
+60	DSC_0250.jpeg	1	2013-03-27 23:34:07.471372	2022-07-03 01:36:31.868134		24
+61	DSC_0248.jpeg	2	2013-03-27 23:34:08.434289	2022-07-03 01:36:32.026589		24
+62	DSC_0261.jpeg	3	2013-03-27 23:34:08.845453	2022-07-03 01:36:32.224198		24
+63	DSC_0266.jpeg	4	2013-03-27 23:34:09.259986	2022-07-03 01:36:32.50815		24
+64	DSC_0278.jpeg	5	2013-03-27 23:34:09.750427	2022-07-03 01:36:32.668222		24
+65	DSC_0288.jpeg	6	2013-03-27 23:34:10.13677	2022-07-03 01:36:32.811303		24
+85	09-La_Bodega_Rustica.jpg	1	2013-03-28 00:59:06.353876	2022-07-03 01:36:35.435444		26
+86	LA_DOCTORA_COLE__Noah_Gordon_.jpg	2	2013-03-28 00:59:06.821734	2022-07-03 01:36:35.587858		26
+89	imagesNoah_presentaci_n.jpg	3	2013-03-28 00:59:07.958679	2022-07-03 01:36:35.732668		26
+91	1_Alguien_camina.sense_marc.JPG	1	2013-03-28 01:29:42.952631	2022-07-03 01:36:36.155244		6
+92	2_El_viento_despeina...JPG	3	2013-03-28 01:34:59.55755	2022-07-03 01:36:36.485126		6
+93	6_La_hoja_tiembla...JPG	4	2013-03-28 01:35:00.10358	2022-07-03 01:36:36.845648		6
+94	5_Cien_hormigas...JPG	5	2013-03-28 01:35:00.649683	2022-07-03 01:36:37.438173		6
+96	7_La_risa_rompe...JPG	7	2013-03-28 01:35:01.740548	2022-07-03 01:36:38.310413		6
+97	4_Mi_sostenido...JPG	8	2013-03-28 01:35:02.330805	2022-07-03 01:36:38.771643		6
+98	8_Palabras_como_humo...JPG	9	2013-03-28 01:35:02.85449	2022-07-03 01:36:39.186104		6
+99	3_La_luna_danza...JPG	10	2013-03-28 01:35:03.373662	2022-07-03 01:36:39.572012		6
+102	portada.sarria.jpg	3	2013-04-05 18:53:13.922329	2022-07-03 01:36:40.087415		29
+103	contraportada.jpg	4	2013-04-05 18:53:14.954064	2022-07-03 01:36:40.547353		29
+104	vila-cecilia-1.jpg	5	2013-04-05 18:53:15.430279	2022-07-03 01:36:40.990038		29
+105	orlandai-1.jpg	6	2013-04-05 18:53:16.02135	2022-07-03 01:36:41.494904		29
+147	DSC_0037.jpeg	1	2014-05-17 12:35:47.239267	2022-07-03 01:36:50.616497		37
+211	P1000490.jpg	4	2015-09-25 01:15:08.350715	2022-07-03 01:37:09.02995		8
+224	20130623_164338.jpg	4	2015-09-27 23:03:10.280082	2022-07-03 01:37:12.037538		38
+275	IMG_9780.jpeg	2	2016-10-19 22:54:28.283388	2022-07-03 01:37:29.755781		56
+369	MZantop_O.JPG	7	2019-06-10 21:02:38.167094	2022-07-03 01:39:45.435654		74
 13	\N	3	2013-01-04 22:56:20.429668	2013-04-05 19:05:21.858828	https://vimeo.com/53101599	9
-71	DSC_0037.jpeg	4	2013-03-27 23:42:26.398666	2013-04-05 19:05:21.870588		9
-72	DSC_0043GUT.jpeg	5	2013-03-27 23:42:26.852704	2013-04-05 19:05:21.905004		9
-73	DSC_0052GUT.jpeg	6	2013-03-27 23:42:27.255255	2013-04-05 19:05:21.923674		9
-75	DSC_0058.jpeg	7	2013-03-27 23:48:29.790516	2013-04-05 19:05:21.941096		9
-76	DSC_0060.jpeg	8	2013-03-27 23:48:30.29204	2013-04-05 19:05:21.951925		9
-78	DSC_0065.jpeg	11	2013-03-27 23:48:31.096866	2013-04-05 19:05:21.972404		9
-4	Possible_Foto.jpg	1	2013-01-04 20:49:48.478672	2019-06-10 20:19:22.40395		7
-5	Survival27.jpeg	2	2013-01-04 20:49:49.126706	2019-06-10 20:19:22.416388		7
-6	Survival29.jpeg	3	2013-01-04 20:49:49.544329	2019-06-10 20:19:22.427902		7
-46	DSC02215.JPG	1	2013-01-20 02:38:39.844998	2020-06-15 15:36:58.157106		19
-47	dsc3697.jpg	2	2013-01-20 02:38:40.653374	2020-06-15 15:36:58.170066		19
-48	DSC02225.JPG	3	2013-01-20 02:38:41.050996	2020-06-15 15:36:58.181578		19
-49	DSC02239.JPG	4	2013-01-20 02:38:41.521906	2020-06-15 15:36:58.194747		19
-77	DSC_0063.jpeg	9	2013-03-27 23:48:30.704229	2013-04-05 19:05:21.962202		9
-79	DSC_0067GUT.jpeg	12	2013-03-27 23:48:31.482008	2013-04-05 19:05:21.982553		9
-274	IMG_9772.jpeg	3	2016-10-19 22:54:27.438028	2017-06-02 00:09:34.250043		56
-365	cartell_i_info_de_taller.jpg	9	2019-06-10 20:41:49.27616	2022-01-10 11:24:54.438928		74
-428	IMG-20200924-WA0012.jpg	3	2021-01-04 20:46:03.875771	2021-01-04 20:49:41.640438		83
-434	IMG-20200308-WA0039.jpg	4	2021-01-04 20:46:08.219791	2021-01-04 20:49:41.647801		83
-429	IMG-20200924-WA0005.jpg	1	2021-01-04 20:46:04.668456	2021-01-04 20:49:41.622531		83
-432	__retocat.jpg	2	2021-01-04 20:46:06.621335	2021-01-04 20:49:41.632111		83
-430	IMG_20201016_172309.jpg	5	2021-01-04 20:46:05.229157	2021-01-04 20:49:41.655893		83
-431	IMG_20200308_180723_115.jpg	6	2021-01-04 20:46:05.97429	2021-01-04 20:49:41.663624		83
-433	des_cuidar_accionant_IMG-20200308-WA0020.jpg	7	2021-01-04 20:46:07.418947	2021-01-04 20:49:41.671036		83
-441	Captura_de_pantalla_de_2021-09-01_01-17-09.png	1	2021-08-31 23:06:53.606217	2021-08-31 23:06:53.606217		84
-442	arts_entre_lletres_foto_joana_querol.png	2	2021-08-31 23:06:54.498915	2021-08-31 23:06:54.498915		84
-443	IMG-20201116-WA0010.jpg	3	2021-08-31 23:06:55.454014	2021-08-31 23:06:55.454014		84
-444	IMG-20201116-WA0013.jpg	4	2021-08-31 23:06:56.217747	2021-08-31 23:06:56.217747		84
-389	IMG-20190307-WA0001.jpg	1	2019-06-10 22:14:22.905657	2021-08-31 23:07:42.43449		77
-390	IMG-20190307-WA0002.jpg	2	2019-06-10 22:14:23.390512	2021-08-31 23:07:42.439585		77
-391	IMG-20190304-WA0006.jpg	3	2019-06-10 22:14:23.870381	2021-08-31 23:07:42.444448		77
-380	2014-08-05_11-30-34.jpg	11	2019-06-10 21:35:33.12261	2022-01-10 11:45:58.769838		75
-445	DSC_0037__copia_.JPG	2	2021-09-13 17:24:30.658413	2022-01-13 20:54:16.095152		87
-446	Copy_of_DSC_0046-001.jpg	3	2021-09-13 17:24:31.590234	2022-01-13 20:54:16.102412		87
-447	DSC_0079-004.jpg	4	2021-09-13 17:24:32.495359	2022-01-13 20:54:16.1095		87
-448	DSC_0083-001.jpg	5	2021-09-13 17:24:33.382089	2022-01-13 20:54:16.116513		87
-456	IMG_20210829_084622_1encaix.jpg	2	2021-09-20 20:07:26.604314	2022-01-05 20:16:55.091473		88
-452	IMG_20210827_195621_103agulles_al_pal.jpg	5	2021-09-20 20:07:22.99403	2022-01-05 20:16:55.110145		88
-453	P9650800_grup_estaques_i_estaques_fons.JPG	7	2021-09-20 20:07:23.810454	2022-01-05 20:16:55.12197		88
-454	IMG_20210829_084447_1amb_cam__.jpg	8	2021-09-20 20:07:24.763822	2022-01-05 20:16:55.127954		88
-455	P9650824_caminet_i_pal_agulles.JPG	9	2021-09-20 20:07:25.716215	2022-01-05 20:16:55.134052		88
-367	IMG_20190518_124507_084.jpg	10	2019-06-10 20:41:50.63583	2022-01-10 11:24:54.444266		74
+73	DSC_0052GUT.jpeg	6	2013-03-27 23:42:27.255255	2022-07-03 01:36:34.07214		9
+5	Survival27.jpeg	2	2013-01-04 20:49:49.126706	2022-07-03 01:36:14.943449		7
+46	DSC02215.JPG	1	2013-01-20 02:38:39.844998	2022-07-03 01:36:27.340542		19
+47	dsc3697.jpg	2	2013-01-20 02:38:40.653374	2022-07-03 01:36:27.516295		19
+48	DSC02225.JPG	3	2013-01-20 02:38:41.050996	2022-07-03 01:36:27.969881		19
+68	DSC_0260.jpeg	8	2013-03-27 23:34:11.498207	2022-07-03 01:36:33.138891		24
+69	DSC_0298.jpeg	9	2013-03-27 23:34:11.894663	2022-07-03 01:36:33.31875		24
+70	DSC_0301.jpeg	10	2013-03-27 23:34:12.526364	2022-07-03 01:36:33.500258		24
+71	DSC_0037.jpeg	4	2013-03-27 23:42:26.398666	2022-07-03 01:36:33.657366		9
+72	DSC_0043GUT.jpeg	5	2013-03-27 23:42:26.852704	2022-07-03 01:36:33.834325		9
+75	DSC_0058.jpeg	7	2013-03-27 23:48:29.790516	2022-07-03 01:36:34.237188		9
+76	DSC_0060.jpeg	8	2013-03-27 23:48:30.29204	2022-07-03 01:36:34.421687		9
+77	DSC_0063.jpeg	9	2013-03-27 23:48:30.704229	2022-07-03 01:36:34.617576		9
+78	DSC_0065.jpeg	11	2013-03-27 23:48:31.096866	2022-07-03 01:36:34.791469		9
+79	DSC_0067GUT.jpeg	12	2013-03-27 23:48:31.482008	2022-07-03 01:36:34.961956		9
+80	DSC_0069GUT.jpeg	1	2013-03-27 23:48:31.885727	2022-07-03 01:36:35.132724		9
+95	9_Baile_de_paraguas...JPG	6	2013-03-28 01:35:01.228049	2022-07-03 01:36:37.931272		6
+106	orlandai.jpg	7	2013-04-05 18:53:16.536748	2022-07-03 01:36:41.97467		29
+107	can-caralleu-3.jpg	8	2013-04-05 18:53:17.149893	2022-07-03 01:36:42.363098		29
+108	torto-la-valencia.jpg	9	2013-04-05 18:53:17.649576	2022-07-03 01:36:42.934306		29
+109	pino.jpg	10	2013-04-05 18:53:18.276834	2022-07-03 01:36:43.514967		29
+131	Coloms_amaralarama1_A.Bombaci.jpg	7	2013-12-06 12:49:26.396816	2022-07-03 01:36:45.641245		33
+142	sum_us_2.jpeg	3	2014-05-17 12:13:09.261653	2022-07-03 01:36:49.518331		34
+157	140531-XIV_Perpetracions-Antologia_Animal-487.jpg	1	2014-07-17 22:28:51.970185	2022-07-03 01:36:52.910631		39
+167	separ_2014.4sala_AUDITORIO.jpg	2	2014-10-09 17:19:05.601242	2022-07-03 01:36:56.763044		30
+195	tarja_antic_c18_captura.jpg	12	2015-01-04 23:21:24.45957	2022-07-03 01:37:04.237844		43
+219	IMG_2539.jpeg	8	2015-09-27 22:40:25.950144	2022-07-03 01:37:10.228837		47
+236	IMG_6090.jpeg	4	2016-08-01 15:36:39.720092	2022-07-03 01:37:16.739797		48
+274	IMG_9772.jpeg	3	2016-10-19 22:54:27.438028	2022-07-03 01:37:29.398761		56
+323	ph_72_ppi_peus_redimensionat.jpg	6	2018-12-21 20:56:14.15072	2022-07-03 01:39:28.526984		67
+339	IMG-20180716-WA0015baixa.jpg	6	2019-01-28 20:12:18.105904	2022-07-03 01:39:32.355381		65
+353	IMG-20150907-WA0003.jpg	2	2019-04-15 11:41:03.904461	2022-07-03 01:39:38.135105		73
+365	cartell_i_info_de_taller.jpg	9	2019-06-10 20:41:49.27616	2022-07-03 01:39:44.047783		74
+367	IMG_20190518_124507_084.jpg	10	2019-06-10 20:41:50.63583	2022-07-03 01:39:44.865811		74
+380	2014-08-05_11-30-34.jpg	11	2019-06-10 21:35:33.12261	2022-07-03 01:39:49.62581		75
+389	IMG-20190307-WA0001.jpg	1	2019-06-10 22:14:22.905657	2022-07-03 01:39:52.878599		77
+390	IMG-20190307-WA0002.jpg	2	2019-06-10 22:14:23.390512	2022-07-03 01:39:53.17079		77
+391	IMG-20190304-WA0006.jpg	3	2019-06-10 22:14:23.870381	2022-07-03 01:39:53.454386		77
+401	cardedeu2_2013.JPG	8	2019-06-10 22:27:02.109431	2022-07-03 01:39:58.229792		62
+419	M.ZANTOP_phoscenes._tinta_a4.jpg	4	2020-10-14 22:48:44.416543	2022-07-03 01:39:59.967119		82
+427	IMG_20191225_132357_968.jpg	4	2020-10-14 23:00:14.377944	2022-07-03 01:40:04.110625		78
+428	IMG-20200924-WA0012.jpg	3	2021-01-04 20:46:03.875771	2022-07-03 01:40:04.688232		83
+429	IMG-20200924-WA0005.jpg	1	2021-01-04 20:46:04.668456	2022-07-03 01:40:05.417314		83
+430	IMG_20201016_172309.jpg	5	2021-01-04 20:46:05.229157	2022-07-03 01:40:05.791608		83
+431	IMG_20200308_180723_115.jpg	6	2021-01-04 20:46:05.97429	2022-07-03 01:40:06.434228		83
+432	__retocat.jpg	2	2021-01-04 20:46:06.621335	2022-07-03 01:40:06.94617		83
+433	des_cuidar_accionant_IMG-20200308-WA0020.jpg	7	2021-01-04 20:46:07.418947	2022-07-03 01:40:07.690541		83
+434	IMG-20200308-WA0039.jpg	4	2021-01-04 20:46:08.219791	2022-07-03 01:40:07.958264		83
+441	Captura_de_pantalla_de_2021-09-01_01-17-09.png	1	2021-08-31 23:06:53.606217	2022-07-03 01:41:02.968887		84
+442	arts_entre_lletres_foto_joana_querol.png	2	2021-08-31 23:06:54.498915	2022-07-03 01:41:19.076289		84
+443	IMG-20201116-WA0010.jpg	3	2021-08-31 23:06:55.454014	2022-07-03 01:41:19.406832		84
+444	IMG-20201116-WA0013.jpg	4	2021-08-31 23:06:56.217747	2022-07-03 01:41:19.784791		84
+445	DSC_0037__copia_.JPG	2	2021-09-13 17:24:30.658413	2022-07-03 01:41:20.348631		87
+446	Copy_of_DSC_0046-001.jpg	3	2021-09-13 17:24:31.590234	2022-07-03 01:41:20.791691		87
+447	DSC_0079-004.jpg	4	2021-09-13 17:24:32.495359	2022-07-03 01:41:21.408555		87
+448	DSC_0083-001.jpg	5	2021-09-13 17:24:33.382089	2022-07-03 01:41:22.051488		87
+452	IMG_20210827_195621_103agulles_al_pal.jpg	5	2021-09-20 20:07:22.99403	2022-07-03 01:41:24.36419		88
+453	P9650800_grup_estaques_i_estaques_fons.JPG	7	2021-09-20 20:07:23.810454	2022-07-03 01:41:25.006358		88
+454	IMG_20210829_084447_1amb_cam__.jpg	8	2021-09-20 20:07:24.763822	2022-07-03 01:41:25.44143		88
+455	P9650824_caminet_i_pal_agulles.JPG	9	2021-09-20 20:07:25.716215	2022-07-03 01:41:25.960055		88
+456	IMG_20210829_084622_1encaix.jpg	2	2021-09-20 20:07:26.604314	2022-07-03 01:41:26.419887		88
+466	ZANTOP_-_4._Odumonde.JPG	1	2021-11-19 20:17:25.438748	2022-07-03 01:41:27.486988		92
+4	Possible_Foto.jpg	1	2013-01-04 20:49:48.478672	2022-07-03 01:36:14.700187		7
+6	Survival29.jpeg	3	2013-01-04 20:49:49.544329	2022-07-03 01:36:15.137311		7
+12	DSC_0062GUT.jpeg	2	2013-01-04 22:53:52.694505	2022-07-03 01:36:16.286044		9
+14	ANA_RITA_RODRIGUES_FEM_2011_PAR_8663.jpg	1	2013-01-05 00:35:47.142951	2022-07-03 01:36:16.675833		10
+49	DSC02239.JPG	4	2013-01-20 02:38:41.521906	2022-07-03 01:36:28.424528		19
+66	DSC_0292.jpeg	7	2013-03-27 23:34:10.59682	2022-07-03 01:36:33.00068		24
+245	AdobeBridgeBatchRenameTemp7CanFelipa_15.jpg	1	2016-08-01 16:18:28.223363	2022-07-03 01:37:19.725406		51
+352	Escultura_sadernes_ONA.jpg	1	2019-04-15 11:41:03.231274	2022-07-03 01:39:37.469374		73
 \.
 
 
@@ -1280,6 +2493,7 @@ COPY public.schema_migrations (version) FROM stdin;
 20220406153731
 20220702222104
 20220703004311
+20220909224320
 \.
 
 
@@ -1702,31 +2916,38 @@ COPY public.work_translations (id, work_id, locale, title, description, techniqu
 
 
 --
+-- Name: action_text_rich_texts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
+--
+
+SELECT pg_catalog.setval('public.action_text_rich_texts_id_seq', 1, false);
+
+
+--
 -- Name: active_storage_attachments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 1, true);
+SELECT pg_catalog.setval('public.active_storage_attachments_id_seq', 1240, true);
 
 
 --
 -- Name: active_storage_blobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 1, true);
+SELECT pg_catalog.setval('public.active_storage_blobs_id_seq', 1240, true);
 
 
 --
 -- Name: active_storage_variant_records_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 1, false);
+SELECT pg_catalog.setval('public.active_storage_variant_records_id_seq', 135, true);
 
 
 --
 -- Name: friendly_id_slugs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 294, true);
+SELECT pg_catalog.setval('public.friendly_id_slugs_id_seq', 295, true);
 
 
 --
@@ -1761,14 +2982,14 @@ SELECT pg_catalog.setval('public.pages_id_seq', 2, true);
 -- Name: section_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.section_translations_id_seq', 30, true);
+SELECT pg_catalog.setval('public.section_translations_id_seq', 32, true);
 
 
 --
 -- Name: sections_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.sections_id_seq', 20, true);
+SELECT pg_catalog.setval('public.sections_id_seq', 22, true);
 
 
 --
@@ -1803,14 +3024,14 @@ SELECT pg_catalog.setval('public.users_id_seq', 2, true);
 -- Name: work_translations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.work_translations_id_seq', 113, true);
+SELECT pg_catalog.setval('public.work_translations_id_seq', 114, true);
 
 
 --
 -- Name: works_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zantop
 --
 
-SELECT pg_catalog.setval('public.works_id_seq', 92, true);
+SELECT pg_catalog.setval('public.works_id_seq', 93, true);
 
 
 --

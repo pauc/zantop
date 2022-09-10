@@ -1,4 +1,4 @@
-<div class="fields">
+<div class="fields" data-new-record=<%= section.new_record? %>>
   <%= form.simple_fields_for "section_attributes[]", section do |fields| %>
     <div class="sorting-controls">
       <a href="javascript:void(0)" data-behaviour="move-up">⬆️</a>
@@ -6,9 +6,7 @@
     </div>
 
     <%= fields.input :title %>
-    <%= fields.input :body,
-                     as: :text,
-                     input_html: { rows: 4, class: "rich-text-area" } %>
+    <%= fields.input :body, as: :rich_text_area %>
     <%= fields.input :position,
                      as: :hidden,
                      input_html: { data: { attribute: "position" } } %>

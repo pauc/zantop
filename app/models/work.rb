@@ -8,6 +8,8 @@ class Work < ApplicationRecord
 
   translates :title, :description, :techniques, :place
 
+  has_rich_text :description
+
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_many :sections, dependent: :destroy
