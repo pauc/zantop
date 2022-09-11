@@ -1,3 +1,5 @@
+import TomSelect from "tom-select"
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("[data-behaviour='work-form']")
 
@@ -9,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAddingNestedRecords(form, "images")
   setupRemovingNestedRecords(form)
   setupPositionControls(form)
+  setupTagsInput(form)
 })
 
 const setupAddingNestedRecords = (form, associationName) => {
@@ -131,5 +134,19 @@ const setPositionValues = fieldset => {
 
   fields.forEach( (inputGroup, index) => {
     inputGroup.querySelector("[data-attribute='position']").value = index + 1
+  })
+}
+
+const setupTagsInput = (form) => {
+  new TomSelect("[data-attribute='tags']", {
+    create: true,
+    createFilter: function(input) {
+      if (input.length < 3) return false
+      if (input.toLowerCase() in this.options) return false
+
+      return true
+    },
+    persist: false,
+    maxOptions: 8
   })
 }

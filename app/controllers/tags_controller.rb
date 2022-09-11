@@ -3,11 +3,6 @@
 class TagsController < ApplicationController
   # include Finder
   # include Authorization
-  # respond_to :html
-
-  # expose(:categories) { Tag.includes(:translations) }
-  # expose(:category) { Tag.find(params[:id]) }
-  # expose(:published_works) { category.works.published.includes(:translations) }
 
   def index
     respond_to do |format|
@@ -17,7 +12,12 @@ class TagsController < ApplicationController
 
   def show
     @category = Tag.find(params[:id])
-    @published_works = @category.works.published.includes(:translations)
+
+    @published_works = @category
+                       .works
+                       .published
+                       .includes(:plain_text_translations,
+                                 :rich_text_translations)
   end
 
   def update
@@ -45,5 +45,7 @@ class TagsController < ApplicationController
     respond_with category, location: admin_tags_path
   end
 
-  def admin; end
+  def admin
+    @categories = Tag.includes(:plain_text_translations)
+  end
 end

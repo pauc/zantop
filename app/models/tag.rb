@@ -46,7 +46,7 @@ class Tag < ApplicationRecord
   end
 
   def untranslated?
-    translations.size < 3
+    plain_text_translations.size < 3
   end
 
   def self.all_translated?
@@ -55,12 +55,6 @@ class Tag < ApplicationRecord
       translated = tag.translations.size == 3
     end
     translated
-  end
-
-  I18n.available_locales.each do |locale|
-    define_method "name_#{locale}" do
-      translations.find_by(locale:).try(:name)
-    end
   end
 
   private

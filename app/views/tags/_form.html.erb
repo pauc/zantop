@@ -1,6 +1,6 @@
-<%= div_for category, class: "#{'untranslated_tag' if category.untranslated?}" do |tag| %>
-  <%= simple_form_for tag, remote: true do |form| %>
-    <h3><%= tag.name %>:</h3>
+<%= content_tag :div,  class: "#{'untranslated_tag' if category.untranslated?}" do %>
+  <%= simple_form_for category, remote: true do |form| %>
+    <h3><%= category.name %>:</h3>
     <% I18n.available_locales.each do |locale| %>
       <%= form.input :"name_#{locale}", input_html: { name: "tag[name][#{locale}]", size: 18 } %>
     <% end %><br />
