@@ -29,9 +29,9 @@ class ActionWorksController < ApplicationController
   end
 
   def create
-    @work_form = ActionWorkForm.new(**action_work_params)
+    @work_form = ActionWorkForm.new
 
-    if @work_form.submit
+    if @work_form.submit(action_work_params)
       flash.notice = t("created")
 
       redirect_to action_works_path and return
@@ -47,7 +47,15 @@ class ActionWorksController < ApplicationController
   end
 
   def update
-    raise NotImplementedError
+    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
+
+    if @work_form.submit(action_work_params)
+      flash.notice = t("updated")
+
+      redirect_to action_work_path(@work_form.id) and return
+    end
+
+    render :edit
   end
 
   def destroy
@@ -66,6 +74,7 @@ class ActionWorksController < ApplicationController
               :place,
               :realization_date,
               :published,
+              tags: [],
               section_attributes: [:title, :body, :position, :_destroy],
               image_attributes: [:image, :video, :credits, :position, :_destroy])
   end
