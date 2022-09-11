@@ -1,11 +1,21 @@
 # frozen_string_literal: true
 
 RSpec.describe ActionWorkForm do
+  describe "#initialize" do
+    it "gets the values of the work" do
+      work = create(:action_work, title: "Some work")
+
+      form = described_class.new(work:)
+
+      expect(form.title).to eq "Some work"
+    end
+  end
+
   describe "#submit" do
     it "creates a new work" do
       attributes = { title: "Jurimuri", description: "Buasca muasca" }
 
-      expect { described_class.new(**attributes).submit }
+      expect { described_class.new.submit(attributes) }
         .to change(ActionWork, :count)
         .by(1)
     end
@@ -28,7 +38,7 @@ RSpec.describe ActionWorkForm do
         }
       }
 
-      expect { described_class.new(**attributes).submit }
+      expect { described_class.new.submit(attributes) }
         .to change(Section, :count)
         .by(2)
     end
@@ -65,7 +75,7 @@ RSpec.describe ActionWorkForm do
         }
       }
 
-      expect { described_class.new(work:, **attributes).submit }
+      expect { described_class.new(work:).submit(attributes) }
         .to change { section1.reload.title }
         .from("Section 1")
         .to("The first section")
@@ -104,7 +114,7 @@ RSpec.describe ActionWorkForm do
         }
       }
 
-      expect { described_class.new(work:, **attributes).submit }
+      expect { described_class.new(work:).submit(attributes) }
         .to change(work.sections, :count)
         .by(-1)
     end
@@ -114,13 +124,23 @@ RSpec.describe ActionWorkForm do
 
       form_attributes = { title: "Some stuff", published: true }
 
-      expect { described_class.new(work:, **form_attributes).submit }
+      expect { described_class.new(work:).submit(form_attributes) }
         .to change(work, :title)
         .from("The Work")
         .to("Some stuff")
         .and change(work, :published?)
         .from(false)
         .to(true)
+    end
+
+    it "creates tags" do
+      work = create(:action_work, title: "The Work")
+
+      form_attributes = { title: "The Work", tags: ["hola bon dia", "sandungueira"] }
+
+      expect { described_class.new(work:).submit(form_attributes) }
+        .to change(Tag, :count)
+        .by(2)
     end
   end
 end

@@ -11,20 +11,31 @@ class WorkForm
 
   validates :title, presence: true
 
-  delegate :sections, :images, to: :work
+  delegate :sections,
+           :images,
+           :id,
+           :new_record?,
+           to: :work
 
-  def initialize(work: ActionWork.new, **attrs)
+  def initialize(work: ActionWork.new)
     @work = work
 
-    attributes_with_defaults(attrs)
-      .then { |attributes| super(attributes) }
+    super()
+
+    return if work.new_record?
+
+    self.class.attribute_names.each do |attr_name|
+      public_send("#{attr_name}=", work.public_send(attr_name))
+    end
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize
-  def submit
-    return unless validate
-
+  def submit(attrs)
     work.transaction do
+      assign_attributes(attrs)
+
+      raise ActiveRecord::Rollback unless validate
+
       work.assign_attributes(serializable_hash)
       work.save
 
@@ -35,7 +46,7 @@ class WorkForm
 
       images.each do |image|
         image.destroy! if image.marked_for_destruction?
-        image.save! if image.has_changes_to_save
+        image.save! if image.has_changes_to_save?
       end
     end
   end

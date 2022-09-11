@@ -1,9 +1,10 @@
 <%= simple_form_for work_form,
-                    url: :action_works,
+                    url: work_form.new_record? ? :action_works : action_work_path(work_form.id),
+                    method: work_form.new_record? ? :post : :put,
                     html: { multipart: true, data: { behaviour: "work-form" } } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :title %>
+  <%= f.input :title, autofocus: true %>
   <%= f.input :description, as: :rich_text_area %>
   <%#= f.input :tag_tokens,
               label: "Tags:",
