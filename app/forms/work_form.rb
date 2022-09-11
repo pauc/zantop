@@ -52,16 +52,40 @@ class WorkForm
   end
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize
 
+  def tags
+    work
+      .tags
+      .includes(:plain_text_translations)
+      .map { |tag| [tag.id, tag.name] }
+  end
+
+  def tags=(ids)
+    ids = ids.select(&:present?)
+
+    ids, new_tags = ids
+                    .select(&:present?)
+                    .partition { |id| Integer(id, exception: false) }
+
+    new_tags.each do |tag_name|
+      tag = Tag.create(name: tag_name)
+      ids << tag.id
+    end
+
+    work.tag_ids = ids
+  end
+
+  def tag_options
+    Tag
+      .includes(:plain_text_translations)
+      .map { |tag| [tag.id, tag.name] }
+  end
+
   def section_attributes=(assoc_attributes)
     set_attributes_for(association: work.sections, assoc_attributes:)
   end
 
   def image_attributes=(assoc_attributes)
     set_attributes_for(association: work.images, assoc_attributes:)
-  end
-
-  def tags
-    work.tags.map(&:name)
   end
 
   def submit_button_text
@@ -71,14 +95,6 @@ class WorkForm
   private
 
   attr_reader :work
-
-  def attributes_with_defaults(attrs)
-    self
-      .class
-      .attribute_names
-      .map { |attr| [attr, work.public_send(attr)] }
-      .to_h
-  end
 
   def set_attributes_for(association:, assoc_attributes:)
     assoc_attributes.each do |id, attributes|

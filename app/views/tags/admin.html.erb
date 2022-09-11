@@ -1,6 +1,6 @@
 <%= page_title 'Administrar categories' %>
 <div id="admin_tags">
-  <% categories.sort{ |a, b| a.send("name_#{I18n.locale}") <=> b.send("name_#{I18n.locale}") }.each do |tag| %>
-    <%= render partial: 'form', locals: { category: tag } %>
+  <% @categories.sort{ |a, b| a.send("name_#{I18n.locale}") <=> b.send("name_#{I18n.locale}") }.each do |category| %>
+    <%= render 'form', category: %>
   <% end %>
 </div>
