@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
 def db_dump
-  db_host = ENV.fetch("ZANTOP_DATABASE_HOST") { "localhost" }
-  db_port = ENV.fetch("ZANTOP_DATABASE_PORT") { 5432 }
+  db_host = ENV.fetch("ZANTOP_DATABASE_HOST", "localhost")
+  db_port = ENV.fetch("ZANTOP_DATABASE_PORT", 5432)
   db_username = ENV.fetch("ZANTOP_DATABASE_USER")
 
-  `pg_dump -h #{db_host} -U #{db_username} -p #{db_port} -a zantop_development > db/dump.sql`
+  `pg_dump \
+    -h #{db_host} \
+    -U #{db_username} \
+    -p #{db_port} \
+    -a \
+    --exclude-table-data=ar_internal_metadata \
+    --exclude-table-data=schema_migrations \
+    zantop_development > db/dump.sql`
 end
 
 Rake::Task["db:migrate"].enhance do
