@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.1"
+ruby "3.2.2"
 
 gem "rails", "7.0.2.3"
 
@@ -52,7 +52,6 @@ group :development, :test do
   gem "rubocop-performance", require: false
   gem "rubocop-rails",       require: false
   gem "rubocop-rspec",       require: false
-
 end
 
 group :development do
@@ -68,7 +67,7 @@ group :development do
 
   gem "listen", "~> 3.3"
 
-  gem "guard-livereload", "~> 2.5",    require: false
+  gem "guard-livereload", "~> 2.5", require: false
   gem "rack-livereload",  "~> 0.3.17"
 end
 
@@ -76,7 +75,5 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 3.26"
   gem "factory_bot_rails"
-  gem "selenium-webdriver", ">= 4.0.0.rc1"
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem "webdrivers"
+  gem "selenium-webdriver", "4.12"
 end
