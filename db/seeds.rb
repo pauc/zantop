@@ -6,6 +6,8 @@
    -U $ZANTOP_DATABASE_USER \
    -p ${ZANTOP_DATABASE_PORT:-5432} \
    -d ${ZANTOP_DATABASE_NAME:-zantop_development} \
- < db/initial_db_data.sql`
+ < db/dump.sql`
 
-User.create!(email: "example@example.com", password: "secret")
+User.find_or_create_by!(email: "example@example.com") do |user|
+  user.password = "secret"
+end
