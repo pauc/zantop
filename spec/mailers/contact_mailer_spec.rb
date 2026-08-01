@@ -16,7 +16,11 @@ RSpec.describe ContactMailer do
     end
 
     it "goes to the site owner" do
-      expect(mail.to).to eq ["erb.devs@gmail.com"]
+      expect(mail.to).to eq ["hola@mireiazantop.com"]
+    end
+
+    it "comes from the site's own address, not the visitor's" do
+      expect(mail.from).to eq ["no-reply@mireiazantop.com"]
     end
 
     it "replies to the sender" do

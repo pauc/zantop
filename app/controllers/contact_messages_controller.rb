@@ -6,14 +6,22 @@ class ContactMessagesController < ApplicationController
   end
 
   def create
-    @contact_message = ContactMessage.new(params[:contact_message])
+    @contact_message = ContactMessage.new(contact_message_params)
 
     if @contact_message.valid?
-      ContactMailer.contact_message(@contact_message).deliver
+      ContactMailer.contact_message(@contact_message).deliver_now
 
       redirect_to root_path, notice: t(".confirmation")
     else
-      render action: "new"
+      render :new
     end
+  end
+
+  private
+
+  # ContactMessage#initialize assigns through send, so anything reaching it
+  # unfiltered would be a setter call chosen by the visitor. Filter first.
+  def contact_message_params
+    params.expect(contact_message: [:from_email, :from_name, :subject, :text])
   end
 end

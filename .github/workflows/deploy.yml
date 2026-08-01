@@ -38,6 +38,9 @@ jobs:
       KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
       SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
       ZANTOP_DATABASE_PASSWORD: ${{ secrets.ZANTOP_DATABASE_PASSWORD }}
+      ZANTOP_SMTP_ADDRESS: ${{ secrets.ZANTOP_SMTP_ADDRESS }}
+      ZANTOP_SMTP_USER_NAME: ${{ secrets.ZANTOP_SMTP_USER_NAME }}
+      ZANTOP_SMTP_PASSWORD: ${{ secrets.ZANTOP_SMTP_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v7

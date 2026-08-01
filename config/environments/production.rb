@@ -65,21 +65,33 @@ Rails.application.configure do
   # Replace the default in-process and non-durable queuing backend for Active Job.
   # config.active_job.queue_adapter = :resque
 
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  # The contact form delivers inside the request, so a broken SMTP account has
+  # to raise: the alternative is telling the visitor the message was sent and
+  # dropping it.
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
 
   # Set host to be used by links generated in mailer templates.
-  # config.action_mailer.default_url_options = { host: "example.com" }
+  config.action_mailer.default_url_options = { host: "mireiazantop.com", protocol: "https" }
 
-  # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
-  # config.action_mailer.smtp_settings = {
-  #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
-  #   password: Rails.application.credentials.dig(:smtp, :password),
-  #   address: "smtp.example.com",
-  #   port: 587,
-  #   authentication: :plain
-  # }
+  # Outgoing SMTP. The credentials come from the environment, not from
+  # Rails.application.credentials: this app has no encrypted credentials (see
+  # .kamal/secrets), and reading them here would drag the master key into the
+  # image build, since production.rb is loaded by assets:precompile.
+  #
+  # For the same reason none of these may be a raising ENV.fetch — during the
+  # build they are all unset, and the fetch would fail the build rather than
+  # the boot. ZANTOP_SMTP_ADDRESS being nil at runtime is what surfaces a
+  # missing secret, loudly, on the first delivery.
+  config.action_mailer.smtp_settings = {
+    address: ENV["ZANTOP_SMTP_ADDRESS"],
+    port: ENV.fetch("ZANTOP_SMTP_PORT", 587).to_i,
+    domain: ENV.fetch("ZANTOP_SMTP_DOMAIN", "mireiazantop.com"),
+    user_name: ENV["ZANTOP_SMTP_USER_NAME"],
+    password: ENV["ZANTOP_SMTP_PASSWORD"],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

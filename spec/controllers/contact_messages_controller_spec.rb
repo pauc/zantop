@@ -68,5 +68,43 @@ RSpec.describe ContactMessagesController, type: :controller do
 
       expect { post :create, params: }.not_to change { ActionMailer::Base.deliveries.size }
     end
+
+    it "confirms in the locale the form was submitted in" do
+      post :create, params: { locale: "en", contact_message: valid_message }
+
+      expect(flash[:notice]).to eq I18n.t("contact_messages.create.confirmation", locale: :en)
+      expect(flash[:notice]).not_to eq I18n.t("contact_messages.create.confirmation", locale: :ca)
+    end
+
+    it "confirms in Spanish for the Spanish form" do
+      post :create, params: { locale: "es", contact_message: valid_message }
+
+      expect(flash[:notice]).to eq I18n.t("contact_messages.create.confirmation", locale: :es)
+      expect(flash[:notice]).not_to eq I18n.t("contact_messages.create.confirmation", locale: :ca)
+    end
+
+    describe "strong parameters" do
+      it "ignores an attribute the form does not offer" do
+        params = { locale: "ca", contact_message: valid_message.merge(persisted: "true") }
+
+        expect { post :create, params: }
+          .to change { ActionMailer::Base.deliveries.size }
+          .by(1)
+      end
+
+      it "keeps the four attributes the form does offer" do
+        post :create, params: { locale: "ca", contact_message: valid_message }
+
+        expect(assigns(:contact_message).from_email).to eq "example@example.com"
+        expect(assigns(:contact_message).from_name).to eq "The name"
+        expect(assigns(:contact_message).subject).to eq "The subject"
+        expect(assigns(:contact_message).text).to eq "Some text"
+      end
+
+      it "rejects a post with no message at all" do
+        expect { post :create, params: { locale: "ca" } }
+          .to raise_error(ActionController::ParameterMissing)
+      end
+    end
   end
 end
