@@ -1,37 +1,25 @@
 name: Rubocop
 
-on: [pull_request]
+on:
+  push:
+  pull_request:
 
-env:
-  RUBY_VERSION: 4.0.6
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ env.RUBY_VERSION }}
-        bundler-cache: true
-
-    - name: Install Ruby dependencies
-      run: |
-        gem install bundler:2.3.9
-        bundle install
-
-    - uses: AurorNZ/paths-filter@v3
-      id: changes
-      with:
-        list-files: 'escape'
-        filters: |
-          ruby:
-            - '**/*.rb'
-            - '!db/schema.rb'
-
-      # run only for ruby files
-    - name: Run rubocop for changed or added files
-      if: steps.changes.outputs.ruby == 'true'
-      run: bundle exec rubocop ${{steps.changes.outputs.ruby_files}}
+      - uses: actions/checkout@v7
+      # no ruby-version: setup-ruby reads .tool-versions, and bundler-cache
+      # installs the bundler from Gemfile.lock and runs a cached bundle install
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run rubocop
+        run: bundle exec rubocop
