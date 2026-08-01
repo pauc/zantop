@@ -83,7 +83,6 @@ task migrate_translations: :environment do
            .flatten
            .grep(/_translations\z/)
 
-
   tables.each do |table|
     TranslationsMigrator.new(db:, table:).call
   end

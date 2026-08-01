@@ -28,6 +28,12 @@ class VisualWorksController < ApplicationController
     render :new
   end
 
+  def edit
+    @work_form = VisualWorkForm.new(work: VisualWork.find(params[:id]))
+
+    render :edit
+  end
+
   def create
     @work_form = VisualWorkForm.new(**visual_work_params)
 
@@ -38,12 +44,6 @@ class VisualWorksController < ApplicationController
     end
 
     render :new
-  end
-
-  def edit
-    @work_form = VisualWorkForm.new(work: VisualWork.find(params[:id]))
-
-    render :edit
   end
 
   def update
