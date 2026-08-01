@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe UsersController, type: :controller do
-  def sign_in(user)
-    session[:user_id] = user.id
-  end
-
   describe "GET edit" do
     it "renders the form for the signed in user" do
       sign_in create(:user)

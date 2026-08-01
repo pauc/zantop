@@ -2,6 +2,8 @@
 
 RSpec.describe WorksController, type: :controller do
   describe "GET admin" do
+    before { sign_in }
+
     it "renders" do
       get :admin, params: { locale: "ca" }
 
@@ -38,6 +40,8 @@ RSpec.describe WorksController, type: :controller do
   end
 
   describe "PATCH sort" do
+    before { sign_in }
+
     it "puts the works in the order they were sent" do
       first = create(:action_work, position: 1)
       second = create(:action_work, position: 2)

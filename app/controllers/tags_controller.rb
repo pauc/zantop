@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class TagsController < ApplicationController
+  include Authorization
+
   # include Finder
-  # include Authorization
+
+  allow_anonymous :show
 
   def show
     @category = Tag.find(params.expect(:id))

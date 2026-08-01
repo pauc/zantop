@@ -89,6 +89,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "GET new" do
+    before { sign_in }
+
     it "renders" do
       get :new, params: { locale: "ca" }
 
@@ -103,6 +105,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "GET edit" do
+    before { sign_in }
+
     it "renders" do
       work = create(:visual_work)
 
@@ -121,6 +125,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "POST create" do
+    before { sign_in }
+
     let(:valid_params) do
       { locale: "ca", visual_work_form: { title: "Jurimuri", techniques: "oli sobre tela" } }
     end
@@ -171,6 +177,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "#visual_work_params" do
+    before { sign_in }
+
     def create_with(attributes)
       form = { title: "Jurimuri" }.merge(attributes)
 
@@ -293,6 +301,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "PATCH update" do
+    before { sign_in }
+
     it "updates the work" do
       work = create(:visual_work, title: "Old")
       params = { locale: "ca", id: work.to_param, visual_work_form: { title: "Nou títol" } }
@@ -342,6 +352,8 @@ RSpec.describe VisualWorksController, type: :controller do
   end
 
   describe "DELETE destroy" do
+    before { sign_in }
+
     it "destroys the work" do
       work = create(:visual_work)
 

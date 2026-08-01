@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WorksController < ApplicationController
-  # include Authorization
+  include Authorization
 
   def admin
     @works = Work

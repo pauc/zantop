@@ -2,6 +2,8 @@
 
 RSpec.describe PagesController, type: :controller do
   describe "GET edit" do
+    before { sign_in }
+
     it "renders" do
       page = create(:page)
 
@@ -41,6 +43,8 @@ RSpec.describe PagesController, type: :controller do
   end
 
   describe "PATCH update" do
+    before { sign_in }
+
     it "saves the title" do
       page = create(:page)
 

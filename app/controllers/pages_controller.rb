@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
+  include Authorization
+
   def edit
     @page = Page.find(params.expect(:id))
   end

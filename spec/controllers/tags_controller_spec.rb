@@ -61,6 +61,8 @@ RSpec.describe TagsController, type: :controller do
   end
 
   describe "GET admin" do
+    before { sign_in }
+
     it "renders" do
       get :admin, params: { locale: "ca" }
 
@@ -93,6 +95,8 @@ RSpec.describe TagsController, type: :controller do
   end
 
   describe "PATCH update" do
+    before { sign_in }
+
     it "updates the name in a single locale" do
       tag = create(:tag, name: "escultura")
 
@@ -172,6 +176,8 @@ RSpec.describe TagsController, type: :controller do
   end
 
   describe "DELETE destroy" do
+    before { sign_in }
+
     it "destroys the tag" do
       tag = create(:tag)
 

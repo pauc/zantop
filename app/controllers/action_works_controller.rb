@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 class ActionWorksController < ApplicationController
+  include Authorization
+
   # include Sortable
   # include Finder
-  # include Authorization
   # include CreateWithDefaultLocale
+
+  allow_anonymous :index, :show
 
   def index
     @published_works = ActionWork.ordered

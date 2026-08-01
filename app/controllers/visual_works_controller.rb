@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 class VisualWorksController < ApplicationController
+  include Authorization
+
   # include Sortable
   # include Finder
-  # include Authorization
   # include CreateWithDefaultLocale
   # respond_to :html
+
+  allow_anonymous :index, :show
 
   def index
     @published_works = VisualWork.ordered

@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class ContactMessagesController < ApplicationController
+  include Authorization
+
+  allow_anonymous :new, :create
+
   def new
     @contact_message = ContactMessage.new
   end

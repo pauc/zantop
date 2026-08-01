@@ -37,6 +37,14 @@ RSpec.describe SessionsController, type: :controller do
 
       expect(response).to redirect_to root_path
     end
+
+    # Only Authorization writes that key, and it never turns anyone away from
+    # the login form. Coming here on purpose leaves nothing to come back to.
+    it "is not remembered as a page to come back to" do
+      get :new, params: { locale: "ca" }
+
+      expect(session[:return_to]).to be_nil
+    end
   end
 
   describe "POST create" do
@@ -63,6 +71,32 @@ RSpec.describe SessionsController, type: :controller do
       post :create, params: credentials
 
       expect(response).to redirect_to("/ca")
+    end
+
+    it "redirects to the page the visitor was turned away from" do
+      create(:user, email: "example@example.com", password: "secret")
+      session[:return_to] = "/ca/works/admin"
+
+      post :create, params: credentials
+
+      expect(response).to redirect_to "/ca/works/admin"
+    end
+
+    it "forgets that page, so the next login starts from the front page again" do
+      create(:user, email: "example@example.com", password: "secret")
+      session[:return_to] = "/ca/works/admin"
+
+      post :create, params: credentials
+
+      expect(session[:return_to]).to be_nil
+    end
+
+    it "ignores the stored page when the credentials are invalid" do
+      session[:return_to] = "/ca/works/admin"
+
+      post :create, params: credentials(email: "mac@mec.mic")
+
+      expect(session[:return_to]).to eq "/ca/works/admin"
     end
 
     it "does not sign in a user whose credentials are invalid" do

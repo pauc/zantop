@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class DashboardsController < ApplicationController
-  # include Authorization
+  include Authorization
+
+  allow_anonymous :front, :about, :more_works
 
   def front
     @works = Work

@@ -16,7 +16,10 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(session_params[:password])
       sign_in(user)
-      redirect_to root_path
+
+      # Back to whatever page turned them away, when authorization is what sent
+      # them here in the first place.
+      redirect_to stored_location || root_path
     else
       flash.now[:error] = t(".invalid_login")
       render :new
