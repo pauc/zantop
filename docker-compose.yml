@@ -3,12 +3,13 @@
 services:
   db:
     container_name: zantop_db
-    image: "postgres:13.4-alpine"
+    image: "postgres:18.4-alpine"
     environment:
       - POSTGRES_USER=zantop
       - POSTGRES_PASSWORD=zantop
     volumes:
-      - database_files:/var/lib/postgresql/data
+      # postgres:18 images keep PGDATA under /var/lib/postgresql (not .../data)
+      - database_files:/var/lib/postgresql
     ports:
       - "5445:5432"
 

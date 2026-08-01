@@ -3,11 +3,14 @@
 def db_dump
   db_config = ActiveRecord::Base.connection_db_config.configuration_hash
 
+  # Runs inside the db container so pg_dump always matches the server version;
+  # the host client (17.x) cannot dump a Postgres 18 server.
   dumped = system(
-    { "PGPASSWORD" => db_config[:password].to_s },
+    "docker", "compose", "exec",
+    "-T",
+    "-e", "PGPASSWORD=#{db_config[:password]}",
+    "db",
     "pg_dump",
-    "-h", db_config[:host],
-    "-p", db_config[:port].to_s,
     "-U", db_config[:username],
     "-a",
     "--restrict-key=zantop",
