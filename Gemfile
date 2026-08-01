@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "4.0.6"
 
-gem "rails", "~> 7.1.6"
+gem "rails", "~> 7.2.3"
 
 # Default gems extracted from the Ruby stdlib (3.4/4.0) that Rails 7.0 still requires
 gem "base64"
