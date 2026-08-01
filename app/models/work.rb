@@ -28,6 +28,27 @@ class Work < ApplicationRecord
   # same position, and an unstable order would shuffle them between pages.
   scope :ordered, -> { order(position: :desc, id: :desc) }
 
+  # Deals the submitted works' own positions back out in the order the ids
+  # arrive, rather than renumbering from one. Only the works named in `ids`
+  # move, so a stale or partial list can never claim a position belonging to a
+  # work it leaves out, and the gaps left by deleted works survive untouched.
+  #
+  # `update_all` deliberately leaves `updated_at` alone: the front page caches
+  # each work on it, and reordering changes no work's content.
+  def self.reposition(ids)
+    transaction do
+      works = where(id: ids).index_by(&:id)
+      # Highest first, to match `ordered`, since the list is rendered top-down.
+      positions = works.values.map(&:position).sort.reverse
+
+      ids.filter_map { |id| works[id.to_i] }.each_with_index do |work, index|
+        # rubocop:disable Rails/SkipsModelValidations -- skipping is the point
+        where(id: work.id).update_all(position: positions[index])
+        # rubocop:enable Rails/SkipsModelValidations
+      end
+    end
+  end
+
   def first_image
     images
       .with_attached_image

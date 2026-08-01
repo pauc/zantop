@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :works, only: [] do
       collection do
         get :admin
+        patch :sort
       end
     end
 
