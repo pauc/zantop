@@ -1,13 +1,14 @@
-!#/usr/bin/env sh
+#!/usr/bin/env sh
 
+PGPASSWORD="${ZANTOP_DATABASE_PASSWORD:-zantop}" \
 pg_dump --data-only \
         --no-owner \
         --verbose \
         --exclude-table-data=users \
         --exclude-table-data=ar_internal_metadata \
         --exclude-table-data=schema_migrations \
-        --host=localhost \
-        --port=${ZANTOP_DATABASE_PORT:-5432} \
-        --username=$ZANTOP_DATABASE_USER \
+        --host="${ZANTOP_DATABASE_HOST:-localhost}" \
+        --port="${ZANTOP_DATABASE_PORT:-5445}" \
+        --username="${ZANTOP_DATABASE_USER:-zantop}" \
         --dbname=zantop_development \
         --file="db/initial_db_data.sql"

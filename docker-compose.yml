@@ -1,28 +1,5 @@
 ---
 
-x-database-credentials: &database_credentials
-  ZANTOP_DATABASE_HOST: zantop_db
-  ZANTOP_DATABASE_USER: zantop
-  ZANTOP_DATABASE_PASSWORD: zantop
-  ZANTOP_DATABASE_PORT: 5432
-x-app-config: &app_config
-  user: "developer"
-  image: "zantop"
-  build:
-    context: .
-    dockerfile: Dockerfile-development
-  environment: &rails_dev_environment
-    <<: *database_credentials
-    ? PRY_HISTORY_FILE
-  tty: true
-  stdin_open: true
-  volumes:
-    - .:/app:cached
-    - bundle_cache:/usr/local/bundle
-  depends_on:
-    - db
-
-version: '3'
 services:
   db:
     container_name: zantop_db
@@ -35,19 +12,9 @@ services:
     ports:
       - "5445:5432"
 
-  web:
-    <<: *app_config
-    container_name: zantop_web
-    command: bin/rails server -b 0.0.0.0
-    environment:
-      <<: *rails_dev_environment
-    ports:
-      - "3000:3000"
-
 networks:
   default:
     name: zantop_default
 
 volumes:
   database_files:
-  bundle_cache:

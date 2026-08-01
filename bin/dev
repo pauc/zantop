@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker-compose up -d db
+docker compose up -d
 
 if ! foreman version &> /dev/null
 then
