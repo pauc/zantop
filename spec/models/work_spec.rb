@@ -15,6 +15,52 @@ RSpec.describe Work do
     end
   end
 
+  describe ".ordered" do
+    it "returns the highest position first" do
+      oldest = create(:action_work, position: 1)
+      middle = create(:action_work, position: 2)
+      newest = create(:action_work, position: 3)
+
+      expect(described_class.ordered).to eq [newest, middle, oldest]
+    end
+
+    it "interleaves visual and action works" do
+      visual = create(:visual_work, position: 2)
+      action = create(:action_work, position: 1)
+
+      expect(described_class.ordered).to eq [visual, action]
+    end
+
+    it "breaks ties on position with the newest record first" do
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 1)
+
+      expect(described_class.ordered).to eq [second, first]
+    end
+  end
+
+  describe "positioning" do
+    it "assigns the next position on create" do
+      create(:action_work, position: 7)
+
+      expect(create(:action_work).position).to eq 8
+    end
+
+    it "starts the sequence at one when there are no works yet" do
+      expect(create(:action_work).position).to eq 1
+    end
+
+    it "keeps a position that was given explicitly" do
+      expect(create(:action_work, position: 42).position).to eq 42
+    end
+
+    it "continues one sequence across both subclasses" do
+      create(:visual_work, position: 3)
+
+      expect(create(:action_work).position).to eq 4
+    end
+  end
+
   describe "validations" do
     it "requires a title" do
       expect(build(:action_work, title: nil)).not_to be_valid
@@ -149,6 +195,14 @@ RSpec.describe Work do
       expect(work.related.size).to eq 5
     end
 
+    it "returns the highest position first" do
+      work = create(:action_work, tags: [tag])
+      oldest = create(:action_work, position: 1, tags: [tag], published: true)
+      newest = create(:action_work, position: 2, tags: [tag], published: true)
+
+      expect(work.related).to eq [newest, oldest]
+    end
+
     it "is empty when the work has no tags" do
       create(:action_work, tags: [tag], published: true)
 
@@ -210,6 +264,30 @@ RSpec.describe Work do
       expect { work.destroy! }
         .to change(Tagging, :count).by(-1)
         .and not_change(Tag, :count)
+    end
+
+    it "orders its sections by position" do
+      work = create(:action_work)
+      last = create(:section, work:, position: 2)
+      first = create(:section, work:, position: 1)
+
+      expect(work.reload.sections).to eq [first, last]
+    end
+
+    it "orders its images by position" do
+      work = create(:action_work)
+      last = create(:image, :video, work:, position: 2)
+      first = create(:image, :video, work:, position: 1)
+
+      expect(work.reload.images).to eq [first, last]
+    end
+
+    it "orders images left with gaps by deleted siblings" do
+      work = create(:action_work)
+      last = create(:image, :video, work:, position: 9)
+      first = create(:image, :video, work:, position: 4)
+
+      expect(work.reload.images).to eq [first, last]
     end
   end
 end

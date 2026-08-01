@@ -7,7 +7,8 @@ class ActionWorksController < ApplicationController
   # include CreateWithDefaultLocale
 
   def index
-    @published_works = ActionWork.includes(:plain_text_translations,
+    @published_works = ActionWork.ordered
+                                 .includes(:plain_text_translations,
                                            :rich_text_translations)
 
     render "works/works_list"

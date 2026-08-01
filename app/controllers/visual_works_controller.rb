@@ -8,7 +8,8 @@ class VisualWorksController < ApplicationController
   # respond_to :html
 
   def index
-    @published_works = VisualWork.includes(:plain_text_translations,
+    @published_works = VisualWork.ordered
+                                 .includes(:plain_text_translations,
                                            :rich_text_translations)
     render "works/works_list"
   end

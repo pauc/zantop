@@ -17,10 +17,6 @@ class Image < ApplicationRecord
     attachable.variant :full,   resize_to_fit:  [2000, 2000]
   end
 
-  # acts_as_list scope: 'illustrated_id=#{illustrated_id} and
-  #                      illustrated_type=\'#{illustrated_type}\''
-  # default_scope :order => 'position'
-
   def type
     return "image" if image.present?
 
