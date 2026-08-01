@@ -9,7 +9,7 @@
     "normalize.css": "^8.0.1",
     "sass": "^1.54.5",
     "tom-select": "^2.6.2",
-    "trix": "^2.0.0-beta.0",
+    "trix": "^2.1.19",
     "yarn": "^1.22.19"
   },
   "version": "0.1.0",
