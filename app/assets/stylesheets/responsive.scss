@@ -1,0 +1,21 @@
+// A first breakpoint for the public site, which otherwise has none: at phone
+// widths the content column collapsed to ~126px beside a 240px sidebar and the
+// page scrolled sideways. The header is not covered here — its menu still
+// overlaps the language links on narrow screens.
+@media (max-width: 46rem) {
+  body {
+    .container,
+    #flash-messages {
+      padding: 0 1rem;
+    }
+
+    &.with-sidebar .main-container {
+      display: block;
+    }
+
+    &.no-front #sidebar {
+      min-width: 0;
+      margin-top: 2rem;
+    }
+  }
+}

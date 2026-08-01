@@ -1,0 +1,11 @@
+<% if image.video? %>
+  <span class="gallery-video-thumb" aria-hidden="true">&#9654;</span>
+<% else %>
+  <% width, height = variant_dimensions(image, 500) %>
+  <%= image_tag image.image.variant(:card),
+                width: width,
+                height: height,
+                loading: eager ? "eager" : "lazy",
+                decoding: "async",
+                alt: "" %>
+<% end %>
