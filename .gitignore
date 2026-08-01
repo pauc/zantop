@@ -36,3 +36,6 @@ uploads
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Mutation testing run results
+/.mutant/
