@@ -7,10 +7,6 @@ RSpec.describe ApplicationController, type: :controller do
     end
   end
 
-  def enabled_tags
-    controller.view_assigns["enabled_tags"]
-  end
-
   before do
     routes.draw do
       get "anonymous", to: "anonymous#index"
@@ -89,7 +85,7 @@ RSpec.describe ApplicationController, type: :controller do
 
       get :index, params: { locale: "ca" }
 
-      expect(enabled_tags).to eq [tag]
+      expect(assigns(:enabled_tags)).to eq [tag]
     end
 
     it "leaves out tags with no published work" do
@@ -97,7 +93,7 @@ RSpec.describe ApplicationController, type: :controller do
 
       get :index, params: { locale: "ca" }
 
-      expect(enabled_tags).to be_empty
+      expect(assigns(:enabled_tags)).to be_empty
     end
 
     it "preloads the tag name translations" do
@@ -106,7 +102,7 @@ RSpec.describe ApplicationController, type: :controller do
 
       get :index, params: { locale: "ca" }
 
-      expect(enabled_tags.first.association(:plain_text_translations)).to be_loaded
+      expect(assigns(:enabled_tags).first.association(:plain_text_translations)).to be_loaded
     end
   end
 

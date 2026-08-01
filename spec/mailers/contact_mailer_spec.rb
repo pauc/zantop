@@ -1,26 +1,34 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 RSpec.describe ContactMailer do
-  let(:message) do
-    ContactMessage.new(from_email: "example@example.com",
-                       from_name: "The name",
-                       subject: "The subject",
-                       text: "Some text")
-  end
+  describe "#contact_message" do
+    let(:message) do
+      ContactMessage.new(from_email: "example@example.com",
+                         from_name: "The name",
+                         subject: "The subject",
+                         text: "Some text")
+    end
 
-  let(:mail) { described_class.contact_message(message) }
+    let(:mail) { described_class.contact_message(message) }
 
-  it "renders the subject" do
-    expect(mail.subject).to eq("[mireiazantop.com]: #{message.subject}")
-  end
+    it "prefixes the subject with the site name" do
+      expect(mail.subject).to eq "[mireiazantop.com]: The subject"
+    end
 
-  it "contains the sender name if exists" do
-    expect(mail.body).to include(message.from_name)
-  end
+    it "goes to the site owner" do
+      expect(mail.to).to eq ["erb.devs@gmail.com"]
+    end
 
-  it "contains the text" do
-    expect(mail.body).to include(message.text)
+    it "replies to the sender" do
+      expect(mail.reply_to).to eq ["example@example.com"]
+    end
+
+    it "names the sender in the body" do
+      expect(mail.body).to include "The name"
+    end
+
+    it "includes the text in the body" do
+      expect(mail.body).to include "Some text"
+    end
   end
 end
