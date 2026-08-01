@@ -60,7 +60,11 @@ env:
     ZANTOP_STORAGE_ROOT: /data/uploads
   secret:
     - ZANTOP_DATABASE_PASSWORD
-    - RAILS_MASTER_KEY
+    # Not RAILS_MASTER_KEY: the key for config/credentials/production.yml.enc
+    # was never recoverable, and with the database credentials moved to the
+    # environment secret_key_base was the only thing left inside it. Since main
+    # has never been deployed, nothing was signed with the old value.
+    - SECRET_KEY_BASE
 
 # Uploaded files live on the host, not in the image.
 volumes:
