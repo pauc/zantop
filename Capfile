@@ -17,6 +17,8 @@ install_plugin Capistrano::SCM::Git
 
 # Puma & friends
 require "capistrano/puma"
+# capistrano3-puma auto-requires the systemd plugin but not the nginx one.
+require "capistrano/puma/nginx"
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
 install_plugin Capistrano::Puma::Systemd
