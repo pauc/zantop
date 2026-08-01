@@ -7,17 +7,6 @@ ruby "4.0.6"
 
 gem "rails", "~> 8.1.3"
 
-# Default gems extracted from the Ruby stdlib (3.4/4.0) that Rails 7.0 still requires
-gem "base64"
-gem "benchmark"
-gem "bigdecimal"
-gem "cgi"
-gem "drb"
-gem "logger"
-gem "mutex_m"
-gem "observer"
-gem "ostruct"
-
 gem "bcrypt", "~> 3.1.22"
 gem "friendly_id", "~> 5.7.0"
 gem "pg", "~> 1.1"
