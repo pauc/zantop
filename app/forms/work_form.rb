@@ -60,10 +60,10 @@ class WorkForm
   end
 
   def tags=(ids)
-    ids = ids.select(&:present?)
+    ids = ids.compact_blank
 
     ids, new_tags = ids
-                    .select(&:present?)
+                    .compact_blank
                     .partition { |id| Integer(id, exception: false) }
 
     new_tags.each do |tag_name|
