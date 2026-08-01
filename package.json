@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/actiontext": "^7.0.4",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^7.0.4",
+    "@rails/ujs": "^7.1.600",
     "esbuild": "^0.15.5",
     "normalize.css": "^8.0.1",
     "sass": "^1.54.5",
