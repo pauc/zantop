@@ -9,14 +9,14 @@ default: &default
 
 development: &development
   <<: *default
-  database: zantop_development
+  database: <%= ENV.fetch("ZANTOP_DATABASE_NAME") { "zantop" } %>_development
   username: <%= ENV.fetch("ZANTOP_DATABASE_USER") { "zantop" } %>
   password: <%= ENV.fetch("ZANTOP_DATABASE_PASSWORD") { "zantop" } %>
   port: <%= ENV.fetch("ZANTOP_DATABASE_PORT") { 5445 } %>
 
 test:
   <<: *development
-  database: zantop_test
+  database: <%= ENV.fetch("ZANTOP_DATABASE_NAME") { "zantop" } %>_test
 
 production:
   <<: *default
