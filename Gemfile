@@ -18,10 +18,10 @@ gem "mutex_m"
 gem "observer"
 gem "ostruct"
 
-gem "bcrypt", "~> 3.1.17"
+gem "bcrypt", "~> 3.1.22"
 gem "friendly_id", "~> 5.4.0"
 gem "pg", "~> 1.1"
-gem "puma", "~> 6.6"
+gem "puma", "~> 8.0"
 
 # Assets
 gem "cssbundling-rails"
@@ -92,5 +92,5 @@ group :test do
   gem "factory_bot_rails"
   # Restores assigns and render_template for controller specs
   gem "rails-controller-testing"
-  gem "selenium-webdriver", "4.12"
+  gem "selenium-webdriver", ">= 4.14"
 end
