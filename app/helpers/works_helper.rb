@@ -62,11 +62,4 @@ module WorksHelper
       edit_visual_work_path(work)
     end
   end
-
-  def translation_info(work, locale)
-    css_class = work.translation?(locale) ? "translated" : "untranslated"
-    I18n.with_locale(locale) do
-      link_to t(locale), url_for_edit_work(work), class: css_class
-    end
-  end
 end

@@ -29,7 +29,7 @@ class WorkForm
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
   def submit(attrs)
     work.transaction do
       assign_attributes(attrs)
@@ -37,7 +37,12 @@ class WorkForm
       raise ActiveRecord::Rollback unless validate
 
       work.assign_attributes(serializable_hash)
-      work.save
+
+      unless work.save
+        errors.merge!(work.errors)
+
+        raise ActiveRecord::Rollback
+      end
 
       sections.each do |section|
         section.destroy! if section.marked_for_destruction?
@@ -50,7 +55,7 @@ class WorkForm
       end
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
 
   def tags
     work

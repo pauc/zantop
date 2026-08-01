@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
 
     # Tags
-    resources :tags, except: [:new, :edit] do
+    resources :tags, only: [:show, :update, :destroy] do
       get "admin", on: :collection
     end
 
