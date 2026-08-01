@@ -21,15 +21,23 @@ function setupGallery(gallery) {
     }
   }
 
-  const showCounter = () => {
-    if (counter) counter.textContent = `${currentIndex() + 1} / ${slides.length}`
+  const prev = gallery.querySelector("[data-gallery-prev]")
+  const next = gallery.querySelector("[data-gallery-next]")
+
+  // Both ends are dead ends, so the arrow that would do nothing is taken away
+  // rather than left to be clicked. `disabled` also drops it out of tab order.
+  const refresh = () => {
+    const index = currentIndex()
+    if (counter) counter.textContent = `${index + 1} / ${slides.length}`
+    if (prev) prev.disabled = index === 0
+    if (next) next.disabled = index === slides.length - 1
   }
 
   const goTo = (index, behavior) => {
     const bounded = Math.min(slides.length - 1, Math.max(0, index))
     preload(bounded)
     track.scrollTo({ left: bounded * track.clientWidth, behavior: behavior || "auto" })
-    showCounter()
+    refresh()
   }
 
   gallery.querySelectorAll("[data-gallery-open]").forEach((button) => {
@@ -39,8 +47,6 @@ function setupGallery(gallery) {
     })
   })
 
-  const prev = gallery.querySelector("[data-gallery-prev]")
-  const next = gallery.querySelector("[data-gallery-next]")
   if (prev) prev.addEventListener("click", () => goTo(currentIndex() - 1, "smooth"))
   if (next) next.addEventListener("click", () => goTo(currentIndex() + 1, "smooth"))
 
@@ -62,7 +68,7 @@ function setupGallery(gallery) {
     }
   })
 
-  track.addEventListener("scroll", showCounter, { passive: true })
+  track.addEventListener("scroll", refresh, { passive: true })
 }
 
 document.querySelectorAll("[data-gallery]").forEach(setupGallery)

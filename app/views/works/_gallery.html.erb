@@ -65,9 +65,11 @@
       <% end %>
     </div>
 
-    <p class="gallery-counter" data-gallery-counter aria-live="polite"></p>
-    <button type="button" class="gallery-nav gallery-prev" data-gallery-prev aria-label="&larr;">&#8249;</button>
-    <button type="button" class="gallery-nav gallery-next" data-gallery-next aria-label="&rarr;">&#8250;</button>
+    <% if images.size > 1 %>
+      <p class="gallery-counter" data-gallery-counter aria-live="polite"></p>
+      <button type="button" class="gallery-nav gallery-prev" data-gallery-prev aria-label="&larr;">&#8249;</button>
+      <button type="button" class="gallery-nav gallery-next" data-gallery-next aria-label="&rarr;">&#8250;</button>
+    <% end %>
     <button type="button" class="gallery-close" data-gallery-close aria-label="&times;">&times;</button>
   </dialog>
 </div>
