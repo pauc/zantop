@@ -1,7 +1,10 @@
 name: Rubocop
 
 on:
+  # branch pushes are covered by their pull request; limiting push to main
+  # avoids running everything twice once a PR is open
   push:
+    branches: [main]
   pull_request:
 
 concurrency:
