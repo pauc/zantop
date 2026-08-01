@@ -12,6 +12,7 @@ jobs:
     env:
       ZANTOP_DATABASE_USER: postgres
       ZANTOP_DATABASE_PASSWORD: postgres
+      ZANTOP_DATABASE_PORT: 5432
     services:
       postgres:
         image: postgres:13.4
