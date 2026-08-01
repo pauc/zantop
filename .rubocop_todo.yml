@@ -16,13 +16,6 @@ Layout/EmptyLineAfterMagicComment:
     - 'db/migrate/20220909224320_create_action_text_tables.action_text.rb'
 
 # Offense count: 1
-# Configuration parameters: AllowedMethods.
-# AllowedMethods: enums
-Lint/ConstantDefinitionInBlock:
-  Exclude:
-    - 'spec/models/concerns/has_slugs_spec.rb'
-
-# Offense count: 1
 # Configuration parameters: MaxRangeSize.
 Lint/MissingCopEnableDirective:
   Exclude:
@@ -55,24 +48,8 @@ Performance/MethodObjectAsBlock:
     - 'app/helpers/application_helper.rb'
     - 'lib/tasks/migrate_translations.rake'
 
-# Offense count: 2
-RSpec/BeforeAfterAll:
-  Exclude:
-    - 'spec/models/concerns/has_slugs_spec.rb'
-
-# Offense count: 1
-RSpec/LeakyConstantDeclaration:
-  Exclude:
-    - 'spec/models/concerns/has_slugs_spec.rb'
-
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
 RSpec/Output:
   Exclude:
     - 'spec/rails_helper.rb'
-
-# Offense count: 2
-RSpec/PendingWithoutReason:
-  Exclude:
-    - 'spec/views/action_works/index.html.erb_spec.rb'
-    - 'spec/views/visual_works/index.html.erb_spec.rb'

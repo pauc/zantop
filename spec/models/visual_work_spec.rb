@@ -13,13 +13,15 @@ RSpec.describe VisualWork do
     end
   end
 
-  it "is stored as a Work of type VisualWork" do
-    expect(create(:visual_work).type).to eq "VisualWork"
-  end
+  describe "single table inheritance" do
+    it "is stored as a Work of type VisualWork" do
+      expect(create(:visual_work).type).to eq "VisualWork"
+    end
 
-  it "is not returned by the ActionWork scope" do
-    work = create(:visual_work)
+    it "is not returned by the ActionWork scope" do
+      work = create(:visual_work)
 
-    expect(ActionWork.all).not_to include work
+      expect(ActionWork.all).not_to include work
+    end
   end
 end

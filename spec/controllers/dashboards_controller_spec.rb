@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
-
 RSpec.describe DashboardsController, type: :controller do
-  def works
-    controller.view_assigns["works"]
-  end
-
   describe "GET front" do
     it "renders" do
       get :front, params: { locale: "en" }
@@ -25,7 +19,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en" }
 
-      expect(works).to include work
+      expect(assigns(:works)).to include work
     end
 
     it "leaves out unpublished works" do
@@ -33,7 +27,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en" }
 
-      expect(works).not_to include work
+      expect(assigns(:works)).not_to include work
     end
 
     it "shows twelve works per page" do
@@ -41,7 +35,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en" }
 
-      expect(works.length).to eq 12
+      expect(assigns(:works).length).to eq 12
     end
 
     it "serves the second page" do
@@ -49,7 +43,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en", page: 2 }
 
-      expect(works.length).to eq 1
+      expect(assigns(:works).length).to eq 1
     end
 
     it "defaults to the first page" do
@@ -57,7 +51,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en" }
 
-      expect(works.current_page).to eq 1
+      expect(assigns(:works).current_page).to eq 1
     end
 
     it "preloads the plain text translations" do
@@ -65,7 +59,7 @@ RSpec.describe DashboardsController, type: :controller do
 
       get :front, params: { locale: "en" }
 
-      expect(works.first.association(:plain_text_translations)).to be_loaded
+      expect(assigns(:works).first.association(:plain_text_translations)).to be_loaded
     end
   end
 
