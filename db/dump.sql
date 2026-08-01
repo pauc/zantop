@@ -4,8 +4,8 @@
 
 \restrict zantop
 
--- Dumped from database version 13.4
--- Dumped by pg_dump version 17.10 (Debian 17.10-0+deb13u1)
+-- Dumped from database version 18.4
+-- Dumped by pg_dump version 18.4
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;

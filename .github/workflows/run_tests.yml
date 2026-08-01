@@ -15,7 +15,7 @@ jobs:
       ZANTOP_DATABASE_PORT: 5432
     services:
       postgres:
-        image: postgres:13.4
+        image: postgres:18.4
         env:
           POSTGRES_PASSWORD: postgres
         ports:
@@ -23,7 +23,7 @@ jobs:
         # needed because the postgres container does not provide a healthcheck
         # tmpfs makes DB faster by using RAM
         options: >-
-          --mount type=tmpfs,destination=/var/lib/postgresql/data
+          --mount type=tmpfs,destination=/var/lib/postgresql
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
