@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "4.0.6"
 
-gem "rails", "7.0.2.3"
+gem "rails", "~> 7.1.6"
 
 # Default gems extracted from the Ruby stdlib (3.4/4.0) that Rails 7.0 still requires
 gem "base64"
@@ -21,7 +21,7 @@ gem "ostruct"
 gem "bcrypt", "~> 3.1.17"
 gem "friendly_id", "~> 5.4.0"
 gem "pg", "~> 1.1"
-gem "puma", "~> 5.6"
+gem "puma", "~> 6.6"
 
 # Assets
 gem "cssbundling-rails"
@@ -43,7 +43,7 @@ gem "simple_form"
 gem "accept_language"
 gem "mobility", "~> 1.2.9"
 gem "mobility-actiontext"
-gem "route_translator", "~> 12.1.0"
+gem "route_translator", "~> 14.2"
 
 # Pagination
 gem "will_paginate", "~> 3.1"
@@ -57,7 +57,7 @@ group :development, :test do
 
   gem "guard-rspec"
   gem "libnotify"
-  gem "rspec-rails", "~> 5.0.0"
+  gem "rspec-rails", "~> 7.1"
 
   # Mutation testing
   gem "mutant",       "~> 0.16.3", require: false
