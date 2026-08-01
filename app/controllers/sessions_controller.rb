@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  def index
-    render :new
-  end
-
   def new
     if current_user
       redirect_back_or_to root_path, notice: "Hola #{current_user.name}, ja estàs autenticada"

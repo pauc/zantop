@@ -4,12 +4,6 @@ class TagsController < ApplicationController
   # include Finder
   # include Authorization
 
-  def index
-    respond_to do |format|
-      format.json { render json: Tag.tokens(params[:q]) }
-    end
-  end
-
   def show
     @category = Tag.find(params.expect(:id))
 
@@ -33,7 +27,7 @@ class TagsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { respond_with category, location: admin_tags_path }
+      format.html { redirect_to admin_tags_path }
       format.js { render "update" }
     end
   end
@@ -42,7 +36,8 @@ class TagsController < ApplicationController
     @category = Tag.find(params.expect(:id))
 
     flash.notice = "Esborrat" if @category.destroy
-    respond_with category, location: admin_tags_path
+
+    redirect_to admin_tags_path
   end
 
   def admin

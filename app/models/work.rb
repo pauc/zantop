@@ -19,14 +19,16 @@ class Work < ApplicationRecord
   scope :published, -> { where(published: true) }
 
   def first_image
-    images.with_attached_image.first&.image&.variant(:medium)
+    images
+      .with_attached_image
+      .find { |image| image.image.attached? }
+      &.image
+      &.variant(:medium)
   end
 
   def related
-    conditions_array_for_taggings = [tags.map { |_t| "tag_id = ?" }.join(" OR ")]
-    tags.each { |t| conditions_array_for_taggings << t.id }
     work_ids_from_taggings = Tagging.select("DISTINCT work_id")
-                                    .where(conditions_array_for_taggings)
+                                    .where(tag_id: tag_ids)
                                     .where.not(work_id: id)
     self
       .class

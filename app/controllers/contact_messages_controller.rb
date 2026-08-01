@@ -11,7 +11,7 @@ class ContactMessagesController < ApplicationController
     if @contact_message.valid?
       ContactMailer.contact_message(@contact_message).deliver
 
-      redirect_to home_path, notice: t(".confirmation")
+      redirect_to root_path, notice: t(".confirmation")
     else
       render action: "new"
     end
