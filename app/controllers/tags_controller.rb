@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @category = Tag.find(params[:id])
+    @category = Tag.find(params.expect(:id))
 
     @published_works = @category
                        .works
@@ -21,7 +21,7 @@ class TagsController < ApplicationController
   end
 
   def update
-    @category = Tag.find(params[:id])
+    @category = Tag.find(params.expect(:id))
 
     I18n.available_locales.each do |locale|
       I18n.with_locale(locale) do
@@ -39,7 +39,7 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @category = Tag.find(params[:id])
+    @category = Tag.find(params.expect(:id))
 
     flash.notice = "Esborrat" if @category.destroy
     respond_with category, location: admin_tags_path

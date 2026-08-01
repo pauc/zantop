@@ -14,7 +14,7 @@ class VisualWorksController < ApplicationController
   end
 
   def show
-    @work = VisualWork.find(params[:id])
+    @work = VisualWork.find(params.expect(:id))
     @related_works = @work.related
 
     flash.now[:alert] = t("untranslated_content") unless @work.translated_into?(I18n.locale)
@@ -29,7 +29,7 @@ class VisualWorksController < ApplicationController
   end
 
   def edit
-    @work_form = VisualWorkForm.new(work: VisualWork.find(params[:id]))
+    @work_form = VisualWorkForm.new(work: VisualWork.find(params.expect(:id)))
 
     render :edit
   end
@@ -51,7 +51,7 @@ class VisualWorksController < ApplicationController
   end
 
   def destroy
-    VisualWork.find(params[:id]).destroy!
+    VisualWork.find(params.expect(:id)).destroy!
 
     redirect_to visual_works_path, notice: t("deleted")
   end
@@ -60,13 +60,15 @@ class VisualWorksController < ApplicationController
 
   def visual_work_params
     params
-      .require(:visual_work_form)
-      .permit(:title,
-              :description,
-              :place,
-              :realization_date,
-              :published,
-              section_attributes: [:title, :body, :position, :_destroy],
-              image_attributes: [:image, :video, :credits, :position, :_destroy])
+      .expect(visual_work_form: [:title,
+                                 :description,
+                                 :place,
+                                 :realization_date,
+                                 :published,
+                                 {
+                                   section_attributes: [[:title, :body, :position, :_destroy]],
+                                   image_attributes: [[:image, :video, :credits, :position,
+                                                       :_destroy]]
+                                 }])
   end
 end

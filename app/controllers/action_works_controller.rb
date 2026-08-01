@@ -14,7 +14,7 @@ class ActionWorksController < ApplicationController
   end
 
   def show
-    @work = ActionWork.find(params[:id])
+    @work = ActionWork.find(params.expect(:id))
     @related_works = @work.related
 
     flash.now[:alert] = t("untranslated_content") unless @work.translated_into?(I18n.locale)
@@ -29,7 +29,7 @@ class ActionWorksController < ApplicationController
   end
 
   def edit
-    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
+    @work_form = ActionWorkForm.new(work: ActionWork.find(params.expect(:id)))
 
     render :edit
   end
@@ -47,7 +47,7 @@ class ActionWorksController < ApplicationController
   end
 
   def update
-    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
+    @work_form = ActionWorkForm.new(work: ActionWork.find(params.expect(:id)))
 
     if @work_form.submit(action_work_params)
       flash.notice = t("updated")
@@ -59,7 +59,7 @@ class ActionWorksController < ApplicationController
   end
 
   def destroy
-    ActionWork.find(params[:id]).destroy!
+    ActionWork.find(params.expect(:id)).destroy!
 
     redirect_to action_works_path, notice: t("deleted")
   end
@@ -68,14 +68,16 @@ class ActionWorksController < ApplicationController
 
   def action_work_params
     params
-      .require(:action_work_form)
-      .permit(:title,
-              :description,
-              :place,
-              :realization_date,
-              :published,
-              tags: [],
-              section_attributes: [:title, :body, :position, :_destroy],
-              image_attributes: [:image, :video, :credits, :position, :_destroy])
+      .expect(action_work_form: [:title,
+                                 :description,
+                                 :place,
+                                 :realization_date,
+                                 :published,
+                                 {
+                                   tags: [],
+                                   section_attributes: [[:title, :body, :position, :_destroy]],
+                                   image_attributes: [[:image, :video, :credits, :position,
+                                                       :_destroy]]
+                                 }])
   end
 end

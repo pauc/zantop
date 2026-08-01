@@ -37,8 +37,8 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session)
-          .permit(:email, :password)
+    params
+      .expect(session: [:email, :password])
   end
 
   def sign_in(user)
