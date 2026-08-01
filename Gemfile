@@ -46,7 +46,7 @@ gem "mobility-actiontext"
 gem "route_translator", "~> 16.2"
 
 # Pagination
-gem "will_paginate", "~> 3.1"
+gem "will_paginate", "~> 4.0"
 
 # Truncate HTML content
 gem "html_truncator"
