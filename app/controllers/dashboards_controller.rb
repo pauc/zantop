@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
   def front
     @works = Work
              .published
+             .ordered
              .includes(:plain_text_translations)
              .paginate(page: params[:page], per_page: 12)
   end
@@ -13,6 +14,7 @@ class DashboardsController < ApplicationController
   def more_works
     works = Work
             .published
+            .ordered
             .includes(:plain_text_translations)
             .paginate(page: params.fetch(:page), per_page: 12)
 

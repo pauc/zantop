@@ -14,10 +14,10 @@ module GalleriesHelper
     [(width * scale).round, (height * scale).round]
   end
 
-  # Ordered by position and loaded eagerly: `images` has no default order, and
-  # a relation would answer `first` with its own `ORDER BY id LIMIT 1` while
-  # `drop(1)` dropped whatever the unordered scan happened to return first.
+  # Loaded eagerly into an array: the `images` association orders by position,
+  # but a relation would still answer `first` with its own `LIMIT 1` query
+  # while `drop(1)` worked on a second, separately fetched result set.
   def gallery_images(work)
-    work.images.order(:position, :id).includes(:rich_text_translations).to_a
+    work.images.includes(:rich_text_translations).to_a
   end
 end

@@ -10,6 +10,7 @@ class TagsController < ApplicationController
     @published_works = @category
                        .works
                        .published
+                       .ordered
                        .includes(:plain_text_translations,
                                  :rich_text_translations)
   end
