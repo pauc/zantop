@@ -12,8 +12,13 @@ body {
   margin: 0;
 
   .container, #flash-messages {
-    max-width: 1240px;
-    padding: 0;
+    // Always a gutter, not only at phone widths. The container fills the
+    // viewport up to 1240px, so from the phone breakpoint to there it had none
+    // and the front page work titles — which bleed .75rem past their card each
+    // side — were clipped at both edges and pushed the page sideways. The
+    // max-width carries the padding, so the content column is still 1240px.
+    max-width: 1272px;
+    padding: 0 1rem;
     margin: 0 auto;
   }
 

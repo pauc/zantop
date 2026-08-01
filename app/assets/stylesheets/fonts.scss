@@ -21,7 +21,10 @@
 }
 
 body {
-  font-size: 125%;
+  // Legacy only applied the 125% above 1281px and sat at 100% below it; this
+  // ramps between the two instead of stepping, and never goes under 16px so
+  // phone text stays legible. Everything else here is sized in em off this.
+  font-size: clamp(1rem, 0.78rem + 0.59vw, 1.25rem);
   font-family: 'cantarellregular', sans-serif;
   color: $dark_grey;
   //@include transition(font-size 0.75s linear);
@@ -33,7 +36,9 @@ h1, h2, h3, h4, h5, h6, .front #main_menu, .f-title {
 }
 
 h1 {
-  font-size: 3em;
+  // A long work title ran to three lines on a phone at a flat 3em. Reaches the
+  // full 3em by 1200px, so desktop is unchanged.
+  font-size: clamp(2.25em, 1.2em + 3vw, 3em);
 }
 
 h2 {

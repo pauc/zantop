@@ -1,14 +1,8 @@
-// A first breakpoint for the public site, which otherwise has none: at phone
-// widths the content column collapsed to ~126px beside a 240px sidebar and the
-// page scrolled sideways. The header is not covered here — its menu still
-// overlaps the language links on narrow screens.
+// Breakpoints for the public site, which otherwise has none: at phone widths
+// the content column collapsed to ~126px beside a 240px sidebar and the page
+// scrolled sideways.
 @media (max-width: 46rem) {
   body {
-    .container,
-    #flash-messages {
-      padding: 0 1rem;
-    }
-
     &.with-sidebar .main-container {
       display: block;
     }
@@ -16,6 +10,99 @@
     &.no-front #sidebar {
       min-width: 0;
       margin-top: 2rem;
+    }
+
+    // The four menu links wrapped onto a second line and ran underneath the
+    // absolutely positioned language links. Give the brand, the language links
+    // and the menu a row each instead of racing for one.
+    &.no-front .header-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 1.5rem; // the row the language links sit in
+
+      #brand {
+        flex: none; // it was shrinking to half its width beside the menu
+        // Desktop hangs the signature below the bar on a negative margin;
+        // here the menu sits there, so it has to stay clear of it.
+        margin: -0.5rem 0 0;
+      }
+
+      #main_menu {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 1em;
+
+        a {
+          margin-left: 0;
+        }
+      }
+    }
+
+    // Three fixed columns left ~110px cards with their titles clipped, and the
+    // display type is sized for a page eight times this wide.
+    &.front {
+      #brand {
+        width: 100%;
+      }
+
+      #main_menu {
+        div a {
+          font-size: 3em;
+        }
+
+        i {
+          font-size: 1.75em;
+        }
+      }
+
+      #works {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .work-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    // The 1 / 2.7 split left the image a ~45px stamp with the "view more" link
+    // orphaned down its side, and the odd/even mirroring reads as nothing but
+    // ragged alignment this narrow. Stack instead, all entries the same way up.
+    .works-list .work {
+      &.odd,
+      &.even {
+        display: block;
+        text-align: left;
+      }
+
+      .image-container img {
+        width: 100%;
+      }
+
+      // The title and the image both already link through to the work.
+      .view-more {
+        display: none;
+      }
+
+      .info-container {
+        margin-top: .75rem;
+      }
+    }
+
+    // The 40%/65% widths and their 12em/16em floors left the fields stranded
+    // mid-box and the submit an awkward half-width tap target. Doubled class to
+    // out-specify the base rule in forms.scss.
+    &.contact_messages.new,
+    &.contact_messages.create {
+      form {
+        input,
+        textarea {
+          width: 100%;
+          min-width: 0;
+        }
+      }
     }
   }
 }
