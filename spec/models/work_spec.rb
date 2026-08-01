@@ -39,6 +39,71 @@ RSpec.describe Work do
     end
   end
 
+  describe ".reposition" do
+    it "puts the works in the order the ids arrive" do
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 2)
+      third = create(:action_work, position: 3)
+
+      described_class.reposition([first.id, third.id, second.id])
+
+      expect(described_class.ordered).to eq [first, third, second]
+    end
+
+    it "deals out the works' own positions rather than renumbering from one" do
+      low = create(:action_work, position: 4)
+      high = create(:action_work, position: 9)
+
+      described_class.reposition([low.id, high.id])
+
+      expect([low.reload.position, high.reload.position]).to eq [9, 4]
+    end
+
+    it "leaves the position of a work it was not given alone" do
+      untouched = create(:action_work, position: 50)
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 2)
+
+      described_class.reposition([first.id, second.id])
+
+      expect(untouched.reload.position).to eq 50
+    end
+
+    it "accepts ids as strings, as they arrive over JSON" do
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 2)
+
+      described_class.reposition([first.id.to_s, second.id.to_s])
+
+      expect(described_class.ordered).to eq [first, second]
+    end
+
+    it "ignores ids of works that no longer exist" do
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 2)
+
+      described_class.reposition([first.id, 0, second.id])
+
+      expect(described_class.ordered).to eq [first, second]
+    end
+
+    it "leaves updated_at alone, so the front page keeps its cached fragments" do
+      first = create(:action_work, position: 1)
+      second = create(:action_work, position: 2)
+
+      expect { described_class.reposition([first.id, second.id]) }
+        .not_to change { first.reload.updated_at }
+    end
+
+    it "does nothing when given no ids" do
+      work = create(:action_work, position: 3)
+
+      described_class.reposition([])
+
+      expect(work.reload.position).to eq 3
+    end
+  end
+
   describe "positioning" do
     it "assigns the next position on create" do
       create(:action_work, position: 7)

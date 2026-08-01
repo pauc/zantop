@@ -1,0 +1,31 @@
+<%= page_title "Ordenar treballs" %>
+
+<p class="sorting-hint">Arrossega els treballs per canviar-ne l'ordre. Es desa tot sol.</p>
+
+<ul class="sortable-list"
+    data-behaviour="sortable-works"
+    data-url="<%= sort_works_path %>">
+  <% @works.each do |work| %>
+    <li class="sortable-item <%= "unpublished" unless work.published? %>"
+        draggable="true"
+        data-id="<%= work.id %>">
+      <span class="handle" aria-hidden="true">⣿</span>
+
+      <%= link_to work.title, work, class: "work-title" %>
+
+      <% unless work.published? %>
+        <span class="unpublished-note">(no publicat)</span>
+      <% end %>
+
+      <span class="translations-info">
+        <% I18n.available_locales.each do |locale| %>
+          <span class="<%= work.translated_into?(locale) ? "translated" : "untranslated" %>">
+            <%= locale %>
+          </span>
+        <% end %>
+      </span>
+
+      <%= link_to "Editar", url_for_edit_work(work), class: "push-right btn btn-smaller" %>
+    </li>
+  <% end %>
+</ul>
