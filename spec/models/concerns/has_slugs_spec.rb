@@ -18,6 +18,7 @@ RSpec.describe HasSlugs, type: :model do
     self.table_name = "things"
 
     include HasSlugs
+
     friendly_id :title, use: [:slugged, :simple_i18n, :history]
   end
 
@@ -43,7 +44,7 @@ RSpec.describe HasSlugs, type: :model do
   describe ".find" do
     it "things with slugs in other languages" do
       thing = DummyTestClass.create(title: "No m'agraden els pèsols",
-                           slug_es: "no-me-gustan-los-guisantes")
+                                    slug_es: "no-me-gustan-los-guisantes")
 
       I18n.with_locale(:ca) do
         expect(DummyTestClass.find("no-me-gustan-los-guisantes")).to eq thing
