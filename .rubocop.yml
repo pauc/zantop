@@ -1,6 +1,13 @@
 ---
 inherit_from: .rubocop_todo.yml
 
+# keep RuboCop's default AllCops/Exclude (vendor, node_modules, tmp, .git)
+# instead of replacing it with the list below — CI installs gems into
+# vendor/bundle, and linting those blows up on the gems' own configs
+inherit_mode:
+  merge:
+    - Exclude
+
 plugins:
   - rubocop-performance
   - rubocop-rails
