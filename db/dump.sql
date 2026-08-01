@@ -2,12 +2,15 @@
 -- PostgreSQL database dump
 --
 
+\restrict zantop
+
 -- Dumped from database version 13.4
--- Dumped by pg_dump version 15.4 (Ubuntu 15.4-2.pgdg22.04+1)
+-- Dumped by pg_dump version 17.10 (Debian 17.10-0+deb13u1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -3701,4 +3704,6 @@ SELECT pg_catalog.setval('public.works_id_seq', 94, true);
 --
 -- PostgreSQL database dump complete
 --
+
+\unrestrict zantop
 
