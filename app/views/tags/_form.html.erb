@@ -1,11 +1,11 @@
-<%= content_tag :div,  class: "#{'untranslated_tag' if category.untranslated?}" do %>
-  <%= simple_form_for category, remote: true do |form| %>
+<%= content_tag :div, class: "#{'untranslated_tag' if category.untranslated?}" do %>
+  <%= simple_form_for category do |form| %>
     <h3><%= category.name %>:</h3>
     <% I18n.available_locales.each do |locale| %>
       <%= form.input :"name_#{locale}", input_html: { name: "tag[name][#{locale}]", size: 18 } %>
     <% end %><br />
     <%= form.button :submit %>
-    <%= link_to t('delete'), tag_path(tag), method: :delete,
-        confirm: "Segur que vols esborrar aquesta etiqueta?", class: "btn_wrng" %>
   <% end %>
+  <%= button_to t("delete"), tag_path(category), method: :delete, class: "btn_wrng",
+      data: { confirm: "Segur que vols esborrar aquesta etiqueta?" } %>
 <% end %>

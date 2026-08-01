@@ -27,10 +27,9 @@ class TagsController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      format.html { redirect_to admin_tags_path }
-      format.js { render "update" }
-    end
+    flash.notice = "Actualitzat"
+
+    redirect_to admin_tags_path
   end
 
   def destroy

@@ -139,6 +139,24 @@ RSpec.describe TagsController, type: :controller do
       expect(response).to redirect_to admin_tags_path
     end
 
+    it "says the tag was updated" do
+      tag = create(:tag)
+
+      patch :update, params: { locale: "ca", id: tag.to_param, tag: { name: { es: "nou" } } }
+
+      expect(flash[:notice]).to eq "Actualitzat"
+    end
+
+    it "redirects rather than answering with javascript" do
+      tag = create(:tag)
+
+      patch :update,
+            params: { locale: "ca", id: tag.to_param, tag: { name: { es: "nou" } } },
+            format: :js
+
+      expect(response).to redirect_to admin_tags_path
+    end
+
     it "raises when the tag key is missing" do
       tag = create(:tag)
 
