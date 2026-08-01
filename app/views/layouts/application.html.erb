@@ -4,6 +4,14 @@
     <title><%= yield :title %>ZANTOP</title>
     <%= stylesheet_link_tag "application", media: "all" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%# Rails serves public/ statically but links nothing from it: only %>
+    <%# /favicon.ico is found without a tag, so icon.svg and the touch icon %>
+    <%# need declaring. PNG first, SVG second — the last supported one wins. %>
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "public", defer: true %>
     <%= javascript_include_tag "admin", defer: true if current_user? %>

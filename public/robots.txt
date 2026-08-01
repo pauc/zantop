@@ -1,1 +1,30 @@
-# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+# robots.txt for https://mireiazantop.com
+# See https://www.robotstxt.org/robotstxt.html for documentation on the format.
+#
+# Every user-facing route is locale-prefixed (/ca, /es, /en), so the paths
+# below use a wildcard for that first segment.
+
+User-agent: *
+
+# Sign-in and account. Nothing here is worth indexing and none of it is
+# reachable without a session.
+Disallow: /*/login
+Disallow: /*/logout
+Disallow: /*/session
+Disallow: /*/user/
+Disallow: /*/usuari/
+Disallow: /*/usuario/
+
+# The editing surface: the admin listings and every edit form.
+Disallow: /*/works/admin
+Disallow: /*/tags/admin
+Disallow: /*/edit
+
+# XHR endpoint behind the "more works" button. The same works are already
+# reachable from the paginated indexes.
+Disallow: /*/more_works
+
+# Health check for kamal-proxy.
+Disallow: /up
+
+Allow: /
