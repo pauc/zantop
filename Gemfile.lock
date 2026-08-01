@@ -82,7 +82,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.3)
     base64 (0.3.0)
-    bcrypt (3.1.19)
+    bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.0)
     benchmark (0.5.0)
     bigdecimal (4.1.2)
@@ -454,7 +454,7 @@ PLATFORMS
 DEPENDENCIES
   accept_language
   base64
-  bcrypt (~> 3.1.17)
+  bcrypt (~> 3.1.22)
   bcrypt_pbkdf
   benchmark
   bigdecimal
