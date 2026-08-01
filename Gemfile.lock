@@ -76,8 +76,6 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    airbrussh (1.6.2)
-      sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.3)
     base64 (0.3.0)
     bcrypt (3.1.22)
@@ -86,25 +84,6 @@ GEM
     bootsnap (1.24.6)
       msgpack (~> 1.2)
     builder (3.3.0)
-    capistrano (3.20.1)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-bundler (2.2.0)
-      capistrano (~> 3.1)
-    capistrano-nvm (0.0.7)
-      capistrano (~> 3.1)
-    capistrano-rails (1.7.0)
-      capistrano (~> 3.1)
-      capistrano-bundler (>= 1.1, < 3)
-    capistrano-rbenv (2.2.0)
-      capistrano (~> 3.1)
-      sshkit (~> 1.3)
-    capistrano3-puma (8.1.0)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 6.1, < 9.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.8)
     connection_pool (3.0.2)
@@ -449,12 +428,6 @@ DEPENDENCIES
   bcrypt (~> 3.1.22)
   bcrypt_pbkdf
   bootsnap
-  capistrano
-  capistrano-bundler
-  capistrano-nvm
-  capistrano-rails
-  capistrano-rbenv
-  capistrano3-puma
   cssbundling-rails
   debug
   ed25519

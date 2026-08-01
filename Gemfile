@@ -66,17 +66,12 @@ group :development, :test do
 end
 
 group :development do
-  # Deployments
-  gem "kamal", require: false
-
-  gem "bcrypt_pbkdf",       require: false
-  gem "capistrano",         require: false
-  gem "capistrano3-puma",   require: false
-  gem "capistrano-bundler", require: false
-  gem "capistrano-nvm",     require: false
-  gem "capistrano-rails",   require: false
-  gem "capistrano-rbenv",   require: false
-  gem "ed25519",            require: false
+  # Deployments. bcrypt_pbkdf and ed25519 are not Kamal's own dependencies:
+  # they are what net-ssh needs to read a modern OpenSSH private key, and
+  # without them an ed25519 deploy key fails to authenticate.
+  gem "bcrypt_pbkdf", require: false
+  gem "ed25519",      require: false
+  gem "kamal",        require: false
 
   gem "listen", "~> 3.3"
 
