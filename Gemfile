@@ -59,6 +59,10 @@ group :development, :test do
   gem "libnotify"
   gem "rspec-rails", "~> 5.0.0"
 
+  # Mutation testing
+  gem "mutant",       "~> 0.16.3", require: false
+  gem "mutant-rspec", "~> 0.16.3", require: false
+
   gem "rubocop",             require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails",       require: false

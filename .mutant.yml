@@ -1,0 +1,26 @@
+---
+usage: opensource
+
+integration:
+  name: rspec
+
+environment_variables:
+  RAILS_ENV: test
+  MUTANT: "true"
+
+requires:
+  - ./config/environment
+
+hooks:
+  - ./config/mutant_hooks.rb
+
+mutation:
+  timeout: 10.0
+
+# One-time setup (per-worker test databases):
+#   bundle exec rake mutant:setup
+#
+# Run against specific subjects from the CLI:
+#   bundle exec mutant run -- 'Work'
+#   bundle exec mutant run -- 'Work#related'
+#   bundle exec mutant run --since main -- 'Work*'
