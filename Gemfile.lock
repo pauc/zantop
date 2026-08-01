@@ -433,7 +433,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    will_paginate (3.3.1)
+    will_paginate (4.0.1)
     zeitwerk (2.8.3)
 
 PLATFORMS
@@ -491,7 +491,7 @@ DEPENDENCIES
   rubocop-rspec
   simple_form
   sprockets-rails
-  will_paginate (~> 3.1)
+  will_paginate (~> 4.0)
 
 RUBY VERSION
    ruby 4.0.6p0
