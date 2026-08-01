@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Health check for kamal-proxy. Deliberately outside `localized`: with
+  # force_locale the block would only ever mount /ca/up, and the proxy asks
+  # for /up.
+  get "up", to: "rails/health#show", as: :rails_health_check
+
   resource :user, only: [:edit, :update]
 
   get "section_fields", to: "admin#section_fields"

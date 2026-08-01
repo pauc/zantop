@@ -15,8 +15,9 @@ Rails.application.configure do
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true
 
-  # Disable serving static files from the `public/` folder by default since
-  # NGINX already handles this.
+  # Serve static files from `public/`. Thruster sits in front of Puma and
+  # accelerates them with X-Sendfile, but it does not read them off disk
+  # itself, so Rails has to. RAILS_SERVE_STATIC_FILES is set in the Dockerfile.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Cache assets for far-future expiry since they are all digest stamped.

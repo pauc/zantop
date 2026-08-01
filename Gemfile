@@ -12,6 +12,9 @@ gem "friendly_id", "~> 5.7.0"
 gem "pg", "~> 1.1"
 gem "puma", "~> 8.0"
 
+# HTTP asset caching/compression and X-Sendfile acceleration in front of Puma
+gem "thruster", require: false
+
 # Assets
 gem "cssbundling-rails"
 gem "jsbundling-rails"
@@ -64,6 +67,8 @@ end
 
 group :development do
   # Deployments
+  gem "kamal", require: false
+
   gem "bcrypt_pbkdf",       require: false
   gem "capistrano",         require: false
   gem "capistrano3-puma",   require: false

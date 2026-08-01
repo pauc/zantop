@@ -18,8 +18,11 @@ test:
   <<: *development
   database: <%= ENV.fetch("ZANTOP_DATABASE_NAME") { "zantop" } %>_test
 
+# The credentials come from ZANTOP_DATABASE_USER/PASSWORD in *default, which
+# Kamal injects from .kamal/secrets. Reading them out of the encrypted
+# credentials instead would mean shipping the master key into the image build,
+# since this file is ERB-evaluated at boot and so during assets:precompile.
+# It would also duplicate the password the Postgres accessory is created with.
 production:
   <<: *default
   database: zantop_production
-  username: <%= Rails.application.credentials.dig(:db, :username) %>
-  password: <%= Rails.application.credentials.dig(:db, :password) %>

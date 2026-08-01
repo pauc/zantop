@@ -2,9 +2,13 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/test_uploads") %>
 
+# In production this root is a Kamal volume mounted from the host, so uploads
+# survive a container being replaced. Nothing else does: the image is
+# immutable, and Rails.root.join("uploads") inside it is thrown away on every
+# deploy. See the `volumes:` entry in config/deploy.yml.
 local:
   service: Disk
-  root: <%= Rails.root.join("uploads") %>
+  root: <%= ENV.fetch("ZANTOP_STORAGE_ROOT") { Rails.root.join("uploads") } %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:

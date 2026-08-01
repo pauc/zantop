@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+# jemalloc keeps a long-running Puma's RSS from creeping the way glibc malloc
+# lets it, which matters on a small droplet.
+if [ -z "${LD_PRELOAD+x}" ]; then
+    LD_PRELOAD=$(find /usr/lib -name libjemalloc.so.2 -print -quit)
+    export LD_PRELOAD
+fi
+
+# Only when actually booting the server, not for `kamal app exec` or a console.
+# Note that db:prepare creates and loads the schema when the database does not
+# exist yet, so during the cutover the restored dump has to be in place before
+# the first container starts.
+if [ "${*: -2:1}" == "./bin/rails" ] && [ "${*: -1:1}" == "server" ]; then
+    ./bin/rails db:prepare
+fi
+
+exec "${@}"
