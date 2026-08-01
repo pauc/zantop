@@ -1,5 +1,7 @@
+@use "colors";
+
 #footer {
-  background: $kaki_yellow;
+  background: colors.$kaki_yellow;
   text-align: center;
   margin-top: 5em;
   margin-bottom: -2em;

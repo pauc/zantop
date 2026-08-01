@@ -1,3 +1,5 @@
+@use "colors";
+
 /* Estils per al formulari de contacte */
 .contact_messages.new, .contact_messages.create {
   form {
@@ -29,9 +31,9 @@
 }
 
 form {
-  background-color: $clear_grey;
+  background-color: colors.$clear_grey;
   padding: 0.5em;
-  border: 1px solid $grey;
+  border: 1px solid colors.$grey;
   border-radius: 5px;
 
   .control-group {

@@ -1,3 +1,5 @@
+@use "colors";
+
 // One large image driven by a strip of every image in the work.
 $strip-height: clamp(5rem, 12vw, 7.5rem);
 
@@ -20,7 +22,7 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     }
 
     &:focus-visible {
-      outline: 2px solid $dark_grey;
+      outline: 2px solid colors.$dark_grey;
       outline-offset: 4px;
     }
   }
@@ -114,7 +116,7 @@ $lead-height: clamp(16rem, 62vh, 36rem);
   // rather than a pile of equals.
   &.is-current img {
     opacity: 1;
-    outline: 2px solid $dark_grey;
+    outline: 2px solid colors.$dark_grey;
     outline-offset: -2px;
   }
 }
@@ -125,7 +127,7 @@ $lead-height: clamp(16rem, 62vh, 36rem);
   justify-content: center;
   width: calc(#{$strip-height} * 1.4);
   height: 100%;
-  background: $dark_grey;
+  background: colors.$dark_grey;
   color: #fff;
 }
 
@@ -280,7 +282,7 @@ $lead-height: clamp(16rem, 62vh, 36rem);
 .gallery-caption {
   margin: 0;
   font-size: .875rem;
-  color: $dark_grey;
+  color: colors.$dark_grey;
 
   p {
     margin: 0;
@@ -292,7 +294,7 @@ $lead-height: clamp(16rem, 62vh, 36rem);
   align-items: center;
   justify-content: center;
   min-height: 12rem;
-  background: $dark_grey;
+  background: colors.$dark_grey;
   color: #fff;
   text-decoration: none;
 

@@ -1,3 +1,5 @@
+@use "colors";
+
 @font-face {
     font-family: 'im_fell_english_proregular';
     src: url('feenrm28c/feenrm28c-webfont.eot');
@@ -26,7 +28,7 @@ body {
   // phone text stays legible. Everything else here is sized in em off this.
   font-size: clamp(1rem, 0.78rem + 0.59vw, 1.25rem);
   font-family: 'cantarellregular', sans-serif;
-  color: $dark_grey;
+  color: colors.$dark_grey;
   //@include transition(font-size 0.75s linear);
 }
 
@@ -82,7 +84,7 @@ a:hover, .front .work:hover .work-title a {
 
 #admin_bar {
   font-size: 0.875em;
-  color: $grey;
+  color: colors.$grey;
 
   /* Buttons */
   a {
@@ -116,7 +118,7 @@ legend {
 }
 
 form .error .help-inline {
-  color: $error;
+  color: colors.$error;
 }
 
 #footer_page_name h3 a {

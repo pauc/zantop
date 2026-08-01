@@ -1,3 +1,5 @@
+@use "colors";
+
 .front {
   #brand, #main_menu {
     div a {
@@ -79,7 +81,7 @@
     span, em, a {
       min-width: 1rem;
       padding: .2rem;
-      border: 1px solid $clear_grey;
+      border: 1px solid colors.$clear_grey;
       text-decoration: none;
     }
 

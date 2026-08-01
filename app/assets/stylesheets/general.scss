@@ -1,14 +1,16 @@
+@use "colors";
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
-  background: $kaki_yellow;
+  background: colors.$kaki_yellow;
   line-height: 1.35;
 }
 
 body {
-  background: $grey asset-url('ricepaper2.png');
+  background: colors.$grey asset-url('ricepaper2.png');
   margin: 0;
 
   .container, #flash-messages {
@@ -84,7 +86,7 @@ h1 {
   }
 
   .alert-notice {
-    background: $green;
+    background: colors.$green;
   }
 
   .alert-alert {
@@ -92,6 +94,6 @@ h1 {
   }
 
   .alert-error {
-    background: $error;
+    background: colors.$error;
   }
 }
