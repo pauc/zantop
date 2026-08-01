@@ -77,6 +77,11 @@ ca:
       related: Treballs semblants
       watch_video: Veure el vídeo
 
+    gallery:
+      previous: Imatge anterior
+      next: Imatge següent
+      close: Tancar la galeria
+
   pages:
     edit:
       title: Editar <span>%{page}</span>

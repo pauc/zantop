@@ -77,6 +77,11 @@ en:
       related: Related works
       watch_video: Watch the video
 
+    gallery:
+      previous: Previous image
+      next: Next image
+      close: Close the gallery
+
   pages:
     edit:
       title: Edit <span>%{page}</span>

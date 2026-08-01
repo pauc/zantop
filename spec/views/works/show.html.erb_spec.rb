@@ -4,7 +4,7 @@ RSpec.describe "works/show", type: :view do
   # The template is shared by both work controllers, so the path parameters
   # decide which one it is standing in for. The admin bar it fills in is
   # yielded by the layout, which view specs do not render.
-  def admin_bar_for(work, controller_name)
+  def render_work(work, controller_name = "action_works")
     controller.request.path_parameters.merge!(controller: controller_name,
                                               action: "show",
                                               locale: "ca",
@@ -13,6 +13,12 @@ RSpec.describe "works/show", type: :view do
     assign(:related_works, [])
 
     render
+
+    rendered
+  end
+
+  def admin_bar_for(work, controller_name)
+    render_work(work, controller_name)
 
     view.content_for(:admin_bar_second_row)
   end
@@ -43,5 +49,19 @@ RSpec.describe "works/show", type: :view do
 
     expect(admin_bar_for(work, "visual_works"))
       .to include %(data-confirm="Segur que ho vols esborrar?")
+  end
+
+  describe "the gallery" do
+    it "shows one for a work that has images" do
+      work = create(:action_work, images: [build(:image)])
+
+      expect(render_work(work)).to include "data-gallery"
+    end
+
+    # The partial would still emit its container, its lightbox and its empty
+    # tracks, so the page has to decide rather than the gallery itself.
+    it "leaves out the empty scaffolding when the work has no images" do
+      expect(render_work(create(:action_work))).not_to include "data-gallery"
+    end
   end
 end

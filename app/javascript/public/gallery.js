@@ -19,8 +19,21 @@ function snapTrack(track, slideSelector) {
   return { slides, index, goTo }
 }
 
+// Centres a thumbnail in its own strip by moving that strip's scroll.
+//
+// Not `scrollIntoView`: on the page strip, which wraps rather than scrolls and
+// so has nothing of its own to move, it walked up to the document instead and
+// yanked the whole page down to the thumbnails the moment the page loaded.
+function centreInStrip(strip, button) {
+  if (!strip || strip.scrollWidth <= strip.clientWidth) return
+
+  const offset = button.getBoundingClientRect().left - strip.getBoundingClientRect().left
+  const centred = strip.scrollLeft + offset - (strip.clientWidth - button.offsetWidth) / 2
+  strip.scrollTo({ left: centred, behavior: "smooth" })
+}
+
 // Marks one thumbnail as current and keeps it in view when the strip scrolls.
-function markStrip(buttons, current) {
+function markStrip(strip, buttons, current) {
   buttons.forEach((button, i) => {
     const isCurrent = i === current
     button.classList.toggle("is-current", isCurrent)
@@ -31,10 +44,7 @@ function markStrip(buttons, current) {
     }
   })
 
-  const button = buttons[current]
-  if (button && button.scrollIntoView) {
-    button.scrollIntoView({ block: "nearest", inline: "center" })
-  }
+  if (buttons[current]) centreInStrip(strip, buttons[current])
 }
 
 function setupGallery(gallery) {
@@ -42,9 +52,10 @@ function setupGallery(gallery) {
   if (!leadTrack) return
 
   const lead = snapTrack(leadTrack, "[data-gallery-lead]")
+  const strip = gallery.querySelector("[data-gallery-strip]")
   const stripButtons = Array.from(gallery.querySelectorAll("[data-gallery-select]"))
 
-  const refreshLead = () => markStrip(stripButtons, lead.index())
+  const refreshLead = () => markStrip(strip, stripButtons, lead.index())
 
   stripButtons.forEach((button) => {
     button.addEventListener("click", () => lead.goTo(Number(button.dataset.gallerySelect), "smooth"))
@@ -67,6 +78,7 @@ function setupGallery(gallery) {
   if (!dialog || !track) return
 
   const slides = snapTrack(track, "[data-gallery-slide]")
+  const filmstrip = gallery.querySelector("[data-gallery-filmstrip]")
   const filmButtons = Array.from(gallery.querySelectorAll("[data-gallery-jump]"))
   const counter = gallery.querySelector("[data-gallery-counter]")
   const prev = gallery.querySelector("[data-gallery-prev]")
@@ -90,7 +102,7 @@ function setupGallery(gallery) {
     if (counter) counter.textContent = `${shown + 1} / ${slides.slides.length}`
     if (prev) prev.disabled = shown === 0
     if (next) next.disabled = shown === slides.slides.length - 1
-    markStrip(filmButtons, shown)
+    markStrip(filmstrip, filmButtons, shown)
   }
 
   const goTo = (index, behavior) => {
@@ -144,7 +156,7 @@ function setupGallery(gallery) {
   // Come back to whichever image you were looking at full-screen.
   dialog.addEventListener("close", () => {
     lead.goTo(shown)
-    markStrip(stripButtons, shown)
+    markStrip(strip, stripButtons, shown)
   })
 
   track.addEventListener("scroll", followScroll, { passive: true })

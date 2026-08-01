@@ -1,0 +1,173 @@
+# frozen_string_literal: true
+
+RSpec.describe "works/_gallery", type: :view do
+  def render_gallery(images)
+    render partial: "works/gallery", locals: { images: }
+
+    rendered
+  end
+
+  def image_with(credits: nil, work: create(:action_work))
+    create(:image, work:).tap do |image|
+      image.update!(credits:) if credits
+    end
+  end
+
+  describe "the images" do
+    it "leads with a large variant of every image" do
+      images = [image_with, image_with]
+
+      expect(render_gallery(images))
+        .to include(polymorphic_path(images.first.image.variant(:large)))
+        .and include(polymorphic_path(images.second.image.variant(:large)))
+    end
+
+    it "blows each one up to the full variant in the lightbox" do
+      image = image_with
+
+      expect(render_gallery([image])).to include polymorphic_path(image.image.variant(:full))
+    end
+
+    it "thumbnails with the card variant, which is the smallest that fits a strip" do
+      image = image_with
+
+      expect(render_gallery([image, image_with]))
+        .to include polymorphic_path(image.image.variant(:card))
+    end
+
+    # The lead is the largest thing on the page and the only one visible before
+    # a scroll, so it is the one image worth blocking the render for.
+    it "loads the first lead eagerly" do
+      expect(render_gallery([image_with, image_with]))
+        .to match(/data-gallery-lead="0".*?loading="eager"/m)
+    end
+
+    it "leaves the leads after it to load lazily" do
+      expect(render_gallery([image_with, image_with]))
+        .to match(/data-gallery-lead="1".*?loading="lazy"/m)
+    end
+  end
+
+  describe "a single image" do
+    it "opens the lightbox on the one image it has" do
+      expect(render_gallery([image_with])).to include %(data-gallery-open="0")
+    end
+
+    # Nothing to pick between, so the strip, the filmstrip, the counter and the
+    # arrows would all only ever point back at the image already on screen.
+    it "has no strip of thumbnails to choose from" do
+      expect(render_gallery([image_with])).not_to include "data-gallery-select"
+    end
+
+    it "has no filmstrip in the lightbox" do
+      expect(render_gallery([image_with])).not_to include "data-gallery-jump"
+    end
+
+    it "has no counter" do
+      expect(render_gallery([image_with])).not_to include "data-gallery-counter"
+    end
+
+    it "has no previous arrow" do
+      expect(render_gallery([image_with])).not_to include "data-gallery-prev"
+    end
+
+    it "has no next arrow" do
+      expect(render_gallery([image_with])).not_to include "data-gallery-next"
+    end
+
+    it "can still be closed" do
+      expect(render_gallery([image_with])).to include "data-gallery-close"
+    end
+  end
+
+  describe "several images" do
+    let(:images) { Array.new(3) { image_with } }
+
+    it "gives the strip a thumbnail per image" do
+      expect(render_gallery(images).scan("data-gallery-select=").size).to eq 3
+    end
+
+    it "gives the filmstrip a thumbnail per image" do
+      expect(render_gallery(images).scan("data-gallery-jump=").size).to eq 3
+    end
+
+    it "gives the lightbox a slide per image" do
+      expect(render_gallery(images).scan("data-gallery-slide=").size).to eq 3
+    end
+
+    it "numbers the strip from zero, as the script indexes it" do
+      expect(render_gallery(images))
+        .to include(%(data-gallery-select="0")).and include(%(data-gallery-select="2"))
+    end
+
+    it "offers the arrows and the counter" do
+      expect(render_gallery(images))
+        .to include("data-gallery-prev").and include("data-gallery-counter")
+    end
+  end
+
+  describe "a video" do
+    let(:video) { create(:image, :video, video: "https://vimeo.com/76979871") }
+
+    it "links out to where the video actually lives" do
+      expect(render_gallery([video])).to include %(href="https://vimeo.com/76979871")
+    end
+
+    it "opens it in a new tab, since it leaves the site" do
+      expect(render_gallery([video])).to include %(target="_blank")
+    end
+
+    it "does not hand the opener over with the tab" do
+      expect(render_gallery([video])).to include %(rel="noopener")
+    end
+
+    it "says what the link is for" do
+      expect(render_gallery([video])).to include I18n.t("works.labels.watch_video")
+    end
+
+    # There is no frame to show, so the strip gets a placeholder in its place.
+    it "stands in for the missing thumbnail" do
+      expect(render_gallery([video, image_with])).to include "gallery-video-thumb"
+    end
+
+    it "has nothing to blow up full screen" do
+      expect(render_gallery([video])).not_to include "data-gallery-open"
+    end
+
+    it "still takes its turn in the strip" do
+      expect(render_gallery([video, image_with]).scan("data-gallery-select=").size).to eq 2
+    end
+  end
+
+  describe "the credits" do
+    it "captions the lead with them" do
+      expect(render_gallery([image_with(credits: "Foto: Ferran Zantop")]))
+        .to include "Foto: Ferran Zantop"
+    end
+
+    it "captions the lightbox slide with them too" do
+      rendered = render_gallery([image_with(credits: "Foto: Ferran Zantop")])
+
+      expect(rendered.scan("Foto: Ferran Zantop").size).to eq 2
+    end
+
+    it "captions a video with them" do
+      video = create(:image, :video)
+      video.update!(credits: "Vídeo: Ferran Zantop")
+
+      expect(render_gallery([video])).to include "Vídeo: Ferran Zantop"
+    end
+
+    # The lead keeps an empty caption to reserve the space, so that images with
+    # and without credits do not shove the strip below them up and down.
+    it "keeps the lead's caption box on an image with none" do
+      expect(render_gallery([image_with])).to include "gallery-caption"
+    end
+
+    it "leaves the lightbox slide without one" do
+      rendered = render_gallery([image_with])
+
+      expect(rendered.scan("gallery-caption").size).to eq 1
+    end
+  end
+end

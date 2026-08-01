@@ -44,6 +44,11 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     border: 0;
     background: none;
     cursor: zoom-in;
+
+    &:focus-visible {
+      outline: 2px solid colors.$dark_grey;
+      outline-offset: 4px;
+    }
   }
 
   .gallery-lead img {
@@ -76,10 +81,10 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     margin: 0;
   }
 
-  .gallery-video {
-    width: calc(#{$lead-height} * .75);
-    height: 100%;
-    min-height: 0;
+  // As tall as the images beside it, so a video does not shrink the band, but
+  // never wider than the track.
+  .gallery-lead .gallery-video {
+    width: min(100%, #{$lead-height} * 16 / 9);
   }
 
   // On a phone the image is width-bound, so a viewport-height box would leave
@@ -87,6 +92,23 @@ $lead-height: clamp(16rem, 62vh, 36rem);
   @media (max-width: 46rem) {
     .gallery-lead-open {
       height: 88vw;
+    }
+
+    // Wrapping stacked eleven thumbnails into five rows that pushed the work's
+    // own text off the screen. One swipeable row instead, like the filmstrip.
+    .gallery-strip {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .gallery-strip-item {
+      flex: 0 0 auto;
     }
   }
 }
@@ -103,21 +125,42 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     display: block;
     width: auto;
     height: 100%;
+  }
+
+  // Whichever of the two a thumbnail holds: an image, or the placeholder that
+  // stands in for a video.
+  img,
+  .gallery-video-thumb {
     opacity: .7;
     transition: opacity .15s ease;
   }
 
-  &:hover img,
-  &:focus-visible img {
-    opacity: .9;
+  &:hover,
+  &:focus-visible {
+    img,
+    .gallery-video-thumb {
+      opacity: .9;
+    }
   }
 
   // The one currently shown large, so the strip reads as a position indicator
-  // rather than a pile of equals.
-  &.is-current img {
-    opacity: 1;
+  // rather than a pile of equals. Marked on the button rather than on the image
+  // inside it, which a video thumbnail does not have.
+  &.is-current {
     outline: 2px solid colors.$dark_grey;
     outline-offset: -2px;
+
+    img,
+    .gallery-video-thumb {
+      opacity: 1;
+    }
+  }
+
+  // After `.is-current`, so that the thumbnail you have tabbed to is the one
+  // marked out even when it is also the one on show.
+  &:focus-visible {
+    outline: 2px solid colors.$dark_grey;
+    outline-offset: 2px;
   }
 }
 
@@ -125,18 +168,32 @@ $lead-height: clamp(16rem, 62vh, 36rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(#{$strip-height} * 1.4);
+  width: auto;
   height: 100%;
+  // Sized from its own strip rather than from a fixed length: the lightbox
+  // filmstrip is half the height of the one on the page, and a shared length
+  // drew it there at twice the width of the photographs beside it.
+  aspect-ratio: 16 / 9;
   background: colors.$dark_grey;
   color: #fff;
 }
 
+// A modal dialog covers the page but does not stop it scrolling underneath, so
+// a wheel or a trackpad swipe over the lightbox moved the work's page behind
+// it. Nothing of the reflow shows: the lightbox is opaque and full-screen.
+html:has(.gallery-lightbox[open]) {
+  overflow: hidden;
+}
+
 .gallery-lightbox {
-  width: 100vw;
-  max-width: 100vw;
+  // 100% of the viewport, not `100vw`, which counts the scrollbar in and left
+  // the close button and the arrows hanging over the right-hand edge.
+  width: 100%;
+  max-width: 100%;
   height: 100dvh;
   max-height: 100dvh;
   overflow: hidden;
+  margin: 0;
   padding: 0;
   border: 0;
   background: rgba(0, 0, 0, .92);
@@ -178,6 +235,10 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     object-fit: contain;
   }
 
+  .gallery-video {
+    width: min(100%, 60rem);
+  }
+
   .gallery-caption {
     color: rgba(255, 255, 255, .75);
     text-align: center;
@@ -210,7 +271,10 @@ $lead-height: clamp(16rem, 62vh, 36rem);
     margin: 0;
   }
 
-  .gallery-thumb.is-current img {
+  // Against the lightbox's black, the mark and the focus ring both have to be
+  // the other way round from the ones on the page.
+  .gallery-thumb.is-current,
+  .gallery-thumb:focus-visible {
     outline-color: #fff;
   }
 }
@@ -291,9 +355,14 @@ $lead-height: clamp(16rem, 62vh, 36rem);
 
 .gallery-video {
   display: flex;
+  flex: 0 0 auto; // it is a flex item in both tracks, and would otherwise stretch
   align-items: center;
   justify-content: center;
-  min-height: 12rem;
+  // Videos are landscape. Standing in for one with a box shaped by whatever
+  // height the slide happened to have gave a grey slab with the label marooned
+  // in the middle of it.
+  aspect-ratio: 16 / 9;
+  height: auto;
   background: colors.$dark_grey;
   color: #fff;
   text-decoration: none;
