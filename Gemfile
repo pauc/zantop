@@ -31,7 +31,11 @@ gem "sprockets-rails"
 # Image processing
 gem "image_optim"
 gem "image_optim_pack"
-gem "image_processing", "~> 1.12"
+gem "image_processing", "~> 2.0"
+# image_processing 2.0 no longer depends on a backend, so the one we use
+# (ImageProcessing::Vips, and ActiveStorage's vips variant processor) has
+# to be declared here.
+gem "ruby-vips", "~> 2.3"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
