@@ -45,7 +45,7 @@ gem "simple_form"
 
 # i18n
 gem "accept_language"
-gem "mobility", "~> 1.2.9"
+gem "mobility", "~> 1.3.2"
 gem "mobility-actiontext"
 gem "route_translator", "~> 16.2"
 
