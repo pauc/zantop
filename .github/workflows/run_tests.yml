@@ -40,6 +40,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+      # ruby-vips is a plain FFI binding, so it needs the libvips runtime present
+      # at load time: Bundler.require pulls it in from config/application.rb and
+      # dies in dlopen without it. The package name is release-specific
+      # (libvips42 before 24.04), so this follows whatever ubuntu-latest is.
+      - name: Install libvips
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libvips42t64
       # no ruby-version: setup-ruby reads .tool-versions, and bundler-cache
       # installs the bundler from Gemfile.lock and runs a cached bundle install
       - uses: ruby/setup-ruby@v1
