@@ -1,5 +1,8 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+# English keeps only what the app overrides — Rails ships its own `en` defaults
+# for everything else, which rails.ca.yml and rails.es.yml have to restate.
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      tag:
+        one: Category
+        other: Categories

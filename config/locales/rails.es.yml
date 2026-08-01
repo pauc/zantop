@@ -1,4 +1,9 @@
 es:
+  activerecord:
+    models:
+      tag:
+        one: Categoría
+        other: Categorías
   date:
     abbr_day_names:
     - dom

@@ -26,6 +26,10 @@ en:
         password_confirmation: "Password confirmation:"
         body: "Text:"
         published: "Published?:"
+        name_ca: "Catalan:"
+        name_en: "English:"
+        name_es: "Spanish:"
+        year: "Year:"
 
       contact_message:
         from_email: "Your e-mail:"
@@ -34,16 +38,8 @@ en:
         text: "Text:"
         send: Send
 
-    # Labels and hints examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+    hints:
+      users:
+        edit:
+          password: Leave blank if you do not want to change the password
+          password_confirmation: Leave blank if you do not want to change the password

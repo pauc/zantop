@@ -40,6 +40,11 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 20
 
+RSpec/DescribeClass:
+  Exclude:
+    # Checks the locale files against each other, not any one class
+    - spec/i18n_spec.rb
+
 RSpec/ExampleLength:
   Enabled: false
 

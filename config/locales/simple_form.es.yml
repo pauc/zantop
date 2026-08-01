@@ -1,7 +1,7 @@
 es:
   simple_form:
-    yes: Si
-    no: No
+    "yes": Sí
+    "no": No
 
     required:
       text: 'obligatorio'
@@ -26,6 +26,10 @@ es:
         password_confirmation: "Confirma la contraseña:"
         body: "Texto:"
         published: "Publicado?:"
+        name_ca: "Catalán:"
+        name_en: "Inglés:"
+        name_es: "Castellano:"
+        year: "Año:"
 
       contact_message:
         from_email: "Tu correo:"
@@ -33,3 +37,9 @@ es:
         subject: "Asunto:"
         text: "Texto:"
         send: Enviar
+
+    hints:
+      users:
+        edit:
+          password: Déjalo en blanco si no quieres cambiar la contraseña
+          password_confirmation: Déjalo en blanco si no quieres cambiar la contraseña

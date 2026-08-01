@@ -3,18 +3,17 @@ ca:
   es: castellà
   en: anglès
 
-  home: Inici
   back: Tornar
   cancel: Cancel·lar
-  change_password: Canviar contrassenya
+  change_password: Canviar contrasenya
   create: Crear
   created: "Contingut creat correctament. Ole!"
-  deleted: Contingut esborrat 👍
   delete: Esborrar
+  deleted: Contingut esborrat 👍
   edit: Editar
+  home: Inici
   restricted_access: Accés restringit. T'has d'identificar abans.
-  untranslated_conten:
-    Oops! Ho sentim, aquest contingut no està traduït al català
+  untranslated_content: Oops! Ho sentim, aquest contingut no està traduït al català.
   updated: Contingut actualitzat.
 
   under_construction: En construcció
@@ -29,9 +28,6 @@ ca:
   categories: Categories
 
   view_more: Veure més
-
-  add_image_or_video: Afegeix una imatge o vídeo
-  remove_image_or_video: Esborra aquesta imatge o vídeo
 
   contact_messages:
     create:

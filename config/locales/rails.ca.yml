@@ -1,4 +1,11 @@
 ca:
+  activerecord:
+    models:
+      # The UI calls tags "categories" everywhere it names them, so the model
+      # name follows the interface rather than the class.
+      tag:
+        one: Categoria
+        other: Categories
   date:
     abbr_day_names:
     - Dg
@@ -130,8 +137,7 @@ ca:
     submit:
       create: Crear %{model}
       submit: Guardar %{model}
-      update: Actualizar %{model}
-      login: Entrar
+      update: Actualitzar %{model}
   number:
     currency:
       format:

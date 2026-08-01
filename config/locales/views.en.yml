@@ -1,21 +1,20 @@
 en:
-  ca: català
-  es: castellà
-  en: anglès
+  ca: Catalan
+  es: Spanish
+  en: English
 
-  home: Home
   back: Back
   cancel: Cancel
-  change_password: Chanche password
+  change_password: Change password
   create: Create
   created: "New content created. Ole!"
   delete: Delete
-  deleted: Content deleted
+  deleted: Content deleted.
   edit: Edit
-  invalid_login: Invalid login
+  home: Home
+  restricted_access: Restricted access. You need to log in first.
+  untranslated_content: Oops! Sorry, this content is not translated into English.
   updated: Content updated.
-  untranslated_content: Oops! Sorry, this content is not translated into english.
-  restricted_accessl: Resticted acces. You need to log in first.
 
   under_construction: Under construction
 
@@ -30,6 +29,9 @@ en:
 
   view_more: View more
 
+  contact_messages:
+    create:
+      confirmation: "Message sent successfully. Thanks!!"
   menu:
     about: Bio
     action_art: Action art
@@ -42,6 +44,8 @@ en:
     page_gap: " ... "
 
   sessions:
+    create:
+      invalid_login: Invalid login
     new:
       title: Log in
 
@@ -89,9 +93,3 @@ en:
   tags:
     works_list:
       title: "%{category}"
-
-  about_the_code:
-    html: The source code for this site is available to be copied,
-          studied and criticized at <a href="http://github.com/pauc/zantop">
-          http://github.com/pauc/zantop</a>.
-          For any questions or suggestions, please get in touch with

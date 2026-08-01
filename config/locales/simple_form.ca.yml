@@ -1,7 +1,7 @@
 ca:
   simple_form:
-    yes: Si
-    no: No
+    "yes": Sí
+    "no": No
 
     required:
       text: 'obligatori'
@@ -21,7 +21,7 @@ ca:
         techniques: "Tècniques:"
         dimensions: "Dimensions:"
         name: "Nom:"
-        email: Correu-e:"
+        email: "Correu-e:"
         password: "Contrasenya:"
         password_confirmation: "Confirma la contrasenya:"
         body: "Text:"
