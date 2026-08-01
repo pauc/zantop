@@ -1,0 +1,7 @@
+<%= page_title t(".title", page: @page.title) %>
+
+<% content_for :admin_bar_second_row do %>
+  <%= link_to t("back"), :back, class: "btn" %>
+<% end %>
+
+<%= render "form", page: @page %>

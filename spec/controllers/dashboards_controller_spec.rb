@@ -65,9 +65,40 @@ RSpec.describe DashboardsController, type: :controller do
 
   describe "GET about" do
     it "renders" do
+      create(:page)
+
       get :about, params: { locale: "en" }
 
       expect(response).to have_http_status(:ok)
+    end
+
+    it "assigns the about page" do
+      page = create(:page)
+
+      get :about, params: { locale: "en" }
+
+      expect(assigns(:page)).to eq page
+    end
+
+    it "warns when the page is not translated into the requested locale" do
+      I18n.with_locale(:ca) { create(:page) }
+
+      get :about, params: { locale: "en" }
+
+      expect(flash.now[:alert]).to eq "Oops! Sorry, this content is not translated into English."
+    end
+
+    it "stays quiet when the page is translated into the requested locale" do
+      I18n.with_locale(:en) { create(:page) }
+
+      get :about, params: { locale: "en" }
+
+      expect(flash.now[:alert]).to be_nil
+    end
+
+    it "raises when the about page is missing" do
+      expect { get :about, params: { locale: "en" } }
+        .to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 

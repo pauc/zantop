@@ -1,0 +1,8 @@
+<%= simple_form_for page do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+  <%= f.input :body, as: :rich_text_area %>
+
+  <%= f.button :submit, t("save"), class: "btn btn-flashy" %>
+<% end %>

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
     get "about", to: "dashboards#about"
 
+    resources :pages, only: [:edit, :update]
+
     root to: "dashboards#front"
     get "more_works", to: "dashboards#more_works"
   end

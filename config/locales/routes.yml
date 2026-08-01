@@ -4,6 +4,7 @@ ca:
     visual_works: art-visual
     about: bio
     contact: contacte
+    pages: pagines
 
 es:
   routes:
@@ -11,6 +12,7 @@ es:
     visual_works: arte-visual
     about: bio
     contact: contacto
+    pages: paginas
 
 en:
   routes:
@@ -18,3 +20,4 @@ en:
     visual_works: visual-art
     about: bio
     contact: contact
+    pages: pages

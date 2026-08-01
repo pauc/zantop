@@ -11,6 +11,14 @@ class DashboardsController < ApplicationController
              .paginate(page: params[:page], per_page: 12)
   end
 
+  def about
+    @page = Page.about
+
+    return if @page.translated_into?(I18n.locale)
+
+    flash.now[:alert] = t("untranslated_content")
+  end
+
   def more_works
     works = Work
             .published
