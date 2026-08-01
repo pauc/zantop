@@ -44,7 +44,7 @@ module ApplicationHelper
   end
 
   def active_link?(url)
-    return "active" if url == request.fullpath
+    "active" if url == request.fullpath
   end
 
   def page_name

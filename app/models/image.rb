@@ -20,7 +20,8 @@ class Image < ApplicationRecord
 
   def type
     return "image" if image.present?
-    return "video" if video.present?
+
+    "video" if video.present?
   end
 
   private
@@ -31,9 +32,9 @@ class Image < ApplicationRecord
       errors.add(:video, "Només imatge o video, no tots dos")
     end
 
-    if image.blank? && video.blank?
-      errors.add(:image, "Has d'indicar una imatge o vídeo")
-      errors.add(:video, "Has d'indicar una imatge o vídeo")
-    end
+    return unless image.blank? && video.blank?
+
+    errors.add(:image, "Has d'indicar una imatge o vídeo")
+    errors.add(:video, "Has d'indicar una imatge o vídeo")
   end
 end

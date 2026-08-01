@@ -28,6 +28,12 @@ class ActionWorksController < ApplicationController
     render :new
   end
 
+  def edit
+    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
+
+    render :edit
+  end
+
   def create
     @work_form = ActionWorkForm.new
 
@@ -38,12 +44,6 @@ class ActionWorksController < ApplicationController
     end
 
     render :new
-  end
-
-  def edit
-    @work_form = ActionWorkForm.new(work: ActionWork.find(params[:id]))
-
-    render :edit
   end
 
   def update
