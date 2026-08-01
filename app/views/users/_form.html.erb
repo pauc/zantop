@@ -1,0 +1,16 @@
+<%= simple_form_for @user, url: user_path, method: :patch do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :email %>
+
+  <%# Blank leaves the current password in place, so neither field is required. %>
+  <%= f.input :password,
+              required: false,
+              input_html: { autocomplete: "new-password" } %>
+  <%= f.input :password_confirmation,
+              required: false,
+              input_html: { autocomplete: "new-password" } %>
+
+  <%= f.button :submit, t("users.edit.submit"), class: "btn btn-flashy" %>
+<% end %>

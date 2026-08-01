@@ -95,6 +95,7 @@ en:
 
     edit:
       title: Edit <span>%{user}</span>
+      submit: Save changes
 
   tags:
     works_list:

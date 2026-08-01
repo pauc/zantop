@@ -95,6 +95,7 @@ ca:
 
     edit:
       title: Editar <span>%{user}</span>
+      submit: Desar els canvis
 
   tags:
     works_list:

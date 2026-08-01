@@ -95,6 +95,7 @@ es:
 
     edit:
       title: Editar <span>%{user}</span>
+      submit: Guardar los cambios
 
   tags:
     works_list:

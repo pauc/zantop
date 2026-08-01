@@ -6,14 +6,15 @@ Rails.application.routes.draw do
   # for /up.
   get "up", to: "rails/health#show", as: :rails_health_check
 
-  resource :user, only: [:edit, :update]
-
-  get "section_fields", to: "admin#section_fields"
-
   localized do
     get  :login,   to: "sessions#new"
     post :session, to: "sessions#create"
     get  :logout,  to: "sessions#destroy"
+
+    # Inside `localized` because every request goes through `set_locale`, which
+    # bounces anything without a locale segment: unlocalized, /user/edit was
+    # redirected to /ca/user/edit and there was no such route to land on.
+    resource :user, only: [:edit, :update]
 
     resources :visual_works
     resources :action_works

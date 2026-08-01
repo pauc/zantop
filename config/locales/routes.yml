@@ -5,6 +5,7 @@ ca:
     about: bio
     contact: contacte
     pages: pagines
+    user: usuari
 
 es:
   routes:
@@ -13,6 +14,7 @@ es:
     about: bio
     contact: contacto
     pages: paginas
+    user: usuario
 
 en:
   routes:
@@ -21,3 +23,4 @@ en:
     about: bio
     contact: contact
     pages: pages
+    user: user
