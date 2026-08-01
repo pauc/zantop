@@ -49,3 +49,11 @@ form {
     }
   }
 }
+
+// button_to wraps its button in a form, which the rule above would otherwise
+// dress up as a grey box around what should look like a plain button
+form.button_to {
+  padding: 0;
+  border: 0;
+  background: none;
+}

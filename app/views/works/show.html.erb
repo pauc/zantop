@@ -1,10 +1,10 @@
 <% content_for :admin_bar_second_row do %>
   <%= link_to "Editar", { action: :edit }, class: "btn" %>
-  <%= link_to "Esborrar",
-              action_work_path(@work),
-              method: :delete,
-              class: "btn btn-danger",
-              data: { confirm: "Segur que ho vols esborrar?" } %>
+  <%= button_to "Esborrar",
+                @work,
+                method: :delete,
+                class: "btn btn-danger",
+                data: { confirm: "Segur que ho vols esborrar?" } %>
 <% end %>
 
 <% content_for :sidebar do %>

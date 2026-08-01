@@ -155,6 +155,11 @@ form .fields {
   border-radius: 0.5rem;
   color: #555;
 
+  // .btn also dresses <button> elements, which come with a line height of
+  // their own and would otherwise sit shorter than the links beside them
+  line-height: inherit;
+  cursor: pointer;
+
   &:visited, &:hover {
     color: #555;
   }
