@@ -135,7 +135,7 @@ GEM
     ffi (1.17.4-x86_64-linux-gnu)
     formatador (1.2.3)
       reline
-    friendly_id (5.4.2)
+    friendly_id (5.7.0)
       activerecord (>= 4.0.0)
     fspath (3.1.2)
     globalid (1.4.0)
@@ -455,7 +455,7 @@ DEPENDENCIES
   drb
   ed25519
   factory_bot_rails
-  friendly_id (~> 5.4.0)
+  friendly_id (~> 5.7.0)
   guard-livereload (~> 2.5)
   guard-rspec
   html_truncator
