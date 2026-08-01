@@ -53,6 +53,17 @@ Actions):
 | `ZANTOP_DATABASE_PASSWORD` | `$DB_PASSWORD`. Used twice: the app connects with it and the Postgres accessory is created with it. |
 | `ZANTOP_DEPLOY_SSH_KEY` | Private half of the deploy key, whole file including the header and trailer lines. |
 | `ZANTOP_DEPLOY_KNOWN_HOSTS` | `ssh-keyscan $NEW_IP` output. Pinned, not `accept-new`. |
+| `ZANTOP_SMTP_ADDRESS` | SMTP host of the contact form's mailbox. TODO — the account is not provisioned yet, see todo 36. |
+| `ZANTOP_SMTP_USER_NAME` | Its login. |
+| `ZANTOP_SMTP_PASSWORD` | Its password. |
+
+The three `ZANTOP_SMTP_*` secrets do not block the deploy: nothing reads them
+until a visitor submits the contact form, and `config/environments/production.rb`
+resolves them to `nil` rather than raising when they are unset — deliberately, so
+`assets:precompile` can run during the image build without them. The cost of
+deploying before they exist is that the first contact submission raises, since
+`raise_delivery_errors` is on. `ZANTOP_SMTP_PORT` and `ZANTOP_SMTP_DOMAIN` are
+non-secret literals already in `config/deploy.yml`.
 
 `KAMAL_REGISTRY_PASSWORD` is not a repository secret: the workflow passes the
 automatic `GITHUB_TOKEN`. Running Kamal from a laptop needs a personal access
@@ -76,11 +87,11 @@ The cutover is gated on work outside this runbook. Check before starting:
   this closes.
 - **Todo 14** — the missing `WorksController`, `UsersController` and
   `AdminController`. Still open.
-- **Todo 33** — SMTP account for the contact form. `config/environments/production.rb`
-  has no `action_mailer.smtp_settings` (lines 75–80 are still the commented Rails
-  default), so the contact form will not deliver. Not fatal to the cutover, but
-  it ships a dead form.
-- Todos 13, 15, 18 and 21 were listed as blockers earlier and are now closed.
+- **Todo 36** — SMTP account for the contact form. `config/environments/production.rb`
+  now has its `action_mailer.smtp_settings`, but the mailbox itself does not exist
+  and the three `ZANTOP_SMTP_*` secrets above are unset, so the contact form will
+  not deliver. Not fatal to the cutover, but it ships a dead form.
+- Todos 13, 15, 18, 20 and 21 were listed as blockers earlier and are now closed.
 
 Also confirm before Phase A:
 
