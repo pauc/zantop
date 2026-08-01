@@ -12,6 +12,9 @@ class Image < ApplicationRecord
   has_one_attached :image do |attachable|
     attachable.variant :thumb,  resize_to_fit:  [100, 100]
     attachable.variant :medium, resize_to_fill: [400, 400]
+    attachable.variant :card,   resize_to_fit:  [500, 500]
+    attachable.variant :large,  resize_to_fit:  [1000, 1000]
+    attachable.variant :full,   resize_to_fit:  [2000, 2000]
   end
 
   # acts_as_list scope: 'illustrated_id=#{illustrated_id} and

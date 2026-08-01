@@ -1,0 +1,70 @@
+<div class="gallery gallery-hybrid" data-gallery>
+  <div class="gallery-lead-track" data-gallery-lead-track tabindex="0">
+    <% images.each_with_index do |image, index| %>
+      <figure class="gallery-lead" data-gallery-lead="<%= index %>">
+        <% if image.video? %>
+          <%= link_to image.video, class: "gallery-video", target: "_blank", rel: "noopener" do %>
+            <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
+          <% end %>
+        <% else %>
+          <button type="button" class="gallery-lead-open" data-gallery-open="<%= index %>">
+            <%= image_tag image.image.variant(:large),
+                          loading: index.zero? ? "eager" : "lazy",
+                          decoding: "async",
+                          alt: "" %>
+          </button>
+        <% end %>
+        <figcaption class="gallery-caption">
+          <%= image.credits if image.credits.present? %>
+        </figcaption>
+      </figure>
+    <% end %>
+  </div>
+
+  <% if images.size > 1 %>
+    <ul class="gallery-strip" data-gallery-strip>
+      <% images.each_with_index do |image, index| %>
+        <li class="gallery-strip-item">
+          <button type="button" class="gallery-thumb" data-gallery-select="<%= index %>">
+            <%= render "works/gallery_thumb", image: image, eager: index < 6 %>
+          </button>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <dialog class="gallery-lightbox" data-gallery-dialog>
+    <div class="gallery-lightbox-track" data-gallery-track>
+      <% images.each_with_index do |image, index| %>
+        <figure class="gallery-slide" data-gallery-slide="<%= index %>">
+          <% if image.video? %>
+            <%= link_to image.video, class: "gallery-video", target: "_blank", rel: "noopener" do %>
+              <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
+            <% end %>
+          <% else %>
+            <%= image_tag image.image.variant(:full), loading: "lazy", decoding: "async", alt: "" %>
+          <% end %>
+          <% if image.credits.present? %>
+            <figcaption class="gallery-caption"><%= image.credits %></figcaption>
+          <% end %>
+        </figure>
+      <% end %>
+    </div>
+
+    <% if images.size > 1 %>
+      <ul class="gallery-filmstrip" data-gallery-filmstrip>
+        <% images.each_with_index do |image, index| %>
+          <li class="gallery-filmstrip-item">
+            <button type="button" class="gallery-thumb" data-gallery-jump="<%= index %>">
+              <%= render "works/gallery_thumb", image: image, eager: false %>
+            </button>
+          </li>
+        <% end %>
+      </ul>
+      <p class="gallery-counter" data-gallery-counter aria-live="polite"></p>
+      <button type="button" class="gallery-nav gallery-prev" data-gallery-prev aria-label="&larr;">&#8249;</button>
+      <button type="button" class="gallery-nav gallery-next" data-gallery-next aria-label="&rarr;">&#8250;</button>
+    <% end %>
+    <button type="button" class="gallery-close" data-gallery-close aria-label="&times;">&times;</button>
+  </dialog>
+</div>
