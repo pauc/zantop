@@ -87,10 +87,7 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem "capybara", ">= 3.26"
   gem "factory_bot_rails"
   # Restores assigns and render_template for controller specs
   gem "rails-controller-testing"
-  gem "selenium-webdriver", ">= 4.14"
 end
