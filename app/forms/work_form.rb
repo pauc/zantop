@@ -17,7 +17,13 @@ class WorkForm
            :new_record?,
            to: :work
 
-  def initialize(work: ActionWork.new)
+  # The work each form builds when none is passed in. Subclasses name their own
+  # STI class: without this a `VisualWorkForm` would silently wrap an `ActionWork`.
+  def self.work_class
+    Work
+  end
+
+  def initialize(work: self.class.work_class.new)
     @work = work
 
     super()

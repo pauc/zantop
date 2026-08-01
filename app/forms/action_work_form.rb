@@ -4,6 +4,10 @@ class ActionWorkForm < WorkForm
   attribute :place, :string
   attribute :realization_date, :date
 
+  def self.work_class
+    ActionWork
+  end
+
   def submit_button_text
     return "Crear treball d'acció" if work.new_record?
 

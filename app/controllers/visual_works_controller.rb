@@ -36,9 +36,9 @@ class VisualWorksController < ApplicationController
   end
 
   def create
-    @work_form = VisualWorkForm.new(**visual_work_params)
+    @work_form = VisualWorkForm.new
 
-    if @work_form.submit
+    if @work_form.submit(visual_work_params)
       flash.notice = t("created")
 
       redirect_to visual_works_path and return
@@ -48,7 +48,15 @@ class VisualWorksController < ApplicationController
   end
 
   def update
-    raise NotImplementedError
+    @work_form = VisualWorkForm.new(work: VisualWork.find(params.expect(:id)))
+
+    if @work_form.submit(visual_work_params)
+      flash.notice = t("updated")
+
+      redirect_to visual_work_path(@work_form.id) and return
+    end
+
+    render :edit
   end
 
   def destroy
@@ -63,10 +71,12 @@ class VisualWorksController < ApplicationController
     params
       .expect(visual_work_form: [:title,
                                  :description,
-                                 :place,
-                                 :realization_date,
+                                 :techniques,
+                                 :dimensions,
+                                 :year,
                                  :published,
                                  {
+                                   tags: [],
                                    section_attributes: [[:title, :body, :position, :_destroy]],
                                    image_attributes: [[:image, :video, :credits, :position,
                                                        :_destroy]]

@@ -3,8 +3,7 @@
 # Only the behaviour VisualWorkForm adds on top of WorkForm lives here; the shared form
 # behaviour it inherits is covered in spec/forms/work_form_spec.rb.
 RSpec.describe VisualWorkForm do
-  # WorkForm defaults to an ActionWork, so a visual work has to be passed in explicitly.
-  let(:form) { described_class.new(work: VisualWork.new) }
+  let(:form) { described_class.new }
 
   describe "#initialize" do
     it "copies the techniques of a persisted work" do
@@ -41,6 +40,60 @@ RSpec.describe VisualWorkForm do
       form.dimensions = "10x20"
 
       expect(form.dimensions).to eq "10x20"
+    end
+  end
+
+  describe "#submit" do
+    it "creates a VisualWork" do
+      expect { form.submit(title: "Jurimuri") }.to change(VisualWork, :count).by(1)
+    end
+
+    it "stores the techniques" do
+      form.submit(title: "Jurimuri", techniques: "oli sobre tela")
+
+      expect(VisualWork.last.techniques).to eq "oli sobre tela"
+    end
+
+    it "stores the dimensions" do
+      form.submit(title: "Jurimuri", dimensions: "10x20")
+
+      expect(VisualWork.last.dimensions).to eq "10x20"
+    end
+
+    it "stores the year as a realization date" do
+      form.submit(title: "Jurimuri", year: "1998")
+
+      expect(VisualWork.last.realization_date).to eq Date.new(1998, 1, 1)
+    end
+
+    it "reads the stored year back" do
+      form.submit(title: "Jurimuri", year: "1998")
+
+      expect(VisualWork.last.year).to eq 1998
+    end
+
+    it "keeps the month and the day when the year does not change" do
+      work = create(:visual_work, realization_date: Date.new(1998, 3, 14))
+
+      described_class.new(work:).submit(title: work.title, year: "1998")
+
+      expect(work.reload.realization_date).to eq Date.new(1998, 3, 14)
+    end
+
+    it "moves the date to January when the year changes" do
+      work = create(:visual_work, realization_date: Date.new(1998, 3, 14))
+
+      described_class.new(work:).submit(title: work.title, year: "2005")
+
+      expect(work.reload.realization_date).to eq Date.new(2005, 1, 1)
+    end
+
+    it "leaves the realization date alone when no year is given" do
+      work = create(:visual_work, realization_date: Date.new(1998, 3, 14))
+
+      described_class.new(work:).submit(title: work.title, year: "")
+
+      expect(work.reload.realization_date).to eq Date.new(1998, 3, 14)
     end
   end
 

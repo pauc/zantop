@@ -2,7 +2,7 @@
 
 RSpec.describe WorkForm do
   describe "#initialize" do
-    it "builds a new ActionWork when no work is given" do
+    it "builds a new work when none is given" do
       expect(described_class.new).to be_new_record
     end
 
@@ -32,7 +32,7 @@ RSpec.describe WorkForm do
   describe "#submit" do
     it "creates the work" do
       expect { described_class.new.submit(title: "Jurimuri") }
-        .to change(ActionWork, :count)
+        .to change(Work, :count)
         .by(1)
     end
 
@@ -46,7 +46,7 @@ RSpec.describe WorkForm do
 
     it "does not create a work without a title" do
       expect { described_class.new.submit(title: "") }
-        .not_to change(ActionWork, :count)
+        .not_to change(Work, :count)
     end
 
     it "rolls back the sections when the work is invalid" do
@@ -66,7 +66,7 @@ RSpec.describe WorkForm do
     end
 
     it "does not create a work whose slug the model rejects" do
-      expect { described_class.new.submit(title: "New") }.not_to change(ActionWork, :count)
+      expect { described_class.new.submit(title: "New") }.not_to change(Work, :count)
     end
 
     it "surfaces the errors of the work on the form" do
@@ -86,13 +86,13 @@ RSpec.describe WorkForm do
     it "stores the description" do
       described_class.new.submit(title: "Jurimuri", description: "La descripció")
 
-      expect(ActionWork.last.description.to_plain_text).to eq "La descripció"
+      expect(Work.last.description.to_plain_text).to eq "La descripció"
     end
 
     it "stores the published flag" do
       described_class.new.submit(title: "Jurimuri", published: true)
 
-      expect(ActionWork.last).to be_published
+      expect(Work.last).to be_published
     end
 
     it "creates the sections given as nested attributes" do
@@ -120,6 +120,38 @@ RSpec.describe WorkForm do
         .to change { section.reload.title }
         .from("Old")
         .to("New")
+    end
+
+    it "adds a section to a work that already has one" do
+      work = create(:action_work)
+      create(:section, work:)
+
+      attributes = {
+        title: work.title,
+        section_attributes: { "999999999999001" => { title: "Nova", body: "Cos", position: 2 } }
+      }
+
+      expect { described_class.new(work:).submit(attributes) }
+        .to change { work.reload.sections.count }
+        .from(1)
+        .to(2)
+    end
+
+    it "adds an image to a work that already has one" do
+      work = create(:action_work)
+      create(:image, :video, work:)
+
+      attributes = {
+        title: work.title,
+        image_attributes: {
+          "999999999999001" => { video: "https://vimeo.com/1", position: 2 }
+        }
+      }
+
+      expect { described_class.new(work:).submit(attributes) }
+        .to change { work.reload.images.count }
+        .from(1)
+        .to(2)
     end
 
     it "removes sections marked for destruction" do
