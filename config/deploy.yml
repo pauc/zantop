@@ -1,0 +1,97 @@
+# Kamal deployment for the Rails 8.1 app. Run `kamal docs` for the reference.
+#
+# The image is built and pushed by .github/workflows/deploy.yml, never on the
+# droplet: an esbuild + sass + sprockets build does not fit in the RAM of the
+# box we are deploying to.
+
+service: zantop
+image: pauc/zantop
+
+servers:
+  web:
+    - <%= ENV.fetch("ZANTOP_DEPLOY_HOST", "REPLACE_ME_WITH_THE_NEW_DROPLET_IP") %>
+
+# Kamal defaults to root, which is what a fresh DigitalOcean droplet gives you.
+# ssh:
+#   user: deployer
+
+proxy:
+  ssl: true
+  hosts:
+    - mireiazantop.com
+    - www.mireiazantop.com
+  # The route added in config/routes.rb. kamal-proxy will not send traffic to a
+  # new container until this answers 200, and it answers over plain HTTP
+  # because config.assume_ssl makes Rails treat proxied requests as secure
+  # rather than redirecting them.
+  healthcheck:
+    path: /up
+    interval: 3
+    timeout: 30
+
+registry:
+  server: ghcr.io
+  username: pauc
+  # A GitHub personal access token with write:packages, not the account
+  # password. In CI this is the workflow's GITHUB_TOKEN.
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  # Reuses the layer cache across builds, which matters because the gem and
+  # node_modules layers dominate the build. Registry rather than gha so that a
+  # deploy run by hand from a laptop hits the same cache as CI; the gha backend
+  # only exists inside a workflow run. The cache lands in
+  # ghcr.io/pauc/zantop-build-cache.
+  cache:
+    type: registry
+    options: mode=max
+
+env:
+  clear:
+    # The Postgres accessory below, reachable by container name on the kamal
+    # network. config/database.yml reads all four of these.
+    ZANTOP_DATABASE_HOST: zantop-db
+    ZANTOP_DATABASE_PORT: 5432
+    ZANTOP_DATABASE_USER: zantop
+    # Matches the volume mount below. Without it ActiveStorage would write
+    # inside the container and lose every upload on the next deploy.
+    ZANTOP_STORAGE_ROOT: /data/uploads
+  secret:
+    - ZANTOP_DATABASE_PASSWORD
+    - RAILS_MASTER_KEY
+
+# Uploaded files live on the host, not in the image.
+volumes:
+  - "/var/lib/zantop/uploads:/data/uploads"
+
+# Keeps the previous release's fingerprinted assets reachable, so a page served
+# just before a deploy does not 404 on its CSS just after one.
+asset_path: /rails/public/assets
+
+# The default 30s is tight: the entrypoint runs db:prepare before Puma binds.
+deploy_timeout: 60
+
+accessories:
+  db:
+    image: postgres:18.4-alpine
+    host: <%= ENV.fetch("ZANTOP_DEPLOY_HOST", "REPLACE_ME_WITH_THE_NEW_DROPLET_IP") %>
+    # Bound to loopback only: the app reaches it over the kamal Docker network
+    # by name, and this is purely so psql and pg_dump work from an SSH session
+    # during the cutover.
+    port: "127.0.0.1:5432:5432"
+    env:
+      clear:
+        POSTGRES_USER: zantop
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      # postgres:18 images keep PGDATA under /var/lib/postgresql, not
+      # .../data — same as docker-compose.yml.
+      - data:/var/lib/postgresql
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  dbc: accessory exec db --interactive --reuse "psql -U zantop zantop_production"

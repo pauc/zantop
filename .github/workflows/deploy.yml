@@ -1,0 +1,73 @@
+name: Deploy
+
+# Deliberately manual for now. The legacy Rails 3.2 app still answers for
+# mireiazantop.com, so a deploy is a decision, not a consequence of merging.
+# Switch this to `push: branches: [main]` once DNS points at the new droplet
+# and the cutover in the runbook has been rehearsed.
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: >-
+          setup on a freshly provisioned droplet (installs Docker, boots the
+          Postgres accessory and kamal-proxy, then deploys); deploy every time
+          after that.
+        type: choice
+        options: [deploy, setup]
+        default: deploy
+
+# Never let two deploys interleave on the same host: kamal takes a deploy lock
+# and the second run would just fail on it.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  deploy:
+    name: Build, push and deploy
+    runs-on: ubuntu-latest
+    env:
+      # The droplet, read by config/deploy.yml for both the web role and the
+      # Postgres accessory.
+      ZANTOP_DEPLOY_HOST: ${{ secrets.ZANTOP_DEPLOY_HOST }}
+      # Read by .kamal/secrets.
+      KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      ZANTOP_DATABASE_PASSWORD: ${{ secrets.ZANTOP_DATABASE_PASSWORD }}
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Kamal builds from a clean clone of the repo and tags the image with
+          # the commit SHA, so it needs the history, not a depth-1 checkout.
+          fetch-depth: 0
+
+      # no ruby-version: setup-ruby reads .tool-versions, and bundler-cache
+      # installs the bundler from Gemfile.lock and runs a cached bundle install
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Authorise SSH to the droplet
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.ZANTOP_DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # Pinned rather than accept-new: the host key is a repository secret
+          # so a substituted host fails the deploy instead of being trusted.
+          printf '%s\n' "${{ secrets.ZANTOP_DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      # Builds on the runner and pushes to GHCR, then the droplet only pulls.
+      # The droplet is too small to run esbuild and sass itself.
+      - name: Deploy
+        run: bundle exec kamal ${{ inputs.command }}
+
+      - name: Remove the SSH key
+        if: always()
+        run: rm -f ~/.ssh/id_ed25519
