@@ -1,0 +1,21 @@
+// SPIKE ONLY — not part of the gallery proposal.
+// The public site has no breakpoints at all, so at phone widths the content
+// column collapses to ~126px next to a 240px sidebar and the page scrolls
+// sideways. Without this the gallery candidates cannot be judged on a phone.
+@media (max-width: 46rem) {
+  body {
+    .container,
+    #flash-messages {
+      padding: 0 1rem;
+    }
+
+    &.with-sidebar .main-container {
+      display: block;
+    }
+
+    &.no-front #sidebar {
+      min-width: 0;
+      margin-top: 2rem;
+    }
+  }
+}

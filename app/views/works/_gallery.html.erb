@@ -1,0 +1,73 @@
+<% lead = images.first %>
+<% rest = images.drop(1) %>
+
+<div class="gallery gallery-hybrid" data-gallery>
+  <figure class="gallery-lead">
+    <% if lead.video? %>
+      <%= link_to lead.video, class: "gallery-video", target: "_blank", rel: "noopener" do %>
+        <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
+      <% end %>
+    <% else %>
+      <% width, height = variant_dimensions(lead, 1000) %>
+      <button type="button" class="gallery-thumb" data-gallery-open="0">
+        <%= image_tag lead.image.variant(:large),
+                      width: width,
+                      height: height,
+                      loading: "eager",
+                      decoding: "async",
+                      alt: "" %>
+      </button>
+    <% end %>
+    <% if lead.credits.present? %>
+      <figcaption class="gallery-caption"><%= lead.credits %></figcaption>
+    <% end %>
+  </figure>
+
+  <% if rest.any? %>
+    <ul class="gallery-strip">
+      <% rest.each_with_index do |image, offset| %>
+        <li class="gallery-strip-item">
+          <% if image.video? %>
+            <%= link_to image.video, class: "gallery-video", target: "_blank", rel: "noopener" do %>
+              <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
+            <% end %>
+          <% else %>
+            <% width, height = variant_dimensions(image, 500) %>
+            <button type="button" class="gallery-thumb" data-gallery-open="<%= offset + 1 %>">
+              <%= image_tag image.image.variant(:card),
+                            width: width,
+                            height: height,
+                            loading: offset < 5 ? "eager" : "lazy",
+                            decoding: "async",
+                            alt: "" %>
+            </button>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <dialog class="gallery-lightbox" data-gallery-dialog>
+    <div class="gallery-lightbox-track" data-gallery-track>
+      <% images.each_with_index do |image, index| %>
+        <figure class="gallery-slide" data-gallery-slide="<%= index %>">
+          <% if image.video? %>
+            <%= link_to image.video, class: "gallery-video", target: "_blank", rel: "noopener" do %>
+              <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
+            <% end %>
+          <% else %>
+            <%= image_tag image.image.variant(:full), loading: "lazy", decoding: "async", alt: "" %>
+          <% end %>
+          <% if image.credits.present? %>
+            <figcaption class="gallery-caption"><%= image.credits %></figcaption>
+          <% end %>
+        </figure>
+      <% end %>
+    </div>
+
+    <p class="gallery-counter" data-gallery-counter aria-live="polite"></p>
+    <button type="button" class="gallery-nav gallery-prev" data-gallery-prev aria-label="&larr;">&#8249;</button>
+    <button type="button" class="gallery-nav gallery-next" data-gallery-next aria-label="&rarr;">&#8250;</button>
+    <button type="button" class="gallery-close" data-gallery-close aria-label="&times;">&times;</button>
+  </dialog>
+</div>
