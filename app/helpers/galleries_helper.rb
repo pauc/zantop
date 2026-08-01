@@ -14,7 +14,10 @@ module GalleriesHelper
     [(width * scale).round, (height * scale).round]
   end
 
+  # Ordered by position and loaded eagerly: `images` has no default order, and
+  # a relation would answer `first` with its own `ORDER BY id LIMIT 1` while
+  # `drop(1)` dropped whatever the unordered scan happened to return first.
   def gallery_images(work)
-    work.images.includes(:rich_text_translations)
+    work.images.order(:position, :id).includes(:rich_text_translations).to_a
   end
 end
