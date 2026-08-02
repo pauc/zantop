@@ -1,0 +1,25 @@
+// Trix's stylesheet dresses both the editor chrome and .trix-content. Only
+// signed-in users ever see an editor, so it belongs to the admin bundle; the
+// public bundle styles rendered .trix-content itself, in richtext.scss.
+@use "trix/dist/trix";
+
+trix-editor {
+  background-color: #fff;
+}
+
+button.trix-button {
+  background-color: #f0f0f0;
+}
+
+// Trix's default toolbar is spread across the full width by a spacer between
+// the block tools and the history tools. Ours has neither, so the two groups
+// it does have sit together on the left.
+trix-toolbar .trix-button-row {
+  justify-content: flex-start;
+}
+
+// The rules that used to live here hid two thirds of the toolbar with
+// display: none, and patched up Trix's attachment gallery layout. Both are
+// gone: app/javascript/admin/rich-text.js builds a toolbar with only the
+// buttons this site allows, and refuses attachments outright, so there is no
+// gallery to lay out.

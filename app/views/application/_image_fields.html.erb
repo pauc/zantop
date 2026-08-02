@@ -7,7 +7,7 @@
 
     <%= fields.input :image %>
     <%= fields.input :video %>
-    <%= fields.input :credits, as: :rich_text_area %>
+    <%= fields.input :credits, as: :text, wrapper_html: { class: "credits-field" } %>
     <%= fields.input :position,
                      as: :hidden,
                      input_html: { data: { attribute: "position" } } %>

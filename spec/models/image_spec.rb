@@ -110,10 +110,64 @@ RSpec.describe Image do
       I18n.with_locale(:en) { image.credits = "Photo by Mireia" }
       image.save!
 
-      expect(I18n.with_locale(:ca) { image.reload.credits.to_plain_text })
-        .to eq "Foto de la Mireia"
-      expect(I18n.with_locale(:en) { image.reload.credits.to_plain_text })
-        .to eq "Photo by Mireia"
+      expect(I18n.with_locale(:ca) { image.reload.credits }).to eq "Foto de la Mireia"
+      expect(I18n.with_locale(:en) { image.reload.credits }).to eq "Photo by Mireia"
+    end
+  end
+
+  # Plain rather than rich, so the value comes back as a String and reaches the
+  # figcaption escaped. The line breaks the poems among the credits are written
+  # with survive as newlines, which the caption renders with white-space.
+  describe "credits" do
+    it "reads back as a plain string" do
+      image = create(:image)
+
+      image.update!(credits: "Foto: Ferran Zantop")
+
+      expect(image.reload.credits).to be_a(String).and eq "Foto: Ferran Zantop"
+    end
+
+    it "keeps the line breaks of a multi-line credit" do
+      image = create(:image)
+
+      image.update!(credits: "Ya no hay horizonte.\nAlguien camina")
+
+      expect(image.reload.credits).to eq "Ya no hay horizonte.\nAlguien camina"
+    end
+
+    it "stores markup as the literal text it is, rather than as markup" do
+      image = create(:image)
+
+      image.update!(credits: "<strong>Atadalasalas</strong>")
+
+      expect(image.reload.credits).to eq "<strong>Atadalasalas</strong>"
+    end
+
+    # Browsers submit a textarea with CRLF line endings, which would otherwise
+    # leave form-typed credits differing from the ones migrated out of rich text
+    # by an invisible carriage return.
+    it "normalises the CRLF line endings a form submits" do
+      image = create(:image)
+
+      image.update!(credits: "Foto: Ferran\r\nSegona linia")
+
+      expect(image.reload.credits).to eq "Foto: Ferran\nSegona linia"
+    end
+
+    it "normalises them in every locale, not only the current one" do
+      image = create(:image)
+
+      I18n.with_locale(:en) { image.update!(credits: "Photo\r\nSecond line") }
+
+      expect(I18n.with_locale(:en) { image.reload.credits }).to eq "Photo\nSecond line"
+    end
+
+    it "still accepts no credits at all" do
+      image = create(:image)
+
+      image.update!(credits: nil)
+
+      expect(image.reload.credits).to be_nil
     end
   end
 end

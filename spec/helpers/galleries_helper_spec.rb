@@ -52,12 +52,14 @@ RSpec.describe GalleriesHelper do
       expect(helper.gallery_images(create(:action_work))).to be_empty
     end
 
-    # The captions come from `credits`, a Mobility rich text translation: one
-    # query per image without this.
+    # The captions come from `credits`, a Mobility *plain* text translation: one
+    # query per image without this. Mobility reads plain attributes through the
+    # plain_text_translations association, so eager loading the rich text one
+    # would load the same table and still leave the read to fire its own query.
     it "eager loads the credits" do
       work = create(:action_work, images: [build(:image)])
 
-      expect(helper.gallery_images(work).first.association(:rich_text_translations))
+      expect(helper.gallery_images(work).first.association(:plain_text_translations))
         .to be_loaded
     end
   end

@@ -348,9 +348,10 @@ html:has(.gallery-lightbox[open]) {
   font-size: .875rem;
   color: colors.$dark_grey;
 
-  p {
-    margin: 0;
-  }
+  // Credits are plain text, and the poems among them are written as several
+  // lines. pre-line keeps those line breaks while still collapsing the
+  // indentation the template puts around the value.
+  white-space: pre-line;
 }
 
 .gallery-video {

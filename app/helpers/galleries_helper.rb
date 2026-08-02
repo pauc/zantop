@@ -18,6 +18,6 @@ module GalleriesHelper
   # but a relation would still answer `first` with its own `LIMIT 1` query
   # while `drop(1)` worked on a second, separately fetched result set.
   def gallery_images(work)
-    work.images.includes(:rich_text_translations).to_a
+    work.images.includes(:plain_text_translations).to_a
   end
 end

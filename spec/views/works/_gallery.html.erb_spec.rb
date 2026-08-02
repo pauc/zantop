@@ -169,5 +169,27 @@ RSpec.describe "works/_gallery", type: :view do
 
       expect(rendered.scan("gallery-caption").size).to eq 1
     end
+
+    # Credits are plain text, not rich text: the caption carries the newlines
+    # through and the stylesheet renders them, rather than the editor wrapping
+    # each line in markup.
+    it "captions with the credits as text, with no markup of their own" do
+      rendered = render_gallery([image_with(credits: "Foto: Ester Xargay")])
+
+      expect(rendered).to include ">Foto: Ester Xargay<"
+    end
+
+    it "keeps the line breaks of a multi-line credit" do
+      rendered = render_gallery([image_with(credits: "Alguien camina\nsin dejar huella")])
+
+      expect(rendered).to include "Alguien camina\nsin dejar huella"
+    end
+
+    it "escapes markup typed into them rather than rendering it" do
+      rendered = render_gallery([image_with(credits: "<strong>Atadalasalas</strong>")])
+
+      expect(rendered).to include "&lt;strong&gt;Atadalasalas"
+      expect(rendered).not_to include "<strong>Atadalasalas"
+    end
   end
 end

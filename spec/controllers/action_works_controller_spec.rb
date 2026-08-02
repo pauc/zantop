@@ -268,7 +268,7 @@ RSpec.describe ActionWorksController, type: :controller do
                     "999999999999001" => { video: "https://vimeo.com/1", credits: "Mireia" }
                   })
 
-      expect(Image.last.credits.to_plain_text).to eq "Mireia"
+      expect(Image.last.credits).to eq "Mireia"
     end
 
     it "permits the section destroy flag" do

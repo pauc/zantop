@@ -1,0 +1,43 @@
+// Public styling for rendered ActionText.
+//
+// ActionText wraps every rendered rich text in <div class="trix-content">.
+// That wrapper used to be stripped by an override of the layout partial, so
+// rendered text arrived on the page with no styling hook at all and nothing
+// targeted it. The override is gone; this is what it exists for.
+//
+// Only the elements config/initializers/action_text.rb allows appear here, and
+// they are the whole list. Trix's own stylesheet also dresses .trix-content,
+// but it is an editor stylesheet and belongs to the admin bundle — nothing
+// here depends on it.
+
+.trix-content {
+  // Trix now emits <p>, matching the content migrated from the old app. A few
+  // paragraphs saved before that are still <div>; they read the same.
+  p,
+  div {
+    margin: 0.375rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  // Links in running prose are otherwise only distinguishable by colour, which
+  // is the same red the headings use.
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+}

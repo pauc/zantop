@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 RSpec.describe WorksHelper do
+  # The inner .trix-content is ActionText's own wrapper, and the hook the public
+  # stylesheet hangs the rich text typography off. An override of the ActionText
+  # layout used to strip it, leaving rendered text with nothing to style it —
+  # see "Rich text" in CLAUDE.md.
+  def described_as(text)
+    %(<div class='work-description'><div class="trix-content">\n  #{text}\n</div>\n</div>)
+  end
+
   describe "#default_image_for_works" do
     it "renders the placeholder image" do
       expect(helper.default_image_for_works).to include "mz-comodin"
@@ -78,8 +86,7 @@ RSpec.describe WorksHelper do
       work = create(:action_work)
       work.update!(description: "La descripció")
 
-      expect(helper.print_work_description(work))
-        .to eq "<div class='work-description'>La descripció\n</div>"
+      expect(helper.print_work_description(work)).to eq described_as("La descripció")
     end
 
     it "is nil when the description is blank" do
@@ -120,8 +127,7 @@ RSpec.describe WorksHelper do
       work = create(:action_work)
       work.update!(description: "Curta")
 
-      expect(helper.print_work_truncated_description(work))
-        .to eq "<div class='work-description'>Curta\n</div>"
+      expect(helper.print_work_truncated_description(work)).to eq described_as("Curta")
     end
 
     it "is nil when the description is blank" do

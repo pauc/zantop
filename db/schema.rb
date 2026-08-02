@@ -10,40 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2026_08_01_140015) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_01_234918) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
-    t.string "name", null: false
     t.text "body"
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "locale", null: false
+    t.string "name", null: false
+    t.bigint "record_id", null: false
+    t.string "record_type", null: false
+    t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name", "locale"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.bigint "record_id", null: false
+    t.string "record_type", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
+    t.string "content_type"
     t.datetime "created_at", null: false
+    t.string "filename", null: false
+    t.string "key", null: false
+    t.text "metadata"
+    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -54,30 +54,30 @@ ActiveRecord::Schema[7.1].define(version: 2026_08_01_140015) do
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+    t.datetime "created_at", precision: nil
+    t.string "scope"
     t.string "slug", null: false
     t.bigint "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
-    t.datetime "created_at", precision: nil
-    t.string "scope"
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
   create_table "image_translations", id: :serial, force: :cascade do |t|
+    t.datetime "created_at", precision: nil, null: false
+    t.text "credits"
     t.bigint "image_id"
     t.string "locale", limit: 255
-    t.text "credits"
-    t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["image_id"], name: "index_image_translations_on_image_id"
     t.index ["locale"], name: "index_image_translations_on_locale"
   end
 
   create_table "images", id: :serial, force: :cascade do |t|
+    t.datetime "created_at", precision: nil, null: false
     t.string "deprecated_image", limit: 255
     t.integer "position"
-    t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "video", limit: 255
     t.bigint "work_id", null: false
@@ -85,11 +85,11 @@ ActiveRecord::Schema[7.1].define(version: 2026_08_01_140015) do
   end
 
   create_table "page_translations", id: :serial, force: :cascade do |t|
-    t.bigint "page_id"
-    t.string "locale", limit: 255
-    t.string "title", limit: 255
     t.text "body"
     t.datetime "created_at", precision: nil, null: false
+    t.string "locale", limit: 255
+    t.bigint "page_id"
+    t.string "title", limit: 255
     t.datetime "updated_at", precision: nil, null: false
     t.index ["locale"], name: "index_page_translations_on_locale"
     t.index ["page_id"], name: "index_page_translations_on_page_id"
@@ -101,37 +101,37 @@ ActiveRecord::Schema[7.1].define(version: 2026_08_01_140015) do
   end
 
   create_table "section_translations", id: :serial, force: :cascade do |t|
-    t.bigint "section_id"
-    t.string "locale", limit: 255
-    t.string "title", limit: 255
     t.text "body"
     t.datetime "created_at", precision: nil, null: false
+    t.string "locale", limit: 255
+    t.bigint "section_id"
+    t.string "title", limit: 255
     t.datetime "updated_at", precision: nil, null: false
     t.index ["locale"], name: "index_section_translations_on_locale"
     t.index ["section_id"], name: "index_section_translations_on_section_id"
   end
 
   create_table "sections", id: :serial, force: :cascade do |t|
-    t.integer "position"
     t.datetime "created_at", precision: nil, null: false
+    t.integer "position"
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "work_id", null: false
     t.index ["work_id"], name: "index_sections_on_work_id"
   end
 
   create_table "tag_translations", id: :serial, force: :cascade do |t|
-    t.bigint "tag_id"
+    t.datetime "created_at", precision: nil, null: false
     t.string "locale", limit: 255
     t.string "name", limit: 255
-    t.datetime "created_at", precision: nil, null: false
+    t.bigint "tag_id"
     t.datetime "updated_at", precision: nil, null: false
     t.index ["locale"], name: "index_tag_translations_on_locale"
     t.index ["tag_id"], name: "index_tag_translations_on_tag_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
-    t.bigint "tag_id", null: false
     t.datetime "created_at", precision: nil, null: false
+    t.bigint "tag_id", null: false
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "work_id", null: false
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
@@ -140,52 +140,52 @@ ActiveRecord::Schema[7.1].define(version: 2026_08_01_140015) do
 
   create_table "tags", id: :serial, force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.string "slug_ca", limit: 255
     t.string "slug_en", limit: 255
     t.string "slug_es", limit: 255
-    t.string "slug_ca", limit: 255
     t.integer "taggings_count", default: 0
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["slug_ca"], name: "index_tags_on_slug_ca"
     t.index ["slug_en"], name: "index_tags_on_slug_en"
     t.index ["slug_es"], name: "index_tags_on_slug_es"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 255
-    t.string "email", limit: 255
     t.boolean "admin", default: false
-    t.string "password_digest", limit: 255
     t.datetime "created_at", precision: nil, null: false
+    t.string "email", limit: 255
+    t.string "name", limit: 255
+    t.string "password_digest", limit: 255
     t.datetime "updated_at", precision: nil, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   create_table "work_translations", id: :serial, force: :cascade do |t|
-    t.bigint "work_id"
-    t.string "locale", limit: 255
-    t.string "title", limit: 255
-    t.text "description"
-    t.string "techniques", limit: 255
-    t.string "place", limit: 255
     t.datetime "created_at", precision: nil, null: false
+    t.text "description"
+    t.string "locale", limit: 255
+    t.string "place", limit: 255
+    t.string "techniques", limit: 255
+    t.string "title", limit: 255
     t.datetime "updated_at", precision: nil, null: false
+    t.bigint "work_id"
     t.index ["locale"], name: "index_work_translations_on_locale"
     t.index ["work_id"], name: "index_work_translations_on_work_id"
   end
 
   create_table "works", id: :serial, force: :cascade do |t|
+    t.datetime "created_at", precision: nil, null: false
+    t.string "dimensions", limit: 255
+    t.integer "images_count", default: 0
+    t.integer "position"
+    t.boolean "published", default: false
+    t.date "realization_date"
+    t.string "slug_ca", limit: 255
     t.string "slug_en", limit: 255
     t.string "slug_es", limit: 255
-    t.string "slug_ca", limit: 255
-    t.date "realization_date"
-    t.string "dimensions", limit: 255
-    t.integer "position"
     t.string "type", limit: 255
-    t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
-    t.boolean "published", default: false
-    t.integer "images_count", default: 0
     t.index ["slug_ca"], name: "index_works_on_slug_ca", unique: true
     t.index ["slug_en"], name: "index_works_on_slug_en", unique: true
     t.index ["slug_es"], name: "index_works_on_slug_es", unique: true

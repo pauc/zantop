@@ -1,3 +1,6 @@
+// Public bundle, loaded for every visitor. Anything only a signed-in user can
+// see belongs in admin.scss.
+
 @use "normalize.css/normalize";
 @use "colors";
 @use "general";
@@ -5,9 +8,9 @@
 @use "front";
 @use "works";
 @use "gallery";
+@use "richtext";
 @use "forms";
+@use "buttons";
 @use "footer";
 @use "fonts";
-@use "admin";
-@use "actiontext";
 @use "responsive";

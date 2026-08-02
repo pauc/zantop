@@ -44,6 +44,8 @@ RSpec/DescribeClass:
   Exclude:
     # Checks the locale files against each other, not any one class
     - spec/i18n_spec.rb
+    # Checks the ActionText sanitizing configuration, not any one class
+    - spec/rich_text_spec.rb
 
 RSpec/ExampleLength:
   Enabled: false

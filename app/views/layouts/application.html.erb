@@ -3,6 +3,7 @@
   <head>
     <title><%= yield :title %>ZANTOP</title>
     <%= stylesheet_link_tag "application", media: "all" %>
+    <%= stylesheet_link_tag "admin", media: "all" if current_user? %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%# Rails serves public/ statically but links nothing from it: only %>

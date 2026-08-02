@@ -14,9 +14,7 @@
                           alt: "" %>
           </button>
         <% end %>
-        <figcaption class="gallery-caption">
-          <%= image.credits if image.credits.present? %>
-        </figcaption>
+        <figcaption class="gallery-caption"><%= image.credits %></figcaption>
       </figure>
     <% end %>
   </div>

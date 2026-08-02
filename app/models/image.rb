@@ -3,7 +3,11 @@
 class Image < ApplicationRecord
   include HasTranslations
 
-  translates :credits
+  # Plain, not rich: credits are a photo credit or a few lines of a poem shown
+  # in a <figcaption>. They need literal line breaks and nothing else, and a
+  # work with twenty images would otherwise build twenty Trix editors to collect
+  # them. See "Rich text" in CLAUDE.md.
+  translates :credits, plain: true
 
   belongs_to :work
 
@@ -15,6 +19,14 @@ class Image < ApplicationRecord
     attachable.variant :card,   resize_to_fit:  [500, 500]
     attachable.variant :large,  resize_to_fit:  [1000, 1000]
     attachable.variant :full,   resize_to_fit:  [2000, 2000]
+  end
+
+  # Browsers submit a textarea's value with CRLF line endings, so credits typed
+  # into the form would otherwise be stored with a line ending the rows migrated
+  # out of rich text do not have. Trix used to hide this by normalising the
+  # newlines itself; a plain textarea does not.
+  def credits=(value)
+    super(value.is_a?(String) ? value.gsub(/\r\n?/, "\n") : value)
   end
 
   def type

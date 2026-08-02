@@ -1,0 +1,109 @@
+@use "colors";
+
+.simple_form {
+  textarea {
+    width: 100%;
+  }
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  border: 4px double black;
+}
+
+legend {
+  padding: .5rem;
+}
+
+form .fields {
+  position: relative;
+  background: #aaa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .333rem;
+  overflow: hidden;
+
+  .sorting-controls {
+    float: right;
+  }
+
+  .push-right {
+    float: right;
+  }
+}
+
+// Image#credits is a plain textarea rather than a Trix editor: it holds a photo
+// credit or a few lines of a poem, and needs literal line breaks and nothing
+// else. Sized for that instead of inheriting the full-height .simple_form rule.
+.credits-field textarea {
+  min-height: 4.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.35;
+  resize: vertical;
+}
+
+.sorting-hint {
+  color: colors.$grey;
+  font-style: italic;
+}
+
+.sortable-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &.saved .sortable-item {
+    animation: sortable-saved .8s ease-out;
+  }
+
+  &.save-failed .sortable-item {
+    border-color: colors.$error;
+  }
+}
+
+.sortable-item {
+  display: flex;
+  align-items: center;
+  column-gap: .75rem;
+  margin-bottom: .25rem;
+  padding: .5rem .75rem;
+  border: 1px solid transparent;
+  border-radius: .333rem;
+  background: colors.$clear_grey;
+  cursor: grab;
+
+  // The dragged row stays in place as a gap, so the list keeps its height
+  // while the others shuffle around it.
+  &.dragging {
+    opacity: .3;
+    cursor: grabbing;
+  }
+
+  &.unpublished .work-title {
+    color: colors.$grey;
+    font-style: italic;
+  }
+
+  .handle {
+    color: colors.$grey;
+    letter-spacing: -.2rem;
+  }
+
+  .work-title {
+    font-weight: bold;
+  }
+
+  .unpublished-note {
+    color: colors.$warning;
+  }
+
+  .push-right {
+    margin-left: auto;
+  }
+}
+
+@keyframes sortable-saved {
+  from { background: colors.$green; }
+  to   { background: colors.$clear_grey; }
+}
