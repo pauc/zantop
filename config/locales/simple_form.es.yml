@@ -30,6 +30,13 @@ es:
         name_en: "Inglés:"
         name_es: "Castellano:"
         year: "Año:"
+        tags: "Categorías:"
+
+      # `video` and `credits` belong to Image alone, so they are scoped to it
+      # rather than added to the defaults every form reads through.
+      image:
+        video: "Vídeo:"
+        credits: "Créditos:"
 
       contact_message:
         from_email: "Tu correo:"
