@@ -19,7 +19,7 @@ RSpec.describe ActionWorksController, type: :controller do
 
       get :index, params: { locale: "en" }
 
-      expect(assigns(:published_works)).to include work
+      expect(assigns(:works)).to include work
     end
 
     it "leaves out visual works" do
@@ -27,7 +27,7 @@ RSpec.describe ActionWorksController, type: :controller do
 
       get :index, params: { locale: "en" }
 
-      expect(assigns(:published_works)).not_to include work
+      expect(assigns(:works)).not_to include work
     end
 
     it "preloads the translations" do
@@ -35,7 +35,24 @@ RSpec.describe ActionWorksController, type: :controller do
 
       get :index, params: { locale: "en" }
 
-      expect(assigns(:published_works).first.association(:plain_text_translations)).to be_loaded
+      expect(assigns(:works).first.association(:plain_text_translations)).to be_loaded
+    end
+
+    it "leaves out unpublished works" do
+      work = create(:action_work, published: false)
+
+      get :index, params: { locale: "en" }
+
+      expect(assigns(:works)).not_to include work
+    end
+
+    it "lists unpublished works for a signed in user" do
+      sign_in
+      work = create(:action_work, published: false)
+
+      get :index, params: { locale: "en" }
+
+      expect(assigns(:works)).to include work
     end
   end
 
@@ -93,6 +110,31 @@ RSpec.describe ActionWorksController, type: :controller do
     it "raises when the work does not exist" do
       expect { get :show, params: { locale: "ca", id: "no-such-work" } }
         .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    # Raising, rather than redirecting: a redirect would tell an anonymous
+    # visitor that the work is there and only being kept from them.
+    it "raises for an unpublished work" do
+      work = create(:action_work, published: false)
+
+      expect { get :show, params: { locale: "ca", id: work.to_param } }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "raises for an unpublished work asked for by its id" do
+      work = create(:action_work, published: false)
+
+      expect { get :show, params: { locale: "ca", id: work.id } }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "serves an unpublished work to a signed in user" do
+      sign_in
+      work = create(:action_work, published: false)
+
+      get :show, params: { locale: "ca", id: work.to_param }
+
+      expect(assigns(:work)).to eq work
     end
   end
 

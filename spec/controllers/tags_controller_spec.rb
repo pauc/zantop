@@ -24,7 +24,7 @@ RSpec.describe TagsController, type: :controller do
 
       get :show, params: { locale: "ca", id: tag.to_param }
 
-      expect(assigns(:published_works)).to eq [work]
+      expect(assigns(:works)).to eq [work]
     end
 
     it "leaves out unpublished works" do
@@ -33,7 +33,17 @@ RSpec.describe TagsController, type: :controller do
 
       get :show, params: { locale: "ca", id: tag.to_param }
 
-      expect(assigns(:published_works)).to be_empty
+      expect(assigns(:works)).to be_empty
+    end
+
+    it "lists unpublished works for a signed in user" do
+      sign_in
+      tag = create(:tag)
+      work = create(:action_work, tags: [tag], published: false)
+
+      get :show, params: { locale: "ca", id: tag.to_param }
+
+      expect(assigns(:works)).to eq [work]
     end
 
     it "leaves out works carrying another tag" do
@@ -42,7 +52,7 @@ RSpec.describe TagsController, type: :controller do
 
       get :show, params: { locale: "ca", id: tag.to_param }
 
-      expect(assigns(:published_works)).to be_empty
+      expect(assigns(:works)).to be_empty
     end
 
     it "preloads the translations of the works" do
@@ -51,7 +61,7 @@ RSpec.describe TagsController, type: :controller do
 
       get :show, params: { locale: "ca", id: tag.to_param }
 
-      expect(assigns(:published_works).first.association(:plain_text_translations)).to be_loaded
+      expect(assigns(:works).first.association(:plain_text_translations)).to be_loaded
     end
 
     it "raises when the tag does not exist" do

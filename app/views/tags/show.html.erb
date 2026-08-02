@@ -1,7 +1,10 @@
 <%= page_title @category.name.capitalize %>
 
-<% cache [I18n.locale, :show, @category] do %>
+<%# The cache key carries who is looking, because the list inside it does: the
+    owner is served her unpublished works here, and without this the copy she
+    leaves behind would be served to the next anonymous visitor. %>
+<% cache [I18n.locale, :show, @category, current_user?] do %>
   <div class="works-list">
-    <%= render partial: 'works/work_preview', collection: @published_works, as: :work %>
+    <%= render partial: 'works/work_preview', collection: @works, as: :work %>
   </div>
 <% end %>

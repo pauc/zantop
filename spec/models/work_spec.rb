@@ -15,6 +15,87 @@ RSpec.describe Work do
     end
   end
 
+  describe ".visible" do
+    it "returns published works to an anonymous visitor" do
+      work = create(:action_work, published: true)
+
+      expect(described_class.visible).to include work
+    end
+
+    it "leaves unpublished works out for an anonymous visitor" do
+      work = create(:action_work, published: false)
+
+      expect(described_class.visible).not_to include work
+    end
+
+    it "returns unpublished works to a signed in user" do
+      Current.user = create(:user)
+      work = create(:action_work, published: false)
+
+      expect(described_class.visible).to include work
+    end
+
+    it "returns published works to a signed in user too" do
+      Current.user = create(:user)
+      work = create(:action_work, published: true)
+
+      expect(described_class.visible).to include work
+    end
+
+    it "leaves unpublished works out where no request set a user" do
+      create(:action_work, published: false)
+
+      expect(Current.user).to be_nil
+      expect(described_class.visible).to be_empty
+    end
+  end
+
+  describe ".visible_find" do
+    it "finds a published work by its slug" do
+      work = create(:action_work)
+
+      expect(described_class.visible_find(work.to_param)).to eq work
+    end
+
+    it "finds a published work by its id" do
+      work = create(:action_work)
+
+      expect(described_class.visible_find(work.id)).to eq work
+    end
+
+    it "finds a published work by a slug in another locale" do
+      work = I18n.with_locale(:en) { create(:action_work, title: "The English title") }
+
+      expect(described_class.visible_find(work.slug_en)).to eq work
+    end
+
+    it "raises for an unpublished work when nobody is signed in" do
+      work = create(:action_work, published: false)
+
+      expect { described_class.visible_find(work.to_param) }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "raises for an unpublished work asked for by its id" do
+      work = create(:action_work, published: false)
+
+      expect { described_class.visible_find(work.id) }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "finds an unpublished work for a signed in user" do
+      Current.user = create(:user)
+      work = create(:action_work, published: false)
+
+      expect(described_class.visible_find(work.to_param)).to eq work
+    end
+
+    it "raises when no work has that slug" do
+      expect { described_class.visible_find("no-such-work") }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+
   describe ".ordered" do
     it "returns the highest position first" do
       oldest = create(:action_work, position: 1)
@@ -209,6 +290,17 @@ RSpec.describe Work do
     end
 
     it "leaves out unpublished works" do
+      work = create(:action_work, tags: [tag])
+      other = create(:action_work, tags: [tag], published: false)
+
+      expect(work.related).not_to include other
+    end
+
+    # The sidebar this fills is cached for everybody at once, so it stays
+    # published-only even for the owner rather than leaving her drafts in a
+    # fragment the next anonymous visitor is served.
+    it "leaves out unpublished works for a signed in user too" do
+      Current.user = create(:user)
       work = create(:action_work, tags: [tag])
       other = create(:action_work, tags: [tag], published: false)
 

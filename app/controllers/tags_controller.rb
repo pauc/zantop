@@ -3,19 +3,17 @@
 class TagsController < ApplicationController
   include Authorization
 
-  # include Finder
-
   allow_anonymous :show
 
   def show
     @category = Tag.find(params.expect(:id))
 
-    @published_works = @category
-                       .works
-                       .published
-                       .ordered
-                       .includes(:plain_text_translations,
-                                 :rich_text_translations)
+    @works = @category
+             .works
+             .visible
+             .ordered
+             .includes(:plain_text_translations,
+                       :rich_text_translations)
   end
 
   def update

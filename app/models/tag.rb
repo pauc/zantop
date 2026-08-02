@@ -17,6 +17,10 @@ class Tag < ApplicationRecord
 
   before_save :name_to_underscore
 
+  # `published` and not `visible`: this is the navigation every page carries,
+  # and a tag worth navigating to is one with something published under it. The
+  # owner reaches a tag that only holds drafts from `tags#admin`, and the works
+  # themselves from `works#admin`.
   scope :enabled, -> { distinct.joins(:works).merge(Work.published) }
 
   def untranslated?

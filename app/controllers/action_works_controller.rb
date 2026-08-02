@@ -3,22 +3,19 @@
 class ActionWorksController < ApplicationController
   include Authorization
 
-  # include Sortable
-  # include Finder
-  # include CreateWithDefaultLocale
-
   allow_anonymous :index, :show
 
   def index
-    @published_works = ActionWork.ordered
-                                 .includes(:plain_text_translations,
-                                           :rich_text_translations)
+    @works = ActionWork.visible
+                       .ordered
+                       .includes(:plain_text_translations,
+                                 :rich_text_translations)
 
     render "works/works_list"
   end
 
   def show
-    @work = ActionWork.find(params.expect(:id))
+    @work = ActionWork.visible_find(params.expect(:id))
     @related_works = @work.related
 
     flash.now[:alert] = t("untranslated_content") unless @work.translated_into?(I18n.locale)

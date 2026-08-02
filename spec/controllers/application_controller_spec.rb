@@ -122,12 +122,52 @@ RSpec.describe ApplicationController, type: :controller do
       expect(controller.send(:current_user)).to eq user
     end
 
-    it "raises when the session points at a user that no longer exists" do
+    # `set_current_user` asks on the way into every request, including the
+    # public ones, so a session naming a deleted user has to read as anonymous
+    # rather than raise — otherwise a stale cookie 500s the whole site.
+    it "reads as signed out when the session points at a user that no longer exists" do
       session[:user_id] = 0
 
       get :index, params: { locale: "ca" }
 
-      expect { controller.send(:current_user) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect(response).to have_http_status(:ok)
+      expect(controller.send(:current_user)).to be_nil
+      expect(controller.send(:current_user?)).to be false
+    end
+  end
+
+  describe "#set_current_user" do
+    # `Current` is reset on the way out of the request, so the only place it
+    # can be read back is from inside the action.
+    controller do
+      def index
+        render plain: Current.user&.email.to_s
+      end
+    end
+
+    it "leaves the models with nobody for an anonymous visitor" do
+      get :index, params: { locale: "ca" }
+
+      expect(response.body).to eq ""
+    end
+
+    it "hands the signed in user to the models" do
+      user = create(:user)
+      session[:user_id] = user.id
+
+      get :index, params: { locale: "ca" }
+
+      expect(response.body).to eq user.email
+    end
+
+    # Everything the later filters query is scoped by who is asking, so the
+    # answer has to be in place before the first of them runs.
+    it "runs before the filters that query" do
+      filters = described_class._process_action_callbacks
+                               .select { |callback| callback.kind == :before }
+                               .map(&:filter)
+
+      expect(filters.index(:set_current_user)).to be < filters.index(:set_tags)
     end
   end
 

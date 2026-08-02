@@ -30,6 +30,15 @@ RSpec.describe DashboardsController, type: :controller do
       expect(assigns(:works)).not_to include work
     end
 
+    it "lists unpublished works for a signed in user" do
+      sign_in
+      work = create(:action_work, published: false)
+
+      get :front, params: { locale: "en" }
+
+      expect(assigns(:works)).to include work
+    end
+
     it "shows twelve works per page" do
       create_list(:action_work, 13, published: true)
 
@@ -135,6 +144,15 @@ RSpec.describe DashboardsController, type: :controller do
       get :more_works, params: { locale: "en", page: 1 }
 
       expect(response.body).not_to include work.title
+    end
+
+    it "renders unpublished works for a signed in user" do
+      sign_in
+      work = create(:action_work, published: false, title: "Unpublished work")
+
+      get :more_works, params: { locale: "en", page: 1 }
+
+      expect(response.body).to include work.title
     end
 
     it "requires a page" do
