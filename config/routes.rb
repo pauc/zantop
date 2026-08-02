@@ -37,8 +37,7 @@ Rails.application.routes.draw do
       get "admin", on: :collection
     end
 
-    get "contact", to: "contact_messages#new"
-    resources :contact_messages, only: [:create]
+    get "contact", to: "dashboards#contact"
 
     get "about", to: "dashboards#about"
 

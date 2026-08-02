@@ -111,6 +111,48 @@ RSpec.describe DashboardsController, type: :controller do
     end
   end
 
+  describe "GET contact" do
+    it "renders" do
+      create(:page, :contact)
+
+      get :contact, params: { locale: "en" }
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "assigns the contact page the address is introduced by" do
+      page = create(:page, :contact)
+
+      get :contact, params: { locale: "en" }
+
+      expect(assigns(:page)).to eq page
+    end
+
+    it "leaves the about page alone" do
+      about = create(:page)
+      create(:page, :contact)
+
+      get :contact, params: { locale: "en" }
+
+      expect(assigns(:page)).not_to eq about
+    end
+
+    it "raises when the contact page is missing" do
+      expect { get :contact, params: { locale: "en" } }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    # Unlike #about: the line naming the mailbox is a translation, so the page
+    # still says what it is for even when the intro falls back to Catalan.
+    it "stays quiet about a page that is not translated into the requested locale" do
+      I18n.with_locale(:ca) { create(:page, :contact) }
+
+      get :contact, params: { locale: "en" }
+
+      expect(flash.now[:alert]).to be_nil
+    end
+  end
+
   describe "GET more_works" do
     render_views
 

@@ -70,7 +70,6 @@ module ApplicationHelper
   private
 
   def sidebar?
-    (!front? && %w[new edit admin].exclude?(controller.action_name)) ||
-      controller.controller_name == "contact_messages"
+    !front? && %w[new edit admin].exclude?(controller.action_name)
   end
 end

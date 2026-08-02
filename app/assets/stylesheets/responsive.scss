@@ -90,19 +90,5 @@
         margin-top: .75rem;
       }
     }
-
-    // The 40%/65% widths and their 12em/16em floors left the fields stranded
-    // mid-box and the submit an awkward half-width tap target. Doubled class to
-    // out-specify the base rule in forms.scss.
-    &.contact_messages.new,
-    &.contact_messages.create {
-      form {
-        input,
-        textarea {
-          width: 100%;
-          min-width: 0;
-        }
-      }
-    }
   }
 }

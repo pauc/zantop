@@ -38,13 +38,6 @@ es:
         video: "Vídeo:"
         credits: "Créditos:"
 
-      contact_message:
-        from_email: "Tu correo:"
-        from_name: "Tu nombre:"
-        subject: "Asunto:"
-        text: "Texto:"
-        send: Enviar
-
     hints:
       user:
         edit:

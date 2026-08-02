@@ -96,9 +96,18 @@ RSpec.describe "Sitemap", type: :request do
       .to eq dates_for("http://www.example.com/ca/art-visual/petra-perta")
   end
 
-  # The contact form is built from the template and the locale files, so there
-  # is no date to give and the element is simply absent. A sitemap is allowed
-  # to be uneven that way; what it may not do is publish a made-up date.
+  it "dates the contact page by the row an admin edits under that name" do
+    page = create(:page, :contact)
+
+    get "/sitemap.xml"
+
+    expect(dates_for("http://www.example.com/ca/contacte"))
+      .to eq [page.reload.updated_at.utc.iso8601]
+  end
+
+  # Nothing creates the contact `Page` here, so there is no date to give and
+  # the element is simply absent. A sitemap is allowed to be uneven that way;
+  # what it may not do is publish a made-up date.
   it "leaves the element out where the page has no date" do
     get "/sitemap.xml"
 

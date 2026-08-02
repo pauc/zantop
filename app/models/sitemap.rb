@@ -70,28 +70,30 @@ class Sitemap
   # the front page's date every time a draft nobody can see is touched. Neither
   # catches a deletion, which leaves no row to ask.
   #
-  # Contact is the one page with no date at all: `contact_messages#new` renders
-  # a form built from the template and the locale files, and reads no record —
-  # not even the `Page` row the admin edits under that name. Nothing here would
-  # be answering the question, so the entry carries no lastmod.
+  # About and contact are each an editable `Page` row and nothing else — the
+  # one line the contact template adds of its own is a translation, which moves
+  # when the app is deployed rather than when the page is edited. So the row's
+  # own `updated_at` is the whole of either page's date.
   def route_entries
     [Entry.new(controller: "dashboards", action: "front", lastmod: newest_work),
      Entry.new(controller: "action_works", action: "index", lastmod: newest_work(ActionWork)),
      Entry.new(controller: "visual_works", action: "index", lastmod: newest_work(VisualWork)),
-     Entry.new(controller: "dashboards", action: "about", lastmod: about_lastmod),
-     Entry.new(controller: "contact_messages", action: "new")]
+     Entry.new(controller: "dashboards", action: "about",
+               lastmod: page_lastmod(Page::ABOUT_ID)),
+     Entry.new(controller: "dashboards", action: "contact",
+               lastmod: page_lastmod(Page::CONTACT_ID))]
   end
 
   def newest_work(scope = Work)
     scope.published.maximum(:updated_at)
   end
 
-  # `find_by` rather than `Page.about`, which raises. The About page's own
-  # action does raise, and should: without the row there is no page to render.
-  # This is a document a crawler fetches, and it can go on naming forty other
-  # URLs without one of them carrying a date.
-  def about_lastmod
-    Page.find_by(id: Page::ABOUT_ID)&.updated_at
+  # `find_by` rather than `Page.about`/`Page.contact`, which raise. Those pages'
+  # own actions do raise, and should: without the row there is no page to
+  # render. This is a document a crawler fetches, and it can go on naming forty
+  # other URLs without one of them carrying a date.
+  def page_lastmod(id)
+    Page.find_by(id:)&.updated_at
   end
 
   # `ordered`, so the sitemap lists the works in the order the site itself

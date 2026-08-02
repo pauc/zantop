@@ -64,6 +64,15 @@ p, li {
   margin: 0.375rem 0;
 }
 
+// The contact page's mailto is the one link on the site in running prose that
+// is not inside rendered rich text, so `.trix-content a` in richtext.scss does
+// not reach it — and it needs the same thing for the same reason: colour alone
+// is the red the headings already use.
+.mailbox a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 h1 {
   margin: 0.25em 0;
 }

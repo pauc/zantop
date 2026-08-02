@@ -94,11 +94,11 @@ RSpec.describe HeaderHelper do
       expect(links.pluck("href")).to all(start_with "/")
     end
 
-    # Pages that declare no record — the indexes, the contact form — have only
+    # Pages that declare no record — the indexes, the contact page — have only
     # a path to translate, and asking for a record's slug would be asking the
     # wrong question.
     it "translates a page that names no record" do
-      links = selector(controller: "contact_messages", action: "new")
+      links = selector(controller: "dashboards", action: "contact")
 
       expect(links.css("a[lang=es]").first["href"]).to eq "/es/contacto"
     end

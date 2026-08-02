@@ -92,8 +92,8 @@ RSpec.describe MetadataHelper do
     it "localizes a page other than the one the request is on" do
       visiting(controller: "dashboards", action: "front")
 
-      expect(helper.localized_url(:en, path_parameters: { controller: "contact_messages",
-                                                          action: "new" }))
+      expect(helper.localized_url(:en, path_parameters: { controller: "dashboards",
+                                                          action: "contact" }))
         .to eq "http://test.host/en/contact"
     end
 
@@ -127,7 +127,7 @@ RSpec.describe MetadataHelper do
     end
 
     it "is nothing on a page that names no record" do
-      visiting(controller: "contact_messages", action: "new")
+      visiting(controller: "dashboards", action: "contact")
       helper.page_metadata(description: "Escriu a Mireia Zantop.")
 
       expect(helper.page_record).to be_nil
@@ -238,7 +238,7 @@ RSpec.describe MetadataHelper do
 
   describe "#page_metadata" do
     it "takes the page's description over the site's" do
-      visiting(controller: "contact_messages", action: "new")
+      visiting(controller: "dashboards", action: "contact")
       helper.page_metadata(description: "Escriu a Mireia Zantop.")
 
       expect(head).to include %(<meta name="description" content="Escriu a Mireia Zantop.">)

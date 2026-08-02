@@ -1,0 +1,14 @@
+<%= page_title @page.title %>
+<%# Unlike the about page, which has nothing but its body to describe itself
+    with, this one says what it is for whatever the editable intro happens to
+    say — so the description stays a translation. %>
+<% page_metadata description: t("meta.descriptions.contact") %>
+
+<%= @page.body %>
+
+<%# A translation rather than page content, for the same reason: the address is
+    the whole of what this page is for, and an admin rewriting the intro above
+    must not be able to leave the page without one. %>
+<p class="mailbox">
+  <%= t(".mailbox_html", address: mail_to("hola@mireiazantop.com")) %>
+</p>

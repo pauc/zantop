@@ -44,9 +44,10 @@ ca:
       tag: Treballs de Mireia Zantop dins la categoria %{category}.
       work: "%{work}, un treball de Mireia Zantop."
 
-  contact_messages:
-    create:
-      confirmation: "Missatge enviat correctament. Gràcies!!"
+  dashboards:
+    contact:
+      mailbox_html: Em pots escriure a %{address}
+
   menu:
     about: Bio
     action_art: "Art d'acció"

@@ -1,35 +1,8 @@
 @use "colors";
 
-/* Estils per al formulari de contacte */
-.contact_messages.new, .contact_messages.create {
-  form {
-    margin-top: 1em;
-
-    input, textarea {
-      font-size: 100%;
-    }
-
-    input {
-      width: 40%;
-      min-width: 12em;
-    }
-
-    textarea {
-      width: 65%;
-      min-width: 16em;
-      min-height: 9em;
-    }
-  }
-
-  .alert.alert-error {
-    background: transparent;
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border: 2px solid red;
-    border-radius: 5px;
-  }
-}
-
+// Public form chrome. The contact form is gone, so the login form is the only
+// thing this dresses on a page a visitor can reach — which is why it is in the
+// public bundle rather than admin.scss, the same call .btn gets in buttons.scss.
 form {
   background-color: colors.$clear_grey;
   padding: 0.5em;

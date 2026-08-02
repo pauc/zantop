@@ -44,9 +44,10 @@ en:
       tag: Works by Mireia Zantop in the category %{category}.
       work: "%{work}, a work by Mireia Zantop."
 
-  contact_messages:
-    create:
-      confirmation: "Message sent successfully. Thanks!!"
+  dashboards:
+    contact:
+      mailbox_html: You can contact me at %{address}
+
   menu:
     about: Bio
     action_art: Action art

@@ -20,7 +20,7 @@ RSpec.describe Sitemap do
                             { controller: "action_works",     action: "index" },
                             { controller: "visual_works",     action: "index" },
                             { controller: "dashboards",       action: "about" },
-                            { controller: "contact_messages", action: "new" }]
+                            { controller: "dashboards",       action: "contact" }]
     end
 
     it "names each work under the controller that serves its subclass" do
@@ -199,11 +199,22 @@ RSpec.describe Sitemap do
       expect(lastmod("dashboards", "about")).to be_nil
     end
 
-    # It renders a form built from the template and the locale files. Neither
-    # has a date to give, and the `Page` row the admin edits under that name is
-    # not read by the action.
-    it "carries no date for the contact form" do
-      expect(lastmod("contact_messages", "new")).to be_nil
+    it "dates the contact page by the row it renders" do
+      page = create(:page, :contact)
+
+      expect(lastmod("dashboards", "contact")).to eq stored(page)
+    end
+
+    # Same as the About page, and for the same reason.
+    it "carries no date for the contact page when its row is not there" do
+      expect(lastmod("dashboards", "contact")).to be_nil
+    end
+
+    # The two pages are separate rows, so neither answers for the other.
+    it "does not date the contact page by the About row" do
+      create(:page)
+
+      expect(lastmod("dashboards", "contact")).to be_nil
     end
 
     it "dates a tag by the newest work under it" do

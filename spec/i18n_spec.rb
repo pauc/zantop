@@ -59,14 +59,13 @@ RSpec.describe "locale files" do
       untranslated_content
       restricted_access
       sessions.create.invalid_login
-      contact_messages.create.confirmation
+      dashboards.contact.mailbox_html
       works.labels.dimensions
       works.labels.techniques
       meta.descriptions.visual_works
       meta.descriptions.action_works
       simple_form.yes
       simple_form.no
-      simple_form.labels.contact_message.send
       activerecord.models.tag.one
       simple_form.labels.defaults.tags
       simple_form.labels.image.video
@@ -105,8 +104,7 @@ RSpec.describe "locale files" do
       path = Rails.root.join("config/locales/simple_form.#{locale}.yml")
       labels = YAML.unsafe_load_file(path).fetch(locale.to_s).fetch("simple_form").fetch("labels")
 
-      # `contact_message.send` is the submit button's value, not a field label.
-      flatten_leaves(labels).except("contact_message.send")
+      flatten_leaves(labels)
     end
 
     %i[ca es en].each do |locale|

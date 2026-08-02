@@ -58,19 +58,8 @@ env:
     # Matches the volume mount below. Without it ActiveStorage would write
     # inside the container and lose every upload on the next deploy.
     ZANTOP_STORAGE_ROOT: /data/uploads
-    # Submission port and HELO domain for the contact form's SMTP delivery.
-    # Neither is account-specific, so they are literals rather than secrets;
-    # config/environments/production.rb defaults to these same two values.
-    ZANTOP_SMTP_PORT: 587
-    ZANTOP_SMTP_DOMAIN: mireiazantop.com
   secret:
     - ZANTOP_DATABASE_PASSWORD
-    # The mail account the contact form sends through. The host is not
-    # sensitive in itself, but it names the provider and belongs with the
-    # credentials that authenticate against it rather than in a committed file.
-    - ZANTOP_SMTP_ADDRESS
-    - ZANTOP_SMTP_USER_NAME
-    - ZANTOP_SMTP_PASSWORD
     # Not RAILS_MASTER_KEY: the key for config/credentials/production.yml.enc
     # was never recoverable, and with the database credentials moved to the
     # environment secret_key_base was the only thing left inside it. Since main
