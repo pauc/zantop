@@ -56,6 +56,8 @@ RSpec.describe "locale files" do
       contact_messages.create.confirmation
       works.labels.dimensions
       works.labels.techniques
+      meta.descriptions.visual_works
+      meta.descriptions.action_works
       simple_form.yes
       simple_form.no
       simple_form.labels.contact_message.send

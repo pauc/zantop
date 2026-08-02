@@ -1,4 +1,6 @@
 <%= page_title @category.name.capitalize %>
+<% page_metadata description: t("meta.descriptions.tag", category: @category.name),
+                 record: @category %>
 
 <%# The cache key carries who is looking, because the list inside it does: the
     owner is served her unpublished works here, and without this the copy she

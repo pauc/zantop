@@ -30,6 +30,18 @@ es:
 
   view_more: Ver más
 
+  meta:
+    titles:
+      front: Arte visual y arte de acción
+
+    descriptions:
+      site: "Obra de Mireia Zantop: arte visual y arte de acción, entre la pintura, la poesía y la acción compartida."
+      visual_works: "El arte visual de Mireia Zantop: pintura, poesía visual y obra sobre papel."
+      action_works: "El arte de acción de Mireia Zantop: performance, arte efímero y proyectos participativos."
+      contact: Escribe a Mireia Zantop sobre encargos, exposiciones y colaboraciones.
+      tag: Trabajos de Mireia Zantop dentro de la categoría %{category}.
+      work: "%{work}, un trabajo de Mireia Zantop."
+
   contact_messages:
     create:
       confirmation: "Mensaje enviado correctamente. ¡¡Gracias!!"

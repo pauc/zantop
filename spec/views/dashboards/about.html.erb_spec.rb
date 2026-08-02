@@ -41,7 +41,17 @@ RSpec.describe "dashboards/about" do
 
     render
 
-    expect(view.content_for(:title)).to eq "Bio | "
+    expect(view.content_for(:title)).to eq "Bio"
+  end
+
+  # The page has no description of its own to set, so the body it does have
+  # stands in for one — stripped of the markup ActionText stores it with.
+  it "describes the page with the opening of its body" do
+    assign(:page, create(:page, body: "<p>Zigzagueja en <strong>l'u</strong></p>"))
+
+    render
+
+    expect(view.content_for(:meta_description)).to eq "Zigzagueja en l'u"
   end
 
   it "shows the title of the requested locale" do

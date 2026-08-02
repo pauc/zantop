@@ -72,12 +72,15 @@ class Work < ApplicationRecord
     end
   end
 
-  def first_image
+  # The variant is a parameter because the two callers want different sizes of
+  # the same picture: a preview thumbnail in a list, and the largest one there
+  # is for the card a shared link previews with.
+  def first_image(variant = :medium)
     images
       .with_attached_image
       .find { |image| image.image.attached? }
       &.image
-      &.variant(:medium)
+      &.variant(variant)
   end
 
   # Deliberately `published` and not `visible`: the sidebar this fills is

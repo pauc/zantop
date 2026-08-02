@@ -24,6 +24,11 @@
   <% end %>
 <% end %>
 <%= page_title @work.title %>
+<% page_metadata description: @work.description.presence ||
+                              t("meta.descriptions.work", work: @work.title),
+                 image: @work.first_image(:large),
+                 record: @work,
+                 type: "article" %>
 
 <% cache [I18n.locale, :show, @work] do %>
   <%= print_work_place @work%>

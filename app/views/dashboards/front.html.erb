@@ -1,3 +1,7 @@
+<%# The front page's own heading is the logo the layout draws, so it sets the %>
+<%# document title without a matching h1 and takes the site description. %>
+<% title t("meta.titles.front") %>
+
 <div id='works'>
   <%= render "works", works: @works %>
 </div>

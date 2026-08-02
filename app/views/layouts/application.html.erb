@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
   <head>
-    <title><%= yield :title %>ZANTOP</title>
+    <meta charset="utf-8">
+    <title><%= document_title %></title>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= stylesheet_link_tag "admin", media: "all" if current_user? %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= metadata_tags %>
 
     <%# Rails serves public/ statically but links nothing from it: only %>
     <%# /favicon.ico is found without a tag, so icon.svg and the touch icon %>

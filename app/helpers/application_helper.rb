@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  # The separator belongs to `document_title`, which is the only thing that
+  # knows whether there is a site name to separate this from.
   def title(title = nil)
-    title += " | " unless title.nil?
     content_for(:title) { title }
   end
 
