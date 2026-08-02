@@ -136,6 +136,25 @@ RSpec.describe ActionWorksController, type: :controller do
 
       expect(assigns(:work)).to eq work
     end
+
+    # The visibility check has to come first for the same reason: answering 301
+    # where an unknown slug answers 404 is itself the news that the work exists.
+    it "raises for an unpublished work reached by another locale's slug" do
+      work = create(:action_work, title: "Recorregut")
+      I18n.with_locale(:en) { work.update!(title: "Walkabout", published: false) }
+
+      expect { get :show, params: { locale: "ca", id: work.slug_en } }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it_behaves_like "a page with one address per locale",
+                    url: :action_work_url,
+                    renamed_by: :title do
+      let(:record) do
+        create(:action_work, title: "Recorregut")
+          .tap { |work| I18n.with_locale(:en) { work.update!(title: "Walkabout") } }
+      end
+    end
   end
 
   describe "GET new" do

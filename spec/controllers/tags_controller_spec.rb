@@ -68,6 +68,15 @@ RSpec.describe TagsController, type: :controller do
       expect { get :show, params: { locale: "ca", id: "no-such-tag" } }
         .to raise_error(ActiveRecord::RecordNotFound)
     end
+
+    it_behaves_like "a page with one address per locale",
+                    url: :tag_url,
+                    renamed_by: :name do
+      let(:record) do
+        create(:tag, name: "pintura")
+          .tap { |tag| I18n.with_locale(:en) { tag.update!(name: "paintings") } }
+      end
+    end
   end
 
   describe "GET admin" do

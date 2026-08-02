@@ -2,6 +2,7 @@
 
 class ActionWorksController < ApplicationController
   include Authorization
+  include CanonicalRedirect
 
   allow_anonymous :index, :show
 
@@ -16,6 +17,8 @@ class ActionWorksController < ApplicationController
 
   def show
     @work = ActionWork.visible_find(params.expect(:id))
+    return if moved_to_canonical?(@work)
+
     @related_works = @work.related
 
     flash.now[:alert] = t("untranslated_content") unless @work.translated_into?(I18n.locale)

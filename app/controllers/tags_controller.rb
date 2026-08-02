@@ -2,11 +2,13 @@
 
 class TagsController < ApplicationController
   include Authorization
+  include CanonicalRedirect
 
   allow_anonymous :show
 
   def show
     @category = Tag.find(params.expect(:id))
+    return if moved_to_canonical?(@category)
 
     @works = @category
              .works
