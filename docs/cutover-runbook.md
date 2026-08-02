@@ -11,6 +11,8 @@ rather than a restore.
 **Read [Rehearsal log](#rehearsal-log) before running any of this.** Everything
 in Phase A has been executed end to end against real production data and timed;
 Phases B–D have not, because the droplet does not exist yet.
+[Phase B0](#phase-b0--provisional-domain-rehearsal) is how to fix that before
+cutover day rather than on it.
 
 ---
 
@@ -30,6 +32,7 @@ column.
 | `DB_PASSWORD` | Postgres password for the new droplet | TODO — generate, see [Secrets](#secrets) |
 | `SECRET_KEY_BASE` | Rails message verifier key | TODO — `bin/rails secret`, see [Secrets](#secrets) |
 | DNS provider | Registrar / DNS host for `mireiazantop.com` | TODO — confirm who holds the zone |
+| `REHEARSAL_HOST` | Provisional hostname for [Phase B0](#phase-b0--provisional-domain-rehearsal) | TODO — suggest `nou.mireiazantop.com` |
 
 The legacy Postgres major version is also unknown. It matters only for
 [Phase A1](#a1--dump-the-legacy-production-database): dump with the **legacy
@@ -82,16 +85,31 @@ export KAMAL_REGISTRY_PASSWORD=...   # PAT with write:packages
 
 The cutover is gated on work outside this runbook. Check before starting:
 
-- **Todo 12** — authorization restored on every admin action. Still open. The
-  admin area is reachable without it; do not expose the new site publicly until
-  this closes.
-- **Todo 14** — the missing `WorksController`, `UsersController` and
-  `AdminController`. Still open.
-- **Todo 36** — SMTP account for the contact form. `config/environments/production.rb`
-  now has its `action_mailer.smtp_settings`, but the mailbox itself does not exist
-  and the three `ZANTOP_SMTP_*` secrets above are unset, so the contact form will
-  not deliver. Not fatal to the cutover, but it ships a dead form.
-- Todos 13, 15, 18, 20 and 21 were listed as blockers earlier and are now closed.
+- **Todo 36** — SMTP account for the contact form. The only one still open.
+  `config/environments/production.rb` has its `action_mailer.smtp_settings`, but
+  the mailbox itself does not exist and the three `ZANTOP_SMTP_*` secrets above
+  are unset, so the contact form will not deliver. Not fatal to the cutover — the
+  settings resolve to `nil` rather than raising, so the deploy succeeds — but
+  `raise_delivery_errors` is on, so the first submission raises. It ships a dead
+  form. Check one thing against whichever provider is picked: `ApplicationMailer`
+  sends `From: no-reply@mireiazantop.com` while the account will most likely
+  authenticate as `hola@`, and providers that require the envelope sender to match
+  the authenticated identity will reject that.
+
+Every other gate has closed. For anyone reading an older note, these were listed
+as blockers here and are now merged to `main`:
+
+- **Todo 12** — authorization on every admin action, `4ccbd62`. The concern is
+  inverted from the legacy version: including it closes every action, and only
+  what `allow_anonymous` names is reopened, so an action added later is protected
+  by default.
+- **Todo 14** — the missing controllers, `6674f47`. `UsersController` exists;
+  `AdminController` was never needed, because `admin#section_fields` turned out to
+  be dead and was deleted.
+- **Todo 39** — unpublished works served to the public, `7ab875e`. Not on this
+  list originally but a genuine go-live blocker: 7 of 71 works were reachable by
+  slug to anyone.
+- Todos 13, 15, 18, 20 and 21, closed earlier.
 
 Also confirm before Phase A:
 
@@ -333,6 +351,107 @@ unset ZANTOP_DATABASE_NAME ZANTOP_STORAGE_ROOT
 
 ---
 
+## Phase B0 — provisional-domain rehearsal
+
+**Optional, and worth it.** Phases B–D have never been run against a host. This
+runs all three under a hostname that is not the live one, so that the only thing
+left untested on cutover day is the DNS change itself.
+
+Deploy it **on the droplet that will become production**. Then the real cutover
+is Phase D plus a redeploy, on a box already proven, rather than a first
+provisioning under time pressure. The cost is that the rehearsal's data must be
+thrown away before going live — see [B0.4](#b04--reset-before-the-real-cutover).
+
+Nothing about the application blocks this any more. The admin area is closed to
+anonymous visitors (todo 12) and drafts are no longer served publicly (todo 39),
+which is what made an exposed test deployment unacceptable before.
+
+### B0.1 — pick the hostname
+
+A subdomain of the real domain, `nou.mireiazantop.com` or similar. It exercises
+the real registrar, the real zone and real Let's Encrypt issuance, which is the
+whole point.
+
+**Not `nip.io` or `sslip.io`.** Their certificate rate limit is shared across
+everyone using them and is routinely exhausted, so issuance fails for reasons
+that have nothing to do with this setup — the exact failure this rehearsal exists
+to rule out. A subdomain of `mireiazantop.com` draws on the same weekly
+per-domain budget as the real cutover will, which is ample as long as the
+rehearsal is not looped.
+
+Confirming who holds the DNS zone is a prerequisite here and a
+[placeholder](#placeholders) still unanswered.
+
+### B0.2 — run Phases A, B and C against it
+
+Phase A unchanged, except that the source can be `db/dump.sql` and the committed
+`legacy_uploads/` instead of a fresh legacy dump — that is what the [rehearsal
+log](#rehearsal-log) already used, it is real content, and it means the rehearsal
+never touches the legacy box at all.
+
+Then B1–B5 and Phase C as written, with two variables set:
+
+```sh
+export ZANTOP_PROXY_HOSTS=$REHEARSAL_HOST   # replaces the real hosts, never adds to them
+export ZANTOP_NOINDEX=true
+```
+
+`ZANTOP_PROXY_HOSTS` **replaces** the list in `config/deploy.yml`. Leaving
+`mireiazantop.com` in it while it still resolves to the legacy box means
+kamal-proxy failing an ACME challenge for it on a loop, which is the fastest way
+to spend the hourly failed-validation limit.
+
+`ZANTOP_NOINDEX=true` makes every response carry `X-Robots-Tag: noindex,
+nofollow`. Without it the rehearsal puts the entire portfolio on a publicly
+resolving hostname for search engines to index as a duplicate of the real site,
+and that outlives the rehearsal. It is a header rather than a `Disallow: /` in
+`robots.txt` on purpose: disallowing the fetch stops a crawler reading the page
+and so stops it seeing that the page asks not to be indexed, which leaves the URL
+indexable from any link pointing at it.
+
+Point an A record for `$REHEARSAL_HOST` at `$NEW_IP` **before** the first deploy
+here — unlike the real cutover there is no reason to withhold it, and having it
+resolve from the start means the certificate is issued on the first boot and
+Phase C's `curl` checks work without `--resolve` or `-k`.
+
+Set `SECRET_KEY_BASE` to the value the real site will use, not a throwaway.
+Changing it later invalidates every signed cookie and signed ActiveStorage URL.
+
+### B0.3 — what to actually check
+
+Everything Phase A cannot prove:
+
+- The certificate is issued and `https://$REHEARSAL_HOST/ca` answers 200.
+- `http://` redirects to `https://` — kamal-proxy's job, not Rails', because of
+  `config.assume_ssl`.
+- Images render. This is the one that exercises the volume mount, the `1000:1000`
+  ownership from [B5](#b5--create-the-uploads-volume-and-copy-the-files) and
+  libvips variant processing on a box far smaller than the laptop that timed
+  them.
+- A second `kamal deploy` is clean, and the previous release's assets stay
+  reachable through `asset_path`.
+- Sign in, edit a work, upload an image, and confirm it survives a deploy — the
+  single most important thing the volume exists for.
+- `X-Robots-Tag` is present: `curl -sSI https://$REHEARSAL_HOST/ca | grep -i robots`.
+
+### B0.4 — reset before the real cutover
+
+The rehearsal's database and uploads are throwaway. Anything entered during it —
+and anything Mireia enters if she is shown the site — is lost. Before Phase D:
+
+1. Re-run Phase A against a **fresh** legacy dump.
+2. Drop and recreate `zantop_production`, then restore, as in [B4](#b4--create-and-load-the-database).
+3. `rsync --delete` the uploads again, as in [B5](#b5--create-the-uploads-volume-and-copy-the-files).
+4. Unset `ZANTOP_PROXY_HOSTS` and `ZANTOP_NOINDEX`, and redeploy so the real
+   hosts and an indexable site come back.
+5. Remove the `$REHEARSAL_HOST` A record once it is no longer wanted.
+
+Step 4 is the one that is easy to forget and expensive to miss: a production
+deploy still carrying `ZANTOP_NOINDEX=true` serves the live site with a header
+telling every search engine to drop it.
+
+---
+
 ## Phase B — provision the droplet and load it
 
 Run from the laptop with the environment from [Secrets](#secrets) exported.
@@ -350,6 +469,18 @@ Add the deploy key to `root`'s `authorized_keys` (`config/deploy.yml` leaves
 ```sh
 ssh-keyscan $NEW_IP            # → the ZANTOP_DEPLOY_KNOWN_HOSTS secret
 ssh root@$NEW_IP true          # confirm key auth works
+```
+
+**Ports 80 and 443 must be reachable from the public internet**, and not only so
+visitors can read the site: kamal-proxy gets its certificate over an ACME
+challenge served on those ports, so a blocked one fails the challenge rather than
+producing an obvious connection error. A plain DigitalOcean droplet has no cloud
+firewall and ships `ufw` inactive, so this usually needs nothing — but confirm it
+rather than discover it in [Phase D](#phase-d--dns-cutover), and check the cloud
+firewall in the provider's console too, which `ufw` knows nothing about:
+
+```sh
+ssh root@$NEW_IP 'ufw status; iptables -S INPUT'
 ```
 
 ### B2 — install Docker
@@ -484,7 +615,9 @@ propagates in minutes.
 
 Then:
 
-1. Point both A records at `$NEW_IP`.
+1. Point both A records at `$NEW_IP`. **Both**, in one go — `proxy.hosts` in
+   `config/deploy.yml` lists the apex and `www`, and a name that does not yet
+   resolve to `$NEW_IP` is a failed validation, not a skipped one.
 2. Watch kamal-proxy acquire the certificate — the first public request for the
    host triggers the ACME challenge:
 
@@ -507,6 +640,32 @@ Then:
 5. Restore the TTL to its previous value once the site is confirmed good.
 
 Leave the legacy droplet running and untouched for at least a week.
+
+### Certificates
+
+`proxy.ssl: true` in `config/deploy.yml` is the whole of the TLS configuration.
+kamal-proxy requests a Let's Encrypt certificate over ACME and renews it on its
+own: no certbot, no cron job, no certificate files in this repository and nothing
+to remember in a year. It replaces the manual ZeroSSL arrangement on the legacy
+box, whose certificate expired on 2026-01-14 precisely because it needed
+remembering.
+
+Two ways to lose that, both avoidable:
+
+- **Let's Encrypt rate-limits failed validations per hour and issued
+  certificates per registered domain per week.** Flipping DNS back and forth to
+  retry a failing challenge is the fastest way to lock yourself out for an hour,
+  at the one moment when the site is already pointing at the new box. This is why
+  Phase C verifies everything reachable without a certificate *before* the switch:
+  the DNS change should be a single attempt, not an experiment. If validation does
+  fail, read `kamal proxy logs` and fix the cause — an unreachable port 80/443
+  from [B1](#b1--create-the-droplet), or a name in `proxy.hosts` that does not
+  resolve to `$NEW_IP` — rather than retrying the switch.
+- **kamal-proxy holds the issued certificates in its own state.** Removing or
+  rebooting the proxy container discards them and re-requests on next boot, which
+  spends the same weekly budget. `kamal deploy` boots the proxy only if it is not
+  already running and leaves a running one alone, so ordinary deploys are safe;
+  `kamal proxy reboot` is the one to think twice about in the first week.
 
 ---
 
