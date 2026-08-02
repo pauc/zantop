@@ -35,7 +35,6 @@ class WorkForm
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
   def submit(attrs)
     work.transaction do
       assign_attributes(attrs)
@@ -50,18 +49,9 @@ class WorkForm
         raise ActiveRecord::Rollback
       end
 
-      sections.each do |section|
-        section.destroy! if section.marked_for_destruction?
-        section.save! if section.has_changes_to_save?
-      end
-
-      images.each do |image|
-        image.destroy! if image.marked_for_destruction?
-        image.save! if image.has_changes_to_save?
-      end
+      save_nested_records
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
 
   def tags
     work
@@ -106,6 +96,27 @@ class WorkForm
   private
 
   attr_reader :work
+
+  # The work's own save writes any nested record it built, but not one that was
+  # already persisted: `has_many` autosaves new children only.
+  def save_nested_records
+    sections.each { |section| save_or_destroy(section) }
+    images.each { |image| save_or_destroy(image) }
+  end
+
+  # A nested record with nothing to write is left alone, but "nothing to write"
+  # is not `has_changes_to_save?`: assigning an uploaded file to a
+  # `has_one_attached` touches no column of its own, because ActiveStorage keeps
+  # the change in `attachment_changes` and writes it from an `after_save` hook.
+  # Guarding on the columns alone therefore skipped the save, and picking a new
+  # file for an existing image kept the old one unless the same submit happened
+  # to edit its credits, position or video too. `changed_for_autosave?` covers
+  # the columns, the translations and the attachment alike.
+  def save_or_destroy(record)
+    return record.destroy! if record.marked_for_destruction?
+
+    record.save! if record.changed_for_autosave?
+  end
 
   def set_attributes_for(association:, assoc_attributes:)
     assoc_attributes.each do |id, attributes|

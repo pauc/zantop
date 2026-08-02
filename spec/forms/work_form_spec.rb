@@ -269,6 +269,31 @@ RSpec.describe WorkForm do
       expect(I18n.with_locale(:ca) { Image.last.credits }).to eq "Photo: Someone"
     end
 
+    it "replaces the file of an existing image" do
+      work = create(:action_work)
+      image = create(:image, work:)
+
+      attributes = {
+        title: work.title,
+        image_attributes: { image.id.to_s => { image: upload("other_image.png") } }
+      }
+
+      expect { described_class.new(work:).submit(attributes) }
+        .to change { image.reload.image.blob.id }
+    end
+
+    it "stores the bytes of the replacing file" do
+      work = create(:action_work)
+      image = create(:image, work:)
+
+      described_class.new(work:).submit(
+        title: work.title,
+        image_attributes: { image.id.to_s => { image: upload("other_image.png") } }
+      )
+
+      expect(image.reload.image.blob.checksum).to eq checksum_of("other_image.png")
+    end
+
     it "does not save an unchanged section again" do
       work = create(:action_work)
       section = create(:section, work:, title: "Section")
