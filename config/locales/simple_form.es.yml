@@ -46,7 +46,7 @@ es:
         send: Enviar
 
     hints:
-      users:
+      user:
         edit:
           password: Déjalo en blanco si no quieres cambiar la contraseña
           password_confirmation: Déjalo en blanco si no quieres cambiar la contraseña

@@ -46,7 +46,7 @@ ca:
         send: "Enviar"
 
     hints:
-      users:
+      user:
         edit:
           password: Deixa-ho en blanc si no vols canviar la contrasenya
           password_confirmation: Deixa-ho en blanc si no vols canviar la contrasenya

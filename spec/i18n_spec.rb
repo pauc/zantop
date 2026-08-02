@@ -116,6 +116,55 @@ RSpec.describe "locale files" do
     end
   end
 
+  describe "simple_form.labels and simple_form.hints" do
+    # SimpleForm scopes both namespaces by the *object* name — `user`, not
+    # `users` — building its lookups from `lookup_model_names`, which is the
+    # form's `object_name` split on `[`/`]` with `_attributes` stripped. So the
+    # first segment under either namespace is always a form object's
+    # `param_key`, or the literal `defaults` it falls back to.
+    #
+    # Anything else is a key nothing will ever ask for, and it fails the way
+    # `hints.users.edit.password` did: the file reads correctly, the key
+    # resolves when you look it up by hand, and the page renders no hint at
+    # all. A plural is the easy way to write one, but so is a typo, so this
+    # asks the stronger question — is this the name of something we can build
+    # a form for?
+    def form_object_names
+      Rails.application.eager_load!
+
+      Rails.root.glob("app/{models,forms}/**/*.rb").filter_map { |path|
+        klass = path.relative_path_from(Rails.root.join("app"))
+                    .to_s
+                    .sub(%r{\A(models|forms)/}, "")
+                    .delete_suffix(".rb")
+                    .camelize
+                    .safe_constantize
+
+        klass.model_name.param_key if klass.respond_to?(:model_name)
+      }
+    end
+
+    def scopes_for(locale, namespace)
+      path = Rails.root.join("config/locales/simple_form.#{locale}.yml")
+
+      YAML.unsafe_load_file(path)
+          .fetch(locale.to_s)
+          .fetch("simple_form")
+          .fetch(namespace, {})
+          .keys
+    end
+
+    namespaces = %w[labels hints]
+
+    %i[ca es en].each do |locale|
+      namespaces.each do |namespace|
+        it "scopes #{namespace} by a name SimpleForm looks up, in #{locale}" do
+          expect(scopes_for(locale, namespace) - ["defaults"] - form_object_names).to be_empty
+        end
+      end
+    end
+  end
+
   describe "activerecord.models.tag" do
     # The tags admin renders a bare `f.button :submit`, which interpolates the
     # model name into `helpers.submit.update`.
