@@ -5,15 +5,18 @@
   the page's own <head>, and the protocol wants them repeated on every member
   of the set rather than declared once.
 
-  No <lastmod>. `updated_at` does not currently move for every change that
-  reaches a page: `Work.reposition` skips it on purpose, and editing only a
-  work's sections or images saves those records without touching the work.
-  A lastmod that is right most of the time is worse than none — Google's rule
-  is that it uses the value only while it is consistently accurate, and one
-  stale date teaches it to ignore the rest. Adding it is a one-line change
-  once the work is touched by everything that changes its page.
+  <lastmod> where the page has a date and nowhere else — the dates themselves
+  are `Sitemap`'s to work out. It goes between <loc> and the alternates
+  because the schema says so: sitemap.xsd sequences loc, lastmod, changefreq
+  and priority, and only then admits elements from another namespace.
 
-  No <changefreq> or <priority> either: nothing reads them.
+  The three URLs of a page all carry the same date, since `updated_at` moves
+  whichever locale was written. Translating a work's title into English
+  therefore re-dates its Catalan URL too. That is the harmless direction to
+  err in, and it is arguably not an error at all: the set of alternates this
+  <url> declares did just change.
+
+  No <changefreq> or <priority>: nothing reads them.
 %>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -22,6 +25,9 @@
 <% urls.each_value do |url| %>
   <url>
     <loc><%= url %></loc>
+<% if entry.lastmod %>
+    <lastmod><%= entry.lastmod.utc.iso8601 %></lastmod>
+<% end %>
 <% urls.each do |locale, alternate| %>
     <xhtml:link rel="alternate" hreflang="<%= locale %>" href="<%= alternate %>"/>
 <% end %>

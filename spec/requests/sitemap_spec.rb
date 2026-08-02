@@ -17,6 +17,12 @@ RSpec.describe "Sitemap", type: :request do
     sitemap.xpath("//url/loc").map(&:text)
   end
 
+  # As an array, so an entry that carries no date is `[]` rather than nil and
+  # the two questions read the same way.
+  def dates_for(location)
+    sitemap.xpath("//url[loc='#{location}']/lastmod").map(&:text)
+  end
+
   it "answers at the unprefixed path a crawler asks for" do
     get "/sitemap.xml"
 
@@ -70,6 +76,64 @@ RSpec.describe "Sitemap", type: :request do
               ["en", "http://www.example.com/en"],
               ["es", "http://www.example.com/es"],
               ["x-default", "http://www.example.com/ca"]]
+  end
+
+  it "dates a url by when the page behind it last changed, in UTC" do
+    work = create(:visual_work, title: "Petra Perta")
+
+    get "/sitemap.xml"
+
+    expect(dates_for("http://www.example.com/ca/art-visual/petra-perta"))
+      .to eq [work.reload.updated_at.utc.iso8601]
+  end
+
+  it "gives the same page the same date in all three locales" do
+    create(:visual_work, title: "Petra Perta")
+
+    get "/sitemap.xml"
+
+    expect(dates_for("http://www.example.com/en/visual-art/petra-perta"))
+      .to eq dates_for("http://www.example.com/ca/art-visual/petra-perta")
+  end
+
+  # The contact form is built from the template and the locale files, so there
+  # is no date to give and the element is simply absent. A sitemap is allowed
+  # to be uneven that way; what it may not do is publish a made-up date.
+  it "leaves the element out where the page has no date" do
+    get "/sitemap.xml"
+
+    expect(dates_for("http://www.example.com/ca/contacte")).to be_empty
+  end
+
+  # sitemap.xsd sequences loc, lastmod, changefreq and priority, and only then
+  # admits anything from another namespace.
+  it "puts the date between the location and the alternates" do
+    create(:visual_work)
+
+    get "/sitemap.xml"
+
+    expect(sitemap.xpath("//url[loc='http://www.example.com/ca']/*").map(&:name).first(3))
+      .to eq %w[loc lastmod link]
+  end
+
+  # spec/fixtures/files/sitemap.xsd is https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd.
+  #
+  # The hreflang links come out first. The schema does admit them — its <url>
+  # ends in a wildcard for other namespaces — but the wildcard is
+  # `processContents="strict"` and the schema imports no xhtml to check them
+  # against, so every one of them fails as undeclared. They are Google's
+  # extension and sitemaps.org has no schema for them. What is left is exactly
+  # what this schema does define, which is the part this template just changed.
+  it "validates against the sitemaps.org schema" do
+    create(:page)
+    create(:tag, name: "pintura").works << create(:visual_work)
+
+    get "/sitemap.xml"
+    document = Nokogiri::XML(response.body)
+    document.xpath("//xhtml:link", "xhtml" => "http://www.w3.org/1999/xhtml").each(&:remove)
+    schema = Nokogiri::XML::Schema(Rails.root.join("spec/fixtures/files/sitemap.xsd").read)
+
+    expect(schema.validate(document)).to be_empty
   end
 
   it "leaves an unpublished work out" do
