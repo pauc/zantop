@@ -1,5 +1,11 @@
+<%# The gallery's text alternative is positional, not descriptive: the site  %>
+<%# stores no per-image description, and the only per-image text there is —  %>
+<%# the credits — is already the figcaption. So every picture is alt="" and  %>
+<%# every *control* around it is named by its place in the run, which is     %>
+<%# what lets a screen reader reach, count and operate all of them.          %>
 <div class="gallery gallery-hybrid" data-gallery>
-  <div class="gallery-lead-track" data-gallery-lead-track tabindex="0">
+  <div class="gallery-lead-track" data-gallery-lead-track tabindex="0"
+       role="group" aria-label="<%= t "works.gallery.images" %>">
     <% images.each_with_index do |image, index| %>
       <figure class="gallery-lead" data-gallery-lead="<%= index %>">
         <% if image.video? %>
@@ -7,13 +13,18 @@
             <span class="gallery-video-label"><%= t "works.labels.watch_video" %></span>
           <% end %>
         <% else %>
-          <button type="button" class="gallery-lead-open" data-gallery-open="<%= index %>">
+          <button type="button" class="gallery-lead-open" data-gallery-open="<%= index %>"
+                  aria-label="<%= t "works.gallery.open_image",
+                                    number: index + 1, total: images.size %>">
             <%= image_tag image.image.variant(:large),
                           loading: index.zero? ? "eager" : "lazy",
                           decoding: "async",
                           alt: "" %>
           </button>
         <% end %>
+        <%# Kept even when empty: its min-height is what stops the strip below %>
+        <%# from moving up and down between an image with credits and one     %>
+        <%# without. It is silent either way; the naming is on the button.    %>
         <figcaption class="gallery-caption"><%= image.credits %></figcaption>
       </figure>
     <% end %>
@@ -23,7 +34,8 @@
     <ul class="gallery-strip" data-gallery-strip>
       <% images.each_with_index do |image, index| %>
         <li class="gallery-strip-item">
-          <button type="button" class="gallery-thumb" data-gallery-select="<%= index %>">
+          <button type="button" class="gallery-thumb" data-gallery-select="<%= index %>"
+                  aria-label="<%= gallery_thumb_label(image, index, images.size) %>">
             <%= render "works/gallery_thumb", image: image, eager: index < 6 %>
           </button>
         </li>
@@ -31,7 +43,8 @@
     </ul>
   <% end %>
 
-  <dialog class="gallery-lightbox" data-gallery-dialog>
+  <dialog class="gallery-lightbox" data-gallery-dialog
+          aria-label="<%= t "works.gallery.lightbox" %>">
     <div class="gallery-lightbox-track" data-gallery-track>
       <% images.each_with_index do |image, index| %>
         <figure class="gallery-slide" data-gallery-slide="<%= index %>">
@@ -53,7 +66,8 @@
       <ul class="gallery-filmstrip" data-gallery-filmstrip>
         <% images.each_with_index do |image, index| %>
           <li class="gallery-filmstrip-item">
-            <button type="button" class="gallery-thumb" data-gallery-jump="<%= index %>">
+            <button type="button" class="gallery-thumb" data-gallery-jump="<%= index %>"
+                    aria-label="<%= gallery_thumb_label(image, index, images.size) %>">
               <%= render "works/gallery_thumb", image: image, eager: false %>
             </button>
           </li>
@@ -65,7 +79,9 @@
       <button type="button" class="gallery-nav gallery-next" data-gallery-next
               aria-label="<%= t "works.gallery.next" %>">&#8250;</button>
     <% end %>
-    <button type="button" class="gallery-close" data-gallery-close
+    <%# Opening the dialog otherwise lands on its scroll container, which has %>
+    <%# no name; the close button is the one control every lightbox has.      %>
+    <button type="button" class="gallery-close" data-gallery-close autofocus
             aria-label="<%= t "works.gallery.close" %>">&times;</button>
   </dialog>
 </div>

@@ -1,5 +1,5 @@
 <%= simple_form_for @user, url: user_path, method: :patch do |f| %>
-  <%= f.error_notification %>
+  <%= error_summary f %>
 
   <%= f.input :name %>
   <%= f.input :email %>

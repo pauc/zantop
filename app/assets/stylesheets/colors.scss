@@ -7,3 +7,7 @@ $grey: #666;
 $clear_grey: #ddd;
 $dark_grey: #333;
 $kaki_yellow: #dfcf80;
+// The link colour for the two kaki bars. The orange links are 3.6:1 against
+// that background and 5:1 against the paper, so the bars get their own — the
+// one the inner-page menu was already using on exactly this background.
+$kaki_bar_link: #523d14;

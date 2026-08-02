@@ -28,7 +28,10 @@ module Zantop
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    # `components` is required by hand from config/initializers/simple_form.rb
+    # — it reopens a gem's namespace, which Zeitwerk would refuse to autoload
+    # from a path that does not spell it out.
+    config.autoload_lib(ignore: %w[assets tasks components])
 
     # Configuration for the application, engines, and railties goes here.
     #

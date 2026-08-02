@@ -2,9 +2,12 @@
   <% cache [I18n.locale, :f_work, work] do %>
     <div class="work new-work">
       <%= link_to preview_image(work), work, class: "work-preview" %>
-      <div class="work-title">
+      <%# The front page is a list of works and nothing else, so the titles %>
+      <%# are the headings that make it navigable — as they already are on  %>
+      <%# the two index pages, which render the same thing.                 %>
+      <h2 class="work-title">
         <%= link_to work.title, work, class: "f-title" %>
-      </div>
+      </h2>
     </div>
   <% end %>
 <% end %>

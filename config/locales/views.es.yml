@@ -30,6 +30,7 @@ es:
   categories: Categorías
 
   view_more: Ver más
+  view_more_about: Ver más sobre %{work}
 
   meta:
     titles:
@@ -94,6 +95,11 @@ es:
       previous: Imagen anterior
       next: Imagen siguiente
       close: Cerrar la galería
+      images: Imágenes de la obra
+      lightbox: Galería a pantalla completa
+      open_image: Ampliar la imagen %{number} de %{total}
+      image: Imagen %{number} de %{total}
+      video: Vídeo %{number} de %{total}
 
   pages:
     edit:

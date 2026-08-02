@@ -1,9 +1,11 @@
 <div class="work <%= cycle('odd', 'even') %>">
   <% cache [I18n.locale, :work_preview, work] do %>
     <div class="image-container">
+      <%# The thumbnail is a link of its own, so it is named after where it %>
+      <%# goes; the site stores nothing that describes the picture itself.  %>
       <%= link_to (work.first_image.present? ?
-                    image_tag(work.first_image) :
-                    default_image_for_works), work %>
+                    image_tag(work.first_image, alt: work.title) :
+                    default_image_for_works(alt: work.title)), work %>
       <%= view_more work %>
     </div>
     <div class="info-container">

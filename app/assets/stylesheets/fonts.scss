@@ -65,12 +65,16 @@ a:hover, .front .work:hover .work-title a {
 }
 
 .no-front #main_menu a {
-  color: #523d14;
+  color: colors.$kaki_bar_link;
   font-size: 1.5em;
   line-height: 1;
 
-  &:hover {
-    color: #ac4a19;
+  // The orange this used to turn is 3.6:1 on the kaki bar. Underlining says
+  // the same thing without asking the colour to carry it.
+  &:hover,
+  &:focus-visible {
+    color: colors.$kaki_bar_link;
+    text-decoration: underline;
   }
 }
 
@@ -96,7 +100,7 @@ form .error .help-inline {
   color: colors.$error;
 }
 
-#footer_page_name h3 a {
+#footer_page_name h2 a {
   text-decoration: underline;
 }
 

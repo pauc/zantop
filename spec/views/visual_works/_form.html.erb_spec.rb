@@ -170,4 +170,35 @@ RSpec.describe "visual_works/_form", type: :view do
     expect(render_form(VisualWorkForm.new(work: work.reload)))
       .to include %(<abbr title="obligatori">*</abbr> Text:)
   end
+
+  # The nested fields repeat the same attribute names down the form, so the
+  # ids the error messages hang off have to be told apart by the record rather
+  # than by the attribute — the same thing Rails does with a `[]` field name.
+  # Two identical ids would point both fields at whichever came first.
+  # An image is invalid with neither a file nor a video URL, which is the state
+  # the form comes back in when one was left empty.
+  def form_with_invalid_images(count)
+    work = create(:visual_work)
+    Array.new(count) { create(:image, work:) }
+    work.images.each do |image|
+      image.image.purge
+      image.valid?
+    end
+
+    Nokogiri::HTML5.fragment(render_form(VisualWorkForm.new(work:)))
+  end
+
+  it "gives each nested record's error message an id of its own" do
+    described = form_with_invalid_images(2).css("[aria-describedby]")
+                                           .pluck("aria-describedby")
+
+    expect(described).to eq described.uniq
+  end
+
+  it "still points each of them at a message that exists" do
+    form = form_with_invalid_images(1)
+    described = form.css("[aria-describedby]").first["aria-describedby"]
+
+    expect(form.css("##{described}").text).to eq "Has d'indicar una imatge o vídeo"
+  end
 end

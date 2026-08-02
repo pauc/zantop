@@ -30,6 +30,7 @@ en:
   categories: Categories
 
   view_more: View more
+  view_more_about: View more about %{work}
 
   meta:
     titles:
@@ -94,6 +95,11 @@ en:
       previous: Previous image
       next: Next image
       close: Close the gallery
+      images: Images of the work
+      lightbox: Full-screen gallery
+      open_image: Enlarge image %{number} of %{total}
+      image: Image %{number} of %{total}
+      video: Video %{number} of %{total}
 
   pages:
     edit:

@@ -30,6 +30,7 @@ ca:
   categories: Categories
 
   view_more: Veure més
+  view_more_about: Veure més sobre %{work}
 
   meta:
     titles:
@@ -94,6 +95,11 @@ ca:
       previous: Imatge anterior
       next: Imatge següent
       close: Tancar la galeria
+      images: Imatges de l'obra
+      lightbox: Galeria a pantalla completa
+      open_image: Ampliar la imatge %{number} de %{total}
+      image: Imatge %{number} de %{total}
+      video: Vídeo %{number} de %{total}
 
   pages:
     edit:

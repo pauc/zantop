@@ -192,4 +192,69 @@ RSpec.describe "works/_gallery", type: :view do
       expect(rendered).not_to include "<strong>Atadalasalas"
     end
   end
+
+  # The site stores no description of any picture, so the text alternative is
+  # positional rather than descriptive: the images say nothing and the controls
+  # around them say which one of how many they are. That is enough to reach,
+  # count and work every one of them, and it invents nothing.
+  describe "the names a screen reader has to work with" do
+    def markup(images)
+      Nokogiri::HTML5.fragment(render_gallery(images))
+    end
+
+    it "names each thumbnail in the strip by its place in the run" do
+      names = markup(Array.new(3) { image_with }).css("[data-gallery-select]")
+
+      expect(names.pluck("aria-label"))
+        .to eq ["Imatge 1 de 3", "Imatge 2 de 3", "Imatge 3 de 3"]
+    end
+
+    it "names the filmstrip's thumbnails the same way" do
+      names = markup(Array.new(2) { image_with }).css("[data-gallery-jump]")
+
+      expect(names.pluck("aria-label"))
+        .to eq ["Imatge 1 de 2", "Imatge 2 de 2"]
+    end
+
+    # A video's thumbnail is a play glyph marked aria-hidden, so before this
+    # the button around it was empty — not merely vague, silent.
+    it "says a video thumbnail is a video" do
+      video = create(:image, :video)
+
+      expect(markup([video, image_with]).css("[data-gallery-select]").first["aria-label"])
+        .to eq "Vídeo 1 de 2"
+    end
+
+    it "says what opening a lead does, and to which image" do
+      expect(markup([image_with, image_with]).css("[data-gallery-open]").last["aria-label"])
+        .to eq "Ampliar la imatge 2 de 2"
+    end
+
+    it "leaves the pictures themselves silent, since their control speaks" do
+      alts = markup(Array.new(2) { image_with }).css("img").pluck("alt")
+
+      expect(alts).to all(eq "")
+    end
+
+    it "gives the lightbox a name, so it is not an unnamed dialog" do
+      expect(markup([image_with]).css("dialog").first["aria-label"])
+        .to eq I18n.t("works.gallery.lightbox")
+    end
+
+    # It takes a tab stop of its own — the arrow keys scroll it — and a focus
+    # stop with no name is a focus stop with nothing to announce.
+    it "names the lead track it makes focusable" do
+      track = markup([image_with]).css("[data-gallery-lead-track]").first
+
+      expect(track["aria-label"]).to eq I18n.t("works.gallery.images")
+      expect(track["role"]).to eq "group"
+    end
+
+    # `showModal` otherwise lands on the first thing it finds focusable, which
+    # in Chrome is the scroll container holding the slides.
+    it "opens the lightbox on its close button" do
+      expect(markup([image_with]).css("[autofocus]").pluck("class"))
+        .to eq ["gallery-close"]
+    end
+  end
 end

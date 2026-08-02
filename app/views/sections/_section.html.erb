@@ -1,7 +1,11 @@
 <div class="section">
-  <div class="section-title">
-    <h2><%= section.title %></h2>
-  </div>
+  <%# A section may be body only. An empty h2 is a heading with no name, %>
+  <%# which reads as a gap in the outline rather than as nothing at all.  %>
+  <% if section.title.present? %>
+    <div class="section-title">
+      <h2><%= section.title %></h2>
+    </div>
+  <% end %>
   <div class="section-body">
     <%= section.body %>
   </div>

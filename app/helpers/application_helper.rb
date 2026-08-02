@@ -48,8 +48,23 @@ module ApplicationHelper
     "active" if url == request.fullpath
   end
 
-  def view_more(destination)
-    content_tag "p", link_to(raw("#{t('view_more')} &rarr;"), destination), class: "view-more"
+  # An invalid submit comes back as the same page with one paragraph added, so
+  # there is nothing to tell someone not looking at the screen that the form
+  # did not go through. Taking focus to the summary is that something, and it
+  # leaves the reading position at the top of what has to be fixed.
+  def error_summary(form)
+    form.error_notification tabindex: -1, autofocus: true
+  end
+
+  # Third link to the same work in one preview, and the only one whose visible
+  # text does not say which work it is. The name says so instead, and in saying
+  # so also drops the trailing arrow, which a screen reader would spell out.
+  def view_more(work)
+    link = link_to(raw("#{t('view_more')} &rarr;"),
+                   work,
+                   "aria-label": t("view_more_about", work: work.title))
+
+    content_tag "p", link, class: "view-more"
   end
 
   private

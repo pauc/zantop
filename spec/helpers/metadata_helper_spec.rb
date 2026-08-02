@@ -96,6 +96,42 @@ RSpec.describe MetadataHelper do
                                                           action: "new" }))
         .to eq "http://test.host/en/contact"
     end
+
+    # The hreflang tags and the Open Graph URL are absolute because that is what
+    # reads them; the language links in the header are the same URLs printed as
+    # hrefs, and an href does not carry the host around.
+    it "gives a path when the caller asks for one" do
+      visiting(controller: "visual_works", action: "index")
+
+      expect(helper.localized_url(:es, only_path: true)).to eq "/es/arte-visual"
+    end
+
+    it "keeps the record's own slug when it gives a path" do
+      work = create(:visual_work, title: "Procés in solid")
+      I18n.with_locale(:en) { work.update!(title: "Petra Perta") }
+      visiting(controller: "visual_works", action: "show", id: work.to_param)
+
+      expect(helper.localized_url(:en, work, only_path: true)).to eq "/en/visual-art/petra-perta"
+    end
+  end
+
+  # The template names the record; the layout, which renders after it, is what
+  # needs it for the language links.
+  describe "#page_record" do
+    it "is the record the page declared" do
+      work = create(:visual_work)
+      visiting(controller: "visual_works", action: "show", id: work.to_param)
+      helper.page_metadata(record: work)
+
+      expect(helper.page_record).to eq work
+    end
+
+    it "is nothing on a page that names no record" do
+      visiting(controller: "contact_messages", action: "new")
+      helper.page_metadata(description: "Escriu a Mireia Zantop.")
+
+      expect(helper.page_record).to be_nil
+    end
   end
 
   describe "#canonical_url" do

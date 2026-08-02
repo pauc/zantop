@@ -2,8 +2,11 @@
 
 # rubocop:disable Rails/OutputSafety
 module WorksHelper
-  def default_image_for_works
-    image_tag "mz-comodin.png"
+  # Stands in for a work with no picture yet. It is a placeholder graphic and
+  # says nothing, but it is the whole of the link it sits in, so the caller
+  # passes the name that link should carry.
+  def default_image_for_works(alt: "")
+    image_tag "mz-comodin.png", alt: alt
   end
 
   def print_work_place(work)

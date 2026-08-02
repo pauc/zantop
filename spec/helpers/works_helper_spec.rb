@@ -17,6 +17,17 @@ RSpec.describe WorksHelper do
     it "renders an img tag" do
       expect(helper.default_image_for_works).to start_with "<img"
     end
+
+    # It is the whole of the link it stands in, and Rails 8.1 derives no alt of
+    # its own, so the caller has to say what that link is for.
+    it "carries the name it is given" do
+      expect(helper.default_image_for_works(alt: "Paisatge líquid"))
+        .to include %(alt="Paisatge líquid")
+    end
+
+    it "says nothing when it is given nothing, rather than nothing at all" do
+      expect(helper.default_image_for_works).to include %(alt="")
+    end
   end
 
   describe "#print_work_place" do

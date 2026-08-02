@@ -14,6 +14,15 @@ module GalleriesHelper
     [(width * scale).round, (height * scale).round]
   end
 
+  # The thumbnail buttons hold either a picture or an aria-hidden play glyph,
+  # so neither can name the button it sits in. The name is the item's place in
+  # the run, which is also the only thing that distinguishes one from the next.
+  def gallery_thumb_label(image, index, total)
+    key = image.video? ? "works.gallery.video" : "works.gallery.image"
+
+    t(key, number: index + 1, total:)
+  end
+
   # Loaded eagerly into an array: the `images` association orders by position,
   # but a relation would still answer `first` with its own `LIMIT 1` query
   # while `drop(1)` worked on a second, separately fetched result set.

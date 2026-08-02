@@ -12,6 +12,43 @@
     list-style: none;
     margin: 0 0.3em;
   }
+
+  // The separator used to be a bare "|" text node between the list items,
+  // which a `ul` may not contain. A border draws the same rule and puts
+  // nothing in the accessibility tree for a screen reader to spell out.
+  li + li {
+    padding-left: 0.6em;
+    border-left: 1px solid colors.$grey;
+  }
+
+  a {
+    color: colors.$kaki_bar_link;
+
+    // Recolouring on hover is what the rest of the site does, but on the kaki
+    // bar there is no lighter tone left with enough contrast. An underline is
+    // the affordance instead, and it is the same one for keyboard focus.
+    &:hover,
+    &:focus-visible {
+      color: colors.$kaki_bar_link;
+      text-decoration: underline;
+    }
+  }
+
+  // The language you are already reading. `aria-current` says so; this is the
+  // half of it a sighted visitor sees. Weight rather than colour: on a
+  // background this light there is no second colour that both clears 4.5:1
+  // against it and differs enough from the first to be read as a difference.
+  a[aria-current] {
+    color: colors.$dark_grey;
+    font-weight: bold;
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
+      color: colors.$dark_grey;
+      text-decoration: none;
+    }
+  }
 }
 
 .front {

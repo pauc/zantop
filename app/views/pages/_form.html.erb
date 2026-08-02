@@ -1,5 +1,5 @@
 <%= simple_form_for page do |f| %>
-  <%= f.error_notification %>
+  <%= error_summary f %>
 
   <%= f.input :title %>
   <%= f.input :body, as: :rich_text_area %>

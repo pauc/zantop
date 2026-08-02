@@ -32,7 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(urlForMoreContent)
       .then(result => result.text())
       .then(content => {
+        const lastBefore = contentContainer.lastElementChild
         contentContainer.insertAdjacentHTML("beforeend", content)
+
+        // Land on the first work that was not there a moment ago. Without it
+        // the click appends twelve works above the button and leaves focus on
+        // the button — which the last page then deletes, dropping focus to the
+        // body — so nothing announces what arrived and a keyboard has to walk
+        // backwards to reach it.
+        const firstAdded = lastBefore ? lastBefore.nextElementSibling
+                                      : contentContainer.firstElementChild
+        const title = firstAdded && firstAdded.querySelector("a")
+        if (title) title.focus()
       })
 
     currentPage += 1

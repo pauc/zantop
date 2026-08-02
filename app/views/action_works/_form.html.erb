@@ -2,7 +2,7 @@
                     url: work_form.new_record? ? :action_works : action_work_path(work_form.id),
                     method: work_form.new_record? ? :post : :put,
                     html: { multipart: true, data: { behaviour: "work-form" } } do |f| %>
-  <%= f.error_notification %>
+  <%= error_summary f %>
 
   <%# Only the locale that has to have a title marks the box required. %>
   <%= f.input :title, autofocus: true, required: work_form.title_required? %>

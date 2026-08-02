@@ -19,7 +19,9 @@ module MetadataHelper
   # `record` is the model the URL names. It is needed because its slug differs
   # per locale, so the other two URLs for this page cannot be had by swapping
   # the prefix of the current path — see `localized_url`.
+  # rubocop:disable Rails/HelperInstanceVariable -- see `page_record`
   def page_metadata(description: nil, image: nil, record: nil, type: "website")
+    @page_record = record
     content_for(:meta_description, summarize(description), flush: true) if description.present?
     content_for(:meta_image, preview_image_url(image), flush: true) if image
     content_for(:meta_type, type, flush: true)
@@ -55,6 +57,19 @@ module MetadataHelper
     I18n.available_locales.index_with { |locale| localized_url(locale, record, path_parameters:) }
   end
 
+  # The record the template declared through `page_metadata`, if any. The
+  # layout renders after the template, so by the time the header asks, the
+  # answer is there — and the language links need exactly what the hreflang
+  # tags need, rather than a second, worse way of guessing it.
+  #
+  # An instance variable on purpose, which is what the cop above objects to:
+  # this is the same trick `content_for` plays, carried across the same gap,
+  # and `content_for` can only hold a string.
+  def page_record
+    @page_record
+  end
+  # rubocop:enable Rails/HelperInstanceVariable
+
   # Asks the router for this same route in another locale rather than rewriting
   # the path: `route_translator` translates every segment, so /ca/art-visual is
   # /en/visual-art, and `friendly_id`'s `simple_i18n` gives the record a
@@ -64,9 +79,11 @@ module MetadataHelper
   # <head> wants. The sitemap is the caller that has to pass its own: it speaks
   # about pages other than the one being served, and it is not itself a
   # localized route, so `request.path_parameters` there names no locale and no
-  # page worth linking to.
-  def localized_url(locale, record = nil, path_parameters: request.path_parameters)
-    options = path_parameters.merge(locale: locale.to_s, only_path: false)
+  # page worth linking to. `only_path` is for the language switcher, whose links
+  # stay on the site and so want no host on them.
+  def localized_url(locale, record = nil,
+                    path_parameters: request.path_parameters, only_path: false)
+    options = path_parameters.merge(locale: locale.to_s, only_path:)
     options[:id] = I18n.with_locale(locale) { record.to_param } if record
 
     url_for(options)

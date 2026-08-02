@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 #
-# Uncomment this and change the path if necessary to include your own
-# components.
-# See https://github.com/heartcombo/simple_form#custom-components to know
-# more about custom components.
-# Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
+# Our own components. See https://github.com/heartcombo/simple_form#custom-components
+Dir[Rails.root.join("lib/components/**/*.rb")].each { |f| require f }
 #
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
@@ -74,11 +71,14 @@ SimpleForm.setup do |config|
   config.wrappers :bootstrap, tag: 'div', class: 'control-group', error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
+    # Renders nothing; it points the input at the hint and the error below,
+    # and so has to run before the input is built. See lib/components.
+    b.use :describedby
     b.use :label
     b.wrapper tag: 'div', class: 'controls' do |ba|
       ba.use :input
-      ba.use :error, wrap_with: { tag: 'span', class: 'help-inline' }
-      ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+      ba.use :described_error
+      ba.use :described_hint
     end
   end
 

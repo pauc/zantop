@@ -51,6 +51,11 @@
   }
 
   .work-title {
+    // An h2 for the outline's sake, with the heading defaults it brought
+    // along taken back off: the size is set below and the card has no room
+    // for a margin.
+    margin: 0;
+    font-weight: normal;
     width: calc(100% + 1.5rem);
     position: absolute;
     bottom: -6px;

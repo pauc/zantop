@@ -18,11 +18,29 @@
     left: 0;
   }
 
+  #footer_page_name h2 {
+    // It was an h3 for its size alone. The level now belongs to the outline —
+    // the front page went h1 straight to h3 — and the size is set here.
+    margin: 1em 0;
+    font-size: 1.17em;
+  }
+
   #footer_menu {
     margin-top: 1em;
 
     a {
       margin: 0 1.5em;
+    }
+  }
+
+  // Same kaki background as the header bar, same reason for the same colour.
+  a {
+    color: colors.$kaki_bar_link;
+
+    &:hover,
+    &:focus-visible {
+      color: colors.$kaki_bar_link;
+      text-decoration: underline;
     }
   }
 }
