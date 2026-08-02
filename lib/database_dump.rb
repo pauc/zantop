@@ -50,6 +50,14 @@ module DatabaseDump
         "--restrict-key=zantop",
         "--exclude-table-data=ar_internal_metadata",
         "--exclude-table-data=schema_migrations",
+        # This repository is public and db/dump.sql is committed, so a users row
+        # publishes a bcrypt digest to anyone who clones it. Cost 12 makes brute
+        # force impractical but does nothing for a guessable password, and the
+        # app has no privilege tier below "signed in" — one credential is the
+        # whole admin area. db/seeds.rb creates the development user instead,
+        # which is what its find_or_create_by! was always for; it simply never
+        # fired while the dump supplied the row first.
+        "--exclude-table-data=users",
         db_config[:database],
         out: path
       )
