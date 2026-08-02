@@ -1,5 +1,9 @@
-<% page_title t("menu.contact") %>
+<%= page_title @page.title %>
+<%# The description says what the page is for, which the editable intro below
+    is free to stop doing, so it stays a translation rather than the body. %>
 <% page_metadata description: t("meta.descriptions.contact") %>
+
+<%= @page.body %>
 
 <%= simple_form_for @contact_message do |f| %>
   <%= f.error_notification %>

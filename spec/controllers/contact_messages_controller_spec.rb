@@ -12,16 +12,50 @@ RSpec.describe ContactMessagesController, type: :controller do
 
   describe "GET new" do
     it "renders" do
+      create(:page, :contact)
+
       get :new, params: { locale: "en" }
 
       expect(response).to have_http_status(:ok)
     end
 
     it "builds an empty message" do
+      create(:page, :contact)
+
       get :new, params: { locale: "en" }
 
       expect(assigns(:contact_message)).to be_a(ContactMessage)
       expect(assigns(:contact_message)).not_to be_persisted
+    end
+
+    it "assigns the contact page the form is introduced by" do
+      page = create(:page, :contact)
+
+      get :new, params: { locale: "en" }
+
+      expect(assigns(:page)).to eq page
+    end
+
+    it "leaves the about page alone" do
+      about = create(:page)
+      create(:page, :contact)
+
+      get :new, params: { locale: "en" }
+
+      expect(assigns(:page)).not_to eq about
+    end
+
+    it "raises when the contact page is missing" do
+      expect { get :new, params: { locale: "en" } }
+        .to raise_error(ActiveRecord::RecordNotFound)
+    end
+
+    it "stays quiet about a page that is not translated into the requested locale" do
+      I18n.with_locale(:ca) { create(:page, :contact) }
+
+      get :new, params: { locale: "en" }
+
+      expect(flash.now[:alert]).to be_nil
     end
   end
 
@@ -52,18 +86,33 @@ RSpec.describe ContactMessagesController, type: :controller do
     end
 
     it "re-renders the form when the message is invalid" do
+      create(:page, :contact)
+
       post :create, params: { locale: "ca", contact_message: valid_message.merge(text: "") }
 
       expect(response).to render_template(:new)
     end
 
+    # The template it re-renders is the one #new sets the page up for, and this
+    # action does not run #new.
+    it "assigns the contact page again when the message is invalid" do
+      page = create(:page, :contact)
+
+      post :create, params: { locale: "ca", contact_message: valid_message.merge(text: "") }
+
+      expect(assigns(:page)).to eq page
+    end
+
     it "does not send an invalid message" do
+      create(:page, :contact)
+
       expect {
         post :create, params: { locale: "ca", contact_message: valid_message.merge(text: "") }
       }.not_to change { ActionMailer::Base.deliveries.size }
     end
 
     it "rejects a malformed email address" do
+      create(:page, :contact)
       params = { locale: "ca", contact_message: valid_message.merge(from_email: "not-an-email") }
 
       expect { post :create, params: }.not_to change { ActionMailer::Base.deliveries.size }
