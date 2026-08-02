@@ -48,19 +48,6 @@ module ApplicationHelper
     "active" if url == request.fullpath
   end
 
-  def page_name
-    case controller.controller_name
-    when "action_works"
-      t("menu.action_art")
-    when "visual_works"
-      t("menu.visual_art")
-    when "dashboards"
-      t("menu.about") if controller.action_name == "about"
-    when "contact_messages"
-      t("menu.contact")
-    end
-  end
-
   def view_more(destination)
     content_tag "p", link_to(raw("#{t('view_more')} &rarr;"), destination), class: "view-more"
   end
