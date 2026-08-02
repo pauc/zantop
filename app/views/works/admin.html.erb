@@ -1,6 +1,17 @@
 <%= page_title "Ordenar treballs" %>
 
-<p class="sorting-hint">Arrossega els treballs per canviar-ne l'ordre. Es desa tot sol.</p>
+<p class="sorting-hint">
+  Arrossega els treballs, o fes servir les fletxes de cada fila, per canviar-ne
+  l'ordre. Es desa tot sol.
+</p>
+
+<%# Two regions rather than one: a move and the save that follows it are
+    separate announcements, and writing both into the same live region would
+    have the second cut the first off before a screen reader finished it. %>
+<p class="sorting-status">
+  <span role="status" data-behaviour="sorting-position"></span>
+  <span role="status" data-behaviour="sorting-save"></span>
+</p>
 
 <ul class="sortable-list"
     data-behaviour="sortable-works"
@@ -10,6 +21,17 @@
         draggable="true"
         data-id="<%= work.id %>">
       <span class="handle" aria-hidden="true">⣿</span>
+
+      <span class="sorting-controls">
+        <button type="button"
+                class="btn-move"
+                data-behaviour="move-up"
+                aria-label="Mou «<%= work.title %>» amunt">⬆️</button>
+        <button type="button"
+                class="btn-move"
+                data-behaviour="move-down"
+                aria-label="Mou «<%= work.title %>» avall">⬇️</button>
+      </span>
 
       <%= link_to work.title, work, class: "work-title" %>
 

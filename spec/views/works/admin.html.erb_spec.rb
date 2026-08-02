@@ -40,6 +40,31 @@ RSpec.describe "works/admin", type: :view do
     expect(rendered).to include %(data-id="#{work.id}")
   end
 
+  it "gives every work a control to move it up and one to move it down" do
+    render_works(create(:visual_work), create(:visual_work))
+
+    expect(rendered.scan(/data-behaviour="move-(up|down)"/).flatten)
+      .to eq %w[up down up down]
+  end
+
+  # The label carries the title because a screen reader reads the controls of a
+  # list out of the row they sit in: twenty rows of "move up" say nothing.
+  it "names the work each control moves" do
+    render_works(create(:visual_work, title: "Retrat"))
+
+    expect(rendered).to include %(aria-label="Mou «Retrat» amunt"),
+                                %(aria-label="Mou «Retrat» avall")
+  end
+
+  # Where a work landed and whether the order was saved. Both are announced
+  # rather than only painted, so the reorder is followable without the screen.
+  it "carries a live region for the new position and another for the save" do
+    render_works(create(:visual_work))
+
+    expect(rendered).to include %(role="status" data-behaviour="sorting-position"),
+                                %(role="status" data-behaviour="sorting-save")
+  end
+
   it "marks an unpublished work" do
     render_works(create(:visual_work, published: false))
 

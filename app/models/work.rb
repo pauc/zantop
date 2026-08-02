@@ -58,6 +58,21 @@ class Work < ApplicationRecord
   #
   # `update_all` deliberately leaves `updated_at` alone: the front page caches
   # each work on it, and reordering changes no work's content.
+  #
+  # A gem was considered for this and for `assign_position`, and neither fits.
+  # `positioning` wants contiguous positions from 1 with no gaps, ascending,
+  # which is the opposite of both properties above: the gaps deleted works
+  # leave are what keeps the remaining works still, and `ordered` reads the
+  # column descending so the newest work leads. `acts_as_list`, which the
+  # legacy app used, does tolerate gaps and can be told not to touch
+  # `updated_at`, but like `positioning` it only moves one record at a time and
+  # renumbers its siblings around it. The one write this site makes is a whole
+  # permutation arriving from `works#sort`, so either gem would turn a single
+  # pass of `update_all` into a call per work, each shifting the rest — and
+  # renumbering is precisely what this avoids, since dealing the submitted
+  # works' own positions back out is what stops a stale list claiming a
+  # position that belongs to a work it left out. Fifteen lines with specs
+  # against them beat a dependency that would have to be fought.
   def self.reposition(ids)
     transaction do
       works = where(id: ids).index_by(&:id)

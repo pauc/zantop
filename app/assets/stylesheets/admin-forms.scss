@@ -49,10 +49,6 @@ form .fields {
 }
 
 // The only hint the admin forms have is the default locale's text under a
-// field the locale being edited has not translated (see TranslatedInputs).
-// It is there to be read and retyped, so it is set apart from the box above
-// it, and `pre-line` keeps the paragraph breaks the prose was written with.
-// The only hint the admin forms have is the default locale's text under a
 // field the locale being edited has not translated (see TranslatedInputs). It
 // is there to be read and retyped, so it is set apart from the box above it,
 // and `pre-line` keeps the paragraph breaks the prose was written with.
@@ -69,6 +65,20 @@ form .fields {
   font-size: .9em;
   font-style: italic;
   white-space: pre-line;
+}
+
+// Says where a work landed and whether the order was saved. It is a live
+// region, but it is on the page for everyone: the save used to be reported by
+// a colour flash alone, which said nothing to anyone not watching that row.
+.sorting-status {
+  color: colors.$grey;
+  font-style: italic;
+  // Held open so the list does not jump the first time something is said.
+  min-height: 1.5rem;
+
+  span + span:not(:empty) {
+    margin-left: .5rem;
+  }
 }
 
 .sortable-list {
@@ -111,6 +121,35 @@ form .fields {
   .handle {
     color: colors.$grey;
     letter-spacing: -.2rem;
+  }
+
+  .sorting-controls {
+    display: flex;
+    column-gap: .25rem;
+  }
+
+  // The keyboard's way through the list, so it is a real target rather than a
+  // pair of glyphs: the emoji alone is under the 24px a finger or a shaky
+  // pointer needs, and the button is what the focus ring can sit on.
+  .btn-move {
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    padding: 0;
+    border: 1px solid colors.$grey;
+    border-radius: .333rem;
+    background: #fff;
+    font-size: .9rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+      background: colors.$kaki_yellow;
+    }
+
+    &:focus-visible {
+      outline: 2px solid colors.$dark_grey;
+      outline-offset: 2px;
+    }
   }
 
   .work-title {
