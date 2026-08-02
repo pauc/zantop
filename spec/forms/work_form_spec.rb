@@ -237,6 +237,38 @@ RSpec.describe WorkForm do
         .to("https://vimeo.com/1")
     end
 
+    it "seeds the default locale of a work submitted in another one" do
+      I18n.with_locale(:en) { described_class.new.submit(title: "Jurimuri") }
+
+      expect(I18n.with_locale(:ca) { Work.last.title }).to eq "Jurimuri"
+    end
+
+    it "seeds the default locale of the sections it creates" do
+      attributes = {
+        title: "Jurimuri",
+        section_attributes: {
+          "999999999999001" => { title: "The Section", body: "Body", position: 1 }
+        }
+      }
+      I18n.with_locale(:en) { described_class.new.submit(attributes) }
+
+      expect(I18n.with_locale(:ca) { Section.last.title }).to eq "The Section"
+    end
+
+    it "seeds the default locale of the credits of the images it creates" do
+      attributes = {
+        title: "Jurimuri",
+        image_attributes: {
+          "999999999999001" => { video: "https://vimeo.com/76979871",
+                                 credits: "Photo: Someone",
+                                 position: 1 }
+        }
+      }
+      I18n.with_locale(:en) { described_class.new.submit(attributes) }
+
+      expect(I18n.with_locale(:ca) { Image.last.credits }).to eq "Photo: Someone"
+    end
+
     it "does not save an unchanged section again" do
       work = create(:action_work)
       section = create(:section, work:, title: "Section")
@@ -322,6 +354,12 @@ RSpec.describe WorkForm do
       other_form.tags = []
 
       expect(other_form.tags).to eq []
+    end
+
+    it "seeds the default locale of a tag created in another one" do
+      I18n.with_locale(:en) { form.tags = ["sculpture"] }
+
+      expect(I18n.with_locale(:ca) { Tag.last.name }).to eq "sculpture"
     end
 
     it "downcases a newly created tag name" do

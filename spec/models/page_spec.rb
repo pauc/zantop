@@ -82,6 +82,18 @@ RSpec.describe Page do
       expect(I18n.with_locale(:es) { page.reload.body.to_s }).to include "Zigzaguea"
     end
 
+    it "seeds the default locale from the locale it was written in" do
+      page = I18n.with_locale(:en) { create(:page, title: "About") }
+
+      expect(I18n.with_locale(:ca) { page.reload.title }).to eq "About"
+    end
+
+    it "seeds the default locale's body too" do
+      page = I18n.with_locale(:en) { create(:page, body: "<p>The bio</p>") }
+
+      expect(I18n.with_locale(:ca) { page.reload.body.body.to_html }).to eq "<p>The bio</p>"
+    end
+
     it "reports the locales it has been translated into" do
       page = I18n.with_locale(:ca) { create(:page) }
 

@@ -29,7 +29,17 @@ class Tag < ApplicationRecord
 
   private
 
+  # Both locales, because `HasTranslations` seeds the default locale from the
+  # one being written and runs first: a tag typed as "Escultura" on /es would
+  # otherwise be stored downcased in Spanish and capitalised in Catalan, and the
+  # tag navigation reads the Catalan one.
   def name_to_underscore
-    name.downcase!
+    [I18n.locale, I18n.default_locale].uniq.each do |locale|
+      I18n.with_locale(locale) do
+        next if name.blank?
+
+        self.name = name.downcase
+      end
+    end
   end
 end

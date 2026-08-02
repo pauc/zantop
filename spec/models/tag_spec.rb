@@ -75,6 +75,12 @@ RSpec.describe Tag do
       expect(create(:tag, name: "Art D'Acció").reload.name).to eq "art d'acció"
     end
 
+    it "downcases the name seeded into the default locale" do
+      tag = I18n.with_locale(:es) { create(:tag, name: "Escultura") }
+
+      expect(I18n.with_locale(:ca) { tag.reload.name }).to eq "escultura"
+    end
+
     it "downcases the name on update too" do
       tag = create(:tag, name: "escultura")
 
