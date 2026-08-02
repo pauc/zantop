@@ -7,20 +7,23 @@
                 data: { confirm: "Segur que ho vols esborrar?" } %>
 <% end %>
 
+<%# Deliberately not cached. This list is other works, picked and ordered by
+    `position`, and `Work.reposition` moves positions with `update_all` so that
+    reordering the front page does not invalidate every work's fragment. No key
+    built from these records can therefore see a reordering, and the fragment
+    only ever saved rendering five links. %>
 <% content_for :sidebar do %>
-  <% cache [I18n.locale, :related_works, @work] do %>
-    <% unless @related_works.empty? %>
-      <div class="sidebar-block">
-        <h2><%= t 'works.labels.related' %></h2>
-        <ul class="related-works vertical-list">
-          <% @related_works.each do |w| %>
-            <li>
-              <%= link_to w.title, w %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% unless @related_works.empty? %>
+    <div class="sidebar-block">
+      <h2><%= t 'works.labels.related' %></h2>
+      <ul class="related-works vertical-list">
+        <% @related_works.each do |w| %>
+          <li>
+            <%= link_to w.title, w %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 <% end %>
 <%= page_title @work.title %>
@@ -30,7 +33,11 @@
                  record: @work,
                  type: "article" %>
 
-<% cache [I18n.locale, :show, @work] do %>
+<%# The tags are in the key because nothing about them reaches the work's own
+    timestamp: a tagging is a row of its own, and renaming a tag changes both
+    the name printed here and the path it links to. Sections and images need no
+    such treatment — they touch the work. %>
+<% cache [I18n.locale, :show, @work, @work.tags] do %>
   <%= print_work_place @work%>
   <%= print_work_date @work%>
 

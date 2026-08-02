@@ -59,8 +59,20 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Replace the default in-process memory cache store with a durable alternative.
-  # config.cache_store = :mem_cache_store
+  # Fragment caching is the only thing that reads or writes this store, and the
+  # fragments are keyed on the records they render, so a cold store costs a few
+  # slow first requests and nothing else.
+  #
+  # Named rather than left to the Rails default of a file store under
+  # `tmp/cache`, which in a container means a directory that is thrown away on
+  # every deploy anyway — with the disk I/O of a durable store and none of the
+  # durability. Puma runs one process here (`WEB_CONCURRENCY` is unset), so an
+  # in-process store is shared by every thread that serves a request, and the
+  # site is a single container: there is no second process to share with.
+  #
+  # 32MB is far more than this site's pages need; the point of the size is that
+  # the store evicts rather than growing into the droplet's RAM.
+  config.cache_store = :memory_store, { size: 32.megabytes }
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   # config.active_job.queue_adapter = :resque

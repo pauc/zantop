@@ -9,7 +9,12 @@ class Image < ApplicationRecord
   # them. See "Rich text" in CLAUDE.md.
   translates :credits, plain: true
 
-  belongs_to :work
+  # `touch` for the same reason as `Section`: the gallery is rendered inside a
+  # fragment cached on the work. It covers the file as well as the columns,
+  # because an `ActiveStorage::Attachment` touches the record it hangs off
+  # (`ActiveStorage.touch_attachment_records`), so attaching, replacing or
+  # purging an image lands here and carries on to the work.
+  belongs_to :work, touch: true
 
   validate :image_xor_video
 

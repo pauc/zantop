@@ -39,3 +39,7 @@ uploads
 
 # Mutation testing run results
 /.mutant/
+
+# The global ignore has a bare `tags` pattern for ctags files, which also
+# matches this directory — new templates under it silently need `git add -f`.
+!/app/views/tags/

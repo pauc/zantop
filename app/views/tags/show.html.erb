@@ -2,11 +2,13 @@
 <% page_metadata description: t("meta.descriptions.tag", category: @category.name),
                  record: @category %>
 
-<%# The cache key carries who is looking, because the list inside it does: the
-    owner is served her unpublished works here, and without this the copy she
-    leaves behind would be served to the next anonymous visitor. %>
-<% cache [I18n.locale, :show, @category, current_user?] do %>
-  <div class="works-list">
-    <%= render partial: 'works/work_preview', collection: @works, as: :work %>
-  </div>
-<% end %>
+<%# Deliberately not cached as a whole. The works are listed in `position`
+    order, and `Work.reposition` moves positions with `update_all`, so a
+    reordering moves no timestamp this fragment could key on. Each preview
+    caches itself on its own work, which is where the rendering cost is —
+    and caching per work rather than per list is also what keeps the owner's
+    drafts, which `visible` shows her here, out of a fragment the next
+    anonymous visitor would read. %>
+<div class="works-list">
+  <%= render partial: 'works/work_preview', collection: @works, as: :work %>
+</div>
