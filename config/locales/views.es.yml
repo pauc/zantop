@@ -15,6 +15,7 @@ es:
   restricted_access: Acceso restringido. Debes identificarte antes.
   save: Guardar
   untranslated_content: Ups! Disculpa, este contenido no está traducido al castellano.
+  untranslated_field: "Sin traducir. En %{language} dice:"
   updated: Contenido actualizado.
 
   under_construction: En construcción

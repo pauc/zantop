@@ -27,6 +27,18 @@ RSpec.describe VisualWorkForm do
     it "defaults the year of a new work to the current one" do
       expect(form.year).to eq Time.current.year
     end
+
+    it "leaves techniques the locale being edited has not translated empty" do
+      work = create(:visual_work, techniques: "oli sobre tela")
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).techniques }).to be_nil
+    end
+
+    it "copies the dimensions whatever the locale, since there is only one value" do
+      work = create(:visual_work, dimensions: "10x20")
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).dimensions }).to eq "10x20"
+    end
   end
 
   describe "attributes" do

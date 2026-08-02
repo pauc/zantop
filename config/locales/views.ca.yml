@@ -15,6 +15,7 @@ ca:
   restricted_access: Accés restringit. T'has d'identificar abans.
   save: Guardar
   untranslated_content: Oops! Ho sentim, aquest contingut no està traduït al català.
+  untranslated_field: "Sense traduir. En %{language} diu:"
   updated: Contingut actualitzat.
 
   under_construction: En construcció

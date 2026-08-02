@@ -95,4 +95,40 @@ RSpec.describe "pages/edit" do
 
     expect(rendered).to include %(value="Biografía")
   end
+
+  # Whatever a box shows is what saving stores, so a box may only ever show
+  # what its own locale holds — see config/initializers/translated_inputs.rb.
+  describe "a locale the page is not translated into" do
+    it "leaves the title empty rather than pre-filling it from the fallback" do
+      assign(:page, create(:page, title: "Biografia"))
+
+      I18n.with_locale(:es) { render }
+
+      expect(rendered).not_to include %(value="Biografia")
+    end
+
+    it "offers the default locale's title to translate from" do
+      assign(:page, create(:page, title: "Biografia"))
+
+      I18n.with_locale(:es) { render }
+
+      expect(rendered).to include "Sin traducir. En catalán dice:\nBiografia"
+    end
+
+    it "offers the default locale's body as plain text" do
+      assign(:page, create(:page, body: "<p>Zigzagueja</p>"))
+
+      I18n.with_locale(:es) { render }
+
+      expect(rendered).to include "Sin traducir. En catalán dice:\nZigzagueja"
+    end
+
+    it "says nothing on the default locale itself" do
+      assign(:page, create(:page, title: "Biografia"))
+
+      render
+
+      expect(rendered).not_to include "Sense traduir"
+    end
+  end
 end

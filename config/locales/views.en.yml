@@ -15,6 +15,7 @@ en:
   restricted_access: Restricted access. You need to log in first.
   save: Save
   untranslated_content: Oops! Sorry, this content is not translated into English.
+  untranslated_field: "Not translated. In %{language} it says:"
   updated: Content updated.
 
   under_construction: Under construction

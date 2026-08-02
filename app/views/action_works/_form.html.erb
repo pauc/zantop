@@ -4,7 +4,8 @@
                     html: { multipart: true, data: { behaviour: "work-form" } } do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :title, autofocus: true %>
+  <%# Only the locale that has to have a title marks the box required. %>
+  <%= f.input :title, autofocus: true, required: work_form.title_required? %>
   <%= f.input :description, as: :rich_text_area %>
 
   <fieldset class="sortable-fieldset sections">

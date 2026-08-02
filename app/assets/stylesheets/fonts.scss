@@ -92,15 +92,6 @@ legend {
   font-weight: bold;
 }
 
-.help-block {
-  font-size: 0.8em;
-  color: #0b0;
-
-  &:before {
-    content: "-";
-  }
-}
-
 form .error .help-inline {
   color: colors.$error;
 }

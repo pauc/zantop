@@ -39,6 +39,17 @@ RSpec.describe "tags/admin" do
       .to eq ['name="tag[name][ca]"', 'name="tag[name][en]"', 'name="tag[name][es]"']
   end
 
+  # The per-locale accessors this form is built on already read without a
+  # fallback, which is the rule the rest of the admin forms were brought round
+  # to in config/initializers/translated_inputs.rb. Pinned so it stays that way.
+  it "fills each locale's box with that locale's name and no other" do
+    assign(:categories, [create(:tag, name: "escultura")])
+
+    render
+
+    expect(rendered.scan('value="escultura"').size).to eq 1
+  end
+
   it "submits the rename form as a normal request rather than over ajax" do
     assign(:categories, [create(:tag, name: "escultura")])
 

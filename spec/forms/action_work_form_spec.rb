@@ -15,6 +15,19 @@ RSpec.describe ActionWorkForm do
 
       expect(described_class.new(work:).realization_date).to eq Date.new(1998, 3, 14)
     end
+
+    it "leaves a place the locale being edited has not translated empty" do
+      work = create(:action_work, place: "Barcelona")
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).place }).to be_nil
+    end
+
+    it "copies the realization date whatever the locale, since there is only one value" do
+      work = create(:action_work, realization_date: Date.new(1998, 3, 14))
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).realization_date })
+        .to eq Date.new(1998, 3, 14)
+    end
   end
 
   describe "#submit" do

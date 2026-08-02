@@ -48,6 +48,29 @@ form .fields {
   font-style: italic;
 }
 
+// The only hint the admin forms have is the default locale's text under a
+// field the locale being edited has not translated (see TranslatedInputs).
+// It is there to be read and retyped, so it is set apart from the box above
+// it, and `pre-line` keeps the paragraph breaks the prose was written with.
+// The only hint the admin forms have is the default locale's text under a
+// field the locale being edited has not translated (see TranslatedInputs). It
+// is there to be read and retyped, so it is set apart from the box above it,
+// and `pre-line` keeps the paragraph breaks the prose was written with.
+//
+// It lives here and not in the public bundle, where a green `.help-block` with
+// a "-" before it sat unreachable until this became the first hint in the app.
+// $dark_grey and not $grey: half of these sit inside .fields, whose own grey
+// background leaves the lighter one barely legible.
+.help-block {
+  margin: .25rem 0 0;
+  padding-left: .75rem;
+  border-left: 3px solid colors.$grey;
+  color: colors.$dark_grey;
+  font-size: .9em;
+  font-style: italic;
+  white-space: pre-line;
+}
+
 .sortable-list {
   margin: 0;
   padding: 0;

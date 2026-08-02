@@ -125,6 +125,34 @@ RSpec.describe PagesController, type: :controller do
       expect(page.reload.title).to eq "About"
     end
 
+    # The form leaves an untranslated field empty rather than pre-filling it
+    # from the fallback, so a blank one means "not translated yet" and the page
+    # keeps what it has. The presence validations read through the fallback and
+    # are happy; nothing is written for the locale being edited.
+    it "accepts a blank field in a locale the page is not translated into" do
+      page = create(:page)
+
+      patch :update, params: { locale: "es", id: page.id, page: { title: "", body: "" } }
+
+      expect(response).to have_http_status(:redirect)
+    end
+
+    it "stores no translation for a locale left untranslated" do
+      page = create(:page)
+
+      patch :update, params: { locale: "es", id: page.id, page: { title: "", body: "" } }
+
+      expect(page.reload.translated_into?(:es)).to be false
+    end
+
+    it "keeps the default locale's text when a locale is left untranslated" do
+      page = create(:page)
+
+      patch :update, params: { locale: "es", id: page.id, page: { title: "", body: "" } }
+
+      expect(I18n.with_locale(:ca) { page.reload.title }).to eq "About"
+    end
+
     it "rejects parameters outside the page key" do
       page = create(:page)
 

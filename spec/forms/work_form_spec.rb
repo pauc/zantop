@@ -27,6 +27,122 @@ RSpec.describe WorkForm do
 
       expect(form.title).to be_nil
     end
+
+    it "copies the description as the markup an editor submits" do
+      work = create(:action_work)
+      work.update!(description: "<p>La <em>descripció</em></p>")
+
+      expect(described_class.new(work: work.reload).description)
+        .to eq "<p>La <em>descripció</em></p>"
+    end
+
+    it "does not copy the description as rendered content" do
+      work = create(:action_work)
+      work.update!(description: "<p>La descripció</p>")
+
+      expect(described_class.new(work: work.reload).description).not_to include "trix-content"
+    end
+
+    it "leaves a title the locale being edited has not translated empty" do
+      work = create(:action_work, title: "El títol")
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).title }).to be_nil
+    end
+
+    it "leaves a description the locale being edited has not translated empty" do
+      work = create(:action_work)
+      work.update!(description: "La descripció")
+
+      expect(I18n.with_locale(:en) { described_class.new(work: work.reload).description })
+        .to be_nil
+    end
+
+    it "copies what the locale being edited does hold" do
+      work = create(:action_work)
+      I18n.with_locale(:en) { work.update!(title: "The title") }
+
+      expect(I18n.with_locale(:en) { described_class.new(work: work.reload).title })
+        .to eq "The title"
+    end
+
+    it "copies an attribute that has one value for every locale whatever the locale" do
+      work = create(:action_work, published: true)
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).published }).to be true
+    end
+  end
+
+  # A blank field in a locale a work is not translated into means "not
+  # translated yet". Saving it must leave the work exactly as it was, or the
+  # form would empty the work every time the admin corrects a typo on /en.
+  describe "submitting a locale left untranslated" do
+    it "stores no translation for it" do
+      work = create(:action_work, title: "El títol")
+
+      I18n.with_locale(:en) { described_class.new(work:).submit(title: "", description: "") }
+
+      expect(work.reload.translated_into?(:en)).to be false
+    end
+
+    it "keeps the text the work already had" do
+      work = create(:action_work, title: "El títol")
+
+      I18n.with_locale(:en) { described_class.new(work:).submit(title: "", description: "") }
+
+      expect(work.reload.title).to eq "El títol"
+    end
+
+    it "is accepted, since the work keeps the title it has" do
+      work = create(:action_work, title: "El títol")
+
+      expect(I18n.with_locale(:en) { described_class.new(work:).submit(title: "") }).to be_truthy
+    end
+
+    it "still refuses a new work with no title at all" do
+      expect(I18n.with_locale(:en) { described_class.new.submit(title: "") }).to be_falsey
+    end
+
+    it "still refuses to blank the title of the default locale" do
+      work = create(:action_work, title: "El títol")
+
+      expect(described_class.new(work:).submit(title: "")).to be_falsey
+    end
+
+    it "stores no translation for a nested section left untranslated" do
+      work = create(:action_work)
+      section = create(:section, work:, title: "La secció")
+
+      I18n.with_locale(:en) do
+        described_class.new(work: work.reload)
+                       .submit(title: "", section_attributes: { section.id.to_s => { title: "" } })
+      end
+
+      expect(section.reload.translated_into?(:en)).to be false
+    end
+
+    it "keeps a nested section's text when its locale is left untranslated" do
+      work = create(:action_work)
+      section = create(:section, work:, title: "La secció")
+
+      I18n.with_locale(:en) do
+        described_class.new(work: work.reload)
+                       .submit(title: "", section_attributes: { section.id.to_s => { title: "" } })
+      end
+
+      expect(section.reload.title).to eq "La secció"
+    end
+
+    it "stores no translation for a nested image left untranslated" do
+      work = create(:action_work)
+      image = create(:image, work:, credits: "Foto: Algú")
+
+      I18n.with_locale(:en) do
+        described_class.new(work: work.reload)
+                       .submit(title: "", image_attributes: { image.id.to_s => { credits: "" } })
+      end
+
+      expect(image.reload.translated_into?(:en)).to be false
+    end
   end
 
   describe "#submit" do
