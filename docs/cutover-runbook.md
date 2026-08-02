@@ -32,7 +32,7 @@ column.
 | `DB_PASSWORD` | Postgres password for the new droplet | TODO — generate, see [Secrets](#secrets) |
 | `SECRET_KEY_BASE` | Rails message verifier key | TODO — `bin/rails secret`, see [Secrets](#secrets) |
 | DNS provider | Registrar / DNS host for `mireiazantop.com` | TODO — confirm who holds the zone |
-| `REHEARSAL_HOST` | Provisional hostname for [Phase B0](#phase-b0--provisional-domain-rehearsal) | TODO — suggest `nou.mireiazantop.com` |
+| `REHEARSAL_HOST` | Provisional hostname for [Phase B0](#phase-b0--provisional-domain-rehearsal) | `zantop.pausandalio.net` |
 
 The legacy Postgres major version is also unknown. It matters only for
 [Phase A1](#a1--dump-the-legacy-production-database): dump with the **legacy
@@ -366,21 +366,37 @@ Nothing about the application blocks this any more. The admin area is closed to
 anonymous visitors (todo 12) and drafts are no longer served publicly (todo 39),
 which is what made an exposed test deployment unacceptable before.
 
-### B0.1 — pick the hostname
+### B0.1 — the hostname
 
-A subdomain of the real domain, `nou.mireiazantop.com` or similar. It exercises
-the real registrar, the real zone and real Let's Encrypt issuance, which is the
-whole point.
+**`zantop.pausandalio.net`**, a subdomain of a domain we already own and whose
+zone is at GoDaddy (`ns57`/`ns58.domaincontrol.com`).
 
-**Not `nip.io` or `sslip.io`.** Their certificate rate limit is shared across
-everyone using them and is routinely exhausted, so issuance fails for reasons
-that have nothing to do with this setup — the exact failure this rehearsal exists
-to rule out. A subdomain of `mireiazantop.com` draws on the same weekly
-per-domain budget as the real cutover will, which is ample as long as the
-rehearsal is not looped.
+A subdomain rather than the apex because `pausandalio.net` is not idle: it and
+`www` both serve a GitHub Pages site (`pauc.github.io`, at
+`185.199.108–111.153`). Pointing the apex at the droplet would take that site
+down for as long as the rehearsal runs. A subdomain costs nothing and proves the
+same things.
 
-Confirming who holds the DNS zone is a prerequisite here and a
-[placeholder](#placeholders) still unanswered.
+A domain other than `mireiazantop.com` is the better choice, for a reason worth
+stating plainly: **Let's Encrypt's certificate limit is per registered domain**,
+so a rehearsal under `pausandalio.net` cannot spend `mireiazantop.com`'s weekly
+budget however many times it is looped. It also means B0 can start now — the
+unanswered "who holds the zone for `mireiazantop.com`"
+[placeholder](#placeholders) no longer blocks it, though it still blocks
+[Phase D](#phase-d--dns-cutover).
+
+There is no CAA record on `pausandalio.net`, so nothing restricts which authority
+may issue for it. Worth having checked: a CAA record naming some other CA fails
+an ACME challenge in a way that reads like a configuration bug.
+
+What this hostname does *not* rehearse is the real zone and registrar, so the DNS
+edit in Phase D stays first-time-on-the-day. That is the one step of the cutover
+that is a single form field, and an acceptable thing to leave unpractised.
+
+**Not `nip.io` or `sslip.io`**, tempting as they are for a name that needs no
+zone edit at all: their certificate rate limit is shared across everyone using
+them and is routinely exhausted, so issuance fails for reasons that have nothing
+to do with this setup — the exact failure this rehearsal exists to rule out.
 
 ### B0.2 — run Phases A, B and C against it
 
