@@ -16,10 +16,20 @@ servers:
 #   user: deployer
 
 proxy:
+  # kamal-proxy requests a Let's Encrypt certificate for the hosts below and
+  # renews it itself. There is no certbot, no cron entry and no certificate file
+  # anywhere in this repository — which is the point, since the legacy site's
+  # ZeroSSL certificate expired in January because renewing it was something a
+  # person had to remember.
   ssl: true
-  hosts:
-    - mireiazantop.com
-    - www.mireiazantop.com
+  # Overridable so the provisional-domain rehearsal in docs/cutover-runbook.md
+  # can deploy under a hostname of its own. Every host named here is one
+  # kamal-proxy will attempt an ACME challenge for, and a challenge for a name
+  # that does not resolve to this droplet is a *failed validation*, not a
+  # skipped one — Let's Encrypt rate-limits those per hour. So the rehearsal
+  # replaces this list rather than adding to it, and the real hosts come back
+  # only once DNS points here.
+  hosts: <%= ENV.fetch("ZANTOP_PROXY_HOSTS", "mireiazantop.com,www.mireiazantop.com").split(",").map(&:strip).inspect %>
   # The route added in config/routes.rb. kamal-proxy will not send traffic to a
   # new container until this answers 200, and it answers over plain HTTP
   # because config.assume_ssl makes Rails treat proxied requests as secure
@@ -63,6 +73,12 @@ env:
     # config/environments/production.rb defaults to these same two values.
     ZANTOP_SMTP_PORT: 587
     ZANTOP_SMTP_DOMAIN: mireiazantop.com
+    # "true" only for the provisional-domain rehearsal, which puts the whole
+    # portfolio on a publicly resolving hostname; it makes every response carry
+    # X-Robots-Tag: noindex. Defaulting to "false" here rather than leaving it
+    # unset means the real deploy cannot inherit a stale "true" from whoever
+    # last ran the rehearsal from their shell.
+    ZANTOP_NOINDEX: "<%= ENV.fetch("ZANTOP_NOINDEX", "false") %>"
   secret:
     - ZANTOP_DATABASE_PASSWORD
     # The mail account the contact form sends through. The host is not

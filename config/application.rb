@@ -45,6 +45,14 @@ module Zantop
     config.i18n.default_locale    = :ca
     config.i18n.fallbacks         = true
 
+    # Set on a deployment that is not the real site — the provisional-domain
+    # rehearsal in docs/cutover-runbook.md, which serves the whole portfolio
+    # under a hostname that resolves publicly and so can be found and indexed as
+    # a duplicate of mireiazantop.com, outliving the rehearsal that created it.
+    # Unset everywhere else, which is why the default is the safe one for
+    # production rather than for a test.
+    config.x.noindex = ENV["ZANTOP_NOINDEX"] == "true"
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

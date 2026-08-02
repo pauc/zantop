@@ -13,6 +13,20 @@ class ApplicationController < ActionController::Base
     ActiveStorage::Current.url_options = { host: request.host }
   end
 
+  # Keeps a deployment that is not the real site out of search results. See
+  # `config.x.noindex` in config/application.rb for which deployment that is.
+  #
+  # A response header rather than `Disallow: /` in robots.txt, for the reason
+  # `MetadataHelper#robots_tag` gives about the admin area and which cuts harder
+  # here: disallowing the fetch stops a crawler reading the page, and so stops it
+  # ever seeing that the page asks not to be indexed, which leaves the URL
+  # indexable from any link that points at it. The header also travels on
+  # responses that have no <head> to put a meta tag in — the sitemap being the
+  # one that lists every URL on the site.
+  before_action(if: -> { Rails.configuration.x.noindex }) do
+    response.set_header("X-Robots-Tag", "noindex, nofollow")
+  end
+
   around_action :set_locale_from_url
   helper_method :current_user, :current_user?
 
