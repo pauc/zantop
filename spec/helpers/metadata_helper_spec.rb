@@ -86,6 +86,16 @@ RSpec.describe MetadataHelper do
 
       expect(helper.localized_url(:es)).to eq "http://test.host/es/paginas/1/edit"
     end
+
+    # What the sitemap needs: it speaks about pages other than the one being
+    # served, from a route that is not localized at all.
+    it "localizes a page other than the one the request is on" do
+      visiting(controller: "dashboards", action: "front")
+
+      expect(helper.localized_url(:en, path_parameters: { controller: "contact_messages",
+                                                          action: "new" }))
+        .to eq "http://test.host/en/contact"
+    end
   end
 
   describe "#canonical_url" do

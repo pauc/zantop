@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # for /up.
   get "up", to: "rails/health#show", as: :rails_health_check
 
+  # Outside `localized` for the same reason, and one of its own: a sitemap
+  # names every locale's URLs and so belongs to none of them. Inside the block
+  # force_locale would mount only /ca/sitemap.xml, and robots.txt has to point
+  # at a path a crawler asks for unprompted, which is /sitemap.xml.
+  get "sitemap", to: "sitemaps#show", as: :sitemap, defaults: { format: "xml" }
+
   localized do
     get  :login,   to: "sessions#new"
     post :session, to: "sessions#create"

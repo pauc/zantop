@@ -28,3 +28,5 @@ Disallow: /*/more_works
 Disallow: /up
 
 Allow: /
+
+Sitemap: https://mireiazantop.com/sitemap.xml

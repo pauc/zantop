@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<%#
+  One <url> per locale per page, each one carrying the alternates for all
+  three plus x-default — the sitemap equivalent of the rel=alternate links in
+  the page's own <head>, and the protocol wants them repeated on every member
+  of the set rather than declared once.
+
+  No <lastmod>. `updated_at` does not currently move for every change that
+  reaches a page: `Work.reposition` skips it on purpose, and editing only a
+  work's sections or images saves those records without touching the work.
+  A lastmod that is right most of the time is worse than none — Google's rule
+  is that it uses the value only while it is consistently accurate, and one
+  stale date teaches it to ignore the rest. Adding it is a one-line change
+  once the work is touched by everything that changes its page.
+
+  No <changefreq> or <priority> either: nothing reads them.
+%>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<% @sitemap.entries.each do |entry| %>
+<% urls = alternate_urls(entry.record, path_parameters: entry.path_parameters) %>
+<% urls.each_value do |url| %>
+  <url>
+    <loc><%= url %></loc>
+<% urls.each do |locale, alternate| %>
+    <xhtml:link rel="alternate" hreflang="<%= locale %>" href="<%= alternate %>"/>
+<% end %>
+    <xhtml:link rel="alternate" hreflang="x-default" href="<%= urls.fetch(MetadataHelper::X_DEFAULT_LOCALE) %>"/>
+  </url>
+<% end %>
+<% end %>
+</urlset>

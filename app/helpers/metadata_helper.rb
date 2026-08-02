@@ -51,16 +51,22 @@ module MetadataHelper
     localized_url(I18n.locale, record)
   end
 
-  def alternate_urls(record = nil)
-    I18n.available_locales.index_with { |locale| localized_url(locale, record) }
+  def alternate_urls(record = nil, path_parameters: request.path_parameters)
+    I18n.available_locales.index_with { |locale| localized_url(locale, record, path_parameters:) }
   end
 
   # Asks the router for this same route in another locale rather than rewriting
   # the path: `route_translator` translates every segment, so /ca/art-visual is
   # /en/visual-art, and `friendly_id`'s `simple_i18n` gives the record a
   # different slug in each locale on top of that.
-  def localized_url(locale, record = nil)
-    options = request.path_parameters.merge(locale: locale.to_s, only_path: false)
+  #
+  # `path_parameters` defaults to the request's, which is what a page in its own
+  # <head> wants. The sitemap is the caller that has to pass its own: it speaks
+  # about pages other than the one being served, and it is not itself a
+  # localized route, so `request.path_parameters` there names no locale and no
+  # page worth linking to.
+  def localized_url(locale, record = nil, path_parameters: request.path_parameters)
+    options = path_parameters.merge(locale: locale.to_s, only_path: false)
     options[:id] = I18n.with_locale(locale) { record.to_param } if record
 
     url_for(options)
