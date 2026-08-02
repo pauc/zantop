@@ -34,6 +34,17 @@ jobs:
       # The droplet, read by config/deploy.yml for both the web role and the
       # Postgres accessory.
       ZANTOP_DEPLOY_HOST: ${{ secrets.ZANTOP_DEPLOY_HOST }}
+      # Repository *variables*, not secrets — neither is sensitive, and both
+      # want to be visible in the Actions UI rather than masked. Without these
+      # a dispatched run always deploys under the real hosts, which is wrong
+      # for the Phase B0 rehearsal and would spend Let's Encrypt's failed
+      # validation limit on names still pointing at the legacy droplet.
+      #
+      # Undefined variables expand to an empty string, not to nothing;
+      # config/deploy.yml treats blank as unset for exactly that reason, so
+      # leaving them undefined gives the production defaults.
+      ZANTOP_PROXY_HOSTS: ${{ vars.ZANTOP_PROXY_HOSTS }}
+      ZANTOP_NOINDEX: ${{ vars.ZANTOP_NOINDEX }}
       # Read by .kamal/secrets.
       KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
       SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}

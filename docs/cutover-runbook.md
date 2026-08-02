@@ -24,15 +24,15 @@ column.
 
 | Variable | What it is | Status |
 | --- | --- | --- |
-| `NEW_IP` | Public IP of the new droplet | TODO — droplet not provisioned |
+| `NEW_IP` | Public IP of the new droplet | `161.35.86.234` — `zantop-web`, ams3, `s-1vcpu-2gb`, Ubuntu 26.04 LTS x64, created 2026-08-02 |
 | `LEGACY_IP` | Legacy app host | `198.211.119.133` |
 | `LEGACY_DB` | Database name of the Rails 3.2 app | TODO — confirm on the box |
 | `LEGACY_DB_USER` | Its Postgres role | TODO — confirm on the box |
 | `LEGACY_UPLOADS_PATH` | CarrierWave upload root on the legacy box | TODO — confirm on the box |
-| `DB_PASSWORD` | Postgres password for the new droplet | TODO — generate, see [Secrets](#secrets) |
-| `SECRET_KEY_BASE` | Rails message verifier key | TODO — `bin/rails secret`, see [Secrets](#secrets) |
-| DNS provider | Registrar / DNS host for `mireiazantop.com` | TODO — confirm who holds the zone |
-| `REHEARSAL_HOST` | Provisional hostname for [Phase B0](#phase-b0--provisional-domain-rehearsal) | `zantop.pausandalio.net` |
+| `DB_PASSWORD` | Postgres password for the new droplet | Generated 2026-08-02, 32 random bytes hex. In Bitwarden as `ZANTOP_DATABASE_PASSWORD`, see [Secrets](#secrets) |
+| `SECRET_KEY_BASE` | Rails message verifier key | Generated 2026-08-02 with `bin/rails secret`. In Bitwarden, see [Secrets](#secrets) |
+| DNS provider | Registrar / DNS host for `mireiazantop.com` | GoDaddy — `ns43`/`ns44.domaincontrol.com`. Still TODO: **which GoDaddy account**, and who can log into it. Not necessarily the one holding `pausandalio.net` (`ns57`/`ns58`) |
+| `REHEARSAL_HOST` | Provisional hostname for [Phase B0](#phase-b0--provisional-domain-rehearsal) | `pausandalio.net` — the apex, not a subdomain; see [B0.1](#b01--the-hostname) for what that costs and what must not be touched |
 
 The legacy Postgres major version is also unknown. It matters only for
 [Phase A1](#a1--dump-the-legacy-production-database): dump with the **legacy
@@ -69,17 +69,58 @@ deploying before they exist is that the first contact submission raises, since
 non-secret literals already in `config/deploy.yml`.
 
 `KAMAL_REGISTRY_PASSWORD` is not a repository secret: the workflow passes the
-automatic `GITHUB_TOKEN`. Running Kamal from a laptop needs a personal access
-token with `write:packages` exported under that name instead.
-
-Export the same set locally for the Phase B commands, which run from the laptop:
+automatic `GITHUB_TOKEN`. Running Kamal from a laptop needs a token with
+`write:packages` exported under that name instead — and the `gh` CLI's own token
+will do, once the scope is added:
 
 ```sh
-export ZANTOP_DEPLOY_HOST=$NEW_IP
-export ZANTOP_DATABASE_PASSWORD=$DB_PASSWORD
-export SECRET_KEY_BASE=...
-export KAMAL_REGISTRY_PASSWORD=...   # PAT with write:packages
+gh auth refresh -h github.com -s write:packages   # once; opens a browser
 ```
+
+Done on 2026-08-02 for user `pauc`; `docker login ghcr.io -u pauc` confirms it.
+
+**It is deliberately not stored in Bitwarden.** `gh` already holds it in the
+system keyring and may rotate it, and a stale copy in the vault would surface as
+a 403 on push that reads like a permissions problem rather than an expired
+token. Read it live instead. The vault item has an empty
+`KAMAL_REGISTRY_PASSWORD` field left over from before that decision; the `jq`
+filter below skips it, so it is inert — delete it if it bothers you.
+
+Export the set locally for the Phase B commands, which run from the laptop. The
+generated secrets live in Bitwarden, in a secure note named **`zantop deploy`**
+(`d8ba53e0-122e-4f6e-b295-b49a00b2de6d`), one custom field per variable:
+
+```sh
+export BW_SESSION=$(bw unlock --raw)
+eval "$(bw get item 'zantop deploy' | jq -r '.fields[]|select(.value!="")|"export \(.name)=\(.value|@sh)"')"
+
+export KAMAL_REGISTRY_PASSWORD=$(gh auth token)   # live, never stored
+export ZANTOP_DEPLOY_HOST=$NEW_IP                 # not secret, not in the vault
+```
+
+`select(.value!="")` skips fields that are blank, so a genuinely unfilled one
+fails loudly at the point it is needed instead of being exported as an empty
+string and surfacing as an unrelated authentication error.
+
+`POSTGRES_PASSWORD` is deliberately **not** a field: `.kamal/secrets` derives it
+from `ZANTOP_DATABASE_PASSWORD`, which is what keeps the app and the accessory
+from drifting apart. Nothing else should set it.
+
+### Why not the Bitwarden adapter in `.kamal/secrets`
+
+Kamal ships one (`kamal secrets fetch --adapter bitwarden`), and it would work
+from a laptop. It is not used here because Kamal parses `.kamal/secrets` with
+`Dotenv.parse` plus an inline command-substitution patch — it is a dotenv file,
+not a shell script, so it takes `KEY=$(...)` but has no conditionals. There is no
+way to express "vault locally, repository secrets in CI" inside it, and
+`.github/workflows/deploy.yml` runs `kamal deploy` on a runner that has no `bw`
+installed and could not answer the interactive `bw unlock` prompt if it did.
+Populating the environment from the vault leaves the committed file working
+unchanged for both.
+
+`bitwarden_secrets_manager` (`BWS_ACCESS_TOKEN`) is the non-interactive adapter
+that *would* survive CI, but it is a separate Bitwarden product and `bws` is not
+installed.
 
 ## Pre-flight gates
 
@@ -368,14 +409,66 @@ which is what made an exposed test deployment unacceptable before.
 
 ### B0.1 — the hostname
 
-**`zantop.pausandalio.net`**, a subdomain of a domain we already own and whose
-zone is at GoDaddy (`ns57`/`ns58.domaincontrol.com`).
+**`pausandalio.net`** — the apex — of a domain we already own and whose zone is
+at GoDaddy (`ns57`/`ns58.domaincontrol.com`).
 
-A subdomain rather than the apex because `pausandalio.net` is not idle: it and
-`www` both serve a GitHub Pages site (`pauc.github.io`, at
-`185.199.108–111.153`). Pointing the apex at the droplet would take that site
-down for as long as the rehearsal runs. A subdomain costs nothing and proves the
-same things.
+> **Superseded, 2026-08-02.** This section originally specified the subdomain
+> `zantop.pausandalio.net`, on the grounds that the apex was not idle. Pau chose
+> the apex instead. The paragraph below is kept because the constraint it
+> describes is real and still governs what may be touched.
+
+`pausandalio.net` is not idle: it serves a GitHub Pages site (`pauc.github.io`,
+at `185.199.108–111.153`). But the split is finer than it first looks — the
+**apex 301-redirects to `www`**, which is the custom domain GitHub Pages is
+actually configured for. So repointing the apex costs only that redirect: the
+site itself stays live at `www.pausandalio.net`, provided the `www` CNAME is
+left alone.
+
+Two consequences, both easy to get wrong:
+
+- **Delete the apex `AAAA` records.** They point at GitHub's IPv6 addresses and
+  the droplet has none. Let's Encrypt prefers IPv6 where it exists, so leaving
+  them means the ACME challenge is served by GitHub Pages and fails validation —
+  a failure whose cause is invisible from the error.
+- **`ZANTOP_PROXY_HOSTS` gets the apex only, never `www`.** `www` still resolves
+  to GitHub. Naming it in `proxy.hosts` is a guaranteed failed validation on a
+  loop, which is exactly the hourly limit this rehearsal exists to avoid
+  spending.
+
+**Rollback.** The apex records as they stood before the change, to restore when
+the rehearsal ends:
+
+```
+A     @   185.199.108.153   185.199.109.153   185.199.110.153   185.199.111.153
+AAAA  @   2606:50c0:8000::153   2606:50c0:8001::153
+          2606:50c0:8002::153   2606:50c0:8003::153
+```
+
+The zone is editable through GoDaddy's API. `GODADDY_ACCESS_TOKEN` is a **bearer**
+token, not the `sso-key KEY:SECRET` pair the GoDaddy docs lead with — `sso-key`
+returns 401 here. `PUT` replaces every record of that type and name at once, so
+the array below is the whole record set, not an addition:
+
+```sh
+GD="https://api.godaddy.com/v1/domains/pausandalio.net/records"
+AUTH="Authorization: Bearer $GODADDY_ACCESS_TOKEN"
+
+curl -sS -X PUT "$GD/A/%40" -H "$AUTH" -H 'Content-Type: application/json' -d '[
+  {"data":"185.199.108.153","ttl":600},{"data":"185.199.109.153","ttl":600},
+  {"data":"185.199.110.153","ttl":600},{"data":"185.199.111.153","ttl":600}]'
+
+curl -sS -X PUT "$GD/AAAA/%40" -H "$AUTH" -H 'Content-Type: application/json' -d '[
+  {"data":"2606:50c0:8000::153","ttl":600},{"data":"2606:50c0:8001::153","ttl":600},
+  {"data":"2606:50c0:8002::153","ttl":600},{"data":"2606:50c0:8003::153","ttl":600}]'
+```
+
+`%40` is the URL-encoded `@`. A `GET "$GD"` with the same header dumps the whole
+zone, which is the cheapest way to confirm a change landed without waiting on
+resolver caches — or query `@ns57.domaincontrol.com` directly.
+
+`www` (CNAME → `pauc.github.io`) and the `MX` records
+(`smtp`/`mailstore1.secureserver.net`) are **not** touched by any of this, so
+mail and the published site are unaffected.
 
 A domain other than `mireiazantop.com` is the better choice, for a reason worth
 stating plainly: **Let's Encrypt's certificate limit is per registered domain**,
@@ -416,6 +509,27 @@ export ZANTOP_NOINDEX=true
 `mireiazantop.com` in it while it still resolves to the legacy box means
 kamal-proxy failing an ACME challenge for it on a loop, which is the fastest way
 to spend the hourly failed-validation limit.
+
+**Run the rehearsal from the laptop, not the Deploy workflow.** Until 2026-08-02
+the workflow's `env:` block did not pass either variable, so a dispatched run
+would silently have deployed under the real hosts — the precise failure this
+section is written to avoid. It now forwards both as repository *variables*
+(Settings → Secrets and variables → Actions → Variables):
+
+| Variable | Rehearsal | Real cutover |
+| --- | --- | --- |
+| `ZANTOP_PROXY_HOSTS` | `pausandalio.net` | leave undefined |
+| `ZANTOP_NOINDEX` | `true` | leave undefined |
+
+Undefined is safe: an unset GitHub variable expands to an empty string, and
+`config/deploy.yml` treats blank as unset and falls back to the real hosts.
+Setting them to blank is equally safe; **deleting the guard is not**, since an
+empty `proxy.hosts` makes kamal-proxy request no certificate and serve plain
+HTTP without erroring.
+
+The workflow still cannot run Phase B end to end regardless — it only builds,
+pushes and deploys. `kamal server bootstrap`, the accessory boot and the data
+load are laptop steps.
 
 `ZANTOP_NOINDEX=true` makes every response carry `X-Robots-Tag: noindex,
 nofollow`. Without it the rehearsal puts the entire portfolio on a publicly
@@ -544,8 +658,72 @@ ssh root@$NEW_IP "docker exec zantop-db psql -U zantop -d zantop_production -c \
   union all select 'schema_migrations', count(*) from schema_migrations;\""
 ```
 
-`schema_migrations` must hold **12** rows. Fewer means `db:prepare` will try to
-migrate on first boot, inside the 60 s `deploy_timeout`.
+`schema_migrations` must hold one row per file in `db/migrate` — **14** at the
+time of writing, not the 12 this step claimed until 2026-08-02. Count the
+directory rather than trusting the number here, since it moves with every
+migration: `ls db/migrate/*.rb | wc -l`. Fewer rows than files means
+`db:prepare` will try to migrate on first boot, inside the 60 s
+`deploy_timeout`.
+
+#### B4 on the rehearsal path — `db/dump.sql` is data-only
+
+[B0.2](#b02--run-phases-a-b-and-c-against-it) allows the committed
+`db/dump.sql` as the source instead of a fresh legacy dump. It is **not** the
+same kind of artifact and the procedure above does not apply to it:
+
+- It is **plain SQL**, so it loads with `psql`, not `pg_restore`.
+- It is **data-only** — 17 `COPY` statements, no `CREATE TABLE`, and no
+  `schema_migrations`: `DatabaseDump` (`lib/database_dump.rb`) runs
+  `pg_dump -a` with `--exclude-table-data` for `schema_migrations` and
+  `ar_internal_metadata`, on the assumption that the structure comes from
+  `db/schema.rb`. `db:schema:load` stamps `schema_migrations` itself, from the
+  schema's own `version:`, so the count check above still holds on this path.
+- It also **omits every ActiveStorage variant record**, deliberately: variants
+  are derived, their files are never shipped, and a variant row without its file
+  makes Rails redirect to a URL that 404s instead of regenerating it. Variants
+  rebuild themselves on first request.
+
+**On this path B4 is not a manual step at all — skip it and deploy.** The
+structure comes from `db/schema.rb` and the data from `db/dump.sql`, and
+`bin/docker-entrypoint` already does both in that order:
+
+1. The accessory creates a database named after `POSTGRES_USER` — `zantop`, not
+   `zantop_production`. So `zantop_production` does not exist on first boot.
+2. `db:prepare` therefore takes its create branch: create, `db:schema:load`,
+   `db:seed`.
+3. `db/seeds.rb` restores `db/dump.sql` through `psql` and raises if it fails.
+
+Everything that needs is in place: `postgresql-client` is installed in the
+runtime layer (`Dockerfile:33`), `db/dump.sql` is not in `.dockerignore` so
+`COPY . .` ships it, and the dump carries 17 `setval` calls, so sequences are
+reset and later inserts cannot collide with restored ids.
+
+> **Do not pre-create `zantop_production`.** An earlier revision of this section
+> told you to `createdb` first. That is worse than unnecessary: `db:prepare`
+> would then take its *exists* branch, run migrations instead of loading the
+> schema, and **never seed** — leaving a structurally correct but empty site,
+> with nothing failing to say so.
+
+`db:setup` is the same three steps run unconditionally. Do not use it for the
+first deploy — `db:prepare` already covers that — but it is the right tool for
+[B0.4](#b04--reset-before-the-real-cutover), since `schema:load` is
+`force: :cascade` and so drops and recreates every table.
+
+Two things to know before running it:
+
+- **`db/seeds.rb` also creates `example@example.com` with the password
+  `secret`.** On the rehearsal that is a real, working login on a hostname that
+  resolves publicly. It is not an admin (`users.admin` defaults to `false`), so
+  it cannot reach the admin area, but delete it once the deploy is verified.
+- All of this runs inside `deploy_timeout: 60`, before Puma binds. A
+  `schema:load` plus a 433 KB restore on one vCPU should be seconds, but it is
+  untested on this box — if the first deploy times out, this is the first place
+  to look, not the image pull.
+
+Phase D's real cutover is the opposite case: restore the legacy dump into
+`zantop_production` **before** the first container starts, exactly as the
+entrypoint's own comment says, so `db:prepare` finds an existing database,
+merely migrates, and never seeds an `example@example.com` into production.
 
 ### B5 — create the uploads volume and copy the files
 

@@ -6,7 +6,10 @@
 # their development and test groups, and the asset build is baked in.
 #
 #   docker build -t zantop .
-#   docker run -d -p 80:80 -e RAILS_MASTER_KEY=<config/credentials/production.key> zantop
+#
+# Running it by hand needs a reachable Postgres and the environment from
+# config/deploy.yml; there is no RAILS_MASTER_KEY, since this app has no
+# encrypted credentials (see .kamal/secrets).
 
 # The versions come from .tool-versions, which stays the single source of truth
 # for local work, CI and the image alike.
@@ -101,8 +104,15 @@ COPY --from=build /rails /rails
 # Run as an unprivileged user, and own only what has to be written at runtime.
 # ZANTOP_STORAGE_ROOT is a Kamal volume owned by the host, so its ownership is
 # fixed there, not here.
+#
+# log and tmp are created rather than assumed: both are gitignored outright and
+# .dockerignore drops /log/* and /tmp/*, so neither directory exists in the
+# build context. Rails' stock Dockerfile gets away with `chown -R db log tmp`
+# because it ships log/.keep and tmp/.keep and negates them in .dockerignore;
+# this app has neither, and the chown failed on the first build attempt.
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    mkdir -p log tmp && \
     chown -R rails:rails db log tmp
 USER 1000:1000
 
