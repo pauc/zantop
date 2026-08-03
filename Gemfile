@@ -78,7 +78,7 @@ group :development do
   gem "guard-livereload", "~> 2.5", require: false
   # Held at 0.3.x: 0.6.1 caps rack at < 3.2, which would pull the whole app
   # back a rack minor for a development-only convenience.
-  gem "rack-livereload",  "~> 0.3.17"
+  gem "rack-livereload",  "~> 0.6.1"
 end
 
 group :test do
