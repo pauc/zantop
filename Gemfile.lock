@@ -152,7 +152,7 @@ GEM
     image_optim_pack (0.13.1.20260426-x86_64-linux)
       fspath (>= 2.1, < 4)
       image_optim (~> 0.19)
-    image_processing (2.0.2)
+    image_processing (2.0.3)
     image_size (3.6.0)
     in_threads (1.6.0)
     io-console (0.8.2)
