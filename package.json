@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/ujs": "^7.1.600",
-    "esbuild": "^0.28.1",
+    "esbuild": "^0.28.2",
     "normalize.css": "^8.0.1",
     "sass": "^1.102.0",
     "tom-select": "^2.6.2",
