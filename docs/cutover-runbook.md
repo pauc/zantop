@@ -9,10 +9,21 @@ are never modified, which is what makes [rollback](#rollback) a DNS change
 rather than a restore.
 
 **Read [Rehearsal log](#rehearsal-log) before running any of this.** Everything
-in Phase A has been executed end to end against real production data and timed;
-Phases B–D have not, because the droplet does not exist yet.
-[Phase B0](#phase-b0--provisional-domain-rehearsal) is how to fix that before
-cutover day rather than on it.
+in Phase A has been executed end to end against real production data and timed.
+[Phase B0](#phase-b0--provisional-domain-rehearsal) was then executed for real on
+the droplet created 2026-08-02: Kamal provisioned it from scratch and deployed
+the app, the Postgres accessory and kamal-proxy, which served the portfolio over
+Let's Encrypt TLS at `pausandalio.net` for a month. **Phases C and D have still
+never run.**
+
+One thing that rehearsal exposed, and that a rebuild has to account for:
+`db/dump.sql` carries no `users` row at all (commit `fc16aa6`, "Restore
+db/dump.sql without the users row"), so a freshly provisioned droplet comes up
+with **no admin account**. Every other content table restores exactly — 71 works,
+403 images, 610 rich texts, all verified against the running droplet — and the
+ActiveStorage variants regenerate themselves on first request. The admin user is
+the single piece of state a rebuild does not recreate; make one through
+`kamal console` after the restore.
 
 ---
 
@@ -24,7 +35,7 @@ column.
 
 | Variable | What it is | Status |
 | --- | --- | --- |
-| `NEW_IP` | Public IP of the new droplet | `161.35.86.234` — `zantop-web`, ams3, `s-1vcpu-2gb`, Ubuntu 26.04 LTS x64, created 2026-08-02 |
+| `NEW_IP` | Public IP of the new droplet | **TODO — reprovision.** The Phase B0 droplet (`zantop-web`, ams3, `s-1vcpu-2gb`, Ubuntu 26.04 LTS x64, `161.35.86.234`) was created 2026-08-02 and **destroyed 2026-09-05** to stop the $12/mo charge until cutover. That IP is released and will not come back; a replacement gets a new one, which also invalidates `ZANTOP_DEPLOY_HOST` and `ZANTOP_DEPLOY_KNOWN_HOSTS` in [Secrets](#secrets) |
 | `LEGACY_IP` | Legacy app host | `198.211.119.133` |
 | `LEGACY_DB` | Database name of the Rails 3.2 app | TODO — confirm on the box |
 | `LEGACY_DB_USER` | Its Postgres role | TODO — confirm on the box |
